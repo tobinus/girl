@@ -1,0 +1,69 @@
+%define name @PACKAGE@
+%define ver @VERSION@
+%define rel 1
+%define prefix %{_usr}
+%define docdir %{_defaultdocdir}
+Summary: GNOME 2.0 Internet Radio Locator program
+Name: %{name}
+Version: %{ver}
+Release: %{rel}
+License: GPL
+Vendor: ping.uio.no
+Packager: Ole Aamot <oka@oka.no>
+URL: http://www.ping.uio.no/~oka/src/girl/
+Group: Applications/Internet
+Source: http://www.ping.uio.no/~oka/src/girl/@PACKAGE@-@VERSION@.tar.gz
+BuildRoot: %{_tmppath}/%{name}-root
+Requires: gtk2 libgnome libxml2 gnome-vfs2 libgnomeui totem
+BuildRequires: /usr/bin/gcc gtk2-devel libgnome-devel libxml2-devel gnome-vfs2-devel libgnomeui-devel
+Provides: girl
+
+%description
+GIRL is a Internet Radio Locator program for GNOME 2.0.
+
+%prep
+%setup -q
+
+%build
+
+%configure
+
+%install
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_bindir}
+%makeinstall
+
+%clean
+rm -rf %{buildroot}
+
+%files
+%defattr (-,root,root)
+%doc AUTHORS COPYING LETTER NEWS README TODO YP-DIRS
+%{_bindir}/girl
+%{_datadir}/girl/girl-0.1.dtd
+%{_datadir}/girl/girl-0.2.dtd
+%{_datadir}/girl/girl-0.3.dtd
+%{_datadir}/girl/girl-logo.png
+%{_datadir}/girl/girl.png
+%{_datadir}/girl/listener-1.0.dtd
+%{_datadir}/girl/listeners.xml
+%{_datadir}/girl/stations.xml
+%{_datadir}/appdata/girl.appdata.xml
+%{_datadir}/applications/girl.desktop
+%{_datadir}/girl/pixmaps/girl-map.png
+%{_datadir}/icons/hicolor/16x16/apps/girl.png
+%{_datadir}/icons/hicolor/22x22/apps/girl.png
+%{_datadir}/icons/hicolor/24x24/apps/girl.png
+%{_datadir}/icons/hicolor/32x32/apps/girl.png
+%{_datadir}/icons/hicolor/48x48/apps/girl.png
+%{_datadir}/icons/hicolor/256x256/apps/girl.png
+%{_datadir}/icons/hicolor/icon-theme.cache
+%{_datadir}/locale/nb/LC_MESSAGES/girl.mo
+
+%changelog
+
+* Sat Nov  8 2014  Ole Aamot
+- Add dependency on 'totem'.
+
+* Sat Nov  1 2014  Ole Aamot
+- Initial GIRL build on Fedora Core 20

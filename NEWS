@@ -1,0 +1,25 @@
+2014-11-14  Ole Aamot  <oka@oka.no>
+
+	* src/stations.xml: Add NRK Radio Alltid Nyheter
+	* src/stations.xml: Add BBC World Service
+	* src/stations.xml: Add WKCR
+
+2014-11-07  Ole Aamot  <oka@oka.no>
+
+	* src/stations.xml: Add support for WMBR (wmbr.org)
+
+2014-11-04  Ole Aamot  <oka@oka.no>
+
+	* src/stations.xml: Add support for KEXP (kexp.org)
+
+2014-11-02  Ole Aamot  <oka@oka.no>
+
+	* girl version 0.1.2 release
+
+2014-11-01  Ole Aamot  <oka@oka.no>
+
+	* girl version 0.1.1 release
+
+2002-09-21  Ole Aamot  <ole@gnu.org>
+
+	* Project started.

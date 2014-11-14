@@ -1,0 +1,47 @@
+2014-11-14  Ole Aamot  <oka@oka.no>
+
+	* NEWS: girl 0.3.0 released.
+	* src/stations.xml: Add NRK Radio Alltid Nyheter
+	* src/stations.xml: Add BBC World Service
+	* src/stations.xml: Add WKCR
+
+2014-11-08  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (ACLOCAL_AMFLAGS): New variable.
+	(EXTRA_DIST): Add config.rpath, m4/ChangeLog.
+
+2014-11-08  Ole Aamot  <oka@oka.no>
+
+	* NEWS: girl 0.2.1 released.
+	* src/stations.xml: Add KZSU
+
+2014-11-07  Ole Aamot  <oka@oka.no>
+
+	* NEWS: girl 0.2.0 released.
+	* src/stations.xml: Add WMBR
+	* src/stations.xml: Add KEXP
+	
+2014-11-04  Ole Aamot  <oka@oka.no>
+
+	* NEWS: girl 0.1.3 released.
+
+2014-11-01  Ole Aamot  <oka@ping.uio.no>
+
+	* NEWS: girl 0.1.2 released.
+
+2014-11-01  Ole Aamot  <oka@ping.uio.no>
+
+	* src/stations.xml: Add WCPE (http://theclassicalstation.org/)
+
+2014-11-01  Ole Aamot  <oka@ping.uio.no>
+
+	* NEWS: girl 0.1.1 released.
+	
+2002-09-22  Ole Aamot  <ole@gnu.org>
+
+	* girl-station.c: Add support for $HOME/.girl/stations.xml
+
+2002-09-22  Ole Aamot  <ole@gnu.org>
+
+	* NEWS: Project started.
+

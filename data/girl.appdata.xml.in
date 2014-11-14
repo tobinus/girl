@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <id type="desktop">girl.desktop</id>
+  <licence>CC0</licence>
+  <description>
+    <_p>
+      Girl, the GNOME Internet Radio Locator program, allow users
+      to easily find live radio programs and audio broadcasted on
+      the Internet.
+    </_p>
+    <_p>
+      Girl is developed on the new GNOME 2.0 platform and requires
+      at least one audio helper such as totem to be installed.
+    </_p>
+    <_p>
+      Enjoy Internet Radio.
+    </_p>
+  </description>
+  <url type="homepage">https://wiki.gnome.org/Apps/Girl</url>
+  <screenshots>
+    <screenshot type="default">https://git.gnome.org/browse/girl/plain/data/screenshot.png</screenshot>
+  </screenshots>
+  <updatecontact>girl-list@gnome.org</updatecontact>
+</application>

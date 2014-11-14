@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE girl SYSTEM "girl-0.3.dtd">
+
+<girl version="0.3">
+
+  <station id="bbcworldservice" name="BBC World Service">
+    <frequency uri="http://www.bbc.co.uk/worldservice/schedules/frequencies/">Internet</frequency>
+    <location>London, United Kingdom</location>
+    <stream mime="audio/mpeg" uri="http://www.bbc.co.uk/worldservice/meta/live/mp3/eneuk.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
+    <uri>http://www.bbc.co.uk/worldserviceradio</uri>
+  </station>
+
+  <station id="nrkradioalltidnyheter" name="NRK Radio Alltid Nyheter">
+    <frequency>93.0 MHz FM in Oslo, Norway</frequency>
+    <location>Oslo, Norway</location>
+    <description>The Norwegian Broadcasting Corporation (NRK) offers the Norwegian public a wide range of content with three national TV-channels, 13 national radio-channels and the website nrk.no.</description>
+    <stream mime="audio/aac" uri="http://lyd.nrk.no/nrk_radio_alltid_nyheter_aac_h" codec="AAC, v4 LC" samplerate="48000 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.nrk.no/alltid_nyheter</uri>
+  </station>
+
+  <station id="wkcr" name="WKCR">
+    <frequency>89.9 MHz FM in New York, NY</frequency>
+    <location>New York City, U.S.A.</location>
+    <description>WKCR-FM, Columbia University’s non-commercial student-run radio station, is dedicated to presenting a spectrum of alternative programming—traditional and art music, spoken arts, and original journalism. Granted its FCC license in 1941, WKCR is both steeped in tradition and committed to innovation. In the New York area, the station can be heard at 89.9 megacycles in FM; worldwide, it streams online.</description>
+    <stream mime="audio/mpeg" uri="http://kanga.college.columbia.edu:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
+    <uri>http://www.studentaffairs.columbia.edu/wkcr/</uri>
+  </station>
+
+  <station id="kzsu" name="KZSU">
+    <frequency>90.1 MHz FM in Stanford, CA</frequency>
+    <location>San Francisco, U.S.A.</location>
+    <description>KZSU is Stanford University's FM radio station, broadcasting across the Bay Area on 90.1 FM and across the world at kzsulive.stanford.edu. We exist to serve the Stanford community with quality radio broadcasts, including music, sports, news, and public affairs programming.
+
+The station is owned by the Board of Trustees of Stanford University and is governed by a Board of Directors appointed by the President. We got our FM license in 1964, and upgraded from 10 to 500 watts in 1978. Before 1964, KZSU broadcast as an AM carrier current station (through the University's power supply) on 880 kHz, starting in 1947 as a part of the Department of Communication.
+
+KZSU is a non-commercial station funded mainly by Stanford student fees, in addition to underwriting and listener donations. KZSU's staff is all volunteer, made up of Stanford students, staff, alumni, and community affiliates.</description>
+    <stream mime="audio/mpeg" uri="http://kzsulive.stanford.edu/audio/kzsu-1-128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://kzsulive.stanford.edu/</uri>
+  </station>
+
+  <station id="wmbr" name="WMBR">
+    <frequency>88.1 MHz FM in Cambridge, MA</frequency>
+    <location>Boston, U.S.A.</location>
+    <description>WMBR is the MIT campus radio station. We broadcast on 88.1 FM between 20 and 24 hours per day, 365 days a year. We transmit at 720 watts, effective radiated power from the top of the Eastgate Building in Kendall Square in Cambridge, Massachusetts. Our programming includes a wide range of music shows, public affairs programs and eclectic audio entertainment.</description>
+    <stream mime="audio/mpeg" uri="http://wmbr.org/WMBR_live_128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://wmbr.org/</uri>
+  </station>
+
+  <station id="kexp" name="KEXP">
+    <frequency>90.9 MHz FM in Seattle, WA</frequency>
+    <location>Seattle, U.S.A.</location>
+    <description>KEXP is a service of the University of Washington, who holds the station’s FCC license. As a 501(c)3 non-profit arts organization, KEXP relies on investments from individual, foundation, business, and government supporters.</description>
+    <stream mime="audio/mpeg" uri="http://live-mp3-128.kexp.org:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://kexp.org/</uri>
+  </station>
+
+</girl>
