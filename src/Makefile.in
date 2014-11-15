@@ -206,6 +206,7 @@ EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GIRL_CFLAGS = @GIRL_CFLAGS@
+GIRL_HELPER = @GIRL_HELPER@
 GIRL_LIBS = @GIRL_LIBS@
 GIRL_PKG_DEPS = @GIRL_PKG_DEPS@
 GMOFILES = @GMOFILES@
@@ -302,7 +303,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-GOAL_CFLAGS = `pkg-config --cflags gtk+-2.0 libgnome-2.0 libxml-2.0 gnome-vfs-2.0 libgnomeui-2.0 libgnomecanvas-2.0` -Wall -g -DHAVE_CONFIG_H -I. -DGNOMELOCALEDIR=\""`pkg-config --variable=prefix libgnomeui-2.0`/share/locale"\" -DDATADIR=\""`pkg-config --variable=prefix libgnomeui-2.0`/share"\" -DDEBUG -DGIRL_CFG
+GOAL_CFLAGS = `pkg-config --cflags gtk+-2.0 libgnome-2.0 libxml-2.0 gnome-vfs-2.0 libgnomeui-2.0 libgnomecanvas-2.0` -Wall -g -DHAVE_CONFIG_H -I. -DGNOMELOCALEDIR=\""`pkg-config --variable=prefix libgnomeui-2.0`/share/locale"\" -DDATADIR=\""`pkg-config --variable=prefix libgnomeui-2.0`/share"\" -DDEBUG -DGIRL_CFG -DGIRL_HELPER=\"$(GIRL_HELPER)\"
 GOAL_LIBS = `pkg-config --libs gtk+-2.0 libgnome-2.0 libxml-2.0 gnome-vfs-2.0 libgnomeui-2.0 libgnomecanvas-2.0`
 AM_CFLAGS = $(GOAL_CFLAGS)
 AM_LDFLAGS = $(GOAL_LIBS)

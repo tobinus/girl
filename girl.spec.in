@@ -19,7 +19,14 @@ BuildRequires: /usr/bin/gcc gtk2-devel libgnome-devel libxml2-devel gnome-vfs2-d
 Provides: girl
 
 %description
-GIRL is a Internet Radio Locator program for GNOME 2.0.
+Girl is a GNOME Internet Radio Locator program that allow users
+to easily find live radio programs and audio broadcasted on the
+Internet.
+
+Girl is developed on the new GNOME 2.0 platform and it requires
+at least one audio helper to be installed.
+
+Enjoy Internet Radio.
 
 %prep
 %setup -q
@@ -62,8 +69,11 @@ rm -rf %{buildroot}
 
 %changelog
 
+* Sat Nov 15 2014  Ole Aamot
+- Modify description of Girl
+
 * Sat Nov  8 2014  Ole Aamot
 - Add dependency on 'totem'.
 
 * Sat Nov  1 2014  Ole Aamot
-- Initial GIRL build on Fedora Core 20
+- Initial Girl build on Fedora Core 20

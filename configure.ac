@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(girl, 0.3.0)
+AC_INIT(girl, 0.3.2)
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/girl.c])
 AC_CONFIG_HEADER([config.h])
@@ -10,6 +10,10 @@ AC_CONFIG_HEADER([config.h])
 # Checks for programs.
 AC_PROG_CC
 # AC_PROG_LIBTOOL
+
+AC_PATH_TOOL([GIRL_HELPER], [totem], [/usr/bin/totem],
+             [$PATH$PATH_SEPARATOR/usr/bin$PATH_SEPARATOR]dnl
+     [/usr/sbin$PATH_SEPARATOR/usr/etc$PATH_SEPARATOR/etc])
 
 # Checks for libraries.
 
@@ -46,6 +50,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package.])
 AC_SUBST(GIRL_LIBS)
 AC_SUBST(GIRL_CFLAGS)
 AC_SUBST(GIRL_PKG_DEPS)
+AC_SUBST(GIRL_HELPER)
 
 AC_OUTPUT([
 Makefile

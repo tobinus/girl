@@ -1,4 +1,4 @@
-GOAL_CFLAGS=`pkg-config --cflags gtk+-2.0 libgnome-2.0 libxml-2.0 gnome-vfs-2.0 libgnomeui-2.0 libgnomecanvas-2.0` -Wall -g -DHAVE_CONFIG_H -I. -DGNOMELOCALEDIR=\""`pkg-config --variable=prefix libgnomeui-2.0`/share/locale"\" -DDATADIR=\""`pkg-config --variable=prefix libgnomeui-2.0`/share"\" -DDEBUG -DGIRL_CFG
+GOAL_CFLAGS=`pkg-config --cflags gtk+-2.0 libgnome-2.0 libxml-2.0 gnome-vfs-2.0 libgnomeui-2.0 libgnomecanvas-2.0` -Wall -g -DHAVE_CONFIG_H -I. -DGNOMELOCALEDIR=\""`pkg-config --variable=prefix libgnomeui-2.0`/share/locale"\" -DDATADIR=\""`pkg-config --variable=prefix libgnomeui-2.0`/share"\" -DDEBUG -DGIRL_CFG -DGIRL_HELPER=\"$(GIRL_HELPER)\"
 GOAL_LIBS=`pkg-config --libs gtk+-2.0 libgnome-2.0 libxml-2.0 gnome-vfs-2.0 libgnomeui-2.0 libgnomecanvas-2.0`
 
 AM_CFLAGS = $(GOAL_CFLAGS)

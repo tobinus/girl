@@ -21,6 +21,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
  */
 
+#include <config.h>
 #include <stdio.h>
 #include <string.h>
 #include <gtk/gtk.h>
@@ -74,7 +75,7 @@ void girl_launch_helper(char *url, GirlStreamType type)
 
 	/* app = gnome_vfs_mime_get_default_application (mime_info); */
 
-	app = g_strdup("totem");
+	app = g_strdup(GIRL_HELPER);
 
 	if (app != NULL) {
 		command = g_strconcat(app, " ", url, NULL);

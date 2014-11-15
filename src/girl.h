@@ -79,4 +79,4 @@ typedef struct _GirlData GirlData;
 
 extern GirlData *girl;
 
-#endif				/* GIRL_H */
+#endif /* GIRL_H */
