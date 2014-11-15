@@ -5,6 +5,7 @@ datadir = @datadir@
 EXTRA_DIST = config.rpath m4/ChangeLog  \
 	Makefile \
 	ChangeLog \
+	HACKING \
 	README \
 	YP-DIRS \
 	AUTHORS \
