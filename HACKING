@@ -1,0 +1,17 @@
+Introduction to girl-list (http://mail.gnome.org/listinfo/girl-list):
+
+The initial work on this program began in 2002 at Norwegian Computing
+Center (http://www.nr.no/) and PING, a computer club at University of
+Oslo (http://www.ping.uio.no/).
+
+The GNOME Internet Radio Locator is currently available a GNOME 2.0
+program with source code released under GNU General Public License.
+
+Source code is available from http://github.com/oleaamot/girl
+
+You are welcome to contribute to the GNOME Internet Radio Locator code
+either by translating Girl into your language and contributing patches
+and adding new Internet radio stations in girl/src/stations.xml
+
+Enjoy Internet radio,
+Ole
