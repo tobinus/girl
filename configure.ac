@@ -3,7 +3,7 @@
 
 AC_PREREQ(2.59)
 AC_INIT(girl, 0.3.2)
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([no-dist-gzip dist-xz])
 AC_CONFIG_SRCDIR([src/girl.c])
 AC_CONFIG_HEADER([config.h])
 

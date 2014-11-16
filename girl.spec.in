@@ -8,19 +8,21 @@ Name: %{name}
 Version: %{ver}
 Release: %{rel}
 License: GPL
-Vendor: ping.uio.no
-Packager: Ole Aamot <oka@oka.no>
 URL: http://www.ping.uio.no/~oka/src/girl/
 Group: Applications/Internet
-Source: http://www.ping.uio.no/~oka/src/girl/@PACKAGE@-@VERSION@.tar.gz
+Source: http://www.ping.uio.no/~oka/src/girl/@PACKAGE@-@VERSION@.tar.xz
 BuildRoot: %{_tmppath}/%{name}-root
-Requires: gtk2 libgnome libxml2 gnome-vfs2 libgnomeui totem
+Requires: gtk2 >= 2.24.24
+Requires: libgnome >= 2.32.1
+Requires: libxml2 >= 2.9.1
+Requires: gnome-vfs2 >= 2.24.4
+Requires: libgnomeui >= 2.24.5
+Requires: totem >= 3.10.1
 BuildRequires: /usr/bin/gcc gtk2-devel libgnome-devel libxml2-devel gnome-vfs2-devel libgnomeui-devel
-Provides: girl
 
 %description
 Girl is a GNOME Internet Radio Locator program that allow users
-to easily find live radio programs and audio broadcasted on the
+to easily find live radio programs on radio broadcasters on the
 Internet.
 
 Girl is developed on the new GNOME 2.0 platform and it requires

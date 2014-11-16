@@ -1,8 +1,18 @@
+2014-11-16  Ole Aamot  <oka@oka.no>
+
+	* girl version 0.3.2 release
+	* src/stations.xml: Add WWNO (wwno.org)
+
+2014-11-15  Ole Aamot  <oka@oka.no>
+
+	* girl version 0.3.1 release
+	* src/stations.xml: Add KTRU (ktru.org)
+
 2014-11-14  Ole Aamot  <oka@oka.no>
 
-	* src/stations.xml: Add NRK Radio Alltid Nyheter
-	* src/stations.xml: Add BBC World Service
-	* src/stations.xml: Add WKCR
+	* src/stations.xml: Add NRK Radio Alltid Nyheter (nrk.no)
+	* src/stations.xml: Add BBC World Service (bbc.co.uk)
+	* src/stations.xml: Add WKCR (wkcr.org)
 
 2014-11-07  Ole Aamot  <oka@oka.no>
 
