@@ -7,7 +7,7 @@ Summary: GNOME 2.0 Internet Radio Locator program
 Name: %{name}
 Version: %{ver}
 Release: %{rel}
-License: GPL
+License: GPLv2+
 URL: http://www.ping.uio.no/~oka/src/girl/
 Group: Applications/Internet
 Source: http://www.ping.uio.no/~oka/src/girl/@PACKAGE@-@VERSION@.tar.xz
@@ -70,12 +70,11 @@ rm -rf %{buildroot}
 %{_datadir}/locale/nb/LC_MESSAGES/girl.mo
 
 %changelog
-
-* Sat Nov 15 2014  Ole Aamot
+* Sat Nov 15 2014 Ole Aamot - 0.3.0
 - Modify description of Girl
 
-* Sat Nov  8 2014  Ole Aamot
+* Sat Nov  8 2014 Ole Aamot - 0.2.0
 - Add dependency on 'totem'.
 
-* Sat Nov  1 2014  Ole Aamot
+* Sat Nov  1 2014 Ole Aamot - 0.1.0
 - Initial Girl build on Fedora Core 20

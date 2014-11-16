@@ -4,9 +4,26 @@
 
 <girl version="0.3">
 
+  <station id="wwno" name="WWNO">
+    <frequency uri="http://wwno.org/">89.9 MHz FM in New Orleans, LA</frequency>
+    <location>New Orleans, U.S.A.</location>
+    <description>WWNO is the NPR member station for New Orleans and the 13 parishes of southeast Louisiana, broadcasting on 89.9 FM — and on KTLN 90.5 FM in the Houma-Thibodaux area — as a public service of the University of New Orleans.</description>
+    <stream mime="audio/mpeg" uri="http://www.publicbroadcasting.net/wwno/ppr/wwno_128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://wwno.org/</uri>
+  </station>
+
+  <station id="ktru" name="KTRU">
+    <frequency uri="http://ktru.org/">99.1 MHz FM in Houston, TX</frequency>
+    <location>Houston, U.S.A.</location>
+    <description>KTRU Houston is Rice University's student-run radio station.</description>
+    <stream mime="audio/mpeg" uri="http://ktru.org/audiometa/listen3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://ktru.org/</uri>
+  </station>
+
   <station id="bbcworldservice" name="BBC World Service">
     <frequency uri="http://www.bbc.co.uk/worldservice/schedules/frequencies/">Internet</frequency>
     <location>London, United Kingdom</location>
+    <description>BBC World Service is an international news service available on radio, television and online. It provides impartial news reports and analysis in English and 27 other languages.  BBC World Service aims to inspire and illuminate the lives of its audience by bringing the world together, making connections and helping listeners to make sense of the world.</description>
     <stream mime="audio/mpeg" uri="http://www.bbc.co.uk/worldservice/meta/live/mp3/eneuk.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
     <uri>http://www.bbc.co.uk/worldserviceradio</uri>
   </station>
