@@ -89,7 +89,7 @@ void girl_launch_helper(char *url, GirlStreamType type)
 			msg =
 			    g_strdup_printf(_
 					    ("An error happened trying to play "
-					     "%s\nEither the The file doesn't exist, or you "
+					     "%s\nEither the file doesn't exist, or you "
 					     "don't have a player for it."),
 					    url);
 			show_error(msg);
@@ -99,7 +99,7 @@ void girl_launch_helper(char *url, GirlStreamType type)
 	}
 
 	if (!g_spawn_command_line_async(command, &err)) {
-		msg = g_strdup_printf(_("Failed to open url: '%s'\n"
+		msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
 					"Details: %s"), url, err->message);
 		show_error(msg);
 		g_error_free(err);
