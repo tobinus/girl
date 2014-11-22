@@ -1,0 +1,21 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+  <name xml:lang="en">GNOME Internet Radio Locator</name>
+  <shortdesc xml:lang="en">Locate Internet Radio Stations</shortdesc>
+  <description>Girl, the GNOME Internet Radio Locator program, allow users to easily find live radio programs on radio broadcasters on the Internet.  Girl is developed on the new GNOME 2.0 platform and requires at least one audio helper such as totem to be installed.  Enjoy Internet Radio.</description>
+  <homepage rdf:resource="https://wiki.gnome.org/Apps/Girl" />
+  <mailing-list rdf:resource="http://mail.gnome.org/mailman/listinfo/girl-list" />
+  <download-page rdf:resource="http://download.gnome.org/sources/girl/" />
+  <bug-database rdf:resource="http://bugzilla.gnome.org/browse.cgi?product=girl" />
+  <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Ole Aamot</foaf:name>
+      <foaf:mbox rdf:resource="mailto:oka@oka.no" />
+      <gnome:userid>ole</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+</Project>
