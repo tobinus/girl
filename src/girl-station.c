@@ -235,9 +235,7 @@ GirlStationInfo *girl_station_load_from_http(GirlStationInfo * head,
 					     gpointer data)
 {
 	GirlStationInfo *gstation;
-
-	gstation = girl_station_load_from_file(head, (gchar *) data);
-
+	gstation = girl_station_load_from_file (head, "http://girl.src.oka.no/stations.xml");
 	return gstation;
 }
 
@@ -251,7 +249,7 @@ GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 
 	g_return_val_if_fail(filename != NULL, NULL);
 
-	doc = xmlParseFile(filename);
+	doc = xmlReadFile(filename, NULL, 0);
 
 	if (doc == NULL) {
 		perror("xmlParseFile");

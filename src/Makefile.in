@@ -309,8 +309,8 @@ AM_CFLAGS = $(GOAL_CFLAGS)
 AM_LDFLAGS = $(GOAL_LIBS)
 girl_SOURCES = girl.c girl-gui.c girl-listener.c girl-station.c girl-canvas.c
 girldir = $(datadir)/girl
-girl_DATA = listeners.xml stations.xml girl-0.1.dtd girl-0.2.dtd girl-0.3.dtd listener-1.0.dtd girl-logo.png girl.png
-EXTRA_DIST = girl.h girl-gui.h girl-listener.h girl-station.h girl-canvas.h listeners.xml stations.xml girl-0.1.dtd girl-0.2.dtd girl-0.3.dtd listener-1.0.dtd girl-logo.png girl.png
+girl_DATA = listeners.xml stations.xml girl-0.1.dtd girl-0.2.dtd girl-0.3.dtd girl-0.4.dtd listener-1.0.dtd girl-logo.png girl.png
+EXTRA_DIST = girl.h girl-gui.h girl-listener.h girl-station.h girl-canvas.h listeners.xml stations.xml girl-0.1.dtd girl-0.2.dtd girl-0.3.dtd girl-0.4.dtd listener-1.0.dtd girl-logo.png girl.png
 all: all-am
 
 .SUFFIXES:

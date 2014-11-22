@@ -1,8 +1,17 @@
+2014-11-22  Ole Aamot  <oka@oka.no>
+
+	* NEWS: girl 0.4.0 released.
+	* src/stations.xml: Add WXYC (wxyc.org)
+	* src/stations.xml: Add KALX (kalx.berkley.edu)
+	* src/stations.xml: Add WHRB (whrb.org)
+	* src/stations.xml: Add Radio NOVA (radionova.no)
+	* src/girl-0.4.dtd: Add station rank property.
+
 2014-11-16  Ole Aamot  <oka@oka.no>
 
 	* NEWS: girl 0.3.2 released.
 	* src/stations.xml: Add WWNO (wwno.org)
-	
+
 2014-11-15  Ole Aamot  <oka@oka.no>
 
 	* NEWS: girl 0.3.1 released.

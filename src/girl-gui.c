@@ -250,11 +250,12 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 
 	/* creating the menu items */
 
-	world_station_xml_filename = gnome_program_locate_file(NULL,
+	/* world_station_xml_filename = gnome_program_locate_file(NULL,
 							       GNOME_FILE_DOMAIN_APP_DATADIR,
 							       "girl/stations.xml",
 							       FALSE,
-							       NULL);
+							       NULL); */
+	world_station_xml_filename = g_strdup("http://girl.src.oka.no/stations.xml");
 
 	MSG("world_station_xml_filename = %s\n",
 	    world_station_xml_filename);
@@ -267,7 +268,7 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 	local_station_xml_file =
 	    g_strconcat(g_get_home_dir(), "/.girl/stations.xml", NULL);
 	localstation =
-	    girl_station_load_from_http(NULL, local_station_xml_file);
+	    girl_station_load_from_file(NULL, local_station_xml_file);
 
 	if (localstation == NULL) {
 		g_warning(("Failed to open %s\n"), local_station_xml_file);
