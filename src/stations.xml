@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!DOCTYPE girl SYSTEM "girl-0.3.dtd">
+<!DOCTYPE girl SYSTEM "girl-0.4.dtd">
 
 <girl version="0.4">
 
@@ -22,6 +22,7 @@
 
     WXYC alumni include ESPN anchor Stuart Scott, former Squirrel Nut Zipper Tom Maxwell, former Polvo guitarist Dave Brylawski, Newsweek reporter Colin Soloway, film director Peyton Reed, as well as scores of doctors, lawyers, writers, executives, and successful professionals of all kinds.</description>
     <stream mime="audio/ogg" uri="http://www.wxyc.org/files/streams/wxyc-ogg.pls" codec="Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
+    <stream mime="audio/mpeg" uri="http://wxyc.org/files/streams/wxyc-mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.wxyc.org/</uri>
   </station>
 
@@ -34,6 +35,7 @@
 
     As part of our mission to educate, every KALX DJ is encouraged to play a variety of musical styles and genres. Rather than segregating music into limited boxes, this philosophy is an attempt to entertain the listener while broadening their musical experience. A pretty fun way to be educated, don't ya think!</description>
     <stream mime="audio/ogg" uri="http://icecast.media.berkeley.edu:8000/kalx-128.ogg.m3u" codec="Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://icecast.media.berkeley.edu:8000/kalx-128.mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://kalx.berkeley.edu/</uri>
   </station>
 
@@ -55,7 +57,7 @@
 
   <station id="wwno" name="WWNO" rank="1.0">
     <frequency uri="http://wwno.org/">89.9 MHz FM in New Orleans, LA</frequency>
-    <location>New Orleans, U.S.A.</location>
+    <location>New Orleans, LA</location>
     <description>WWNO is the NPR member station for New Orleans and the 13 parishes of southeast Louisiana, broadcasting on 89.9 FM — and on KTLN 90.5 FM in the Houma-Thibodaux area — as a public service of the University of New Orleans.</description>
     <stream mime="audio/mpeg" uri="http://www.publicbroadcasting.net/wwno/ppr/wwno_128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wwno.org/</uri>
@@ -63,7 +65,7 @@
 
   <station id="ktru" name="KTRU" rank="1.0">
     <frequency uri="http://ktru.org/">99.1 MHz FM in Houston, TX</frequency>
-    <location>Houston, U.S.A.</location>
+    <location>Houston, TX</location>
     <description>KTRU Houston is Rice University's student-run radio station.</description>
     <stream mime="audio/mpeg" uri="http://ktru.org/audiometa/listen3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://ktru.org/</uri>
@@ -87,7 +89,7 @@
 
   <station id="wkcr" name="WKCR" rank="1.0">
     <frequency>89.9 MHz FM in New York, NY</frequency>
-    <location>New York City, U.S.A.</location>
+    <location>New York City, NY</location>
     <description>WKCR-FM, Columbia University’s non-commercial student-run radio station, is dedicated to presenting a spectrum of alternative programming—traditional and art music, spoken arts, and original journalism. Granted its FCC license in 1941, WKCR is both steeped in tradition and committed to innovation. In the New York area, the station can be heard at 89.9 megacycles in FM; worldwide, it streams online.</description>
     <stream mime="audio/mpeg" uri="http://kanga.college.columbia.edu:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
     <uri>http://www.studentaffairs.columbia.edu/wkcr/</uri>
@@ -95,7 +97,7 @@
 
   <station id="kzsu" name="KZSU" rank="1.0">
     <frequency>90.1 MHz FM in Stanford, CA</frequency>
-    <location>San Francisco, U.S.A.</location>
+    <location>San Francisco, CA</location>
     <description>KZSU is Stanford University's FM radio station, broadcasting across the Bay Area on 90.1 FM and across the world at kzsulive.stanford.edu. We exist to serve the Stanford community with quality radio broadcasts, including music, sports, news, and public affairs programming.
 
 The station is owned by the Board of Trustees of Stanford University and is governed by a Board of Directors appointed by the President. We got our FM license in 1964, and upgraded from 10 to 500 watts in 1978. Before 1964, KZSU broadcast as an AM carrier current station (through the University's power supply) on 880 kHz, starting in 1947 as a part of the Department of Communication.
@@ -107,7 +109,7 @@ KZSU is a non-commercial station funded mainly by Stanford student fees, in addi
 
   <station id="wmbr" name="WMBR" rank="1.0">
     <frequency>88.1 MHz FM in Cambridge, MA</frequency>
-    <location>Boston, U.S.A.</location>
+    <location>Boston, MA</location>
     <description>WMBR is the MIT campus radio station. We broadcast on 88.1 FM between 20 and 24 hours per day, 365 days a year. We transmit at 720 watts, effective radiated power from the top of the Eastgate Building in Kendall Square in Cambridge, Massachusetts. Our programming includes a wide range of music shows, public affairs programs and eclectic audio entertainment.</description>
     <stream mime="audio/mpeg" uri="http://wmbr.org/WMBR_live_128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wmbr.org/</uri>
@@ -115,7 +117,7 @@ KZSU is a non-commercial station funded mainly by Stanford student fees, in addi
 
   <station id="kexp" name="KEXP" rank="1.0">
     <frequency>90.9 MHz FM in Seattle, WA</frequency>
-    <location>Seattle, U.S.A.</location>
+    <location>Seattle, WA</location>
     <description>KEXP is a service of the University of Washington, who holds the station’s FCC license. As a 501(c)3 non-profit arts organization, KEXP relies on investments from individual, foundation, business, and government supporters.</description>
     <stream mime="audio/mpeg" uri="http://live-mp3-128.kexp.org:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://kexp.org/</uri>

@@ -59,7 +59,6 @@ girl_listener_parser(GirlListenerInfo * listener, xmlDocPtr doc,
 	MSG("listener->uri = %s\n", listener->uri);
 	sub = cur->xmlChildrenNode;
 
-#if 0
 	while (sub != NULL) {
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "location"))) {
@@ -72,7 +71,6 @@ girl_listener_parser(GirlListenerInfo * listener, xmlDocPtr doc,
 			MSG("listener->locationinfo->name = %s\n",
 			    listener->locationinfo->name);
 
-#if 0
 			listener->locationinfo->link =
 			    xmlGetProp(sub, "link");
 			MSG("listener->locationinfo->link = %s\n",
@@ -102,13 +100,12 @@ girl_listener_parser(GirlListenerInfo * listener, xmlDocPtr doc,
 			    xmlGetProp(sub, "rack");
 			MSG("listener->locationinfo->rack = %s\n",
 			    listener->locationinfo->rack);
-#endif
 
 		}
 		/* if... "location" */
 		sub = sub->next;
 	}
-#endif
+
 	return;
 }
 

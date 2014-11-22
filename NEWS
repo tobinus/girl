@@ -2,7 +2,7 @@
 
 	* girl version 0.4.0 release
 	* src/stations.xml: Add WXYC (wxyc.org)
-	* src/stations.xml: Add KALX (kalx.berkley.edu)
+	* src/stations.xml: Add KALX (kalx.berkeley.edu)
 	* src/stations.xml: Add WHRB (whrb.org)
 	* src/stations.xml: Add Radio NOVA (radionova.no)
 	* src/girl-0.4.dtd: Add station rank property.

@@ -2,10 +2,10 @@
 
 <!DOCTYPE listener SYSTEM "listener-1.0.dtd">
 
-<girl version="0.2">
+<girl version="0.4">
 
-  <listener name="oka" mail="oka+girl@oka.no" uri="http://osl.oka.no/" location="Oslo, Norway">
-    <location name="Oslo, Norway" link="http://linux.oka.no/" glat="59.9292193" glon="10.7903029" grad="1.0" vote="1.0" rack="1.0" />
+  <listener name="oka" mail="oka+girl@oka.no" uri="http://oka.no/" location="Oslo, Norway">
+    <location name="Oslo, Norway" link="http://girl.src.oka.no/oka" glat="59.9292193" glon="10.7903029" grad="1.0" vote="1.0" rack="1.0" />
   </listener>
 
 </girl>

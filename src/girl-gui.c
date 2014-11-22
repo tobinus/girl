@@ -100,7 +100,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 	GtkWidget *align, *menu, *drop_down, *item;
 
 	gchar *listener_uri, *listener_name, *listener_location;
-	gchar *label, *world_listener_xml_filename,
+	gchar *label, *world_listener_xml_uri,
 	    *local_listener_xml_file;
 
 	int i = 0, selection = -1;
@@ -124,18 +124,19 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 
 	/* creating the menu items */
 
-	world_listener_xml_filename = gnome_program_locate_file(NULL,
-								GNOME_FILE_DOMAIN_APP_DATADIR,
-								"girl/listeners.xml",
-								FALSE,
-								NULL);
+	/* world_listener_xml_uri = gnome_program_locate_file(NULL, */
+	/* 							GNOME_FILE_DOMAIN_APP_DATADIR, */
+	/* 							"girl/listeners.xml", */
+	/* 							FALSE, */
+	/* 							NULL); */
 
-	MSG("world_listener_xml_filename = %s\n",
-	    world_listener_xml_filename);
+	world_listener_xml_uri = g_strdup("http://girl.src.oka.no/listeners.xml");
+	MSG("world_listener_xml_uri = %s\n",
+	    world_listener_xml_uri);
 
-	if (world_listener_xml_filename == NULL) {
+	if (world_listener_xml_uri == NULL) {
 		g_warning(("Failed to open %s.  Please install it.\n"),
-			  world_listener_xml_filename);
+			  world_listener_xml_uri);
 	}
 
 	local_listener_xml_file =
@@ -152,7 +153,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 
 	listenerinfo =
 	    girl_listener_load_from_file(locallistener,
-					 world_listener_xml_filename);
+					 world_listener_xml_uri);
 
 	while (listenerinfo != NULL) {
 

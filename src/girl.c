@@ -193,6 +193,10 @@ void on_listeners_selector_changed(GtkWidget * a, gpointer user_data)
 			girl->selected_listener_name,
 			girl->selected_listener_location,
 			girl->selected_listener_uri);
+
+	girl_launch_helper(girl->selected_listener_uri,
+			   GIRL_STREAM_SHOUTCAST);
+
 }
 
 void on_stations_selector_button_clicked(GtkWidget * a, gpointer user_data)
@@ -224,6 +228,9 @@ void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 			girl->selected_station_name,
 			girl->selected_station_location,
 			girl->selected_station_uri);
+
+	girl_launch_helper(girl->selected_station_uri,
+			   GIRL_STREAM_SHOUTCAST);
 }
 
 void quit_app(GtkWidget * a, gpointer user_data)
@@ -279,17 +286,19 @@ void about_app(GtkWidget * a, gpointer user_data)
 	gtk_widget_show(about);
 }
 
-void on_listen_button_clicked(GtkWidget * a, gpointer user_data)
+void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 {
 
 
-
-	girl_stream_player(a, user_data);
+	/* girl_stream_player(a, user_data); */
 
 	appbar_send_msg(_("Listening to %s in %s: %s "),
 			girl->selected_station_name,
 			girl->selected_station_location,
 			girl->selected_station_uri);
+
+	girl_launch_helper(girl->selected_station_uri,
+			   GIRL_STREAM_SHOUTCAST);
 
 }
 
