@@ -7,7 +7,7 @@ Oslo (http://www.ping.uio.no/).
 The GNOME Internet Radio Locator is currently available a GNOME 2.0
 program with source code released under GNU General Public License.
 
-Source code is available from http://github.com/oleaamot/girl
+The Git source code repository is at https://git.gnome.org/girl
 
 You are welcome to contribute to the GNOME Internet Radio Locator code
 either by translating Girl into your language and contributing patches
