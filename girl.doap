@@ -11,6 +11,7 @@
   <download-page rdf:resource="http://download.gnome.org/sources/girl/" />
   <bug-database rdf:resource="http://bugzilla.gnome.org/browse.cgi?product=girl" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
+  <programming-language>C</programming-language>
   <maintainer>
     <foaf:Person>
       <foaf:name>Ole Aamot</foaf:name>
