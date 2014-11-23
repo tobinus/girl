@@ -1,3 +1,4 @@
-Oskar Nakken
-Richard Hughes
-Federico Mena Quintero
+Oskar Nakken for tips on adding KEXP (Seattle, WA) to src/stations.xml
+Richard Hughes for tips on adding data/girl.app.data.xml and girl.desktop.in
+Federico Mena Quintero for launching the GNOME project and writing GNOME Canvas
+Piotr Drąg for fixing minor typos in src/girl-station.c
