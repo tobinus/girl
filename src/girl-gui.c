@@ -124,13 +124,14 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 
 	/* creating the menu items */
 
-	/* world_listener_xml_uri = gnome_program_locate_file(NULL, */
-	/* 							GNOME_FILE_DOMAIN_APP_DATADIR, */
-	/* 							"girl/listeners.xml", */
-	/* 							FALSE, */
-	/* 							NULL); */
+	world_listener_xml_uri = gnome_program_locate_file(NULL,
+							   GNOME_FILE_DOMAIN_APP_DATADIR,
+							   "girl/listeners.xml",
+							   FALSE,
+							   NULL);
 
-	world_listener_xml_uri = g_strdup("http://girl.src.oka.no/listeners.xml");
+	/* world_listener_xml_uri = g_strdup("http://girl.src.oka.no/listeners.xml"); */
+
 	MSG("world_listener_xml_uri = %s\n",
 	    world_listener_xml_uri);
 
@@ -251,12 +252,12 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 
 	/* creating the menu items */
 
-	/* world_station_xml_filename = gnome_program_locate_file(NULL,
+	world_station_xml_filename = gnome_program_locate_file(NULL,
 							       GNOME_FILE_DOMAIN_APP_DATADIR,
 							       "girl/stations.xml",
 							       FALSE,
-							       NULL); */
-	world_station_xml_filename = g_strdup("http://girl.src.oka.no/stations.xml");
+							       NULL);
+	/* world_station_xml_filename = g_strdup("http://girl.src.oka.no/stations.xml"); */
 
 	MSG("world_station_xml_filename = %s\n",
 	    world_station_xml_filename);

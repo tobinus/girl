@@ -18,7 +18,7 @@ Requires: libxml2 >= 2.9.1
 Requires: gnome-vfs2 >= 2.24.4
 Requires: libgnomeui >= 2.24.5
 Requires: totem >= 3.10.1
-BuildRequires: /usr/bin/gcc gtk2-devel libgnome-devel libxml2-devel gnome-vfs2-devel libgnomeui-devel
+BuildRequires: /usr/bin/gcc gtk2-devel libgnome-devel libxml2-devel gnome-vfs2-devel libgnomeui-devel intltool
 
 %description
 Girl is a GNOME Internet Radio Locator program that allow users
@@ -38,21 +38,27 @@ Enjoy Internet Radio.
 %configure
 
 %install
-rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_bindir}
+
 %makeinstall
+
+mkdir -p %{buildroot}%{_bindir}
+
+%find_lang %{name}
 
 %clean
 rm -rf %{buildroot}
 
-%files
+%files -f %{name}.lang
 %defattr (-,root,root)
 %doc AUTHORS COPYING LETTER NEWS README TODO YP-DIRS
+%lang(cs)
+%lang(pt_BR)
 %{_bindir}/girl
 %{_datadir}/girl/girl-0.1.dtd
 %{_datadir}/girl/girl-0.2.dtd
 %{_datadir}/girl/girl-0.3.dtd
 %{_datadir}/girl/girl-0.4.dtd
+%{_datadir}/girl/girl-0.5.dtd
 %{_datadir}/girl/girl-logo.png
 %{_datadir}/girl/girl.png
 %{_datadir}/girl/listener-1.0.dtd
@@ -68,7 +74,6 @@ rm -rf %{buildroot}
 %{_datadir}/icons/hicolor/48x48/apps/girl.png
 %{_datadir}/icons/hicolor/256x256/apps/girl.png
 %{_datadir}/icons/hicolor/icon-theme.cache
-%{_datadir}/locale/nb/LC_MESSAGES/girl.mo
 
 %changelog
 * Sat Nov 22 2014 Ole Aamot - 0.4.0-1
