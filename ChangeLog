@@ -1,8 +1,16 @@
 2014-11-27  Ole Aamot  <oka@oka.no>
 
-	* AUTHORS: Add Marek Černocký (Czech translation)
-	* po/cs.po: Czech translation by Marek Černocký
-	
+	* AUTHORS: Add Marek Černocký (Czech translation).
+	* AUTHORS: Add Rafael Ferreira (Brazilian Portuguese translation).
+	* NEWS: girl 0.4.1 released.
+	* po/cs.po: Czech translation by Marek Černocký.
+	* po/pt_BR.po: Brazilian Portuguese translation by Rafael Ferreira.
+	* src/girl-0.5.dtd: Add station type property.
+	* src/stations.xml: Add Cam FM (www.camfm.co.uk).
+	* src/stations.xml: Add Oxford Student Radio (oxideradio.co.uk).
+	* src/stations.xml: Add Pulse LSE (pulselse.co.uk).
+	* src/stations.xml: Add Radio UNAM (www.radiounam.unam.mx).
+
 2014-11-22  Ole Aamot  <oka@oka.no>
 
 	* NEWS: girl 0.4.0 released.
