@@ -1,101 +1,75 @@
-=============
-Version 0.5.1
-=============
+2014-11-29  Ole Aamot  <oka@oka.no>
 
-Translations
+	* AUTHORS: Add Мирослав Николић/Miroslav Nikolić (Serbian translation).
+	* NEWS: girl 0.5.1 released.
+	* po/sr.po: Serbian translation by Мирослав Николић
+	* po/sr@latin.po: Serbian translation by Miroslav Nikolić
+	* src/girl-station.[ch]: Add station rank, type variables
 
-	* sr (Мирослав Николић), sr@latin (Miroslav Nikolić).
+2014-11-29  Ole Aamot  <oka@oka.no>
 
-=============
-Version 0.5.0
-=============
+	* girl version 0.5.0 release
+	* src/girl.c: Initial Previous Station / Next Station support
+	* src/girl-gui.c: Add Previous Station / Next Station buttons
+	* src/stations.xml: Add Radio Campus Paris (radiocampusparis.org).
+	* src/stations.xml: Add WCSB (wcsb.org).
+	* src/stations.xml: Add Radio Campus de l’Université Libre de Bruxelles (radiocampus.be).
+	* src/stations.xml: Add Coimbra University Radio (ruc.pt).
 
-GUI (src/girl-gui.c)
+2014-11-27  Ole Aamot  <oka@oka.no>
 
-	* Add Previous Station / Next Station buttons.
-	* Experimental Previous Station / Next Station support.
+	* girl version 0.4.1 release
+	* AUTHORS: Add Marek Černocký (Czech translation)
+	* AUTHORS: Add Rafael Ferreira (Brazilian Portuguese translation)
+	* po/cs.po: Czech translation by Marek Černocký
+	* po/pt_BR.po: Brazilian Portuguese translation by Rafael Ferreira
+	* src/girl-0.5.dtd: Add station type property.
+	* src/stations.xml: Add Cam FM (www.camfm.co.uk).
+	* src/stations.xml: Add Oxford Student Radio (oxideradio.co.uk).
+	* src/stations.xml: Add Pulse LSE (pulselse.co.uk).
+	* src/stations.xml: Add Radio UNAM (www.radiounam.unam.mx).
 
-Stations (src/stations.xml)
+2014-11-22  Ole Aamot  <oka@oka.no>
 
-	* Add Radio Campus Paris (radiocampusparis.org).
-	* Add WCSB (wcsb.org).
-	* Add Radio Campus de l’Université Libre de Bruxelles (radiocampus.be).
-	* Add Coimbra University Radio (ruc.pt).
+	* girl version 0.4.0 release
+	* src/stations.xml: Add WXYC (wxyc.org)
+	* src/stations.xml: Add KALX (kalx.berkeley.edu)
+	* src/stations.xml: Add WHRB (whrb.org)
+	* src/stations.xml: Add Radio NOVA (radionova.no)
+	* src/girl-0.4.dtd: Add station rank property.
 
-=============
-Version 0.4.1
-=============
+2014-11-16  Ole Aamot  <oka@oka.no>
 
-Girl DTD (src/girl-0.5.dtd)
+	* girl version 0.3.2 release
+	* src/stations.xml: Add WWNO (wwno.org)
 
-	* Add station type property.
+2014-11-15  Ole Aamot  <oka@oka.no>
 
-Stations (src/stations.xml)
+	* girl version 0.3.1 release
+	* src/stations.xml: Add KTRU (ktru.org)
 
-	* Add Cam FM (www.camfm.co.uk).
-	* Add Oxford Student Radio (oxideradio.co.uk).
-	* Add Pulse LSE (pulselse.co.uk).
-	* Add Radio UNAM (www.radiounam.unam.mx).
+2014-11-14  Ole Aamot  <oka@oka.no>
 
-Translations
-
-	* cs (Czech translation by Marek Černocký)
-	* pt_BR (Brazilian Portuguese translation by Rafael Ferreira)
-
-=============
-Version 0.4.0
-=============
-
-Girl DTD (src/girl-0.4.dtd):
-
-	* Add station rank property.
-
-Stations (src/stations.xml):
-
-	* Add WXYC (wxyc.org)
-	* Add KALX (kalx.berkeley.edu)
-	* Add WHRB (whrb.org)
-	* Add Radio NOVA (radionova.no)
-
-=============
-Version 0.3.2
-=============
-
-Stations (src/stations.xml):
-
-	* Add WWNO (wwno.org)
-
-=============
-Version 0.3.1
-=============
-
-Stations (src/stations.xml):
-
-	* Add KTRU (ktru.org)
 	* src/stations.xml: Add NRK Radio Alltid Nyheter (nrk.no)
 	* src/stations.xml: Add BBC World Service (bbc.co.uk)
+	* src/stations.xml: Add WKCR (wkcr.org)
 
-=============
-Version 0.3.0
-=============
+2014-11-07  Ole Aamot  <oka@oka.no>
 
-Stations (src/stations.xml):
+	* src/stations.xml: Add support for WMBR (wmbr.org)
 
-	* Add WKCR (wkcr.org)
+2014-11-04  Ole Aamot  <oka@oka.no>
 
-=============
-Version 0.2.0
-=============
+	* src/stations.xml: Add support for KEXP (kexp.org)
 
-Stations (src/stations.xml):
+2014-11-02  Ole Aamot  <oka@oka.no>
 
-	* Add support for WMBR (wmbr.org)
-	* Add support for KEXP (kexp.org)
+	* girl version 0.1.2 release
 
-=============
-Version 0.1.0
-=============
+2014-11-01  Ole Aamot  <oka@oka.no>
 
-GUI (src/girl-gui.c)
+	* girl version 0.1.1 release
 
-	* Initial release.
+2002-09-21  Ole Aamot  <ole@gnu.org>
+
+	* Project started.
