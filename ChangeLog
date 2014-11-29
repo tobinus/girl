@@ -1,5 +1,11 @@
 2014-11-29  Ole Aamot  <oka@oka.no>
 
+	* configure.ac: girl version 0.5.2.
+	* girl.spec.in: Update package spec for Fedora 21.
+	* man/girl.1: Add man page.
+
+2014-11-29  Ole Aamot  <oka@oka.no>
+
 	* AUTHORS: Add Мирослав Николић/Miroslav Nikolić (Serbian translation).
 	* NEWS: girl 0.5.1 released.
 	* po/sr.po: Serbian translation by Мирослав Николић

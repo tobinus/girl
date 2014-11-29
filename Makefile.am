@@ -1,4 +1,4 @@
-SUBDIRS = data src po
+SUBDIRS = data man src po
 
 datadir = @datadir@
 

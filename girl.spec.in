@@ -1,8 +1,6 @@
 %define name @PACKAGE@
 %define ver @VERSION@
 %define rel 1
-%define prefix %{_usr}
-%define docdir %{_defaultdocdir}
 Summary: GNOME 2.0 Internet Radio Locator program
 Name: %{name}
 Version: %{ver}
@@ -18,7 +16,7 @@ Requires: libxml2 >= 2.9.1
 Requires: gnome-vfs2 >= 2.24.4
 Requires: libgnomeui >= 2.24.5
 Requires: totem >= 3.10.1
-BuildRequires: /usr/bin/gcc gtk2-devel libgnome-devel libxml2-devel gnome-vfs2-devel libgnomeui-devel intltool
+BuildRequires: gtk2-devel libgnome-devel libxml2-devel gnome-vfs2-devel libgnomeui-devel intltool
 
 %description
 Girl is a GNOME Internet Radio Locator program that allow users
@@ -43,13 +41,12 @@ Enjoy Internet Radio.
 
 mkdir -p %{buildroot}%{_bindir}
 
-%find_lang %{name}
+%find_lang %{name} --with-man
 
 %clean
 rm -rf %{buildroot}
 
 %files -f %{name}.lang
-%defattr (-,root,root)
 %doc AUTHORS COPYING LETTER NEWS README TODO YP-DIRS
 %lang(cs)
 %lang(pt_BR)
@@ -74,8 +71,15 @@ rm -rf %{buildroot}
 %{_datadir}/icons/hicolor/48x48/apps/girl.png
 %{_datadir}/icons/hicolor/256x256/apps/girl.png
 %{_datadir}/icons/hicolor/icon-theme.cache
+%{_mandir}/man1/girl.1.gz
 
 %changelog
+* Sat Nov 29 2014 Ole Aamot - 0.5.2-1
+- Girl 0.5.2 build on Fedora Linux 21
+
+* Sat Nov 29 2014 Ole Aamot - 0.5.1-1
+- Girl 0.5.1 build on Fedora Linux 21
+
 * Sat Nov 29 2014 Ole Aamot - 0.5.0-1
 - Girl 0.5.0 build on Fedora Linux 21
 
