@@ -41,6 +41,9 @@
 
 /* extern GirlListenerInfo *girllistener; */
 
+extern GList *girl_stations;
+extern GList *girl_listeners;
+
 static void
 girl_listener_parser(GirlListenerInfo * listener, xmlDocPtr doc,
 		     xmlNodePtr cur)
@@ -173,6 +176,8 @@ GirlListenerInfo *girl_listener_load_from_file(GirlListenerInfo * head,
 			curr->next = head;
 
 			head = curr;
+
+			girl_listeners = g_list_append(girl_listeners, (GirlListenerInfo *) curr);
 
 			MSG("Done with parsing the listener..\n");
 

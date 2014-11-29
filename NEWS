@@ -1,67 +1,101 @@
-2014-11-29  Ole Aamot  <oka@oka.no>
+=============
+Version 0.5.1
+=============
 
-	* girl version 0.5.0 release
-	* src/girl.c: Initial Previous Station / Next Station support
-	* src/girl-gui.c: Add Previous Station / Next Station buttons
-	* src/stations.xml: Add Radio Campus Paris (radiocampusparis.org).
-	* src/stations.xml: Add WCSB (wcsb.org).
-	* src/stations.xml: Add Radio Campus de l’Université Libre de Bruxelles (radiocampus.be).
-	* src/stations.xml: Add Coimbra University Radio (ruc.pt).
+Translations
 
-2014-11-27  Ole Aamot  <oka@oka.no>
+	* sr (Мирослав Николић), sr@latin (Miroslav Nikolić).
 
-	* girl version 0.4.1 release
-	* AUTHORS: Add Marek Černocký (Czech translation)
-	* AUTHORS: Add Rafael Ferreira (Brazilian Portuguese translation)
-	* po/cs.po: Czech translation by Marek Černocký
-	* po/pt_BR.po: Brazilian Portuguese translation by Rafael Ferreira
-	* src/girl-0.5.dtd: Add station type property.
-	* src/stations.xml: Add Cam FM (www.camfm.co.uk).
-	* src/stations.xml: Add Oxford Student Radio (oxideradio.co.uk).
-	* src/stations.xml: Add Pulse LSE (pulselse.co.uk).
-	* src/stations.xml: Add Radio UNAM (www.radiounam.unam.mx).
+=============
+Version 0.5.0
+=============
 
-2014-11-22  Ole Aamot  <oka@oka.no>
+GUI (src/girl-gui.c)
 
-	* girl version 0.4.0 release
-	* src/stations.xml: Add WXYC (wxyc.org)
-	* src/stations.xml: Add KALX (kalx.berkeley.edu)
-	* src/stations.xml: Add WHRB (whrb.org)
-	* src/stations.xml: Add Radio NOVA (radionova.no)
-	* src/girl-0.4.dtd: Add station rank property.
+	* Add Previous Station / Next Station buttons.
+	* Experimental Previous Station / Next Station support.
 
-2014-11-16  Ole Aamot  <oka@oka.no>
+Stations (src/stations.xml)
 
-	* girl version 0.3.2 release
-	* src/stations.xml: Add WWNO (wwno.org)
+	* Add Radio Campus Paris (radiocampusparis.org).
+	* Add WCSB (wcsb.org).
+	* Add Radio Campus de l’Université Libre de Bruxelles (radiocampus.be).
+	* Add Coimbra University Radio (ruc.pt).
 
-2014-11-15  Ole Aamot  <oka@oka.no>
+=============
+Version 0.4.1
+=============
 
-	* girl version 0.3.1 release
-	* src/stations.xml: Add KTRU (ktru.org)
+Girl DTD (src/girl-0.5.dtd)
 
-2014-11-14  Ole Aamot  <oka@oka.no>
+	* Add station type property.
 
+Stations (src/stations.xml)
+
+	* Add Cam FM (www.camfm.co.uk).
+	* Add Oxford Student Radio (oxideradio.co.uk).
+	* Add Pulse LSE (pulselse.co.uk).
+	* Add Radio UNAM (www.radiounam.unam.mx).
+
+Translations
+
+	* cs (Czech translation by Marek Černocký)
+	* pt_BR (Brazilian Portuguese translation by Rafael Ferreira)
+
+=============
+Version 0.4.0
+=============
+
+Girl DTD (src/girl-0.4.dtd):
+
+	* Add station rank property.
+
+Stations (src/stations.xml):
+
+	* Add WXYC (wxyc.org)
+	* Add KALX (kalx.berkeley.edu)
+	* Add WHRB (whrb.org)
+	* Add Radio NOVA (radionova.no)
+
+=============
+Version 0.3.2
+=============
+
+Stations (src/stations.xml):
+
+	* Add WWNO (wwno.org)
+
+=============
+Version 0.3.1
+=============
+
+Stations (src/stations.xml):
+
+	* Add KTRU (ktru.org)
 	* src/stations.xml: Add NRK Radio Alltid Nyheter (nrk.no)
 	* src/stations.xml: Add BBC World Service (bbc.co.uk)
-	* src/stations.xml: Add WKCR (wkcr.org)
 
-2014-11-07  Ole Aamot  <oka@oka.no>
+=============
+Version 0.3.0
+=============
 
-	* src/stations.xml: Add support for WMBR (wmbr.org)
+Stations (src/stations.xml):
 
-2014-11-04  Ole Aamot  <oka@oka.no>
+	* Add WKCR (wkcr.org)
 
-	* src/stations.xml: Add support for KEXP (kexp.org)
+=============
+Version 0.2.0
+=============
 
-2014-11-02  Ole Aamot  <oka@oka.no>
+Stations (src/stations.xml):
 
-	* girl version 0.1.2 release
+	* Add support for WMBR (wmbr.org)
+	* Add support for KEXP (kexp.org)
 
-2014-11-01  Ole Aamot  <oka@oka.no>
+=============
+Version 0.1.0
+=============
 
-	* girl version 0.1.1 release
+GUI (src/girl-gui.c)
 
-2002-09-21  Ole Aamot  <ole@gnu.org>
-
-	* Project started.
+	* Initial release.

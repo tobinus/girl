@@ -4,6 +4,7 @@
 	* NEWS: girl 0.5.1 released.
 	* po/sr.po: Serbian translation by Мирослав Николић
 	* po/sr@latin.po: Serbian translation by Miroslav Nikolić
+	* src/girl-station.[ch]: Add station rank, type variables
 
 2014-11-29  Ole Aamot  <oka@oka.no>
 

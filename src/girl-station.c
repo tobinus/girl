@@ -138,6 +138,10 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 	MSG("station->id = %s\n", station->id);
 	station->name = xmlGetProp(cur, "name");
 	MSG("station->name = %s\n", station->name);
+	station->rank = xmlGetProp(cur, "rank");
+	MSG("station->rank = %s\n", station->rank);
+	station->type = xmlGetProp(cur, "type");
+	MSG("station->type = %s\n", station->type);
 
 	sub = cur->xmlChildrenNode;
 
@@ -249,6 +253,7 @@ GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 	xmlNodePtr cur = NULL;
 	GirlStationInfo *curr = NULL;
 	char *version;
+	GirlStationInfo *mem_station;
 
 	g_return_val_if_fail(filename != NULL, NULL);
 
@@ -291,12 +296,17 @@ GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 			MSG("Found a new station.\n");
 
 			curr = g_new0(GirlStationInfo, 1);
+			mem_station = g_new0(GirlStationInfo, 1);
 
 			girl_station_parser(curr, doc, cur);
 
 			curr->next = head;
 
 			head = curr;
+
+			mem_station = head;
+
+			girl_stations = g_list_append(girl_stations, (GirlStationInfo *)mem_station);
 
 			MSG("Done with parsing the station.\n");
 

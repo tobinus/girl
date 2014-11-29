@@ -45,6 +45,8 @@ struct _GirlStationInfo {
 	GtkWidget *widget;
 	gchar *id;
 	gchar *name;
+	gchar *rank;
+	gchar *type;
 	gchar *frequency;
 	gchar *location;
 	gchar *description;

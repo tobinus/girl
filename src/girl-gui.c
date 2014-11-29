@@ -154,7 +154,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 	    girl_listener_load_from_file(locallistener,
 					 world_listener_xml_uri);
 
-	girl_listeners = NULL;
+	/* girl_listeners = NULL; */
 
 	while (listenerinfo != NULL) {
 
@@ -165,7 +165,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 		listener_name = g_strdup(listenerinfo->name);
 		listener_location = g_strdup(listenerinfo->location);
 
-		girl_listeners = g_list_append(girl_listeners,(GirlListenerInfo *)listenerinfo);
+		/* girl_listeners = g_list_append(girl_listeners,(GirlListenerInfo *)listenerinfo); */
 
 		if (label != NULL) {
 			item = gtk_menu_item_new_with_label(label);
