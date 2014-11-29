@@ -41,6 +41,9 @@
 #endif
 
 extern GirlData *girl;
+extern GList *girl_stations;
+extern GList *girl_listeners;
+
 extern GtkWidget *girl_app;
 
 void show_error(gchar * msg)

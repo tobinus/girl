@@ -54,14 +54,6 @@
 extern GtkWidget *girl_app;
 
 GnomeUIInfo toolbar[] = {
-#if 0
-	GNOMEUIINFO_ITEM_STOCK(("Previous"),
-			       ("Go to the previous station"),
-			       on_previous_click, GTK_STOCK_GO_BACK),
-	GNOMEUIINFO_ITEM_STOCK(("Next"), ("Go to the next station"),
-			       on_next_click, GTK_STOCK_GO_FORWARD),
-	GNOMEUIINFO_SEPARATOR,
-#endif
 	GNOMEUIINFO_ITEM_STOCK(("Listen"), ("Listen to selected station"),
 			       on_listen_button_clicked,
 			       GTK_STOCK_REFRESH),
@@ -71,6 +63,12 @@ GnomeUIInfo toolbar[] = {
 	GNOMEUIINFO_ITEM_STOCK(("Stations"), ("Stations"),
 			       on_stations_selector_button_clicked,
 			       GTK_STOCK_PREFERENCES),
+	GNOMEUIINFO_SEPARATOR,
+	GNOMEUIINFO_ITEM_STOCK(("Previous station"),
+			       ("Go to the previous station"),
+			       on_previous_click, GTK_STOCK_GO_BACK),
+	GNOMEUIINFO_ITEM_STOCK(("Next station"), ("Go to the next station"),
+			       on_next_click, GTK_STOCK_GO_FORWARD),
 	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_ITEM_STOCK(("About"),
 			       ("About the GNOME Internet Radio Locator"),
@@ -156,6 +154,8 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 	    girl_listener_load_from_file(locallistener,
 					 world_listener_xml_uri);
 
+	girl_listeners = NULL;
+
 	while (listenerinfo != NULL) {
 
 		label =
@@ -164,6 +164,8 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 		listener_uri = g_strdup(listenerinfo->uri);
 		listener_name = g_strdup(listenerinfo->name);
 		listener_location = g_strdup(listenerinfo->location);
+
+		girl_listeners = g_list_append(girl_listeners,(GirlListenerInfo *)listenerinfo);
 
 		if (label != NULL) {
 			item = gtk_menu_item_new_with_label(label);
@@ -282,6 +284,8 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 	    girl_station_load_from_file(localstation,
 					world_station_xml_filename);
 
+	girl_stations = NULL;
+
 	while (stationinfo != NULL) {
 
 		label =
@@ -290,6 +294,8 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 		station_uri = g_strdup(stationinfo->stream->uri);
 		station_name = g_strdup(stationinfo->name);
 		station_location = g_strdup(stationinfo->location);
+
+		girl_stations = g_list_append(girl_stations,(GirlStationInfo *)stationinfo);
 
 		if (label != NULL) {
 			item = gtk_menu_item_new_with_label(label);

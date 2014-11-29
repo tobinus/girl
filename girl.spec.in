@@ -76,6 +76,9 @@ rm -rf %{buildroot}
 %{_datadir}/icons/hicolor/icon-theme.cache
 
 %changelog
+* Sat Nov 29 2014 Ole Aamot - 0.5.0-1
+- Girl 0.5.0 build on Fedora Linux 21
+
 * Sat Nov 22 2014 Ole Aamot - 0.4.0-1
 - Girl 0.4.0 build on Fedora Linux 20
 

@@ -1,3 +1,13 @@
+2014-11-29  Ole Aamot  <oka@oka.no>
+
+	* girl version 0.5.0 release
+	* src/girl.c: Initial Previous Station / Next Station support
+	* src/girl-gui.c: Add Previous Station / Next Station buttons
+	* src/stations.xml: Add Radio Campus Paris (radiocampusparis.org).
+	* src/stations.xml: Add WCSB (wcsb.org).
+	* src/stations.xml: Add Radio Campus de l’Université Libre de Bruxelles (radiocampus.be).
+	* src/stations.xml: Add Coimbra University Radio (ruc.pt).
+
 2014-11-27  Ole Aamot  <oka@oka.no>
 
 	* girl version 0.4.1 release

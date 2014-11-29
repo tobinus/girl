@@ -54,6 +54,7 @@ struct _GirlStationInfo {
 	/*   gchar *category; */
 	GirlStreamInfo *stream;
 	GirlStationInfo *next;
+	GirlStationInfo *prev;
 };
 
 struct _GirlStreamInfo {

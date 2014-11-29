@@ -42,6 +42,9 @@
 #endif
 
 GirlData *girl;
+GList *girl_stations;
+GList *girl_listeners;
+
 GtkWidget *girl_app;
 GtkWidget *listeners_selector = NULL;
 GtkWidget *stations_selector = NULL;
@@ -152,14 +155,90 @@ static void cause_movement(int way)
 
 void on_previous_click(GtkWidget * a, gpointer user_data)
 {
-	cause_movement(-1);
-	on_listen_button_clicked(a, user_data);
+	GList *l = g_list_previous(girl_stations);
+	if (l != NULL) {
+		GirlStationInfo *station = l->data;
+		if (station->prev != NULL) {
+			girl_stations->data = station->prev;
+		} else {
+			girl_stations->data = station;
+		}
+
+		cause_movement(-1);
+		if (station != NULL) {
+			printf("Previous Station ID: %s\n", station->id);
+			printf("Previous Station Name: %s\n", station->name);
+			printf("Previous Station URI: %s\n", station->stream->uri);
+			printf("Previous Station Location: %s\n", station->location);
+
+			girl->selected_station_uri = station->stream->uri;
+
+			MSG("on_station_select_changed: %s\n",
+			    girl->selected_station_uri);
+
+			girl->selected_station_name = station->name;
+
+			MSG("on_station_select_changed: %s\n",
+			    girl->selected_station_name);
+
+			girl->selected_station_location = station->location;
+
+			MSG("on_station_select_changed: %s\n",
+			    girl->selected_station_location);
+
+			appbar_send_msg(_("Selected %s in %s: %s"),
+					girl->selected_station_name,
+					girl->selected_station_location,
+					girl->selected_station_uri);
+			
+
+			girl_launch_helper(station->stream->uri, GIRL_STREAM_SHOUTCAST);
+		}
+	} else {
+		printf("Prev Station: At the beginning of Stations list!\n");
+	}
 }
 
 void on_next_click(GtkWidget * a, gpointer user_data)
 {
-	cause_movement(1);
-	on_listen_button_clicked(a, user_data);
+	GList *l = g_list_first(girl_stations);
+	if (l != NULL) {
+		GirlStationInfo *station = l->data;
+		if (station->next != NULL) {
+			girl_stations->data = station->next;
+		} else {
+			printf("Next Station: At the end of Stations list!\n");
+		}
+		cause_movement(1);
+		if (station != NULL) {
+			printf("Next Station ID: %s\n", station->id);
+			printf("Next Station Name: %s\n", station->name);
+			printf("Next Station URI: %s\n", station->stream->uri);
+			printf("Next Station Location: %s\n", station->location);
+
+			girl->selected_station_uri = station->stream->uri;
+
+			MSG("on_station_select_changed: %s\n",
+			    girl->selected_station_uri);
+
+			girl->selected_station_name = station->name;
+
+			MSG("on_station_select_changed: %s\n",
+			    girl->selected_station_name);
+
+			girl->selected_station_location = station->location;
+
+			MSG("on_station_select_changed: %s\n",
+			    girl->selected_station_location);
+
+			appbar_send_msg(_("Selected %s in %s: %s"),
+					girl->selected_station_name,
+					girl->selected_station_location,
+					girl->selected_station_uri);
+			
+			girl_launch_helper(station->stream->uri, GIRL_STREAM_SHOUTCAST);
+		}
+	}
 }
 
 void on_listeners_selector_button_clicked(GtkWidget * a,

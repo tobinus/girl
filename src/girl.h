@@ -78,5 +78,7 @@ struct _GirlData {
 typedef struct _GirlData GirlData;
 
 extern GirlData *girl;
+extern GList *girl_stations;
+extern GList *girl_listeners;
 
 #endif /* GIRL_H */
