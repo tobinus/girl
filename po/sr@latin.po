@@ -1,0 +1,111 @@
+# Serbian translation for girl.
+# Copyright (C) 2014 girl's COPYRIGHT HOLDER
+# This file is distributed under the same license as the girl package.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: girl master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=girl&ke"
+"ywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-11-28 20:17+0000\n"
+"PO-Revision-Date: 2014-11-29 10:17+0200\n"
+"Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <gnom@prevod.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/girl.appdata.xml.in.h:1
+msgid ""
+"Girl, the GNOME Internet Radio Locator program, allow users to easily find "
+"live radio programs on radio broadcasters on the Internet."
+msgstr ""
+"Girl, Gnomov pronalazač internet radia (GNOME Internet Radio Locator), "
+"omogućava korisnicima da s lakoćom nađu radio programe uživo na radio "
+"stanicama koje emituju preko interneta."
+
+#: ../data/girl.appdata.xml.in.h:2
+msgid ""
+"Girl is developed on the new GNOME 2.0 platform and requires at least one "
+"audio helper such as totem to be installed."
+msgstr ""
+"Girl se razvija na novoj platformi Gnoma 2.0 i zahteva da je instaliran "
+"barem jedan pomoćnik zvuka kao što je totem."
+
+#: ../data/girl.appdata.xml.in.h:3
+msgid "Enjoy Internet Radio."
+msgstr "Uživajte u radiu na internetu."
+
+#: ../data/girl.desktop.in.in.h:1
+msgid "Internet Radio Locator"
+msgstr "Pronalazač internet radia"
+
+#: ../data/girl.desktop.in.in.h:2
+msgid "Locate Internet Radio Stations"
+msgstr "Pronađite radio stanice na internetu"
+
+#. Extra keywords that can be used to search for girl in GNOME Shell and Unity
+#: ../data/girl.desktop.in.in.h:4
+msgid "Live;Radio;Program;Station;Locator;"
+msgstr "radio;uživo;program;stanica;pronalazač;"
+
+#: ../src/girl.c:123
+#, c-format
+msgid "Fetching %s"
+msgstr "Dovlačim „%s“"
+
+#: ../src/girl.c:192 ../src/girl.c:227
+#, c-format
+msgid "Selected %s in %s: %s"
+msgstr "Izabrano je „%s“ u „%s“: %s"
+
+#: ../src/girl.c:269
+msgid "translator_credits"
+msgstr ""
+"Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
+"\n"
+"http://prevod.org — prevod na srpski jezik."
+
+#: ../src/girl.c:276
+msgid "GNOME Internet Radio Locator"
+msgstr "Gnomov pronalazač internet radia"
+
+#: ../src/girl.c:276
+msgid ""
+"Copyright 2014 Ole Aamot Software\n"
+"Copyright 2002 Free Software Foundation"
+msgstr ""
+"Autorska prava 2014 Ole Amot Softver\n"
+"Autorska prava 2002 Zadužbina Slobodnog Softvera"
+
+#: ../src/girl.c:276
+msgid "Internet radio station and listener locator"
+msgstr "Pronalazač radio stanica na Internetu i program za slušanje istih"
+
+#. girl_stream_player(a, user_data);
+#: ../src/girl.c:295
+#, c-format
+msgid "Listening to %s in %s: %s "
+msgstr "Slušam na „%s“ u „%s“: %s "
+
+#: ../src/girl-station.c:91
+#, c-format
+msgid ""
+"An error happened trying to play %s\n"
+"Either the file doesn't exist, or you don't have a player for it."
+msgstr ""
+"Došlo je do greške kada sam pokušao da pustim „%s“\n"
+"Ili datoteka ne postoji, ili nemate odgovarajući program za puštanje iste."
+
+#: ../src/girl-station.c:102
+#, c-format
+msgid ""
+"Failed to open URL: '%s'\n"
+"Details: %s"
+msgstr ""
+"Nisam uspeo da otvorim adresu: „%s“\n"
+"Pojedinosti: %s"
