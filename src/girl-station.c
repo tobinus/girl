@@ -142,6 +142,8 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 	MSG("station->rank = %s\n", station->rank);
 	station->type = xmlGetProp(cur, "type");
 	MSG("station->type = %s\n", station->type);
+	station->release = xmlGetProp(cur, "release");
+	MSG("station->release = %s\n", station->release);
 
 	sub = cur->xmlChildrenNode;
 
@@ -167,8 +169,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			station->description =
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("station->description = %s\n",
-			    station->description);
+			MSG("station->description = %s\n", station->description);
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "uri"))) {

@@ -60,6 +60,12 @@ girl_listener_parser(GirlListenerInfo * listener, xmlDocPtr doc,
 	MSG("listener->location = %s\n", listener->location);
 	listener->uri = xmlGetProp(cur, "uri");
 	MSG("listener->uri = %s\n", listener->uri);
+	listener->release = xmlGetProp(cur, "release");
+	MSG("listener->release = %s\n", listener->release);
+	listener->description = xmlGetProp(cur, "description");
+	MSG("listener->description = %s\n", listener->description);
+
+#if 0
 	sub = cur->xmlChildrenNode;
 
 	while (sub != NULL) {
@@ -108,6 +114,7 @@ girl_listener_parser(GirlListenerInfo * listener, xmlDocPtr doc,
 		/* if... "location" */
 		sub = sub->next;
 	}
+#endif
 
 	return;
 }

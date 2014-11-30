@@ -56,9 +56,11 @@ rm -rf %{buildroot}
 %{_datadir}/girl/girl-0.3.dtd
 %{_datadir}/girl/girl-0.4.dtd
 %{_datadir}/girl/girl-0.5.dtd
+%{_datadir}/girl/girl-0.6.dtd
 %{_datadir}/girl/girl-logo.png
 %{_datadir}/girl/girl.png
 %{_datadir}/girl/listener-1.0.dtd
+%{_datadir}/girl/listener-1.1.dtd
 %{_datadir}/girl/listeners.xml
 %{_datadir}/girl/stations.xml
 %{_datadir}/appdata/girl.appdata.xml

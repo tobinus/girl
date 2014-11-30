@@ -186,10 +186,21 @@ void on_previous_click(GtkWidget * a, gpointer user_data)
 			MSG("on_station_select_changed: %s\n",
 			    girl->selected_station_location);
 
+			girl->selected_station_release = station->release;
+
+			MSG("on_station_select_changed: %s\n",
+			    girl->selected_station_release);
+
+			girl->selected_station_description = station->description;
+
+			MSG("on_station_select_changed: %s\n",
+			    girl->selected_station_description);
+
 			appbar_send_msg(_("Selected %s in %s: %s"),
 					girl->selected_station_name,
 					girl->selected_station_location,
-					girl->selected_station_uri);
+					girl->selected_station_uri,
+					girl->selected_station_release);
 			
 
 			girl_launch_helper(station->stream->uri, GIRL_STREAM_SHOUTCAST);
@@ -231,10 +242,21 @@ void on_next_click(GtkWidget * a, gpointer user_data)
 			MSG("on_station_select_changed: %s\n",
 			    girl->selected_station_location);
 
+			girl->selected_station_release = station->release;
+
+			MSG("on_station_select_changed: %s\n",
+			    girl->selected_station_release);
+
+			girl->selected_station_description = station->description;
+
+			MSG("on_station_select_changed: %s\n",
+			    girl->selected_station_description);
+
 			appbar_send_msg(_("Selected %s in %s: %s"),
 					girl->selected_station_name,
 					girl->selected_station_location,
-					girl->selected_station_uri);
+					girl->selected_station_uri,
+					girl->selected_station_release);
 			
 			girl_launch_helper(station->stream->uri, GIRL_STREAM_SHOUTCAST);
 		}
@@ -268,10 +290,21 @@ void on_listeners_selector_changed(GtkWidget * a, gpointer user_data)
 	MSG("on_listener_select_changed: %s\n",
 	    girl->selected_listener_location);
 
-	appbar_send_msg(_("Selected %s in %s: %s"),
+	girl->selected_listener_release =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "listener_release"));
+	MSG("on_listener_select_changed: %s\n",
+	    girl->selected_listener_release);
+
+	girl->selected_listener_description =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "listener_description"));
+	MSG("on_listener_select_changed: %s\n",
+	    girl->selected_listener_description);
+
+	appbar_send_msg(_("Selected %s in %s: %s (%f)"),
 			girl->selected_listener_name,
 			girl->selected_listener_location,
-			girl->selected_listener_uri);
+			girl->selected_listener_uri,
+		        girl->selected_listener_release);
 
 	girl_launch_helper(girl->selected_listener_uri,
 			   GIRL_STREAM_SHOUTCAST);
@@ -303,10 +336,21 @@ void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 	MSG("on_station_select_changed: %s\n",
 	    girl->selected_station_location);
 
+	girl->selected_station_release =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "station_release"));
+	MSG("on_station_select_changed: %s\n",
+	    girl->selected_station_release);
+
+	girl->selected_station_description =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "station_description"));
+	MSG("on_station_select_changed: %s\n",
+	    girl->selected_station_description);
+
 	appbar_send_msg(_("Selected %s in %s: %s"),
 			girl->selected_station_name,
 			girl->selected_station_location,
-			girl->selected_station_uri);
+			girl->selected_station_uri,
+			girl->selected_station_release);
 
 	girl_launch_helper(girl->selected_station_uri,
 			   GIRL_STREAM_SHOUTCAST);
@@ -321,12 +365,18 @@ void quit_app(GtkWidget * a, gpointer user_data)
 				girl->selected_listener_name);
 	gnome_config_set_string("selected_listener_location",
 				girl->selected_listener_location);
+	gnome_config_set_string("selected_listener_release",
+				girl->selected_listener_release);
 	gnome_config_set_string("selected_station_uri",
 				girl->selected_station_uri);
 	gnome_config_set_string("selected_station_name",
 				girl->selected_station_name);
 	gnome_config_set_string("selected_station_location",
 				girl->selected_station_location);
+	gnome_config_set_string("selected_station_release",
+				girl->selected_station_release);
+	gnome_config_set_string("selected_station_description",
+				girl->selected_station_description);
 	gnome_config_sync();
 	gnome_config_pop_prefix();
 
@@ -365,6 +415,68 @@ void about_app(GtkWidget * a, gpointer user_data)
 	gtk_widget_show(about);
 }
 
+void about_listener(GtkWidget * a, gpointer user_data)
+{
+	static GtkWidget *about_listener = NULL;
+	const gchar *translator_credits = _("translator_credits");
+	const gchar *authors[] = {
+		girl->selected_listener_name,
+		NULL,
+	};
+
+	if (about_listener) {
+		gdk_window_raise(about_listener->window);
+		return;
+	}
+
+	about_listener = gnome_about_new(girl->selected_listener_name,
+					girl->selected_listener_release,
+					girl->selected_listener_location,
+					girl->selected_listener_description,
+					authors,
+					NULL,
+					NULL,
+					girl->icon);
+
+	g_signal_connect(G_OBJECT(about_listener), "destroy",
+			 G_CALLBACK(gtk_widget_destroy), NULL);
+	g_signal_connect(G_OBJECT(about_listener), "delete-event",
+			 G_CALLBACK(gtk_widget_destroy), NULL);
+	g_object_add_weak_pointer(G_OBJECT(about_listener), (void **) &(about_listener));
+	gtk_widget_show(about_listener);
+}
+
+void about_station(GtkWidget * a, gpointer user_data)
+{
+	static GtkWidget *about_station = NULL;
+	const gchar *translator_credits = _("translator_credits");
+	const gchar *authors[] = {
+		girl->selected_station_name,
+		NULL,
+	};
+
+	if (about_station) {
+		gdk_window_raise(about_station->window);
+		return;
+	}
+
+	about_station = gnome_about_new(girl->selected_station_name,
+					girl->selected_station_release,
+					girl->selected_station_location,
+					girl->selected_station_description,
+					authors,
+					NULL,
+					NULL,
+					girl->icon);
+
+	g_signal_connect(G_OBJECT(about_station), "destroy",
+			 G_CALLBACK(gtk_widget_destroy), NULL);
+	g_signal_connect(G_OBJECT(about_station), "delete-event",
+			 G_CALLBACK(gtk_widget_destroy), NULL);
+	g_object_add_weak_pointer(G_OBJECT(about_station), (void **) &(about_station));
+	gtk_widget_show(about_station);
+}
+
 void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 {
 
@@ -374,7 +486,8 @@ void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 	appbar_send_msg(_("Listening to %s in %s: %s "),
 			girl->selected_station_name,
 			girl->selected_station_location,
-			girl->selected_station_uri);
+			girl->selected_station_uri,
+			girl->selected_station_release);
 
 	girl_launch_helper(girl->selected_station_uri,
 			   GIRL_STREAM_SHOUTCAST);

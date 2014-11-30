@@ -47,6 +47,7 @@ struct _GirlStationInfo {
 	gchar *name;
 	gchar *rank;
 	gchar *type;
+	gchar *release;
 	gchar *frequency;
 	gchar *location;
 	gchar *description;

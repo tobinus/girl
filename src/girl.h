@@ -56,6 +56,8 @@ void on_stations_selector_button_clicked(GtkWidget *, gpointer user_data);
 void on_stations_selector_changed(GtkWidget * a, gpointer user_data);
 void quit_app(GtkWidget *, gpointer user_data);
 void about_app(GtkWidget *, gpointer user_data);
+void about_listener(GtkWidget *, gpointer user_data);
+void about_station(GtkWidget *, gpointer user_data);
 
 
 struct _GirlData {
@@ -65,10 +67,14 @@ struct _GirlData {
 	gchar *selected_listener_uri;
 	gchar *selected_listener_name;
 	gchar *selected_listener_location;
+	gchar *selected_listener_release;
+	gchar *selected_listener_description;
 	GirlStationInfo *selected_station;
 	gchar *selected_station_uri;
 	gchar *selected_station_name;
 	gchar *selected_station_location;
+	gchar *selected_station_release;
+	gchar *selected_station_description;
 	gint selected_bitrate;
 	GirlChannels selected_channels;
 	gint selected_samplerate;
