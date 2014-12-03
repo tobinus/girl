@@ -1,0 +1,114 @@
+# German translation for girl.
+# Copyright (C) 2014 girl's COPYRIGHT HOLDER
+# This file is distributed under the same license as the girl package.
+# Wolfgang Stöggl <c72578@yahoo.de>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: girl master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=girl&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-12-01 06:31+0000\n"
+"PO-Revision-Date: 2014-12-02 14:44+0100\n"
+"Last-Translator: Wolfgang Stoeggl <c72578@yahoo.de>\n"
+"Language-Team: German <gnome-de@gnome.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.7beta2\n"
+
+#: ../data/girl.appdata.xml.in.h:1
+msgid ""
+"Girl, the GNOME Internet Radio Locator program, allow users to easily find "
+"live radio programs on radio broadcasters on the Internet."
+msgstr ""
+"Girl, das GNOME Internet-Radio-Ortungsprogramm, ermöglicht es Benutzern "
+"Live-Radioprogramme und Sender leicht im Internet zu finden."
+
+# "Neu" und die Version wurden absichtlich weggelassen, da GNOME 2.0 schon einige Jahre alt ist.
+#: ../data/girl.appdata.xml.in.h:2
+msgid ""
+"Girl is developed on the new GNOME 2.0 platform and requires at least one "
+"audio helper such as totem to be installed."
+msgstr ""
+"Girl wird auf der GNOME-Plattform entwickelt und benötigt zumindest ein "
+"installiertes Musikwiedergabeprogramm wie zum Beispiel Totem."
+
+#: ../data/girl.appdata.xml.in.h:3
+msgid "Enjoy Internet Radio."
+msgstr "Viel Spaß mit Internet-Radio."
+
+#: ../data/girl.desktop.in.in.h:1
+msgid "Internet Radio Locator"
+msgstr "Internet-Radio-Ortung"
+
+#: ../data/girl.desktop.in.in.h:2
+msgid "Locate Internet Radio Stations"
+msgstr "Internet-Radiostationen auffinden"
+
+#. Extra keywords that can be used to search for girl in GNOME Shell and Unity
+#: ../data/girl.desktop.in.in.h:4
+msgid "Live;Radio;Program;Station;Locator;"
+msgstr "Live;Radio;Programm;Sender;Ortung;"
+
+#: ../src/girl.c:126
+#, c-format
+msgid "Fetching %s"
+msgstr "%s wird geholt"
+
+#: ../src/girl.c:199 ../src/girl.c:255 ../src/girl.c:349
+#, c-format
+msgid "Selected %s in %s: %s"
+msgstr "%s in %s: %s ausgewählt"
+
+#: ../src/girl.c:303
+#, c-format
+msgid "Selected %s in %s: %s (%f)"
+msgstr "%s in %s: %s (%f) ausgewählt"
+
+#: ../src/girl.c:398 ../src/girl.c:421 ../src/girl.c:452
+msgid "translator_credits"
+msgstr "Wolfgang Stöggl <c72578@yahoo.de>"
+
+#: ../src/girl.c:405
+msgid "GNOME Internet Radio Locator"
+msgstr "GNOME Internet-Radio-Ortung"
+
+#: ../src/girl.c:405
+msgid ""
+"Copyright 2014 Ole Aamot Software\n"
+"Copyright 2002 Free Software Foundation"
+msgstr ""
+"Copyright 2014 Ole Aamot Software\n"
+"Copyright 2002 Free Software Foundation"
+
+#: ../src/girl.c:405
+msgid "Internet radio station and listener locator"
+msgstr "Ortung für Internet-Radiostationen und -Sender"
+
+#. girl_stream_player(a, user_data);
+#: ../src/girl.c:486
+#, c-format
+msgid "Listening to %s in %s: %s "
+msgstr "Hören von %s in %s: %s "
+
+#: ../src/girl-station.c:94
+#, c-format
+msgid ""
+"An error happened trying to play %s\n"
+"Either the file doesn't exist, or you don't have a player for it."
+msgstr ""
+"Fehler beim Versuch, %s zu spielen.\n"
+"Entweder ist die Datei nicht vorhanden oder Ihnen fehlt das passende "
+"Wiedergabeprogramm."
+
+#: ../src/girl-station.c:105
+#, c-format
+msgid ""
+"Failed to open URL: '%s'\n"
+"Details: %s"
+msgstr ""
+"Öffnen der Adresse fehlgeschlagen: »%s«\n"
+"Details: %s"
