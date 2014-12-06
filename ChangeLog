@@ -1,3 +1,19 @@
+2014-12-06  Ole Aamot  <oka@oka.no>
+
+	* NEWS: girl 0.6.0 released.
+
+2014-12-04  Ole Aamot  <oka@oka.no>
+
+	* AUTHORS: Add Wolfgang Stöggl (German translation).
+	* po/de.po: German translation by Wolfgang Stöggl
+
+2014-12-02  Ole Aamot  <oka@oka.no>
+
+	* src/stations.xml: Add Leeds University Student Radio FM (lsrfm.com)
+	* src/stations.xml: Add University Radio Nottingham (urn1350.net))
+	* src/stations.xml: Add King's College London Radio (kclradio.co.uk)
+	* src/stations.xml: Add Imperial College Radio (icradio.com)
+
 2014-11-29  Ole Aamot  <oka@oka.no>
 
 	* configure.ac: girl version 0.5.2.

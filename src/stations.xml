@@ -1,6 +1,36 @@
 <?xml version="1.0"?>
 <!DOCTYPE girl SYSTEM "girl-0.6.dtd">
 <girl version="0.6">
+  <station id="lsrfm" name="Leeds University Student Radio FM" rank="1.0" type="edu" release="">
+    <frequency uri="http://lsrfm.com/">Internet</frequency>
+    <location>Leeds, United Kingdom</location>
+    <description></description>
+    <stream mime="audio/mpeg" uri="http://soho.wavestreamer.com:6648/listen.pls?sid=1" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://lsrfm.com/</uri>
+  </station>
+  <station id="urn" name="University Radio Nottingham" rank="1.0" type="edu" release="1350">
+    <frequency uri="http://urn1350.net">1350 AM MHz in Nottingham, United Kingdom</frequency>
+    <location>Nottingham, United Kingdom</location>
+    <description>URN is the University of Nottingham's award winning student radio station.You can listen online, on 1350AM on campus or in some of the university's shops and bars.</description>
+    <stream mime="audio/mpeg" uri="http://posurnl.nottingham.ac.uk:8080/urn_high.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://urn1350.net/</uri>
+  </station>
+  <station id="kcl" name="King's College London Radio" rank="1.0" type="edu" release="">
+    <frequency uri="http://www.kclradio.co.uk/">Internet</frequency>
+    <location>London, United Kingdom</location>
+    <description>KCL Radio is King’s College London’s award winning, student radio station, which first broadcast live last year. Our studio is currently located on the basement floor of the Chesham Building (although there are plans to relocate to a new studio in Tutu’s on the 4th floor of the Macadam Building during 2015).  Output ranges from music to news, chat, sport, comedy and everything in between. Live broadcasts also take place throughout the year for significant events on the KCLSU calendar such as the Student Officer Elections or the Varsity Rugby match.</description>
+    <stream mime="audio/mpeg" uri="http://159.92.75.8:8080/KCLR" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.kclradio.co.uk/</uri>
+  </station>
+  <station id="icradio" name="Imperial College Radio" rank="1.0" type="edu" release="">
+    <frequency uri="http://icradio.com/">1134 AM in Wye, Kent, United Kingdom</frequency>
+    <location>London, United Kingdom</location>
+    <description>IC Radio is among the oldest student radio stations in the country. Started in 1976, broadcasting on a home built AM transmitter around halls, we now broadcast all over the globe from icradio.com. Absolutely anyone is welcome to try their hand at presenting or producing a show; whatever your music taste. We also love a good speech based program, so anyone will feel at home in IC Radio. As well as being able to broadcast, we are lucky enough to have a brand new, fully equipped recording studio which we use to record bands and musicians.
+
+Behind the scenes we rely on our fantastic technical, musical and promotional teams. Are you interested in web design? Want to record professional band and artists? Maybe you fancy running our IT system? Or perhaps you want to talk to industry insiders to get your hands on new music weeks before any of your friends? There's a place for you here and we'd love for you to join us!</description>
+    <stream mime="audio/mpeg" uri="http://icecast.icradio.com:8000/live-mp3-high" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
+    <uri>http://icradio.com/</uri>
+  </station>
   <station id="ruc" name="Coimbra University Radio" rank="1.0" type="edu" release="107.9">
     <frequency uri="http://www.ruc.pt/">107.9 FM MHz in Coimbra, Portugal</frequency>
     <location>Coimbra, Portugal</location>
@@ -13,14 +43,14 @@
     The radio gives courses in Programming, Technic and News, that students from the University of Coimbra can join.
     
     For its 25th anniversary, the radio hosts concerts of the indie Swedish band the Radio Dept., and later Eleanor Friedberger from the rock duo The Fiery Furnaces and the Welsh songwriter Euros Childs.</description>
-    <stream mime="mime/mpeg" uri="http://ruc.midi-club.net:8000/;stream/1" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://ruc.midi-club.net:8000/;stream/1" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.ruc.pt/</uri>
   </station>
   <station id="radiocampusbruxelles" name="Radio Campus Bruxelles" rank="1.0" type="edu" release="92.1">
     <frequency uri="http://www.radiocampus.be/">92.1 MHz FM in Bruxelles, Belgium</frequency>
     <location>Bruxelles, Belgium</location>
     <description>Radio Campus est née en 1980 sur le campus de l’Université Libre de Bruxelles. Avec une cinquantaine d’émissions, elle rassemble plus de 150 animateurs, techniciens et collaborateurs autour de valeurs partagées : une libre expression assumée et constructive, un attachement immodéré au tissu social bruxellois et un amour sans borne pour la diversité musicale et culturelle.</description>
-    <stream mime="mime/mpeg" uri="http://streamer.radiocampus.be:8000/stream_hi.ogg" codec="Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
+    <stream mime="audio/mpeg" uri="http://streamer.radiocampus.be:8000/stream_hi.ogg" codec="Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
     <uri>http://www.radiocampus.be/</uri>
   </station>
   <station id="radiocampusparis" name="Radio Campus Paris" rank="1.0" type="edu" release="93.9">
@@ -34,7 +64,7 @@
     <frequency uri="http://wcsb.org/">89.3 MHz FM in Cleveland, OH</frequency>
     <location>Cleveland, OH</location>
     <description>A student-operated radio station at Cleveland State University, broadcasting from northeast Ohio.</description>
-    <stream mime="mime/mpeg" uri="http://cent7.directhostingcenter.com/tunein.php/ubtevcdv/playlist.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://cent7.directhostingcenter.com/tunein.php/ubtevcdv/playlist.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wcsb.org/</uri>
   </station>
   <station id="pulse" name="Pulse LSE" rank="1.0" type="edu" release="87.7">

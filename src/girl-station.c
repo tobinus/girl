@@ -162,6 +162,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("station->location = %s\n", station->location);
+			/* fprintf(stdout, "%s (%s), ", station->name, station->location); */
 		}
 
 		if ((!xmlStrcmp
