@@ -1,3 +1,9 @@
+2014-12-07  Ole Aamot  <oka@oka.no>
+
+	* girl version 0.6.2 release.
+	* src/stations.xml: Add Radio R (radior.cz)
+	* src/stations.xml: Add Radio Radius (radioradius.ch)
+
 2014-12-07  Ole Aamot  <oka@linux.oka.no>
 
 	* girl version 0.6.1 release.

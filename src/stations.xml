@@ -1,6 +1,22 @@
 <?xml version="1.0"?>
 <!DOCTYPE girl SYSTEM "girl-0.6.dtd">
 <girl version="0.6">
+  <station id="radior" name="Radio R" rank="1.0" type="edu" release="">
+    <frequency uri="http://radior.cz">Internet</frequency>
+    <location>Brno, Czechoslovakia</location>
+    <description>Masaryk University’s student radio,</description>
+    <stream mime="audio/ogg" uri="http://radior.video.muni.cz:8000/FSS_ogg-q0.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <stream mime="audio/ogg" uri="http://radior.video.muni.cz:8000/FSS_ogg-q4.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/ogg" uri="http://radior.video.muni.cz:8000/FSS_ogg-q8.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="256 kbps" />
+    <uri>http://www.radior.cz/</uri>
+  </station>
+  <station id="radius" name="Radio Radius" rank="1.0" type="edu" release="">
+    <frequency uri="http://radioradius.ch/">Internet</frequency>
+    <location>Zürich, Switzerland</location>
+    <description>Student webradio in Zürich.</description>
+    <stream mime="audio/ogg" uri="http://relay.radio.ethz.ch/sender.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.radioradius.ch/</uri>
+  </station>
   <station id="lsrfm" name="Leeds University Student Radio FM" rank="1.0" type="edu" release="">
     <frequency uri="http://lsrfm.com/">Internet</frequency>
     <location>Leeds, United Kingdom</location>
