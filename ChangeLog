@@ -1,3 +1,22 @@
+2014-12-07  Ole Aamot  <oka@oka.no>
+
+	* NEWS: Release girl version 0.6.1
+	* THANKS: Add Ettore Perazzoli and Bernd Homuth.
+	* configure.ac: Check for GIRL_HELPER_PLAYER (totem)
+	* configure.ac: Check for GIRL_HELPER_RECORD (streamripper)
+	* configure.ac: Check for and define HAVE_GIRL_RECORD
+	* src/Makefile.am: Add GIRL_HELPER_PLAYER, GIRL_HELPER_RECORD
+	* src/girl-gui.c: Add menu item if GIRL_HELPER_RECORD is defined
+	* src/girl-program.c: New file with support for programs
+	* src/girl-station.c: Rename girl_launch_helper to girl_helper_run
+	* src/girl-station.h: Remove GirlChannels and GirlStreamType
+	* src/girl.c: Add programs feature
+	* src/girl.h: Add enums GirlChannels, GirlStreamType, GirlHelperType
+
+2014-12-06  Ole Aamot  <oka@oka.no>
+
+	* configure.ac: Bump version to 0.6.1.
+
 2014-12-06  Ole Aamot  <oka@oka.no>
 
 	* NEWS: girl 0.6.0 released.

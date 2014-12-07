@@ -43,6 +43,7 @@
 
 #include "girl.h"
 #include "girl-gui.h"
+#include "girl-program.h"
 #include "girl-station.h"
 
 #ifdef DEBUG
@@ -56,13 +57,21 @@ extern GtkWidget *girl_app;
 GnomeUIInfo toolbar[] = {
 	GNOMEUIINFO_ITEM_STOCK(("Listen"), ("Listen to selected station"),
 			       on_listen_button_clicked,
-			       GTK_STOCK_REFRESH),
-	GNOMEUIINFO_ITEM_STOCK(("Listeners"), ("Listeners"),
-			       on_listeners_selector_button_clicked,
-			       GTK_STOCK_FIND),
+			       GTK_STOCK_MEDIA_PLAY),
+#ifdef GIRL_HELPER_RECORD
+	GNOMEUIINFO_ITEM_STOCK(("Record"), ("Record selected station"),
+			       on_record_button_clicked,
+			       GTK_STOCK_MEDIA_RECORD),
+#endif /* GIRL_HELPER_RECORD
+	/* GNOMEUIINFO_ITEM_STOCK(("Listeners"), ("Listeners"), */
+	/* 		       on_listeners_selector_button_clicked, */
+	/* 		       GTK_STOCK_FIND), */
 	GNOMEUIINFO_ITEM_STOCK(("Stations"), ("Stations"),
 			       on_stations_selector_button_clicked,
-			       GTK_STOCK_PREFERENCES),
+			       GTK_STOCK_NETWORK),
+	GNOMEUIINFO_ITEM_STOCK(("Programs"), ("Programs"),
+			       on_programs_selector_button_clicked,
+			       GTK_STOCK_HARDDISK),
 	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_ITEM_STOCK(("Previous"),
 			       ("Go back to the previous station"),
@@ -70,17 +79,22 @@ GnomeUIInfo toolbar[] = {
 	GNOMEUIINFO_ITEM_STOCK(("Next"), ("Proceed to the next station"),
 			       on_next_click, GTK_STOCK_GO_FORWARD),
 	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_ITEM_STOCK(("About Listener"),
-			       ("About the GNOME Internet Radio Locator"),
-			       about_listener, GNOME_STOCK_ABOUT),
-	GNOMEUIINFO_SEPARATOR,
+	/* GNOMEUIINFO_ITEM_STOCK(("About Listener"), */
+	/* 		       ("About the GNOME Internet Radio Locator"), */
+	/* 		       about_listener, GNOME_STOCK_ABOUT), */
+	/* GNOMEUIINFO_SEPARATOR, */
 	GNOMEUIINFO_ITEM_STOCK(("About Station"),
-			       ("About the GNOME Internet Radio Locator"),
+			       ("About the current Station"),
 			       about_station, GNOME_STOCK_ABOUT),
 	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_ITEM_STOCK(("About Program"),
+			       ("About the current Program"),
+			       about_program, GNOME_STOCK_ABOUT),
+	GNOMEUIINFO_SEPARATOR,
+	GNOMEUIINFO_ITEM_STOCK(("About App"),
 			       ("About the GNOME Internet Radio Locator"),
 			       about_app, GNOME_STOCK_ABOUT),
+
 	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_ITEM_STOCK(("Exit"),
 			       ("Quit the GNOME Internet Radio Locator"),
@@ -237,6 +251,138 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 			 (gpointer) listeners_selector);
 
 	return listeners_selector;
+}
+
+GtkWidget *create_programs_selector(char *selected_program_uri,
+				    char *filename)
+{
+	GirlProgramInfo *programinfo, *localprogram;
+	GtkWidget *programs_selector;
+	GtkWidget *align, *menu, *drop_down, *item;
+
+	gchar *program_uri, *program_name, *program_location, *program_release, *program_description;
+	gchar *label, *world_program_xml_filename, *local_program_xml_file;
+
+	int i = 0, selection = -1;
+
+	/* The Programs dialog */
+	programs_selector = gtk_dialog_new_with_buttons(("Select a program"), GTK_WINDOW(girl_app), 0,	/* flags */
+							GTK_STOCK_CLOSE,
+							GTK_RESPONSE_ACCEPT,
+							NULL);
+	gtk_container_set_border_width
+	    (GTK_CONTAINER(GTK_DIALOG(programs_selector)->vbox), 6);
+
+	align = gtk_alignment_new(0.5, 0.5, 0, 0);
+	gtk_container_add(GTK_CONTAINER
+			  (GTK_DIALOG(programs_selector)->vbox), align);
+	gtk_container_set_border_width(GTK_CONTAINER(align), 6);
+	gtk_widget_show(align);
+
+	menu = gtk_menu_new();
+	gtk_widget_show(menu);
+
+	/* creating the menu items */
+
+	world_program_xml_filename = gnome_program_locate_file(NULL,
+							       GNOME_FILE_DOMAIN_APP_DATADIR,
+							       "girl/programs.xml",
+							       FALSE,
+							       NULL);
+	/* world_program_xml_filename = g_strdup("http://girl.src.oka.no/programs.xml"); */
+
+	MSG("world_program_xml_filename = %s\n",
+	    world_program_xml_filename);
+
+	if (world_program_xml_filename == NULL) {
+		g_warning(("Failed to open %s.  Please install it.\n"),
+			  world_program_xml_filename);
+	}
+
+	local_program_xml_file =
+	    g_strconcat(g_get_home_dir(), "/.girl/programs.xml", NULL);
+	localprogram =
+	    girl_program_load_from_file(NULL, local_program_xml_file);
+
+	if (localprogram == NULL) {
+		g_warning(("Failed to open %s\n"), local_program_xml_file);
+	}
+
+/*   g_free (local_program_xml_file); */
+
+	programinfo =
+	    girl_program_load_from_file(localprogram,
+					world_program_xml_filename);
+
+	girl_programs = NULL;
+
+	while (programinfo != NULL) {
+
+		label =
+		    g_strconcat(programinfo->name, " (",
+				programinfo->location, ")", NULL);
+		program_uri = g_strdup(programinfo->archive->uri);
+		program_name = g_strdup(programinfo->name);
+		program_location = g_strdup(programinfo->location);
+		program_release = g_strdup(programinfo->release);
+		program_description = g_strdup(programinfo->description);
+
+		girl_programs = g_list_append(girl_programs,(GirlProgramInfo *)programinfo);
+
+		if (label != NULL) {
+			item = gtk_menu_item_new_with_label(label);
+			gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+			g_signal_connect(G_OBJECT(item), "activate",
+					 G_CALLBACK
+					 (on_programs_selector_changed),
+					 NULL);
+			g_object_set_data(G_OBJECT(item), "program_uri",
+					  (gpointer) program_uri);
+			g_object_set_data(G_OBJECT(item), "program_name",
+					  (gpointer) program_name);
+			g_object_set_data(G_OBJECT(item),
+					  "program_location",
+					  (gpointer) program_location);
+			g_object_set_data(G_OBJECT(item),
+					  "program_release",
+					  (gpointer) program_release);
+			g_object_set_data(G_OBJECT(item),
+					  "program_description",
+					  (gpointer) program_description);
+			gtk_widget_show(item);
+			g_free(label);
+
+			/* selection */
+			if (selected_program_uri != NULL &&
+			    !strcmp(selected_program_uri, program_uri))
+				selection = i;
+		} else {
+			g_free(program_uri);
+			g_free(program_name);
+			g_free(program_location);
+			g_free(program_release);
+			g_free(program_description);
+		}
+		i++;
+		programinfo = programinfo->next;
+	}
+
+	drop_down = gtk_option_menu_new();
+	gtk_widget_show(drop_down);
+	gtk_option_menu_set_menu(drop_down, menu);
+	gtk_container_add(GTK_CONTAINER(align), drop_down);
+
+	if (selection != -1)
+		gtk_option_menu_set_history(drop_down, selection);
+
+	g_signal_connect(G_OBJECT(programs_selector), "response",
+			 G_CALLBACK(gtk_widget_hide),
+			 (gpointer) programs_selector);
+	g_signal_connect(G_OBJECT(programs_selector), "delete-event",
+			 G_CALLBACK(gtk_widget_hide),
+			 (gpointer) programs_selector);
+
+	return programs_selector;
 }
 
 GtkWidget *create_stations_selector(char *selected_station_uri,

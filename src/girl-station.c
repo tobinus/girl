@@ -1,4 +1,4 @@
-/* $Id$
+/* $id$
  *
  * GNOME Internet Radio Locator
  *
@@ -63,59 +63,104 @@ void show_error(gchar * msg)
 #endif				/* GIRL_CLI */
 }
 
-void girl_launch_helper(char *url, GirlStreamType type)
+void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType helper)
 {
 	GError *err = NULL;
+	GTimeVal mtime;
+
 	const char *mime_info;
 
 	/* GnomeVFSMimeApplication *app; */
-	char *app, *command, *msg;
+	char *app, *command, *msg, *archive;
+
+	gint status;
 
 	g_return_if_fail(url != NULL);
 	MSG("%s", url);
 
 	mime_info = gnome_vfs_get_mime_type(url);
 
+	g_get_current_time(&mtime);
+
 	/* app = gnome_vfs_mime_get_default_application (mime_info); */
 
-	app = g_strdup(GIRL_HELPER);
+	if (helper == GIRL_STREAM_PLAYER) {
+		app = g_strdup(GIRL_HELPER_PLAYER);
+	}
+
+	if (helper == GIRL_STREAM_RECORD) {
+		app = g_strdup(GIRL_HELPER_RECORD);
+	}
 
 	if (app != NULL) {
 		command = g_strconcat(app, " ", url, NULL);
-		g_print("Helper command is %s\n", command);
+		g_print("Helper application is %s\n", command);
+		if (type == GIRL_STREAM_SHOUTCAST) {
+			if (helper == GIRL_STREAM_PLAYER) {
+				command = g_strconcat(app, " ", url, NULL);
+			}
+			if (helper == GIRL_STREAM_RECORD) {
+				/* archive = g_strconcat("file://", g_get_home_dir(), "/.girl/", name, NULL); */
+				/* girl_archive_new(url, archive); */
+				/* printf("Archiving program at %s\n", archive); */			        command = g_strconcat(app, " ", url, NULL);
+				/* " -d ", g_get_home_dir(), "/.girl -D \"", name, "\" -s -a -u girl/", VERSION, NULL); */
+				/* command = g_strconcat(command, " -d ", g_get_home_dir(), "/.girl/", name, " -D %S%A%T -t 10 -u girl/", VERSION, NULL); */
+			}
+			g_print("Helper command is %s\n", command);
+		}
 		/* gnome_vfs_mime_application_free (app); */
 	} else {
-		if (type == GIRL_STREAM_SHOUTCAST) {
-			command = g_strconcat(app, " ", url, NULL);
-			g_print("Helper command is %s\n", command);
-		} else {
-			msg =
-			    g_strdup_printf(_
-					    ("An error happened trying to play "
-					     "%s\nEither the file doesn't exist, or you "
-					     "don't have a player for it."),
-					    url);
+		if (helper == GIRL_STREAM_PLAYER) {
+			msg = g_strdup_printf(_("An error happened trying to play "
+						"%s\nEither the file doesn't exist, or you "
+						"don't have a player for it."),
+					      url);
+		}
+		if (helper == GIRL_STREAM_RECORD) {
+			msg = g_strdup_printf(_("An error happened trying to record "
+						"%s\nEither the file doesn't exist, or you "
+						"don't have a recorder for it."),
+					      url);
+		}
+		if (msg != NULL) {
 			show_error(msg);
 			g_free(msg);
 		}
 		return;
 	}
 
-	if (!g_spawn_command_line_async(command, &err)) {
-		msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
-					"Details: %s"), url, err->message);
-		show_error(msg);
-		g_error_free(err);
-		g_free(msg);
-	} else {
-		g_print("Launching %s\n", command);
+	if (helper == GIRL_STREAM_PLAYER) {
+		if (!g_spawn_command_line_async(command, &err)) {
+			msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
+						"Details: %s"), url, err->message);
+			show_error(msg);
+			g_error_free(err);
+			g_free(msg);
+		} else {
+			g_print("Launching %s player\n", command);
+		}
+	}
+
+	if (helper == GIRL_STREAM_RECORD) {
+		if (!g_spawn_command_line_sync(command, stdout, stderr, status, &err)) {
+			msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
+						"Status code: %i\n"
+						"Details: %s"), url, status, err->message);
+			show_error(msg);
+			g_error_free(err);
+			g_free(msg);
+		} else {
+			g_print("Launching %s\n", command);
+		}
 	}
 }
 
 void girl_stream_player(GtkWidget * widget, gpointer data)
 {
-	girl_launch_helper(girl->selected_station_uri,
-			   GIRL_STREAM_SHOUTCAST);
+	girl_helper_run(girl->selected_station_uri,
+			girl->selected_station_name,
+			GIRL_STREAM_SHOUTCAST,
+		        GIRL_STREAM_PLAYER);
 }
 
 void girl_info_view(GirlStationInfo * info)

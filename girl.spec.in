@@ -12,10 +12,11 @@ Requires: libxml2 >= 2.9.1
 Requires: gnome-vfs2 >= 2.24.4
 Requires: libgnomeui >= 2.24.5
 Requires: totem >= 3.10.1
+Requires: streamripper >= 1.64.6
 BuildRequires: gtk2-devel libgnome-devel libxml2-devel gnome-vfs2-devel libgnomeui-devel intltool
 
 %description
-Girl is a GNOME Internet Radio Locator program that allow users
+Girl is a GNOME Internet Radio Locator program that allows users
 to easily find live radio programs on radio broadcasters on the
 Internet.
 
@@ -54,6 +55,8 @@ make DESTDIR=%{buildroot} install
 %{_datadir}/girl/listener-1.0.dtd
 %{_datadir}/girl/listener-1.1.dtd
 %{_datadir}/girl/listeners.xml
+%{_datadir}/girl/programs-0.1.dtd
+%{_datadir}/girl/programs.xml
 %{_datadir}/girl/stations.xml
 %{_datadir}/appdata/girl.appdata.xml
 %{_datadir}/applications/girl.desktop
@@ -67,6 +70,9 @@ make DESTDIR=%{buildroot} install
 %{_mandir}/man1/girl.1.gz
 
 %changelog
+* Sat Dec 06 2014 Ole Aamot - 0.6.1-1
+- Girl 0.6.1 build on Fedora Linux 21
+
 * Tue Dec 02 2014 Ole Aamot - 0.6.0-1
 - Girl 0.6.0 build on Fedora Linux 21
 

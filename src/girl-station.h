@@ -29,18 +29,6 @@
 typedef struct _GirlStationInfo GirlStationInfo;
 typedef struct _GirlStreamInfo GirlStreamInfo;
 
-typedef enum {
-	GIRL_CHANNELS_MONO = 0x0001,
-	GIRL_CHANNELS_STEREO = 0x0002,
-	GIRL_CHANNELS_5_1 = 0x0005,
-	GIRL_CHANNELS_NONE = 0xffff
-} GirlChannels;
-
-typedef enum {
-	GIRL_STREAM_SHOUTCAST = 0x0001,
-	GIRL_STREAM_OGG = 0x0002
-} GirlStreamType;
-
 struct _GirlStationInfo {
 	GtkWidget *widget;
 	gchar *id;
@@ -78,6 +66,6 @@ GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 					     char *filename);
 GirlStationInfo *girl_station_load_from_http(GirlStationInfo * head,
 					     gpointer data);
-void girl_launch_helper(char *url, GirlStreamType type);
+void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType girl);
 
 #endif				/* GIRL_STATION_H */

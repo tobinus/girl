@@ -42,11 +42,14 @@
 #endif
 
 GirlData *girl;
-GList *girl_stations;
+
 GList *girl_listeners;
+GList *girl_programs;
+GList *girl_stations;
 
 GtkWidget *girl_app;
 GtkWidget *listeners_selector = NULL;
+GtkWidget *programs_selector = NULL;
 GtkWidget *stations_selector = NULL;
 
 int main(int argc, char *argv[])
@@ -74,18 +77,24 @@ int main(int argc, char *argv[])
 	gtk_widget_show(girl_app);
 
 	/* Set up the listeners list */
-	listeners_selector =
-	    create_listeners_selector(girl->selected_listener_uri,
-				      "listeners.xml");
+	listeners_selector = create_listeners_selector(girl->selected_listener_uri,"listeners.xml");
 
 	g_object_add_weak_pointer(G_OBJECT(listeners_selector),
 				  (void **) &(listeners_selector));
+
+	/* Set up the programs list */
+	programs_selector = create_programs_selector(girl->selected_program_uri,"programs.xml");
+
+	/* gtk_widget_show(programs_selector); */
+
+        g_object_add_weak_pointer(G_OBJECT(programs_selector),
+				  (void **) &(programs_selector));
 
 	/* Set up the stations list */
 	stations_selector = create_stations_selector(girl->selected_station_uri,
 						     "stations.xml");
 
-	gtk_widget_show(stations_selector);
+	/* gtk_widget_show(stations_selector); */
 
 	g_object_add_weak_pointer(G_OBJECT(stations_selector),
 				  (void **) &(stations_selector));
@@ -113,19 +122,6 @@ toggle_in_area (double x1, double y1, double x2, double y2)
 {
 	double nx1,nx2,ny1,ny2;
 	
-}
-
-
-static gint
-xfer_progress_callback(GnomeVFSXferProgressInfo * info, gpointer data)
-{
-
-	while (gtk_events_pending())
-		gtk_main_iteration();
-
-	appbar_send_msg(_("Fetching %s"), (gchar *) data);
-	MSG("%s", gnome_vfs_result_to_string(info->status));
-	return TRUE;
 }
 
 void appbar_send_msg(const char *a, ...)
@@ -203,7 +199,10 @@ void on_previous_click(GtkWidget * a, gpointer user_data)
 					girl->selected_station_release);
 			
 
-			girl_launch_helper(station->stream->uri, GIRL_STREAM_SHOUTCAST);
+			girl_helper_run(girl->selected_station_uri,
+					girl->selected_station_name,
+					GIRL_STREAM_SHOUTCAST,
+					GIRL_STREAM_PLAYER);
 		}
 	} else {
 		printf("Prev Station: At the beginning of Stations list!\n");
@@ -258,7 +257,10 @@ void on_next_click(GtkWidget * a, gpointer user_data)
 					girl->selected_station_uri,
 					girl->selected_station_release);
 			
-			girl_launch_helper(station->stream->uri, GIRL_STREAM_SHOUTCAST);
+			girl_helper_run(station->stream->uri,
+					station->name,
+					GIRL_STREAM_SHOUTCAST,
+					GIRL_STREAM_PLAYER);
 		}
 	}
 }
@@ -306,9 +308,58 @@ void on_listeners_selector_changed(GtkWidget * a, gpointer user_data)
 			girl->selected_listener_uri,
 		        girl->selected_listener_release);
 
-	girl_launch_helper(girl->selected_listener_uri,
-			   GIRL_STREAM_SHOUTCAST);
+	girl_helper_run(girl->selected_listener_uri,
+			girl->selected_listener_name,
+			GIRL_STREAM_SHOUTCAST,
+			GIRL_STREAM_PLAYER);
 
+}
+
+void on_programs_selector_button_clicked(GtkWidget * a, gpointer user_data)
+{
+	gtk_widget_show(programs_selector);
+	gdk_window_raise(programs_selector->window);
+}
+
+void on_programs_selector_changed(GtkWidget * a, gpointer user_data)
+{
+	if (girl->selected_program_uri != NULL)
+		g_free(girl->selected_program_uri);
+
+	girl->selected_program_uri =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "program_uri"));
+	MSG("on_program_select_changed: %s\n", girl->selected_program_uri);
+
+	girl->selected_program_name =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "program_name"));
+	MSG("on_program_select_changed: %s\n",
+	    girl->selected_program_name);
+
+	girl->selected_program_location =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "program_location"));
+	MSG("on_program_select_changed: %s\n",
+	    girl->selected_program_location);
+
+	girl->selected_program_release =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "program_release"));
+	MSG("on_program_select_changed: %s\n",
+	    girl->selected_program_release);
+
+	girl->selected_program_description =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "program_description"));
+	MSG("on_program_select_changed: %s\n",
+	    girl->selected_program_description);
+
+	appbar_send_msg(_("Selected %s in %s: %s"),
+			girl->selected_program_name,
+			girl->selected_program_location,
+			girl->selected_program_uri,
+			girl->selected_program_release);
+
+	girl_helper_run(girl->selected_program_uri,
+			girl->selected_program_name,
+			GIRL_STREAM_SHOUTCAST,
+			GIRL_STREAM_PLAYER);
 }
 
 void on_stations_selector_button_clicked(GtkWidget * a, gpointer user_data)
@@ -352,8 +403,10 @@ void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 			girl->selected_station_uri,
 			girl->selected_station_release);
 
-	girl_launch_helper(girl->selected_station_uri,
-			   GIRL_STREAM_SHOUTCAST);
+	girl_helper_run(girl->selected_station_uri,
+			girl->selected_station_name,
+			GIRL_STREAM_SHOUTCAST,
+		        GIRL_STREAM_PLAYER);
 }
 
 void quit_app(GtkWidget * a, gpointer user_data)
@@ -392,7 +445,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 {
 	static GtkWidget *about = NULL;
 	const gchar *authors[] = {
-		("Ole Aamot <ole@gnu.org>"),
+		("Ole Aamot <ole@src.gnome.org>"),
 		NULL,
 	};
 	const gchar *translator_credits = _("translator_credits");
@@ -437,13 +490,45 @@ void about_listener(GtkWidget * a, gpointer user_data)
 					NULL,
 					NULL,
 					girl->icon);
-
 	g_signal_connect(G_OBJECT(about_listener), "destroy",
 			 G_CALLBACK(gtk_widget_destroy), NULL);
 	g_signal_connect(G_OBJECT(about_listener), "delete-event",
 			 G_CALLBACK(gtk_widget_destroy), NULL);
 	g_object_add_weak_pointer(G_OBJECT(about_listener), (void **) &(about_listener));
 	gtk_widget_show(about_listener);
+}
+
+void about_program(GtkWidget * a, gpointer user_data)
+{
+	static GtkWidget *about_program = NULL;
+	const gchar *translator_credits = _("translator_credits");
+	const gchar *authors[] = {
+		girl->selected_program_name,
+		NULL,
+	};
+
+	if (about_program) {
+		gdk_window_raise(about_program->window);
+		return;
+	}
+
+	if (girl->selected_program_name != NULL) {
+		about_program = gnome_about_new(girl->selected_program_name,
+						girl->selected_program_release,
+						girl->selected_program_location,
+						girl->selected_program_description,
+						authors,
+						NULL,
+						NULL,
+						girl->icon);
+		g_signal_connect(G_OBJECT(about_program), "destroy",
+				 G_CALLBACK(gtk_widget_destroy), NULL);
+		g_signal_connect(G_OBJECT(about_program), "delete-event",
+				 G_CALLBACK(gtk_widget_destroy), NULL);
+		g_object_add_weak_pointer(G_OBJECT(about_program), (void **) &(about_program));
+		gtk_widget_show(about_program);
+	}
+
 }
 
 void about_station(GtkWidget * a, gpointer user_data)
@@ -489,11 +574,36 @@ void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 			girl->selected_station_uri,
 			girl->selected_station_release);
 
-	girl_launch_helper(girl->selected_station_uri,
-			   GIRL_STREAM_SHOUTCAST);
+	girl_helper_run(girl->selected_station_uri,
+			girl->selected_station_name,
+			GIRL_STREAM_SHOUTCAST,
+			GIRL_STREAM_PLAYER);
 
 }
 
+void on_record_button_clicked(GtkWidget *a, gpointer user_data)
+{
+	GtkWidget *dialog;
+
+	if (girl->selected_station_name != NULL) {
+		appbar_send_msg(_("Recording from %s in %s: %s "),
+				girl->selected_station_name,
+				girl->selected_station_location,
+				girl->selected_station_uri,
+				girl->selected_station_release);
+		girl_helper_run(girl->selected_station_uri,
+				girl->selected_station_name,
+				GIRL_STREAM_SHOUTCAST,
+				GIRL_STREAM_RECORD);
+	} else {
+		dialog = gtk_message_dialog_new(GTK_WINDOW(girl_app),
+						GTK_DIALOG_MODAL,
+						GTK_MESSAGE_ERROR,
+						GTK_BUTTONS_CLOSE, "Could not record!", NULL);
+		gtk_dialog_run(GTK_DIALOG(dialog));
+		gtk_widget_destroy(dialog);
+	}
+}
 
 GnomeVFSFileSize get_size(GnomeVFSURI * uri)
 {
@@ -516,7 +626,19 @@ GnomeVFSFileSize get_size(GnomeVFSURI * uri)
 	return len;
 }
 
-GnomeVFSURI *xfer_webpage(gchar * src, gchar * dest)
+static gint
+girl_archive_progress_callback(GnomeVFSXferProgressInfo * info, gpointer data)
+{
+
+	while (gtk_events_pending())
+		gtk_main_iteration();
+
+	appbar_send_msg(_("Archiving %s"), (gchar *) data);
+	MSG("%s", gnome_vfs_result_to_string(info->status));
+	return TRUE;
+}
+
+GnomeVFSURI *girl_archive_new(gchar *src, gchar *dest)
 {
 	GnomeVFSURI *src_uri, *dest_uri;
 	GnomeVFSResult result;
@@ -527,11 +649,13 @@ GnomeVFSURI *xfer_webpage(gchar * src, gchar * dest)
 	src_uri = gnome_vfs_uri_new(src);
 	dest_uri = gnome_vfs_uri_new(dest);
 
-	result = gnome_vfs_xfer_uri(src_uri, dest_uri,
+	result = gnome_vfs_xfer_uri(src_uri,
+				    dest_uri,
 				    xfer_options,
 				    GNOME_VFS_XFER_ERROR_MODE_QUERY,
 				    GNOME_VFS_XFER_OVERWRITE_MODE_REPLACE,
-				    xfer_progress_callback, src);
+				    girl_archive_progress_callback, src);
+
 	gnome_vfs_uri_unref(src_uri);
 
 	if (result != GNOME_VFS_OK)
