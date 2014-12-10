@@ -1,3 +1,9 @@
+2014-12-10  Ole Aamot  <oka@oka.no>
+
+	* girl version 0.6.283185307 release in honor of Malala
+	* src/girl-runners.c: Add file for the threads implementation
+	* src/girl-runners.h: Add file for the threads implementation
+
 2014-12-07  Ole Aamot  <oka@oka.no>
 
 	* girl version 0.6.2 release.

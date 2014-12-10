@@ -45,6 +45,7 @@ typedef enum {
 #include <libgnomevfs/gnome-vfs.h>
 #include "girl-listener.h"
 #include "girl-program.h"
+#include "girl-runners.h"
 #include "girl-station.h"
 
 #ifdef DEBUG
