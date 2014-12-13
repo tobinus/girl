@@ -33,7 +33,8 @@ typedef enum {
 
 typedef enum {
 	GIRL_STREAM_SHOUTCAST = 0x0001,
-	GIRL_STREAM_OGG = 0x0002
+	GIRL_STREAM_OGG = 0x0002,
+	GIRL_STREAM_AAC = 0x0003
 } GirlStreamType;
 
 typedef enum {
@@ -47,12 +48,16 @@ typedef enum {
 #include "girl-program.h"
 #include "girl-runners.h"
 #include "girl-station.h"
+#include "girl-streams.h"
 
-#ifdef DEBUG
+#ifdef GIRL_DEBUG
 #define MSG(x...) g_message(x)
 #else
 #define MSG(x...)
 #endif
+
+#define GIRL_RECORDING_TRUE 1
+#define GIRL_RECORDING_FALSE 0
 
 void show_error(gchar * msg);
 void appbar_send_msg(const char *a, ...);
@@ -68,23 +73,27 @@ gchar *copy_to_mem(GnomeVFSURI * uri, GnomeVFSFileSize len);
 void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType girl);
 void on_listen_button_clicked(GtkWidget * button, gpointer user_data);
 void on_record_button_clicked(GtkWidget * button, gpointer user_data);
-void on_next_click(GtkWidget *, gpointer user_data);
-void on_previous_click(GtkWidget *, gpointer user_data);
+void on_next_station_click(GtkWidget *, gpointer user_data);
+void on_previous_station_click(GtkWidget *, gpointer user_data);
 void on_listeners_selector_button_clicked(GtkWidget *, gpointer user_data);
 void on_listeners_selector_changed(GtkWidget * a, gpointer user_data);
 void on_programs_selector_button_clicked(GtkWidget *, gpointer user_data);
 void on_programs_selector_changed(GtkWidget * a, gpointer user_data);
 void on_stations_selector_button_clicked(GtkWidget *, gpointer user_data);
 void on_stations_selector_changed(GtkWidget * a, gpointer user_data);
+void on_streams_selector_button_clicked(GtkWidget *, gpointer user_data);
+void on_streams_selector_changed(GtkWidget * a, gpointer user_data);
 void quit_app(GtkWidget *, gpointer user_data);
 void about_app(GtkWidget *, gpointer user_data);
 void about_listener(GtkWidget *, gpointer user_data);
 void about_program(GtkWidget *, gpointer user_data);
 void about_station(GtkWidget *, gpointer user_data);
+void about_streams(GtkWidget *, gpointer user_data);
 
 struct _GirlData {
 	GtkImage *pixmap;
 	GnomeAppBar *appbar;
+	GtkProgressBar *progress;
 	GirlListenerInfo *selected_listener;
 	gchar *selected_listener_uri;
 	gchar *selected_listener_name;
@@ -97,6 +106,8 @@ struct _GirlData {
 	gchar *selected_program_location;
 	gchar *selected_program_release;
 	gchar *selected_program_description;
+	GirlRunnersInfo *selected_runners;
+	gint timeout_id;
 	GirlStationInfo *selected_station;
 	gchar *selected_station_uri;
 	gchar *selected_station_name;
@@ -104,6 +115,13 @@ struct _GirlData {
 	gchar *selected_station_release;
 	gchar *selected_station_description;
 	gint selected_bitrate;
+	GirlStreamsInfo *selected_streams;
+	gchar *selected_streams_mime;
+	gchar *selected_streams_uri;
+	gchar *selected_streams_codec;
+	gchar *selected_streams_samplerate;
+	gchar *selected_streams_channels;
+	gchar *selected_streams_bitrate;
 	GirlChannels selected_channels;
 	gint selected_samplerate;
 	GdkPixbuf *icon;
@@ -112,8 +130,9 @@ struct _GirlData {
 typedef struct _GirlData GirlData;
 
 extern GirlData *girl;
-extern GList *girl_stations;
-extern GList *girl_programs;
 extern GList *girl_listeners;
+extern GList *girl_programs;
+extern GList *girl_stations;
+extern GList *girl_streams;
 
 #endif /* GIRL_H */

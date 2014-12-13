@@ -328,6 +328,7 @@ EXTRA_DIST = config.rpath m4/ChangeLog  \
 	NEWS \
 	NEWS-0.5 \
 	NEWS-0.6 \
+	NEWS-0.7 \
 	THANKS \
 	TODO \
 	girl.spec.in

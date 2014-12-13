@@ -34,12 +34,6 @@
 #include "girl.h"
 #include "girl-program.h"
 
-#ifdef DEBUG
-#define MSG(x...) g_message(x)
-#else
-#define MSG(x...)
-#endif
-
 extern GirlData *girl;
 extern GList *girl_stations;
 extern GList *girl_programs;

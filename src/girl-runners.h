@@ -24,30 +24,31 @@
 #ifndef GIRL_RUNNERS_H
 #define GIRL_RUNNERS_H
 
-#include "girl.h"
-
 typedef struct _GirlRunnersInfo GirlRunnersInfo;
 
 struct _GirlRunnersInfo {
 	GtkWidget *widget;
-	GMutex mutex;
-	gchar *id;
+	GMutex *mutex;
+	GPid *pid;
 	gchar *name;
+	gchar *date;
+	gchar *time;
+	gchar *file;
 	gchar *command;
 };
 
-GirlRunnersInfo *girl_runners_new (GirlRunnersInfo * head,
-				   gchar *id,
+GirlRunnersInfo *girl_runners_new (GPid *pid,
 				   gchar *name,
 				   gchar *date,
 				   gchar *time,
 				   gchar *file);
 
 void girl_runners_free(GirlRunnersInfo * info);
+void girl_runners_mutex_get(GirlRunnersInfo *info);
+void girl_runners_mutex_release(GirlRunnersInfo *info);
+void girl_runners_mutex_lock(GirlRunnersInfo *info);
+void girl_runners_mutex_unlock(GirlRunnersInfo *info);
 
-void girl_runners_mutex_init(GirlRunnersInfo *info, GMutex runner);
-void girl_runners_mutex_lock(GirlRunnersInfo *info, GMutex runner);
-void girl_runners_mutex_unlock(GirlRunnersInfo *info, GMutex mutex);
-void girl_runners_mutex_exit(GirlRunnersInfo *info, GMutex mutex);
+void cb_record_execute(GtkButton *button);
 
 #endif /* GIRL_RUNNERS_H */

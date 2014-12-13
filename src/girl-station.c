@@ -34,15 +34,10 @@
 #include "girl.h"
 #include "girl-station.h"
 
-#ifdef DEBUG
-#define MSG(x...) g_message(x)
-#else
-#define MSG(x...)
-#endif
-
 extern GirlData *girl;
 extern GList *girl_stations;
 extern GList *girl_listeners;
+extern GList *girl_streams;
 
 extern GtkWidget *girl_app;
 
@@ -63,17 +58,86 @@ void show_error(gchar * msg)
 #endif				/* GIRL_CLI */
 }
 
+static void
+cb_child_watch( GPid  pid,
+		gint  status)
+{
+	/* Remove timeout callback */
+	g_source_remove(girl->timeout_id );
+
+	/* Close pid */
+	g_spawn_close_pid( pid );
+}
+
+static gboolean
+cb_out_watch( GIOChannel   *channel,
+	      GIOCondition  cond)
+{
+	gchar *string;
+	gsize  size;
+
+	if( cond == G_IO_HUP )
+	{
+		g_io_channel_unref( channel );
+		return( FALSE );
+	}
+
+	g_io_channel_read_line( channel, &string, &size, NULL, NULL );
+
+	/* gnome_appbar_pop(girl->appbar); */
+	/* gnome_appbar_push(girl->appbar, string); */
+
+	g_free( string );
+
+	return( TRUE );
+}
+
+static gboolean
+cb_err_watch( GIOChannel   *channel,
+	      GIOCondition  cond)
+{
+	gchar *string;
+	gsize  size;
+
+	if( cond == G_IO_HUP )
+	{
+		g_io_channel_unref( channel );
+		return( FALSE );
+	}
+
+	g_io_channel_read_line( channel, &string, &size, NULL, NULL );
+	/* gnome_appbar_pop(girl->appbar); */
+	/* gnome_appbar_push(girl->appbar, string); */
+	g_free( string );
+
+	return( TRUE );
+}
+
+static gboolean
+cb_timeout( )
+{
+	/* Bounce progress bar */
+	gtk_progress_bar_pulse( girl->progress );
+
+	return( TRUE );
+}
+
 void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType helper)
 {
 	GError *err = NULL;
 	GTimeVal mtime;
 
 	const char *mime_info;
-
 	/* GnomeVFSMimeApplication *app; */
 	char *app, *command, *msg, *archive;
-
+	char **argv = NULL;
+	gint argc;
 	gint status;
+
+	GPid        pid;
+	gint        out, error;
+	GIOChannel *out_ch, *err_ch;
+	gboolean    ret;
 
 	g_return_if_fail(url != NULL);
 	MSG("%s", url);
@@ -98,11 +162,14 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		if (type == GIRL_STREAM_SHOUTCAST) {
 			if (helper == GIRL_STREAM_PLAYER) {
 				command = g_strconcat(app, " ", url, NULL);
+				/* argv[0] = g_strdup(app); */
+				/* argv[1] = g_strdup(url); */
 			}
 			if (helper == GIRL_STREAM_RECORD) {
 				/* archive = g_strconcat("file://", g_get_home_dir(), "/.girl/", name, NULL); */
 				/* girl_archive_new(url, archive); */
-				/* printf("Archiving program at %s\n", archive); */			        command = g_strconcat(app, " ", url, NULL);
+				/* printf("Archiving program at %s\n", archive); */
+				command = g_strconcat(app, " ", url, NULL);
 				/* " -d ", g_get_home_dir(), "/.girl -D \"", name, "\" -s -a -u girl/", VERSION, NULL); */
 				/* command = g_strconcat(command, " -d ", g_get_home_dir(), "/.girl/", name, " -D %S%A%T -t 10 -u girl/", VERSION, NULL); */
 			}
@@ -142,6 +209,69 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 	}
 
 	if (helper == GIRL_STREAM_RECORD) {
+
+/* #if 0 */
+		/* gchar *argv[] = { command, NULL }; */
+		/* Spawn child process */
+
+		g_shell_parse_argv(command,
+				   &argc,
+				   &argv,
+				   NULL);
+		ret = g_spawn_async_with_pipes (".",
+						argv,
+						NULL,
+						G_SPAWN_SEARCH_PATH|G_SPAWN_STDOUT_TO_DEV_NULL|G_SPAWN_STDERR_TO_DEV_NULL|G_SPAWN_DO_NOT_REAP_CHILD,
+						NULL,
+						NULL,
+						&pid,
+						NULL,
+						NULL,
+						NULL,
+						&err);
+		if( ! ret )
+		{
+			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, pid);
+			show_error(msg);
+			g_free(msg);
+			return;
+		}
+		/* Add watch function to catch termination of the process. This function
+		 * will clean any remnants of process. */
+		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl);
+
+		/* Install timeout fnction that will move the progress bar */
+		girl->timeout_id = g_timeout_add(100,(GSourceFunc)cb_timeout,girl);
+/* #endif */
+/* #if 0 */
+		ret = g_spawn_async_with_pipes( NULL, /* command */ argv, NULL,
+						/* G_SPAWN_DO_NOT_REAP_CHILD */ G_SPAWN_DEFAULT, NULL,
+						NULL, &pid, NULL, &out, &error, NULL );
+		if( ! ret )
+		{
+			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, pid);
+			show_error(msg);
+			g_free(msg);
+			return;
+		}
+		/* Add watch function to catch termination of the process. This function
+		 * will clean any remnants of process. */
+		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl );
+		/* Create channels that will be used to read girl from pipes. */
+#ifdef G_OS_WIN32
+		out_ch = g_io_channel_win32_new_fd( out );
+		err_ch = g_io_channel_win32_new_fd( err );
+#else
+		out_ch = g_io_channel_unix_new( out );
+		err_ch = g_io_channel_unix_new( err );
+#endif
+		/* Add watches to channels */
+		g_io_add_watch( out_ch, G_IO_IN | G_IO_HUP, (GIOFunc)cb_out_watch, girl );
+		g_io_add_watch( err_ch, G_IO_IN | G_IO_HUP, (GIOFunc)cb_err_watch, girl );
+		/* Install timeout fnction that will move the progress bar */
+		girl->timeout_id = g_timeout_add( 100, (GSourceFunc)cb_timeout, girl );
+/* #endif */
+#if 0
 		if (!g_spawn_command_line_sync(command, stdout, stderr, status, &err)) {
 			msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
 						"Status code: %i\n"
@@ -152,6 +282,10 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		} else {
 			g_print("Launching %s\n", command);
 		}
+		/* Add watch function to catch termination of the process. This function
+		 * will clean any remnants of process. */
+		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl );
+#endif
 	}
 }
 
@@ -163,9 +297,16 @@ void girl_stream_player(GtkWidget * widget, gpointer data)
 		        GIRL_STREAM_PLAYER);
 }
 
-void girl_info_view(GirlStationInfo * info)
+void girl_stream_record(GtkWidget * widget, gpointer data)
 {
+	girl_helper_run(girl->selected_station_uri,
+			girl->selected_station_name,
+			GIRL_STREAM_SHOUTCAST,
+		        GIRL_STREAM_RECORD);
+}
 
+void girl_stream_select(GirlStreamsInfo * info)
+{
 }
 
 static void
@@ -207,7 +348,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("station->location = %s\n", station->location);
-			/* fprintf(stdout, "%s (%s), ", station->name, station->location); */
+			fprintf(stdout, "%s (%s), ", station->name, station->location); 
 		}
 
 		if ((!xmlStrcmp

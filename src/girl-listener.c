@@ -33,12 +33,6 @@
 #include "girl.h"
 #include "girl-listener.h"
 
-#ifdef DEBUG
-#define MSG(x...) g_message(x)
-#else
-#define MSG(x...)
-#endif
-
 /* extern GirlListenerInfo *girllistener; */
 
 extern GList *girl_stations;

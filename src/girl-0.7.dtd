@@ -4,7 +4,7 @@
 <!ELEMENT location ( lat | lon )* >
 <!ELEMENT girl ( station+ ) >
 <!ATTLIST girl version NMTOKEN #REQUIRED >
-<!ELEMENT station ( description | frequency | location | stream | uri | rank | type | release)* >
+<!ELEMENT station ( description | frequency | location | stream | uri | rank | type | release | lang)* >
 <!ATTLIST station id NMTOKEN #REQUIRED >
 <!ATTLIST station name CDATA #REQUIRED >
 <!ATTLIST station rank CDATA #REQUIRED >

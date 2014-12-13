@@ -35,7 +35,7 @@
 #include "girl-listener.h"
 #include "girl-station.h"
 
-#ifdef DEBUG
+#ifdef GIRL_DEBUG
 #define MSG(x...) g_message(x)
 #else
 #define MSG(x...)
@@ -46,11 +46,13 @@ GirlData *girl;
 GList *girl_listeners;
 GList *girl_programs;
 GList *girl_stations;
+GList *girl_streams;
 
 GtkWidget *girl_app;
 GtkWidget *listeners_selector = NULL;
 GtkWidget *programs_selector = NULL;
 GtkWidget *stations_selector = NULL;
+GtkWidget *streams_selector = NULL;
 
 int main(int argc, char *argv[])
 {
@@ -72,18 +74,22 @@ int main(int argc, char *argv[])
 			   argc, argv,
 			   GNOME_PARAM_APP_DATADIR, DATADIR, NULL);
 
+#if defined(G_THREADS_ENABLED) && ! defined(G_THREADS_IMPL_NONE)
+	g_thread_init (NULL);
+#endif
+
 	girl_app = create_girl_app();
 
 	gtk_widget_show(girl_app);
 
 	/* Set up the listeners list */
-	listeners_selector = create_listeners_selector(girl->selected_listener_uri,"listeners.xml");
+	/* listeners_selector = create_listeners_selector(girl->selected_listener_uri,"listeners.xml"); */
 
-	g_object_add_weak_pointer(G_OBJECT(listeners_selector),
-				  (void **) &(listeners_selector));
+	/* g_object_add_weak_pointer(G_OBJECT(listeners_selector), */
+	/* 			  (void **) &(listeners_selector)); */
 
-	/* Set up the programs list */
-	programs_selector = create_programs_selector(girl->selected_program_uri,"programs.xml");
+	/* /\* Set up the programs list *\/ */
+	/* programs_selector = create_programs_selector(girl->selected_program_uri,"programs.xml"); */
 
 	/* gtk_widget_show(programs_selector); */
 
@@ -94,11 +100,15 @@ int main(int argc, char *argv[])
 	stations_selector = create_stations_selector(girl->selected_station_uri,
 						     "stations.xml");
 
-	/* gtk_widget_show(stations_selector); */
+	/* Set up the streams list */
+	streams_selector = create_streams_selector(girl->selected_streams_uri,
+						   "streams.xml");
 
 	g_object_add_weak_pointer(G_OBJECT(stations_selector),
 				  (void **) &(stations_selector));
 
+	g_object_add_weak_pointer(G_OBJECT(streams_selector),
+				  (void **) &(streams_selector));
 	/* Icons */
 	iconname = gnome_program_locate_file(NULL,
 					     GNOME_FILE_DOMAIN_APP_PIXMAP,
@@ -149,7 +159,7 @@ static void cause_movement(int way)
 
 }
 
-void on_previous_click(GtkWidget * a, gpointer user_data)
+void on_previous_station_click(GtkWidget * a, gpointer user_data)
 {
 	GList *l = g_list_previous(girl_stations);
 	if (l != NULL) {
@@ -209,7 +219,7 @@ void on_previous_click(GtkWidget * a, gpointer user_data)
 	}
 }
 
-void on_next_click(GtkWidget * a, gpointer user_data)
+void on_next_station_click(GtkWidget * a, gpointer user_data)
 {
 	GList *l = g_list_first(girl_stations);
 	if (l != NULL) {
@@ -409,6 +419,52 @@ void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 		        GIRL_STREAM_PLAYER);
 }
 
+void on_streams_selector_button_clicked(GtkWidget * a, gpointer user_data)
+{
+	gtk_widget_show(streams_selector);
+	gdk_window_raise(streams_selector->window);
+}
+
+void on_streams_selector_changed(GtkWidget * a, gpointer user_data)
+{
+	if (girl->selected_streams_uri != NULL)
+		g_free(girl->selected_streams_uri);
+
+	girl->selected_streams_uri = g_strdup(g_object_get_data(G_OBJECT(a), "streams_uri"));
+	MSG("on_streams_select_changed: %s\n", girl->selected_streams_uri);
+
+	girl->selected_streams_mime = g_strdup(g_object_get_data(G_OBJECT(a), "streams_mime"));
+	MSG("on_streams_select_changed: %s\n",
+	    girl->selected_streams_mime);
+
+	girl->selected_streams_codec = g_strdup(g_object_get_data(G_OBJECT(a), "streams_codec"));
+	MSG("on_streams_select_changed: %s\n",
+	    girl->selected_streams_codec);
+
+	girl->selected_streams_samplerate = g_strdup(g_object_get_data(G_OBJECT(a), "streams_samplerate"));
+	MSG("on_streams_select_changed: %s\n",
+	    girl->selected_streams_samplerate);
+
+	girl->selected_streams_bitrate = g_strdup(g_object_get_data(G_OBJECT(a), "streams_bitrate"));
+	MSG("on_streams_select_changed: %s\n",
+	    girl->selected_streams_bitrate);
+
+	girl->selected_streams_channels = g_strdup(g_object_get_data(G_OBJECT(a), "streams_channels"));
+	MSG("on_streams_select_changed: %s\n",
+	    girl->selected_streams_channels);
+
+	appbar_send_msg(_("Selected %s [%s] [%s] [%s]"),
+			girl->selected_streams_uri,
+			girl->selected_streams_mime,
+			girl->selected_streams_codec,
+			girl->selected_streams_bitrate);
+
+	girl_helper_run(girl->selected_streams_uri,
+			girl->selected_streams_mime,
+			GIRL_STREAM_SHOUTCAST,
+		        GIRL_STREAM_PLAYER);
+}
+
 void quit_app(GtkWidget * a, gpointer user_data)
 {
 	gnome_config_push_prefix("/girl/General/");
@@ -430,12 +486,27 @@ void quit_app(GtkWidget * a, gpointer user_data)
 				girl->selected_station_release);
 	gnome_config_set_string("selected_station_description",
 				girl->selected_station_description);
+	gnome_config_set_string("selected_streams_uri",
+				girl->selected_streams_uri);
+	gnome_config_set_string("selected_streams_mime",
+				girl->selected_streams_mime);
+	gnome_config_set_string("selected_streams_codec",
+				girl->selected_streams_codec);
+	gnome_config_set_string("selected_streams_samplerate",
+				girl->selected_streams_samplerate);
+	gnome_config_set_string("selected_streams_bitrate",
+				girl->selected_streams_bitrate);
+	gnome_config_set_string("selected_streams_channels",
+				girl->selected_streams_channels);
 	gnome_config_sync();
 	gnome_config_pop_prefix();
 
 	gtk_widget_destroy(girl_app);
 	if (GTK_IS_WIDGET(stations_selector)) {
 		gtk_widget_destroy(stations_selector);
+	}
+	if (GTK_IS_WIDGET(streams_selector)) {
+		gtk_widget_destroy(streams_selector);
 	}
 
 	gtk_main_quit();
@@ -455,7 +526,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 		return;
 	}
 
-	about = gnome_about_new(_("GNOME Internet Radio Locator"), VERSION, _("Copyright 2014 Ole Aamot Software\nCopyright 2002 Free Software Foundation"), _("Internet radio station and listener locator"), (const gchar **) authors, NULL,	/* documenters */
+	about = gnome_about_new(_("GNOME Internet Radio Locator"), VERSION, _("Copyright 2014 Ole Aamot Software\nCopyright 2002 Free Software Foundation"), _("Internet Radio Locator"), (const gchar **) authors, NULL,	/* documenters */
 				strcmp(translator_credits,
 				       "translator_credits") !=
 				0 ? translator_credits : NULL, girl->icon);
@@ -562,6 +633,39 @@ void about_station(GtkWidget * a, gpointer user_data)
 	gtk_widget_show(about_station);
 }
 
+void about_streams(GtkWidget * a, gpointer user_data)
+{
+	static GtkWidget *about_streams = NULL;
+	const gchar *translator_credits = _("translator_credits");
+	const gchar *authors[] = {
+		girl->selected_streams_uri,
+		NULL,
+	};
+
+	if (about_streams) {
+		gdk_window_raise(about_streams->window);
+		return;
+	}
+
+	if (girl->selected_streams_uri != NULL) {
+		about_streams = gnome_about_new(girl->selected_streams_uri,
+						girl->selected_streams_codec,
+						girl->selected_streams_mime,
+						girl->selected_streams_bitrate,
+						authors,
+						NULL,
+						NULL,
+						girl->icon);
+		g_signal_connect(G_OBJECT(about_streams), "destroy",
+				 G_CALLBACK(gtk_widget_destroy), NULL);
+		g_signal_connect(G_OBJECT(about_streams), "delete-event",
+				 G_CALLBACK(gtk_widget_destroy), NULL);
+		g_object_add_weak_pointer(G_OBJECT(about_streams), (void **) &(about_streams));
+		gtk_widget_show(about_streams);
+	}
+
+}
+
 void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 {
 
@@ -584,6 +688,7 @@ void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 {
 	GtkWidget *dialog;
+	GPid *pid;
 
 	if (girl->selected_station_name != NULL) {
 		appbar_send_msg(_("Recording from %s in %s: %s "),
@@ -595,6 +700,11 @@ void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 				girl->selected_station_name,
 				GIRL_STREAM_SHOUTCAST,
 				GIRL_STREAM_RECORD);
+		girl->selected_runners = girl_runners_new(getpid(),
+							  girl->selected_station_name,
+							  "date",
+							  "time",
+							  "girl.wav");
 	} else {
 		dialog = gtk_message_dialog_new(GTK_WINDOW(girl_app),
 						GTK_DIALOG_MODAL,

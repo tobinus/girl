@@ -1,3 +1,34 @@
+2014-12-13  Ole Aamot  <oka@oka.no>
+
+	* AUTHORS: Add Muhammet Kara (Turkish translation)
+	* THANKS: Muhammet Kara for Turkish translation
+	* girl version 0.7.1 release.
+	* data/girl.appdata.xml.in: Remove old reference to "new GNOME 2.0".
+	* src/girl-0.7.dtd: Add girl 0.7 DTD with station language attribute
+	* src/girl-gui.c: Add Streams and About Stream buttons
+	* src/girl-station.c: Add new function girl_stream_record
+	* src/girl-streams.c: New file
+	* src/girl-streams.h: New file
+	* src/stations.xml: Add 95bFM (95bfm.com)
+	* src/stations.xml: Add KDUP (kdup.up.edu)
+	* src/streams.xml: Add streams file
+
+2014-12-12  Ole Aamot  <oka@oka.no>
+
+	* girl version 0.7.0 release.
+	* AUTHORS: Add Piotr Drąg (Polish translation)
+	* NEWS: Release girl version 0.7.0
+	* THANKS: Piotr Drąg for minor typo fix and Polish translation
+	* girl.spec.in: Update RPM spec file for Fedora 21
+	* po/pl.po: Polish translation by Piotr Drąg
+	* src/girl-gui.c: Add GtkWidget progress
+	* src/girl-runners.c: Modify mutex functions for future usage.
+	* src/girl-runners.h: Modify mutex functions for future usage.
+	* src/girl-station.c: Add asynchronous child process function.
+	* src/girl.h: Rename DEBUG macro GIRL_DEBUG, add progress bar.
+	* src/stations.xml: Add 2NURFM (broadcaster1.newcastle.edu.au)
+	* src/stations.xml: Add Radio Adelaide (radio.adelaide.edu.au)
+
 2014-12-10  Ole Aamot  <oka@oka.no>
 
 	* girl version 0.6.283185307 release in honor of Malala

@@ -3,9 +3,9 @@ Name: @PACKAGE@
 Version: @VERSION@
 Release: 1
 License: GPLv2+
-URL: http://www.ping.uio.no/~oka/src/girl/
+URL: http://girl.software/
 Group: Applications/Internet
-Source: http://www.ping.uio.no/~oka/src/girl/@PACKAGE@-@VERSION@.tar.xz
+Source: http://girl.software/@PACKAGE@-@VERSION@.tar.xz
 Requires: gtk2 >= 2.24.24
 Requires: libgnome >= 2.32.1
 Requires: libxml2 >= 2.9.1
@@ -30,7 +30,7 @@ Enjoy Internet Radio.
 
 %build
 
-%configure
+%configure --with-recording
 
 %install
 
@@ -50,6 +50,7 @@ make DESTDIR=%{buildroot} install
 %{_datadir}/girl/girl-0.4.dtd
 %{_datadir}/girl/girl-0.5.dtd
 %{_datadir}/girl/girl-0.6.dtd
+%{_datadir}/girl/girl-0.7.dtd
 %{_datadir}/girl/girl-logo.png
 %{_datadir}/girl/girl.png
 %{_datadir}/girl/listener-1.0.dtd
@@ -58,6 +59,7 @@ make DESTDIR=%{buildroot} install
 %{_datadir}/girl/programs-0.1.dtd
 %{_datadir}/girl/programs.xml
 %{_datadir}/girl/stations.xml
+%{_datadir}/girl/streams.xml
 %{_datadir}/appdata/girl.appdata.xml
 %{_datadir}/applications/girl.desktop
 %{_datadir}/girl/pixmaps/girl-map.png
@@ -70,6 +72,12 @@ make DESTDIR=%{buildroot} install
 %{_mandir}/man1/girl.1.gz
 
 %changelog
+* Sat Dec 13 2014 Ole Aamot - 0.7.1-1
+- Girl 0.7.1 build on Fedora Linux 21
+
+* Fri Dec 12 2014 Ole Aamot - 0.7.0-1
+- Girl 0.7.0 build on Fedora Linux 21
+
 * Sun Dec 07 2014 Ole Aamot - 0.6.2-1
 - Girl 0.6.2 build on Fedora Linux 21
 

@@ -219,9 +219,9 @@ GirlStreamsInfo *girl_streams_load_from_file(GirlStreamsInfo * head,
 
 	while (cur != NULL) {
 
-		if ((!xmlStrcmp(cur->name, (const xmlChar *) "streams"))) {
+		if ((!xmlStrcmp(cur->name, (const xmlChar *) "stream"))) {
 
-			MSG("Found a new streams.\n");
+			MSG("Found a new stream.\n");
 
 			curr = g_new0(GirlStreamsInfo, 1);
 			mem_streams = g_new0(GirlStreamsInfo, 1);

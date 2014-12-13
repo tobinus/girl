@@ -1,7 +1,36 @@
 <?xml version="1.0"?>
-<!DOCTYPE girl SYSTEM "girl-0.6.dtd">
-<girl version="0.6">
-  <station id="radior" name="Radio R" rank="1.0" type="edu" release="">
+<!DOCTYPE girl SYSTEM "girl-0.7.dtd">
+<girl version="0.7">
+  <station id="kdup" name="KDUP" rank="1.0" type="edu" release="1580" lang="en">
+    <frequency uri="http://kdup.up.edu/">1580 AM in Portland, OR</frequency>
+    <location>Portland, OR</location>
+    <description>University of Portland's radio station</description>
+    <stream mime="audio/ogg" uri="http://icecast.up.edu:8000/mystream.ogg.m3u" codec="Ogg Vorbis" samplerate="32000 Hz" channels="Stereo" bitrate="192 kbps" />
+  </station>
+  <station id="95bfm" name="95bFM" rank="1.0" type="edu" release="95.0" lang="en">
+    <frequency uri="http://www.95bfm.com/">95.0 FM in Auckland, New Zealand</frequency>
+    <location>Auckland, New Zealand</location>
+    <description>In 1969, Radio Bosom was born as a student's capping stunt, broadcasting illegally from a boat in the Waitemata Harbour. Over the next few decades the bosom morphed into the mighty 95bFM, the longest-standing independent radio station in New Zealand.
+
+    We're passionate about music, just like you. We think that radio is better when it's free from commercial pressures, and that it should be challenging without being inaccessible. This is not top 40 radio.</description>
+    <stream mime="audio/mpeg" uri="http://streams.95bfm.com/stream95" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Mono" bitrate="32 kbps" />
+  </station>
+  <station id="2nurfm" name="2NURFM" rank="1.0" type="edu" release="103.7" lang="en">
+    <frequency uri="http://www.newcastle.edu.au/community-and-alumni/arts-and-culture/2nurfm">103.7 FM in Newcastle, Australia</frequency>
+    <location>Newcastle, Australia</location>
+    <description>Newcastle's leading 'easy listening' radio station.</description>
+    <stream mime="audio/aacp" uri="http://broadcaster1.newcastle.edu.au:8000/2NURFM-aacPlus" codec="MPEG-2 AAC (AAC+)" samplerate="44100 Hz" channels="Stereo" bitrate="29 kbps" />
+    <uri>http://www.newcastle.edu.au/community-and-alumni/arts-and-culture/2nurfm</uri>
+  </station>
+  <station id="radioadelaide" name="Radio Adelaide" rank="1.0" type="edu" release="101.5" lang="en">
+    <frequency uri="https://radio.adelaide.edu.au/">101.5 FM in Adelaide, Australia</frequency>
+    <location>Adelaide, Australia</location>
+    <description>Radio Adelaide is a real radio alternative for people curious about ideas, issues and music. We are as diverse as the city we live in, with programs ranging from Jazz and Classical to World Music, arts, current affairs and more, with many shows presented by local community groups in their own languages.</description>
+    <stream mime="audio/mpeg" uri="http://stream.radio.adelaide.edu.au:8000/radadl-128.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://stream.radio.adelaide.edu.au:8000/radadl-64.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <uri>https://radio.adelaide.edu.au/</uri>
+  </station>
+  <station id="radior" name="Radio R" rank="1.0" type="edu" release="" lang="cs">
     <frequency uri="http://radior.cz">Internet</frequency>
     <location>Brno, Czechoslovakia</location>
     <description>Masaryk University’s student radio,</description>
@@ -10,35 +39,35 @@
     <stream mime="audio/ogg" uri="http://radior.video.muni.cz:8000/FSS_ogg-q8.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="256 kbps" />
     <uri>http://www.radior.cz/</uri>
   </station>
-  <station id="radius" name="Radio Radius" rank="1.0" type="edu" release="">
+  <station id="radius" name="Radio Radius" rank="1.0" type="edu" release="de">
     <frequency uri="http://radioradius.ch/">Internet</frequency>
     <location>Zürich, Switzerland</location>
     <description>Student webradio in Zürich.</description>
     <stream mime="audio/ogg" uri="http://relay.radio.ethz.ch/sender.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.radioradius.ch/</uri>
   </station>
-  <station id="lsrfm" name="Leeds University Student Radio FM" rank="1.0" type="edu" release="">
+  <station id="lsrfm" name="Leeds University Student Radio FM" rank="1.0" type="edu" release="" lang="en">
     <frequency uri="http://lsrfm.com/">Internet</frequency>
     <location>Leeds, United Kingdom</location>
     <description></description>
     <stream mime="audio/mpeg" uri="http://soho.wavestreamer.com:6648/listen.pls?sid=1" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://lsrfm.com/</uri>
   </station>
-  <station id="urn" name="University Radio Nottingham" rank="1.0" type="edu" release="1350">
+  <station id="urn" name="University Radio Nottingham" rank="1.0" type="edu" release="1350" lang="en">
     <frequency uri="http://urn1350.net">1350 AM MHz in Nottingham, United Kingdom</frequency>
     <location>Nottingham, United Kingdom</location>
     <description>URN is the University of Nottingham's award winning student radio station.You can listen online, on 1350AM on campus or in some of the university's shops and bars.</description>
     <stream mime="audio/mpeg" uri="http://posurnl.nottingham.ac.uk:8080/urn_high.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://urn1350.net/</uri>
   </station>
-  <station id="kcl" name="King's College London Radio" rank="1.0" type="edu" release="">
+  <station id="kcl" name="King's College London Radio" rank="1.0" type="edu" release="" lang="en">
     <frequency uri="http://www.kclradio.co.uk/">Internet</frequency>
     <location>London, United Kingdom</location>
     <description>KCL Radio is King’s College London’s award winning, student radio station, which first broadcast live last year. Our studio is currently located on the basement floor of the Chesham Building (although there are plans to relocate to a new studio in Tutu’s on the 4th floor of the Macadam Building during 2015).  Output ranges from music to news, chat, sport, comedy and everything in between. Live broadcasts also take place throughout the year for significant events on the KCLSU calendar such as the Student Officer Elections or the Varsity Rugby match.</description>
     <stream mime="audio/mpeg" uri="http://159.92.75.8:8080/KCLR" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.kclradio.co.uk/</uri>
   </station>
-  <station id="icradio" name="Imperial College Radio" rank="1.0" type="edu" release="">
+  <station id="icradio" name="Imperial College Radio" rank="1.0" type="edu" release="" lang="en">
     <frequency uri="http://icradio.com/">1134 AM in Wye, Kent, United Kingdom</frequency>
     <location>London, United Kingdom</location>
     <description>IC Radio is among the oldest student radio stations in the country. Started in 1976, broadcasting on a home built AM transmitter around halls, we now broadcast all over the globe from icradio.com. Absolutely anyone is welcome to try their hand at presenting or producing a show; whatever your music taste. We also love a good speech based program, so anyone will feel at home in IC Radio. As well as being able to broadcast, we are lucky enough to have a brand new, fully equipped recording studio which we use to record bands and musicians.
@@ -47,7 +76,7 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <stream mime="audio/mpeg" uri="http://icecast.icradio.com:8000/live-mp3-high" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
     <uri>http://icradio.com/</uri>
   </station>
-  <station id="ruc" name="Coimbra University Radio" rank="1.0" type="edu" release="107.9">
+  <station id="ruc" name="Coimbra University Radio" rank="1.0" type="edu" release="107.9" lang="pt">
     <frequency uri="http://www.ruc.pt/">107.9 FM MHz in Coimbra, Portugal</frequency>
     <location>Coimbra, Portugal</location>
     <description>Coimbra University Radio (Portuguese: Rádio Universidade de Coimbra - RUC) is a university radio station of the Coimbra Academic Association (students' union) of the University of Coimbra in Coimbra, Portugal.
@@ -62,56 +91,56 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <stream mime="audio/mpeg" uri="http://ruc.midi-club.net:8000/;stream/1" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.ruc.pt/</uri>
   </station>
-  <station id="radiocampusbruxelles" name="Radio Campus Bruxelles" rank="1.0" type="edu" release="92.1">
+  <station id="radiocampusbruxelles" name="Radio Campus Bruxelles" rank="1.0" type="edu" release="92.1" lang="nl">
     <frequency uri="http://www.radiocampus.be/">92.1 MHz FM in Bruxelles, Belgium</frequency>
     <location>Bruxelles, Belgium</location>
     <description>Radio Campus est née en 1980 sur le campus de l’Université Libre de Bruxelles. Avec une cinquantaine d’émissions, elle rassemble plus de 150 animateurs, techniciens et collaborateurs autour de valeurs partagées : une libre expression assumée et constructive, un attachement immodéré au tissu social bruxellois et un amour sans borne pour la diversité musicale et culturelle.</description>
-    <stream mime="audio/mpeg" uri="http://streamer.radiocampus.be:8000/stream_hi.ogg" codec="Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
+    <stream mime="audio/ogg" uri="http://streamer.radiocampus.be:8000/stream_hi.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
     <uri>http://www.radiocampus.be/</uri>
   </station>
-  <station id="radiocampusparis" name="Radio Campus Paris" rank="1.0" type="edu" release="93.9">
+  <station id="radiocampusparis" name="Radio Campus Paris" rank="1.0" type="edu" release="93.9" lang="fr">
     <frequency uri="http://www.radiocampusparis.org/">93.9 MHz FM in Paris, France</frequency>
     <location>Paris, France</location>
     <description>Radio Campus Paris is a non-profit Student radio station. Founded in 1998 and first broadcast on the Internet, the radio can be listened to in Paris, France on 93.9 FM (from 5.30 p.m. to 5.30 a.m.). Managed by volunteers (mainly students), this indie student radio focuses on emerging music and local and student-related news.</description>
     <stream mime="audio/mpeg" uri="http://www.radiocampusparis.org:8000/stream_rcp" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.radiocampusparis.org/</uri>
   </station>
-  <station id="wcsb" name="WCSB" rank="1.0" type="edu" release="89.3">
+  <station id="wcsb" name="WCSB" rank="1.0" type="edu" release="89.3" lang="en">
     <frequency uri="http://wcsb.org/">89.3 MHz FM in Cleveland, OH</frequency>
     <location>Cleveland, OH</location>
     <description>A student-operated radio station at Cleveland State University, broadcasting from northeast Ohio.</description>
     <stream mime="audio/mpeg" uri="http://cent7.directhostingcenter.com/tunein.php/ubtevcdv/playlist.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wcsb.org/</uri>
   </station>
-  <station id="pulse" name="Pulse LSE" rank="1.0" type="edu" release="87.7">
+  <station id="pulse" name="Pulse LSE" rank="1.0" type="edu" release="87.7" lang="en">
     <frequency uri="http://pulselse.co.uk/">87.7 MHz FM in London, United Kingdom</frequency>
     <location>London, United Kingdom</location>
     <description>Pulse Radio is the official radio station of the London School of Economics and Political Science Students’ Union. We are totally student run and are committed to bringing great radio broadcasting to LSE students and beyond. We hope you tune in and enjoy!</description>
     <stream mime="audio/mpeg" uri="http://s3.radioboss.fm:8223/stream" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://pulselse.co.uk/</uri>
   </station>
-  <station id="oxide" name="Oxford Student Radio" rank="1.0" type="edu" release="107.9">
+  <station id="oxide" name="Oxford Student Radio" rank="1.0" type="edu" release="107.9" lang="en">
     <frequency uri="http://oxideradio.co.uk/">107.9 MHz FM in Oxford, United Kingdom</frequency>
     <location>Oxford, United Kingdom</location>
     <description>Oxide Radio is a student radio station run by members of Oxford University in Oxford, England.</description>
     <stream mime="audio/mpeg" uri="http://listen.oxideradio.co.uk:8000/oxide-radio.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://oxideradio.co.uk/</uri>
   </station>
-  <station id="camfm" name="Cam FM" rank="1.0" type="edu" release="97.2">
+  <station id="camfm" name="Cam FM" rank="1.0" type="edu" release="97.2" lang="en">
     <frequency uri="http://www.camfm.co.uk/">97.2 MHz FM in Cambridge, United Kingdom</frequency>
     <location>Cambridge, United Kingdom</location>
     <description>Originally founded in 1979, the award-winning Cam FM is now one of the most heavily listened to student radio stations in the UK, as well as one of the largest student-run media organisations in Cambridge, covering students at both Cambridge and Anglia Ruskin Universities. We know students because we are students; every aspect of the station is professionally run by students, staff, and alumni of the Universities - presenting, producing, or running the committee. Our content is primarily geared towards engaging with the student community in Cambridge.</description>
     <stream mime="audio/mpeg" uri="http://stream.camfm.co.uk/camfm" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.camfm.co.uk/</uri>
   </station>
-  <station id="radiounam" name="Radio UNAM" rank="1.0" type="edu" release="96.1">
+  <station id="radiounam" name="Radio UNAM" rank="1.0" type="edu" release="96.1" lang="es">
     <frequency uri="http://www.radiounam.unam.mx/">96.1 MHz FM in México City, México</frequency>
     <location>México City, México</location>
     <description>Radio Universidad Nacional Autónoma de México</description>
     <stream mime="audio/mpeg" uri="http://www.radiounam.unam.mx/templates/player/reproductor/CREA_FM/listen.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.radiounam.unam.mx/</uri>
   </station>
-  <station id="wxyc" name="WXYC" rank="1.0" type="edu" release="89.3">
+  <station id="wxyc" name="WXYC" rank="1.0" type="edu" release="89.3" lang="en">
     <frequency uri="http://www.wxyc.org/">89.3 MHz FM in Chapel Hill, NC</frequency>
     <location>Chapel Hill, NC</location>
     <description>WXYC went on the air on March 17, 1977 with Joni Mitchell's "You Turn Me on I'm a Radio."
@@ -129,11 +158,11 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
       In 1994, the staff of UNC's SunSITE, the first Web site in North America, helped WXYC become the first radio station in the world to stream its on-air signal live over the Internet. We're proud to have been at the forefront of the Internet radio medium. We now have loyal listeners all over the world who contact us with comments and requests by email and IM.
 
       WXYC alumni include ESPN anchor Stuart Scott, former Squirrel Nut Zipper Tom Maxwell, former Polvo guitarist Dave Brylawski, Newsweek reporter Colin Soloway, film director Peyton Reed, as well as scores of doctors, lawyers, writers, executives, and successful professionals of all kinds.</description>
-    <stream mime="audio/ogg" uri="http://www.wxyc.org/files/streams/wxyc-ogg.pls" codec="Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
+    <stream mime="audio/ogg" uri="http://www.wxyc.org/files/streams/wxyc-ogg.pls" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
     <stream mime="audio/mpeg" uri="http://wxyc.org/files/streams/wxyc-mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.wxyc.org/</uri>
   </station>
-  <station id="kalx" name="KALX" rank="1.0" type="edu" release="90.7">
+  <station id="kalx" name="KALX" rank="1.0" type="edu" release="90.7" lang="en">
     <frequency uri="http://kalx.berkeley.edu/">90.7 MHz FM in Berkeley, CA</frequency>
     <location>Berkeley, CA</location>
     <description>KALX 90.7 FM broadcasts freeform radio 24 hours a day to a large portion of the San Francisco Bay Area. You can catch all stripes of underground music accented with news, sports and alternative informational programming.
@@ -141,60 +170,60 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
       KALX has a wonderfully dedicated staff of student and community volunteers who are willing to explore with and educate their listeners. KALX is regular folks doing wild, unpredictable, extraordinary radio. All of our programs are homespun, we don't depend on satellite feeds. Rather we create programs from, and for our community (a community that includes both the University of California, Berkeley student population AND the surrounding area).
 
       As part of our mission to educate, every KALX DJ is encouraged to play a variety of musical styles and types. Rather than segregating music into limited boxes, this philosophy is an attempt to entertain the listener while broadening their musical experience. A pretty fun way to be educated, don't ya think!</description>
-    <stream mime="audio/ogg" uri="http://icecast.media.berkeley.edu:8000/kalx-128.ogg.m3u" codec="Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/ogg" uri="http://icecast.media.berkeley.edu:8000/kalx-128.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <stream mime="audio/mpeg" uri="http://icecast.media.berkeley.edu:8000/kalx-128.mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://kalx.berkeley.edu/</uri>
   </station>
-  <station id="whrb" name="WHRB" rank="1.0" type="edu" release="95.3">
+  <station id="whrb" name="WHRB" rank="1.0" type="edu" release="95.3" lang="en">
     <frequency uri="http://www.whrb.org/">95.3 MHz FM in Boston, MA</frequency>
     <location>Boston, MA</location>
     <description>For seventy years, 95.3FM has been Boston's first source for exciting, entertaining, and enlightening music broadcasts. Harvard Radio's daily broadcast of Classical music, Jazz, and underground Rock explore a great repertoire of music left largely untouched by other commercial stations.</description>
     <stream mime="audio/mpeg" uri="http://www.whrb.org/streams/whrb.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
     <uri>http://www.whrb.org/</uri>
   </station>
-  <station id="nova" name="Radio NOVA" rank="1.0" type="edu" release="99.3">
+  <station id="nova" name="Radio NOVA" rank="1.0" type="edu" release="99.3" lang="nb">
     <frequency uri="http://radionova.no/">99.3 MHz FM in Oslo, Norway</frequency>
     <location>Oslo, Norway</location>
     <description>Radio NOVA is the student radio of University of Oslo.</description>
     <stream mime="audio/mpeg" uri="http://stream.radionova.no/mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
     <uri>http://radionova.no/</uri>
   </station>
-  <station id="wwno" name="WWNO" rank="1.0" type="edu" release="89.9">
+  <station id="wwno" name="WWNO" rank="1.0" type="edu" release="89.9" lang="en">
     <frequency uri="http://wwno.org/">89.9 MHz FM in New Orleans, LA</frequency>
     <location>New Orleans, LA</location>
     <description>WWNO is the NPR member station for New Orleans and the 13 parishes of southeast Louisiana, broadcasting on 89.9 FM — and on KTLN 90.5 FM in the Houma-Thibodaux area — as a public service of the University of New Orleans.</description>
     <stream mime="audio/mpeg" uri="http://www.publicbroadcasting.net/wwno/ppr/wwno_128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wwno.org/</uri>
   </station>
-  <station id="ktru" name="KTRU" rank="1.0" type="edu" release="99.1">
+  <station id="ktru" name="KTRU" rank="1.0" type="edu" release="99.1" lang="en">
     <frequency uri="http://ktru.org/">99.1 MHz FM in Houston, TX</frequency>
     <location>Houston, TX</location>
     <description>KTRU Houston is Rice University's student-run radio station.</description>
     <stream mime="audio/mpeg" uri="http://ktru.org/audiometa/listen3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://ktru.org/</uri>
   </station>
-  <station id="bbcworldservice" name="BBC World Service" rank="1.0" type="gov" release="93.20">
+  <station id="bbcworldservice" name="BBC World Service" rank="1.0" type="gov" release="93.20" lang="en">
     <frequency uri="http://www.bbc.co.uk/worldservice/schedules/frequencies/">Internet</frequency>
     <location>London, United Kingdom</location>
     <description>BBC World Service is an international news service available on radio, television and online. It provides impartial news reports and analysis in English and 27 other languages.  BBC World Service aims to inspire and illuminate the lives of its audience by bringing the world together, making connections and helping listeners to make sense of the world.</description>
     <stream mime="audio/mpeg" uri="http://www.bbc.co.uk/worldservice/meta/live/mp3/eneuk.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
     <uri>http://www.bbc.co.uk/worldserviceradio</uri>
   </station>
-  <station id="nrkradioalltidnyheter" name="NRK Radio Alltid Nyheter" rank="1.0" type="gov" release="93.0">
+  <station id="nrkradioalltidnyheter" name="NRK Radio Alltid Nyheter" rank="1.0" type="gov" release="93.0" lang="nb">
     <frequency>93.0 MHz FM in Oslo, Norway</frequency>
     <location>Oslo, Norway</location>
     <description>The Norwegian Broadcasting Corporation (NRK) offers the Norwegian public a wide range of content with three national TV-channels, 13 national radio-channels and the website nrk.no.</description>
     <stream mime="audio/aac" uri="http://lyd.nrk.no/nrk_radio_alltid_nyheter_aac_h" codec="AAC, v4 LC" samplerate="48000 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.nrk.no/alltid_nyheter</uri>
   </station>
-  <station id="wkcr" name="WKCR" rank="1.0" type="edu" release="89.9">
+  <station id="wkcr" name="WKCR" rank="1.0" type="edu" release="89.9" lang="en">
     <frequency>89.9 MHz FM in New York, NY</frequency>
     <location>New York City, NY</location>
     <description>WKCR-FM, Columbia University’s non-commercial student-run radio station, is dedicated to presenting a spectrum of alternative programming—traditional and art music, spoken arts, and original journalism. Granted its FCC license in 1941, WKCR is both steeped in tradition and committed to innovation. In the New York area, the station can be heard at 89.9 megacycles in FM; worldwide, it streams online.</description>
     <stream mime="audio/mpeg" uri="http://kanga.college.columbia.edu:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
     <uri>http://www.studentaffairs.columbia.edu/wkcr/</uri>
   </station>
-  <station id="kzsu" name="KZSU" rank="1.0" type="edu" release="90.1">
+  <station id="kzsu" name="KZSU" rank="1.0" type="edu" release="90.1" lang="en">
     <frequency>90.1 MHz FM in Stanford, CA</frequency>
     <location>San Francisco, CA</location>
     <description>KZSU is Stanford University's FM radio station, broadcasting across the Bay Area on 90.1 FM and across the world at kzsulive.stanford.edu. We exist to serve the Stanford community with quality radio broadcasts, including music, sports, news, and public affairs programming.
@@ -205,14 +234,14 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <stream mime="audio/mpeg" uri="http://kzsulive.stanford.edu/audio/kzsu-1-128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://kzsulive.stanford.edu/</uri>
   </station>
-  <station id="wmbr" name="WMBR" rank="1.0" type="edu" release="88.1">
+  <station id="wmbr" name="WMBR" rank="1.0" type="edu" release="88.1" lang="en">
     <frequency>88.1 MHz FM in Cambridge, MA</frequency>
     <location>Boston, MA</location>
     <description>WMBR is the MIT campus radio station. We broadcast on 88.1 FM between 20 and 24 hours per day, 365 days a year. We transmit at 720 watts, effective radiated power from the top of the Eastgate Building in Kendall Square in Cambridge, Massachusetts. Our programming includes a wide range of music shows, public affairs programs and eclectic audio entertainment.</description>
     <stream mime="audio/mpeg" uri="http://wmbr.org/WMBR_live_128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wmbr.org/</uri>
   </station>
-  <station id="kexp" name="KEXP" rank="1.0" type="edu" release="90.9">
+  <station id="kexp" name="KEXP" rank="1.0" type="edu" release="90.9" lang="en">
     <frequency>90.9 MHz FM in Seattle, WA</frequency>
     <location>Seattle, WA</location>
     <description>KEXP is a service of the University of Washington, who holds the station’s FCC license. As a 501(c)3 non-profit arts organization, KEXP relies on investments from individual, foundation, business, and government supporters.</description>
