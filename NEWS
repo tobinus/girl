@@ -1,3 +1,10 @@
+2014-12-14  Ole Aamot  <oka@oka.no>
+
+	* NEWS: girl version 0.7.2 "Don't shoot" release
+	* po/pl.po: Updated Polish translation by Piotr Drąg
+	* src/stations.xml: Add WAMU (wamu.org)
+	* src/stations.xml: Add WXOU (wxou.org)
+	
 2014-12-13  Ole Aamot  <oka@oka.no>
 
 	* AUTHORS: Add Muhammet Kara (Turkish translation)

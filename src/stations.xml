@@ -1,6 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE girl SYSTEM "girl-0.7.dtd">
 <girl version="0.7">
+  <station id="wxou" name="WXOU" rank="1.0" type="edu" release="88.3" lang="en">
+    <frequency uri="http://wxou.org/">88.3 FM in Rochester, MI</frequency>
+    <location>Rochester, MI</location>
+    <description>WXOU is a non-profit, student operated, freeform community radio station. Currently we are broadcasting with 110 watts of power from the campus of Oakland University. WE offer diverse programming such as, music, sports, news and student produced programs. Our goal is to supply the community with a service that provides both an educational experience to those involved with the radio station, while also providing information and entertainment o the rest of the community outside of Oakland’s campus.</description>
+    <stream mime="audio/mpeg" uri="http://wxou.oakland.edu:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Mono" bitrate="24 kbps" />
+    <stream mime="audio/mpeg" uri="http://wxou.oakland.edu:8002/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="128 kbps" />
+  </station>
+  <station id="wamu" name="WAMU" rank="1.0" type="edu" release="88.5" lang="en">
+    <frequency uri="http://wamu.org/">88.5 FM in Washington, DC</frequency>
+    <location>Washington, DC</location>
+    <description>WAMU 88.5 is the leading public radio station for NPR news and information in the greater Washington, D.C., area. WAMU 88.5 is licensed to American University.</description>
+    <stream mime="audio/mpeg" uri="http://wamu-1.streamguys.com/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="48 kbps" />
+  </station>
   <station id="kdup" name="KDUP" rank="1.0" type="edu" release="1580" lang="en">
     <frequency uri="http://kdup.up.edu/">1580 AM in Portland, OR</frequency>
     <location>Portland, OR</location>
@@ -11,7 +24,6 @@
     <frequency uri="http://www.95bfm.com/">95.0 FM in Auckland, New Zealand</frequency>
     <location>Auckland, New Zealand</location>
     <description>In 1969, Radio Bosom was born as a student's capping stunt, broadcasting illegally from a boat in the Waitemata Harbour. Over the next few decades the bosom morphed into the mighty 95bFM, the longest-standing independent radio station in New Zealand.
-
     We're passionate about music, just like you. We think that radio is better when it's free from commercial pressures, and that it should be challenging without being inaccessible. This is not top 40 radio.</description>
     <stream mime="audio/mpeg" uri="http://streams.95bfm.com/stream95" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Mono" bitrate="32 kbps" />
   </station>
