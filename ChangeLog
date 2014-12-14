@@ -1,5 +1,11 @@
 2014-12-14  Ole Aamot  <oka@oka.no>
 
+	* NEWS: girl version 0.7.3 release
+	* src/stations.xml: Add CJSW (cjsw.com)
+	* src/stations.xml: Add Caper Radio (caperradio.ca)
+
+2014-12-14  Ole Aamot  <oka@oka.no>
+
 	* NEWS: girl version 0.7.2 "Don't shoot" release
 	* po/pl.po: Updated Polish translation by Piotr Drąg
 	* src/stations.xml: Add WAMU (wamu.org)

@@ -1,14 +1,25 @@
-GIRL 0.2 notes
+==============
+GIRL 0.7 notes
 ==============
 
-GIRL is a GNOME Internet Radio Locator program that allow users
-to easily find live radio programs on radio broadcasters on the
-Internet.
+GIRL is a GNOME Internet Radio Locator program that allows the user
+to easily find and record live radio programs on radio broadcasters
+on the Internet.
 
-GIRL is developed on the new GNOME 2.0 platform and it requires
-at least one audio helper to be installed.
+GIRL is developed for the GNOME desktop and requires one audio helper
+such as Totem (https://developer.gnome.org/totem/) to be installed for
+playback and streamripper (http://streamripper.sourceforge.net/) to be
+installed for recording live radio streams of supported radio stations
+(http://girl.software/stations.xml)
+
+A user without root on a GNOME desktop can add his or her personal
+Stations in $HOME/.girl/stations.xml
+
+If a user starts the program and exits the program, then the last radio
+station that the user was listening to, appears selected in the Stations
+list.  The default girl Stations setting is stored in $HOME/.gnome2/girl
 
 Enjoy Internet Radio.
 
 Cheers,
-Ole Aamot <ole@gnu.org>
+Ole Aamot <ole@src.gnome.org>

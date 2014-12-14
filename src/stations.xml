@@ -1,6 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE girl SYSTEM "girl-0.7.dtd">
 <girl version="0.7">
+  <station id="cjsw" name="CJSW" rank="1.0" type="edu" release="90.9" lang="en">
+    <frequency uri="http://cjsw.com/"></frequency>
+    <location>Calgary, Canada</location>
+    <description>CJSW 90.9 FM will be celebrating 30 years of on air radio programming at the beginning of 2015. Our goal is to provide an alternative to commercial media by recognizing and promoting the diverse musical styles, points of view and cultures that exist within our city. CJSW strives to provide programming to an audience and by programmers that are varied in their ethnicity, culture, gender, sexual orientation, age, and physical and mental ability. Our diverse programming includes music, arts, spoken word and multicultural programs.</description>
+    <stream mime="audio/mpeg" uri="http://stream.cjsw.com/cjsw.mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+  </station>
+  <station id="caper" name="Caper Radio" rank="1.0" type="edu" release="pending" lang="en">
+    <frequency uri="http://caperradio.ca/">Pending FM license in Sydney, Nova Scotia, Canada</frequency>
+    <location>Sydney, Nova Scotia, Canada</location>
+    <description>Caper Radio Incorporated is CBU's campus radio station!
+
+    Located in the Students' Union building we are equipped with an ever-growing music collection of over 6000 CDs on a digital library. We offer some of the best independent music in Canada. Caper Radio is also a prime resource for information on events taking place both on and off campus.
+
+    Being involved with Caper Radio, Inc. helps students gain new skills (in communication, as well as working with the equipment), build confidence, and make new friends. Taking part in shaping the university community, and building valuable job skills – It's a lot of fun too!
+
+    Caper Radio broadcasts from 9:30am until 4:30pm Monday - Friday. Repeat broadcasts can be heard by visiting our website.</description>
+    <stream mime="audio/mpeg" uri="http://142.12.32.15:8000/stream.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+  </station>
   <station id="wxou" name="WXOU" rank="1.0" type="edu" release="88.3" lang="en">
     <frequency uri="http://wxou.org/">88.3 FM in Rochester, MI</frequency>
     <location>Rochester, MI</location>

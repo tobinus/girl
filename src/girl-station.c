@@ -348,7 +348,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("station->location = %s\n", station->location);
-			fprintf(stdout, "%s (%s), ", station->name, station->location); 
+
 		}
 
 		if ((!xmlStrcmp
@@ -364,6 +364,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("station->uri = %s\n", station->uri);
+			/* fprintf(stdout, "%s (%s)\n%s\n\n", station->name, station->location, station->uri); */
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "stream"))) {
@@ -393,6 +394,8 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			MSG("station->stream->uri = %s\n",
 			    station->stream->uri);
 
+			/* fprintf(stdout, "%s (%s)\n%s\n\n, ", station->name, station->location, station->stream->uri); */
+			
 			chans = xmlGetProp(sub, "channels");
 
 			if (chans != NULL) {
