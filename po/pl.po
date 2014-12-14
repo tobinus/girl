@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: girl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-12 18:38+0100\n"
-"PO-Revision-Date: 2014-12-12 18:39+0100\n"
+"POT-Creation-Date: 2014-12-14 12:51+0100\n"
+"PO-Revision-Date: 2014-12-14 12:52+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -33,10 +33,10 @@ msgstr ""
 
 #: ../data/girl.appdata.xml.in.h:2
 msgid ""
-"Girl is developed on the new GNOME 2.0 platform and requires at least one "
-"audio helper such as totem to be installed."
+"Girl is developed on the GNOME platform and requires at least one audio "
+"helper such as totem to be installed."
 msgstr ""
-"Girl został zaprojektowany dla nowej platformy GNOME 2.0 i wymaga "
+"Program Girl został zaprojektowany dla platformy GNOME i wymaga "
 "zainstalowania co najmniej jednego programu pomocniczego do odtwarzania "
 "dźwięku, takiego jak totem."
 
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Enjoy Internet Radio."
 msgstr "Ciesz się radiem internetowym."
 
-#: ../data/girl.desktop.in.in.h:1
+#: ../data/girl.desktop.in.in.h:1 ../src/girl.c:529
 msgid "Internet Radio Locator"
 msgstr "Wyszukiwanie internetowych stacji radiowych"
 
@@ -57,27 +57,33 @@ msgstr "Wyszukiwanie internetowych stacji radiowych"
 msgid "Live;Radio;Program;Station;Locator;"
 msgstr "Na żywo;Live;Program;Stacja;Wyszukiwanie;Znajdź;"
 
-#: ../src/girl.c:195 ../src/girl.c:254 ../src/girl.c:353 ../src/girl.c:400
+#: ../src/girl.c:205 ../src/girl.c:264 ../src/girl.c:363 ../src/girl.c:410
 #, c-format
 msgid "Selected %s in %s: %s"
 msgstr "Wybrano %s w %s: %s"
 
-#: ../src/girl.c:305
+#: ../src/girl.c:315
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "Wybrano %s w %s: %s (%f)"
 
-#: ../src/girl.c:451 ../src/girl.c:474 ../src/girl.c:504 ../src/girl.c:537
+#: ../src/girl.c:456
+#, c-format
+msgid "Selected %s [%s] [%s] [%s]"
+msgstr "Wybrano %s [%s] [%s] [%s]"
+
+#: ../src/girl.c:522 ../src/girl.c:545 ../src/girl.c:575 ../src/girl.c:608
+#: ../src/girl.c:639
 msgid "translator_credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2014\n"
 "Aviary.pl <gnomepl@aviary.pl>, 2014"
 
-#: ../src/girl.c:458
+#: ../src/girl.c:529
 msgid "GNOME Internet Radio Locator"
 msgstr "Wyszukiwanie internetowych stacji radiowych w GNOME"
 
-#: ../src/girl.c:458
+#: ../src/girl.c:529
 msgid ""
 "Copyright 2014 Ole Aamot Software\n"
 "Copyright 2002 Free Software Foundation"
@@ -85,27 +91,23 @@ msgstr ""
 "Copyright 2014 Ole Aamot Software\n"
 "Copyright 2002 Free Software Foundation"
 
-#: ../src/girl.c:458
-msgid "Internet radio station and listener locator"
-msgstr "Wyszukiwanie internetowych stacji radiowych"
-
 #. girl_stream_player(a, user_data);
-#: ../src/girl.c:571
+#: ../src/girl.c:675
 #, c-format
 msgid "Listening to %s in %s: %s "
 msgstr "Słuchanie %s w %s: %s "
 
-#: ../src/girl.c:589
+#: ../src/girl.c:694
 #, c-format
 msgid "Recording from %s in %s: %s "
 msgstr "Nagrywanie z %s w %s: %s "
 
-#: ../src/girl.c:636
+#: ../src/girl.c:746
 #, c-format
 msgid "Archiving %s"
 msgstr "Archiwizowanie %s"
 
-#: ../src/girl-station.c:114
+#: ../src/girl-station.c:181
 #, c-format
 msgid ""
 "An error happened trying to play %s\n"
@@ -114,7 +116,7 @@ msgstr ""
 "Wystąpił błąd podczas próby odtworzenia %s\n"
 "Plik nie istnieje lub nie ma dla niego odtwarzacza."
 
-#: ../src/girl-station.c:120
+#: ../src/girl-station.c:187
 #, c-format
 msgid ""
 "An error happened trying to record %s\n"
@@ -123,7 +125,7 @@ msgstr ""
 "Wystąpił błąd podczas próby nagrania %s\n"
 "Plik nie istnieje lub nie ma dla niego programu nagrywającego."
 
-#: ../src/girl-station.c:134
+#: ../src/girl-station.c:201
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -132,7 +134,12 @@ msgstr ""
 "Otwarcie adresu URL się nie powiodło: \"%s\"\n"
 "Szczegóły: %s"
 
-#: ../src/girl-station.c:146
+#: ../src/girl-station.c:234 ../src/girl-station.c:252
+#, c-format
+msgid "Failed to run %s (%i)\n"
+msgstr "Wykonanie %s się nie powiodło (%i)\n"
+
+#: ../src/girl-station.c:276
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
