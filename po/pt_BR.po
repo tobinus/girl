@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-11-24 18:26+0000\n"
-"PO-Revision-Date: 2014-11-24 18:26-0300\n"
+"POT-Creation-Date: 2014-12-13 21:47+0000\n"
+"PO-Revision-Date: 2014-12-14 22:51-0300\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.6.11\n"
 
 #: ../data/girl.appdata.xml.in.h:1
 msgid ""
-"Girl, the GNOME Internet Radio Locator program, allow users to easily find "
+"Girl, the GNOME Internet Radio Locator program, allows users to easily find "
 "live radio programs on radio broadcasters on the Internet."
 msgstr ""
 "Girl, o programa localizador de rádio na Internet para o GNOME (do inglês, "
@@ -30,17 +30,17 @@ msgstr ""
 
 #: ../data/girl.appdata.xml.in.h:2
 msgid ""
-"Girl is developed on the new GNOME 2.0 platform and requires at least one "
-"audio helper such as totem to be installed."
+"Girl is developed on the GNOME platform and requires at least one audio "
+"helper such as totem to be installed."
 msgstr ""
-"Girl é desenvolvido na nova plataforma GNOME 2.0 e requer que pelo menos uma "
+"Girl é desenvolvido na nova plataforma GNOME e requer que pelo menos uma "
 "auxiliar de áudio como totem esteja instalado."
 
 #: ../data/girl.appdata.xml.in.h:3
 msgid "Enjoy Internet Radio."
 msgstr "Aproveite rádio na Internet"
 
-#: ../data/girl.desktop.in.in.h:1
+#: ../data/girl.desktop.in.in.h:1 ../src/girl.c:529
 msgid "Internet Radio Locator"
 msgstr "Localizador de rádio na Internet"
 
@@ -55,25 +55,31 @@ msgstr ""
 "Ao vivo;Live;Rádio;Radio;Programa;Program;Estação;Station;Localizador;"
 "Locator;"
 
-#: ../src/girl.c:123
-#, c-format
-msgid "Fetching %s"
-msgstr "Obtendo %s"
-
-#: ../src/girl.c:192 ../src/girl.c:227
+#: ../src/girl.c:205 ../src/girl.c:264 ../src/girl.c:363 ../src/girl.c:410
 #, c-format
 msgid "Selected %s in %s: %s"
 msgstr "%s selecionado em %s: %s"
 
-#: ../src/girl.c:269
+#: ../src/girl.c:315
+#, c-format
+msgid "Selected %s in %s: %s (%f)"
+msgstr "%s selecionado em %s: %s (%f)"
+
+#: ../src/girl.c:456
+#, c-format
+msgid "Selected %s [%s] [%s] [%s]"
+msgstr "%s selecionado [%s] [%s] [%s]"
+
+#: ../src/girl.c:522 ../src/girl.c:545 ../src/girl.c:575 ../src/girl.c:608
+#: ../src/girl.c:639
 msgid "translator_credits"
 msgstr "Rafael Ferreira <rafael.f.f1@gmail.com>, 2014."
 
-#: ../src/girl.c:276
+#: ../src/girl.c:529
 msgid "GNOME Internet Radio Locator"
 msgstr "Localizador de rádio na Internet para o GNOME"
 
-#: ../src/girl.c:276
+#: ../src/girl.c:529
 msgid ""
 "Copyright 2014 Ole Aamot Software\n"
 "Copyright 2002 Free Software Foundation"
@@ -81,17 +87,23 @@ msgstr ""
 "Copyright 2014 Ole Aamot Software\n"
 "Copyright 2002 Free Software Foundation"
 
-#: ../src/girl.c:276
-msgid "Internet radio station and listener locator"
-msgstr "Localizador que escuta e que é estação de rádio na internet"
-
 #. girl_stream_player(a, user_data);
-#: ../src/girl.c:295
+#: ../src/girl.c:675
 #, c-format
 msgid "Listening to %s in %s: %s "
 msgstr "Escutando %s em %s: %s"
 
-#: ../src/girl-station.c:91
+#: ../src/girl.c:694
+#, c-format
+msgid "Recording from %s in %s: %s "
+msgstr "Gravando de %s em %s: %s"
+
+#: ../src/girl.c:746
+#, c-format
+msgid "Archiving %s"
+msgstr "Arquivando %s"
+
+#: ../src/girl-station.c:181
 #, c-format
 msgid ""
 "An error happened trying to play %s\n"
@@ -100,7 +112,16 @@ msgstr ""
 "Ocorreu um erro ao tentar reproduzir %s\n"
 "O arquivo não existe ou você não tem um reprodutor para ele."
 
-#: ../src/girl-station.c:102
+#: ../src/girl-station.c:187
+#, c-format
+msgid ""
+"An error happened trying to record %s\n"
+"Either the file doesn't exist, or you don't have a recorder for it."
+msgstr ""
+"Ocorreu um erro ao tentar reproduzir %s\n"
+"O arquivo não existe ou você não tem um gravador para ele."
+
+#: ../src/girl-station.c:201
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -108,3 +129,22 @@ msgid ""
 msgstr ""
 "Falha ao abrir a URL: \"%s\"\n"
 "Detalhes: %s"
+
+#: ../src/girl-station.c:234 ../src/girl-station.c:252
+#, c-format
+msgid "Failed to run %s (%i)\n"
+msgstr "Falha ao executar %s (%i)\n"
+
+#: ../src/girl-station.c:276
+#, c-format
+msgid ""
+"Failed to open URL: '%s'\n"
+"Status code: %i\n"
+"Details: %s"
+msgstr ""
+"Falha ao abrir a URL: \"%s\"\n"
+"Código de status: %i\n"
+"Detalhes: %s"
+
+#~ msgid "Internet radio station and listener locator"
+#~ msgstr "Localizador que escuta e que é estação de rádio na internet"
