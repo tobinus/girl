@@ -1,6 +1,21 @@
 <?xml version="1.0"?>
-<!DOCTYPE girl SYSTEM "girl-0.7.dtd">
-<girl version="0.7">
+<!DOCTYPE girl SYSTEM "girl-0.8.dtd">
+<girl version="0.8">
+  <station id="burstradio" name="Burst Radio" rank="1.0" type="edu" release="" lang="en">
+    <frequency uri="http://www.burstradio.co.uk/"></frequency>
+    <location>Brighton, United Kingdom</location>
+    <description>Burst aims to capture the essential essence of student life at Brighton University; distil it and broadcast this elixir to you.</description>
+    <stream mime="audio/mpeg" uri="http://burst.brighton.ac.uk:8000/burst.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+  </station>
+  <station id="fusefm" name="Fuse FM" rank="1.0" type="edu" release="" lang="en">
+    <frequency uri="http://fusefm.co.uk/"></frequency>
+    <location>Manchester, United Kingdom</location>
+    <description>Fuse FM is Manchester University's student radio station. We first went on air back in 2001, and 13 years later we now broadcast from a brand new, professional quality studio from within the Students' Union. We broadcast online throughout the academic year and you can listen to live shows and podcasts on our website. We love our new home, but we need your help to sound great on air. If you want to get in on the action, you'd be more than welcome! We are constantly on the look out for new talent, so if you fancy yourself as a music journalist, producer, DJ, news reader, or think you have what it takes to host your own show, Fuse FM is certainly the place for you! Not only is Fuse FM a fun organisation to be part of, but we can help you if you are interested in getting into the radio industry. Past Fuse FM members have gone on to find work at the BBC and commercial radio stations.</description>
+    <stream mime="audio/mpeg" uri="http://studio.fusefm.co.uk:8000/livehi" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="320 kbps" />
+    <stream mime="audio/ogg" uri="http://studio.fusefm.co.uk:8000/livehi"  codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="320 kbps" />
+    <stream mime="audio/mpeg" uri="http://studio.fusefm.co.uk:8000/live" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/ogg" uri="http://studio.fusefm.co.uk:8000/live"  codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+  </station>
   <station id="cjsw" name="CJSW" rank="1.0" type="edu" release="90.9" lang="en">
     <frequency uri="http://cjsw.com/"></frequency>
     <location>Calgary, Canada</location>

@@ -52,15 +52,15 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 	g_return_if_fail(doc != NULL);
 	g_return_if_fail(cur != NULL);
 
-	program->id = xmlGetProp(cur, "id");
+	program->id = (gchar *)xmlGetProp(cur, (const xmlChar *)"id");
 	MSG("program->id = %s\n", program->id);
-	program->name = xmlGetProp(cur, "name");
+	program->name = (gchar *)xmlGetProp(cur, (const xmlChar *)"name");
 	MSG("program->name = %s\n", program->name);
-	program->rank = xmlGetProp(cur, "rank");
+	program->rank = (gchar *)xmlGetProp(cur, (const xmlChar *)"rank");
 	MSG("program->rank = %s\n", program->rank);
-	program->type = xmlGetProp(cur, "type");
+	program->type = (gchar *)xmlGetProp(cur, (const xmlChar *)"type");
 	MSG("program->type = %s\n", program->type);
-	program->release = xmlGetProp(cur, "release");
+	program->release = (gchar *)xmlGetProp(cur, (const xmlChar *)"release");
 	MSG("program->release = %s\n", program->release);
 
 	sub = cur->xmlChildrenNode;
@@ -68,7 +68,7 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 	while (sub != NULL) {
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "frequency"))) {
-			program->frequency =
+			program->frequency = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("program->frequency = %s\n",
@@ -76,7 +76,7 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "location"))) {
-			program->location =
+			program->location = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("program->location = %s\n", program->location);
@@ -85,14 +85,14 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 
 		if ((!xmlStrcmp
 		     (sub->name, (const xmlChar *) "description"))) {
-			program->description =
+			program->description = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("program->description = %s\n", program->description);
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "uri"))) {
-			program->uri =
+			program->uri = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("program->uri = %s\n", program->uri);
@@ -103,29 +103,28 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 			GirlArchiveInfo *archive = g_new0(GirlArchiveInfo, 1);
 			program->archive = archive;
 
-			program->archive->mimetype =
-			    xmlGetProp(sub, "mime");
+			program->archive->mimetype = (gchar *)xmlGetProp(sub, (const xmlChar *)"mime");
 			MSG("program->archive->mimetype = %s\n",
 			    program->archive->mimetype);
-			if (xmlGetProp(sub, "bitrate") != NULL) {
-				program->archive->bitrate =
-				    atol(xmlGetProp(sub, "bitrate"));
+			if (xmlGetProp(sub, (const xmlChar *)"bitrate") != NULL) {
+				program->archive->bitrate = (glong)
+					atol((const char *)xmlGetProp(sub, (const xmlChar *)"bitrate"));
 				MSG("program->archive->bitrate = %li\n",
 				    program->archive->bitrate);
 			}
 
-			if (xmlGetProp(sub, "samplerate") != NULL) {
-				program->archive->samplerate =
-				    atol(xmlGetProp(sub, "samplerate"));
+			if (xmlGetProp(sub, (const xmlChar *)"samplerate") != NULL) {
+				program->archive->samplerate = (glong) 
+					atol((const char *)xmlGetProp(sub, (const xmlChar *)"samplerate"));
 			}
 
 			MSG("program->archive->samplerate = %li\n",
 			    program->archive->samplerate);
-			program->archive->uri = xmlGetProp(sub, "uri");
+			program->archive->uri = (gchar *)xmlGetProp(sub, (const xmlChar *)"uri");
 			MSG("program->archive->uri = %s\n",
 			    program->archive->uri);
 
-			chans = xmlGetProp(sub, "channels");
+			chans = (gchar *)xmlGetProp(sub, (const xmlChar *)"channels");
 
 			if (chans != NULL) {
 				if (strcmp(chans, "stereo") == 0) {
@@ -194,7 +193,7 @@ GirlProgramInfo *girl_program_load_from_file(GirlProgramInfo * head,
 		return NULL;
 	}
 
-	version = xmlGetProp(cur, "version");
+	version = (gchar *)xmlGetProp(cur, (const xmlChar *)"version");
 
 	MSG("Valid Girl %s XML document... Parsing programs...\n",
 	    version);

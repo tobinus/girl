@@ -1,3 +1,11 @@
+2014-12-20  Ole Aamot  <oka@oka.no>
+
+	* NEWS: girl version 0.8.0 "Cinnamon Girl" release
+	* po/de.po: Updated German translation by Wolfgang Stöggl
+	* po/pt_BR.po: Updated Brazilian Portuguese translation by Rafael Ferreira
+	* src/stations.xml: Add Fuse FM (fusefm.co.uk)
+	* src/stations.xml: Add Burst Radio (burstradio.co.uk)
+
 2014-12-14  Ole Aamot  <oka@oka.no>
 
 	* NEWS: girl version 0.7.3 release

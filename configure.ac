@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(girl, 0.7.3)
+AC_INIT(girl, 0.8.0)
 AM_INIT_AUTOMAKE([no-dist-gzip dist-xz])
 AC_CONFIG_SRCDIR([src/girl.c])
 AC_CONFIG_HEADER([config.h])
@@ -37,7 +37,7 @@ if $try_record; then
 	   girl_record=true
 	else
 	   AC_DEFINE([HAVE_GIRL_RECORD],0,[don't have record])
-	   record_msg="no"
+	   record_msg="no (http://streamripper.sf.net/)"
 	   girl_record=false
         fi
 	AC_MSG_RESULT([$record_msg])

@@ -188,6 +188,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 		listener_name = g_strdup(listenerinfo->name);
 		listener_location = g_strdup(listenerinfo->location);
 		listener_description = g_strdup(listenerinfo->description);
+		listener_release = g_strdup(listenerinfo->release);
 
 		/* girl_listeners = g_list_append(girl_listeners,(GirlListenerInfo *)listenerinfo); */
 
@@ -238,11 +239,11 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 
 	drop_down = gtk_option_menu_new();
 	gtk_widget_show(drop_down);
-	gtk_option_menu_set_menu(drop_down, menu);
+	gtk_option_menu_set_menu(GTK_OPTION_MENU(drop_down), menu);
 	gtk_container_add(GTK_CONTAINER(align), drop_down);
 
 	if (selection != -1)
-		gtk_option_menu_set_history(drop_down, selection);
+		gtk_option_menu_set_history(GTK_OPTION_MENU(drop_down), selection);
 
 	g_signal_connect(G_OBJECT(listeners_selector), "response",
 			 G_CALLBACK(gtk_widget_hide),
@@ -370,11 +371,11 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 
 	drop_down = gtk_option_menu_new();
 	gtk_widget_show(drop_down);
-	gtk_option_menu_set_menu(drop_down, menu);
+	gtk_option_menu_set_menu(GTK_OPTION_MENU(drop_down), menu);
 	gtk_container_add(GTK_CONTAINER(align), drop_down);
 
 	if (selection != -1)
-		gtk_option_menu_set_history(drop_down, selection);
+		gtk_option_menu_set_history(GTK_OPTION_MENU(drop_down), selection);
 
 	g_signal_connect(G_OBJECT(programs_selector), "response",
 			 G_CALLBACK(gtk_widget_hide),
@@ -502,11 +503,11 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 
 	drop_down = gtk_option_menu_new();
 	gtk_widget_show(drop_down);
-	gtk_option_menu_set_menu(drop_down, menu);
+	gtk_option_menu_set_menu(GTK_OPTION_MENU(drop_down), menu);
 	gtk_container_add(GTK_CONTAINER(align), drop_down);
 
 	if (selection != -1)
-		gtk_option_menu_set_history(drop_down, selection);
+		gtk_option_menu_set_history(GTK_OPTION_MENU(drop_down), selection);
 
 	g_signal_connect(G_OBJECT(stations_selector), "response",
 			 G_CALLBACK(gtk_widget_hide),
@@ -638,11 +639,11 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 
 	drop_down = gtk_option_menu_new();
 	gtk_widget_show(drop_down);
-	gtk_option_menu_set_menu(drop_down, menu);
+	gtk_option_menu_set_menu(GTK_OPTION_MENU(drop_down), menu);
 	gtk_container_add(GTK_CONTAINER(align), drop_down);
 
 	if (selection != -1)
-		gtk_option_menu_set_history(drop_down, selection);
+		gtk_option_menu_set_history(GTK_OPTION_MENU(drop_down), selection);
 
 	g_signal_connect(G_OBJECT(streams_selector), "response",
 			 G_CALLBACK(gtk_widget_hide),

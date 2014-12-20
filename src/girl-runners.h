@@ -29,7 +29,7 @@ typedef struct _GirlRunnersInfo GirlRunnersInfo;
 struct _GirlRunnersInfo {
 	GtkWidget *widget;
 	GMutex *mutex;
-	GPid *pid;
+	pid_t pid;
 	gchar *name;
 	gchar *date;
 	gchar *time;
@@ -37,7 +37,7 @@ struct _GirlRunnersInfo {
 	gchar *command;
 };
 
-GirlRunnersInfo *girl_runners_new (GPid *pid,
+GirlRunnersInfo *girl_runners_new (pid_t pid,
 				   gchar *name,
 				   gchar *date,
 				   gchar *time,

@@ -29,17 +29,17 @@
 
 GnomeCanvasGroup *girl_canvas_root = NULL;
 GtkWidget *girl_canvas = NULL;
+#if 0
 static GnomeCanvasItem *girl_canvas_item;
+#endif
 
 GtkWidget *
 girl_canvas_create(char *image, guint x1, guint x2, guint y1, guint y2, gpointer data) {
 	GnomeCanvas *canvas;
-	GnomeCanvasItem *images;
-	GnomeCanvasItem *item;
-	GError **err = NULL;
-
+	/* GnomeCanvasItem *images; */
+	/* GnomeCanvasItem *item; */
+	/* GError **err = NULL; */
 	canvas = GNOME_CANVAS(data);
-	images = GDK_PIXBUF(gdk_pixbuf_new_from_file("girl-logo.png", err));
-
-	return canvas;
+	/* images = GDK_PIXBUF(gdk_pixbuf_new_from_file("girl-logo.png", err)); */
+	return (GTK_WIDGET(canvas));
 }

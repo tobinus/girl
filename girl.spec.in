@@ -52,6 +52,7 @@ make DESTDIR=%{buildroot} install
 %{_datadir}/girl/girl-0.5.dtd
 %{_datadir}/girl/girl-0.6.dtd
 %{_datadir}/girl/girl-0.7.dtd
+%{_datadir}/girl/girl-0.8.dtd
 %{_datadir}/girl/girl-logo.png
 %{_datadir}/girl/girl.png
 %{_datadir}/girl/listener-1.0.dtd
@@ -73,6 +74,9 @@ make DESTDIR=%{buildroot} install
 %{_mandir}/man1/girl.1.gz
 
 %changelog
+* Sat Dec 20 2014 Ole Aamot - 0.8.0-1
+- Girl 0.8.0 build on Fedora Linux 21
+
 * Sun Dec 14 2014 Ole Aamot - 0.7.3-1
 - Girl 0.7.3 build on Fedora Linux 21
 

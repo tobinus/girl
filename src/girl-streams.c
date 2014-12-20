@@ -42,6 +42,7 @@ extern GList *girl_streams;
 
 extern GtkWidget *girl_app;
 
+#if 0
 GirlStreamsInfo *girl_streams_new (GirlStreamsInfo * head,
 				   gchar *mime,
 				   gchar *uri,
@@ -50,29 +51,30 @@ GirlStreamsInfo *girl_streams_new (GirlStreamsInfo * head,
 				   gchar *channels,
 	                           gchar *bitrate) {
 }
+#endif
 
 static void
 girl_streams_parser(GirlStreamsInfo *streams, xmlDocPtr doc,
 		    xmlNodePtr cur)
 {
-	xmlNodePtr sub;
-	char *chans;
+	/* xmlNodePtr sub; */
+	/* char *chans; */
 
 	g_return_if_fail(streams != NULL);
 	g_return_if_fail(doc != NULL);
 	g_return_if_fail(cur != NULL);
 
-	streams->mime = xmlGetProp(cur, "mime");
+	streams->mime = (gchar *)xmlGetProp(cur, (const xmlChar *)"mime");
 	MSG("streams->mime = %s\n", streams->mime);
-	streams->uri = xmlGetProp(cur, "uri");
+	streams->uri = (gchar *)xmlGetProp(cur, (const xmlChar *)"uri");
 	MSG("streams->uri = %s\n", streams->uri);
-	streams->samplerate = xmlGetProp(cur, "samplerate");
+	streams->samplerate = (gchar *)xmlGetProp(cur, (const xmlChar *)"samplerate");
 	MSG("streams->samplerate = %s\n", streams->samplerate);
-	streams->codec = xmlGetProp(cur, "codec");
+	streams->codec = (gchar *)xmlGetProp(cur, (const xmlChar *)"codec");
 	MSG("streams->codec = %s\n", streams->codec);
-	streams->bitrate = xmlGetProp(cur, "bitrate");
+	streams->bitrate = (gchar *)xmlGetProp(cur, (const xmlChar *)"bitrate");
 	MSG("streams->bitrate = %s\n", streams->bitrate);
-	streams->channels = xmlGetProp(cur, "channels");
+	streams->channels = (gchar *)xmlGetProp(cur, (const xmlChar *)"channels");
 	MSG("streams->channels = %s\n", streams->channels);
 
 #if 0
@@ -208,7 +210,7 @@ GirlStreamsInfo *girl_streams_load_from_file(GirlStreamsInfo * head,
 		return NULL;
 	}
 
-	version = xmlGetProp(cur, "version");
+	version = (gchar *)xmlGetProp(cur, (const xmlChar *)"version");
 
 	MSG("Valid Girl %s XML document... Parsing streams...\n",
 	    version);

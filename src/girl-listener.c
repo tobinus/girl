@@ -42,21 +42,22 @@ static void
 girl_listener_parser(GirlListenerInfo * listener, xmlDocPtr doc,
 		     xmlNodePtr cur)
 {
+#if 0
 	xmlNodePtr sub;
-
+#endif
 	g_return_if_fail(listener != NULL);
 	g_return_if_fail(doc != NULL);
 	g_return_if_fail(cur != NULL);
 
-	listener->name = xmlGetProp(cur, "name");
+	listener->name = (gchar *)xmlGetProp(cur, (const xmlChar *)"name");
 	MSG("listener->name = %s\n", listener->name);
-	listener->location = xmlGetProp(cur, "location");
+	listener->location = (gchar *)xmlGetProp(cur, (const xmlChar *)"location");
 	MSG("listener->location = %s\n", listener->location);
-	listener->uri = xmlGetProp(cur, "uri");
+	listener->uri = (gchar *)xmlGetProp(cur, (const xmlChar *)"uri");
 	MSG("listener->uri = %s\n", listener->uri);
-	listener->release = xmlGetProp(cur, "release");
+	listener->release = (gchar *)xmlGetProp(cur, (const xmlChar *)"release");
 	MSG("listener->release = %s\n", listener->release);
-	listener->description = xmlGetProp(cur, "description");
+	listener->description = (gchar *)xmlGetProp(cur, (const xmlChar *)"description");
 	MSG("listener->description = %s\n", listener->description);
 
 #if 0
@@ -156,7 +157,7 @@ GirlListenerInfo *girl_listener_load_from_file(GirlListenerInfo * head,
 		return NULL;
 	}
 
-	version = xmlGetProp(cur, "version");
+	version = (gchar *)xmlGetProp(cur, (const xmlChar *) "version");
 
 	MSG("Valid Girl Listener %s XML document... Parsing listeners...\n", version);
 

@@ -127,12 +127,13 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 	GError *err = NULL;
 	GTimeVal mtime;
 
-	const char *mime_info;
+	/* const char *mime_info = NULL; */
 	/* GnomeVFSMimeApplication *app; */
-	char *app, *command, *msg, *archive;
+	char *app = NULL, *command = NULL, *msg = NULL;
+        /* char *archive; */
 	char **argv = NULL;
 	gint argc;
-	gint status;
+	/* gint status; */
 
 	GPid        pid;
 	gint        out, error;
@@ -142,12 +143,12 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 	g_return_if_fail(url != NULL);
 	MSG("%s", url);
 
-	mime_info = gnome_vfs_get_mime_type(url);
+	/* mime_info = gnome_vfs_get_mime_type(url); */
 
 	g_get_current_time(&mtime);
 
-	/* app = gnome_vfs_mime_get_default_application (mime_info); */
-
+	/* app = (gchar *)gnome_vfs_mime_get_default_application (mime_info); */
+	
 	if (helper == GIRL_STREAM_PLAYER) {
 		app = g_strdup(GIRL_HELPER_PLAYER);
 	}
@@ -260,10 +261,10 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		/* Create channels that will be used to read girl from pipes. */
 #ifdef G_OS_WIN32
 		out_ch = g_io_channel_win32_new_fd( out );
-		err_ch = g_io_channel_win32_new_fd( err );
+		err_ch = g_io_channel_win32_new_fd( error );
 #else
 		out_ch = g_io_channel_unix_new( out );
-		err_ch = g_io_channel_unix_new( err );
+		err_ch = g_io_channel_unix_new( error );
 #endif
 		/* Add watches to channels */
 		g_io_add_watch( out_ch, G_IO_IN | G_IO_HUP, (GIOFunc)cb_out_watch, girl );
@@ -320,15 +321,15 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 	g_return_if_fail(doc != NULL);
 	g_return_if_fail(cur != NULL);
 
-	station->id = xmlGetProp(cur, "id");
+	station->id = (gchar *)xmlGetProp(cur, (const xmlChar *)"id");
 	MSG("station->id = %s\n", station->id);
-	station->name = xmlGetProp(cur, "name");
+	station->name = (gchar *)xmlGetProp(cur, (const xmlChar *)"name");
 	MSG("station->name = %s\n", station->name);
-	station->rank = xmlGetProp(cur, "rank");
+	station->rank = (gchar *)xmlGetProp(cur, (const xmlChar *)"rank");
 	MSG("station->rank = %s\n", station->rank);
-	station->type = xmlGetProp(cur, "type");
+	station->type = (gchar *)xmlGetProp(cur, (const xmlChar *)"type");
 	MSG("station->type = %s\n", station->type);
-	station->release = xmlGetProp(cur, "release");
+	station->release = (gchar *)xmlGetProp(cur, (const xmlChar *)"release");
 	MSG("station->release = %s\n", station->release);
 
 	sub = cur->xmlChildrenNode;
@@ -336,7 +337,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 	while (sub != NULL) {
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "frequency"))) {
-			station->frequency =
+			station->frequency = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("station->frequency = %s\n",
@@ -344,7 +345,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "location"))) {
-			station->location =
+			station->location = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("station->location = %s\n", station->location);
@@ -353,18 +354,18 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 
 		if ((!xmlStrcmp
 		     (sub->name, (const xmlChar *) "description"))) {
-			station->description =
+			station->description = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("station->description = %s\n", station->description);
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "uri"))) {
-			station->uri =
+			station->uri = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
 			MSG("station->uri = %s\n", station->uri);
-			/* fprintf(stdout, "%s (%s)\n%s\n\n", station->name, station->location, station->uri); */
+			fprintf(stdout, "%s (%s)\n%s\n\n", station->name, station->location, station->uri);
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "stream"))) {
@@ -372,31 +373,31 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			GirlStreamInfo *stream = g_new0(GirlStreamInfo, 1);
 			station->stream = stream;
 
-			station->stream->mimetype =
-			    xmlGetProp(sub, "mime");
+			station->stream->mimetype = (gchar *)
+				xmlGetProp(sub, (const xmlChar *)"mime");
 			MSG("station->stream->mimetype = %s\n",
 			    station->stream->mimetype);
-			if (xmlGetProp(sub, "bitrate") != NULL) {
+			if (xmlGetProp(sub, (const xmlChar *)"bitrate") != NULL) {
 				station->stream->bitrate =
-				    atol(xmlGetProp(sub, "bitrate"));
+					(glong)atol((char *)xmlGetProp(sub, (const xmlChar *)"bitrate"));
 				MSG("station->stream->bitrate = %li\n",
 				    station->stream->bitrate);
 			}
 
-			if (xmlGetProp(sub, "samplerate") != NULL) {
-				station->stream->samplerate =
-				    atol(xmlGetProp(sub, "samplerate"));
+			if (xmlGetProp(sub, (const xmlChar *)"samplerate") != NULL) {
+				station->stream->samplerate = (glong) 
+					atol((char *)xmlGetProp(sub, (const xmlChar *)"samplerate"));
 			}
 
 			MSG("station->stream->samplerate = %li\n",
 			    station->stream->samplerate);
-			station->stream->uri = xmlGetProp(sub, "uri");
+			station->stream->uri = (gchar *)xmlGetProp(sub, (const xmlChar *)"uri");
 			MSG("station->stream->uri = %s\n",
 			    station->stream->uri);
 
 			/* fprintf(stdout, "%s (%s)\n%s\n\n, ", station->name, station->location, station->stream->uri); */
 			
-			chans = xmlGetProp(sub, "channels");
+			chans = (gchar *)xmlGetProp(sub, (const xmlChar *)"channels");
 
 			if (chans != NULL) {
 				if (strcmp(chans, "stereo") == 0) {
@@ -421,12 +422,6 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 	}
 
 	return;
-}
-
-GirlStationInfo *girl_station_load_from_yp(char *uri)
-{
-	GirlStationInfo *gstation;
-	return gstation;
 }
 
 GirlStationInfo *girl_station_load_from_http(GirlStationInfo * head,
@@ -471,7 +466,7 @@ GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 		return NULL;
 	}
 
-	version = xmlGetProp(cur, "version");
+	version = (gchar *)xmlGetProp(cur, (const xmlChar *)"version");
 
 	MSG("Valid Girl %s XML document... Parsing stations...\n",
 	    version);

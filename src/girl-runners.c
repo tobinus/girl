@@ -24,7 +24,7 @@
 #include "girl.h"
 #include "girl-runners.h"
 
-GirlRunnersInfo *girl_runners_new (GPid *pid,
+GirlRunnersInfo *girl_runners_new (pid_t pid,
 				   gchar *name,
 				   gchar *date,
 				   gchar *time,
@@ -52,12 +52,12 @@ void girl_runners_mutex_unlock(GirlRunnersInfo *info);
 
 void girl_runners_run(GirlRunnersInfo *info)
 {
-	GThread *thread;
-	gboolean thread_ready;
-	gint recording_lock;
+	/* GThread *thread; */
+	/* gboolean thread_ready; */
+	/* gint recording_lock; */
 	/* g_assert (g_mutex_trylock (girl_mutex)); */
 	/* g_assert (G_TRYLOCK (mutex)); */
-	thread_ready = GIRL_RECORDING_FALSE;
+	/* thread_ready = GIRL_RECORDING_FALSE; */
 	/* thread = g_thread_create (thread, girl_helper_run, command, NULL); */
 	/* while (!thread_ready) { */
 	/* 	g_usleep(G_USEC_PER_SEC / 5); */
@@ -66,7 +66,7 @@ void girl_runners_run(GirlRunnersInfo *info)
 	/* g_mutex_unlock (mutex); */
 	/* g_mutex_free (mutex); */
 	girl_runners_mutex_get(info);
-	recording_lock = GIRL_RECORDING_TRUE;
+	/* recording_lock = GIRL_RECORDING_TRUE; */
 	girl_runners_mutex_release(info);
-	return (0);
+	return;
 }

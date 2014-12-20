@@ -26,6 +26,7 @@
 #include <gnome.h>
 #include <libgnomevfs/gnome-vfs.h>
 #include <libgnomevfs/gnome-vfs-application-registry.h>
+#include <gio/gcredentials.h>
 
 #include <stdlib.h>
 #include <string.h>
@@ -75,7 +76,7 @@ int main(int argc, char *argv[])
 			   GNOME_PARAM_APP_DATADIR, DATADIR, NULL);
 
 #if defined(G_THREADS_ENABLED) && ! defined(G_THREADS_IMPL_NONE)
-	g_thread_init (NULL);
+	/* g_thread_init (NULL); */
 #endif
 
 	girl_app = create_girl_app();
@@ -130,7 +131,11 @@ int main(int argc, char *argv[])
 void
 toggle_in_area (double x1, double y1, double x2, double y2)
 {
-	double nx1,nx2,ny1,ny2;
+	/* double nx1,nx2,ny1,ny2; */
+	/* nx1 = x1; */
+	/* nx2 = x2; */
+	/* ny1 = y1; */
+	/* ny2 = y2; */
 	
 }
 
@@ -542,7 +547,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 void about_listener(GtkWidget * a, gpointer user_data)
 {
 	static GtkWidget *about_listener = NULL;
-	const gchar *translator_credits = _("translator_credits");
+	/* const gchar *translator_credits = _("translator_credits"); */
 	const gchar *authors[] = {
 		girl->selected_listener_name,
 		NULL,
@@ -572,7 +577,7 @@ void about_listener(GtkWidget * a, gpointer user_data)
 void about_program(GtkWidget * a, gpointer user_data)
 {
 	static GtkWidget *about_program = NULL;
-	const gchar *translator_credits = _("translator_credits");
+	/* const gchar *translator_credits = _("translator_credits"); */
 	const gchar *authors[] = {
 		girl->selected_program_name,
 		NULL,
@@ -605,7 +610,7 @@ void about_program(GtkWidget * a, gpointer user_data)
 void about_station(GtkWidget * a, gpointer user_data)
 {
 	static GtkWidget *about_station = NULL;
-	const gchar *translator_credits = _("translator_credits");
+	/* const gchar *translator_credits = _("translator_credits"); */
 	const gchar *authors[] = {
 		girl->selected_station_name,
 		NULL,
@@ -636,7 +641,7 @@ void about_station(GtkWidget * a, gpointer user_data)
 void about_streams(GtkWidget * a, gpointer user_data)
 {
 	static GtkWidget *about_streams = NULL;
-	const gchar *translator_credits = _("translator_credits");
+	/* const gchar *translator_credits = _("translator_credits"); */
 	const gchar *authors[] = {
 		girl->selected_streams_uri,
 		NULL,
@@ -688,8 +693,11 @@ void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 {
 	GtkWidget *dialog;
-	GPid *pid;
+	GCredentials *credentials;
+	GError **err = NULL;
 
+	credentials = g_credentials_new ();
+	
 	if (girl->selected_station_name != NULL) {
 		appbar_send_msg(_("Recording from %s in %s: %s "),
 				girl->selected_station_name,
@@ -700,7 +708,7 @@ void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 				girl->selected_station_name,
 				GIRL_STREAM_SHOUTCAST,
 				GIRL_STREAM_RECORD);
-		girl->selected_runners = girl_runners_new(getpid(),
+		girl->selected_runners = girl_runners_new(g_credentials_get_unix_pid(credentials, err),
 							  girl->selected_station_name,
 							  "date",
 							  "time",
@@ -709,7 +717,9 @@ void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 		dialog = gtk_message_dialog_new(GTK_WINDOW(girl_app),
 						GTK_DIALOG_MODAL,
 						GTK_MESSAGE_ERROR,
-						GTK_BUTTONS_CLOSE, "Could not record!", NULL);
+						GTK_BUTTONS_CLOSE,
+						"Could not record %s!",
+						"girl.wav");
 		gtk_dialog_run(GTK_DIALOG(dialog));
 		gtk_widget_destroy(dialog);
 	}
