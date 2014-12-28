@@ -74,6 +74,9 @@ make DESTDIR=%{buildroot} install
 %{_mandir}/man1/girl.1.gz
 
 %changelog
+* Sat Dec 27 2014 Ole Aamot - 0.9.0-1
+- Girl 0.9.0 build on Fedora Linux 21
+
 * Sat Dec 20 2014 Ole Aamot - 0.8.0-1
 - Girl 0.8.0 build on Fedora Linux 21
 

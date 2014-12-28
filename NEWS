@@ -1,3 +1,18 @@
+2014-12-28  Ole Aamot  <oka@oka.no>
+
+	* src/stations.xml: Add EPER (eper.elte.hu)
+	* src/stations.xml: Add URY (ury.org.uk)
+	* src/stations.xml: Add WVUA-FM (wvuafm.ua.edu)
+	* src/stations.xml: Add COOG (coogradio.com)
+
+2014-12-27  Ole Aamot  <oka@oka.no>
+
+	* girl version 0.9.0 "It Girl" release
+	* po/cs.po: Updated Czech translation by Marek Černocký
+	* po/hu.po: Hungarian translation by Balázs Úr
+	* po/sr.po: Updated Serbian translation by Мирослав Николић
+	* po/sr@latin.po: Updated Serbian translation by Miroslav Nikolić
+
 2014-12-20  Ole Aamot  <oka@oka.no>
 
 	* NEWS: girl version 0.8.0 "Cinnamon Girl" release

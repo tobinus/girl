@@ -150,9 +150,6 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 							   "girl/listeners.xml",
 							   FALSE,
 							   NULL);
-
-	/* world_listener_xml_uri = g_strdup("http://girl.src.oka.no/listeners.xml"); */
-
 	MSG("world_listener_xml_uri = %s\n",
 	    world_listener_xml_uri);
 
@@ -286,11 +283,13 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 
 	/* creating the menu items */
 
-	world_program_xml_filename = gnome_program_locate_file(NULL,
-							       GNOME_FILE_DOMAIN_APP_DATADIR,
-							       "girl/programs.xml",
-							       FALSE,
-							       NULL);
+	/* world_program_xml_filename = gnome_program_locate_file(NULL, */
+	/* 						   GNOME_FILE_DOMAIN_APP_DATADIR, */
+	/* 						   "girl/programs.xml", */
+	/* 						   FALSE, */
+	/* 						   NULL); */
+	world_program_xml_filename = g_strconcat(DATADIR, "/girl/programs.xml", NULL);
+
 	/* world_program_xml_filename = g_strdup("http://girl.src.oka.no/programs.xml"); */
 
 	MSG("world_program_xml_filename = %s\n",
@@ -418,13 +417,15 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 
 	/* creating the menu items */
 
-	world_station_xml_filename = gnome_program_locate_file(NULL,
-							       GNOME_FILE_DOMAIN_APP_DATADIR,
-							       "girl/stations.xml",
-							       FALSE,
-							       NULL);
+	/* world_station_xml_filename = gnome_program_locate_file(NULL, */
+	/* 						       GNOME_FILE_DOMAIN_APP_DATADIR, */
+	/* 						       "girl/stations.xml", */
+	/* 						       FALSE, */
+	/* 						       NULL); */
+
 	/* world_station_xml_filename = g_strdup("http://girl.src.oka.no/stations.xml"); */
 
+	world_station_xml_filename = g_strconcat(DATADIR, "/girl/stations.xml", NULL);
 	MSG("world_station_xml_filename = %s\n",
 	    world_station_xml_filename);
 
@@ -551,13 +552,13 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 
 	/* creating the menu items */
 
-	world_streams_xml_filename = gnome_program_locate_file(NULL,
-							       GNOME_FILE_DOMAIN_APP_DATADIR,
-							       "girl/streams.xml",
-							       FALSE,
-							       NULL);
+	/* world_streams_xml_filename = gnome_program_locate_file(NULL, */
+	/* 						       GNOME_FILE_DOMAIN_APP_DATADIR, */
+	/* 						       "girl/streams.xml", */
+	/* 						       FALSE, */
+	/* 						       NULL); */
+	world_streams_xml_filename = g_strconcat(DATADIR, "/girl/streams.xml", NULL);
 	/* world_streams_xml_filename = g_strdup("http://girl.src.oka.no/streams.xml"); */
-
 	MSG("world_streams_xml_filename = %s\n",
 	    world_streams_xml_filename);
 
@@ -706,9 +707,7 @@ GtkWidget *create_girl_app()
 	gtk_widget_show(vbox1);
 	gnome_app_set_contents(GNOME_APP(girl_app), vbox1);
 
-	pmf = gnome_program_locate_file(NULL,
-					GNOME_FILE_DOMAIN_APP_DATADIR,
-					"girl/pixmaps/girl-map.png", FALSE, NULL);
+	pmf = g_strconcat(DATADIR, "/girl/pixmaps/girl-map.png", NULL);
 
 	girl_pixmap = gtk_image_new_from_file(pmf);
 	g_free(pmf);

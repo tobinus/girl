@@ -1,10 +1,43 @@
 <?xml version="1.0"?>
-<!DOCTYPE girl SYSTEM "girl-0.8.dtd">
-<girl version="0.8">
+<!DOCTYPE girl SYSTEM "girl-0.9.dtd">
+<girl version="0.9">
+  <station id="coog" name="COOG" rank="1.0" type="edu" release="online">
+    <frequency uri="http://coogradio.uh.edu/"></frequency>
+    <location>Houston, TX</location>
+    <description>Coog Radio is an online radio station operated and staffed by students from the University of Houston. Co-founders Conner Clifton, Markley Rogers, and Matt Womack came up with the idea in 2010, but it wasn’t until fall 2011 that the idea finally came to fruition. Coog Radio not only provides a creative outlet for fellow students to express themselves over the air, but also introduces them to the world of broadcasting.</description>
+    <stream mime="audio/mpeg" uri="http://coogradio.uh.edu:8000/coogradio.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="48000 Hz" channels="Stereo" bitrate="128 kbps" />
+  </station>
+  <station id="wvua" name="WVUA-FM" rank="1.0" type="edu" release="90.7">
+    <frequency uri="http://wvuafm.ua.edu/"></frequency>
+    <location>Tuscaloosa, AL</location>
+    <description>WVUA-FM is the University’s only student operated radio station. Its history dates back to 1940 when the Department of Radio Arts began operation of an AM carrier-current station (the signal was transmitted to dormitories and other buildings on campus through electrical wiring). The station was known as BRN (the Bama Radio Network). In 1947, the signal was extended and the station became known as WABP. The station was operated as a commercial venture at 570 on the AM dial. During the 1950’s and 1960’s, as more students moved off campus, the station’s listenership dwindled.</description>
+    <stream mime="audio/mpeg" uri="http://ice8.securenetsystems.net/WVUA" codec="MPEG-4 AAC" samplerate="44100 Hz" channels="Stereo" bitrate="30 kbps" />
+  </station>
+  <station id="ury" name="University Radio York" rank="1.0" type="edu" release="1350" lang="en">
+    <frequency uri="http://ury.org.uk/"></frequency>
+    <location>York, United Kingdom</location>
+    <description>University Radio York (URY) is the student radio station for the University of York, broadcasting 24 hours a day during term time on 1350am across the University's Heslington Campus and worldwide via this website.
+
+    The station is run by students for students, meaning the people behind the station understand what the listenership want to hear.
+
+    With no playlist and no set format to many of our shows, our presenters have the chance to try whatever they like, as long as it's legal!</description>
+    <stream mime="audio/mpeg" uri="http://ury.york.ac.uk/audio/live-mobile.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
+    <stream mime="audio/mpeg" uri="http://ury.york.ac.uk/audio/live-low.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
+    <stream mime="audio/mpeg" uri="http://ury.york.ac.uk/audio/live-high.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
+  </station>
+  <station id="eper" name="EPER" rank="1.0" type="edu" release="97.0" lang="en">
+    <frequency uri="http://eper.elte.hu/"></frequency>
+    <location>Budapest, Hungary</location>
+    <description>EPER is a non-profit small power community station in downtown Budapest. We broadcast from the buildings of the Eötvös Loránd University. Our staff is students and teachers of the University or of other institutions of higher education.</description>
+    <stream mime="audio/mpeg" uri="http://radio.elte.hu:8000/eper2" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="64 kbps" />
+    <stream mime="audio/mpeg" uri="http://radio.elte.hu:8000/eper24" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Mono" bitrate="24 kbps" />
+    <stream mime="audio/mpeg" uri="http://radio.elte.hu:8000/live24" codec="MPEG-2 AAC" samplerate="32000 Hz" channels="Stereo" bitrate="24 kbps" />
+  </station>
   <station id="burstradio" name="Burst Radio" rank="1.0" type="edu" release="" lang="en">
     <frequency uri="http://www.burstradio.co.uk/"></frequency>
     <location>Brighton, United Kingdom</location>
     <description>Burst aims to capture the essential essence of student life at Brighton University; distil it and broadcast this elixir to you.</description>
+    <stream mime="audio/mpeg" uri="http://burst.brighton.ac.uk:8000/burst.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Mono" bitrate="24 kbps" />
     <stream mime="audio/mpeg" uri="http://burst.brighton.ac.uk:8000/burst.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
   </station>
   <station id="fusefm" name="Fuse FM" rank="1.0" type="edu" release="" lang="en">

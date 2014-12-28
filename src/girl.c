@@ -111,9 +111,9 @@ int main(int argc, char *argv[])
 	g_object_add_weak_pointer(G_OBJECT(streams_selector),
 				  (void **) &(streams_selector));
 	/* Icons */
-	iconname = gnome_program_locate_file(NULL,
-					     GNOME_FILE_DOMAIN_APP_PIXMAP,
-					     "girl/icons/hicolor/48x48/apps/girl.png", TRUE, NULL);
+
+	iconname = g_strconcat(DATADIR, "/girl/girl.png", NULL);
+
 	if (iconname != NULL) {
 		girl->icon = gdk_pixbuf_new_from_file(iconname, NULL);
 		g_free(iconname);
@@ -531,7 +531,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 		return;
 	}
 
-	about = gnome_about_new(_("GNOME Internet Radio Locator"), VERSION, _("Copyright 2014 Ole Aamot Software\nCopyright 2002 Free Software Foundation"), _("Internet Radio Locator"), (const gchar **) authors, NULL,	/* documenters */
+	about = gnome_about_new(_("GNOME Internet Radio Locator"), VERSION, _("Copyright 2014 Ole Aamot Software\nCopyright 2002 Free Software Foundation"), _("Locate Internet Radio Stations"), (const gchar **) authors, NULL,	/* documenters */
 				strcmp(translator_credits,
 				       "translator_credits") !=
 				0 ? translator_credits : NULL, girl->icon);
