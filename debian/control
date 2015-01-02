@@ -1,0 +1,16 @@
+Source: girl
+Section: gnome
+Priority: extra
+Maintainer: Ole Aamot <ole@src.gnome.org>
+Build-Depends: debhelper (>> 9.0.0), pkg-config (>> 0.28-0), libgtk2.0-0 (>> 2.24.25-0), libgnome2-dev (>> 2.32.1-4), libxml2-dev (>> 2.9.0), libgnomevfs2-dev (>> 2.24.5), libgnomeui-dev (>> 2.24.5), intltool (>> 0.50.2)
+Standards-Version: 3.9.6
+
+Package: girl
+Section: gnome
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, totem (>> 3.14.0), streamripper (>> 1.64.6)
+Description: GNOME Internet Radio Locator
+ The GNOME Internet Radio Locator program, allows users to easily find
+ and record live radio programs on radio broadcasters on the Internet.
+ .
+ This package provides the GNOME Internet Radio Locator program.

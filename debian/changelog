@@ -1,0 +1,5 @@
+girl (1.0.0-1) unstable; urgency=medium
+
+  * Initial Debian packaging of girl 1.0.0.
+
+ -- Ole Aamot <ole@src.gnome.org>  Fri, 02 Jan 2015 04:17:00 +0000
