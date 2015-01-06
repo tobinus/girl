@@ -1,5 +1,9 @@
 2015-01-06  Ole Aamot  <oka@src.gnome.org>
 
+	* BROADCAST: Add link to jwz's page on webcasting
+
+2015-01-06  Ole Aamot  <oka@src.gnome.org>
+
 	* src/girl-gui.c: Add i18n support
 	* src/girl.c: Add i18n support
 
