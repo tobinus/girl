@@ -1,15 +1,16 @@
 # Czech translation for girl.
 # Copyright (C) 2014 girl's COPYRIGHT HOLDER
 # This file is distributed under the same license as the girl package.
-# Marek Černocký <marek@manet.cz>, 2014.
+#
+# Marek Černocký <marek@manet.cz>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-12-13 21:47+0000\n"
-"PO-Revision-Date: 2014-12-27 17:16+0100\n"
+"POT-Creation-Date: 2015-01-06 20:25+0000\n"
+"PO-Revision-Date: 2015-01-06 23:02+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -19,27 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
-#: ../data/girl.appdata.xml.in.h:1
-msgid ""
-"Girl, the GNOME Internet Radio Locator program, allows users to easily find "
-"live radio programs on radio broadcasters on the Internet."
-msgstr ""
-"Girl je program GNOME sloužící k naladění internetových rádií. Můžete pomocí "
-"něj snadno najít živá rádiová vysílání na Internetu."
-
-#: ../data/girl.appdata.xml.in.h:2
-msgid ""
-"Girl is developed on the GNOME platform and requires at least one audio "
-"helper such as totem to be installed."
-msgstr ""
-"Girl je vyvíjen na nové platformě GNOME a vyžaduje nainstalovaný aspoň jeden "
-"pomocný přehrávač, jak třeba Totem."
-
-#: ../data/girl.appdata.xml.in.h:3
-msgid "Enjoy Internet Radio."
-msgstr "Užívejte si internetová rádia."
-
-#: ../data/girl.desktop.in.in.h:1 ../src/girl.c:529
+#: ../data/girl.desktop.in.in.h:1
 msgid "Internet Radio Locator"
 msgstr "Naladění internetových rádií"
 
@@ -52,55 +33,85 @@ msgstr "Nalaďte si rádio na Internetu."
 msgid "Live;Radio;Program;Station;Locator;"
 msgstr "živé;živě;rádio;program;stanice;vyhledání;ladění;naladění;"
 
-#: ../src/girl.c:205 ../src/girl.c:264 ../src/girl.c:363 ../src/girl.c:410
+#: ../src/girl.c:181
 #, c-format
-msgid "Selected %s in %s: %s"
-msgstr "Vybráno %s na %s: %s"
+msgid "Selected the previous radio station: %s in %s: %s"
+msgstr "Vybrána předchozí stanice: %s na %s: %s"
 
-#: ../src/girl.c:315
+#: ../src/girl.c:240
+#, c-format
+msgid "Selected the next radio station %s in %s: %s"
+msgstr "Vybrána následující stanice: %s na %s: %s"
+
+#: ../src/girl.c:293
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "Vybráno %s na %s: %s (%f)"
 
-#: ../src/girl.c:456
+#: ../src/girl.c:341
+#, c-format
+msgid "Selected %s in %s: %s"
+msgstr "Vybráno %s na %s: %s"
+
+#: ../src/girl.c:388
+#, c-format
+msgid "Selected the radio station %s in %s: %s"
+msgstr "Vybrána stanice %s na %s: %s"
+
+#: ../src/girl.c:434
 #, c-format
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "Vybráno %s [%s] [%s] [%s]"
 
-#: ../src/girl.c:522 ../src/girl.c:545 ../src/girl.c:575 ../src/girl.c:608
-#: ../src/girl.c:639
-msgid "translator_credits"
-msgstr "Marek Černocký <marek@manet.cz>"
-
-#: ../src/girl.c:529
-msgid "GNOME Internet Radio Locator"
-msgstr "Naladění internetových rádií GNOME"
-
-#: ../src/girl.c:529
-msgid ""
-"Copyright 2014 Ole Aamot Software\n"
-"Copyright 2002 Free Software Foundation"
-msgstr ""
-"Copyright 2014 Ole Aamot Software\n"
-"Copyright 2002 Free Software Foundation"
+#: ../src/girl.c:673
+msgid "Search radio station by location"
+msgstr "Hledat stanici podle místa"
 
 #. girl_stream_player(a, user_data);
-#: ../src/girl.c:675
+#: ../src/girl.c:682
 #, c-format
-msgid "Listening to %s in %s: %s "
-msgstr "Posloucháte %s na %s: %s"
+msgid "Listening to the radio station %s in %s: %s "
+msgstr "Posloucháte stanici %s na %s: %s"
 
-#: ../src/girl.c:694
+#: ../src/girl.c:704
 #, c-format
-msgid "Recording from %s in %s: %s "
-msgstr "Nahrává se z %s na %s: %s"
+msgid "Recording from the radio station %s in %s: %s "
+msgstr "Nahrává se ze stanice %s na %s: %s"
 
-#: ../src/girl.c:746
+#: ../src/girl.c:739
+#, c-format
+msgid "Finished recording from the radio station %s in %s: %s"
+msgstr "Dokončeno nahrávání z stanice %s na %s: %s"
+
+#: ../src/girl.c:753
+#, c-format
+msgid ""
+"To finish playing from the radio station %s in %s: %s, simply exit the "
+"application Videos."
+msgstr ""
+"Pro ukončení poslechu stanice %s na %s: %s stačí jen ukončit aplikaci Videa."
+
+#: ../src/girl.c:763
+msgid ""
+"Stop what?  You can \"Search\" by location, select a radio station from "
+"\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
+"or \"Next\" radio station."
+msgstr ""
+"Zastavit co? Můžete „Hledat“ podle místa, vybrat stanici ze seznamu "
+"„Stanice“ nebo kliknout na „Poslouchat“ a/nebo „Nahrávat“. Můžete také "
+"přejít na „Předchozí“ nebo „Následující“ stanici."
+
+#: ../src/girl.c:803
 #, c-format
 msgid "Archiving %s"
 msgstr "Archivuje se %s"
 
-#: ../src/girl-station.c:181
+#: ../src/girl-gui.c:402
+#, c-format
+msgid "Your search by location resulted in the radio station %s in %s: %s"
+msgstr "Výsledkem vašeho hledání podle místa je stanice %s na %s: %s"
+
+#: ../src/girl-station.c:189
 #, c-format
 msgid ""
 "An error happened trying to play %s\n"
@@ -109,7 +120,7 @@ msgstr ""
 "Vyskytla se chyba při pokusu přehrát %s\n"
 "Buď soubor neexistuje nebo pro něj nemáte přehrávač."
 
-#: ../src/girl-station.c:187
+#: ../src/girl-station.c:195
 #, c-format
 msgid ""
 "An error happened trying to record %s\n"
@@ -118,21 +129,13 @@ msgstr ""
 "Vyskytla se chyba při pokusu nahrát %s\n"
 "Buď soubor neexistuje nebo pro něj nemáte nahrávací program."
 
-#: ../src/girl-station.c:201
-#, c-format
-msgid ""
-"Failed to open URL: '%s'\n"
-"Details: %s"
-msgstr ""
-"Selhalo otevření adresy URL: „%s“\n"
-"Podrobnosti: %s"
-
-#: ../src/girl-station.c:234 ../src/girl-station.c:252
+#: ../src/girl-station.c:228 ../src/girl-station.c:248
+#: ../src/girl-station.c:325 ../src/girl-station.c:345
 #, c-format
 msgid "Failed to run %s (%i)\n"
 msgstr "Selhalo spuštění %s (%i)\n"
 
-#: ../src/girl-station.c:276
+#: ../src/girl-station.c:272 ../src/girl-station.c:369
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -141,4 +144,13 @@ msgid ""
 msgstr ""
 "Selhalo otevření adresy URL: „%s“\n"
 "Stavový kód: %i\n"
+"Podrobnosti: %s"
+
+#: ../src/girl-station.c:290
+#, c-format
+msgid ""
+"Failed to open URL: '%s'\n"
+"Details: %s"
+msgstr ""
+"Selhalo otevření adresy URL: „%s“\n"
 "Podrobnosti: %s"
