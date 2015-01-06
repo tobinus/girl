@@ -1,3 +1,19 @@
+2015-01-06  Ole Aamot  <oka@src.gnome.org>
+
+	* AUTHORS: Add Andika Triwidada
+	* THANKS: Add Andika Triwidada
+	* src/girl.xml: Fix Brno location.
+
+2015-01-03  Ole Aamot  <oka@src.gnome.org>
+
+	* NEWS: girl version 1.0.0 "Fenchurch" release
+
+2015-01-01  Ole Aamot  <ole@src.gnome.org>
+
+	* src/girl.xml: Rename src/stations.xml
+	* src/girl.xml: Add WNYO (wnyo889.org)
+	* src/girl.xml: Add WUSB (wusb.fm)
+
 2014-12-28  Ole Aamot  <oka@oka.no>
 
 	* src/stations.xml: Add COOG (coogradio.com)

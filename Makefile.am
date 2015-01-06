@@ -1,23 +1,25 @@
-SUBDIRS = data man src po
+SUBDIRS = data man src po debian
 
 datadir = @datadir@
 
 EXTRA_DIST = config.rpath m4/ChangeLog  \
-	Makefile \
-	ChangeLog \
-	HACKING \
-	README \
-	YP-DIRS \
 	AUTHORS \
+	ChangeLog \
+	BROADCAST \
+	HACKING \
 	LETTER \
+	Makefile \
 	NEWS \
 	NEWS-0.5 \
 	NEWS-0.6 \
 	NEWS-0.7 \
 	NEWS-0.8 \
 	NEWS-0.9 \
+	NEWS-1.0 \
+	README \
 	THANKS \
 	TODO \
+	YP-DIRS \
 	girl.spec.in
 
 DISTCLEANFILES =                \

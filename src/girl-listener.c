@@ -35,7 +35,7 @@
 
 /* extern GirlListenerInfo *girllistener; */
 
-extern GList *girl_stations;
+extern GList *girl_channels;
 extern GList *girl_listeners;
 
 static void
@@ -50,15 +50,15 @@ girl_listener_parser(GirlListenerInfo * listener, xmlDocPtr doc,
 	g_return_if_fail(cur != NULL);
 
 	listener->name = (gchar *)xmlGetProp(cur, (const xmlChar *)"name");
-	MSG("listener->name = %s\n", listener->name);
+	GIRL_DEBUG_MSG("listener->name = %s\n", listener->name);
 	listener->location = (gchar *)xmlGetProp(cur, (const xmlChar *)"location");
-	MSG("listener->location = %s\n", listener->location);
+	GIRL_DEBUG_MSG("listener->location = %s\n", listener->location);
 	listener->uri = (gchar *)xmlGetProp(cur, (const xmlChar *)"uri");
-	MSG("listener->uri = %s\n", listener->uri);
+	GIRL_DEBUG_MSG("listener->uri = %s\n", listener->uri);
 	listener->release = (gchar *)xmlGetProp(cur, (const xmlChar *)"release");
-	MSG("listener->release = %s\n", listener->release);
+	GIRL_DEBUG_MSG("listener->release = %s\n", listener->release);
 	listener->description = (gchar *)xmlGetProp(cur, (const xmlChar *)"description");
-	MSG("listener->description = %s\n", listener->description);
+	GIRL_DEBUG_MSG("listener->description = %s\n", listener->description);
 
 #if 0
 	sub = cur->xmlChildrenNode;
@@ -72,37 +72,37 @@ girl_listener_parser(GirlListenerInfo * listener, xmlDocPtr doc,
 
 			listener->locationinfo->name =
 			    xmlGetProp(sub, "name");
-			MSG("listener->locationinfo->name = %s\n",
+			GIRL_DEBUG_MSG("listener->locationinfo->name = %s\n",
 			    listener->locationinfo->name);
 
 			listener->locationinfo->link =
 			    xmlGetProp(sub, "link");
-			MSG("listener->locationinfo->link = %s\n",
+			GIRL_DEBUG_MSG("listener->locationinfo->link = %s\n",
 			    listener->locationinfo->link);
 
 			listener->locationinfo->glat =
 			    xmlGetProp(sub, "glat");
-			MSG("listener->locationinfo->glat = %s\n",
+			GIRL_DEBUG_MSG("listener->locationinfo->glat = %s\n",
 			    listener->locationinfo->glat);
 
 			listener->locationinfo->glon =
 			    xmlGetProp(sub, "glon");
-			MSG("listener->locationinfo->glon = %s\n",
+			GIRL_DEBUG_MSG("listener->locationinfo->glon = %s\n",
 			    listener->locationinfo->glon);
 
 			listener->locationinfo->grad =
 			    xmlGetProp(sub, "grad");
-			MSG("listener->locationinfo->grad = %s\n",
+			GIRL_DEBUG_MSG("listener->locationinfo->grad = %s\n",
 			    listener->locationinfo->grad);
 
 			listener->locationinfo->vote =
 			    xmlGetProp(sub, "vote");
-			MSG("listener->locationinfo->vote = %s\n",
+			GIRL_DEBUG_MSG("listener->locationinfo->vote = %s\n",
 			    listener->locationinfo->vote);
 
 			listener->locationinfo->rack =
 			    xmlGetProp(sub, "rack");
-			MSG("listener->locationinfo->rack = %s\n",
+			GIRL_DEBUG_MSG("listener->locationinfo->rack = %s\n",
 			    listener->locationinfo->rack);
 
 		}
@@ -159,7 +159,7 @@ GirlListenerInfo *girl_listener_load_from_file(GirlListenerInfo * head,
 
 	version = (gchar *)xmlGetProp(cur, (const xmlChar *) "version");
 
-	MSG("Valid Girl Listener %s XML document... Parsing listeners...\n", version);
+	GIRL_DEBUG_MSG("Valid Girl Listener %s XML document... Parsing listeners...\n", version);
 
 	free(version);
 
@@ -169,7 +169,7 @@ GirlListenerInfo *girl_listener_load_from_file(GirlListenerInfo * head,
 
 		if ((!xmlStrcmp(cur->name, (const xmlChar *) "listener"))) {
 
-			MSG("Found a new listener tag...\n");
+			GIRL_DEBUG_MSG("Found a new listener tag...\n");
 
 			curr = g_new0(GirlListenerInfo, 1);
 
@@ -181,13 +181,13 @@ GirlListenerInfo *girl_listener_load_from_file(GirlListenerInfo * head,
 
 			girl_listeners = g_list_append(girl_listeners, (GirlListenerInfo *) curr);
 
-			MSG("Done with parsing the listener..\n");
+			GIRL_DEBUG_MSG("Done with parsing the listener..\n");
 
 		}
 		cur = cur->next;
 	}
 
-	MSG("Finished parsing XML document.\n");
+	GIRL_DEBUG_MSG("Finished parsing XML document.\n");
 
 	xmlFreeDoc(doc);
 

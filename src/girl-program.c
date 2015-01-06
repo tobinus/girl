@@ -35,7 +35,7 @@
 #include "girl-program.h"
 
 extern GirlData *girl;
-extern GList *girl_stations;
+extern GList *girl_channels;
 extern GList *girl_programs;
 extern GList *girl_listeners;
 
@@ -53,15 +53,15 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 	g_return_if_fail(cur != NULL);
 
 	program->id = (gchar *)xmlGetProp(cur, (const xmlChar *)"id");
-	MSG("program->id = %s\n", program->id);
+	GIRL_DEBUG_MSG("program->id = %s\n", program->id);
 	program->name = (gchar *)xmlGetProp(cur, (const xmlChar *)"name");
-	MSG("program->name = %s\n", program->name);
+	GIRL_DEBUG_MSG("program->name = %s\n", program->name);
 	program->rank = (gchar *)xmlGetProp(cur, (const xmlChar *)"rank");
-	MSG("program->rank = %s\n", program->rank);
+	GIRL_DEBUG_MSG("program->rank = %s\n", program->rank);
 	program->type = (gchar *)xmlGetProp(cur, (const xmlChar *)"type");
-	MSG("program->type = %s\n", program->type);
+	GIRL_DEBUG_MSG("program->type = %s\n", program->type);
 	program->release = (gchar *)xmlGetProp(cur, (const xmlChar *)"release");
-	MSG("program->release = %s\n", program->release);
+	GIRL_DEBUG_MSG("program->release = %s\n", program->release);
 
 	sub = cur->xmlChildrenNode;
 
@@ -71,7 +71,7 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 			program->frequency = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("program->frequency = %s\n",
+			GIRL_DEBUG_MSG("program->frequency = %s\n",
 			    program->frequency);
 		}
 
@@ -79,7 +79,7 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 			program->location = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("program->location = %s\n", program->location);
+			GIRL_DEBUG_MSG("program->location = %s\n", program->location);
 			/* fprintf(stdout, "%s (%s), ", program->name, program->location); */
 		}
 
@@ -88,14 +88,14 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 			program->description = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("program->description = %s\n", program->description);
+			GIRL_DEBUG_MSG("program->description = %s\n", program->description);
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "uri"))) {
 			program->uri = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("program->uri = %s\n", program->uri);
+			GIRL_DEBUG_MSG("program->uri = %s\n", program->uri);
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "archive"))) {
@@ -104,12 +104,12 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 			program->archive = archive;
 
 			program->archive->mimetype = (gchar *)xmlGetProp(sub, (const xmlChar *)"mime");
-			MSG("program->archive->mimetype = %s\n",
+			GIRL_DEBUG_MSG("program->archive->mimetype = %s\n",
 			    program->archive->mimetype);
 			if (xmlGetProp(sub, (const xmlChar *)"bitrate") != NULL) {
 				program->archive->bitrate = (glong)
 					atol((const char *)xmlGetProp(sub, (const xmlChar *)"bitrate"));
-				MSG("program->archive->bitrate = %li\n",
+				GIRL_DEBUG_MSG("program->archive->bitrate = %li\n",
 				    program->archive->bitrate);
 			}
 
@@ -118,10 +118,10 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 					atol((const char *)xmlGetProp(sub, (const xmlChar *)"samplerate"));
 			}
 
-			MSG("program->archive->samplerate = %li\n",
+			GIRL_DEBUG_MSG("program->archive->samplerate = %li\n",
 			    program->archive->samplerate);
 			program->archive->uri = (gchar *)xmlGetProp(sub, (const xmlChar *)"uri");
-			MSG("program->archive->uri = %s\n",
+			GIRL_DEBUG_MSG("program->archive->uri = %s\n",
 			    program->archive->uri);
 
 			chans = (gchar *)xmlGetProp(sub, (const xmlChar *)"channels");
@@ -130,15 +130,15 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 				if (strcmp(chans, "stereo") == 0) {
 					program->archive->channels =
 					    GIRL_CHANNELS_STEREO;
-					MSG("program->archive->channels = %d\n", program->archive->channels);
+					GIRL_DEBUG_MSG("program->archive->channels = %d\n", program->archive->channels);
 				} else if (strcmp(chans, "mono") == 0) {
 					program->archive->channels =
 					    GIRL_CHANNELS_MONO;
-					MSG("program->archive->channels = %d\n", program->archive->channels);
+					GIRL_DEBUG_MSG("program->archive->channels = %d\n", program->archive->channels);
 				} else if (strcmp(chans, "5:1") == 0) {
 					program->archive->channels =
 					    GIRL_CHANNELS_5_1;
-					MSG("program->archive->channels = %d\n", program->archive->channels);
+					GIRL_DEBUG_MSG("program->archive->channels = %d\n", program->archive->channels);
 				}
 				g_free(chans);
 			}
@@ -195,7 +195,7 @@ GirlProgramInfo *girl_program_load_from_file(GirlProgramInfo * head,
 
 	version = (gchar *)xmlGetProp(cur, (const xmlChar *)"version");
 
-	MSG("Valid Girl %s XML document... Parsing programs...\n",
+	GIRL_DEBUG_MSG("Valid Girl %s XML document... Parsing programs...\n",
 	    version);
 
 	free(version);
@@ -206,7 +206,7 @@ GirlProgramInfo *girl_program_load_from_file(GirlProgramInfo * head,
 
 		if ((!xmlStrcmp(cur->name, (const xmlChar *) "program"))) {
 
-			MSG("Found a new program.\n");
+			GIRL_DEBUG_MSG("Found a new program.\n");
 
 			curr = g_new0(GirlProgramInfo, 1);
 			mem_program = g_new0(GirlProgramInfo, 1);
@@ -221,13 +221,13 @@ GirlProgramInfo *girl_program_load_from_file(GirlProgramInfo * head,
 
 			girl_programs = g_list_append(girl_programs, (GirlProgramInfo *)mem_program);
 
-			MSG("Done with parsing the program.\n");
+			GIRL_DEBUG_MSG("Done with parsing the program.\n");
 
 		}
 		cur = cur->next;
 	}
 
-	MSG("Finished parsing XML document.\n");
+	GIRL_DEBUG_MSG("Finished parsing XML document.\n");
 
 	xmlFreeDoc(doc);
 

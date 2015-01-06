@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2014  Ole Aamot Software
+ * Copyright (C) 2014, 2015  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -36,12 +36,6 @@
 #include "girl-listener.h"
 #include "girl-station.h"
 
-#ifdef GIRL_DEBUG
-#define MSG(x...) g_message(x)
-#else
-#define MSG(x...)
-#endif
-
 GirlData *girl;
 
 GList *girl_listeners;
@@ -54,6 +48,7 @@ GtkWidget *listeners_selector = NULL;
 GtkWidget *programs_selector = NULL;
 GtkWidget *stations_selector = NULL;
 GtkWidget *streams_selector = NULL;
+GtkWidget *search_selector = NULL;
 
 int main(int argc, char *argv[])
 {
@@ -83,36 +78,29 @@ int main(int argc, char *argv[])
 
 	gtk_widget_show(girl_app);
 
-	/* Set up the listeners list */
-	/* listeners_selector = create_listeners_selector(girl->selected_listener_uri,"listeners.xml"); */
-
-	/* g_object_add_weak_pointer(G_OBJECT(listeners_selector), */
-	/* 			  (void **) &(listeners_selector)); */
-
-	/* /\* Set up the programs list *\/ */
-	/* programs_selector = create_programs_selector(girl->selected_program_uri,"programs.xml"); */
-
-	/* gtk_widget_show(programs_selector); */
-
-        g_object_add_weak_pointer(G_OBJECT(programs_selector),
-				  (void **) &(programs_selector));
-
-	/* Set up the stations list */
+	/* Set up the channels list */
 	stations_selector = create_stations_selector(girl->selected_station_uri,
-						     "stations.xml");
+						     "girl.xml");
+	
+	/* /\* Set up the stations list *\/ */
+	/* stations_selector = create_stations_selector(girl->selected_station_uri, */
+	/* 					     "girl.xml"); */
 
 	/* Set up the streams list */
-	streams_selector = create_streams_selector(girl->selected_streams_uri,
-						   "streams.xml");
+	/* streams_selector = create_streams_selector(girl->selected_streams_uri, */
+	/* 					   "streams.xml"); */
 
 	g_object_add_weak_pointer(G_OBJECT(stations_selector),
 				  (void **) &(stations_selector));
+	
+	/* g_object_add_weak_pointer(G_OBJECT(stations_selector), */
+	/* 			  (void **) &(stations_selector)); */
 
-	g_object_add_weak_pointer(G_OBJECT(streams_selector),
-				  (void **) &(streams_selector));
+	/* g_object_add_weak_pointer(G_OBJECT(streams_selector), */
+	/* 			  (void **) &(streams_selector)); */
 	/* Icons */
 
-	iconname = g_strconcat(DATADIR, "/girl/girl.png", NULL);
+	iconname = g_strconcat(GIRL_DATADIR, "/girl.png", NULL);
 
 	if (iconname != NULL) {
 		girl->icon = gdk_pixbuf_new_from_file(iconname, NULL);
@@ -144,18 +132,13 @@ void appbar_send_msg(const char *a, ...)
 	gchar foo[2048];
 	va_list ap;
 	va_start(ap, a);
-
 	vsnprintf(foo, 2000, a, ap);
-
 	gnome_appbar_pop(girl->appbar);
 	gnome_appbar_push(girl->appbar, foo);
-
-	MSG("%s", foo);
-
+	GIRL_DEBUG_MSG("%s", foo);
 	/* lets update the statusbar widget */
 	while (gtk_events_pending())
 		gtk_main_iteration();
-
 	va_end(ap);
 }
 
@@ -166,107 +149,95 @@ static void cause_movement(int way)
 
 void on_previous_station_click(GtkWidget * a, gpointer user_data)
 {
-	GList *l = g_list_previous(girl_stations);
-	if (l != NULL) {
-		GirlStationInfo *station = l->data;
-		if (station->prev != NULL) {
-			girl_stations->data = station->prev;
-		} else {
-			girl_stations->data = station;
-		}
+	GirlStationInfo *station = (GirlStationInfo *)girl->previous_station;
+	girl->previous_station = girl->selected_station;
 
+	if (station != NULL) {
 		cause_movement(-1);
-		if (station != NULL) {
-			printf("Previous Station ID: %s\n", station->id);
-			printf("Previous Station Name: %s\n", station->name);
-			printf("Previous Station URI: %s\n", station->stream->uri);
-			printf("Previous Station Location: %s\n", station->location);
+		GIRL_DEBUG_MSG("Previous Station ID: %s\n", station->id);
+		GIRL_DEBUG_MSG("Previous Station Name: %s\n", station->name);
+		GIRL_DEBUG_MSG("Previous Station URI: %s\n", station->stream->uri);
+		GIRL_DEBUG_MSG("Previous Station Location: %s\n", station->location);
+		girl->selected_station_uri = station->stream->uri;
+		girl->selected_station_name = station->name;
+		girl->selected_station_location = station->location;
+		girl->selected_station_release = station->release;
+		girl->selected_station_description = station->description;
+		GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
+			       girl->selected_station_uri);
 
-			girl->selected_station_uri = station->stream->uri;
-
-			MSG("on_station_select_changed: %s\n",
-			    girl->selected_station_uri);
-
-			girl->selected_station_name = station->name;
-
-			MSG("on_station_select_changed: %s\n",
-			    girl->selected_station_name);
-
-			girl->selected_station_location = station->location;
-
-			MSG("on_station_select_changed: %s\n",
-			    girl->selected_station_location);
-
-			girl->selected_station_release = station->release;
-
-			MSG("on_station_select_changed: %s\n",
-			    girl->selected_station_release);
-
-			girl->selected_station_description = station->description;
-
-			MSG("on_station_select_changed: %s\n",
-			    girl->selected_station_description);
-
-			appbar_send_msg(_("Selected %s in %s: %s"),
-					girl->selected_station_name,
-					girl->selected_station_location,
-					girl->selected_station_uri,
-					girl->selected_station_release);
-			
-
-			girl_helper_run(girl->selected_station_uri,
-					girl->selected_station_name,
-					GIRL_STREAM_SHOUTCAST,
-					GIRL_STREAM_PLAYER);
-		}
+		girl->selected_station_name = station->name;
+		GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
+			       girl->selected_station_name);
+		girl->selected_station_location = station->location;
+		GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
+			       girl->selected_station_location);
+		girl->selected_station_release = station->release;
+		GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
+			       girl->selected_station_release);
+		girl->selected_station_description = station->description;
+		GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
+			       girl->selected_station_description);
+		appbar_send_msg(_("Selected the previous radio station: %s in %s: %s"),
+				girl->selected_station_name,
+				girl->selected_station_location,
+				girl->selected_station_uri,
+				girl->selected_station_release);
+		girl_helper_run(girl->selected_station_uri,
+				girl->selected_station_name,
+				GIRL_STREAM_SHOUTCAST,
+				GIRL_STREAM_PLAYER);
 	} else {
-		printf("Prev Station: At the beginning of Stations list!\n");
+
+		GIRL_DEBUG_MSG("Prev Station: At the beginning of Stations list!\n");
 	}
+	girl->previous_station = station;
 }
 
 void on_next_station_click(GtkWidget * a, gpointer user_data)
 {
 	GList *l = g_list_first(girl_stations);
+	girl->previous_station = (GirlStationInfo*)girl->selected_station;
 	if (l != NULL) {
 		GirlStationInfo *station = l->data;
 		if (station->next != NULL) {
 			girl_stations->data = station->next;
 		} else {
-			printf("Next Station: At the end of Stations list!\n");
+			GIRL_DEBUG_MSG("Next Station: At the end of Stations list!\n");
 		}
 		cause_movement(1);
 		if (station != NULL) {
-			printf("Next Station ID: %s\n", station->id);
-			printf("Next Station Name: %s\n", station->name);
-			printf("Next Station URI: %s\n", station->stream->uri);
-			printf("Next Station Location: %s\n", station->location);
+			GIRL_DEBUG_MSG("Next Station ID: %s\n", station->id);
+			GIRL_DEBUG_MSG("Next Station Name: %s\n", station->name);
+			GIRL_DEBUG_MSG("Next Station URI: %s\n", station->stream->uri);
+			GIRL_DEBUG_MSG("Next Station Location: %s\n", station->location);
 
 			girl->selected_station_uri = station->stream->uri;
 
-			MSG("on_station_select_changed: %s\n",
+			GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
 			    girl->selected_station_uri);
 
 			girl->selected_station_name = station->name;
 
-			MSG("on_station_select_changed: %s\n",
+			GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
 			    girl->selected_station_name);
 
 			girl->selected_station_location = station->location;
 
-			MSG("on_station_select_changed: %s\n",
+			GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
 			    girl->selected_station_location);
 
 			girl->selected_station_release = station->release;
 
-			MSG("on_station_select_changed: %s\n",
+			GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
 			    girl->selected_station_release);
 
 			girl->selected_station_description = station->description;
 
-			MSG("on_station_select_changed: %s\n",
+			GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
 			    girl->selected_station_description);
 
-			appbar_send_msg(_("Selected %s in %s: %s"),
+			appbar_send_msg(_("Selected the next radio station %s in %s: %s"),
 					girl->selected_station_name,
 					girl->selected_station_location,
 					girl->selected_station_uri,
@@ -276,6 +247,8 @@ void on_next_station_click(GtkWidget * a, gpointer user_data)
 					station->name,
 					GIRL_STREAM_SHOUTCAST,
 					GIRL_STREAM_PLAYER);
+
+			girl->selected_station = (GirlStationInfo*)station;
 		}
 	}
 }
@@ -294,27 +267,27 @@ void on_listeners_selector_changed(GtkWidget * a, gpointer user_data)
 
 	girl->selected_listener_uri =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "listener_uri"));
-	MSG("on_listener_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_listener_select_changed: %s\n",
 	    girl->selected_listener_uri);
 
 	girl->selected_listener_name =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "listener_name"));
-	MSG("on_listener_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_listener_select_changed: %s\n",
 	    girl->selected_listener_name);
 
 	girl->selected_listener_location =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "listener_location"));
-	MSG("on_listener_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_listener_select_changed: %s\n",
 	    girl->selected_listener_location);
 
 	girl->selected_listener_release =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "listener_release"));
-	MSG("on_listener_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_listener_select_changed: %s\n",
 	    girl->selected_listener_release);
 
 	girl->selected_listener_description =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "listener_description"));
-	MSG("on_listener_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_listener_select_changed: %s\n",
 	    girl->selected_listener_description);
 
 	appbar_send_msg(_("Selected %s in %s: %s (%f)"),
@@ -343,26 +316,26 @@ void on_programs_selector_changed(GtkWidget * a, gpointer user_data)
 
 	girl->selected_program_uri =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "program_uri"));
-	MSG("on_program_select_changed: %s\n", girl->selected_program_uri);
+	GIRL_DEBUG_MSG("on_program_select_changed: %s\n", girl->selected_program_uri);
 
 	girl->selected_program_name =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "program_name"));
-	MSG("on_program_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_program_select_changed: %s\n",
 	    girl->selected_program_name);
 
 	girl->selected_program_location =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "program_location"));
-	MSG("on_program_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_program_select_changed: %s\n",
 	    girl->selected_program_location);
 
 	girl->selected_program_release =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "program_release"));
-	MSG("on_program_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_program_select_changed: %s\n",
 	    girl->selected_program_release);
 
 	girl->selected_program_description =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "program_description"));
-	MSG("on_program_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_program_select_changed: %s\n",
 	    girl->selected_program_description);
 
 	appbar_send_msg(_("Selected %s in %s: %s"),
@@ -390,29 +363,29 @@ void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 
 	girl->selected_station_uri =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "station_uri"));
-	MSG("on_station_select_changed: %s\n", girl->selected_station_uri);
+	GIRL_DEBUG_MSG("on_station_select_changed: %s\n", girl->selected_station_uri);
 
 	girl->selected_station_name =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "station_name"));
-	MSG("on_station_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
 	    girl->selected_station_name);
 
 	girl->selected_station_location =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "station_location"));
-	MSG("on_station_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
 	    girl->selected_station_location);
 
 	girl->selected_station_release =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "station_release"));
-	MSG("on_station_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
 	    girl->selected_station_release);
 
 	girl->selected_station_description =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "station_description"));
-	MSG("on_station_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_station_select_changed: %s\n",
 	    girl->selected_station_description);
 
-	appbar_send_msg(_("Selected %s in %s: %s"),
+	appbar_send_msg(_("Selected the radio station %s in %s: %s"),
 			girl->selected_station_name,
 			girl->selected_station_location,
 			girl->selected_station_uri,
@@ -436,27 +409,27 @@ void on_streams_selector_changed(GtkWidget * a, gpointer user_data)
 		g_free(girl->selected_streams_uri);
 
 	girl->selected_streams_uri = g_strdup(g_object_get_data(G_OBJECT(a), "streams_uri"));
-	MSG("on_streams_select_changed: %s\n", girl->selected_streams_uri);
+	GIRL_DEBUG_MSG("on_streams_select_changed: %s\n", girl->selected_streams_uri);
 
 	girl->selected_streams_mime = g_strdup(g_object_get_data(G_OBJECT(a), "streams_mime"));
-	MSG("on_streams_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_streams_select_changed: %s\n",
 	    girl->selected_streams_mime);
 
 	girl->selected_streams_codec = g_strdup(g_object_get_data(G_OBJECT(a), "streams_codec"));
-	MSG("on_streams_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_streams_select_changed: %s\n",
 	    girl->selected_streams_codec);
 
 	girl->selected_streams_samplerate = g_strdup(g_object_get_data(G_OBJECT(a), "streams_samplerate"));
-	MSG("on_streams_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_streams_select_changed: %s\n",
 	    girl->selected_streams_samplerate);
 
 	girl->selected_streams_bitrate = g_strdup(g_object_get_data(G_OBJECT(a), "streams_bitrate"));
-	MSG("on_streams_select_changed: %s\n",
+	GIRL_DEBUG_MSG("on_streams_select_changed: %s\n",
 	    girl->selected_streams_bitrate);
 
-	girl->selected_streams_channels = g_strdup(g_object_get_data(G_OBJECT(a), "streams_channels"));
-	MSG("on_streams_select_changed: %s\n",
-	    girl->selected_streams_channels);
+	girl->selected_streams_stations = g_strdup(g_object_get_data(G_OBJECT(a), "streams_stations"));
+	GIRL_DEBUG_MSG("on_streams_select_changed: %s\n",
+	    girl->selected_streams_stations);
 
 	appbar_send_msg(_("Selected %s [%s] [%s] [%s]"),
 			girl->selected_streams_uri,
@@ -501,8 +474,8 @@ void quit_app(GtkWidget * a, gpointer user_data)
 				girl->selected_streams_samplerate);
 	gnome_config_set_string("selected_streams_bitrate",
 				girl->selected_streams_bitrate);
-	gnome_config_set_string("selected_streams_channels",
-				girl->selected_streams_channels);
+	gnome_config_set_string("selected_streams_stations",
+				girl->selected_streams_stations);
 	gnome_config_sync();
 	gnome_config_pop_prefix();
 
@@ -519,29 +492,48 @@ void quit_app(GtkWidget * a, gpointer user_data)
 
 void about_app(GtkWidget * a, gpointer user_data)
 {
-	static GtkWidget *about = NULL;
-	const gchar *authors[] = {
-		("Ole Aamot <ole@src.gnome.org>"),
-		NULL,
-	};
-	const gchar *translator_credits = _("translator_credits");
+	static GtkWindow *about = NULL;
+	gchar* authors[] = { "Ole Aamot",
+			     "Marek Černocký",
+			     "Miroslav Nikolić",
+			     "Wolfgang Stöggl",
+			     "Piotr Drąg",
+			     "Muhammet Kara",
+			     "Balázs Úr",
+			     NULL };
+	gchar* artists[] = { "Wiki Graphic Designer",
+			     "Aly Raj",
+			     NULL };
+	gchar* comments = { "Locate Internet Radio Stations" };
+	gchar* copyright = { "Copyright (C) 2014, 2015  Ole Aamot Software" };
+	gchar* documenters[] = { NULL };
 
-	if (about) {
-		gdk_window_raise(about->window);
-		return;
+	static GdkPixbuf* logo;
+	gchar* name = PACKAGE;
+	gchar* version = VERSION;
+	gchar* website = "http://wiki.gnome.org/Apps/Girl";
+	gchar* website_label = "http://wiki.gnome.org/Apps/Girl";
+
+	if (!logo) {
+		GError* error = NULL;
+		logo = gdk_pixbuf_new_from_file (GIRL_DATADIR "/girl.png", &error);
+		if (error) {
+			g_warning ("Unable to load GIRL logo: %s\n", error->message);
+			g_error_free (error);
+		}
 	}
 
-	about = gnome_about_new(_("GNOME Internet Radio Locator"), VERSION, _("Copyright 2014 Ole Aamot Software\nCopyright 2002 Free Software Foundation"), _("Locate Internet Radio Stations"), (const gchar **) authors, NULL,	/* documenters */
-				strcmp(translator_credits,
-				       "translator_credits") !=
-				0 ? translator_credits : NULL, girl->icon);
-
-	g_signal_connect(G_OBJECT(about), "destroy",
-			 G_CALLBACK(gtk_widget_destroy), NULL);
-	g_signal_connect(G_OBJECT(about), "delete-event",
-			 G_CALLBACK(gtk_widget_destroy), NULL);
-	g_object_add_weak_pointer(G_OBJECT(about), (void **) &(about));
-	gtk_widget_show(about);
+	gtk_show_about_dialog (about,
+			       "authors", authors,
+			       "artists", artists,
+			       "comments", comments,
+			       "copyright", copyright,
+			       "documenters", documenters,
+			       "logo", logo,
+			       "name", name,
+			       "version", version,
+			       "website", website,
+			       "website-label", website_label, NULL);
 }
 
 void about_listener(GtkWidget * a, gpointer user_data)
@@ -671,13 +663,23 @@ void about_streams(GtkWidget * a, gpointer user_data)
 
 }
 
+void on_search_button_clicked(GtkWidget *a, gpointer user_data)
+{
+	GtkWidget *search;
+
+	search = create_search_selector();
+	gtk_widget_show(search);
+	
+	appbar_send_msg(_("Search radio station by location"));
+}
+
 void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 {
 
 
 	/* girl_stream_player(a, user_data); */
 
-	appbar_send_msg(_("Listening to %s in %s: %s "),
+	appbar_send_msg(_("Listening to the radio station %s in %s: %s "),
 			girl->selected_station_name,
 			girl->selected_station_location,
 			girl->selected_station_uri,
@@ -699,7 +701,7 @@ void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 	credentials = g_credentials_new ();
 	
 	if (girl->selected_station_name != NULL) {
-		appbar_send_msg(_("Recording from %s in %s: %s "),
+		appbar_send_msg(_("Recording from the radio station %s in %s: %s "),
 				girl->selected_station_name,
 				girl->selected_station_location,
 				girl->selected_station_uri,
@@ -723,6 +725,51 @@ void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 		gtk_dialog_run(GTK_DIALOG(dialog));
 		gtk_widget_destroy(dialog);
 	}
+}
+
+void on_stop_button_clicked(GtkWidget *a, gpointer user_data)
+{
+
+	if (girl->record_status == GIRL_RECORD_TRUE) {
+		
+		/* Close pid */
+		
+		g_spawn_close_pid( girl->record_pid);
+
+		appbar_send_msg(_("Finished recording from the radio station %s in %s: %s"),
+				girl->selected_station_name,
+				girl->selected_station_location,
+				girl->selected_station_uri,
+				girl->selected_station_release);
+
+		girl->record_status = GIRL_RECORD_FALSE;
+		
+	} else {
+
+		if (girl->player_status == GIRL_PLAYER_TRUE) {
+			
+			g_spawn_close_pid( girl->player_pid);
+			
+			appbar_send_msg(_("To finish playing from the radio station %s in %s: %s, simply exit the application Videos."),
+					girl->selected_station_name,
+					girl->selected_station_location,
+					girl->selected_station_uri,
+					girl->selected_station_release);
+			
+			girl->player_status = GIRL_PLAYER_FALSE;
+
+		} else {
+			
+			appbar_send_msg(_("Stop what?  You can \"Search\" by location, select a radio station from \"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" or \"Next\" radio station."),
+					girl->selected_station_name,
+					girl->selected_station_location,
+					girl->selected_station_uri,
+					girl->selected_station_release);
+			
+		}
+	}
+	
+	
 }
 
 GnomeVFSFileSize get_size(GnomeVFSURI * uri)
@@ -754,7 +801,7 @@ girl_archive_progress_callback(GnomeVFSXferProgressInfo * info, gpointer data)
 		gtk_main_iteration();
 
 	appbar_send_msg(_("Archiving %s"), (gchar *) data);
-	MSG("%s", gnome_vfs_result_to_string(info->status));
+	GIRL_DEBUG_MSG("%s", gnome_vfs_result_to_string(info->status));
 	return TRUE;
 }
 

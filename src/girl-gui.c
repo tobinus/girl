@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2014  Ole Aamot Software
+ * Copyright (C) 2014, 2015  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -40,6 +40,7 @@
 #include <libgnome/libgnome.h>
 /* #include <libgnome/gnome-desktop-item.h> */
 #include <gtk/gtk.h>
+#include <glib/gstdio.h>
 
 #include "girl.h"
 #include "girl-gui.h"
@@ -47,52 +48,40 @@
 #include "girl-station.h"
 #include "girl-streams.h"
 
-#ifdef GIRL_DEBUG
-#define MSG(x...) g_message(x)
-#else
-#define MSG(x...)
-#endif
-
 extern GtkWidget *girl_app;
 
 GnomeUIInfo toolbar[] = {
-	GNOMEUIINFO_ITEM_STOCK(("Listen"), ("Listen to selected station"),
+	GNOMEUIINFO_ITEM_STOCK(("Search"), ("Search by location for radio stations"),
+			       on_search_button_clicked,
+			       GTK_STOCK_FIND),
+	GNOMEUIINFO_SEPARATOR,	
+	GNOMEUIINFO_ITEM_STOCK(("Stations"), ("Internet Radio Stations"),
+	 		       on_stations_selector_button_clicked,
+			       GTK_STOCK_NETWORK),
+	GNOMEUIINFO_SEPARATOR,	
+	GNOMEUIINFO_ITEM_STOCK(("Listen"), ("Listen to selected radio station"),
 			       on_listen_button_clicked,
 			       GTK_STOCK_MEDIA_PLAY),
-#ifdef GIRL_HELPER_RECORD
-	GNOMEUIINFO_ITEM_STOCK(("Record"), ("Record selected station"),
+#if HAVE_GIRL_RECORD == 1
+	GNOMEUIINFO_ITEM_STOCK(("Record"), ("Record selected radio station"),
 			       on_record_button_clicked,
 			       GTK_STOCK_MEDIA_RECORD),
-#endif /* GIRL_HELPER_RECORD */
-	/* GNOMEUIINFO_ITEM_STOCK(("Listeners"), ("Listeners"), */
-	/* 		       on_listeners_selector_button_clicked, */
-	/* 		       GTK_STOCK_FIND), */
-	GNOMEUIINFO_ITEM_STOCK(("Stations"), ("Stations"),
-			       on_stations_selector_button_clicked,
-			       GTK_STOCK_NETWORK),
-	GNOMEUIINFO_ITEM_STOCK(("Streams"), ("Streams"),
-			       on_streams_selector_button_clicked,
-			       GTK_STOCK_HARDDISK),
+	GNOMEUIINFO_ITEM_STOCK(("Stop"), ("Stop recording selected radio station"),
+			       on_stop_button_clicked,
+			       GTK_STOCK_MEDIA_STOP),
+#endif /* HAVE_GIRL_RECORD */
 	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_ITEM_STOCK(("Previous"),
-			       ("Go back to the previous station"),
+			       ("Go back to the previous radio station"),
 			       on_previous_station_click, GTK_STOCK_GO_BACK),
-	GNOMEUIINFO_ITEM_STOCK(("Next"), ("Proceed to the next station"),
+	GNOMEUIINFO_ITEM_STOCK(("Next"), ("Proceed to the next radio station"),
 			       on_next_station_click, GTK_STOCK_GO_FORWARD),
 	GNOMEUIINFO_SEPARATOR,
-	/* GNOMEUIINFO_ITEM_STOCK(("About Listener"), */
-	/* 		       ("About the GNOME Internet Radio Locator"), */
-	/* 		       about_listener, GNOME_STOCK_ABOUT), */
-	/* GNOMEUIINFO_SEPARATOR, */
 	GNOMEUIINFO_ITEM_STOCK(("About Station"),
 			       ("About the current Station"),
 			       about_station, GNOME_STOCK_ABOUT),
 	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_ITEM_STOCK(("About Stream"),
-			       ("About the current Stream"),
-			       about_streams, GNOME_STOCK_ABOUT),
-	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_ITEM_STOCK(("About App"),
+	GNOMEUIINFO_ITEM_STOCK(("About Program"),
 			       ("About the GNOME Internet Radio Locator"),
 			       about_app, GNOME_STOCK_ABOUT),
 
@@ -107,8 +96,8 @@ GnomeUIInfo toolbar[] = {
 /* 
    Reading list of stations from
 
-   $PREFIX/share/girl/stations.xml 
-   $HOME/.girl/stations.xml
+   $PREFIX/share/girl/girl.xml 
+   $HOME/.girl/girl.xml
 
 */
 
@@ -150,7 +139,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 							   "girl/listeners.xml",
 							   FALSE,
 							   NULL);
-	MSG("world_listener_xml_uri = %s\n",
+	GIRL_DEBUG_MSG("world_listener_xml_uri = %s\n",
 	    world_listener_xml_uri);
 
 	if (world_listener_xml_uri == NULL) {
@@ -214,10 +203,10 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 
 			/* selection */
 
-			printf("selected_listener_uri: %s\n",
+			GIRL_DEBUG_MSG("selected_listener_uri: %s\n",
 			       selected_listener_uri);
 
-			printf("listener_uri: %s\n", listener_uri);
+			GIRL_DEBUG_MSG("listener_uri: %s\n", listener_uri);
 
 			if (selected_listener_uri != NULL
 			    && listener_uri != NULL
@@ -288,11 +277,11 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 	/* 						   "girl/programs.xml", */
 	/* 						   FALSE, */
 	/* 						   NULL); */
-	world_program_xml_filename = g_strconcat(DATADIR, "/girl/programs.xml", NULL);
+	world_program_xml_filename = g_strconcat(GIRL_DATADIR, "/programs.xml", NULL);
 
 	/* world_program_xml_filename = g_strdup("http://girl.src.oka.no/programs.xml"); */
 
-	MSG("world_program_xml_filename = %s\n",
+	GIRL_DEBUG_MSG("world_program_xml_filename = %s\n",
 	    world_program_xml_filename);
 
 	if (world_program_xml_filename == NULL) {
@@ -386,6 +375,224 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 	return programs_selector;
 }
 
+static gboolean
+on_search_matches(GtkEntryCompletion *widget,
+		  GtkTreeModel *model,
+		  GtkTreeIter *iter,
+		  gpointer user_data)
+{
+	GValue value = {0, };
+
+	gtk_tree_model_get_value(model, iter, STATION_URI, &value);
+	girl->selected_station_uri = g_strdup(g_value_get_string(&value));
+	g_value_unset(&value);
+
+	gtk_tree_model_get_value(model, iter, STATION_NAME, &value);
+	girl->selected_station_name = g_strdup(g_value_get_string(&value));
+	g_value_unset(&value);	
+
+	gtk_tree_model_get_value(model, iter, STATION_LOCATION, &value);
+	girl->selected_station_location = g_strdup(g_value_get_string(&value));
+	g_value_unset(&value);
+
+	gtk_tree_model_get_value(model, iter, STATION_DESCRIPTION, &value);
+	girl->selected_station_description = g_strdup(g_value_get_string(&value));
+	g_value_unset(&value);
+
+	appbar_send_msg(_("Your search by location resulted in the radio station %s in %s: %s"),
+			girl->selected_station_name,
+			girl->selected_station_location,
+			girl->selected_station_uri);
+
+	girl_helper_run(girl->selected_station_uri,
+			girl->selected_station_name,
+			GIRL_STREAM_SHOUTCAST,
+			GIRL_STREAM_PLAYER);
+	
+	return FALSE;
+}
+
+GtkWidget *create_search_selector(void) {
+
+	GirlStationInfo *stationinfo, *localstation;
+	GtkWidget *search_selector, *content_area;
+	GtkWidget *align, *textentry;
+	GtkEntryCompletion *completion;
+	GtkListStore *model;
+	GtkTreeIter iter;
+	
+	gchar *world_station_xml_filename, *local_station_xml_file;
+
+	/* int i = 0, search_selection = -1; */
+
+	GStatBuf stats;
+
+	memset(&stats, 0, sizeof(stats));
+
+	/* The Stations dialog */
+	search_selector = gtk_dialog_new_with_buttons(("Search by location"), GTK_WINDOW(girl_app), 0,	/* flags */
+							GTK_STOCK_CLOSE,
+							GTK_RESPONSE_ACCEPT,
+							NULL);
+	content_area = gtk_dialog_get_content_area (GTK_DIALOG (search_selector));
+	gtk_container_set_border_width
+	    (GTK_CONTAINER(GTK_DIALOG(search_selector)->vbox), 6);
+
+	align = gtk_alignment_new(0.5, 0.5, 0, 0);
+	gtk_container_add(GTK_CONTAINER
+			  (GTK_DIALOG(search_selector)->vbox), align);
+	gtk_container_set_border_width(GTK_CONTAINER(align), 6);
+	gtk_widget_show(align);
+
+	textentry = gtk_entry_new();
+	completion = gtk_entry_completion_new();
+	gtk_entry_completion_set_text_column(completion, STATION_NAME);
+	gtk_entry_completion_set_text_column(completion, STATION_LOCATION);
+	gtk_entry_set_completion(GTK_ENTRY(textentry), completion);
+	g_signal_connect(G_OBJECT(completion), "match-selected",
+			 G_CALLBACK(on_search_matches), NULL);
+	model = gtk_list_store_new(11, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
+
+	world_station_xml_filename = g_strconcat(GIRL_DATADIR, "/girl.xml", NULL);
+	GIRL_DEBUG_MSG("world_station_xml_filename = %s\n",
+	    world_station_xml_filename);
+
+	if (world_station_xml_filename == NULL) {
+		g_warning(("Failed to open %s.  Please install it.\n"),
+			  world_station_xml_filename);
+	}
+
+	local_station_xml_file =
+	    g_strconcat(g_get_home_dir(), "/.girl/girl.xml", NULL);
+
+	if (!g_stat(local_station_xml_file, &stats)) {
+		localstation = girl_station_load_from_file(NULL, local_station_xml_file);
+	} else {
+		localstation = NULL;
+	}
+
+	if (localstation == NULL) {
+		g_warning(("Failed to open %s\n"), local_station_xml_file);
+	}
+
+/*   g_free (local_station_xml_file); */
+
+	stationinfo =
+	    girl_station_load_from_file(localstation,
+					world_station_xml_filename);
+
+	girl_stations = NULL;
+
+	while (stationinfo != NULL) {
+
+		gtk_list_store_append(model, &iter);
+		gtk_list_store_set(model,
+				   &iter,
+				   STATION_NAME,
+				   stationinfo->name,
+				   STATION_LOCATION,
+				   stationinfo->location,
+				   STATION_URI,
+				   stationinfo->stream->uri,
+				   STATION_DESCRIPTION,
+				   stationinfo->description,
+				   STATION_FREQUENCY,
+				   stationinfo->frequency,
+				   STATION_RELEASE,
+				   stationinfo->release,
+				   STATION_TYPE,
+				   stationinfo->type,
+				   STATION_RANK,
+				   stationinfo->rank,
+				   STATION_BITRATE,
+				   stationinfo->bitrate,
+				   STATION_SAMPLERATE,
+				   stationinfo->samplerate,
+				   STATION_ID,
+				   stationinfo->id,
+				   -1);
+		
+		stationinfo = stationinfo->next;
+	}
+
+	gtk_entry_completion_set_model(completion, GTK_TREE_MODEL(model));
+
+	gtk_widget_show(textentry);	
+	gtk_container_add(GTK_CONTAINER(content_area), textentry);
+	
+#if 0
+	/* label = */
+		/*     g_strconcat(stationinfo->name, " (", */
+		/* 		stationinfo->location, ")", NULL); */
+		/* station_uri = g_strdup(stationinfo->stream->uri); */
+		/* station_name = g_strdup(stationinfo->name); */
+		/* station_location = g_strdup(stationinfo->location); */
+		/* station_release = g_strdup(stationinfo->release); */
+		/* station_description = g_strdup(stationinfo->description); */
+		/* station_website = g_strdup(stationinfo->uri); */
+		
+		/* girl_stations = g_list_append(girl_stations,(GirlStationInfo *)stationinfo); */
+
+		if (label != NULL) {
+			/* item = gtk_menu_item_new_with_label(label); */
+			/* gtk_menu_shell_append(GTK_MENU_SHELL(menu), item); */
+			g_signal_connect(G_OBJECT(item), "activate",
+					 G_CALLBACK
+					 (on_stations_selector_changed),
+					 NULL);
+			g_object_set_data(G_OBJECT(item), "station_uri",
+					  (gpointer) station_uri);
+			g_object_set_data(G_OBJECT(item), "station_name",
+					  (gpointer) station_name);
+			g_object_set_data(G_OBJECT(item),
+					  "station_location",
+					  (gpointer) station_location);
+			g_object_set_data(G_OBJECT(item),
+					  "station_release",
+					  (gpointer) station_release);
+			g_object_set_data(G_OBJECT(item),
+					  "station_description",
+					  (gpointer) station_description);
+			g_object_set_data(G_OBJECT(item),
+					  "station_website",
+					  (gpointer) station_website);
+			gtk_widget_show(item);
+			g_free(label);
+
+			/* selection */
+#if 0 /* FIXME */
+			if (selected_station_uri != NULL && 
+			    !strcmp(selected_station_uri, station_uri))
+				search_selection = i;
+#endif
+		} else {
+			g_free(station_uri);
+			g_free(station_name);
+			g_free(station_location);
+			g_free(station_release);
+			g_free(station_description);
+		}
+		i++;
+	}
+	
+	/* drop_down = gtk_option_menu_new(); */
+	/* gtk_widget_show(drop_down); */
+	/* gtk_option_menu_set_menu(GTK_OPTION_MENU(drop_down), menu); */
+	/* gtk_container_add(GTK_CONTAINER(align), drop_down); */
+
+	/* if (selection != -1) */
+	/* 	gtk_option_menu_set_history(GTK_OPTION_MENU(drop_down), selection); */
+#endif	
+	g_signal_connect(G_OBJECT(search_selector), "response",
+			 G_CALLBACK(gtk_widget_hide),
+			 (gpointer) search_selector);
+	g_signal_connect(G_OBJECT(search_selector), "delete-event",
+			 G_CALLBACK(gtk_widget_hide),
+			 (gpointer) search_selector);
+
+	return search_selector;
+}
+
 GtkWidget *create_stations_selector(char *selected_station_uri,
 				    char *filename)
 {
@@ -393,10 +600,14 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 	GtkWidget *stations_selector;
 	GtkWidget *align, *menu, *drop_down, *item;
 
-	gchar *station_uri, *station_name, *station_location, *station_release, *station_description;
+	gchar *station_uri, *station_name, *station_location, *station_release, *station_description, *station_website;
 	gchar *label, *world_station_xml_filename, *local_station_xml_file;
 
 	int i = 0, selection = -1;
+
+	GStatBuf stats;
+
+	memset(&stats, 0, sizeof(stats));
 
 	/* The Stations dialog */
 	stations_selector = gtk_dialog_new_with_buttons(("Select a station"), GTK_WINDOW(girl_app), 0,	/* flags */
@@ -419,14 +630,14 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 
 	/* world_station_xml_filename = gnome_program_locate_file(NULL, */
 	/* 						       GNOME_FILE_DOMAIN_APP_DATADIR, */
-	/* 						       "girl/stations.xml", */
+	/* 						       "girl/girl.xml", */
 	/* 						       FALSE, */
 	/* 						       NULL); */
 
-	/* world_station_xml_filename = g_strdup("http://girl.src.oka.no/stations.xml"); */
+	/* world_station_xml_filename = g_strdup("http://girl.src.oka.no/girl.xml"); */
 
-	world_station_xml_filename = g_strconcat(DATADIR, "/girl/stations.xml", NULL);
-	MSG("world_station_xml_filename = %s\n",
+	world_station_xml_filename = g_strconcat(GIRL_DATADIR, "/girl.xml", NULL);
+	GIRL_DEBUG_MSG("world_station_xml_filename = %s\n",
 	    world_station_xml_filename);
 
 	if (world_station_xml_filename == NULL) {
@@ -435,9 +646,13 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 	}
 
 	local_station_xml_file =
-	    g_strconcat(g_get_home_dir(), "/.girl/stations.xml", NULL);
-	localstation =
-	    girl_station_load_from_file(NULL, local_station_xml_file);
+	    g_strconcat(g_get_home_dir(), "/.girl/girl.xml", NULL);
+
+	if (!g_stat(local_station_xml_file, &stats)) {
+		localstation = girl_station_load_from_file(NULL, local_station_xml_file);
+	} else {
+		localstation = NULL;
+	}
 
 	if (localstation == NULL) {
 		g_warning(("Failed to open %s\n"), local_station_xml_file);
@@ -461,6 +676,7 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 		station_location = g_strdup(stationinfo->location);
 		station_release = g_strdup(stationinfo->release);
 		station_description = g_strdup(stationinfo->description);
+		station_website = g_strdup(stationinfo->uri);
 		
 		girl_stations = g_list_append(girl_stations,(GirlStationInfo *)stationinfo);
 
@@ -484,6 +700,9 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 			g_object_set_data(G_OBJECT(item),
 					  "station_description",
 					  (gpointer) station_description);
+			g_object_set_data(G_OBJECT(item),
+					  "station_website",
+					  (gpointer) station_website);
 			gtk_widget_show(item);
 			g_free(label);
 
@@ -520,7 +739,6 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 	return stations_selector;
 }
 
-
 GtkWidget *create_streams_selector(char *selected_streams_uri,
 				    char *filename)
 {
@@ -528,10 +746,13 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 	GtkWidget *streams_selector;
 	GtkWidget *align, *menu, *drop_down, *item;
 
-	gchar *streams_mime, *streams_uri, *streams_codec, *streams_bitrate, *streams_samplerate, *streams_channels;
+	gchar *streams_mime, *streams_uri, *streams_codec, *streams_bitrate, *streams_samplerate;
+	GirlChannels streams_channels;
 	gchar *label, *world_streams_xml_filename, *local_streams_xml_file;
 
 	int i = 0, selection = -1;
+
+	GStatBuf stats;
 
 	/* The Streams dialog */
 	streams_selector = gtk_dialog_new_with_buttons(("Select a stream"), GTK_WINDOW(girl_app), 0,	/* flags */
@@ -557,9 +778,9 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 	/* 						       "girl/streams.xml", */
 	/* 						       FALSE, */
 	/* 						       NULL); */
-	world_streams_xml_filename = g_strconcat(DATADIR, "/girl/streams.xml", NULL);
+	world_streams_xml_filename = g_strconcat(GIRL_DATADIR, "/streams.xml", NULL);
 	/* world_streams_xml_filename = g_strdup("http://girl.src.oka.no/streams.xml"); */
-	MSG("world_streams_xml_filename = %s\n",
+	GIRL_DEBUG_MSG("world_streams_xml_filename = %s\n",
 	    world_streams_xml_filename);
 
 	if (world_streams_xml_filename == NULL) {
@@ -569,17 +790,20 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 
 	local_streams_xml_file =
 	    g_strconcat(g_get_home_dir(), "/.girl/streams.xml", NULL);
-	localstreams =
-	    girl_streams_load_from_file(NULL, local_streams_xml_file);
 
-	if (localstreams == NULL) {
-		g_warning(("Failed to open %s\n"), local_streams_xml_file);
+	if (!g_stat(local_streams_xml_file, &stats)) {
+		localstreams = girl_streams_load_from_file(NULL, local_streams_xml_file);
+	} else {
+		localstreams = NULL;
 	}
 
-/*   g_free (local_streams_xml_file); */
+	if (!g_stat("~/.gnome2/girl", &stats)) {
+		if (localstreams == NULL) {
+			g_warning(("Failed to open %s\n"), local_streams_xml_file);
+		}
+	}
 
-	streamsinfo = girl_streams_load_from_file(localstreams,
-						world_streams_xml_filename);
+	streamsinfo = girl_streams_load_from_file(localstreams, world_streams_xml_filename);
 
 	girl_streams = NULL;
 
@@ -593,7 +817,7 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 		streams_codec = g_strdup(streamsinfo->codec);
 		streams_bitrate = g_strdup(streamsinfo->bitrate);
 		streams_samplerate = g_strdup(streamsinfo->samplerate);
-		streams_channels = g_strdup(streamsinfo->channels);
+		streams_channels = streamsinfo->channels;
 		girl_streams = g_list_append(girl_streams,(GirlStreamsInfo *)streamsinfo);
 
 		if (label != NULL) {
@@ -632,7 +856,6 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 			g_free(streams_codec);
 			g_free(streams_bitrate);
 			g_free(streams_samplerate);
-			g_free(streams_channels);
 		}
 		i++;
 		streamsinfo = streamsinfo->next;
@@ -707,7 +930,7 @@ GtkWidget *create_girl_app()
 	gtk_widget_show(vbox1);
 	gnome_app_set_contents(GNOME_APP(girl_app), vbox1);
 
-	pmf = g_strconcat(DATADIR, "/girl/pixmaps/girl-map.png", NULL);
+	pmf = g_strconcat(GIRL_DATADIR, "/pixmaps/girl-map.png", NULL);
 
 	girl_pixmap = gtk_image_new_from_file(pmf);
 	g_free(pmf);
@@ -729,9 +952,13 @@ GtkWidget *create_girl_app()
 	girl_data->appbar = GNOME_APPBAR(appbar);
 	girl_data->progress = GTK_PROGRESS_BAR(progress);
 
+#if HAVE_GIRL_RECORD == 1
 	gnome_appbar_push(girl_data->appbar,
-			  ("Point on the map and click \"Listen\" to listen to the station."));
-
+			  ("Search by location from \"Search\" or select a radio station from \"Stations\".  Click \"Listen\" to listen to, or \"Record\" to record from the station."));
+#else
+	gnome_appbar_push(girl_data->appbar,
+			  ("Select a radio station from \"Stations\" and click \"Listen\" to listen to the station."));
+#endif	
 	/*    g_signal_connect(G_OBJECT(calendar), */
 	/*                     "day_selected_double_click", */
 	/*                     G_CALLBACK (on_listen_button_clicked), girl_data); */
@@ -755,15 +982,15 @@ GtkWidget *create_girl_app()
 	girl->selected_listener_description =
 	    gnome_config_get_string("selected_listener_description=");
 
-	printf("girl->selected_listener_uri: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_listener_uri: %s\n",
 	       girl->selected_listener_uri);
-	printf("girl->selected_listener_name: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_listener_name: %s\n",
 	       girl->selected_listener_name);
-	printf("girl->selected_listener_location: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_listener_location: %s\n",
 	       girl->selected_listener_location);
-	printf("girl->selected_listener_release: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_listener_release: %s\n",
 	       girl->selected_listener_release);
-	printf("girl->selected_listener_description: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_listener_description: %s\n",
 	       girl->selected_listener_description);
 
 	girl->selected_station_uri =
@@ -777,15 +1004,15 @@ GtkWidget *create_girl_app()
 	girl->selected_station_description =
 	    gnome_config_get_string("selected_station_description=");
 
-	printf("girl->selected_station_uri: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_station_uri: %s\n",
 	       girl->selected_station_uri);
-	printf("girl->selected_station_name: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_station_name: %s\n",
 	       girl->selected_station_name);
-	printf("girl->selected_station_location: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_station_location: %s\n",
 	       girl->selected_station_location);
-	printf("girl->selected_station_release: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_station_release: %s\n",
 	       girl->selected_station_release);
-	printf("girl->selected_station_description: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_station_description: %s\n",
 	       girl->selected_station_description);
 
 	girl->selected_streams_uri =
@@ -799,19 +1026,19 @@ GtkWidget *create_girl_app()
 	girl->selected_streams_samplerate =
 	    gnome_config_get_string("selected_streams_samplerate=");
 	girl->selected_streams_channels =
-	    gnome_config_get_string("selected_streams_channels=");
+		(GirlChannels)gnome_config_get_string("selected_streams_channels=");
 
-	printf("girl->selected_streams_uri: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_streams_uri: %s\n",
 	       girl->selected_streams_uri);
-	printf("girl->selected_streams_mime: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_streams_mime: %s\n",
 	       girl->selected_streams_mime);
-	printf("girl->selected_streams_codec: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_streams_codec: %s\n",
 	       girl->selected_streams_codec);
-	printf("girl->selected_streams_bitrate: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_streams_bitrate: %s\n",
 	       girl->selected_streams_bitrate);
-	printf("girl->selected_streams_samplerate: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_streams_samplerate: %s\n",
 	       girl->selected_streams_samplerate);
-	printf("girl->selected_streams_channels: %s\n",
+	GIRL_DEBUG_MSG("girl->selected_channels: %s\n",
 	       girl->selected_streams_channels);
 
 	gnome_config_pop_prefix();

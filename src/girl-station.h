@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2014  Ole Aamot Software
+ * Copyright (C) 2014, 2015  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -28,6 +28,20 @@
 
 typedef struct _GirlStationInfo GirlStationInfo;
 typedef struct _GirlStreamInfo GirlStreamInfo;
+
+typedef enum {
+	STATION_ID = 10,
+	STATION_NAME = 0,
+	STATION_RANK = 7,
+	STATION_TYPE = 6,
+	STATION_RELEASE = 5,
+	STATION_FREQUENCY = 4,
+	STATION_LOCATION = 1,
+	STATION_DESCRIPTION = 3,
+	STATION_BITRATE = 8,
+	STATION_SAMPLERATE = 9,
+	STATION_URI = 2
+} GirlStationColumn;
 
 struct _GirlStationInfo {
 	GtkWidget *widget;
@@ -60,7 +74,6 @@ struct _GirlStreamInfo {
 };
 
 void show_error(gchar * msg);
-void girl_stream_player(GtkWidget * widget, gpointer data);
 void girl_station_free(GirlStationInfo * info);
 GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 					     char *filename);
@@ -68,4 +81,4 @@ GirlStationInfo *girl_station_load_from_http(GirlStationInfo * head,
 					     gpointer data);
 void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType girl);
 
-#endif				/* GIRL_STATION_H */
+#endif /* GIRL_STATION_H */

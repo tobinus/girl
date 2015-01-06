@@ -6,15 +6,15 @@ Standards-Version: 3.9.6
 Homepage: https://wiki.gnome.org/Apps/Girl
 Build-Depends: debhelper (>> 9.0.0),
 	       pkg-config (>> 0.28-0),
-	       libgtk2.0-0 (>> 2.24.25-0),
+	       libgtk-3-dev (>> 3.14.5-1),
 	       libgnome2-dev (>> 2.32.1-4),
 	       libxml2-dev (>> 2.9.0),
 	       libgnomevfs2-dev (>> 2.24.5),
 	       libgnomeui-dev (>> 2.24.5),
 	       intltool (>> 0.50.2)
+
 Package: girl
 Architecture: any
-Section: gnome
 Depends: ${shlibs:Depends},
 	 ${misc:Depends},
 	 totem (>> 3.14.0),

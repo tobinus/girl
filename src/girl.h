@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2014  Ole Aamot Software
+ * Copyright (C) 2014, 2015  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -47,32 +47,36 @@ typedef enum {
 #include "girl-listener.h"
 #include "girl-program.h"
 #include "girl-runners.h"
-#include "girl-station.h"
 #include "girl-streams.h"
+#include "girl-station.h"
 
-#ifdef GIRL_DEBUG
-#define MSG(x...) g_message(x)
+#if GIRL_DEBUG == 0
+#define GIRL_DEBUG_MSG(x...) g_message(x)
 #else
-#define MSG(x...)
+#define GIRL_DEBUG_MSG(x...)
 #endif
 
-#define GIRL_RECORDING_TRUE 1
-#define GIRL_RECORDING_FALSE 0
+#define GIRL_RECORD_TRUE 1
+#define GIRL_RECORD_FALSE 0
+#define GIRL_PLAYER_TRUE 1
+#define GIRL_PLAYER_FALSE 0
 
 void show_error(gchar * msg);
 void appbar_send_msg(const char *a, ...);
 
 /* GnomeVFSFileSize get_size(GnomeVFSURI *uri); */
 
-/* GnomeVFSURI *xfer_stations(gchar *src, gchar *dest); */
+/* GnomeVFSURI *xfer_channels(gchar *src, gchar *dest); */
 
 gchar *copy_to_mem(GnomeVFSURI * uri, GnomeVFSFileSize len);
 
-/* Fetcher for the stations */
+/* Fetcher for the channels */
 
 void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType girl);
+void on_search_button_clicked(GtkWidget * button, gpointer user_data);
 void on_listen_button_clicked(GtkWidget * button, gpointer user_data);
 void on_record_button_clicked(GtkWidget * button, gpointer user_data);
+void on_stop_button_clicked(GtkWidget *a, gpointer user_data);
 void on_next_station_click(GtkWidget *, gpointer user_data);
 void on_previous_station_click(GtkWidget *, gpointer user_data);
 void on_listeners_selector_button_clicked(GtkWidget *, gpointer user_data);
@@ -89,11 +93,12 @@ void about_listener(GtkWidget *, gpointer user_data);
 void about_program(GtkWidget *, gpointer user_data);
 void about_station(GtkWidget *, gpointer user_data);
 void about_streams(GtkWidget *, gpointer user_data);
-
+	
 struct _GirlData {
 	GtkImage *pixmap;
 	GnomeAppBar *appbar;
 	GtkProgressBar *progress;
+	GtkAboutDialog *window;
 	GirlListenerInfo *selected_listener;
 	gchar *selected_listener_uri;
 	gchar *selected_listener_name;
@@ -108,23 +113,29 @@ struct _GirlData {
 	gchar *selected_program_description;
 	GirlRunnersInfo *selected_runners;
 	gint timeout_id;
+	GirlStationInfo *previous_station;
 	GirlStationInfo *selected_station;
 	gchar *selected_station_uri;
 	gchar *selected_station_name;
 	gchar *selected_station_location;
 	gchar *selected_station_release;
 	gchar *selected_station_description;
+	gchar *selected_station_website;
 	gint selected_bitrate;
 	GirlStreamsInfo *selected_streams;
 	gchar *selected_streams_mime;
 	gchar *selected_streams_uri;
 	gchar *selected_streams_codec;
 	gchar *selected_streams_samplerate;
-	gchar *selected_streams_channels;
+	gchar *selected_streams_stations;
 	gchar *selected_streams_bitrate;
-	GirlChannels selected_channels;
+	GirlChannels selected_streams_channels;
 	gint selected_samplerate;
 	GdkPixbuf *icon;
+	gint player_status;
+	GPid player_pid;
+	gint record_status;
+	GPid record_pid;
 };
 
 typedef struct _GirlData GirlData;

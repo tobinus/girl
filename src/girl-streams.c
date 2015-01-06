@@ -35,7 +35,7 @@
 #include "girl-streams.h"
 
 extern GirlData *girl;
-extern GList *girl_stations;
+extern GList *girl_channels;
 extern GList *girl_streams;
 extern GList *girl_listeners;
 extern GList *girl_streams;
@@ -65,17 +65,17 @@ girl_streams_parser(GirlStreamsInfo *streams, xmlDocPtr doc,
 	g_return_if_fail(cur != NULL);
 
 	streams->mime = (gchar *)xmlGetProp(cur, (const xmlChar *)"mime");
-	MSG("streams->mime = %s\n", streams->mime);
+	GIRL_DEBUG_MSG("streams->mime = %s\n", streams->mime);
 	streams->uri = (gchar *)xmlGetProp(cur, (const xmlChar *)"uri");
-	MSG("streams->uri = %s\n", streams->uri);
+	GIRL_DEBUG_MSG("streams->uri = %s\n", streams->uri);
 	streams->samplerate = (gchar *)xmlGetProp(cur, (const xmlChar *)"samplerate");
-	MSG("streams->samplerate = %s\n", streams->samplerate);
+	GIRL_DEBUG_MSG("streams->samplerate = %s\n", streams->samplerate);
 	streams->codec = (gchar *)xmlGetProp(cur, (const xmlChar *)"codec");
-	MSG("streams->codec = %s\n", streams->codec);
+	GIRL_DEBUG_MSG("streams->codec = %s\n", streams->codec);
 	streams->bitrate = (gchar *)xmlGetProp(cur, (const xmlChar *)"bitrate");
-	MSG("streams->bitrate = %s\n", streams->bitrate);
-	streams->channels = (gchar *)xmlGetProp(cur, (const xmlChar *)"channels");
-	MSG("streams->channels = %s\n", streams->channels);
+	GIRL_DEBUG_MSG("streams->bitrate = %s\n", streams->bitrate);
+	streams->channels = (GirlChannels)xmlGetProp(cur, (const xmlChar *)"channels");
+	GIRL_DEBUG_MSG("streams->channels = %s\n", streams->channels);
 
 #if 0
 	sub = cur->xmlChildrenNode;
@@ -86,7 +86,7 @@ girl_streams_parser(GirlStreamsInfo *streams, xmlDocPtr doc,
 			streams->frequency =
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("streams->frequency = %s\n",
+			GIRL_DEBUG_MSG("streams->frequency = %s\n",
 			    streams->frequency);
 		}
 
@@ -94,7 +94,7 @@ girl_streams_parser(GirlStreamsInfo *streams, xmlDocPtr doc,
 			streams->location =
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("streams->location = %s\n", streams->location);
+			GIRL_DEBUG_MSG("streams->location = %s\n", streams->location);
 			/* fprintf(stdout, "%s (%s), ", streams->name, streams->location); */
 		}
 
@@ -103,14 +103,14 @@ girl_streams_parser(GirlStreamsInfo *streams, xmlDocPtr doc,
 			streams->description =
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("streams->description = %s\n", streams->description);
+			GIRL_DEBUG_MSG("streams->description = %s\n", streams->description);
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "uri"))) {
 			streams->uri =
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("streams->uri = %s\n", streams->uri);
+			GIRL_DEBUG_MSG("streams->uri = %s\n", streams->uri);
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "encoder"))) {
@@ -120,12 +120,12 @@ girl_streams_parser(GirlStreamsInfo *streams, xmlDocPtr doc,
 
 			streams->encoder->mimetype =
 			    xmlGetProp(sub, "mime");
-			MSG("streams->encoder->mimetype = %s\n",
+			GIRL_DEBUG_MSG("streams->encoder->mimetype = %s\n",
 			    streams->encoder->mimetype);
 			if (xmlGetProp(sub, "bitrate") != NULL) {
 				streams->encoder->bitrate =
 				    atol(xmlGetProp(sub, "bitrate"));
-				MSG("streams->encoder->bitrate = %li\n",
+				GIRL_DEBUG_MSG("streams->encoder->bitrate = %li\n",
 				    streams->encoder->bitrate);
 			}
 
@@ -134,10 +134,10 @@ girl_streams_parser(GirlStreamsInfo *streams, xmlDocPtr doc,
 				    atol(xmlGetProp(sub, "samplerate"));
 			}
 
-			MSG("streams->encoder->samplerate = %li\n",
+			GIRL_DEBUG_MSG("streams->encoder->samplerate = %li\n",
 			    streams->encoder->samplerate);
 			streams->encoder->uri = xmlGetProp(sub, "uri");
-			MSG("streams->encoder->uri = %s\n",
+			GIRL_DEBUG_MSG("streams->encoder->uri = %s\n",
 			    streams->encoder->uri);
 
 			chans = xmlGetProp(sub, "channels");
@@ -146,15 +146,15 @@ girl_streams_parser(GirlStreamsInfo *streams, xmlDocPtr doc,
 				if (strcmp(chans, "stereo") == 0) {
 					streams->encoder->channels =
 					    GIRL_CHANNELS_STEREO;
-					MSG("streams->encoder->channels = %d\n", streams->encoder->channels);
+					GIRL_DEBUG_MSG("streams->encoder->channels = %d\n", streams->encoder->channels);
 				} else if (strcmp(chans, "mono") == 0) {
 					streams->encoder->channels =
 					    GIRL_CHANNELS_MONO;
-					MSG("streams->encoder->channels = %d\n", streams->encoder->channels);
+					GIRL_DEBUG_MSG("streams->encoder->channels = %d\n", streams->encoder->channels);
 				} else if (strcmp(chans, "5:1") == 0) {
 					streams->encoder->channels =
 					    GIRL_CHANNELS_5_1;
-					MSG("streams->encoder->channels = %d\n", streams->encoder->channels);
+					GIRL_DEBUG_MSG("streams->encoder->channels = %d\n", streams->encoder->channels);
 				}
 				g_free(chans);
 			}
@@ -212,7 +212,7 @@ GirlStreamsInfo *girl_streams_load_from_file(GirlStreamsInfo * head,
 
 	version = (gchar *)xmlGetProp(cur, (const xmlChar *)"version");
 
-	MSG("Valid Girl %s XML document... Parsing streams...\n",
+	GIRL_DEBUG_MSG("Valid Girl %s XML document... Parsing streams...\n",
 	    version);
 
 	free(version);
@@ -223,7 +223,7 @@ GirlStreamsInfo *girl_streams_load_from_file(GirlStreamsInfo * head,
 
 		if ((!xmlStrcmp(cur->name, (const xmlChar *) "stream"))) {
 
-			MSG("Found a new stream.\n");
+			GIRL_DEBUG_MSG("Found a new stream.\n");
 
 			curr = g_new0(GirlStreamsInfo, 1);
 			mem_streams = g_new0(GirlStreamsInfo, 1);
@@ -238,13 +238,13 @@ GirlStreamsInfo *girl_streams_load_from_file(GirlStreamsInfo * head,
 
 			girl_streams = g_list_append(girl_streams, (GirlStreamsInfo *)mem_streams);
 
-			MSG("Done with parsing the streams.\n");
+			GIRL_DEBUG_MSG("Done with parsing the streams.\n");
 
 		}
 		cur = cur->next;
 	}
 
-	MSG("Finished parsing XML document.\n");
+	GIRL_DEBUG_MSG("Finished parsing XML document.\n");
 
 	xmlFreeDoc(doc);
 

@@ -35,8 +35,9 @@ struct _GirlStreamsInfo {
 	gchar *uri;
 	gchar *codec;
 	gchar *samplerate;
-	gchar *channels;
+	gchar *streams;
 	gchar *bitrate;
+	GirlChannels channels;
 	GirlEncoderInfo *encoder;
 	GirlStreamsInfo *next;
 	GirlStreamsInfo *prev;

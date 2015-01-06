@@ -1,19 +1,31 @@
 ==============
-GIRL 0.9 notes
+GIRL 1.0 notes
 ==============
 
-GIRL is a GNOME Internet Radio Locator program that allows the user
-to easily find and record live radio programs on radio broadcasters
-on the Internet.
+GIRL is a GNOME Internet Radio Locator program that allows the user to
+easily find and record live radio programs on radio broadcasters on
+the Internet.
 
-GIRL is developed for the GNOME desktop and requires one audio helper
+GNOME Internet Radio Locator (GIRL) version 1.0.0 ("Fenchurch") is now
+available.  The first major 1.0.0 release is dedicated to the writings
+of the English writer, humorist and dramatist Douglas Adams.
+
+GIRL 1.0.0 supports search by location for the 42 supported radio
+stations.  42 is Douglas Adams' Answer to Life, the Universe and
+Everything in book The Hitchhiker's Guide to the Galaxy.  Life is
+finite.  The Universe is infinite.  Listen to and/or record Everything
+that is broadcasted live from 42 radio stations on Earth included with
+this program.
+
+GIRL was developed for the GNOME desktop and requires one audio helper
 such as Totem (https://developer.gnome.org/totem/) to be installed for
-playback and streamripper (http://streamripper.sourceforge.net/) to be
-installed for recording live radio streams of supported radio stations
-(http://girl.software/stations.xml)
+playback and StreamRipper (http://streamripper.sourceforge.net/) to be
+installed for recording live radio streams of supported radio stations.
 
-A user without root on a GNOME desktop can add his or her personal
-Stations in $HOME/.girl/stations.xml
+The station list is available in XML from http://girl.software/girl.xml
+
+A user without root on a GNOME desktop can add his or her Favourite
+Stations in $HOME/.girl/girl.xml (see src/girl.xml for the syntax).
 
 If a user starts the program and exits the program, then the last radio
 station that the user was listening to, appears selected in the Stations

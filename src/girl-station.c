@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2014  Ole Aamot Software
+ * Copyright (C) 2014, 2015  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -24,6 +24,7 @@
 #include <config.h>
 #include <stdio.h>
 #include <string.h>
+#include <glib.h>
 #include <gtk/gtk.h>
 #include <libxml/xmlmemory.h>
 #include <libxml/parser.h>
@@ -63,7 +64,8 @@ cb_child_watch( GPid  pid,
 		gint  status)
 {
 	/* Remove timeout callback */
-	g_source_remove(girl->timeout_id );
+
+	/* FIXME? g_source_remove(girl->timeout_id ); */
 
 	/* Close pid */
 	g_spawn_close_pid( pid );
@@ -140,8 +142,13 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 	GIOChannel *out_ch, *err_ch;
 	gboolean    ret;
 
+	if (signal(SIGCHLD, SIG_IGN) == SIG_ERR) {
+		perror(0);
+		exit(1);
+	}
+	
 	g_return_if_fail(url != NULL);
-	MSG("%s", url);
+	GIRL_DEBUG_MSG("%s", url);
 
 	/* mime_info = gnome_vfs_get_mime_type(url); */
 
@@ -157,9 +164,9 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		app = g_strdup(GIRL_HELPER_RECORD);
 	}
 
-	if (app != NULL) {
+	if (g_strcmp0(app,"no")!=0) {
 		command = g_strconcat(app, " ", url, NULL);
-		g_print("Helper application is %s\n", command);
+		GIRL_DEBUG_MSG("Helper application is %s\n", command);
 		if (type == GIRL_STREAM_SHOUTCAST) {
 			if (helper == GIRL_STREAM_PLAYER) {
 				command = g_strconcat(app, " ", url, NULL);
@@ -174,7 +181,7 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 				/* " -d ", g_get_home_dir(), "/.girl -D \"", name, "\" -s -a -u girl/", VERSION, NULL); */
 				/* command = g_strconcat(command, " -d ", g_get_home_dir(), "/.girl/", name, " -D %S%A%T -t 10 -u girl/", VERSION, NULL); */
 			}
-			g_print("Helper command is %s\n", command);
+		        GIRL_DEBUG_MSG("Helper command is %s\n", command);
 		}
 		/* gnome_vfs_mime_application_free (app); */
 	} else {
@@ -198,23 +205,9 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 	}
 
 	if (helper == GIRL_STREAM_PLAYER) {
-		if (!g_spawn_command_line_async(command, &err)) {
-			msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
-						"Details: %s"), url, err->message);
-			show_error(msg);
-			g_error_free(err);
-			g_free(msg);
-		} else {
-			g_print("Launching %s player\n", command);
-		}
-	}
 
-	if (helper == GIRL_STREAM_RECORD) {
 
-/* #if 0 */
-		/* gchar *argv[] = { command, NULL }; */
-		/* Spawn child process */
-
+#if 0
 		g_shell_parse_argv(command,
 				   &argc,
 				   &argv,
@@ -240,7 +233,9 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		/* Add watch function to catch termination of the process. This function
 		 * will clean any remnants of process. */
 		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl);
-
+		
+		girl->player_pid = pid;
+		girl->player_status = GIRL_PLAYER_TRUE;
 		/* Install timeout fnction that will move the progress bar */
 		girl->timeout_id = g_timeout_add(100,(GSourceFunc)cb_timeout,girl);
 /* #endif */
@@ -281,7 +276,104 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 			g_error_free(err);
 			g_free(msg);
 		} else {
-			g_print("Launching %s\n", command);
+			GIRL_DEBUG_MSG("Launching %s\n", command);
+		}
+		/* Add watch function to catch termination of the process. This function
+		 * will clean any remnants of process. */
+		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl );
+#endif
+#endif
+
+		/* Original async player code */
+		
+		if (!g_spawn_command_line_async(command, &err)) {
+			msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
+						"Details: %s"), url, err->message);
+			show_error(msg);
+			g_error_free(err);
+			g_free(msg);
+		} else {
+			girl->player_status = GIRL_PLAYER_TRUE;
+			GIRL_DEBUG_MSG("Launching %s player\n", command);
+		}
+
+	}
+	
+	if (helper == GIRL_STREAM_RECORD) {
+		
+/* #if 0 */
+		/* gchar *argv[] = { command, NULL }; */
+		/* Spawn child process */
+		
+		g_shell_parse_argv(command,
+				   &argc,
+				   &argv,
+				   NULL);
+		ret = g_spawn_async_with_pipes (".",
+						argv,
+						NULL,
+						G_SPAWN_SEARCH_PATH|G_SPAWN_STDOUT_TO_DEV_NULL|G_SPAWN_STDERR_TO_DEV_NULL|G_SPAWN_DO_NOT_REAP_CHILD,
+						NULL,
+						NULL,
+						&pid,
+						NULL,
+						NULL,
+						NULL,
+						&err);
+		if( ! ret )
+		{
+			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, pid);
+			show_error(msg);
+			g_free(msg);
+			return;
+		}
+		/* Add watch function to catch termination of the process. This function
+		 * will clean any remnants of process. */
+		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl);
+
+		girl->record_pid = pid;
+		girl->record_status = GIRL_RECORD_TRUE;
+		/* Install timeout fnction that will move the progress bar */
+		girl->timeout_id = g_timeout_add(100,(GSourceFunc)cb_timeout,girl);
+/* #endif */
+/* #if 0 */
+		ret = g_spawn_async_with_pipes( NULL, /* command */ argv, NULL,
+						/* G_SPAWN_DO_NOT_REAP_CHILD */ G_SPAWN_DEFAULT, NULL,
+						NULL, &pid, NULL, &out, &error, NULL );
+		if( ! ret )
+		{
+			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, pid);
+			show_error(msg);
+			g_free(msg);
+			return;
+		}
+		/* Add watch function to catch termination of the process. This function
+		 * will clean any remnants of process. */
+		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl );
+		/* Create channels that will be used to read girl from pipes. */
+#ifdef G_OS_WIN32
+		out_ch = g_io_channel_win32_new_fd( out );
+		err_ch = g_io_channel_win32_new_fd( error );
+#else
+		out_ch = g_io_channel_unix_new( out );
+		err_ch = g_io_channel_unix_new( error );
+#endif
+		/* Add watches to channels */
+		g_io_add_watch( out_ch, G_IO_IN | G_IO_HUP, (GIOFunc)cb_out_watch, girl );
+		g_io_add_watch( err_ch, G_IO_IN | G_IO_HUP, (GIOFunc)cb_err_watch, girl );
+		/* Install timeout fnction that will move the progress bar */
+		girl->timeout_id = g_timeout_add( 100, (GSourceFunc)cb_timeout, girl );
+/* #endif */
+#if 0
+		if (!g_spawn_command_line_sync(command, stdout, stderr, status, &err)) {
+			msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
+						"Status code: %i\n"
+						"Details: %s"), url, status, err->message);
+			show_error(msg);
+			g_error_free(err);
+			g_free(msg);
+		} else {
+			GIRL_DEBUG_MSG("Launching %s\n", command);
 		}
 		/* Add watch function to catch termination of the process. This function
 		 * will clean any remnants of process. */
@@ -322,15 +414,15 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 	g_return_if_fail(cur != NULL);
 
 	station->id = (gchar *)xmlGetProp(cur, (const xmlChar *)"id");
-	MSG("station->id = %s\n", station->id);
+	GIRL_DEBUG_MSG("station->id = %s\n", station->id);
 	station->name = (gchar *)xmlGetProp(cur, (const xmlChar *)"name");
-	MSG("station->name = %s\n", station->name);
+	GIRL_DEBUG_MSG("station->name = %s\n", station->name);
 	station->rank = (gchar *)xmlGetProp(cur, (const xmlChar *)"rank");
-	MSG("station->rank = %s\n", station->rank);
+	GIRL_DEBUG_MSG("station->rank = %s\n", station->rank);
 	station->type = (gchar *)xmlGetProp(cur, (const xmlChar *)"type");
-	MSG("station->type = %s\n", station->type);
+	GIRL_DEBUG_MSG("station->type = %s\n", station->type);
 	station->release = (gchar *)xmlGetProp(cur, (const xmlChar *)"release");
-	MSG("station->release = %s\n", station->release);
+	GIRL_DEBUG_MSG("station->release = %s\n", station->release);
 
 	sub = cur->xmlChildrenNode;
 
@@ -340,7 +432,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			station->frequency = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("station->frequency = %s\n",
+			GIRL_DEBUG_MSG("station->frequency = %s\n",
 			    station->frequency);
 		}
 
@@ -348,7 +440,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			station->location = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("station->location = %s\n", station->location);
+			GIRL_DEBUG_MSG("station->location = %s\n", station->location);
 
 		}
 
@@ -357,15 +449,15 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			station->description = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("station->description = %s\n", station->description);
+			GIRL_DEBUG_MSG("station->description = %s\n", station->description);
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "uri"))) {
 			station->uri = (gchar *)
 			    xmlNodeListGetString(doc, sub->xmlChildrenNode,
 						 1);
-			MSG("station->uri = %s\n", station->uri);
-			fprintf(stdout, "%s (%s)\n%s\n\n", station->name, station->location, station->uri);
+			GIRL_DEBUG_MSG("station->uri = %s\n", station->uri);
+			/* fprintf(stdout, "%s (%s)\n%s\n\n", station->name, station->location, station->uri); */
 		}
 
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "stream"))) {
@@ -375,12 +467,12 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 
 			station->stream->mimetype = (gchar *)
 				xmlGetProp(sub, (const xmlChar *)"mime");
-			MSG("station->stream->mimetype = %s\n",
+			GIRL_DEBUG_MSG("station->stream->mimetype = %s\n",
 			    station->stream->mimetype);
 			if (xmlGetProp(sub, (const xmlChar *)"bitrate") != NULL) {
 				station->stream->bitrate =
 					(glong)atol((char *)xmlGetProp(sub, (const xmlChar *)"bitrate"));
-				MSG("station->stream->bitrate = %li\n",
+				GIRL_DEBUG_MSG("station->stream->bitrate = %li\n",
 				    station->stream->bitrate);
 			}
 
@@ -389,29 +481,29 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 					atol((char *)xmlGetProp(sub, (const xmlChar *)"samplerate"));
 			}
 
-			MSG("station->stream->samplerate = %li\n",
+			GIRL_DEBUG_MSG("station->stream->samplerate = %li\n",
 			    station->stream->samplerate);
 			station->stream->uri = (gchar *)xmlGetProp(sub, (const xmlChar *)"uri");
-			MSG("station->stream->uri = %s\n",
+			GIRL_DEBUG_MSG("station->stream->uri = %s\n",
 			    station->stream->uri);
 
 			/* fprintf(stdout, "%s (%s)\n%s\n\n, ", station->name, station->location, station->stream->uri); */
 			
-			chans = (gchar *)xmlGetProp(sub, (const xmlChar *)"channels");
+			chans = (gchar *)xmlGetProp(sub, (const xmlChar *)"stations");
 
 			if (chans != NULL) {
 				if (strcmp(chans, "stereo") == 0) {
 					station->stream->channels =
 					    GIRL_CHANNELS_STEREO;
-					MSG("station->stream->channels = %d\n", station->stream->channels);
+					GIRL_DEBUG_MSG("station->stream->channels = %d\n", station->stream->channels);
 				} else if (strcmp(chans, "mono") == 0) {
 					station->stream->channels =
 					    GIRL_CHANNELS_MONO;
-					MSG("station->stream->channels = %d\n", station->stream->channels);
+					GIRL_DEBUG_MSG("station->stream->channels = %d\n", station->stream->channels);
 				} else if (strcmp(chans, "5:1") == 0) {
 					station->stream->channels =
 					    GIRL_CHANNELS_5_1;
-					MSG("station->stream->channels = %d\n", station->stream->channels);
+					GIRL_DEBUG_MSG("station->stream->channels = %d\n", station->stream->channels);
 				}
 				g_free(chans);
 			}
@@ -428,7 +520,7 @@ GirlStationInfo *girl_station_load_from_http(GirlStationInfo * head,
 					     gpointer data)
 {
 	GirlStationInfo *gstation;
-	gstation = girl_station_load_from_file (head, "http://girl.src.oka.no/stations.xml");
+	gstation = girl_station_load_from_file (head, "http://girl.src.oka.no/girl.xml");
 	return gstation;
 }
 
@@ -468,7 +560,7 @@ GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 
 	version = (gchar *)xmlGetProp(cur, (const xmlChar *)"version");
 
-	MSG("Valid Girl %s XML document... Parsing stations...\n",
+	GIRL_DEBUG_MSG("Valid Girl %s XML document... Parsing stations...\n",
 	    version);
 
 	free(version);
@@ -479,7 +571,7 @@ GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 
 		if ((!xmlStrcmp(cur->name, (const xmlChar *) "station"))) {
 
-			MSG("Found a new station.\n");
+			GIRL_DEBUG_MSG("Found a new station.\n");
 
 			curr = g_new0(GirlStationInfo, 1);
 			mem_station = g_new0(GirlStationInfo, 1);
@@ -494,13 +586,13 @@ GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 
 			girl_stations = g_list_append(girl_stations, (GirlStationInfo *)mem_station);
 
-			MSG("Done with parsing the station.\n");
+			GIRL_DEBUG_MSG("Done with parsing the station.\n");
 
 		}
 		cur = cur->next;
 	}
 
-	MSG("Finished parsing XML document.\n");
+	GIRL_DEBUG_MSG("Finished parsing XML document.\n");
 
 	xmlFreeDoc(doc);
 

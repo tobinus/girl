@@ -12,5 +12,6 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 				    char *filename);
 GtkWidget *create_streams_selector(char *selected_streams_uri,
 				   char *filename);
+GtkWidget *create_search_selector(void);
 
-#endif				/* GIRL_GUI_H */
+#endif /* GIRL_GUI_H */

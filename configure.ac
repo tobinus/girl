@@ -2,14 +2,13 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(girl, 0.9.0)
+AC_INIT(girl, 1.0.0)
 AM_INIT_AUTOMAKE([no-dist-gzip dist-xz])
 AC_CONFIG_SRCDIR([src/girl.c])
 AC_CONFIG_HEADER([config.h])
 
 # Checks for programs.
 AC_PROG_CC
-# AC_PROG_LIBTOOL
 
 AC_PATH_TOOL([GIRL_HELPER_PLAYER], [totem], [/usr/bin/totem],
              [$PATH$PATH_SEPARATOR/usr/bin$PATH_SEPARATOR]dnl
@@ -18,6 +17,7 @@ AC_PATH_TOOL([GIRL_HELPER_PLAYER], [totem], [/usr/bin/totem],
 record_msg="no (http://streamripper.sf.net/)"
 try_record=:
 girl_record=false
+
 AC_ARG_WITH([recording],AS_HELP_STRING([--with-recording],[Support recording with streamripper]), [
 	if test x$withval = xno; then
 	   try_record=false
@@ -25,21 +25,21 @@ AC_ARG_WITH([recording],AS_HELP_STRING([--with-recording],[Support recording wit
 	fi
 ])
 record_prefix=$ac_default_prefix
-
 if $try_record; then
-   AC_PATH_TOOL([GIRL_HELPER_RECORD], [streamripper], [/usr/bin/streamripper],
-					   [$PATH$PATH_SEPARATOR/usr/bin$PATH_SEPARATOR]dnl
-					   [/usr/sbin$PATH_SEPARATOR/usr/etc$PATH_SEPARATOR/etc])
-	AC_MSG_CHECKING([for recording])
-	if test -n "${GIRL_HELPER_RECORD}"; then
+   AC_PATH_TOOL([GIRL_HELPER_RECORD], [streamripper],
+   				       [no],
+				       [$PATH$PATH_SEPARATOR/usr/bin$PATH_SEPARATOR]dnl
+   				       [/usr/sbin$PATH_SEPARATOR/usr/etc$PATH_SEPARATOR/etc])
+	if test x${GIRL_HELPER_RECORD} = xno; then
+	   AC_DEFINE([HAVE_GIRL_RECORD],0,[don't have record])
+   	   record_msg="no (http://streamripper.sf.net/)"
+ 	   girl_record=false
+	else
 	   AC_DEFINE([HAVE_GIRL_RECORD],1,[have record])
 	   record_msg="yes"
 	   girl_record=true
-	else
-	   AC_DEFINE([HAVE_GIRL_RECORD],0,[don't have record])
-	   record_msg="no (http://streamripper.sf.net/)"
-	   girl_record=false
-        fi
+	fi
+	AC_MSG_CHECKING([for recording])
 	AC_MSG_RESULT([$record_msg])
 fi
 AM_CONDITIONAL([HAVE_GIRL_RECORD], [$girl_record])
@@ -48,7 +48,7 @@ AC_SUBST([HAVE_GIRL_RECORD])
 # Checks for libraries.
 
 PKG_CHECK_MODULES(GIRL,
-		  gtk+-2.0 >= 2.0 \
+		  gtk+-3.0 >= 3.0 \
 		  libgnome-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
 		  gnome-vfs-2.0 >= 2.0 \
@@ -94,6 +94,10 @@ data/icons/24x24/Makefile
 data/icons/32x32/Makefile
 data/icons/48x48/Makefile
 data/icons/256x256/Makefile
+data/icons/512x512/Makefile
+data/icons/1024x1024/Makefile
+debian/Makefile
+debian/source/Makefile
 man/Makefile
 po/Makefile.in
 src/Makefile
