@@ -1,5 +1,10 @@
 2015-01-06  Ole Aamot  <oka@src.gnome.org>
 
+	* src/girl-gui.c: Add i18n support
+	* src/girl.c: Add i18n support
+
+2015-01-06  Ole Aamot  <oka@src.gnome.org>
+
 	* AUTHORS: Add Andika Triwidada
 	* THANKS: Add Andika Triwidada
 	* src/girl.xml: Fix Brno location.

@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 #endif
 
 	if (gnome_vfs_init() == FALSE) {
-		g_warning("Gaaaaaaaah! Gnome-VFS init failed mate !\n");
+		g_warning(_("GNOME VFS initialization failed!\n"));
 		exit(1);
 	}
 
@@ -504,8 +504,8 @@ void about_app(GtkWidget * a, gpointer user_data)
 	gchar* artists[] = { "Wiki Graphic Designer",
 			     "Aly Raj",
 			     NULL };
-	gchar* comments = { "Locate Internet Radio Stations" };
-	gchar* copyright = { "Copyright (C) 2014, 2015  Ole Aamot Software" };
+	gchar* comments = { _("Locate Internet Radio Stations") };
+	gchar* copyright = { _("Copyright (C) 2014, 2015  Ole Aamot Software") };
 	gchar* documenters[] = { NULL };
 
 	static GdkPixbuf* logo;
@@ -518,7 +518,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 		GError* error = NULL;
 		logo = gdk_pixbuf_new_from_file (GIRL_DATADIR "/girl.png", &error);
 		if (error) {
-			g_warning ("Unable to load GIRL logo: %s\n", error->message);
+			g_warning (_("Unable to load GIRL logo: %s\n"), error->message);
 			g_error_free (error);
 		}
 	}

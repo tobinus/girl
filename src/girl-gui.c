@@ -51,43 +51,43 @@
 extern GtkWidget *girl_app;
 
 GnomeUIInfo toolbar[] = {
-	GNOMEUIINFO_ITEM_STOCK(("Search"), ("Search by location for radio stations"),
+	GNOMEUIINFO_ITEM_STOCK(N_("Search"), N_("Search by location for radio stations"),
 			       on_search_button_clicked,
 			       GTK_STOCK_FIND),
 	GNOMEUIINFO_SEPARATOR,	
-	GNOMEUIINFO_ITEM_STOCK(("Stations"), ("Internet Radio Stations"),
+	GNOMEUIINFO_ITEM_STOCK(N_("Stations"), N_("Internet Radio Stations"),
 	 		       on_stations_selector_button_clicked,
 			       GTK_STOCK_NETWORK),
 	GNOMEUIINFO_SEPARATOR,	
-	GNOMEUIINFO_ITEM_STOCK(("Listen"), ("Listen to selected radio station"),
+	GNOMEUIINFO_ITEM_STOCK(N_("Listen"), N_("Listen to selected radio station"),
 			       on_listen_button_clicked,
 			       GTK_STOCK_MEDIA_PLAY),
 #if HAVE_GIRL_RECORD == 1
-	GNOMEUIINFO_ITEM_STOCK(("Record"), ("Record selected radio station"),
+	GNOMEUIINFO_ITEM_STOCK(N_("Record"), N_("Record selected radio station"),
 			       on_record_button_clicked,
 			       GTK_STOCK_MEDIA_RECORD),
-	GNOMEUIINFO_ITEM_STOCK(("Stop"), ("Stop recording selected radio station"),
+	GNOMEUIINFO_ITEM_STOCK(N_("Stop"), N_("Stop recording selected radio station"),
 			       on_stop_button_clicked,
 			       GTK_STOCK_MEDIA_STOP),
 #endif /* HAVE_GIRL_RECORD */
 	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_ITEM_STOCK(("Previous"),
-			       ("Go back to the previous radio station"),
+	GNOMEUIINFO_ITEM_STOCK(N_("Previous"),
+			       N_("Go back to the previous radio station"),
 			       on_previous_station_click, GTK_STOCK_GO_BACK),
-	GNOMEUIINFO_ITEM_STOCK(("Next"), ("Proceed to the next radio station"),
+	GNOMEUIINFO_ITEM_STOCK(N_("Next"), N_("Proceed to the next radio station"),
 			       on_next_station_click, GTK_STOCK_GO_FORWARD),
 	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_ITEM_STOCK(("About Station"),
-			       ("About the current Station"),
+	GNOMEUIINFO_ITEM_STOCK(N_("About Station"),
+			       N_("About the current Station"),
 			       about_station, GNOME_STOCK_ABOUT),
 	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_ITEM_STOCK(("About Program"),
-			       ("About the GNOME Internet Radio Locator"),
+	GNOMEUIINFO_ITEM_STOCK(N_("About Program"),
+			       N_("About the GNOME Internet Radio Locator"),
 			       about_app, GNOME_STOCK_ABOUT),
 
 	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_ITEM_STOCK(("Exit"),
-			       ("Quit the GNOME Internet Radio Locator"),
+	GNOMEUIINFO_ITEM_STOCK(N_("Exit"),
+			       N_("Quit the GNOME Internet Radio Locator"),
 			       quit_app, GTK_STOCK_QUIT),
 	GNOMEUIINFO_END,
 
@@ -116,7 +116,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 	int i = 0, selection = -1;
 
 	/* The Listeners dialog */
-	listeners_selector = gtk_dialog_new_with_buttons(("Select a listener"), GTK_WINDOW(girl_app), 0,	/* flags */
+	listeners_selector = gtk_dialog_new_with_buttons(_("Select a listener"), GTK_WINDOW(girl_app), 0,	/* flags */
 							 GTK_STOCK_CLOSE,
 							 GTK_RESPONSE_ACCEPT,
 							 NULL);
@@ -143,7 +143,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 	    world_listener_xml_uri);
 
 	if (world_listener_xml_uri == NULL) {
-		g_warning(("Failed to open %s.  Please install it.\n"),
+		g_warning(_("Failed to open %s.  Please install it.\n"),
 			  world_listener_xml_uri);
 	}
 
@@ -153,7 +153,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 	    girl_listener_load_from_http(NULL, local_listener_xml_file);
 
 	if (locallistener == NULL) {
-		g_warning(("Failed to open %s\n"),
+		g_warning(_("Failed to open %s\n"),
 			  local_listener_xml_file);
 	}
 
@@ -254,7 +254,7 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 	int i = 0, selection = -1;
 
 	/* The Programs dialog */
-	programs_selector = gtk_dialog_new_with_buttons(("Select a program"), GTK_WINDOW(girl_app), 0,	/* flags */
+	programs_selector = gtk_dialog_new_with_buttons(_("Select a program"), GTK_WINDOW(girl_app), 0,	/* flags */
 							GTK_STOCK_CLOSE,
 							GTK_RESPONSE_ACCEPT,
 							NULL);
@@ -285,7 +285,7 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 	    world_program_xml_filename);
 
 	if (world_program_xml_filename == NULL) {
-		g_warning(("Failed to open %s.  Please install it.\n"),
+		g_warning(_("Failed to open %s.\n"),
 			  world_program_xml_filename);
 	}
 
@@ -295,7 +295,7 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 	    girl_program_load_from_file(NULL, local_program_xml_file);
 
 	if (localprogram == NULL) {
-		g_warning(("Failed to open %s\n"), local_program_xml_file);
+		g_warning(_("Failed to open %s.\n"), local_program_xml_file);
 	}
 
 /*   g_free (local_program_xml_file); */
@@ -430,7 +430,7 @@ GtkWidget *create_search_selector(void) {
 	memset(&stats, 0, sizeof(stats));
 
 	/* The Stations dialog */
-	search_selector = gtk_dialog_new_with_buttons(("Search by location"), GTK_WINDOW(girl_app), 0,	/* flags */
+	search_selector = gtk_dialog_new_with_buttons(_("Search by location"), GTK_WINDOW(girl_app), 0,	/* flags */
 							GTK_STOCK_CLOSE,
 							GTK_RESPONSE_ACCEPT,
 							NULL);
@@ -472,7 +472,7 @@ GtkWidget *create_search_selector(void) {
 	}
 
 	if (localstation == NULL) {
-		g_warning(("Failed to open %s\n"), local_station_xml_file);
+		g_warning(_("Failed to open %s.\n"), local_station_xml_file);
 	}
 
 /*   g_free (local_station_xml_file); */
@@ -610,7 +610,7 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 	memset(&stats, 0, sizeof(stats));
 
 	/* The Stations dialog */
-	stations_selector = gtk_dialog_new_with_buttons(("Select a station"), GTK_WINDOW(girl_app), 0,	/* flags */
+	stations_selector = gtk_dialog_new_with_buttons(_("Select a station"), GTK_WINDOW(girl_app), 0,	/* flags */
 							GTK_STOCK_CLOSE,
 							GTK_RESPONSE_ACCEPT,
 							NULL);
@@ -641,7 +641,7 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 	    world_station_xml_filename);
 
 	if (world_station_xml_filename == NULL) {
-		g_warning(("Failed to open %s.  Please install it.\n"),
+		g_warning(_("Failed to open %s.\n"),
 			  world_station_xml_filename);
 	}
 
@@ -655,7 +655,7 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 	}
 
 	if (localstation == NULL) {
-		g_warning(("Failed to open %s\n"), local_station_xml_file);
+		g_warning(_("Failed to open %s\n"), local_station_xml_file);
 	}
 
 /*   g_free (local_station_xml_file); */
@@ -755,7 +755,7 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 	GStatBuf stats;
 
 	/* The Streams dialog */
-	streams_selector = gtk_dialog_new_with_buttons(("Select a stream"), GTK_WINDOW(girl_app), 0,	/* flags */
+	streams_selector = gtk_dialog_new_with_buttons(_("Select a stream"), GTK_WINDOW(girl_app), 0,	/* flags */
 							GTK_STOCK_CLOSE,
 							GTK_RESPONSE_ACCEPT,
 							NULL);
@@ -784,7 +784,7 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 	    world_streams_xml_filename);
 
 	if (world_streams_xml_filename == NULL) {
-		g_warning(("Failed to open %s.  Please install it.\n"),
+		g_warning(_("Failed to open %s.\n"),
 			  world_streams_xml_filename);
 	}
 
@@ -799,7 +799,7 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 
 	if (!g_stat("~/.gnome2/girl", &stats)) {
 		if (localstreams == NULL) {
-			g_warning(("Failed to open %s\n"), local_streams_xml_file);
+			g_warning(_("Failed to open %s\n"), local_streams_xml_file);
 		}
 	}
 
@@ -886,7 +886,7 @@ static void station_print_selection(GtkWidget * list, gpointer func_data)
 	/*      dlist = GTK_LIST(list)->selection; */
 
 	if (!dlist) {
-		g_print("Selection cleared!\n");
+		g_print(_("Selection cleared!\n"));
 		return;
 	}
 
@@ -922,9 +922,9 @@ GtkWidget *create_girl_app()
 	GirlData *girl_data = g_new0(GirlData, 1);
 	char *pmf;
 
-	girl_app = gnome_app_new("girl", ("girl"));
+	girl_app = gnome_app_new("girl", _("GIRL"));
 	gtk_window_set_title(GTK_WINDOW(girl_app),
-			     ("GNOME Internet Radio Locator"));
+			     _("GNOME Internet Radio Locator"));
 
 	vbox1 = gtk_vbox_new(FALSE, 0);
 	gtk_widget_show(vbox1);
@@ -936,7 +936,7 @@ GtkWidget *create_girl_app()
 	g_free(pmf);
 
 	if (girl_pixmap == NULL)
-		g_error(("Couldn't create pixmap"));
+		g_error(_("Couldn't create pixmap"));
 
 	gtk_widget_show(girl_pixmap);
 	gtk_box_pack_start(GTK_BOX(vbox1), girl_pixmap, TRUE, TRUE, 0);
@@ -954,10 +954,10 @@ GtkWidget *create_girl_app()
 
 #if HAVE_GIRL_RECORD == 1
 	gnome_appbar_push(girl_data->appbar,
-			  ("Search by location from \"Search\" or select a radio station from \"Stations\".  Click \"Listen\" to listen to, or \"Record\" to record from the station."));
+			  _("Search by location from \"Search\" or select a radio station from \"Stations\".  Click \"Listen\" to listen to, or \"Record\" to record from the station."));
 #else
 	gnome_appbar_push(girl_data->appbar,
-			  ("Select a radio station from \"Stations\" and click \"Listen\" to listen to the station."));
+			  _("Select a radio station from \"Stations\" and click \"Listen\" to listen to the station."));
 #endif	
 	/*    g_signal_connect(G_OBJECT(calendar), */
 	/*                     "day_selected_double_click", */
