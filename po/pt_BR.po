@@ -1,15 +1,15 @@
 # Brazilian Portuguese translation for girl.
-# Copyright (C) 2014 girl's COPYRIGHT HOLDER
+# Copyright (C) 2015 girl's COPYRIGHT HOLDER
 # This file is distributed under the same license as the girl package.
-# Rafael Ferreira <rafael.f.f1@gmail.com>, 2014.
+# Rafael Ferreira <rafael.f.f1@gmail.com>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-12-13 21:47+0000\n"
-"PO-Revision-Date: 2014-12-14 22:51-0300\n"
+"POT-Creation-Date: 2015-01-06 22:35+0000\n"
+"PO-Revision-Date: 2015-01-08 05:23-0300\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -17,34 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.6.11\n"
+"X-Generator: Poedit 1.7.1\n"
 
-#: ../data/girl.appdata.xml.in.h:1
-msgid ""
-"Girl, the GNOME Internet Radio Locator program, allows users to easily find "
-"live radio programs on radio broadcasters on the Internet."
-msgstr ""
-"Girl, o programa localizador de rádio na Internet para o GNOME (do inglês, "
-"GNOME Internet Radio Locator), permite que os usuários localizem facilmente "
-"programas de rádio ao vivo em transmissões de rádio na Internet."
-
-#: ../data/girl.appdata.xml.in.h:2
-msgid ""
-"Girl is developed on the GNOME platform and requires at least one audio "
-"helper such as totem to be installed."
-msgstr ""
-"Girl é desenvolvido na nova plataforma GNOME e requer que pelo menos uma "
-"auxiliar de áudio como totem esteja instalado."
-
-#: ../data/girl.appdata.xml.in.h:3
-msgid "Enjoy Internet Radio."
-msgstr "Aproveite rádio na Internet"
-
-#: ../data/girl.desktop.in.in.h:1 ../src/girl.c:529
+#: ../data/girl.desktop.in.in.h:1
 msgid "Internet Radio Locator"
 msgstr "Localizador de rádio na Internet"
 
-#: ../data/girl.desktop.in.in.h:2
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:507
 msgid "Locate Internet Radio Stations"
 msgstr "Localizar estações de rádio na Internet."
 
@@ -55,55 +34,254 @@ msgstr ""
 "Ao vivo;Live;Rádio;Radio;Programa;Program;Estação;Station;Localizador;"
 "Locator;"
 
-#: ../src/girl.c:205 ../src/girl.c:264 ../src/girl.c:363 ../src/girl.c:410
-#, c-format
-msgid "Selected %s in %s: %s"
-msgstr "%s selecionado em %s: %s"
+#: ../src/girl.c:64
+msgid "GNOME VFS initialization failed!\n"
+msgstr "Falha ao inicializar GNOME VFS\n"
 
-#: ../src/girl.c:315
+#: ../src/girl.c:181
+#, c-format
+msgid "Selected the previous radio station: %s in %s: %s"
+msgstr "Selecionada a estação de rádio anterior: %s em %s: %s"
+
+#: ../src/girl.c:240
+#, c-format
+msgid "Selected the next radio station %s in %s: %s"
+msgstr "Selecionada a próxima estação de rádio %s em %s: %s"
+
+#: ../src/girl.c:293
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "%s selecionado em %s: %s (%f)"
 
-#: ../src/girl.c:456
+#: ../src/girl.c:341
+#, c-format
+msgid "Selected %s in %s: %s"
+msgstr "%s selecionado em %s: %s"
+
+#: ../src/girl.c:388
+#, c-format
+msgid "Selected the radio station %s in %s: %s"
+msgstr "Selecionada a estação de rádio %s em %s: %s"
+
+#: ../src/girl.c:434
 #, c-format
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "%s selecionado [%s] [%s] [%s]"
 
-#: ../src/girl.c:522 ../src/girl.c:545 ../src/girl.c:575 ../src/girl.c:608
-#: ../src/girl.c:639
-msgid "translator_credits"
-msgstr "Rafael Ferreira <rafael.f.f1@gmail.com>, 2014."
+#: ../src/girl.c:508
+msgid "Copyright (C) 2014, 2015  Ole Aamot Software"
+msgstr "Copyright (C) 2014, 2015  Ole Aamot Software"
 
-#: ../src/girl.c:529
-msgid "GNOME Internet Radio Locator"
-msgstr "Localizador de rádio na Internet para o GNOME"
+#: ../src/girl.c:521
+#, c-format
+msgid "Unable to load GIRL logo: %s\n"
+msgstr "Não foi possível carregar a logo do GIRL: %s\n"
 
-#: ../src/girl.c:529
-msgid ""
-"Copyright 2014 Ole Aamot Software\n"
-"Copyright 2002 Free Software Foundation"
-msgstr ""
-"Copyright 2014 Ole Aamot Software\n"
-"Copyright 2002 Free Software Foundation"
+#: ../src/girl.c:673
+msgid "Search radio station by location"
+msgstr "Pesquise estações de rádio por localização"
 
 #. girl_stream_player(a, user_data);
-#: ../src/girl.c:675
+#: ../src/girl.c:682
 #, c-format
-msgid "Listening to %s in %s: %s "
-msgstr "Escutando %s em %s: %s"
+msgid "Listening to the radio station %s in %s: %s "
+msgstr "Ouvindo a estação de rádio %s em %s: %s"
 
-#: ../src/girl.c:694
+#: ../src/girl.c:704
 #, c-format
-msgid "Recording from %s in %s: %s "
-msgstr "Gravando de %s em %s: %s"
+msgid "Recording from the radio station %s in %s: %s "
+msgstr "Gravando da estação de rádio %s em %s: %s"
 
-#: ../src/girl.c:746
+#: ../src/girl.c:739
+#, c-format
+msgid "Finished recording from the radio station %s in %s: %s"
+msgstr "Finalizada a gravação da estação de rádio %s em %s: %s"
+
+#: ../src/girl.c:753
+#, c-format
+msgid ""
+"To finish playing from the radio station %s in %s: %s, simply exit the "
+"application Videos."
+msgstr ""
+"Para finalizar a reprodução da estação de rádio %s em %s: %s, basta sair do "
+"aplicativo Vídeos."
+
+#: ../src/girl.c:763
+msgid ""
+"Stop what?  You can \"Search\" by location, select a radio station from "
+"\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
+"or \"Next\" radio station."
+msgstr ""
+"Para o quê? Você pode \"Pesquisar\" por localização, selecionar uma estação "
+"de rádio de \"Estações\", ou  clicar em \"Ouvir\" e/ou \"Gravar\". Ou vá "
+"para a estação de rádio \"Anterior\" ou a \"Próxima\"."
+
+#: ../src/girl.c:803
 #, c-format
 msgid "Archiving %s"
 msgstr "Arquivando %s"
 
-#: ../src/girl-station.c:181
+#: ../src/girl-gui.c:54
+msgid "Search"
+msgstr "Pesquisar"
+
+#: ../src/girl-gui.c:54
+msgid "Search by location for radio stations"
+msgstr "Pesquise por localização de estações de rádio"
+
+#: ../src/girl-gui.c:58
+msgid "Stations"
+msgstr "Estações"
+
+#: ../src/girl-gui.c:58
+msgid "Internet Radio Stations"
+msgstr "Estações de rádio na Internet"
+
+#: ../src/girl-gui.c:62
+msgid "Listen"
+msgstr "Ouvir"
+
+#: ../src/girl-gui.c:62
+msgid "Listen to selected radio station"
+msgstr "Ouve a estação de rádio selecionada"
+
+#: ../src/girl-gui.c:66
+msgid "Record"
+msgstr "Gravar"
+
+#: ../src/girl-gui.c:66
+msgid "Record selected radio station"
+msgstr "Grava a estação de rádio selecionada"
+
+#: ../src/girl-gui.c:69
+msgid "Stop"
+msgstr "Parar"
+
+#: ../src/girl-gui.c:69
+msgid "Stop recording selected radio station"
+msgstr "Para a gravação da estação de rádio selecionada"
+
+#: ../src/girl-gui.c:74
+msgid "Previous"
+msgstr "Anterior"
+
+#: ../src/girl-gui.c:75
+msgid "Go back to the previous radio station"
+msgstr "Volta para a estação de rádio anterior"
+
+#: ../src/girl-gui.c:77
+msgid "Next"
+msgstr "Próxima"
+
+#: ../src/girl-gui.c:77
+msgid "Proceed to the next radio station"
+msgstr "Vai para a próxima estação de rádio"
+
+#: ../src/girl-gui.c:80
+msgid "About Station"
+msgstr "Sobre a estação"
+
+#: ../src/girl-gui.c:81
+msgid "About the current Station"
+msgstr "Sobre a estação atual"
+
+#: ../src/girl-gui.c:84
+msgid "About Program"
+msgstr "Sobre o programa"
+
+#: ../src/girl-gui.c:85
+msgid "About the GNOME Internet Radio Locator"
+msgstr "Sobre o localizador de rádio na Internet para o GNOME"
+
+#: ../src/girl-gui.c:89
+msgid "Exit"
+msgstr "Sair"
+
+#: ../src/girl-gui.c:90
+msgid "Quit the GNOME Internet Radio Locator"
+msgstr "Sai do localizador de rádio na Internet para o GNOME"
+
+#. The Listeners dialog
+#: ../src/girl-gui.c:119
+msgid "Select a listener"
+msgstr "Selecione um ouvinte"
+
+#: ../src/girl-gui.c:146
+#, c-format
+msgid "Failed to open %s.  Please install it.\n"
+msgstr "Falha ao abrir %s. Por favor instale-o.\n"
+
+#: ../src/girl-gui.c:156 ../src/girl-gui.c:658 ../src/girl-gui.c:802
+#, c-format
+msgid "Failed to open %s\n"
+msgstr "Falha ao abrir %s\n"
+
+#. The Programs dialog
+#: ../src/girl-gui.c:257
+msgid "Select a program"
+msgstr "Selecione um programa"
+
+#: ../src/girl-gui.c:288 ../src/girl-gui.c:298 ../src/girl-gui.c:475
+#: ../src/girl-gui.c:644 ../src/girl-gui.c:787
+#, c-format
+msgid "Failed to open %s.\n"
+msgstr "Falha ao abrir %s.\n"
+
+#: ../src/girl-gui.c:402
+#, c-format
+msgid "Your search by location resulted in the radio station %s in %s: %s"
+msgstr "Sua pesquisa por localização resultou na estação de rádio %s em %s: %s"
+
+#. The Stations dialog
+#: ../src/girl-gui.c:433
+msgid "Search by location"
+msgstr "Pesquisar por localização"
+
+#. The Stations dialog
+#: ../src/girl-gui.c:613
+msgid "Select a station"
+msgstr "Selecione uma estação"
+
+#. The Streams dialog
+#: ../src/girl-gui.c:758
+msgid "Select a stream"
+msgstr "Selecione um fluxo"
+
+#: ../src/girl-gui.c:889
+#, c-format
+msgid "Selection cleared!\n"
+msgstr "Seleção apagada!\n"
+
+#: ../src/girl-gui.c:925
+msgid "GIRL"
+msgstr "GIRL"
+
+#: ../src/girl-gui.c:927
+msgid "GNOME Internet Radio Locator"
+msgstr "Localizador de rádio na Internet para o GNOME"
+
+#: ../src/girl-gui.c:939
+msgid "Couldn't create pixmap"
+msgstr "Não foi possível criar pixmap"
+
+#: ../src/girl-gui.c:957
+msgid ""
+"Search by location from \"Search\" or select a radio station from \"Stations"
+"\".  Click \"Listen\" to listen to, or \"Record\" to record from the station."
+msgstr ""
+"Pesquise por localização em \"Pesquisar\" ou selecione uma estação de rádio "
+"em \"Estações\". Clique em \"Ouvir\" para ouvir ou \"Gravar\" para gravar da "
+"estação."
+
+#: ../src/girl-gui.c:960
+msgid ""
+"Select a radio station from \"Stations\" and click \"Listen\" to listen to "
+"the station."
+msgstr ""
+"Selecione uma estação de rádio em \"Estações\" e clique \"Ouvir\" para ouvir "
+"a estação."
+
+#: ../src/girl-station.c:189
 #, c-format
 msgid ""
 "An error happened trying to play %s\n"
@@ -112,7 +290,7 @@ msgstr ""
 "Ocorreu um erro ao tentar reproduzir %s\n"
 "O arquivo não existe ou você não tem um reprodutor para ele."
 
-#: ../src/girl-station.c:187
+#: ../src/girl-station.c:195
 #, c-format
 msgid ""
 "An error happened trying to record %s\n"
@@ -121,21 +299,13 @@ msgstr ""
 "Ocorreu um erro ao tentar reproduzir %s\n"
 "O arquivo não existe ou você não tem um gravador para ele."
 
-#: ../src/girl-station.c:201
-#, c-format
-msgid ""
-"Failed to open URL: '%s'\n"
-"Details: %s"
-msgstr ""
-"Falha ao abrir a URL: \"%s\"\n"
-"Detalhes: %s"
-
-#: ../src/girl-station.c:234 ../src/girl-station.c:252
+#: ../src/girl-station.c:228 ../src/girl-station.c:248
+#: ../src/girl-station.c:325 ../src/girl-station.c:345
 #, c-format
 msgid "Failed to run %s (%i)\n"
 msgstr "Falha ao executar %s (%i)\n"
 
-#: ../src/girl-station.c:276
+#: ../src/girl-station.c:272 ../src/girl-station.c:369
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -146,5 +316,40 @@ msgstr ""
 "Código de status: %i\n"
 "Detalhes: %s"
 
-#~ msgid "Internet radio station and listener locator"
-#~ msgstr "Localizador que escuta e que é estação de rádio na internet"
+#: ../src/girl-station.c:290
+#, c-format
+msgid ""
+"Failed to open URL: '%s'\n"
+"Details: %s"
+msgstr ""
+"Falha ao abrir a URL: \"%s\"\n"
+"Detalhes: %s"
+
+#~ msgid ""
+#~ "Girl, the GNOME Internet Radio Locator program, allows users to easily "
+#~ "find live radio programs on radio broadcasters on the Internet."
+#~ msgstr ""
+#~ "Girl, o programa localizador de rádio na Internet para o GNOME (do "
+#~ "inglês, GNOME Internet Radio Locator), permite que os usuários localizem "
+#~ "facilmente programas de rádio ao vivo em transmissões de rádio na "
+#~ "Internet."
+
+#~ msgid ""
+#~ "Girl is developed on the GNOME platform and requires at least one audio "
+#~ "helper such as totem to be installed."
+#~ msgstr ""
+#~ "Girl é desenvolvido na nova plataforma GNOME e requer que pelo menos uma "
+#~ "auxiliar de áudio como totem esteja instalado."
+
+#~ msgid "Enjoy Internet Radio."
+#~ msgstr "Aproveite rádio na Internet"
+
+#~ msgid "translator_credits"
+#~ msgstr "Rafael Ferreira <rafael.f.f1@gmail.com>, 2014."
+
+#~ msgid ""
+#~ "Copyright 2014 Ole Aamot Software\n"
+#~ "Copyright 2002 Free Software Foundation"
+#~ msgstr ""
+#~ "Copyright 2014 Ole Aamot Software\n"
+#~ "Copyright 2002 Free Software Foundation"
