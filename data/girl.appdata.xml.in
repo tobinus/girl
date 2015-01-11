@@ -3,20 +3,20 @@
   <id type="desktop">girl.desktop</id>
   <licence>CC0</licence>
   <description>
-    <p>
-      Girl, the GNOME Internet Radio Locator program, allows users to
+    <_p>
+      GIRL, the GNOME Internet Radio Locator program, allows users to
       easily find and record live radio programs on radio broadcasters
       on the Internet.
-    </p>
-    <p>
-      Girl is developed for the GNOME desktop and requires one audio
+    </_p>
+    <_p>
+      GIRL is developed for the GNOME desktop and requires one audio
       helper such as Totem to be installed for playback and
       streamripper to be installed for recording live radio streams of
       supported radio stations.
-    </p>
-    <p>
-      Enjoy listening to and recording from supported Internet Radio stations in Girl.
-    </p>
+    </_p>
+    <_p>
+      Enjoy listening to and recording from supported Internet Radio stations in GIRL.
+    </_p>
   </description>
   <url type="homepage">https://wiki.gnome.org/Apps/Girl</url>
   <screenshots>
