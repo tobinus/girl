@@ -4,14 +4,14 @@
 # pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Piotr Drąg <piotrdrag@gmail.com>, 2014.
-# Aviary.pl <gnomepl@aviary.pl>, 2014.
+# Piotr Drąg <piotrdrag@gmail.com>, 2014-2015.
+# Aviary.pl <gnomepl@aviary.pl>, 2014-2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: girl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-14 12:51+0100\n"
-"PO-Revision-Date: 2014-12-14 12:52+0100\n"
+"POT-Creation-Date: 2015-01-11 15:02+0100\n"
+"PO-Revision-Date: 2015-01-11 15:04+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -25,30 +25,33 @@ msgstr ""
 
 #: ../data/girl.appdata.xml.in.h:1
 msgid ""
-"Girl, the GNOME Internet Radio Locator program, allows users to easily find "
-"live radio programs on radio broadcasters on the Internet."
+"GIRL, the GNOME Internet Radio Locator program, allows users to easily find "
+"and record live radio programs on radio broadcasters on the Internet."
 msgstr ""
-"Girl jest programem do wykrywania internetowych stacji radiowych dla "
-"środowiska GNOME."
+"GIRL jest programem do wykrywania i nagrywania internetowych stacji "
+"radiowych dla środowiska GNOME."
 
 #: ../data/girl.appdata.xml.in.h:2
 msgid ""
-"Girl is developed on the GNOME platform and requires at least one audio "
-"helper such as totem to be installed."
+"GIRL is developed for the GNOME desktop and requires one audio helper such "
+"as Totem to be installed for playback and streamripper to be installed for "
+"recording live radio streams of supported radio stations."
 msgstr ""
-"Program Girl został zaprojektowany dla platformy GNOME i wymaga "
+"Program GIRL został zaprojektowany dla platformy GNOME i wymaga "
 "zainstalowania co najmniej jednego programu pomocniczego do odtwarzania "
-"dźwięku, takiego jak totem."
+"dźwięku, takiego jak Totem, oraz programu streamripper do nagrywania."
 
 #: ../data/girl.appdata.xml.in.h:3
-msgid "Enjoy Internet Radio."
-msgstr "Ciesz się radiem internetowym."
+msgid ""
+"Enjoy listening to and recording from supported Internet Radio stations in "
+"GIRL."
+msgstr "Ciesz się radiem internetowym w programie GIRL."
 
-#: ../data/girl.desktop.in.in.h:1 ../src/girl.c:529
+#: ../data/girl.desktop.in.in.h:1
 msgid "Internet Radio Locator"
 msgstr "Wyszukiwanie internetowych stacji radiowych"
 
-#: ../data/girl.desktop.in.in.h:2
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:507
 msgid "Locate Internet Radio Stations"
 msgstr "Wyszukiwanie internetowych stacji radiowych"
 
@@ -57,57 +60,255 @@ msgstr "Wyszukiwanie internetowych stacji radiowych"
 msgid "Live;Radio;Program;Station;Locator;"
 msgstr "Na żywo;Live;Program;Stacja;Wyszukiwanie;Znajdź;"
 
-#: ../src/girl.c:205 ../src/girl.c:264 ../src/girl.c:363 ../src/girl.c:410
-#, c-format
-msgid "Selected %s in %s: %s"
-msgstr "Wybrano %s w %s: %s"
+#: ../src/girl.c:64
+msgid "GNOME VFS initialization failed!\n"
+msgstr "Zainicjowanie GNOME VFS się nie powiodło.\n"
 
-#: ../src/girl.c:315
+#: ../src/girl.c:181
+#, c-format
+msgid "Selected the previous radio station: %s in %s: %s"
+msgstr "Wybrano poprzednią stację radiową: %s w %s: %s"
+
+#: ../src/girl.c:240
+#, c-format
+msgid "Selected the next radio station %s in %s: %s"
+msgstr "Wybrano następną stację radiową %s w %s: %s"
+
+#: ../src/girl.c:293
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "Wybrano %s w %s: %s (%f)"
 
-#: ../src/girl.c:456
+#: ../src/girl.c:341
+#, c-format
+msgid "Selected %s in %s: %s"
+msgstr "Wybrano %s w %s: %s"
+
+#: ../src/girl.c:388
+#, c-format
+msgid "Selected the radio station %s in %s: %s"
+msgstr "Wybrano stację radiową %s w %s: %s"
+
+#: ../src/girl.c:434
 #, c-format
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "Wybrano %s [%s] [%s] [%s]"
 
-#: ../src/girl.c:522 ../src/girl.c:545 ../src/girl.c:575 ../src/girl.c:608
-#: ../src/girl.c:639
-msgid "translator_credits"
-msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2014\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2014"
+#: ../src/girl.c:508
+msgid "Copyright (C) 2014, 2015  Ole Aamot Software"
+msgstr "Copyright (C) 2014, 2015 Ole Aamot Software"
 
-#: ../src/girl.c:529
-msgid "GNOME Internet Radio Locator"
-msgstr "Wyszukiwanie internetowych stacji radiowych w GNOME"
+#: ../src/girl.c:521
+#, c-format
+msgid "Unable to load GIRL logo: %s\n"
+msgstr "Nie można wczytać logo programu GIRL: %s\n"
 
-#: ../src/girl.c:529
-msgid ""
-"Copyright 2014 Ole Aamot Software\n"
-"Copyright 2002 Free Software Foundation"
-msgstr ""
-"Copyright 2014 Ole Aamot Software\n"
-"Copyright 2002 Free Software Foundation"
+#: ../src/girl.c:673
+msgid "Search radio station by location"
+msgstr "Wyszukiwanie stacji radiowych według położenia"
 
 #. girl_stream_player(a, user_data);
-#: ../src/girl.c:675
+#: ../src/girl.c:682
 #, c-format
-msgid "Listening to %s in %s: %s "
-msgstr "Słuchanie %s w %s: %s "
+msgid "Listening to the radio station %s in %s: %s "
+msgstr "Słuchanie stacji radiowej %s w %s: %s "
 
-#: ../src/girl.c:694
+#: ../src/girl.c:704
 #, c-format
-msgid "Recording from %s in %s: %s "
-msgstr "Nagrywanie z %s w %s: %s "
+msgid "Recording from the radio station %s in %s: %s "
+msgstr "Nagrywanie ze stacji radiowej %s w %s: %s "
 
-#: ../src/girl.c:746
+#: ../src/girl.c:739
+#, c-format
+msgid "Finished recording from the radio station %s in %s: %s"
+msgstr "Ukończono nagrywanie ze stacji radiowej %s w %s: %s"
+
+#: ../src/girl.c:753
+#, c-format
+msgid ""
+"To finish playing from the radio station %s in %s: %s, simply exit the "
+"application Videos."
+msgstr ""
+"Aby ukończyć odtwarzanie ze stacji radiowej %s w %s: %s, należy zakończyć "
+"działanie programu Filmy."
+
+#: ../src/girl.c:763
+msgid ""
+"Stop what?  You can \"Search\" by location, select a radio station from "
+"\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
+"or \"Next\" radio station."
+msgstr ""
+"Nie ma nic do zatrzymania. Można \"Wyszukać\" według położenia, wybrać "
+"stację radiową ze \"Stacje\", albo kliknąć \"Słuchaj\" i/lub \"Nagrywaj\". "
+"Można też przejść do \"Poprzedniej\" lub \"Następnej\" stacji radiowej."
+
+#: ../src/girl.c:803
 #, c-format
 msgid "Archiving %s"
 msgstr "Archiwizowanie %s"
 
-#: ../src/girl-station.c:181
+#: ../src/girl-gui.c:54
+msgid "Search"
+msgstr "Wyszukaj"
+
+#: ../src/girl-gui.c:54
+msgid "Search by location for radio stations"
+msgstr "Wyszukuje stacje radiowe według położenia"
+
+#: ../src/girl-gui.c:58
+msgid "Stations"
+msgstr "Stacje"
+
+#: ../src/girl-gui.c:58
+msgid "Internet Radio Stations"
+msgstr "Internetowe stacje radiowe"
+
+#: ../src/girl-gui.c:62
+msgid "Listen"
+msgstr "Słuchaj"
+
+#: ../src/girl-gui.c:62
+msgid "Listen to selected radio station"
+msgstr "Słucha wybranej stacji radiowej"
+
+#: ../src/girl-gui.c:66
+msgid "Record"
+msgstr "Nagrywaj"
+
+#: ../src/girl-gui.c:66
+msgid "Record selected radio station"
+msgstr "Nagrywa wybraną stację radiową"
+
+#: ../src/girl-gui.c:69
+msgid "Stop"
+msgstr "Zatrzymaj"
+
+#: ../src/girl-gui.c:69
+msgid "Stop recording selected radio station"
+msgstr "Zatrzymuje nagrywanie wybranej stacji radiowej"
+
+#: ../src/girl-gui.c:74
+msgid "Previous"
+msgstr "Poprzednia"
+
+#: ../src/girl-gui.c:75
+msgid "Go back to the previous radio station"
+msgstr "Przechodzi do poprzedniej stacji radiowej"
+
+#: ../src/girl-gui.c:77
+msgid "Next"
+msgstr "Następna"
+
+#: ../src/girl-gui.c:77
+msgid "Proceed to the next radio station"
+msgstr "Przechodzi do następnej stacji radiowej"
+
+#: ../src/girl-gui.c:80
+msgid "About Station"
+msgstr "Informacje o stacji"
+
+#: ../src/girl-gui.c:81
+msgid "About the current Station"
+msgstr "Informacje o bieżącej stacji"
+
+#: ../src/girl-gui.c:84
+msgid "About Program"
+msgstr "O programie"
+
+#: ../src/girl-gui.c:85
+msgid "About the GNOME Internet Radio Locator"
+msgstr ""
+"Informacje o programie do wyszukiwania internetowych stacji radiowych w GNOME"
+
+#: ../src/girl-gui.c:89
+msgid "Exit"
+msgstr "Zakończ"
+
+#: ../src/girl-gui.c:90
+msgid "Quit the GNOME Internet Radio Locator"
+msgstr ""
+"Kończy działanie programu do wyszukiwania internetowych stacji radiowych w "
+"GNOME"
+
+#. The Listeners dialog
+#: ../src/girl-gui.c:119
+msgid "Select a listener"
+msgstr "Wybór słuchacza"
+
+#: ../src/girl-gui.c:146
+#, c-format
+msgid "Failed to open %s.  Please install it.\n"
+msgstr ""
+"Otwarcie programu %s się nie powiodło. Proszę zainstalować go ponownie.\n"
+
+#: ../src/girl-gui.c:156 ../src/girl-gui.c:658 ../src/girl-gui.c:802
+#, c-format
+msgid "Failed to open %s\n"
+msgstr "Otwarcie %s się nie powiodło\n"
+
+#. The Programs dialog
+#: ../src/girl-gui.c:257
+msgid "Select a program"
+msgstr "Wybór programu"
+
+#: ../src/girl-gui.c:288 ../src/girl-gui.c:298 ../src/girl-gui.c:475
+#: ../src/girl-gui.c:644 ../src/girl-gui.c:787
+#, c-format
+msgid "Failed to open %s.\n"
+msgstr "Otwarcie %s się nie powiodło.\n"
+
+#: ../src/girl-gui.c:402
+#, c-format
+msgid "Your search by location resulted in the radio station %s in %s: %s"
+msgstr "Wyszukiwanie według położenia znalazło stację radiową %s w %s: %s"
+
+#. The Stations dialog
+#: ../src/girl-gui.c:433
+msgid "Search by location"
+msgstr "Wyszukiwanie według położenia"
+
+#. The Stations dialog
+#: ../src/girl-gui.c:613
+msgid "Select a station"
+msgstr "Wybór stacji"
+
+#. The Streams dialog
+#: ../src/girl-gui.c:758
+msgid "Select a stream"
+msgstr "Wybór strumienia"
+
+#: ../src/girl-gui.c:889
+#, c-format
+msgid "Selection cleared!\n"
+msgstr "Wyczyszczono wybór.\n"
+
+#: ../src/girl-gui.c:925
+msgid "GIRL"
+msgstr "GIRL"
+
+#: ../src/girl-gui.c:927
+msgid "GNOME Internet Radio Locator"
+msgstr "Wyszukiwanie internetowych stacji radiowych w GNOME"
+
+#: ../src/girl-gui.c:939
+msgid "Couldn't create pixmap"
+msgstr "Nie można utworzyć mapy pikseli"
+
+#: ../src/girl-gui.c:957
+msgid ""
+"Search by location from \"Search\" or select a radio station from \"Stations"
+"\".  Click \"Listen\" to listen to, or \"Record\" to record from the station."
+msgstr ""
+"Można \"Wyszukać\" według położenia lub wybrać stację radiową ze \"Stacje\". "
+"Można też kliknąć \"Słuchaj\" lub \"Nagrywaj\"."
+
+#: ../src/girl-gui.c:960
+msgid ""
+"Select a radio station from \"Stations\" and click \"Listen\" to listen to "
+"the station."
+msgstr "Można wybrać stację radiową ze \"Stacje\" i kliknąć \"Słuchaj\"."
+
+#: ../src/girl-station.c:189
 #, c-format
 msgid ""
 "An error happened trying to play %s\n"
@@ -116,7 +317,7 @@ msgstr ""
 "Wystąpił błąd podczas próby odtworzenia %s\n"
 "Plik nie istnieje lub nie ma dla niego odtwarzacza."
 
-#: ../src/girl-station.c:187
+#: ../src/girl-station.c:195
 #, c-format
 msgid ""
 "An error happened trying to record %s\n"
@@ -125,21 +326,13 @@ msgstr ""
 "Wystąpił błąd podczas próby nagrania %s\n"
 "Plik nie istnieje lub nie ma dla niego programu nagrywającego."
 
-#: ../src/girl-station.c:201
-#, c-format
-msgid ""
-"Failed to open URL: '%s'\n"
-"Details: %s"
-msgstr ""
-"Otwarcie adresu URL się nie powiodło: \"%s\"\n"
-"Szczegóły: %s"
-
-#: ../src/girl-station.c:234 ../src/girl-station.c:252
+#: ../src/girl-station.c:228 ../src/girl-station.c:248
+#: ../src/girl-station.c:325 ../src/girl-station.c:345
 #, c-format
 msgid "Failed to run %s (%i)\n"
 msgstr "Wykonanie %s się nie powiodło (%i)\n"
 
-#: ../src/girl-station.c:276
+#: ../src/girl-station.c:272 ../src/girl-station.c:369
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -148,4 +341,13 @@ msgid ""
 msgstr ""
 "Otwarcie adresu URL się nie powiodło: \"%s\"\n"
 "Kod stanu: %i\n"
+"Szczegóły: %s"
+
+#: ../src/girl-station.c:290
+#, c-format
+msgid ""
+"Failed to open URL: '%s'\n"
+"Details: %s"
+msgstr ""
+"Otwarcie adresu URL się nie powiodło: \"%s\"\n"
 "Szczegóły: %s"
