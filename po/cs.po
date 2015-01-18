@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-06 22:35+0000\n"
-"PO-Revision-Date: 2015-01-07 00:45+0100\n"
+"POT-Creation-Date: 2015-01-11 14:05+0000\n"
+"PO-Revision-Date: 2015-01-18 18:45+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -18,6 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Gtranslator 2.91.6\n"
+
+#: ../data/girl.appdata.xml.in.h:1
+msgid ""
+"GIRL, the GNOME Internet Radio Locator program, allows users to easily find "
+"and record live radio programs on radio broadcasters on the Internet."
+msgstr ""
+"GIRL, GNOME Internet Radio Locator (ladění internetových stanic pro GNOME) "
+"je aplikace, pomocí které si uživatel může snadno najít, a připadně i "
+"nahrát, živé vysílání rádií na Internetu."
+
+#: ../data/girl.appdata.xml.in.h:2
+msgid ""
+"GIRL is developed for the GNOME desktop and requires one audio helper such "
+"as Totem to be installed for playback and streamripper to be installed for "
+"recording live radio streams of supported radio stations."
+msgstr ""
+"GIRL je vyvíjen pro pracovní prostředí GNOME a vyžaduje, aby byl "
+"nainstalován podpůrný program pro práci se zvukem, jako je Totem, který "
+"hudbu přehrává a další program, který umí u podporovaných stanic živé "
+"vysílání nahrávat."
+
+#: ../data/girl.appdata.xml.in.h:3
+#| msgid "Finished recording from the radio station %s in %s: %s"
+msgid ""
+"Enjoy listening to and recording from supported Internet Radio stations in "
+"GIRL."
+msgstr ""
+"Uživejte si poslech a nahrávání z podporovaných internetových rádií v "
+"aplikaci GIRL."
 
 #: ../data/girl.desktop.in.in.h:1
 msgid "Internet Radio Locator"
@@ -123,7 +152,6 @@ msgid "Search"
 msgstr "Hledat"
 
 #: ../src/girl-gui.c:54
-#| msgid "Your search by location resulted in the radio station %s in %s: %s"
 msgid "Search by location for radio stations"
 msgstr "Vyhledat stanici podle místa"
 
@@ -132,7 +160,6 @@ msgid "Stations"
 msgstr "Stanice"
 
 #: ../src/girl-gui.c:58
-#| msgid "Locate Internet Radio Stations"
 msgid "Internet Radio Stations"
 msgstr "Stanice internetových radií"
 
@@ -141,7 +168,6 @@ msgid "Listen"
 msgstr "Poslouchat"
 
 #: ../src/girl-gui.c:62
-#| msgid "Listening to the radio station %s in %s: %s "
 msgid "Listen to selected radio station"
 msgstr "Poslouchat vybranou stanici"
 
@@ -150,7 +176,6 @@ msgid "Record"
 msgstr "Nahrávat"
 
 #: ../src/girl-gui.c:66
-#| msgid "Selected the radio station %s in %s: %s"
 msgid "Record selected radio station"
 msgstr "Nahrávat vybranou stanici"
 
@@ -159,7 +184,6 @@ msgid "Stop"
 msgstr "Zastavit"
 
 #: ../src/girl-gui.c:69
-#| msgid "Recording from the radio station %s in %s: %s "
 msgid "Stop recording selected radio station"
 msgstr "Zastavit nahrávání vybrané stanice"
 
@@ -168,7 +192,6 @@ msgid "Previous"
 msgstr "Předchozí"
 
 #: ../src/girl-gui.c:75
-#| msgid "Selected the previous radio station: %s in %s: %s"
 msgid "Go back to the previous radio station"
 msgstr "Vrátit se k předchozí stanici"
 
@@ -177,7 +200,6 @@ msgid "Next"
 msgstr "Následující"
 
 #: ../src/girl-gui.c:77
-#| msgid "Selected the next radio station %s in %s: %s"
 msgid "Proceed to the next radio station"
 msgstr "Přejít k následující stanici"
 
@@ -194,7 +216,6 @@ msgid "About Program"
 msgstr "O aplikaci"
 
 #: ../src/girl-gui.c:85
-#| msgid "Internet Radio Locator"
 msgid "About the GNOME Internet Radio Locator"
 msgstr "O aplikaci Naladění internetových rádií v GNOME"
 
@@ -203,7 +224,6 @@ msgid "Exit"
 msgstr "Ukončit"
 
 #: ../src/girl-gui.c:90
-#| msgid "Internet Radio Locator"
 msgid "Quit the GNOME Internet Radio Locator"
 msgstr "Ukončit aplikaci Naladění internetových rádií"
 
@@ -219,7 +239,6 @@ msgstr "Selhalo otevření %s. Nainstalujte jej prosím.\n"
 
 #: ../src/girl-gui.c:156 ../src/girl-gui.c:658 ../src/girl-gui.c:802
 #, c-format
-#| msgid "Failed to run %s (%i)\n"
 msgid "Failed to open %s\n"
 msgstr "Selhalo otevření %s\n"
 
@@ -231,7 +250,6 @@ msgstr "Výběr programu"
 #: ../src/girl-gui.c:288 ../src/girl-gui.c:298 ../src/girl-gui.c:475
 #: ../src/girl-gui.c:644 ../src/girl-gui.c:787
 #, c-format
-#| msgid "Failed to run %s (%i)\n"
 msgid "Failed to open %s.\n"
 msgstr "Selhalo otevření %s.\n"
 
@@ -242,7 +260,6 @@ msgstr "Výsledkem vašeho hledání podle místa je stanice %s v %s: %s"
 
 #. The Stations dialog
 #: ../src/girl-gui.c:433
-#| msgid "Search radio station by location"
 msgid "Search by location"
 msgstr "Vyhledání podle místa"
 
@@ -266,7 +283,6 @@ msgid "GIRL"
 msgstr "GIRL"
 
 #: ../src/girl-gui.c:927
-#| msgid "Internet Radio Locator"
 msgid "GNOME Internet Radio Locator"
 msgstr "Naladění internetových rádií v GNOME"
 
@@ -275,10 +291,6 @@ msgid "Couldn't create pixmap"
 msgstr "Nelze vytvořit pixelovou mapu"
 
 #: ../src/girl-gui.c:957
-#| msgid ""
-#| "Stop what?  You can \"Search\" by location, select a radio station from "
-#| "\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev"
-#| "\" or \"Next\" radio station."
 msgid ""
 "Search by location from \"Search\" or select a radio station from \"Stations"
 "\".  Click \"Listen\" to listen to, or \"Record\" to record from the station."
