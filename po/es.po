@@ -1,16 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2015-01-23 06:29+0000\n"
-"PO-Revision-Date: 2015-01-23 10:37+0100\n"
+"PO-Revision-Date: 2015-01-23 10:40+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -54,7 +53,7 @@ msgstr ""
 
 #: ../src/girl.c:64
 msgid "GNOME VFS initialization failed!\n"
-msgstr "Falló al iniciar GNOME VFS"
+msgstr "Falló al iniciar GNOME VFS\n"
 
 #: ../src/girl.c:181
 #, c-format
@@ -238,7 +237,7 @@ msgstr "Seleccionar un programa"
 #: ../src/girl-gui.c:644 ../src/girl-gui.c:787
 #, c-format
 msgid "Failed to open %s.\n"
-msgstr "%s: Falló al abrir %s.\n"
+msgstr "Falló al abrir %s.\n"
 
 #: ../src/girl-gui.c:402
 #, c-format
@@ -307,7 +306,7 @@ msgstr ""
 #: ../src/girl-station.c:325 ../src/girl-station.c:345
 #, c-format
 msgid "Failed to run %s (%i)\n"
-msgstr "Falló al ejecutar %s (%i)"
+msgstr "Falló al ejecutar %s (%i)\n"
 
 #: ../src/girl-station.c:272 ../src/girl-station.c:369
 #, c-format
@@ -318,7 +317,7 @@ msgid ""
 msgstr ""
 "Falló al abrir el URL: «%s»\n"
 "Código de estado: %i\n"
-"Detalles: %i"
+"Detalles: %s"
 
 #: ../src/girl-station.c:290
 #, c-format
