@@ -49,7 +49,7 @@ msgstr "Ciesz się radiem internetowym w programie GIRL."
 
 #: ../data/girl.desktop.in.in.h:1
 msgid "Internet Radio Locator"
-msgstr "Internetowych stacji radiowych"
+msgstr "Internetowe stacje radiowe"
 
 #: ../data/girl.desktop.in.in.h:2 ../src/girl.c:507
 msgid "Locate Internet Radio Stations"
