@@ -493,26 +493,31 @@ void quit_app(GtkWidget * a, gpointer user_data)
 void about_app(GtkWidget * a, gpointer user_data)
 {
 	static GtkWindow *about = NULL;
-	gchar* authors[] = { "Ole Aamot",
-			     "Marek Černocký",
-			     "Miroslav Nikolić",
-			     "Wolfgang Stöggl",
-			     "Piotr Drąg",
-			     "Muhammet Kara",
-			     "Balázs Úr",
-			     NULL };
+
+	gchar* authors[] = { "Ole Aamot <ole@src.gnome.org> (Maintainer)", NULL };
+
+	gchar* translators = g_strdup(_("Marek Černocký <marek@manet.cz> (Czech translation)\n"
+					"Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese translation)\n"
+					"Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+					"Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
+					"Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
+					"Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
+					"Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
+					"Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
+					"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"));
 	gchar* artists[] = { "Wiki Graphic Designer",
 			     "Aly Raj",
 			     NULL };
 	gchar* comments = { _("Locate Internet Radio Stations") };
 	gchar* copyright = { _("Copyright (C) 2014, 2015  Ole Aamot Software") };
-	gchar* documenters[] = { NULL };
+	gchar* documenters[] = { _("See http://wiki.gnome.org/DocumentationProject"), NULL };
 
 	static GdkPixbuf* logo;
 	gchar* name = PACKAGE;
 	gchar* version = VERSION;
 	gchar* website = "http://wiki.gnome.org/Apps/Girl";
 	gchar* website_label = "http://wiki.gnome.org/Apps/Girl";
+	gchar* license = g_strdup(_("This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\nYou should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA."));
 
 	if (!logo) {
 		GError* error = NULL;
@@ -529,11 +534,15 @@ void about_app(GtkWidget * a, gpointer user_data)
 			       "comments", comments,
 			       "copyright", copyright,
 			       "documenters", documenters,
+			       "license", license,
 			       "logo", logo,
 			       "name", name,
+			       "translator-credits", translators,
 			       "version", version,
 			       "website", website,
-			       "website-label", website_label, NULL);
+			       "website-label", website_label,
+			       "wrap-license", TRUE,
+			       NULL);
 }
 
 void about_listener(GtkWidget * a, gpointer user_data)
@@ -750,7 +759,7 @@ void on_stop_button_clicked(GtkWidget *a, gpointer user_data)
 			
 			g_spawn_close_pid( girl->player_pid);
 			
-			appbar_send_msg(_("To finish playing from the radio station %s in %s: %s, simply exit the application Videos."),
+			appbar_send_msg(_("To finish playing from the radio station %s in %s, exit the application Videos."),
 					girl->selected_station_name,
 					girl->selected_station_location,
 					girl->selected_station_uri,

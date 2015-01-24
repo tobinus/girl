@@ -1,5 +1,11 @@
+girl (1.2.0-1) unstable; urgency=medium
+
+  * Debian packaging of the girl 1.2.0 upstream release.
+
+ -- Ole Aamot <ole@src.gnome.org>  Sat, 24 Jan 2015 00:54:00 +0000
+
 girl (1.0.0-1) unstable; urgency=medium
 
   * Initial Debian packaging of girl 1.0.0.
 
- -- Ole Aamot <ole@src.gnome.org>  Fri, 02 Jan 2015 04:17:00 +0000
+  -- Ole Aamot <ole@src.gnome.org>  Fri, 02 Jan 2015 04:17:00 +0000

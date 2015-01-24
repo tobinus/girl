@@ -42,7 +42,7 @@ clean:
 	rm -f build-stamp configure-stamp
 	-$(MAKE) distclean
 	-rm -rf `pwd`/debian/girl
-	sed -e "s/@linux-gnu@/`type-handling any linux-gnu`/g" < debian/control.in > debian/control
+#	sed -e "s/@linux-gnu@/`type-handling any linux-gnu`/g" < debian/control.in > debian/control
 	dh_clean
 
 install: build

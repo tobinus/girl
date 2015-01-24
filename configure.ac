@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(girl, 1.0.1)
+AC_INIT(girl, 1.2.0)
 AM_INIT_AUTOMAKE([no-dist-gzip dist-xz])
 AC_CONFIG_SRCDIR([src/girl.c])
 AC_CONFIG_HEADER([config.h])
@@ -26,12 +26,13 @@ AC_ARG_WITH([recording],AS_HELP_STRING([--with-recording],[Support recording wit
 ])
 record_prefix=$ac_default_prefix
 if $try_record; then
+   AC_MSG_CHECKING([for recording])
    AC_PATH_TOOL([GIRL_HELPER_RECORD], [streamripper],
    				       [no],
 				       [$PATH$PATH_SEPARATOR/usr/bin$PATH_SEPARATOR]dnl
    				       [/usr/sbin$PATH_SEPARATOR/usr/etc$PATH_SEPARATOR/etc])
 	if test x${GIRL_HELPER_RECORD} = xno; then
-	   AC_DEFINE([HAVE_GIRL_RECORD],0,[don't have record])
+	   AC_DEFINE([HAVE_GIRL_RECORD],0,[record missing])
    	   record_msg="no (http://streamripper.sf.net/)"
  	   girl_record=false
 	else
@@ -39,7 +40,6 @@ if $try_record; then
 	   record_msg="yes"
 	   girl_record=true
 	fi
-	AC_MSG_CHECKING([for recording])
 	AC_MSG_RESULT([$record_msg])
 fi
 AM_CONDITIONAL([HAVE_GIRL_RECORD], [$girl_record])
@@ -48,7 +48,7 @@ AC_SUBST([HAVE_GIRL_RECORD])
 # Checks for libraries.
 
 PKG_CHECK_MODULES(GIRL,
-		  gtk+-3.0 >= 3.0 \
+		  gtk+-2.0 \
 		  libgnome-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
 		  gnome-vfs-2.0 >= 2.0 \

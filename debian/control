@@ -6,7 +6,7 @@ Standards-Version: 3.9.6
 Homepage: https://wiki.gnome.org/Apps/Girl
 Build-Depends: debhelper (>> 9.0.0),
 	       pkg-config (>> 0.28-0),
-	       libgtk-3-dev (>> 3.14.5-1),
+	       libgtk2.0-dev (>> 2.24.24-1),
 	       libgnome2-dev (>> 2.32.1-4),
 	       libxml2-dev (>> 2.9.0),
 	       libgnomevfs2-dev (>> 2.24.5),

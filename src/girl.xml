@@ -14,7 +14,7 @@
     <location>Long Island, NY</location>
     <description>WUSB is a 3,600 watt non-commercial station located on the campus of Stony Brook University. Since 1977, we have served the campus and Long Island listening communities with a diverse broadcast mix of music, news, public affairs, drama and sports programming. Our 24 hour a day schedule is made possible by a volunteer staff efforts of over 160 Stony Brook students, faculty, staff, alumni and community residents. Behind-the-scenes as well as on-air work, combined with a variety of nationally syndicated radio programs integrated into the schedule, creates the 168 hours per week of innovative and high-quality programming.</description>
     <stream mime="audio/mpeg" uri="http://stream.wusb.stonybrook.edu:8080/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
-    <stream mime="audio/mpeg" uri="http://stream.wusb.stonybrook.edu:8090/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />    
+    <stream mime="audio/mpeg" uri="http://stream.wusb.stonybrook.edu:8090/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.wusb.fm/</uri>
   </station>
   <station id="coog" name="COOG" rank="1.0" type="edu" release="online">
@@ -184,13 +184,13 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <frequency uri="http://www.ruc.pt/">107.9 FM MHz in Coimbra, Portugal</frequency>
     <location>Coimbra, Portugal</location>
     <description>Coimbra University Radio (Portuguese: Rádio Universidade de Coimbra - RUC) is a university radio station of the Coimbra Academic Association (students' union) of the University of Coimbra in Coimbra, Portugal.
-    
+
     It broadcasts on 107.9 FM (also broadcasts on-line). The Center of Experimental Radio was founded in the 40's, but it was only on March, 1st 1986, that the radio obtained the authorization to broadcast on FM.
-    
+
     The studios and offices of this university radio station are located in the main building of the Associação Académica de Coimbra, in the city centre. One of its trademarks is that there are no set playlists for any of the programs broadcast. This allows for an exceptionally wide range of musical genres.
-    
+
     The radio gives courses in Programming, Technic and News, that students from the University of Coimbra can join.
-    
+
     For its 25th anniversary, the radio hosts concerts of the indie Swedish band the Radio Dept., and later Eleanor Friedberger from the rock duo The Fiery Furnaces and the Welsh songwriter Euros Childs.</description>
     <stream mime="audio/mpeg" uri="http://ruc.midi-club.net:8000/;stream/1" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.ruc.pt/</uri>

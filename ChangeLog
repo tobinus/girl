@@ -1,19 +1,38 @@
-2015-01-06  Ole Aamot  <oka@src.gnome.org>
+2015-01-23  Ole Aamot  <ole@src.gnome.org>
+
+	* NEWS: girl version 1.2.0 release
+	* configure.ac: Patch by Dominique Leuenberger (Bugzilla #743340)
+	* po/es.po: New Spanish translation by Daniel Mustieles
+	* src/Makefile.am: Patch by Dominique Leuenberger (Bugzilla #743340)
+
+2015-01-22  Ole Aamot  <ole@src.gnome-org>
+
+	* po/cs.po: Updated Czech translation by Marek Černocký
+
+2015-01-17  Ole Aamot  <ole@src.gnome.org>
+
+	* NEWS: girl version 1.1.0 release
+	* po/cs.po: Updated Czech translation by Marek Černocký
+	* po/id.po: New Indonesian translation by Andika Triwidada
+	* po/pl.po: Updated Polish translation by Piotr Drąg
+	* po/pt_BR.po: Updated Brazilian Portuguese translation by Rafael Ferreira
+
+2015-01-06  Ole Aamot  <ole@src.gnome.org>
 
 	* BROADCAST: Add link to jwz's page on webcasting
 
-2015-01-06  Ole Aamot  <oka@src.gnome.org>
+2015-01-06  Ole Aamot  <ole@src.gnome.org>
 
 	* src/girl-gui.c: Add i18n support
 	* src/girl.c: Add i18n support
 
-2015-01-06  Ole Aamot  <oka@src.gnome.org>
+2015-01-06  Ole Aamot  <ole@src.gnome.org>
 
 	* AUTHORS: Add Andika Triwidada
 	* THANKS: Add Andika Triwidada
 	* src/girl.xml: Fix Brno location.
 
-2015-01-03  Ole Aamot  <oka@src.gnome.org>
+2015-01-03  Ole Aamot  <ole@src.gnome.org>
 
 	* NEWS: girl version 1.0.0 "Fenchurch" release
 
