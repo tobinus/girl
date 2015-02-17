@@ -1,17 +1,17 @@
 # Turkish translation for girl.
 # Copyright (C) 2014 girl's COPYRIGHT HOLDER
 # This file is distributed under the same license as the girl package.
-# Muhammet Kara <muhammetk@gmail.com>, 2014.
+# Muhammet Kara <muhammetk@gmail.com>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-12-13 06:29+0000\n"
-"PO-Revision-Date: 2014-12-13 13:34+0200\n"
+"POT-Creation-Date: 2015-01-24 16:24+0000\n"
+"PO-Revision-Date: 2015-02-17 12:05+0200\n"
 "Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
-"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,9 +20,13 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/girl.appdata.xml.in.h:1
+#, fuzzy
+#| msgid ""
+#| "Girl, the GNOME Internet Radio Locator program, allows users to easily "
+#| "find live radio programs on radio broadcasters on the Internet."
 msgid ""
-"Girl, the GNOME Internet Radio Locator program, allows users to easily find "
-"live radio programs on radio broadcasters on the Internet."
+"GIRL, the GNOME Internet Radio Locator program, allows users to easily find "
+"and record live radio programs on radio broadcasters on the Internet."
 msgstr ""
 "Girl, GNOME Internet Radyo Bulucu programı, kullanıcıların İnternetteki "
 "radyo yayıncılarının canlı radyo programlarını kolayca bulmalarına olanak "
@@ -30,21 +34,22 @@ msgstr ""
 
 #: ../data/girl.appdata.xml.in.h:2
 msgid ""
-"Girl is developed on the new GNOME 2.0 platform and requires at least one "
-"audio helper such as totem to be installed."
+"GIRL is developed for the GNOME desktop and requires one audio helper such "
+"as Totem to be installed for playback and streamripper to be installed for "
+"recording live radio streams of supported radio stations."
 msgstr ""
-"Girl; yeni GNOME 2.0 platformu üzerinde geliştirilmektedir ve en az bir adet "
-"ses yardımcısının (totem gibi) kurulu olmasını gerektirir."
 
 #: ../data/girl.appdata.xml.in.h:3
-msgid "Enjoy Internet Radio."
-msgstr "İnternet Radyosunun Tadını Çıkarın."
+msgid ""
+"Enjoy listening to and recording from supported Internet Radio stations in "
+"GIRL."
+msgstr ""
 
 #: ../data/girl.desktop.in.in.h:1
 msgid "Internet Radio Locator"
 msgstr "İnternet Radyo Bulucu"
 
-#: ../data/girl.desktop.in.in.h:2
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:511
 msgid "Locate Internet Radio Stations"
 msgstr "İnternet Radyo İstasyonlarını Bulun"
 
@@ -53,53 +58,291 @@ msgstr "İnternet Radyo İstasyonlarını Bulun"
 msgid "Live;Radio;Program;Station;Locator;"
 msgstr "Canlı;Radyo;Program;İstasyon;Bulucu;"
 
-#: ../src/girl.c:195 ../src/girl.c:254 ../src/girl.c:353 ../src/girl.c:400
-#, c-format
-msgid "Selected %s in %s: %s"
+#: ../src/girl.c:64
+msgid "GNOME VFS initialization failed!\n"
 msgstr ""
 
-#: ../src/girl.c:305
+#: ../src/girl.c:181
+#, c-format
+msgid "Selected the previous radio station: %s in %s: %s"
+msgstr ""
+
+#: ../src/girl.c:240
+#, c-format
+msgid "Selected the next radio station %s in %s: %s"
+msgstr ""
+
+#: ../src/girl.c:293
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr ""
 
-#: ../src/girl.c:451 ../src/girl.c:474 ../src/girl.c:504 ../src/girl.c:537
-msgid "translator_credits"
-msgstr "Muhammet Kara <muhammetk@gmail.com>"
-
-#: ../src/girl.c:458
-msgid "GNOME Internet Radio Locator"
-msgstr "GNOME İnternet Radyo Bulucu"
-
-#: ../src/girl.c:458
-msgid ""
-"Copyright 2014 Ole Aamot Software\n"
-"Copyright 2002 Free Software Foundation"
+#: ../src/girl.c:341
+#, c-format
+msgid "Selected %s in %s: %s"
 msgstr ""
-"Telif Hakkı 2014 Ole Aamot Software\n"
-"Telif Hakkı 2002 Free Software Foundation"
 
-#: ../src/girl.c:458
-msgid "Internet radio station and listener locator"
+#: ../src/girl.c:388
+#, c-format
+msgid "Selected the radio station %s in %s: %s"
+msgstr ""
+
+#: ../src/girl.c:434
+#, c-format
+msgid "Selected %s [%s] [%s] [%s]"
+msgstr ""
+
+#: ../src/girl.c:499
+msgid ""
+"Marek Černocký <marek@manet.cz> (Czech translation)\n"
+"Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese translation)\n"
+"Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+"Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
+"Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
+"Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
+"Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
+"Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
+msgstr ""
+
+#: ../src/girl.c:512
+msgid "Copyright (C) 2014, 2015  Ole Aamot Software"
+msgstr ""
+
+#: ../src/girl.c:513
+msgid "See http://wiki.gnome.org/DocumentationProject"
+msgstr ""
+
+#: ../src/girl.c:520
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 59 Temple "
+"Place, Suite 330, Boston, MA 02111-1307, USA."
+msgstr ""
+
+#: ../src/girl.c:526
+#, c-format
+msgid "Unable to load GIRL logo: %s\n"
+msgstr ""
+
+#: ../src/girl.c:682
+msgid "Search radio station by location"
 msgstr ""
 
 #. girl_stream_player(a, user_data);
-#: ../src/girl.c:571
+#: ../src/girl.c:691
 #, c-format
-msgid "Listening to %s in %s: %s "
+msgid "Listening to the radio station %s in %s: %s "
 msgstr ""
 
-#: ../src/girl.c:589
+#: ../src/girl.c:713
 #, c-format
-msgid "Recording from %s in %s: %s "
+msgid "Recording from the radio station %s in %s: %s "
 msgstr ""
 
-#: ../src/girl.c:636
+#: ../src/girl.c:748
+#, c-format
+msgid "Finished recording from the radio station %s in %s: %s"
+msgstr ""
+
+#: ../src/girl.c:762
+#, c-format
+msgid ""
+"To finish playing from the radio station %s in %s, exit the application "
+"Videos."
+msgstr ""
+
+#: ../src/girl.c:772
+msgid ""
+"Stop what?  You can \"Search\" by location, select a radio station from "
+"\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
+"or \"Next\" radio station."
+msgstr ""
+
+#: ../src/girl.c:812
 #, c-format
 msgid "Archiving %s"
 msgstr "%s arşivleniyor"
 
-#: ../src/girl-station.c:114
+#: ../src/girl-gui.c:54
+msgid "Search"
+msgstr "Ara"
+
+#: ../src/girl-gui.c:54
+msgid "Search by location for radio stations"
+msgstr ""
+
+#: ../src/girl-gui.c:58
+msgid "Stations"
+msgstr "İstasyonlar"
+
+#: ../src/girl-gui.c:58
+#| msgid "Locate Internet Radio Stations"
+msgid "Internet Radio Stations"
+msgstr "İnternet Radyo İstasyonları"
+
+#: ../src/girl-gui.c:62
+msgid "Listen"
+msgstr "Dinle"
+
+#: ../src/girl-gui.c:62
+#| msgid "Locate Internet Radio Stations"
+msgid "Listen to selected radio station"
+msgstr "Seçilen radyo istasyonunu dinle"
+
+#: ../src/girl-gui.c:66
+msgid "Record"
+msgstr "Kaydet"
+
+#: ../src/girl-gui.c:66
+msgid "Record selected radio station"
+msgstr "Seçilen radyo istasyonunu kaydet"
+
+#: ../src/girl-gui.c:69
+msgid "Stop"
+msgstr "Dur"
+
+#: ../src/girl-gui.c:69
+msgid "Stop recording selected radio station"
+msgstr "Seçilen radyo istasyonunu kaydetmeyi durdur"
+
+#: ../src/girl-gui.c:74
+msgid "Previous"
+msgstr "Önceki"
+
+#: ../src/girl-gui.c:75
+msgid "Go back to the previous radio station"
+msgstr "Önceki radyo istasyonuna git"
+
+#: ../src/girl-gui.c:77
+msgid "Next"
+msgstr "Sonraki"
+
+#: ../src/girl-gui.c:77
+#| msgid "Locate Internet Radio Stations"
+msgid "Proceed to the next radio station"
+msgstr "Sonraki radyo istasyonuna git"
+
+#: ../src/girl-gui.c:80
+msgid "About Station"
+msgstr "İstasyon Hakkında"
+
+#: ../src/girl-gui.c:81
+msgid "About the current Station"
+msgstr "Geçerli istasyon hakkındaki bilgiler"
+
+#: ../src/girl-gui.c:84
+msgid "About Program"
+msgstr "Program Hakkında"
+
+#: ../src/girl-gui.c:85
+#| msgid "GNOME Internet Radio Locator"
+msgid "About the GNOME Internet Radio Locator"
+msgstr "GNOME İnternet Radyo Bulucu Hakkında"
+
+#: ../src/girl-gui.c:89
+msgid "Exit"
+msgstr "Çıkış"
+
+#: ../src/girl-gui.c:90
+#| msgid "GNOME Internet Radio Locator"
+msgid "Quit the GNOME Internet Radio Locator"
+msgstr "GNOME İnternet Radyo Bulucuyu Kapat"
+
+#. The Listeners dialog
+#: ../src/girl-gui.c:119
+msgid "Select a listener"
+msgstr ""
+
+#: ../src/girl-gui.c:146
+#, c-format
+msgid "Failed to open %s.  Please install it.\n"
+msgstr ""
+
+#: ../src/girl-gui.c:156 ../src/girl-gui.c:658 ../src/girl-gui.c:802
+#, fuzzy, c-format
+#| msgid ""
+#| "Failed to open URL: '%s'\n"
+#| "Details: %s"
+msgid "Failed to open %s\n"
+msgstr ""
+"URL açma başarısız oldu: '%s'\n"
+"Ayrıntılar: %s"
+
+#. The Programs dialog
+#: ../src/girl-gui.c:257
+msgid "Select a program"
+msgstr ""
+
+#: ../src/girl-gui.c:288 ../src/girl-gui.c:298 ../src/girl-gui.c:475
+#: ../src/girl-gui.c:644 ../src/girl-gui.c:787
+#, fuzzy, c-format
+#| msgid ""
+#| "Failed to open URL: '%s'\n"
+#| "Details: %s"
+msgid "Failed to open %s.\n"
+msgstr ""
+"URL açma başarısız oldu: '%s'\n"
+"Ayrıntılar: %s"
+
+#: ../src/girl-gui.c:402
+#, c-format
+msgid "Your search by location resulted in the radio station %s in %s: %s"
+msgstr ""
+
+#. The Stations dialog
+#: ../src/girl-gui.c:433
+msgid "Search by location"
+msgstr ""
+
+#. The Stations dialog
+#: ../src/girl-gui.c:613
+msgid "Select a station"
+msgstr ""
+
+#. The Streams dialog
+#: ../src/girl-gui.c:758
+msgid "Select a stream"
+msgstr ""
+
+#: ../src/girl-gui.c:889
+#, c-format
+msgid "Selection cleared!\n"
+msgstr ""
+
+#: ../src/girl-gui.c:925
+msgid "GIRL"
+msgstr ""
+
+#: ../src/girl-gui.c:927
+msgid "GNOME Internet Radio Locator"
+msgstr "GNOME İnternet Radyo Bulucu"
+
+#: ../src/girl-gui.c:939
+msgid "Couldn't create pixmap"
+msgstr ""
+
+#: ../src/girl-gui.c:957
+msgid ""
+"Search by location from \"Search\" or select a radio station from \"Stations"
+"\".  Click \"Listen\" to listen to, or \"Record\" to record from the station."
+msgstr ""
+
+#: ../src/girl-gui.c:960
+msgid ""
+"Select a radio station from \"Stations\" and click \"Listen\" to listen to "
+"the station."
+msgstr ""
+
+#: ../src/girl-station.c:189
 #, c-format
 msgid ""
 "An error happened trying to play %s\n"
@@ -108,7 +351,7 @@ msgstr ""
 "%s oynatılmaya çalışılırken bir hata oluştu.\n"
 "Ya dosya mevcut değil ya da bu dosya için bir oynatıcınız yok."
 
-#: ../src/girl-station.c:120
+#: ../src/girl-station.c:195
 #, c-format
 msgid ""
 "An error happened trying to record %s\n"
@@ -117,16 +360,13 @@ msgstr ""
 "%s kaydedilmeye çalışılırken bir hata oluştu.\n"
 "Ya dosya mevcut değil ya da bu dosya için bir kaydediciniz yok."
 
-#: ../src/girl-station.c:134
+#: ../src/girl-station.c:228 ../src/girl-station.c:248
+#: ../src/girl-station.c:325 ../src/girl-station.c:345
 #, c-format
-msgid ""
-"Failed to open URL: '%s'\n"
-"Details: %s"
+msgid "Failed to run %s (%i)\n"
 msgstr ""
-"URL açma başarısız oldu: '%s'\n"
-"Ayrıntılar: %s"
 
-#: ../src/girl-station.c:146
+#: ../src/girl-station.c:272 ../src/girl-station.c:369
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -136,3 +376,32 @@ msgstr ""
 "URL açma başarısız oldu: '%s'\n"
 "Durum kodu: %i\n"
 "Ayrıntılar: %s"
+
+#: ../src/girl-station.c:290
+#, c-format
+msgid ""
+"Failed to open URL: '%s'\n"
+"Details: %s"
+msgstr ""
+"URL açma başarısız oldu: '%s'\n"
+"Ayrıntılar: %s"
+
+#~ msgid ""
+#~ "Girl is developed on the new GNOME 2.0 platform and requires at least one "
+#~ "audio helper such as totem to be installed."
+#~ msgstr ""
+#~ "Girl; yeni GNOME 2.0 platformu üzerinde geliştirilmektedir ve en az bir "
+#~ "adet ses yardımcısının (totem gibi) kurulu olmasını gerektirir."
+
+#~ msgid "Enjoy Internet Radio."
+#~ msgstr "İnternet Radyosunun Tadını Çıkarın."
+
+#~ msgid "translator_credits"
+#~ msgstr "Muhammet Kara <muhammetk@gmail.com>"
+
+#~ msgid ""
+#~ "Copyright 2014 Ole Aamot Software\n"
+#~ "Copyright 2002 Free Software Foundation"
+#~ msgstr ""
+#~ "Telif Hakkı 2014 Ole Aamot Software\n"
+#~ "Telif Hakkı 2002 Free Software Foundation"
