@@ -1,3 +1,18 @@
+2015-02-21  Ole Aamot  <ole@src.gnome.org>
+
+	* NEWS: girl version 1.4.0 release
+	* po/tr.po: Updated Turkish translation by Muhammet Kara
+	* src/girl.xml: Add KCSN (kcsn.org)
+	* src/girl.xml: Add KSUB (ksubseattle.org)
+	* src/girl.xml: Add KVRX (kvrx.org)
+	* src/girl.xml: Add WHPK (whpk.org)
+	* src/girl.xml: Add WRVU (wrvu.org)
+	* src/girl.xml: Add WVAU (wvau.org)
+
+2015-02-14  Ole Aamot  <ole@src.gnome.org>
+
+	* NEWS: girl version 1.3.0 release
+
 2015-02-08  Ole Aamot  <ole@src.gnome.org>
 
 	* po/cs.po: Updated Czech translation by Marek Černocký

@@ -2,6 +2,54 @@
 <?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
 <!DOCTYPE girl SYSTEM "girl-1.0.dtd">
 <girl version="1.0">
+  <station id="wvau" name="WVAU" rank="1.0" type="edu" release="online">
+    <frequency uri="http://www.wvau.org/">Online in Washington, DC</frequency>
+    <location>Washington, DC</location>
+    <description>WVAU is American University's student radio station. We broadcast online 24/7 from the Mary Graydon Center in Washington, D.C.
+
+    With a staff of over 120 student DJs, WVAU offers unique musical programming and a perspective that you won't find anywhere else. Outside of the studio, WVAU brings in local and touring artists every semester for interviews, in-studio performances, and our Capital Punishment free concert series. We also host monthly open mic nights to showcase AU's talented students and faculty. All of our events are free and open to the public.
+
+    WVAU focuses on showcasing independent music that you won't hear on your traditional Top 40 station. Our live programming covers the best in indie rock, hip-hop, electronic, experimental, jazz, folk, world music, and more. Our eclectic schedule doesn't limit students to genre-specific shows, which sets WVAU apart from traditional college radio stations and gives our DJs the freedom to play whatever music they want.</description>
+    <stream mime="audio/mpeg" uri="http://ice8.securenetsystems.net/WVAU" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.wvau.org/</uri>
+  </station>
+  <station id="kcsn" name="KCSN" rank="1.0" type="edu" release="88.5">
+    <frequency uri="http://www.kcsn.org/">88.5 FM in Los Angeles, CA</frequency>
+    <location>Los Angeles, CA</location>
+    <description>KCSN is commercial free, public radio that relies heavily on donor contributions.</description>
+    <stream mime="audio/mpeg" uri="http://130.166.82.184:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://130.166.82.184:8002/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <stream mime="audio/mpeg" uri="http://130.166.82.184:8004/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />    
+    <uri>http://www.kcsn.org/</uri>
+  </station>
+  <station id="kvrx" name="KVRX" rank="1.0" type="edu" release="91.7">
+    <frequency uri="http://www.kvrx.org/">91.7 FM in Austin, TX</frequency>
+    <location>Austin, TX</location>
+    <description>KVRX is the student-run radio station at the University of Texas in Austin. We solemnly swear to play "none of the hits, all of the time" to bring you the best music that you didn't know you loved, or remind you of your favorite songs that you won't hear anywhere else. We share our frequency, 91.7FM, with KOOP radio, another great community station, and we're on the air from 7PM to 9AM on weekdays and from 10PM to 9AM on weekends.</description>
+    <stream mime="audio/mpeg" uri="http://tstv-stream.tsm.utexas.edu:8000/kvrx_livestream" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.kvrx.org/</uri>
+  </station>
+  <station id="ksub" name="KSUB" rank="1.0" type="edu" release="online">
+    <frequency uri="http://www.ksubseattle.org/">Online in Seattle, WA</frequency>
+    <location>Seattle, WA</location>        
+    <description>We are one of the last college radio stations in the Seattle area actually run by students. Our DJ's are current students and beloved alumni (and even some faculty), and because we are non-commercial, we are free from mainstream radio constraints. Each individual DJ has near complete control of what he or she plays on the air, giving KSUB a rich musical diversity.</description>
+    <stream mime="audio/mpeg" uri="http://lin1.san.fast-serv.com:6014" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.ksubseattle.org/</uri>
+  </station>
+  <station id="wrvu" name="WRVU" rank="1.0" type="edu" release="online">
+    <frequency uri="http://wrvu.org/">Online in Nashville, TN</frequency>
+    <location>Nashville, TN</location>    
+    <description>WRVU is a free-format college radio station committed to providing Vanderbilt University and the surrounding community with the best in new, non-mainstream music. WRVU is student-run and focuses on teaching Vanderbilt students the ins and outs of radio broadcasting, playing music you can’t hear anywhere else.</description>
+    <stream mime="audio/mpeg" uri="http://129.59.202.68:8200/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://wrvu.org/</uri>
+  </station>
+  <station id="whpk" name="WHPK" rank="1.0" type="edu" release="88.5">
+    <frequency uri="http://www.whpk.org/">88.5 FM in Chicago, IL</frequency>
+    <location>Chicago, IL</location>
+    <description>WHPK a non-profit community radio station of the University of Chicago, broadcasting to Hyde Park and the South Side of Chicago for over 50 years.</description>
+    <stream mime="audio/mpeg" uri="http://www.whpk.org/stream/mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://whpk.org/</uri>
+  </station>
   <station id="wnyo" name="WNYO" rank="1.0" type="edu" release="88.9">
     <frequency uri="http://www.wnyo889.org/">88.9 FM in Oswego, NY</frequency>
     <location>Oswego, NY</location>

@@ -1,4 +1,22 @@
 =============
+Version 1.4.0
+=============
+
+Stations
+
+	* src/girl.xml: Add KCSN (kcsn.org)
+	* src/girl.xml: Add KSUB (ksubseattle.org)
+	* src/girl.xml: Add KVRX (kvrx.org)
+	* src/girl.xml: Add WHPK (whpk.org)
+	* src/girl.xml: Add WRVU (wrvu.org)
+	* src/girl.xml: Add WVAU (wvau.org)
+
+Translations
+
+
+	* tr: Updated Turkish translation by Muhammet Kara
+
+=============
 Version 1.3.0
 =============
 
