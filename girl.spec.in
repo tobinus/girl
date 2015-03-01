@@ -63,6 +63,9 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %changelog
+* Sat Feb 28 2015 Ole Aamot - 1.5.0-1.fc21
+- Girl 1.5.0 build on Fedora Linux 22
+
 * Sat Feb 21 2015 Ole Aamot - 1.4.0-1.fc21
 - Girl 1.4.0 build on Fedora Linux 22
 
