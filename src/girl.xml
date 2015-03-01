@@ -1,7 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
 <!DOCTYPE girl SYSTEM "girl-1.0.dtd">
-<girl version="1.0">
+<girl version="1.5">
+  <station id="wpts" name="WPTS" rank="1.0" type="edu" release="92.1">
+    <frequency uri="http://wptsradio.org/">92.1 FM in Pittsburgh, PA</frequency>
+    <location>Pittsburgh, PA</location>
+    <description>
+      WPTS is an educational, non-commercial FM station owned by the University of Pittsburgh and operated by its students.  Located at a frequency of 92.1 in the commercial band of the FM dial, we have a radiating power of 17 Watts, and an effective radiated output of 17 Watts.  Our transmitted is located atop the Cathedral of Learning, 530 feet above the ground.  This greatly enhances our broadcast radius, which averages about 30 miles.
+    </description>
+    <stream mime="audio/mpeg" uri="http://audio.wpts.pitt.edu:8000/wpts_live_256s.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="256 kbps" />
+    <stream mime="audio/mpeg" uri="http://audio.wpts.pitt.edu:8000/wpts_live_128s.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://audio.wpts.pitt.edu:8000/wpts_live_96s.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
+    <stream mime="audio/mpeg" uri="http://audio.wpts.pitt.edu:8000/wpts_live_48s.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
+  </station>
+  <station id="wtbu" name="WTBU" rank="1.0" type="edu" release="1330">
+    <frequency uri="http://www.wtburadio.org/">89.3 FM in Boston, MA</frequency>
+    <location>Boston, MA</location>
+    <description>
+      WTBU is BU's student-run, volunteer radio station which broadcasts live 20 hours a day.  Our station is primarily available through our webcast, but you can also listen to us on 89.3 FM/640 AM if you're in Boston, or on BU's cable channel 6 if you live on campus.
+    </description>
+    <stream mime="audio/mpeg" uri="http://wtbu.bu.edu:1800/listen.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+  </station>
+  <station id="kasc" name="Arizona State University" rank="1.0" type="edu" release="1330">
+    <frequency uri="http://www.blazeradioonline.com/">1330 AM in Phoenix, AZ</frequency>
+    <location>Phoenix, AZ</location>
+    <description>
+      KASC (The Blaze) is an AM radio station serving all four campuses of the ASU community.  The student-run college radio station broadcasts at 1330 AM 24 hours a day during the school year and is operated by students under the supervision of a Cronkite School faculty adviser.
+    </description>
+    <stream mime="audio/mpeg" uri="http://184.154.90.188:80/stream" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.blazeradioonline.com/</uri>
+  </station>
+  <station id="soundfm" name="SoundFM" rank="1.0" type="edu" release="100.3">
+    <frequency uri="http://soundfm.ca/">100.3 FM in Waterloo, Canada</frequency>
+    <location>Waterloo, Canada</location>
+    <description>
+      CKMS 100.3 FM (SoundFM) is a community radio station broadcasting independent and alternative music and culture to Waterloo Region.
+    </description>
+    <stream mime="audio/mpeg" uri="http://cast9.directhostingcenter.com:2199/tunein/soevwkmu.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://soundfm.ca/</uri>
+  </station>    
+  <station id="nrj-bern" name="Radio NRJ Bern" rank="1.0" type="edu" release="de">
+    <frequency uri="http://www.energy.ch/bern/">Internet</frequency>
+    <location>Bern, Switzerland</location>
+    <description>Student webradio in Zürich.</description>
+    <stream mime="audio/mpeg" uri="http://energybern.ice.infomaniak.ch/energybern-high.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.energy.ch/bern/</uri>
+  </station>
   <station id="wvau" name="WVAU" rank="1.0" type="edu" release="online">
     <frequency uri="http://www.wvau.org/">Online in Washington, DC</frequency>
     <location>Washington, DC</location>

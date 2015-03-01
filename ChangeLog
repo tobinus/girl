@@ -1,3 +1,11 @@
+2015-02-28  Ole Aamot  <ole@src.gnome.org>
+
+	* NEWS: girl version 1.5.0 release
+	* po/el.po: New Greek translation by Γιάννης Κουτσούκος/Efstathios Iosifidis
+	* po/sl.po: New Slovenian translation by Matej Urbančič
+	* src/girl.xml: Add Radio NRJ Bern (Bugzilla #745087)
+	* src/girl.xml: Add SoundFM (soundfm.ca)
+
 2015-02-21  Ole Aamot  <ole@src.gnome.org>
 
 	* NEWS: girl version 1.4.0 release

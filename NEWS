@@ -1,4 +1,18 @@
 =============
+Version 1.5.0
+=============
+
+Stations
+
+	* src/girl.xml: Add Radio NRJ Bern (Bugzilla #745087)
+	* src/girl.xml: Add SoundFM (soundfm.ca)
+
+Translations
+
+	* el: New Greek translation by Γιάννης Κουτσούκος/Efstathios Iosifidis
+	* sl: New Slovenian translation by Matej Urbančič
+
+=============
 Version 1.4.0
 =============
 
