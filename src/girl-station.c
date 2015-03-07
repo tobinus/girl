@@ -24,6 +24,11 @@
 #include <config.h>
 #include <stdio.h>
 #include <string.h>
+#include <dirent.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/resource.h>
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libxml/xmlmemory.h>
@@ -31,6 +36,8 @@
 #include <libgnome/gnome-exec.h>
 #include <libgnomevfs/gnome-vfs.h>
 #include <libgnomevfs/gnome-vfs-application-registry.h>
+
+
 
 #include "girl.h"
 #include "girl-station.h"
@@ -253,7 +260,8 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		/* Add watch function to catch termination of the process. This function
 		 * will clean any remnants of process. */
 		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl );
-		/* Create channels that will be used to read girl from pipes. */
+		/* Create channels that will be used to read girl from pipes. *
+			
 #ifdef G_OS_WIN32
 		out_ch = g_io_channel_win32_new_fd( out );
 		err_ch = g_io_channel_win32_new_fd( error );
@@ -333,6 +341,9 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 
 		girl->record_pid = pid;
 		girl->record_status = GIRL_RECORD_TRUE;
+
+		girl_archive_new(pid, "archive.mp3");
+				
 		/* Install timeout fnction that will move the progress bar */
 		girl->timeout_id = g_timeout_add(100,(GSourceFunc)cb_timeout,girl);
 /* #endif */
@@ -421,8 +432,8 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 	GIRL_DEBUG_MSG("station->rank = %s\n", station->rank);
 	station->type = (gchar *)xmlGetProp(cur, (const xmlChar *)"type");
 	GIRL_DEBUG_MSG("station->type = %s\n", station->type);
-	station->release = (gchar *)xmlGetProp(cur, (const xmlChar *)"release");
-	GIRL_DEBUG_MSG("station->release = %s\n", station->release);
+	station->band = (gchar *)xmlGetProp(cur, (const xmlChar *)"band");
+	GIRL_DEBUG_MSG("station->band = %s\n", station->band);
 
 	sub = cur->xmlChildrenNode;
 

@@ -34,7 +34,7 @@ typedef enum {
 	STATION_NAME = 0,
 	STATION_RANK = 7,
 	STATION_TYPE = 6,
-	STATION_RELEASE = 5,
+	STATION_BAND = 5,
 	STATION_FREQUENCY = 4,
 	STATION_LOCATION = 1,
 	STATION_DESCRIPTION = 3,
@@ -49,7 +49,7 @@ struct _GirlStationInfo {
 	gchar *name;
 	gchar *rank;
 	gchar *type;
-	gchar *release;
+	gchar *band;
 	gchar *frequency;
 	gchar *location;
 	gchar *description;

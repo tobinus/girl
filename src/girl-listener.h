@@ -36,7 +36,7 @@ struct _GirlListenerInfo {
 	gchar *name;
 	gchar *pass;
 	gchar *uri;
-	gchar *release;
+	gchar *band;
 	gchar *description;
 	GirlLocationInfo *locationinfo;
 	GirlListenerInfo *next;

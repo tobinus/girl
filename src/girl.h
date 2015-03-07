@@ -103,13 +103,13 @@ struct _GirlData {
 	gchar *selected_listener_uri;
 	gchar *selected_listener_name;
 	gchar *selected_listener_location;
-	gchar *selected_listener_release;
+	gchar *selected_listener_band;
 	gchar *selected_listener_description;
 	GirlProgramInfo *selected_program;
 	gchar *selected_program_uri;
 	gchar *selected_program_name;
 	gchar *selected_program_location;
-	gchar *selected_program_release;
+	gchar *selected_program_band;
 	gchar *selected_program_description;
 	GirlRunnersInfo *selected_runners;
 	gint timeout_id;
@@ -118,7 +118,7 @@ struct _GirlData {
 	gchar *selected_station_uri;
 	gchar *selected_station_name;
 	gchar *selected_station_location;
-	gchar *selected_station_release;
+	gchar *selected_station_band;
 	gchar *selected_station_description;
 	gchar *selected_station_website;
 	gint selected_bitrate;

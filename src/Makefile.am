@@ -23,6 +23,6 @@ girl_CFLAGS  = $(GIRL_CFLAGS) \
 girl_LDADD = $(GIRL_LIBS)
 
 girldir = $(datadir)/girl
-girl_DATA = girl-1.0.dtd girl-logo.png girl.png girl.xml
+girl_DATA = girl-1.6.dtd girl-logo.png girl.png girl.xml
 
-EXTRA_DIST = girl.h girl-station.h girl-gui.h girl-listener.h girl-program.h girl-runners.h girl-streams.h girl-canvas.h girl-1.0.dtd girl-logo.png girl.png girl.xml
+EXTRA_DIST = girl.h girl-station.h girl-gui.h girl-listener.h girl-program.h girl-runners.h girl-streams.h girl-canvas.h girl-1.6.dtd girl-logo.png girl.png girl.xml

@@ -35,7 +35,7 @@ struct _GirlProgramInfo {
 	gchar *name;
 	gchar *rank;
 	gchar *type;
-	gchar *release;
+	gchar *band;
 	gchar *frequency;
 	gchar *location;
 	gchar *description;

@@ -51,14 +51,14 @@
 extern GtkWidget *girl_app;
 
 GnomeUIInfo toolbar[] = {
-	GNOMEUIINFO_ITEM_STOCK(N_("Search"), N_("Search by location for radio stations"),
-			       on_search_button_clicked,
-			       GTK_STOCK_FIND),
-	GNOMEUIINFO_SEPARATOR,	
 	GNOMEUIINFO_ITEM_STOCK(N_("Stations"), N_("Internet Radio Stations"),
 	 		       on_stations_selector_button_clicked,
 			       GTK_STOCK_NETWORK),
 	GNOMEUIINFO_SEPARATOR,	
+	GNOMEUIINFO_ITEM_STOCK(N_("Search"), N_("Search by location for radio stations"),
+			       on_search_button_clicked,
+			       GTK_STOCK_FIND),
+	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_ITEM_STOCK(N_("Listen"), N_("Listen to selected radio station"),
 			       on_listen_button_clicked,
 			       GTK_STOCK_MEDIA_PLAY),
@@ -109,7 +109,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 	GtkWidget *listeners_selector;
 	GtkWidget *align, *menu, *drop_down, *item;
 
-	gchar *listener_uri, *listener_name, *listener_location, *listener_release, *listener_description;
+	gchar *listener_uri, *listener_name, *listener_location, *listener_band, *listener_description;
 	gchar *label, *world_listener_xml_uri,
 	    *local_listener_xml_file;
 
@@ -174,7 +174,7 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 		listener_name = g_strdup(listenerinfo->name);
 		listener_location = g_strdup(listenerinfo->location);
 		listener_description = g_strdup(listenerinfo->description);
-		listener_release = g_strdup(listenerinfo->release);
+		listener_band = g_strdup(listenerinfo->band);
 
 		/* girl_listeners = g_list_append(girl_listeners,(GirlListenerInfo *)listenerinfo); */
 
@@ -193,8 +193,8 @@ GtkWidget *create_listeners_selector(char *selected_listener_uri,
 					  "listener_location",
 					  (gpointer) listener_location);
 			g_object_set_data(G_OBJECT(item),
-					  "listener_release",
-					  (gpointer) listener_release);
+					  "listener_band",
+					  (gpointer) listener_band);
 			g_object_set_data(G_OBJECT(item),
 					  "listener_description",
 					  (gpointer) listener_description);
@@ -248,7 +248,7 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 	GtkWidget *programs_selector;
 	GtkWidget *align, *menu, *drop_down, *item;
 
-	gchar *program_uri, *program_name, *program_location, *program_release, *program_description;
+	gchar *program_uri, *program_name, *program_location, *program_band, *program_description;
 	gchar *label, *world_program_xml_filename, *local_program_xml_file;
 
 	int i = 0, selection = -1;
@@ -314,7 +314,7 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 		program_uri = g_strdup(programinfo->archive->uri);
 		program_name = g_strdup(programinfo->name);
 		program_location = g_strdup(programinfo->location);
-		program_release = g_strdup(programinfo->release);
+		program_band = g_strdup(programinfo->band);
 		program_description = g_strdup(programinfo->description);
 
 		girl_programs = g_list_append(girl_programs,(GirlProgramInfo *)programinfo);
@@ -334,8 +334,8 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 					  "program_location",
 					  (gpointer) program_location);
 			g_object_set_data(G_OBJECT(item),
-					  "program_release",
-					  (gpointer) program_release);
+					  "program_band",
+					  (gpointer) program_band);
 			g_object_set_data(G_OBJECT(item),
 					  "program_description",
 					  (gpointer) program_description);
@@ -350,7 +350,7 @@ GtkWidget *create_programs_selector(char *selected_program_uri,
 			g_free(program_uri);
 			g_free(program_name);
 			g_free(program_location);
-			g_free(program_release);
+			g_free(program_band);
 			g_free(program_description);
 		}
 		i++;
@@ -498,8 +498,8 @@ GtkWidget *create_search_selector(void) {
 				   stationinfo->description,
 				   STATION_FREQUENCY,
 				   stationinfo->frequency,
-				   STATION_RELEASE,
-				   stationinfo->release,
+				   STATION_BAND,
+				   stationinfo->band,
 				   STATION_TYPE,
 				   stationinfo->type,
 				   STATION_RANK,
@@ -527,7 +527,7 @@ GtkWidget *create_search_selector(void) {
 		/* station_uri = g_strdup(stationinfo->stream->uri); */
 		/* station_name = g_strdup(stationinfo->name); */
 		/* station_location = g_strdup(stationinfo->location); */
-		/* station_release = g_strdup(stationinfo->release); */
+		/* station_band = g_strdup(stationinfo->band); */
 		/* station_description = g_strdup(stationinfo->description); */
 		/* station_website = g_strdup(stationinfo->uri); */
 		
@@ -548,8 +548,8 @@ GtkWidget *create_search_selector(void) {
 					  "station_location",
 					  (gpointer) station_location);
 			g_object_set_data(G_OBJECT(item),
-					  "station_release",
-					  (gpointer) station_release);
+					  "station_band",
+					  (gpointer) station_band);
 			g_object_set_data(G_OBJECT(item),
 					  "station_description",
 					  (gpointer) station_description);
@@ -569,7 +569,7 @@ GtkWidget *create_search_selector(void) {
 			g_free(station_uri);
 			g_free(station_name);
 			g_free(station_location);
-			g_free(station_release);
+			g_free(station_band);
 			g_free(station_description);
 		}
 		i++;
@@ -600,7 +600,7 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 	GtkWidget *stations_selector;
 	GtkWidget *align, *menu, *drop_down, *item;
 
-	gchar *station_uri, *station_name, *station_location, *station_release, *station_description, *station_website;
+	gchar *station_uri, *station_name, *station_location, *station_band, *station_description, *station_website;
 	gchar *label, *world_station_xml_filename, *local_station_xml_file;
 
 	int i = 0, selection = -1;
@@ -674,7 +674,7 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 		station_uri = g_strdup(stationinfo->stream->uri);
 		station_name = g_strdup(stationinfo->name);
 		station_location = g_strdup(stationinfo->location);
-		station_release = g_strdup(stationinfo->release);
+		station_band = g_strdup(stationinfo->band);
 		station_description = g_strdup(stationinfo->description);
 		station_website = g_strdup(stationinfo->uri);
 		
@@ -695,8 +695,8 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 					  "station_location",
 					  (gpointer) station_location);
 			g_object_set_data(G_OBJECT(item),
-					  "station_release",
-					  (gpointer) station_release);
+					  "station_band",
+					  (gpointer) station_band);
 			g_object_set_data(G_OBJECT(item),
 					  "station_description",
 					  (gpointer) station_description);
@@ -714,7 +714,7 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 			g_free(station_uri);
 			g_free(station_name);
 			g_free(station_location);
-			g_free(station_release);
+			g_free(station_band);
 			g_free(station_description);
 		}
 		i++;
@@ -977,8 +977,8 @@ GtkWidget *create_girl_app()
 	    gnome_config_get_string("selected_listener_name=");
 	girl->selected_listener_location =
 	    gnome_config_get_string("selected_listener_location=");
-	girl->selected_listener_release =
-	    gnome_config_get_string("selected_listener_release=");
+	girl->selected_listener_band =
+	    gnome_config_get_string("selected_listener_band=");
 	girl->selected_listener_description =
 	    gnome_config_get_string("selected_listener_description=");
 
@@ -988,8 +988,8 @@ GtkWidget *create_girl_app()
 	       girl->selected_listener_name);
 	GIRL_DEBUG_MSG("girl->selected_listener_location: %s\n",
 	       girl->selected_listener_location);
-	GIRL_DEBUG_MSG("girl->selected_listener_release: %s\n",
-	       girl->selected_listener_release);
+	GIRL_DEBUG_MSG("girl->selected_listener_band: %s\n",
+	       girl->selected_listener_band);
 	GIRL_DEBUG_MSG("girl->selected_listener_description: %s\n",
 	       girl->selected_listener_description);
 
@@ -999,8 +999,8 @@ GtkWidget *create_girl_app()
 	    gnome_config_get_string("selected_station_name=");
 	girl->selected_station_location =
 	    gnome_config_get_string("selected_station_location=");
-	girl->selected_station_release =
-	    gnome_config_get_string("selected_station_release=");
+	girl->selected_station_band =
+	    gnome_config_get_string("selected_station_band=");
 	girl->selected_station_description =
 	    gnome_config_get_string("selected_station_description=");
 
@@ -1010,8 +1010,8 @@ GtkWidget *create_girl_app()
 	       girl->selected_station_name);
 	GIRL_DEBUG_MSG("girl->selected_station_location: %s\n",
 	       girl->selected_station_location);
-	GIRL_DEBUG_MSG("girl->selected_station_release: %s\n",
-	       girl->selected_station_release);
+	GIRL_DEBUG_MSG("girl->selected_station_band: %s\n",
+	       girl->selected_station_band);
 	GIRL_DEBUG_MSG("girl->selected_station_description: %s\n",
 	       girl->selected_station_description);
 

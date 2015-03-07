@@ -21,9 +21,11 @@ EXTRA_DIST = config.rpath m4/ChangeLog  \
 	NEWS-1.3 \
 	NEWS-1.4 \
 	NEWS-1.5 \
+	NEWS-1.6 \
 	README \
 	THANKS \
 	TODO \
+	VERSION \
 	YP-DIRS \
 	girl.spec.in
 

@@ -1,3 +1,11 @@
+2015-03-07  Ole Aamot  <ole@src.gnome.org>
+
+	* NEWS: girl version 1.6.0 release
+	* src/girl.xml: Add KXSC (kxsc.org)
+	* src/girl.xml: Add KASC (blazeradioonline.com)
+	* src/girl.xml: Add WPTS (wptsradio.org)
+	* src/girl.xml: Add WTBU (wtburadio.org)
+
 2015-02-28  Ole Aamot  <ole@src.gnome.org>
 
 	* NEWS: girl version 1.5.0 release

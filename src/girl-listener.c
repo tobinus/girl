@@ -55,8 +55,8 @@ girl_listener_parser(GirlListenerInfo * listener, xmlDocPtr doc,
 	GIRL_DEBUG_MSG("listener->location = %s\n", listener->location);
 	listener->uri = (gchar *)xmlGetProp(cur, (const xmlChar *)"uri");
 	GIRL_DEBUG_MSG("listener->uri = %s\n", listener->uri);
-	listener->release = (gchar *)xmlGetProp(cur, (const xmlChar *)"release");
-	GIRL_DEBUG_MSG("listener->release = %s\n", listener->release);
+	listener->band = (gchar *)xmlGetProp(cur, (const xmlChar *)"band");
+	GIRL_DEBUG_MSG("listener->band = %s\n", listener->band);
 	listener->description = (gchar *)xmlGetProp(cur, (const xmlChar *)"description");
 	GIRL_DEBUG_MSG("listener->description = %s\n", listener->description);
 

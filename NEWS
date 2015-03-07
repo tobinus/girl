@@ -1,4 +1,15 @@
 =============
+Version 1.6.0
+=============
+
+Stations
+
+	* src/girl.xml: Add KXSC (kxsc.org)
+	* src/girl.xml: Add KASC (blazeradioonline.com)
+	* src/girl.xml: Add WPTS (wptsradio.org)
+	* src/girl.xml: Add WTBU (wtburadio.org)
+
+=============
 Version 1.5.0
 =============
 

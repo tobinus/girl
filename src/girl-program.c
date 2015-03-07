@@ -60,8 +60,8 @@ girl_program_parser(GirlProgramInfo * program, xmlDocPtr doc,
 	GIRL_DEBUG_MSG("program->rank = %s\n", program->rank);
 	program->type = (gchar *)xmlGetProp(cur, (const xmlChar *)"type");
 	GIRL_DEBUG_MSG("program->type = %s\n", program->type);
-	program->release = (gchar *)xmlGetProp(cur, (const xmlChar *)"release");
-	GIRL_DEBUG_MSG("program->release = %s\n", program->release);
+	program->band = (gchar *)xmlGetProp(cur, (const xmlChar *)"band");
+	GIRL_DEBUG_MSG("program->band = %s\n", program->band);
 
 	sub = cur->xmlChildrenNode;
 
