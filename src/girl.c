@@ -589,26 +589,25 @@ void about_program(GtkWidget * a, gpointer user_data)
 		NULL,
 	};
 
+	about_program->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+
+	
 	if (about_program) {
 		gdk_window_raise(about_program->window);
+		gtk_widget_show(about_program->window);
 		return;
 	}
 
-	if (girl->selected_program_name != NULL) {
-		about_program = gnome_about_new(girl->selected_program_name,
-						girl->selected_program_band,
-						girl->selected_program_location,
-						girl->selected_program_description,
-						authors,
-						NULL,
-						NULL,
-						girl->icon);
+	if (strcmp(girl->selected_station_name, "KEXP")==0) {
+
+
 		g_signal_connect(G_OBJECT(about_program), "destroy",
 				 G_CALLBACK(gtk_widget_destroy), NULL);
 		g_signal_connect(G_OBJECT(about_program), "delete-event",
 				 G_CALLBACK(gtk_widget_destroy), NULL);
 		g_object_add_weak_pointer(G_OBJECT(about_program), (void **) &(about_program));
 		gtk_widget_show(about_program);
+		printf("%s\n", "Test");
 	}
 
 }

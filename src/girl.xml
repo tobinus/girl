@@ -2,6 +2,17 @@
 <?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
 <!DOCTYPE girl SYSTEM "girl-1.6.dtd">
 <girl version="1.6">
+  <station band="99.3FM" id="radiorakel" lang="en" name="radiOrakel" rank="1.0" type="edu">
+    <frequency uri="http://radiorakel.no/">99.3 FM in Oslo, Norway</frequency>
+    <location>Oslo, Norway</location>
+    <description>RadiOrakel was started in 1982 when the government allowed local radio operations in Norway. At a women's cultural festival a group of women collected funds to start up the world's first women's radio station. On 16th of October 1982, RadiOrakel was founded.
+
+    Since 1982 RadiOrakel has produced experimental journalism with the aim of educating women in radio-journalism and audio engineering. RadiOrakel has a minimum of 2 / 3 female members. RadiOrakel actively prioritizes and promotes women as both interviewers and interviewees, and also has a profile with at least 50% of all music being performed by female performers / musicians. RadiOrakel also seeks to combat discrimination based on gender, race, religion and sexual orientation.
+
+    RadiOrakel is located at the Blitz House on Pilestredet 30E in Oslo. They broadcast daily from 1:00 p.m. to 7:00 p.m., and on Friday’s and Saturday’s from 9:00 a.m. to 7:00 p.m. on FM 99.3 in Oslo and surrounding areas.  Broadcasts are streamed over the Internet.</description>
+    <stream mime="audio/mpeg" uri="http://stream.radionova.no/fm993.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://radiorakel.no/</uri>
+  </station>
   <station band="1560AM" id="kxsc" lang="en" name="KXSC" rank="1.0" type="edu">
     <frequency uri="http://kxsc.org/">1560 AM in Los Angeles, CA</frequency>
     <location>Los Angeles, CA</location>
