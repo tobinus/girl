@@ -22,6 +22,8 @@ EXTRA_DIST = config.rpath m4/ChangeLog  \
 	NEWS-1.4 \
 	NEWS-1.5 \
 	NEWS-1.6 \
+	NEWS-1.7 \
+	NEWS-1.8 \
 	README \
 	THANKS \
 	TODO \

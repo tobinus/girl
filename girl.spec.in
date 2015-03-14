@@ -3,9 +3,9 @@ Name: @PACKAGE@
 Version: @VERSION@
 Release: 1%{?dist}
 License: GPLv2+
-URL: http://girl.software/
+URL: http://www.ping.uio.no/~oka/src/girl/
 Group: Applications/Internet
-Source: http://girl.software/@PACKAGE@-@VERSION@.tar.xz
+Source: http://www.ping.uio.no/~oka/src/girl/@PACKAGE@-@VERSION@.tar.xz
 BuildRequires: gtk2-devel
 BuildRequires: libgnome-devel
 BuildRequires: libxml2-devel
@@ -23,7 +23,7 @@ to easily find and record live radio programs on radio broadcasters
 on the Internet.
 
 GIRL is developed on the GNOME platform and it requires at least
-one audio player such as Totem to be installed for playback and
+one audio player such as Videos to be installed for playback and
 streamripper for recording.
 
 Enjoy Internet Radio.
@@ -67,6 +67,9 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sat Mar 14 2015 Ole Aamot - 1.8.0-1.fc21
+- Girl 1.8.0 build on Fedora Linux 21
+
 * Sun Mar 08 2015 Ole Aamot - 1.7.0-1.fc21
 - Girl 1.7.0 build on Fedora Linux 21
 

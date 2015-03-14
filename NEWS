@@ -1,4 +1,30 @@
 =============
+Version 1.8.0
+=============
+
+Documentation
+
+	* help/C/aboutprogram.page: New documentation
+	* help/C/aboutstation.page: New documentation
+	* help/C/index.page: New documentation file
+	* help/C/intro.page: New documentation file
+	* help/C/legal.xml: Creative Commons license
+	* help/C/listen.page: New documentation file
+	* help/C/next.page: New documentation file
+	* help/C/prev.page: New documentation file
+	* help/C/record.page: New documentation file
+	* help/C/search.page: New documentation file
+	* help/C/stations.page: New documentation file
+
+=============
+Version 1.7.0
+=============
+
+Stations
+
+	* src/girl.xml: Add radiOrakel (radiorakel.no)
+
+=============
 Version 1.6.0
 =============
 

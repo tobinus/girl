@@ -515,7 +515,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 			     NULL };
 	gchar* comments = { _("Locate Internet Radio Stations") };
 	gchar* copyright = { _("Copyright (C) 2014, 2015  Ole Aamot Software") };
-	gchar* documenters[] = { _("See http://wiki.gnome.org/DocumentationProject"), NULL };
+	gchar* documenters[] = { _("See yelp://girl"), NULL };
 
 	static GdkPixbuf* logo;
 	gchar* name = PACKAGE;
@@ -590,11 +590,10 @@ void about_program(GtkWidget * a, gpointer user_data)
 	};
 
 	about_program->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-
 	
 	if (about_program) {
 		gdk_window_raise(about_program->window);
-		gtk_widget_show(about_program->window);
+		gtk_widget_show(GTK_WIDGET(about_program->window));
 		return;
 	}
 

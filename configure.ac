@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(girl, 1.7.0)
+AC_INIT(girl, 1.8.0)
 AM_INIT_AUTOMAKE([no-dist-gzip dist-xz])
 AC_CONFIG_SRCDIR([src/girl.c])
 AC_CONFIG_HEADER([config.h])
@@ -56,6 +56,8 @@ PKG_CHECK_MODULES(GIRL,
 		  libgnomecanvas-2.0 >= 2.0)
 GIRL_PKG_DEPS="gtk+-2.0, libgnome-2.0, libxml-2.0, gnome-vfs-2.0, libgnomeui-2.0 libgnomecanvas-2.0"
 
+GTK_DOC_CHECK([1.16], [--flavour no-tmpl])
+
 # Checks for header files.
 AC_HEADER_STDC
 AC_CHECK_HEADERS([stdlib.h string.h unistd.h])
@@ -81,6 +83,9 @@ AC_SUBST(GIRL_LIBS)
 AC_SUBST(GIRL_CFLAGS)
 AC_SUBST(GIRL_PKG_DEPS)
 AC_SUBST(GIRL_HELPER_PLAYER)
+
+dnl Enable yelp-tools
+dnl YELP_HELP_INIT
 
 AC_OUTPUT([
 Makefile

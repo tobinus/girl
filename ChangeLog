@@ -1,3 +1,13 @@
+2015-03-14  Ole Aamot  <ole@src.gnome.org>
+
+	* NEWS: girl version 1.8.0 release on π day.
+	* po/bo.pl: New Bosnian translation by Samir Ribić
+
+2015-03-07  Ole Aamot  <ole@src.gnome.org>
+
+	* NEWS: girl version 1.7.0 release
+	* src/girl.xml: Add radiOrakel (radiorakel.no)
+
 2015-03-07  Ole Aamot  <ole@src.gnome.org>
 
 	* NEWS: girl version 1.6.0 release
