@@ -2,19 +2,9 @@
 Version 1.8.0
 =============
 
-Documentation
+Translations
 
-	* help/C/aboutprogram.page: New documentation
-	* help/C/aboutstation.page: New documentation
-	* help/C/index.page: New documentation file
-	* help/C/intro.page: New documentation file
-	* help/C/legal.xml: Creative Commons license
-	* help/C/listen.page: New documentation file
-	* help/C/next.page: New documentation file
-	* help/C/prev.page: New documentation file
-	* help/C/record.page: New documentation file
-	* help/C/search.page: New documentation file
-	* help/C/stations.page: New documentation file
+	* bo: New Bosnian translation by Samir Ribić
 
 =============
 Version 1.7.0
