@@ -67,6 +67,9 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sat Mar 21 2015 Ole Aamot - 1.9.0-1.fc21
+- Girl 1.9.0 build on Fedora Linux 21
+
 * Sat Mar 14 2015 Ole Aamot - 1.8.0-1.fc21
 - Girl 1.8.0 build on Fedora Linux 21
 

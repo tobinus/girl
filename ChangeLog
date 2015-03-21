@@ -1,7 +1,18 @@
+2015-03-21  Ole Aamot  <ole@src.gnome.org>
+
+	* AUTHORS: Add Enrico Nicoletto (Brazilian Portuguese translation)
+	* NEWS: girl version 1.9.0 release
+	* THANKS: Add Enrico Nicoletto (Brazilian Portuguese translation)
+	* po/cs.po: Updated Czech translation by Marek Černocký
+	* po/pl.po: Updated Polish translation by Piotr Drąg
+	* po/pt_BR.po: Updated Brazilian Portuguese by Enrico Nicoletto
+	* src/girl.xml: Add CFRC (cfrc.ca)
+	* src/girl.xml: Add CHUO (chuo.fm)
+
 2015-03-14  Ole Aamot  <ole@src.gnome.org>
 
 	* NEWS: girl version 1.8.0 release on π day.
-	* po/bo.pl: New Bosnian translation by Samir Ribić
+	* po/bo.po: New Bosnian translation by Samir Ribić
 
 2015-03-07  Ole Aamot  <ole@src.gnome.org>
 

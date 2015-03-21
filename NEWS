@@ -1,4 +1,19 @@
 =============
+Version 1.9.0
+=============
+
+Stations
+
+	* src/girl.xml: Add CHUO (chuo.fm)
+	* src/girl.xml: Add CFRC (cfrc.ca)
+
+Translations
+
+	* po/cs.po: Updated Czech translation by Marek Černocký
+	* po/pl.po: Updated Polish translation by Piotr Drąg
+	* po/pt_BR.po: Updated Brazilian Portuguese by Enrico Nicoletto
+
+=============
 Version 1.8.0
 =============
 
