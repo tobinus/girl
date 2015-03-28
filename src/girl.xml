@@ -1,19 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-1.6.dtd">
-<girl version="1.9">
+<!DOCTYPE girl SYSTEM "girl-2.0.dtd">
+<girl version="1.0">
+  <station band="ONLINE" id="nrkp1" lang="no" name="NRK P1" rank="1.0" type="gov">
+    <frequency uri="http://www.nrk.no/p1/">ONLINE in Oslo, Norway</frequency>
+    <location>Oslo, Norway</location>
+    <description>
+      NRK P1 is one of the nationwide radio channels operated by the Norwegian Broadcasting Corporation (NRK).
+      NRK P1 is the direct descendant of NRK's first radio station which began broadcasting in 1933. P1's programming is aimed at a broad mature demographic and it is Norway's most popular radio station, with approximately 1.9 million listeners daily.
+    </description>
+    <stream mime="audio/mpeg" uri="http://lyd.nrk.no/nrk_radio_p1_ostlandssendingen_aac_h" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.nrk.no/p1</uri>
+  </station>
+  <station band="ONLINE" id="nrkp2" lang="no" name="NRK P2" rank="1.0" type="gov">
+    <frequency uri="http://www.nrk.no/p2/">ONLINE in Oslo, Norway</frequency>
+    <location>Oslo, Norway</location>
+    <description>
+      NRK P2 is one of the nationwide radio channels operated by the Norwegian Broadcasting Corporation (NRK).
+    </description>
+    <stream mime="audio/mpeg" uri="http://lyd.nrk.no/nrk_radio_p2_aac_h" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.nrk.no/p2</uri>
+  </station>
+  <station band="ONLINE" id="nrkp3" lang="no" name="NRK P3" rank="1.0" type="gov">
+    <frequency uri="http://www.nrk.no/p3/">ONLINE in Oslo, Norway</frequency>
+    <location>Oslo, Norway</location>
+    <description>
+      NRK P3 is one of the radio channels operated by the Norwegian Broadcasting Corporation (NRK).
+      NRK P3 focuses on youth culture.
+    </description>
+    <stream mime="audio/mpeg" uri="http://lyd.nrk.no/nrk_radio_p3_aac_h" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.nrk.no/p3</uri>
+  </station>
+  <station band="ONLINE" id="nrkurort" lang="no" name="NRK Urørt" rank="1.0" type="gov">
+    <frequency uri="http://www.nrk.no/urort/">ONLINE in Oslo, Norway</frequency>
+    <location>Oslo, Norway</location>
+    <description>
+      NRK P3 Urørt is a site where independent Norwegian artists and bands can promote their music.  The Urørt editors review the music played on NRK P3 Urørt.
+    </description>
+    <stream mime="audio/mpeg" uri="http://lyd.nrk.no/nrk_radio_p3_urort_aac_h" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://urort.p3.no</uri>
+  </station>
+  <station band="104.5FM" id="uctradio" lang="en" name="UCT Radio" rank="1.0" type="edu">
+    <frequency uri="http://www.radio.uct.ac.za/">104.5 FM in Cape Town, South Africa</frequency>
+    <location>Cape Town, South Africa</location>
+    <description>
+      UCT Radio 104.5fm in three words: Diverse, Dynamic and Contemporary.
+
+      From the underground beats of hip hop, to the euphoric tones of house and the classic tunes of rock,  and everything else in between, UCT Radio embodies what it truly means to be a music lover. The station captures a diverse audience of university students, staffers and even the wider Cape Town community.
+    </description>
+    <stream mime="audio/mpeg" uri="http://listenlive-c2p1.ndstream.net:8130/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="48 kbps" />
+    <uri>http://www.radio.uct.ac.za/</uri>
+  </station>
   <station band="101.9FM" id="cfrc" lang="en" name="CFRC" rank="1.0" type="edu">
     <frequency uri="http://www.cfrc.ca/">101.9 FM in Kingston, Canada</frequency>
     <location>Kingston, Canada</location>
     <description>
       CFRC 101.9 FM is Kingston’s only campus and community radio station!
-
       We are 100% not-for-profit, volunteer-powered media that fills the gap left by the mainstream.
-
-      We offer diverse music and spoken word programming 24/7: over the air at 101.9FM in the Kingston area and worldwide on-line.
-
-      We provide free broadcast skills training and experience to members of the community.
-
+<!--      We offer diverse music and spoken word programming 24/7: over the air at 101.9FM in the Kingston area and worldwide on-line.
+      We provide free broadcast skills training and experience to members of the community.-->
       We have been broadcasting since 1922, making us the longest-running campus-based broadcaster in Canada.
     </description>
     <stream mime="audio/mpeg" uri="http://stream.cfrc.ca:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
@@ -23,13 +68,8 @@
     <frequency uri="http://chuo.fm/">89.1 FM in Ottawa, Canada</frequency>
     <location>Ottawa, Canada</location>
     <description>
-      Music, information, community. That’s CHUO
-
       We are NOT your traditional radio station. We are THE community radio station.
-
       For over 20 YEARS we’ve been playing nothing but the best in indie-rock, folk, funk, reggae, hip hop, jazz, blues, country, rock, classical, ska, punk, soul, Motown and more. We offer a new, refreshing flavour of music from local, independent, underground and emerging artists to tickle every one of your musical taste buds. We play tunes that you probably won’t know the words to… we feature artists you’ve probably never heard of… we make radio worth listening to.
-
-      We are the voice of the community. We talk about things you care about. We represent the various facets that make up our beautiful community……We are CHUO FM 89.1by the people for the people!
     </description>
     <stream mime="audio/mpeg" uri="http://icecast1.isiglobal.ca:8000/chuo.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://chuo.fm/</uri>
@@ -38,10 +78,9 @@
     <frequency uri="http://radiorakel.no/">99.3 FM in Oslo, Norway</frequency>
     <location>Oslo, Norway</location>
     <description>RadiOrakel was started in 1982 when the government allowed local radio operations in Norway. At a women's cultural festival a group of women collected funds to start up the world's first women's radio station. On 16th of October 1982, RadiOrakel was founded.
-
-    Since 1982 RadiOrakel has produced experimental journalism with the aim of educating women in radio-journalism and audio engineering. RadiOrakel has a minimum of 2 / 3 female members. RadiOrakel actively prioritizes and promotes women as both interviewers and interviewees, and also has a profile with at least 50% of all music being performed by female performers / musicians. RadiOrakel also seeks to combat discrimination based on gender, race, religion and sexual orientation.
-
-    RadiOrakel is located at the Blitz House on Pilestredet 30E in Oslo. They broadcast daily from 1:00 p.m. to 7:00 p.m., and on Friday’s and Saturday’s from 9:00 a.m. to 7:00 p.m. on FM 99.3 in Oslo and surrounding areas.  Broadcasts are streamed over the Internet.</description>
+    RadiOrakel is located at the Blitz House on Pilestredet 30E in Oslo. They broadcast daily from 1:00 p.m. to 7:00 p.m., and on Friday’s and Saturday’s from 9:00 a.m. to 7:00 p.m. on FM 99.3 in Oslo and surrounding areas.
+<!--    Since 1982 RadiOrakel has produced experimental journalism with the aim of educating women in radio-journalism and audio engineering. RadiOrakel has a minimum of 2 / 3 female members. RadiOrakel actively prioritizes and promotes women as both interviewers and interviewees, and also has a profile with at least 50% of all music being performed by female performers / musicians. RadiOrakel also seeks to combat discrimination based on gender, race, religion and sexual orientation.-->
+<!--      Broadcasts are streamed over the Internet.--></description>
     <stream mime="audio/mpeg" uri="http://stream.radionova.no/fm993.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://radiorakel.no/</uri>
   </station>
@@ -49,10 +88,8 @@
     <frequency uri="http://kxsc.org/">1560 AM in Los Angeles, CA</frequency>
     <location>Los Angeles, CA</location>
     <description>KXSC Radio (formerly KSCR) is the 100% student-run radio station of the University of Southern California; we are volunteer, non-profit, donation funded and we provide the USC community with original radio programming 24 hours a day.
-    
     KXSC traces its roots to the original KUSC, which was operated by students starting in 1946. KUSC transitioned to classical programming and moved off-campus in the mid-1970s, but students still demanded a broadcast voice. So on April 2, 1975, a dozen students gathered in a converted production studio to start KSCR, a radio station run by and for students.
-
-    KXSC has undergone yet another revolution with our new home in the Ronald Tutor Campus Center, but our approach to radio is still the same: All-student run music, sports and news broadcasts that encourage diversity and a student-centric approach.
+<!--    KXSC has undergone yet another revolution with our new home in the Ronald Tutor Campus Center, but our approach to radio is still the same: All-student run music, sports and news broadcasts that encourage diversity and a student-centric approach.-->
     </description>
     <stream mime="audio/mpeg" uri="http://kxsc.org/s/kxsc.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.kxsc.org/</uri>
@@ -93,7 +130,7 @@
     </description>
     <stream mime="audio/mpeg" uri="http://cast9.directhostingcenter.com:2199/tunein/soevwkmu.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://soundfm.ca/</uri>
-  </station>    
+  </station>
   <station band="ONLINE" id="nrj-bern" lang="en" name="Radio NRJ Bern" rank="1.0" type="edu">
     <frequency uri="http://www.energy.ch/bern/">Internet</frequency>
     <location>Bern, Switzerland</location>
@@ -105,10 +142,8 @@
     <frequency uri="http://www.wvau.org/">Online in Washington, DC</frequency>
     <location>Washington, DC</location>
     <description>WVAU is American University's student radio station. We broadcast online 24/7 from the Mary Graydon Center in Washington, D.C.
-
-    With a staff of over 120 student DJs, WVAU offers unique musical programming and a perspective that you won't find anywhere else. Outside of the studio, WVAU brings in local and touring artists every semester for interviews, in-studio performances, and our Capital Punishment free concert series. We also host monthly open mic nights to showcase AU's talented students and faculty. All of our events are free and open to the public.
-
-    WVAU focuses on showcasing independent music that you won't hear on your traditional Top 40 station. Our live programming covers the best in indie rock, hip-hop, electronic, experimental, jazz, folk, world music, and more. Our eclectic schedule doesn't limit students to genre-specific shows, which sets WVAU apart from traditional college radio stations and gives our DJs the freedom to play whatever music they want.</description>
+<!--    With a staff of over 120 student DJs, WVAU offers unique musical programming and a perspective that you won't find anywhere else. Outside of the studio, WVAU brings in local and touring artists every semester for interviews, in-studio performances, and our Capital Punishment free concert series. We also host monthly open mic nights to showcase AU's talented students and faculty. All of our events are free and open to the public.-->
+<!--    WVAU focuses on showcasing independent music that you won't hear on your traditional Top 40 station. Our live programming covers the best in indie rock, hip-hop, electronic, experimental, jazz, folk, world music, and more. Our eclectic schedule doesn't limit students to genre-specific shows, which sets WVAU apart from traditional college radio stations and gives our DJs the freedom to play whatever music they want.--></description>
     <stream mime="audio/mpeg" uri="http://ice8.securenetsystems.net/WVAU" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.wvau.org/</uri>
   </station>
@@ -118,7 +153,7 @@
     <description>KCSN is commercial free, public radio that relies heavily on donor contributions.</description>
     <stream mime="audio/mpeg" uri="http://130.166.82.184:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <stream mime="audio/mpeg" uri="http://130.166.82.184:8002/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
-    <stream mime="audio/mpeg" uri="http://130.166.82.184:8004/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />    
+    <stream mime="audio/mpeg" uri="http://130.166.82.184:8004/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
     <uri>http://www.kcsn.org/</uri>
   </station>
   <station band="91.7FM" id="kvrx" name="KVRX" rank="1.0" type="edu">
@@ -130,14 +165,14 @@
   </station>
   <station band="ONLINE" id="ksub" name="KSUB" rank="1.0" type="edu">
     <frequency uri="http://www.ksubseattle.org/">Online in Seattle, WA</frequency>
-    <location>Seattle, WA</location>        
+    <location>Seattle, WA</location>
     <description>We are one of the last college radio stations in the Seattle area actually run by students. Our DJ's are current students and beloved alumni (and even some faculty), and because we are non-commercial, we are free from mainstream radio constraints. Each individual DJ has near complete control of what he or she plays on the air, giving KSUB a rich musical diversity.</description>
     <stream mime="audio/mpeg" uri="http://lin1.san.fast-serv.com:6014" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.ksubseattle.org/</uri>
   </station>
   <station band="ONLINE" id="wrvu" name="WRVU" rank="1.0" type="edu">
     <frequency uri="http://wrvu.org/">Online in Nashville, TN</frequency>
-    <location>Nashville, TN</location>    
+    <location>Nashville, TN</location>
     <description>WRVU is a free-format college radio station committed to providing Vanderbilt University and the surrounding community with the best in new, non-mainstream music. WRVU is student-run and focuses on teaching Vanderbilt students the ins and outs of radio broadcasting, playing music you can’t hear anywhere else.</description>
     <stream mime="audio/mpeg" uri="http://129.59.202.68:8200/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wrvu.org/</uri>
@@ -159,7 +194,7 @@
   <station band="90.1FM" id="wusb" name="WUSB" rank="1.0" type="edu">
     <frequency uri="http://www.wusb.fm/">90.1 FM in Long Island, NY</frequency>
     <location>Long Island, NY</location>
-    <description>WUSB is a 3,600 watt non-commercial station located on the campus of Stony Brook University. Since 1977, we have served the campus and Long Island listening communities with a diverse broadcast mix of music, news, public affairs, drama and sports programming. Our 24 hour a day schedule is made possible by a volunteer staff efforts of over 160 Stony Brook students, faculty, staff, alumni and community residents. Behind-the-scenes as well as on-air work, combined with a variety of nationally syndicated radio programs integrated into the schedule, creates the 168 hours per week of innovative and high-quality programming.</description>
+    <description>WUSB is a 3,600 watt non-commercial station located on the campus of Stony Brook University. Since 1977, we have served the campus and Long Island listening communities with a diverse broadcast mix of music, news, public affairs, drama and sports programming.<!-- Our 24 hour a day schedule is made possible by a volunteer staff efforts of over 160 Stony Brook students, faculty, staff, alumni and community residents. Behind-the-scenes as well as on-air work, combined with a variety of nationally syndicated radio programs integrated into the schedule, creates the 168 hours per week of innovative and high-quality programming.--></description>
     <stream mime="audio/mpeg" uri="http://stream.wusb.stonybrook.edu:8080/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
     <stream mime="audio/mpeg" uri="http://stream.wusb.stonybrook.edu:8090/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.wusb.fm/</uri>
@@ -174,18 +209,16 @@
   <station band="90.7FM" id="wvua" name="WVUA-FM" rank="1.0" type="edu">
     <frequency uri="http://wvuafm.ua.edu/"></frequency>
     <location>Tuscaloosa, AL</location>
-    <description>WVUA-FM is the University’s only student operated radio station. Its history dates back to 1940 when the Department of Radio Arts began operation of an AM carrier-current station (the signal was transmitted to dormitories and other buildings on campus through electrical wiring). The station was known as BRN (the Bama Radio Network). In 1947, the signal was extended and the station became known as WABP. The station was operated as a commercial venture at 570 on the AM dial. During the 1950’s and 1960’s, as more students moved off campus, the station’s listenership dwindled.</description>
+    <description>WVUA-FM is the University’s only student operated radio station. Its history dates back to 1940 when the Department of Radio Arts began operation of an AM carrier-current station (the signal was transmitted to dormitories and other buildings on campus through electrical wiring).<!-- The station was known as BRN (the Bama Radio Network). In 1947, the signal was extended and the station became known as WABP. The station was operated as a commercial venture at 570 on the AM dial. During the 1950’s and 1960’s, as more students moved off campus, the station’s listenership dwindled.--></description>
     <stream mime="audio/mpeg" uri="http://ice8.securenetsystems.net/WVUA" codec="MPEG-4 AAC" samplerate="44100 Hz" channels="Stereo" bitrate="30 kbps" />
     <uri>http://wvuafm.ua.edu/</uri>
   </station>
   <station band="1350AM" id="ury" lang="en" name="University Radio York" rank="1.0" type="edu">
     <frequency uri="http://ury.org.uk/"></frequency>
     <location>York, United Kingdom</location>
-    <description>University Radio York (URY) is the student radio station for the University of York, broadcasting 24 hours a day during term time on 1350am across the University's Heslington Campus and worldwide via this website.
-
+    <description>University Radio York (URY) is the student radio station for the University of York, broadcasting 24 hours a day during term time on 1350am across the University's Heslington Campus and worldwide via this website.<!--
     The station is run by students for students, meaning the people behind the station understand what the listenership want to hear.
-
-    With no playlist and no set format to many of our shows, our presenters have the chance to try whatever they like, as long as it's legal!</description>
+    With no playlist and no set format to many of our shows, our presenters have the chance to try whatever they like, as long as it's legal!--></description>
     <stream mime="audio/mpeg" uri="http://ury.york.ac.uk/audio/live-mobile.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
     <stream mime="audio/mpeg" uri="http://ury.york.ac.uk/audio/live-low.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
     <stream mime="audio/mpeg" uri="http://ury.york.ac.uk/audio/live-high.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
@@ -210,7 +243,7 @@
   <station band="ONLINE" id="fusefm" lang="en" name="Fuse FM" rank="1.0" type="edu">
     <frequency uri="http://fusefm.co.uk/"></frequency>
     <location>Manchester, United Kingdom</location>
-    <description>Fuse FM is Manchester University's student radio station. We first went on air back in 2001, and 13 years later we now broadcast from a brand new, professional quality studio from within the Students' Union. We broadcast online throughout the academic year and you can listen to live shows and podcasts on our website. We love our new home, but we need your help to sound great on air. If you want to get in on the action, you'd be more than welcome! We are constantly on the look out for new talent, so if you fancy yourself as a music journalist, producer, DJ, news reader, or think you have what it takes to host your own show, Fuse FM is certainly the place for you! Not only is Fuse FM a fun organisation to be part of, but we can help you if you are interested in getting into the radio industry. Past Fuse FM members have gone on to find work at the BBC and commercial radio stations.</description>
+    <description>Fuse FM is Manchester University's student radio station. We first went on air back in 2001, and 13 years later we now broadcast from a brand new, professional quality studio from within the Students' Union. We broadcast online throughout the academic year and you can listen to live shows and podcasts on our website. We love our new home, but we need your help to sound great on air. <!--If you want to get in on the action, you'd be more than welcome! We are constantly on the look out for new talent, so if you fancy yourself as a music journalist, producer, DJ, news reader, or think you have what it takes to host your own show, Fuse FM is certainly the place for you! Not only is Fuse FM a fun organisation to be part of, but we can help you if you are interested in getting into the radio industry. Past Fuse FM members have gone on to find work at the BBC and commercial radio stations.--></description>
     <stream mime="audio/mpeg" uri="http://studio.fusefm.co.uk:8000/livehi" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="320 kbps" />
     <stream mime="audio/ogg" uri="http://studio.fusefm.co.uk:8000/livehi" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="320 kbps" />
     <stream mime="audio/mpeg" uri="http://studio.fusefm.co.uk:8000/live" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
@@ -220,7 +253,7 @@
   <station band="90.9FM" id="cjsw" lang="en" name="CJSW" rank="1.0" type="edu">
     <frequency uri="http://cjsw.com/"></frequency>
     <location>Calgary, Canada</location>
-    <description>CJSW 90.9 FM will be celebrating 30 years of on air radio programming at the beginning of 2015. Our goal is to provide an alternative to commercial media by recognizing and promoting the diverse musical styles, points of view and cultures that exist within our city. CJSW strives to provide programming to an audience and by programmers that are varied in their ethnicity, culture, gender, sexual orientation, age, and physical and mental ability. Our diverse programming includes music, arts, spoken word and multicultural programs.</description>
+    <description>CJSW 90.9 FM will be celebrating 30 years of on air radio programming at the beginning of 2015. Our goal is to provide an alternative to commercial media by recognizing and promoting the diverse musical styles, points of view and cultures that exist within our city.<!-- CJSW strives to provide programming to an audience and by programmers that are varied in their ethnicity, culture, gender, sexual orientation, age, and physical and mental ability. Our diverse programming includes music, arts, spoken word and multicultural programs.--></description>
     <stream mime="audio/mpeg" uri="http://stream.cjsw.com/cjsw.mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://cjsw.com/</uri>
   </station>
@@ -228,11 +261,8 @@
     <frequency uri="http://caperradio.ca/">Pending FM license in Sydney, Nova Scotia, Canada</frequency>
     <location>Sydney, Nova Scotia, Canada</location>
     <description>Caper Radio Incorporated is CBU's campus radio station!
-
     Located in the Students' Union building we are equipped with an ever-growing music collection of over 6000 CDs on a digital library. We offer some of the best independent music in Canada. Caper Radio is also a prime resource for information on events taking place both on and off campus.
-
-    Being involved with Caper Radio, Inc. helps students gain new skills (in communication, as well as working with the equipment), build confidence, and make new friends. Taking part in shaping the university community, and building valuable job skills – It's a lot of fun too!
-
+<!--    Being involved with Caper Radio, Inc. helps students gain new skills (in communication, as well as working with the equipment), build confidence, and make new friends. Taking part in shaping the university community, and building valuable job skills – It's a lot of fun too!-->
     Caper Radio broadcasts from 9:30am until 4:30pm Monday - Friday. Repeat broadcasts can be heard by visiting our website.</description>
     <stream mime="audio/mpeg" uri="http://142.12.32.15:8000/stream.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://caperradio.ca/</uri>
@@ -240,7 +270,7 @@
   <station band="88.3FM" id="wxou" lang="en" name="WXOU" rank="1.0" type="edu">
     <frequency uri="http://wxou.org/">88.3 FM in Rochester, MI</frequency>
     <location>Rochester, MI</location>
-    <description>WXOU is a non-profit, student operated, freeform community radio station. Currently we are broadcasting with 110 watts of power from the campus of Oakland University. WE offer diverse programming such as, music, sports, news and student produced programs. Our goal is to supply the community with a service that provides both an educational experience to those involved with the radio station, while also providing information and entertainment o the rest of the community outside of Oakland’s campus.</description>
+    <description>WXOU is a non-profit, student operated, freeform community radio station. Currently we are broadcasting with 110 watts of power from the campus of Oakland University. WE offer diverse programming such as, music, sports, news and student produced programs.<!-- Our goal is to supply the community with a service that provides both an educational experience to those involved with the radio station, while also providing information and entertainment o the rest of the community outside of Oakland’s campus.--></description>
     <stream mime="audio/mpeg" uri="http://wxou.oakland.edu:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Mono" bitrate="24 kbps" />
     <stream mime="audio/mpeg" uri="http://wxou.oakland.edu:8002/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="128 kbps" />
   </station>
@@ -261,8 +291,8 @@
   <station band="95.0FM" id="95bfm" lang="en" name="95bFM" rank="1.0" type="edu">
     <frequency uri="http://www.95bfm.com/">95.0 FM in Auckland, New Zealand</frequency>
     <location>Auckland, New Zealand</location>
-    <description>In 1969, Radio Bosom was born as a student's capping stunt, broadcasting illegally from a boat in the Waitemata Harbour. Over the next few decades the bosom morphed into the mighty 95bFM, the longest-standing independent radio station in New Zealand.
-    We're passionate about music, just like you. We think that radio is better when it's free from commercial pressures, and that it should be challenging without being inaccessible. This is not top 40 radio.</description>
+    <description>In 1969, Radio Bosom was born as a student's capping stunt, broadcasting illegally from a boat in the Waitemata Harbour. Over the next few decades the bosom morphed into the mighty 95bFM, the longest-standing independent radio station in New Zealand.<!--
+    We're passionate about music, just like you. We think that radio is better when it's free from commercial pressures, and that it should be challenging without being inaccessible. This is not top 40 radio.--></description>
     <stream mime="audio/mpeg" uri="http://streams.95bfm.com/stream95" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Mono" bitrate="32 kbps" />
     <uri>http://www.95bfm.com/</uri>
   </station>
@@ -314,31 +344,28 @@
   <station band="ONLINE" id="kcl" lang="en" name="King's College London Radio" rank="1.0" type="edu">
     <frequency uri="http://www.kclradio.co.uk/">Internet</frequency>
     <location>London, United Kingdom</location>
-    <description>KCL Radio is King’s College London’s award winning, student radio station, which first broadcast live last year. Our studio is currently located on the basement floor of the Chesham Building (although there are plans to relocate to a new studio in Tutu’s on the 4th floor of the Macadam Building during 2015).  Output ranges from music to news, chat, sport, comedy and everything in between. Live broadcasts also take place throughout the year for significant events on the KCLSU calendar such as the Student Officer Elections or the Varsity Rugby match.</description>
+    <description>KCL Radio is King’s College London’s award winning, student radio station, which first broadcast live last year. Our studio is currently located on the basement floor of the Chesham Building (although there are plans to relocate to a new studio in Tutu’s on the 4th floor of the Macadam Building during 2015).<!--  Output ranges from music to news, chat, sport, comedy and everything in between. Live broadcasts also take place throughout the year for significant events on the KCLSU calendar such as the Student Officer Elections or the Varsity Rugby match.--></description>
     <stream mime="audio/mpeg" uri="http://159.92.75.8:8080/KCLR" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.kclradio.co.uk/</uri>
   </station>
   <station band="ONLINE" id="icradio" lang="en" name="Imperial College Radio" rank="1.0" type="edu">
     <frequency uri="http://icradio.com/">1134 AM in Wye, Kent, United Kingdom</frequency>
     <location>London, United Kingdom</location>
-    <description>IC Radio is among the oldest student radio stations in the country. Started in 1976, broadcasting on a home built AM transmitter around halls, we now broadcast all over the globe from icradio.com. Absolutely anyone is welcome to try their hand at presenting or producing a show; whatever your music taste. We also love a good speech based program, so anyone will feel at home in IC Radio. As well as being able to broadcast, we are lucky enough to have a brand new, fully equipped recording studio which we use to record bands and musicians.
-
-Behind the scenes we rely on our fantastic technical, musical and promotional teams. Are you interested in web design? Want to record professional band and artists? Maybe you fancy running our IT system? Or perhaps you want to talk to industry insiders to get your hands on new music weeks before any of your friends? There's a place for you here and we'd love for you to join us!</description>
+    <description>IC Radio is among the oldest student radio stations in the country. Started in 1976, broadcasting on a home built AM transmitter around halls, we now broadcast all over the globe from icradio.com.<!-- Absolutely anyone is welcome to try their hand at presenting or producing a show; whatever your music taste. We also love a good speech based program, so anyone will feel at home in IC Radio. As well as being able to broadcast, we are lucky enough to have a brand new, fully equipped recording studio which we use to record bands and musicians.-->
+<!--
+Behind the scenes we rely on our fantastic technical, musical and promotional teams. Are you interested in web design? Want to record professional band and artists? Maybe you fancy running our IT system? Or perhaps you want to talk to industry insiders to get your hands on new music weeks before any of your friends? There's a place for you here and we'd love for you to join us!--></description>
     <stream mime="audio/mpeg" uri="http://icecast.icradio.com:8000/live-mp3-high" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
     <uri>http://icradio.com/</uri>
   </station>
   <station band="107.9FM" id="ruc" lang="pt" name="Coimbra University Radio" rank="1.0" type="edu">
     <frequency uri="http://www.ruc.pt/">107.9 FM in Coimbra, Portugal</frequency>
     <location>Coimbra, Portugal</location>
-    <description>Coimbra University Radio (Portuguese: Rádio Universidade de Coimbra - RUC) is a university radio station of the Coimbra Academic Association (students' union) of the University of Coimbra in Coimbra, Portugal.
-
-    It broadcasts on 107.9 FM (also broadcasts on-line). The Center of Experimental Radio was founded in the 40's, but it was only on March, 1st 1986, that the radio obtained the authorization to broadcast on FM.
-
+    <description>Coimbra University Radio (Portuguese: Rádio Universidade de Coimbra - RUC) is a university radio station of the Coimbra Academic Association (students' union) of the University of Coimbra in Coimbra, Portugal.<!--
+    It broadcasts on 107.9 FM (also broadcasts on-line). The Center of Experimental Radio was founded in the 40's, but it was only on March, 1st 1986, that the radio obtained the authorization to broadcast on FM.-->
+<!--
     The studios and offices of this university radio station are located in the main building of the Associação Académica de Coimbra, in the city centre. One of its trademarks is that there are no set playlists for any of the programs broadcast. This allows for an exceptionally wide range of musical genres.
-
     The radio gives courses in Programming, Technic and News, that students from the University of Coimbra can join.
-
-    For its 25th anniversary, the radio hosts concerts of the indie Swedish band the Radio Dept., and later Eleanor Friedberger from the rock duo The Fiery Furnaces and the Welsh songwriter Euros Childs.</description>
+    For its 25th anniversary, the radio hosts concerts of the indie Swedish band the Radio Dept., and later Eleanor Friedberger from the rock duo The Fiery Furnaces and the Welsh songwriter Euros Childs.--></description>
     <stream mime="audio/mpeg" uri="http://ruc.midi-club.net:8000/;stream/1" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.ruc.pt/</uri>
   </station>
@@ -380,7 +407,7 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
   <station band="97.2FM" id="camfm" lang="en" name="Cam FM" rank="1.0" type="edu">
     <frequency uri="http://www.camfm.co.uk/">97.2 FM in Cambridge, United Kingdom</frequency>
     <location>Cambridge, United Kingdom</location>
-    <description>Originally founded in 1979, the award-winning Cam FM is now one of the most heavily listened to student radio stations in the UK, as well as one of the largest student-run media organisations in Cambridge, covering students at both Cambridge and Anglia Ruskin Universities. We know students because we are students; every aspect of the station is professionally run by students, staff, and alumni of the Universities - presenting, producing, or running the committee. Our content is primarily geared towards engaging with the student community in Cambridge.</description>
+    <description>Originally founded in 1979, the award-winning Cam FM is now one of the most heavily listened to student radio stations in the UK, as well as one of the largest student-run media organisations in Cambridge, covering students at both Cambridge and Anglia Ruskin Universities. <!--We know students because we are students; every aspect of the station is professionally run by students, staff, and alumni of the Universities - presenting, producing, or running the committee. Our content is primarily geared towards engaging with the student community in Cambridge.--></description>
     <stream mime="audio/mpeg" uri="http://stream.camfm.co.uk/camfm" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.camfm.co.uk/</uri>
   </station>
@@ -397,7 +424,7 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <description>WXYC went on the air on March 17, 1977 with Joni Mitchell's "You Turn Me on I'm a Radio."
 
       WXYC was preceded by WCAR, a carrier current station that reached dorms on the UNC-Chapel Hill campus through electrical wiring. The station's alumni include top 40 radio host Rick Dees.
-
+<!--
       When WCAR wanted to upgrade in the early 1970s, it decided to pursue an FM license and begin broadcastin over the air rather than update the carrier current system. Funding for the change to FM was provided by a student referendum passed in 1973. The physical conversion cost $35,000 and took two years to complete.
 
       The non-profit Student Educational Broadcasting, Inc. was established to serve as the official owner of WXYC's broadcast license, and in 1977 WCAR became WXYC. The station was originally scheduled to begin broadcasting in January 1977, but winter freezes prevented the installation of an antenna on UNC's water tower delaying the broadcast until March.
@@ -408,7 +435,7 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
 
       In 1994, the staff of UNC's SunSITE, the first Web site in North America, helped WXYC become the first radio station in the world to stream its on-air signal live over the Internet. We're proud to have been at the forefront of the Internet radio medium. We now have loyal listeners all over the world who contact us with comments and requests by email and IM.
 
-      WXYC alumni include ESPN anchor Stuart Scott, former Squirrel Nut Zipper Tom Maxwell, former Polvo guitarist Dave Brylawski, Newsweek reporter Colin Soloway, film director Peyton Reed, as well as scores of doctors, lawyers, writers, executives, and successful professionals of all kinds.</description>
+      WXYC alumni include ESPN anchor Stuart Scott, former Squirrel Nut Zipper Tom Maxwell, former Polvo guitarist Dave Brylawski, Newsweek reporter Colin Soloway, film director Peyton Reed, as well as scores of doctors, lawyers, writers, executives, and successful professionals of all kinds.--></description>
     <stream mime="audio/ogg" uri="http://www.wxyc.org/files/streams/wxyc-ogg.pls" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
     <stream mime="audio/mpeg" uri="http://wxyc.org/files/streams/wxyc-mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.wxyc.org/</uri>
@@ -417,10 +444,10 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <frequency uri="http://kalx.berkeley.edu/">90.7 FM in Berkeley, CA</frequency>
     <location>Berkeley, CA</location>
     <description>KALX 90.7 FM broadcasts freeform radio 24 hours a day to a large portion of the San Francisco Bay Area. You can catch all stripes of underground music accented with news, sports and alternative informational programming.
-
+<!--
       KALX has a wonderfully dedicated staff of student and community volunteers who are willing to explore with and educate their listeners. KALX is regular folks doing wild, unpredictable, extraordinary radio. All of our programs are homespun, we don't depend on satellite feeds. Rather we create programs from, and for our community (a community that includes both the University of California, Berkeley student population AND the surrounding area).
 
-      As part of our mission to educate, every KALX DJ is encouraged to play a variety of musical styles and types. Rather than segregating music into limited boxes, this philosophy is an attempt to entertain the listener while broadening their musical experience. A pretty fun way to be educated, don't ya think!</description>
+      As part of our mission to educate, every KALX DJ is encouraged to play a variety of musical styles and types. Rather than segregating music into limited boxes, this philosophy is an attempt to entertain the listener while broadening their musical experience. A pretty fun way to be educated, don't ya think!--></description>
     <stream mime="audio/ogg" uri="http://icecast.media.berkeley.edu:8000/kalx-128.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <stream mime="audio/mpeg" uri="http://icecast.media.berkeley.edu:8000/kalx-128.mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://kalx.berkeley.edu/</uri>
@@ -478,10 +505,10 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <frequency>90.1 FM in Stanford, CA</frequency>
     <location>San Francisco, CA</location>
     <description>KZSU is Stanford University's FM radio station, broadcasting across the Bay Area on 90.1 FM and across the world at kzsulive.stanford.edu. We exist to serve the Stanford community with quality radio broadcasts, including music, sports, news, and public affairs programming.
-
+<!--
       The station is owned by the Board of Trustees of Stanford University and is governed by a Board of Directors appointed by the President. We got our FM license in 1964, and upgraded from 10 to 500 watts in 1978. Before 1964, KZSU broadcast as an AM carrier current station (through the University's power supply) on 880 kHz, starting in 1947 as a part of the Department of Communication.
 
-      KZSU is a non-commercial station funded mainly by Stanford student fees, in addition to underwriting and listener donations. KZSU's staff is all volunteer, made up of Stanford students, staff, alumni, and community affiliates.</description>
+      KZSU is a non-commercial station funded mainly by Stanford student fees, in addition to underwriting and listener donations. KZSU's staff is all volunteer, made up of Stanford students, staff, alumni, and community affiliates.--></description>
     <stream mime="audio/mpeg" uri="http://kzsulive.stanford.edu/audio/kzsu-1-128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://kzsulive.stanford.edu/</uri>
   </station>

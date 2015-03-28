@@ -1,321 +1,1507 @@
-2015-03-21  Ole Aamot  <ole@src.gnome.org>
+commit c24031433d2b13b817ec9df7413f4e26e6ad9220
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:   Mon Mar 23 16:40:10 2015 +0000
+
+    Updated Hungarian translation
+
+ po/hu.po | 398 +++++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 347 insertions(+), 51 deletions(-)
+
+commit 06ed0847c30f27453fc9360f77a300346002722b
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Mar 21 20:37:57 2015 +0100
+
+    GIRL 1.9.0
+
+ AUTHORS      |  1 +
+ ChangeLog    | 13 ++++++++-
+ Makefile.am  |  1 +
+ NEWS         | 15 +++++++++++
+ THANKS       |  3 ++-
+ configure    | 20 +++++++-------
+ configure.ac |  2 +-
+ girl.spec.in |  3 +++
+ src/girl.xml | 86 +++++++++++++++++++++++++++++++++++++++++-------------------
+ 9 files changed, 104 insertions(+), 40 deletions(-)
+
+commit 176c6942fe0bf7ae5cfc7641bada74cbdb061cb5
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Mar 15 10:23:12 2015 +0100
+
+    Update screenshot.
+
+ NEWS                |  16 +++-------------
+ data/screenshot.png | Bin 162426 -> 165520 bytes
+ 2 files changed, 3 insertions(+), 13 deletions(-)
+
+commit d74604f5b11f96688ab1229b011101cf0caa3367
+Author: Marek Černocký <marek@manet.cz>
+Date:   Mon Mar 16 15:23:36 2015 +0100
+
+    Updated Czech translation
+
+ po/cs.po | 82 ++++++++++++++++++++++++++++++++--------------------------------
+ 1 file changed, 41 insertions(+), 41 deletions(-)
+
+commit e1d06e9679dcde2af566c5f9f1bdfb6bac2f983c
+Author: Enrico Nicoletto <liverig@gmail.com>
+Date:   Sun Mar 15 22:57:44 2015 +0000
+
+    Updated Brazilian Portuguese translation
+
+ po/pt_BR.po | 83 ++++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 43 insertions(+), 40 deletions(-)
+
+commit e7a89a7b1d89dc59b21d5217d560880df814aa81
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sun Mar 15 22:47:37 2015 +0100
+
+    Updated Polish translation
+
+ po/pl.po | 76 ++++++++++++++++++++++++++++++++--------------------------------
+ 1 file changed, 38 insertions(+), 38 deletions(-)
+
+commit d062e7e38d9b9e0e94b1603067c32a6dac6d1ca0
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Mar 14 17:46:06 2015 +0100
+
+    GNOME Internet Radio Locator 1.8.0
+
+ AUTHORS                        |   1 +
+ ChangeLog                      |  10 +
+ Makefile.am                    |   2 +
+ NEWS                           |  26 +++
+ THANKS                         |   1 +
+ configure                      | 449 ++++++++++++++++++++++++++++++++++++++++-
+ configure.ac                   |   7 +-
+ data/Makefile.in               |   7 +
+ data/icons/16x16/Makefile.in   |   7 +
+ data/icons/22x22/Makefile.in   |   7 +
+ data/icons/24x24/Makefile.in   |   7 +
+ data/icons/256x256/Makefile.in |   7 +
+ data/icons/32x32/Makefile.in   |   7 +
+ data/icons/48x48/Makefile.in   |   7 +
+ data/icons/Makefile.in         |   7 +
+ data/pixmaps/Makefile.in       |   7 +
+ girl.spec.in                   |   9 +-
+ src/Makefile.in                |   7 +
+ src/girl.c                     |   5 +-
+ 19 files changed, 563 insertions(+), 17 deletions(-)
+
+commit 7c6bc8e9ac6d98a97ef2a89fdcfe9f2d4d6d35d4
+Author: Samir Ribic <samir.ribic@etf.unsa.ba>
+Date:   Fri Mar 13 23:33:42 2015 +0000
+
+    Added Bosnian translation
+
+ po/LINGUAS |   1 +
+ po/bs.po   | 406 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 407 insertions(+)
+
+commit d8f0d977732b30362b4aa26540b2142b4ad828f1
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Mar 8 01:28:22 2015 +0100
+
+    GIRL 1.7.0
+
+ configure           |  20 ++++++++++----------
+ configure.ac        |   2 +-
+ data/screenshot.png | Bin 172304 -> 162426 bytes
+ girl.spec.in        |   3 +++
+ src/girl.c          |  17 ++++++++---------
+ src/girl.xml        |  11 +++++++++++
+ 6 files changed, 33 insertions(+), 20 deletions(-)
+
+commit b220f225d8c1b3064b61970f72fcd530bd6eafc1
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Mar 7 03:40:07 2015 +0100
+
+    GIRL version 1.6.0
+
+ ChangeLog           |   8 +++
+ Makefile.am         |   2 +
+ NEWS                |  11 ++++
+ configure           |  20 +++----
+ configure.ac        |   2 +-
+ debian/changelog    |   4 +-
+ girl.spec.in        |  54 +++++++++++--------
+ src/Makefile.am     |   4 +-
+ src/Makefile.in     |   4 +-
+ src/girl-gui.c      |  64 +++++++++++-----------
+ src/girl-listener.c |   4 +-
+ src/girl-listener.h |   2 +-
+ src/girl-program.c  |   4 +-
+ src/girl-program.h  |   2 +-
+ src/girl-station.c  |  17 ++++--
+ src/girl-station.h  |   4 +-
+ src/girl.c          | 151 +++++++++++++++++++++++++++++++++++-----------------
+ src/girl.h          |   6 +--
+ src/girl.xml        | 122 +++++++++++++++++++++++-------------------
+ 19 files changed, 297 insertions(+), 188 deletions(-)
+
+commit 3a8e5f2e5177c12f4d99ff470c0bb95c21d2c936
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Mar 1 19:55:23 2015 +0100
+
+    GIRL version 1.5.0
+
+ AUTHORS             |   3 +
+ ChangeLog           |   8 ++
+ Makefile.am         |   1 +
+ NEWS                |  14 +++
+ README              |   8 ++
+ THANKS              |   3 +
+ configure           |  20 +--
+ configure.ac        |   2 +-
+ data/screenshot.png | Bin 159247 -> 172304 bytes
+ debian/changelog    |   6 +
+ girl.spec.in        |   3 +
+ src/girl.xml        |  46 ++++++-
+ src/stations.xml    | 356 +---------------------------------------------------
+ 13 files changed, 103 insertions(+), 367 deletions(-)
+
+commit 9ae7994eae53daf4204382bf034f14fdc47dde23
+Author: Rafael Ferreira <rafael.f.f1@gmail.com>
+Date:   Tue Mar 3 14:52:05 2015 +0000
+
+    Updated Brazilian Portuguese translation
+
+ po/pt_BR.po | 87 +++++++++++++++++++++++++++++++++++++++++++++++++------------
+ 1 file changed, 70 insertions(+), 17 deletions(-)
+
+commit f4fba2a0fed3fc9530428b560ddebedd00d77306
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:   Sat Feb 28 21:57:44 2015 +0100
+
+    Added sl for Slovenian translation
+
+ po/LINGUAS | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a40a202471787b91177c80902de548abd83c9dcd
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:   Sat Feb 28 21:57:25 2015 +0100
+
+    Added Slovenian translation
+
+ po/sl.po | 377 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 377 insertions(+)
+
+commit 885842704380635cb22c3bf5030283ed182e9807
+Author: Γιάννης Κουτσούκος <giankoyt@gmail.com>
+Date:   Mon Feb 23 23:00:09 2015 +0000
+
+    Added Greek translation
+
+ po/LINGUAS |   1 +
+ po/el.po   | 409 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 410 insertions(+)
+
+commit ee05ba5af77bafc928237a5e91da2c46ef999650
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Feb 22 00:08:44 2015 +0100
+
+    Add NEWS for 1.4.0
+
+ NEWS-1.4 | 335 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 335 insertions(+)
+
+commit 1a87c07e03e4dd0448fffd0d061c72a75625c68d
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Feb 22 00:07:44 2015 +0100
+
+    GNOME Internet Radio Locator version 1.4.0
+
+ ChangeLog    | 15 +++++++++++++++
+ Makefile.am  |  1 +
+ NEWS         | 18 ++++++++++++++++++
+ TODO         |  1 +
+ configure    | 20 ++++++++++----------
+ configure.ac |  2 +-
+ girl.spec.in |  6 ++++++
+ src/girl.xml | 48 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 8 files changed, 100 insertions(+), 11 deletions(-)
+
+commit e063d4045a1334d5afee8454e77457216664faa7
+Author: Muhammet Kara <muhammetk@gmail.com>
+Date:   Tue Feb 17 10:06:09 2015 +0000
+
+    Updated Turkish translation
+
+ po/tr.po | 349 +++++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 309 insertions(+), 40 deletions(-)
+
+commit 13bd3253b974a8fe9da9a3e11441b386146539f2
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Feb 14 00:34:29 2015 +0100
+
+    GIRL version 1.3.0
+
+ ChangeLog           |   5 +++++
+ HACKING             |   4 ++--
+ Makefile.am         |   1 +
+ NEWS                |   9 +++++++++
+ configure           |  20 ++++++++++----------
+ configure.ac        |   2 +-
+ data/screenshot.png | Bin 175001 -> 159247 bytes
+ 7 files changed, 28 insertions(+), 13 deletions(-)
+
+commit 8060d0c5967d76c4db03fcc31e0cc53b8bcf2974
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sun Feb 1 14:48:04 2015 +0100
+
+    Updated Polish translation
+
+ po/pl.po | 87 +++++++++++++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 72 insertions(+), 15 deletions(-)
+
+commit d3b6abcd32f5f0bcbd905a8ffb9a7f1635a9b524
+Author: Marek Černocký <marek@manet.cz>
+Date:   Mon Jan 26 23:31:50 2015 +0100
+
+    Updated Czech translation
+
+ po/cs.po | 86 ++++++++++++++++++++++++++++++++++++++++++++++++++++------------
+ 1 file changed, 70 insertions(+), 16 deletions(-)
+
+commit 985c3c49a0aa1bfe8c53b094c5cdc2e1939b663a
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sat Jan 24 21:05:31 2015 +0100
+
+    Fix Polish translation
+    
+    Please never change strings without marking them as fuzzy!
+    We don't want ungrammatical translations, after all.
+
+ po/pl.po | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5d8480de04fa498e0eb25e494fa43cf587df92b4
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Jan 24 17:23:48 2015 +0100
+
+    Add NEWS for girl release
+
+ NEWS-1.2 | 308 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 308 insertions(+)
+
+commit 404a2161bacaad4a522f4af855ef4f936f40eaac
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Jan 24 17:23:17 2015 +0100
+
+    GIRL 1.2.0
 
-	* AUTHORS: Add Enrico Nicoletto (Brazilian Portuguese translation)
-	* NEWS: girl version 1.9.0 release
-	* THANKS: Add Enrico Nicoletto (Brazilian Portuguese translation)
-	* po/cs.po: Updated Czech translation by Marek Černocký
-	* po/pl.po: Updated Polish translation by Piotr Drąg
-	* po/pt_BR.po: Updated Brazilian Portuguese by Enrico Nicoletto
-	* src/girl.xml: Add CFRC (cfrc.ca)
-	* src/girl.xml: Add CHUO (chuo.fm)
+ AUTHORS             |  11 +-
+ ChangeLog           |  27 +++-
+ Makefile.am         |   2 +
+ NEWS                | 353 ++++++++++++++++++++++++++++++++++-----------------
+ THANKS              |   2 +
+ configure           |  42 +++----
+ configure.ac        |   8 +-
+ data/screenshot.png | Bin 161045 -> 175001 bytes
+ debian/changelog    |   8 +-
+ debian/control      |   2 +-
+ debian/rules        |   2 +-
+ girl.spec.in        |  39 +++---
+ po/pl.po            |   2 +-
+ src/Makefile.am     |  23 +++-
+ src/Makefile.in     | 170 ++++++++++++++++++++++---
+ src/girl.c          |  31 +++--
+ src/girl.xml        |  10 +-
+ src/stations.xml    | 356 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 18 files changed, 874 insertions(+), 214 deletions(-)
 
-2015-03-14  Ole Aamot  <ole@src.gnome.org>
+commit e937a18c43af55792937e2acaf6966c6d4f8d356
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:   Fri Jan 23 10:44:05 2015 +0100
 
-	* NEWS: girl version 1.8.0 release on π day.
-	* po/bo.po: New Bosnian translation by Samir Ribić
+    Updated Spanish Translation
 
-2015-03-07  Ole Aamot  <ole@src.gnome.org>
+ po/es.po | 13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
 
-	* NEWS: girl version 1.7.0 release
-	* src/girl.xml: Add radiOrakel (radiorakel.no)
+commit 4d6c3ab013fba78dbad21cf8b641c40710640769
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:   Fri Jan 23 10:38:39 2015 +0100
 
-2015-03-07  Ole Aamot  <ole@src.gnome.org>
+    Updated Spanish Translation
 
-	* NEWS: girl version 1.6.0 release
-	* src/girl.xml: Add KXSC (kxsc.org)
-	* src/girl.xml: Add KASC (blazeradioonline.com)
-	* src/girl.xml: Add WPTS (wptsradio.org)
-	* src/girl.xml: Add WTBU (wtburadio.org)
+ po/LINGUAS |   1 +
+ po/es.po   | 328 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 329 insertions(+)
 
-2015-02-28  Ole Aamot  <ole@src.gnome.org>
+commit a1ef9067ee9f9e4cbe7c9dd320d5c2801c9db408
+Author: Marek Černocký <marek@manet.cz>
+Date:   Sun Jan 18 18:45:56 2015 +0100
 
-	* NEWS: girl version 1.5.0 release
-	* po/el.po: New Greek translation by Γιάννης Κουτσούκος/Efstathios Iosifidis
-	* po/sl.po: New Slovenian translation by Matej Urbančič
-	* src/girl.xml: Add Radio NRJ Bern (Bugzilla #745087)
-	* src/girl.xml: Add SoundFM (soundfm.ca)
+    Updated Czech translation
 
-2015-02-21  Ole Aamot  <ole@src.gnome.org>
+ po/cs.po | 50 +++++++++++++++++++++++++++++++-------------------
+ 1 file changed, 31 insertions(+), 19 deletions(-)
 
-	* NEWS: girl version 1.4.0 release
-	* po/tr.po: Updated Turkish translation by Muhammet Kara
-	* src/girl.xml: Add KCSN (kcsn.org)
-	* src/girl.xml: Add KSUB (ksubseattle.org)
-	* src/girl.xml: Add KVRX (kvrx.org)
-	* src/girl.xml: Add WHPK (whpk.org)
-	* src/girl.xml: Add WRVU (wrvu.org)
-	* src/girl.xml: Add WVAU (wvau.org)
+commit 46b13c2b34422eb2b07a00601581fa9644083b5e
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Jan 17 22:50:46 2015 +0100
 
-2015-02-14  Ole Aamot  <ole@src.gnome.org>
+    GIRL version 1.1.0
 
-	* NEWS: girl version 1.3.0 release
+ NEWS-1.1 | 287 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 287 insertions(+)
 
-2015-02-08  Ole Aamot  <ole@src.gnome.org>
+commit 56a154309597d9ac422752718d119a4494ee252f
+Author: Rafael Ferreira <rafael.f.f1@gmail.com>
+Date:   Wed Jan 14 17:55:49 2015 +0000
 
-	* po/cs.po: Updated Czech translation by Marek Černocký
-	* po/pl.po: Updated Polish translation by Piotr Drąg
+    Updated Brazilian Portuguese translation
 
-2015-01-23  Ole Aamot  <ole@src.gnome.org>
+ po/pt_BR.po | 42 ++++++++++++++++++++++++++++++------------
+ 1 file changed, 30 insertions(+), 12 deletions(-)
 
-	* NEWS: girl version 1.2.0 release
-	* configure.ac: Patch by Dominique Leuenberger (Bugzilla #743340)
-	* po/es.po: New Spanish translation by Daniel Mustieles
-	* src/Makefile.am: Patch by Dominique Leuenberger (Bugzilla #743340)
+commit ae8f8c167cd3ba76d591d501fef81005a8ca36d2
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:   Mon Jan 12 11:34:19 2015 +0100
 
-2015-01-22  Ole Aamot  <ole@src.gnome-org>
+    Updated Serbian translation
 
-	* po/cs.po: Updated Czech translation by Marek Černocký
+ po/sr.po       | 367 ++++++++++++++++++++++++++++++++++++++++++++++-----------
+ po/sr@latin.po | 367 ++++++++++++++++++++++++++++++++++++++++++++++-----------
+ 2 files changed, 592 insertions(+), 142 deletions(-)
 
-2015-01-17  Ole Aamot  <ole@src.gnome.org>
+commit 5eae51956a516e60829eabc064fe2d412aff90e9
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sun Jan 11 15:05:30 2015 +0100
 
-	* NEWS: girl version 1.1.0 release
-	* po/cs.po: Updated Czech translation by Marek Černocký
-	* po/id.po: New Indonesian translation by Andika Triwidada
-	* po/pl.po: Updated Polish translation by Piotr Drąg
-	* po/pt_BR.po: Updated Brazilian Portuguese translation by Rafael Ferreira
+    Updated Polish translation
 
-2015-01-06  Ole Aamot  <ole@src.gnome.org>
+ po/pl.po | 312 ++++++++++++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 257 insertions(+), 55 deletions(-)
 
-	* BROADCAST: Add link to jwz's page on webcasting
+commit 8e4b0889f641b2e53a7559d5dbade63aa36ae74b
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sun Jan 11 14:49:52 2015 +0100
 
-2015-01-06  Ole Aamot  <ole@src.gnome.org>
+    Mark strings as translatable in the appdata file
 
-	* src/girl-gui.c: Add i18n support
-	* src/girl.c: Add i18n support
+ data/girl.appdata.xml.in | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
-2015-01-06  Ole Aamot  <ole@src.gnome.org>
+commit 8628aa808cbd096404ebc481ce38171bc9ae03be
+Author: Rafael Ferreira <rafael.f.f1@gmail.com>
+Date:   Thu Jan 8 07:25:25 2015 +0000
 
-	* AUTHORS: Add Andika Triwidada
-	* THANKS: Add Andika Triwidada
-	* src/girl.xml: Fix Brno location.
+    Updated Brazilian Portuguese translation
 
-2015-01-03  Ole Aamot  <ole@src.gnome.org>
-
-	* NEWS: girl version 1.0.0 "Fenchurch" release
-
-2015-01-01  Ole Aamot  <ole@src.gnome.org>
-
-	* src/girl.xml: Rename src/stations.xml
-	* src/girl.xml: Add WNYO (wnyo889.org)
-	* src/girl.xml: Add WUSB (wusb.fm)
-
-2014-12-28  Ole Aamot  <oka@oka.no>
-
-	* src/stations.xml: Add COOG (coogradio.com)
-	* src/stations.xml: Add EPER (eper.elte.hu)
-	* src/stations.xml: Add URY (ury.org.uk)
-	* src/stations.xml: Add WVUA-FM (wvuafm.ua.edu)
-
-2014-12-27  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl version 0.9.0 "It Girl" release
-	* po/cs.po: Updated Czech translation by Marek Černocký
-	* po/hu.po: Hungarian translation by Balázs Úr
-	* po/sr.po: Updated Serbian translation by Мирослав Николић
-	* po/sr@latin.po: Updated Serbian translation by Miroslav Nikolić
-
-2014-12-20  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl version 0.8.0 "Cinnamon Girl" release
-	* po/de.po: Updated German translation by Wolfgang Stöggl
-	* po/pt_BR.po: Updated Brazilian Portuguese translation by Rafael Ferreira
-	* src/stations.xml: Add Fuse FM (fusefm.co.uk)
-	* src/stations.xml: Add Burst Radio (burstradio.co.uk)
-
-2014-12-14  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl version 0.7.3 release
-	* src/stations.xml: Add CJSW (cjsw.com)
-	* src/stations.xml: Add Caper Radio (caperradio.ca)
-
-2014-12-14  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl version 0.7.2 "Don't shoot" release
-	* po/pl.po: Updated Polish translation by Piotr Drąg
-	* src/stations.xml: Add WAMU (wamu.org)
-	* src/stations.xml: Add WXOU (wxou.org)
-
-2014-12-13  Ole Aamot  <oka@oka.no>
-
-	* AUTHORS: Add Muhammet Kara (Turkish translation)
-	* NEWS: Release girl version 0.7.1
-	* THANKS: Muhammet Kara for Turkish translation
-	* data/girl.appdata.xml.in: Remove old reference to "new GNOME 2.0".
-	* src/girl-0.7.dtd: Add girl 0.7 DTD with station language attribute
-	* src/girl-gui.c: Add Streams and About Stream buttons
-	* src/girl-station.c: Add new function girl_stream_record
-	* src/girl-streams.c: New file
-	* src/girl-streams.h: New file
-	* src/stations.xml: Add 95bFM (95bfm.com)
-	* src/stations.xml: Add KDUP (kdup.up.edu)
-	* src/streams.xml: Add streams file
-
-2014-12-12  Ole Aamot  <oka@oka.no>
-
-	* AUTHORS: Add Piotr Drąg (Polish translation)
-	* NEWS: Release girl version 0.7.0
-	* THANKS: Piotr Drąg for minor typo fix and Polish translation
-	* girl.spec.in: Update RPM spec file for Fedora 21
-	* po/pl.po: Polish translation by Piotr Drąg
-	* src/girl-gui.c: Add GtkWidget progress
-	* src/girl-runners.c: Modify mutex functions for future usage.
-	* src/girl-runners.h: Modify mutex functions for future usage.
-	* src/girl-station.c: Add asynchronous child process function.
-	* src/girl.h: Rename DEBUG macro GIRL_DEBUG, add progress bar.
-	* src/stations.xml: Add 2NURFM (broadcaster1.newcastle.edu.au)
-	* src/stations.xml: Add Radio Adelaide (radio.adelaide.edu.au)
-
-2014-12-10  Ole Aamot  <oka@oka.no>
-
-	* NEWS: Release girl version 0.6.283185307 in honor of Malala
-	* src/girl-runners.c: Add file for the threads implementation
-	* src/girl-runners.h: Add file for the threads implementation
-
-2014-12-09  Ole Aamot  <oka@oka.no>
-
-	* THANKS: Add Justin Dove
-
-2014-12-07  Ole Aamot  <oka@oka.no>
-
-	* NEWS: Release girl version 0.6.2
-	* src/stations.xml: Add Radio R (radior.cz)
-	* src/stations.xml: Add Radio Radius (radioradius.ch)
-
-2014-12-07  Ole Aamot  <oka@oka.no>
-
-	* NEWS: Release girl version 0.6.1
-	* THANKS: Add Ettore Perazzoli and Bernd Homuth.
-	* configure.ac: Check for GIRL_HELPER_PLAYER (totem)
-	* configure.ac: Check for GIRL_HELPER_RECORD (streamripper)
-	* configure.ac: Check for and define HAVE_GIRL_RECORD
-	* src/Makefile.am: Add GIRL_HELPER_PLAYER, GIRL_HELPER_RECORD
-	* src/girl-gui.c: Add menu item if GIRL_HELPER_RECORD is defined
-	* src/girl-program.c: New file with support for programs
-	* src/girl-station.c: Rename girl_launch_helper to girl_helper_run
-	* src/girl-station.h: Remove GirlChannels and GirlStreamType
-	* src/girl.c: Add programs feature
-	* src/girl.h: Add enums GirlChannels, GirlStreamType, GirlHelperType
-
-2014-12-06  Ole Aamot  <oka@oka.no>
-
-	* configure.ac: Bump version to 0.6.1.
-
-2014-12-06  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl 0.6.0 released.
-
-2014-12-04  Ole Aamot  <oka@oka.no>
-
-	* AUTHORS: Add Wolfgang Stöggl (German translation).
-	* po/de.po: German translation by Wolfgang Stöggl
-
-2014-12-02  Ole Aamot  <oka@oka.no>
-
-	* src/stations.xml: Add Leeds University Student Radio FM (lsrfm.com)
-	* src/stations.xml: Add University Radio Nottingham (urn1350.net))
-	* src/stations.xml: Add King's College London Radio (kclradio.co.uk)
-	* src/stations.xml: Add Imperial College Radio (icradio.com)
-
-2014-11-29  Ole Aamot  <oka@oka.no>
-
-	* configure.ac: girl version 0.5.2.
-	* girl.spec.in: Update package spec for Fedora 21.
-	* man/girl.1: Add man page.
-
-2014-11-29  Ole Aamot  <oka@oka.no>
-
-	* AUTHORS: Add Мирослав Николић/Miroslav Nikolić (Serbian translation).
-	* NEWS: girl 0.5.1 released.
-	* po/sr.po: Serbian translation by Мирослав Николић
-	* po/sr@latin.po: Serbian translation by Miroslav Nikolić
-	* src/girl-station.[ch]: Add station rank, type variables
-
-2014-11-29  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl 0.5.0 released.
-	* src/girl.c: Initial Previous Station / Next Station support
-	* src/girl-gui.c: Add Previous Station / Next Station buttons
-	* src/stations.xml: Add Radio Campus Paris (radiocampusparis.org).
-	* src/stations.xml: Add WCSB (wcsb.org).
-	* src/stations.xml: Add Radio Campus de l’Université Libre de Bruxelles (radiocampus.be).
-	* src/stations.xml: Add Coimbra University Radio (ruc.pt).
-
-2014-11-27  Ole Aamot  <oka@oka.no>
-
-	* AUTHORS: Add Marek Černocký (Czech translation).
-	* AUTHORS: Add Rafael Ferreira (Brazilian Portuguese translation).
-	* NEWS: girl 0.4.1 released.
-	* configure.ac: Version 0.4.1.
-	* po/cs.po: Czech translation by Marek Černocký.
-	* po/pt_BR.po: Brazilian Portuguese translation by Rafael Ferreira.
-	* src/girl-0.5.dtd: Add station type property.
-	* src/stations.xml: Add Cam FM (www.camfm.co.uk).
-	* src/stations.xml: Add Oxford Student Radio (oxideradio.co.uk).
-	* src/stations.xml: Add Pulse LSE (pulselse.co.uk).
-	* src/stations.xml: Add Radio UNAM (www.radiounam.unam.mx).
-
-2014-11-22  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl 0.4.0 released.
-	* src/stations.xml: Add WXYC (wxyc.org)
-	* src/stations.xml: Add KALX (kalx.berkeley.edu)
-	* src/stations.xml: Add WHRB (whrb.org)
-	* src/stations.xml: Add Radio NOVA (radionova.no)
-	* src/girl-0.4.dtd: Add station rank property.
-
-2014-11-16  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl 0.3.2 released.
-	* src/stations.xml: Add WWNO (wwno.org)
-
-2014-11-15  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl 0.3.1 released.
-	* src/stations.xml: Add KTRU (ktru.org)
-
-2014-11-14  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl 0.3.0 released.
-	* src/stations.xml: Add NRK Radio Alltid Nyheter
-	* src/stations.xml: Add BBC World Service
-	* src/stations.xml: Add WKCR
-
-2014-11-08  gettextize  <bug-gnu-gettext@gnu.org>
-
-	* Makefile.am (ACLOCAL_AMFLAGS): New variable.
-	(EXTRA_DIST): Add config.rpath, m4/ChangeLog.
-
-2014-11-08  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl 0.2.1 released.
-	* src/stations.xml: Add KZSU
-
-2014-11-07  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl 0.2.0 released.
-	* src/stations.xml: Add WMBR
-	* src/stations.xml: Add KEXP
-
-2014-11-04  Ole Aamot  <oka@oka.no>
-
-	* NEWS: girl 0.1.3 released.
-
-2014-11-01  Ole Aamot  <oka@ping.uio.no>
-
-	* NEWS: girl 0.1.2 released.
-
-2014-11-01  Ole Aamot  <oka@ping.uio.no>
-
-	* src/stations.xml: Add WCPE (http://theclassicalstation.org/)
-
-2014-11-01  Ole Aamot  <oka@ping.uio.no>
-
-	* NEWS: girl 0.1.1 released.
-
-2002-09-22  Ole Aamot  <ole@gnu.org>
-
-	* girl-station.c: Add support for $HOME/.girl/stations.xml
-
-2002-09-22  Ole Aamot  <ole@gnu.org>
-
-	* NEWS: Project started.
+ po/pt_BR.po | 339 ++++++++++++++++++++++++++++++++++++++++++++++++------------
+ 1 file changed, 272 insertions(+), 67 deletions(-)
+
+commit f203f7f963af39b59995de1da9e3ad1c714dc4dd
+Author: Marek Černocký <marek@manet.cz>
+Date:   Wed Jan 7 00:48:38 2015 +0100
+
+    Updated Czech translation
+
+ po/cs.po | 211 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 197 insertions(+), 14 deletions(-)
+
+commit 4e464be0c6514d274186e79defd7f7f9624a1229
+Author: Ole Aamot <oka@oka.no>
+Date:   Wed Jan 7 00:00:10 2015 +0100
+
+    Add link to jwz's page on webcasting
+
+ BROADCAST   |   3 +-
+ ChangeLog   |   4 +
+ Makefile.in | 836 ------------------------------------------------------------
+ 3 files changed, 6 insertions(+), 837 deletions(-)
+
+commit b81f7351620a2a61f9cd7e73dc49a0157794fe8e
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jan 6 23:34:59 2015 +0100
+
+    Add better i18n support
+
+ ChangeLog       |   5 +
+ Makefile.in     |   2 +-
+ configure       |  20 +--
+ man/Makefile    | 503 --------------------------------------------------------
+ man/Makefile.in | 503 --------------------------------------------------------
+ src/girl-gui.c  |  68 ++++----
+ src/girl.c      |   8 +-
+ 7 files changed, 54 insertions(+), 1055 deletions(-)
+
+commit 4f821fca43d7791c492cefa4121f74e440e4a8eb
+Author: Marek Černocký <marek@manet.cz>
+Date:   Tue Jan 6 23:04:27 2015 +0100
+
+    Updated Czech translation
+
+ po/cs.po | 136 ++++++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 74 insertions(+), 62 deletions(-)
+
+commit 347074ad3b17776a392aebbfe6b08393f836418b
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jan 6 21:32:13 2015 +0100
+
+    New file for stations data
+
+ src/girl.xml | 355 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 355 insertions(+)
+
+commit a235f4786dae7949a1105eed3423c668e7108343
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jan 6 21:30:23 2015 +0100
+
+    Add 512x512 and 1024x1024 icons
+
+ data/icons/1024x1024/apps/girl.png | Bin 0 -> 91311 bytes
+ data/icons/512x512/apps/girl.png   | Bin 0 -> 39039 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 92b9609198e61c21209eee60730197cd873013a9
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jan 6 21:28:12 2015 +0100
+
+    Add Makefile.am, bump version and add BROADCAST text
+
+ BROADCAST                        | 33 +++++++++++++++++++++++++++++++++
+ configure.ac                     |  2 +-
+ data/icons/1024x1024/Makefile.am |  7 +++++++
+ data/icons/512x512/Makefile.am   |  7 +++++++
+ 4 files changed, 48 insertions(+), 1 deletion(-)
+
+commit cf33291c031424a6cc148ab2fcf6b17c37f1083f
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jan 6 21:23:09 2015 +0100
+
+    Add Andika Triwidada and fix Brno location.
+
+ AUTHORS                          |   4 +-
+ ChangeLog                        |  16 ++
+ HACKING                          |  23 ++-
+ LETTER                           |   6 +-
+ Makefile.am                      |  12 +-
+ Makefile.in                      |  12 +-
+ NEWS                             |  10 +
+ README                           |  32 +++-
+ THANKS                           |   2 +
+ TODO                             |   2 +-
+ YP-DIRS                          |   2 -
+ configure                        |  73 ++++----
+ configure.ac                     |  32 ++--
+ data/girl.appdata.xml.in         |  26 +--
+ data/icons/16x16/apps/girl.png   | Bin 610 -> 744 bytes
+ data/icons/22x22/apps/girl.png   | Bin 1050 -> 1052 bytes
+ data/icons/24x24/apps/girl.png   | Bin 1097 -> 1087 bytes
+ data/icons/256x256/apps/girl.png | Bin 43992 -> 14492 bytes
+ data/icons/32x32/apps/girl.png   | Bin 1544 -> 1401 bytes
+ data/icons/48x48/apps/girl.png   | Bin 2988 -> 2153 bytes
+ data/icons/Makefile.am           |   2 +-
+ data/icons/Makefile.in           |   2 +-
+ data/screenshot.png              | Bin 113604 -> 161045 bytes
+ debian/control                   |  25 ++-
+ debian/control.in                |   4 +-
+ girl.spec.in                     |  52 +++---
+ man/Makefile                     |  10 +-
+ man/girl.1                       |  13 +-
+ src/Makefile.am                  |   8 +-
+ src/Makefile.in                  |  12 +-
+ src/girl-gui.c                   | 385 +++++++++++++++++++++++++++++++--------
+ src/girl-gui.h                   |   3 +-
+ src/girl-listener.c              |  34 ++--
+ src/girl-program.c               |  42 ++---
+ src/girl-station.c               | 160 ++++++++++++----
+ src/girl-station.h               |  19 +-
+ src/girl-streams.c               |  46 ++---
+ src/girl-streams.h               |   3 +-
+ src/girl.c                       | 341 +++++++++++++++++++---------------
+ src/girl.h                       |  35 ++--
+ src/stations.xml                 | 330 +--------------------------------
+ 41 files changed, 960 insertions(+), 818 deletions(-)
+
+commit 64798f936216fbd7f72017aa04ae6b7fa57b68dc
+Author: Andika Triwidada <andika@gmail.com>
+Date:   Sun Jan 4 13:25:55 2015 +0000
+
+    Added Indonesian translation
+
+ po/LINGUAS |   1 +
+ po/id.po   | 143 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 144 insertions(+)
+
+commit b68ae879e3a9b6a244d1922215907733a3d26ee8
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Jan 3 00:53:52 2015 +0100
+
+    GNOME Internet Radio Locator version 1.0.0
+
+ NEWS-0.8                  | 240 ++++++++++++++++++++++++++++++++++++++++
+ NEWS-0.9                  | 262 +++++++++++++++++++++++++++++++++++++++++++
+ NEWS-1.0                  | 276 ++++++++++++++++++++++++++++++++++++++++++++++
+ debian/Makefile.am        |   2 +
+ debian/changelog          |   5 +
+ debian/compat             |   1 +
+ debian/control            |  16 +++
+ debian/control.in         |  25 +++++
+ debian/copyright          |  16 +++
+ debian/girl.1             |  43 ++++++++
+ debian/girl.install       |   7 ++
+ debian/girl.manpages      |   1 +
+ debian/girl.xpm           | 161 +++++++++++++++++++++++++++
+ debian/menu               |   4 +
+ debian/rules              |  79 +++++++++++++
+ debian/source/Makefile.am |   1 +
+ debian/source/format      |   1 +
+ debian/watch              |   3 +
+ src/girl-0.8.dtd          |  20 ++++
+ src/girl-1.0.dtd          |  21 ++++
+ src/streams.xml           |  57 ++++++++++
+ 21 files changed, 1241 insertions(+)
+
+commit 6ab9303207308946d710700c588ed3ecdcbdca5d
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Dec 28 14:17:41 2014 +0100
+
+    girl version 0.9.0
+
+ AUTHORS                          |   2 ++
+ ChangeLog                        |  15 ++++++++++++++
+ Makefile.am                      |   1 +
+ Makefile.in                      |   1 +
+ NEWS                             |  15 ++++++++++++++
+ README                           |   2 +-
+ THANKS                           |   2 ++
+ configure                        |  20 +++++++++---------
+ configure.ac                     |   2 +-
+ data/icons/16x16/apps/girl.png   | Bin 781 -> 610 bytes
+ data/icons/22x22/apps/girl.png   | Bin 1020 -> 1050 bytes
+ data/icons/24x24/apps/girl.png   | Bin 4109 -> 1097 bytes
+ data/icons/256x256/apps/girl.png | Bin 2803 -> 43992 bytes
+ data/icons/32x32/apps/girl.png   | Bin 4109 -> 1544 bytes
+ data/icons/48x48/apps/girl.png   | Bin 2803 -> 2988 bytes
+ data/screenshot.png              | Bin 100925 -> 113604 bytes
+ girl.spec.in                     |   3 +++
+ man/Makefile                     |   6 +++---
+ src/girl-gui.c                   |  43 +++++++++++++++++++--------------------
+ src/girl.c                       |   8 ++++----
+ src/girl.png                     | Bin 4655 -> 2988 bytes
+ src/stations.xml                 |  37 +++++++++++++++++++++++++++++++--
+ 22 files changed, 114 insertions(+), 43 deletions(-)
+
+commit e4f5bee6c2f1a19abdedfebb1345d0d9f1c444c2
+Author: Marek Černocký <marek@manet.cz>
+Date:   Sat Dec 27 17:16:35 2014 +0100
+
+    The Czech translation
+
+ po/cs.po | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 5e1f1d84ba1d9e55ad376b52f7c5c52abd467f8d
+Author: Marek Černocký <marek@manet.cz>
+Date:   Sat Dec 27 17:15:48 2014 +0100
+
+    The Czech translation
+
+ po/cs.po | 85 ++++++++++++++++++++++++++++++++++++++++++++++------------------
+ 1 file changed, 61 insertions(+), 24 deletions(-)
+
+commit b96e00e23b8f6972845251ee5e27b77b659b09c9
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:   Sat Dec 27 13:57:21 2014 +0100
+
+    Updated Serbian translation
+
+ po/sr.po       | 104 ++++++++++++++++++++++++++++++++++++++++++++-------------
+ po/sr@latin.po | 104 ++++++++++++++++++++++++++++++++++++++++++++-------------
+ 2 files changed, 160 insertions(+), 48 deletions(-)
+
+commit bde155280e2ecb48276b93ab41191a29b7e2f39c
+Author: Balázs Úr <urbalazs@src.gnome.org>
+Date:   Sun Dec 21 17:20:56 2014 +0100
+
+    Initial Hungarian translation
+
+ po/LINGUAS |   1 +
+ po/hu.po   | 145 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 146 insertions(+)
+
+commit 55ecb01abfcde0021861a0b3e364c0da99a2665f
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Dec 20 16:18:08 2014 +0100
+
+    girl version 0.8.0
+
+ ChangeLog           |  8 +++++++
+ Makefile.am         |  1 +
+ Makefile.in         |  1 +
+ NEWS                |  8 +++++++
+ configure           | 22 +++++++++----------
+ configure.ac        |  4 ++--
+ girl.spec.in        |  4 ++++
+ man/Makefile        |  6 ++---
+ src/Makefile.am     |  4 ++--
+ src/Makefile.in     |  4 ++--
+ src/girl-0.7.dtd    |  6 +++--
+ src/girl-canvas.c   | 14 ++++++------
+ src/girl-gui.c      | 17 ++++++++-------
+ src/girl-gui.h      |  2 ++
+ src/girl-listener.c | 15 +++++++------
+ src/girl-program.c  | 39 ++++++++++++++++-----------------
+ src/girl-runners.c  | 14 ++++++------
+ src/girl-runners.h  |  4 ++--
+ src/girl-station.c  | 63 ++++++++++++++++++++++++-----------------------------
+ src/girl-streams.c  | 20 +++++++++--------
+ src/girl.c          | 28 ++++++++++++++++--------
+ src/stations.xml    | 19 ++++++++++++++--
+ 22 files changed, 176 insertions(+), 127 deletions(-)
+
+commit 7c04b35b2b7093ebe01e889c79b99d18ac209b9b
+Author: Wolfgang Stöggl <c72578@yahoo.de>
+Date:   Thu Dec 18 21:43:42 2014 +0000
+
+    Updated German translation
+
+ po/de.po | 102 +++++++++++++++++++++++++++++++++++++++++----------------------
+ 1 file changed, 67 insertions(+), 35 deletions(-)
+
+commit 536ac667e63eaebd011ac60e1f479476c48a6155
+Author: Rafael Ferreira <rafael.f.f1@gmail.com>
+Date:   Mon Dec 15 00:53:59 2014 +0000
+
+    Updated Brazilian Portuguese translation
+
+ po/pt_BR.po | 88 ++++++++++++++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 64 insertions(+), 24 deletions(-)
+
+commit 06108e15f1be2c0192413f305933cc7470c9ae8d
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Dec 14 18:58:33 2014 +0100
+
+    girl version 0.7.3
+
+ ChangeLog          |  6 ++++++
+ NEWS               |  6 ++++++
+ NEWS-0.7           |  9 +++++++++
+ README             | 25 ++++++++++++++++++-------
+ configure          | 20 ++++++++++----------
+ configure.ac       |  2 +-
+ girl.spec.in       | 12 ++++++++----
+ man/Makefile       | 26 +++++++++++++-------------
+ src/girl-station.c |  5 ++++-
+ src/stations.xml   | 18 ++++++++++++++++++
+ 10 files changed, 93 insertions(+), 36 deletions(-)
+
+commit 0cdbd0230573e8044832efb68e86ffb27d87f388
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Dec 14 14:01:42 2014 +0100
+
+    girl version 0.7.2
+
+ ChangeLog        |  7 +++++++
+ NEWS             |  7 +++++++
+ NEWS-0.7         | 16 ++++++++++++++++
+ configure        | 20 ++++++++++----------
+ configure.ac     |  2 +-
+ girl.spec.in     |  3 +++
+ man/Makefile     | 26 +++++++++++++-------------
+ src/stations.xml | 14 +++++++++++++-
+ 8 files changed, 70 insertions(+), 25 deletions(-)
+
+commit d080abf9a5121021942e14d90f4e63d53a3136fe
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sun Dec 14 12:54:03 2014 +0100
+
+    Updated Polish translation
+
+ po/pl.po | 51 +++++++++++++++++++++++++++++----------------------
+ 1 file changed, 29 insertions(+), 22 deletions(-)
+
+commit 8765ec616cc045afae8a7b09e83f3382db8d811c
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Dec 13 22:46:59 2014 +0100
+
+    girl 0.7.1 release
+
+ AUTHORS                  |   2 +
+ ChangeLog                |  30 ++++++++
+ Makefile.am              |   1 +
+ Makefile.in              |   1 +
+ NEWS                     |  31 ++++++++
+ NEWS-0.7                 |  37 +++++++++-
+ THANKS                   |   3 +-
+ TODO                     |   2 -
+ configure                |  20 ++---
+ configure.ac             |   2 +-
+ data/girl.appdata.xml.in |   2 +-
+ data/screenshot.png      | Bin 130805 -> 100925 bytes
+ girl.spec.in             |  14 +++-
+ man/Makefile             |   8 +-
+ src/Makefile.am          |   8 +-
+ src/Makefile.in          |  11 +--
+ src/girl-0.7.dtd         |   2 +-
+ src/girl-gui.c           | 186 ++++++++++++++++++++++++++++++++++++++++++++---
+ src/girl-listener.c      |   6 --
+ src/girl-program.c       |   6 --
+ src/girl-runners.c       |  88 ++++++++++++++++------
+ src/girl-runners.h       |  21 +++---
+ src/girl-station.c       | 163 ++++++++++++++++++++++++++++++++++++++---
+ src/girl-streams.c       |   4 +-
+ src/girl.c               | 130 ++++++++++++++++++++++++++++++---
+ src/girl.h               |  31 ++++++--
+ src/stations.xml         |  91 +++++++++++++++--------
+ 27 files changed, 750 insertions(+), 150 deletions(-)
+
+commit 1927e601229cc467b3d57ddbb2765cf6f3f37b05
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Dec 13 22:45:14 2014 +0100
+
+    girl version 0.7.1
+
+ src/girl-streams.c | 250 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/girl-streams.h |  70 +++++++++++++++
+ 2 files changed, 320 insertions(+)
+
+commit 68f763a40689d8e478dad2290a82a3b289fd0511
+Author: Muhammet Kara <muhammetk@gmail.com>
+Date:   Sat Dec 13 11:36:13 2014 +0000
+
+    Added Turkish translation
+
+ po/LINGUAS |   1 +
+ po/tr.po   | 138 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 139 insertions(+)
+
+commit ad1b68d27482095ead955b88d0e9f781b0d0c3fc
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Dec 13 03:13:52 2014 +0100
+
+    girl version 0.7.0
+
+ NEWS-0.7         | 166 ++++++++++++++++++
+ man/Makefile     | 503 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ man/Makefile.am  |   3 +
+ man/Makefile.in  | 503 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ man/girl.1       |  38 +++++
+ src/girl-0.7.dtd |  21 +++
+ 6 files changed, 1234 insertions(+)
+
+commit 3125e8afbf78e4fa0b13e2bedd473a26e1b980df
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Fri Dec 12 18:40:16 2014 +0100
+
+    Added Polish translation
+    
+    I love "the new GNOME 2.0 platform" bit in appdata. :)
+
+ po/LINGUAS |   1 +
+ po/pl.po   | 144 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 145 insertions(+)
+
+commit a8434ab799af95e7dda1eafe8f2bad217686eb8b
+Author: Ole Aamot <oka@oka.no>
+Date:   Wed Dec 10 18:17:38 2014 +0100
+
+    Update screenshot.
+
+ ChangeLog           |   6 ++++++
+ NEWS                |   6 ++++++
+ NEWS-0.6            |  11 +++++++++++
+ configure           |  20 ++++++++++----------
+ configure.ac        |   2 +-
+ data/screenshot.png | Bin 166375 -> 130805 bytes
+ src/Makefile.am     |   4 ++--
+ src/Makefile.in     |   8 +++++---
+ src/girl.h          |   1 +
+ 9 files changed, 42 insertions(+), 16 deletions(-)
+
+commit cd6b9938a805019cdce06eb87e897a4c85cd5a15
+Author: Ole Aamot <oka@oka.no>
+Date:   Wed Dec 10 18:07:05 2014 +0100
+
+    girl version 0.6.283185307 ('Malala')
+
+ src/girl-runners.c | 32 ++++++++++++++++++++++++++++++++
+ src/girl-runners.h | 53 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 85 insertions(+)
+
+commit 6f0fc8f7b4615757109d325a0003bdb491885f57
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Dec 9 21:58:37 2014 +0100
+
+    Fix punctuation
+
+ THANKS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c4abdffee9deed7d9ded2744bc7fbff187d739c5
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Dec 9 21:54:31 2014 +0100
+
+    Add Justin Dove
+
+ ChangeLog           |   4 ++++
+ THANKS              |   1 +
+ data/screenshot.png | Bin 142688 -> 166375 bytes
+ 3 files changed, 5 insertions(+)
+
+commit 19086419f2bd1642174bf8d196bb50a8f9463895
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Dec 7 19:31:03 2014 +0100
+
+    girl version 0.6.2
+
+ ChangeLog        |  6 ++++++
+ NEWS             |  6 ++++++
+ NEWS-0.6         |  9 +++++++++
+ configure        | 20 ++++++++++----------
+ configure.ac     |  2 +-
+ girl.spec.in     |  3 +++
+ src/stations.xml | 16 ++++++++++++++++
+ 7 files changed, 51 insertions(+), 11 deletions(-)
+
+commit e67e66c8c62f16d2e26f0a3eaf248ea21117cf67
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Dec 7 17:03:38 2014 +0100
+
+    News for 0.6.1
+
+ NEWS-0.6 | 130 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 130 insertions(+)
+
+commit e2ec94916eeadf28fab23c5109acb41a8e456579
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Dec 7 17:00:18 2014 +0100
+
+    girl 0.6 DTD
+
+ src/girl-0.6.dtd | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+commit 852eda6b82c1ee684dd54fe3fccb71cf3ac620d0
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Dec 7 16:59:43 2014 +0100
+
+    Listener 1.1 DTD
+
+ src/listener-1.1.dtd | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit e41e6dd94c51ad9516e18ed3d1747fedac5132cd
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Dec 7 16:58:54 2014 +0100
+
+    New file for radio programs.
+
+ src/girl-program.c | 242 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/girl-program.h |  75 +++++++++++++++++
+ 2 files changed, 317 insertions(+)
+
+commit dcfc75e2b4c25babc2aad00eff93fa8613755649
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Dec 7 16:57:23 2014 +0100
+
+    New file with a radio program.
+
+ src/programs.xml | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit 934fe1d5d5129f6c4ace2967092a707750afbad9
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Dec 7 16:56:37 2014 +0100
+
+    girl version 0.6.1
+
+ ChangeLog                      |  19 ++++
+ Makefile.in                    |   4 +-
+ NEWS                           |  15 +++
+ THANKS                         |   3 +-
+ configure                      | 223 +++++++++++++++++++++++++++++++++++------
+ configure.ac                   |  36 ++++++-
+ data/Makefile.in               |   4 +-
+ data/girl.appdata.xml.in       |   2 +-
+ data/icons/16x16/Makefile.in   |   4 +-
+ data/icons/22x22/Makefile.in   |   4 +-
+ data/icons/24x24/Makefile.in   |   4 +-
+ data/icons/256x256/Makefile.in |   4 +-
+ data/icons/32x32/Makefile.in   |   4 +-
+ data/icons/48x48/Makefile.in   |   4 +-
+ data/icons/Makefile.in         |   4 +-
+ data/pixmaps/Makefile.in       |   4 +-
+ data/screenshot.png            | Bin 164831 -> 142688 bytes
+ girl.doap                      |   2 +-
+ girl.spec.in                   |   8 +-
+ src/Makefile.am                |   8 +-
+ src/Makefile.in                |  17 ++--
+ src/girl-gui.c                 | 166 ++++++++++++++++++++++++++++--
+ src/girl-station.c             |  95 +++++++++++++-----
+ src/girl-station.h             |  14 +--
+ src/girl.c                     | 186 ++++++++++++++++++++++++++++------
+ src/girl.h                     |  34 ++++++-
+ src/programs-0.1.dtd           |  17 ++++
+ 27 files changed, 742 insertions(+), 143 deletions(-)
+
+commit 6619beb0aebb3061391b4b384ab1ed21e3d45088
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Dec 6 11:32:10 2014 +0100
+
+    girl version 0.6.0
+
+ AUTHORS            |  3 ++-
+ ChangeLog          | 16 ++++++++++++++++
+ Makefile.am        |  1 +
+ Makefile.in        |  1 +
+ NEWS               |  6 ++++++
+ NEWS-0.5           |  2 +-
+ THANKS             |  1 +
+ configure          | 20 ++++++++++----------
+ configure.ac       |  2 +-
+ girl.doap          |  2 +-
+ girl.spec.in       | 28 +++++++++++-----------------
+ src/girl-station.c |  1 +
+ src/stations.xml   | 36 +++++++++++++++++++++++++++++++++---
+ 13 files changed, 85 insertions(+), 34 deletions(-)
+
+commit f88f9b34af5dde0eff5c318970576aeb2dd637da
+Author: Wolfgang Stöggl <c72578@yahoo.de>
+Date:   Wed Dec 3 21:56:08 2014 +0000
+
+    Added German translation
+
+ po/LINGUAS |   1 +
+ po/de.po   | 114 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 115 insertions(+)
+
+commit e48a58cd8f2277ad3ec55a01034f89bfe0bcc9d4
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Nov 30 21:30:53 2014 +0100
+
+    Update screenshot.
+
+ data/screenshot.png | Bin 119916 -> 164831 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit eedd8803037c777d5c94c298a11aa5b1a6d2b1a8
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Nov 30 20:48:03 2014 +0100
+
+    New screenshot for girl version 0.5.2
+
+ data/screenshot.png | Bin 160556 -> 119916 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 92e97395baf55a863c5853b833d35f228bd6c381
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Nov 30 13:39:09 2014 +0100
+
+    girl version 0.5.2
+
+ girl.spec.in        |   2 +
+ src/Makefile.am     |   4 +-
+ src/Makefile.in     |   4 +-
+ src/girl-gui.c      |  56 ++++++++++++++++++++---
+ src/girl-listener.c |   7 +++
+ src/girl-listener.h |   2 +
+ src/girl-station.c  |   5 ++-
+ src/girl-station.h  |   1 +
+ src/girl.c          | 125 +++++++++++++++++++++++++++++++++++++++++++++++++---
+ src/girl.h          |   6 +++
+ src/listeners.xml   |   6 +--
+ src/stations.xml    |  44 +++++++++---------
+ 12 files changed, 217 insertions(+), 45 deletions(-)
+
+commit 9108c6648f05aa533c1283071db0ff50ef5d1136
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 29 19:10:23 2014 +0100
+
+    Add man page, update RPM spec for Fedora 21, prepare version 0.5.2.
+
+ .gitignore   | 62 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ChangeLog    |  6 ++++++
+ Makefile.am  |  2 +-
+ Makefile.in  |  2 +-
+ NEWS         |  6 ++++++
+ configure    | 23 +++++++++++-----------
+ configure.ac |  3 ++-
+ girl.spec.in | 14 +++++++++-----
+ 8 files changed, 99 insertions(+), 19 deletions(-)
+
+commit fa61afd0123fbfe4e6a677f5523b30fe4dc7d8a5
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 29 14:11:33 2014 +0100
+
+    Add NEWS-0.5 file.
+
+ Makefile.am |   1 +
+ Makefile.in |   1 +
+ NEWS        | 128 ++++++++++++++++++++++++------------------------------------
+ NEWS-0.5    | 101 +++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 154 insertions(+), 77 deletions(-)
+
+commit 9933edd29372696008af6cbb8aaee551023d5262
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 29 13:48:36 2014 +0100
+
+    girl version 0.5.1
+
+ ChangeLog           |   1 +
+ NEWS                | 124 +++++++++++++++++++++++++++++++++-------------------
+ configure           |  20 ++++-----
+ configure.ac        |   2 +-
+ src/girl-gui.c      |   4 +-
+ src/girl-listener.c |   5 +++
+ src/girl-station.c  |  10 +++++
+ src/girl-station.h  |   2 +
+ 8 files changed, 110 insertions(+), 58 deletions(-)
+
+commit 3574eac660943537c9cc281e28a023514b260c15
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 29 12:09:48 2014 +0100
+
+    Add Мирослав Николић/Miroslav Nikolić (Serbian translation)
+
+ AUTHORS   | 1 +
+ ChangeLog | 9 ++++++++-
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+
+commit 2f3131c63ef483e088f799148aaebfef7c1e954a
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:   Sat Nov 29 10:45:32 2014 +0100
+
+    Added Serbian translation
+
+ po/LINGUAS     |   2 ++
+ po/sr.po       | 111 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ po/sr@latin.po | 111 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 224 insertions(+)
+
+commit 78ac5babc105c1b4951d290376ebcb420a149f9a
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 29 04:25:44 2014 +0100
+
+    Update screenshot for 0.5.0
+
+ data/screenshot.png | Bin 164998 -> 160556 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f7b8b6e30fa1f4d7ffd0f9c878e4c69eed5b8fee
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 29 03:46:16 2014 +0100
+
+    girl version 0.5.0
+
+ ChangeLog          | 10 +++++++
+ NEWS               | 10 +++++++
+ configure          | 20 ++++++-------
+ configure.ac       |  2 +-
+ girl.spec.in       |  3 ++
+ src/girl-gui.c     | 22 +++++++++-----
+ src/girl-station.c |  3 ++
+ src/girl-station.h |  1 +
+ src/girl.c         | 87 +++++++++++++++++++++++++++++++++++++++++++++++++++---
+ src/girl.h         |  2 ++
+ src/stations.xml   | 36 ++++++++++++++++++++++
+ 11 files changed, 173 insertions(+), 23 deletions(-)
+
+commit 8386686844364b190b4365946997cb09c4e25b2d
+Author: Ole Aamot <oka@oka.no>
+Date:   Fri Nov 28 23:16:29 2014 +0100
+
+    Add license boilerplate and fix space
+
+ AUTHORS             |  1 -
+ THANKS              |  2 +-
+ configure           | 20 ++++++++++----------
+ configure.ac        |  2 +-
+ src/girl-listener.h | 23 ++++++++++++++++++++++-
+ 5 files changed, 34 insertions(+), 14 deletions(-)
+
+commit 925ca6b12a395f4fa6834cb9b78a599dce74027f
+Author: Ole Aamot <oka@oka.no>
+Date:   Fri Nov 28 21:16:52 2014 +0100
+
+    Add Hans Petter Jansson
+
+ THANKS | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit bc8efe8fd777fb308c9e5b0989445ab66087e24a
+Author: Ole Aamot <oka@oka.no>
+Date:   Thu Nov 27 19:42:28 2014 +0100
+
+    girl release 0.4.1
+
+ ChangeLog      |  1 +
+ girl.spec.in   | 15 ++++++++++-----
+ src/girl-gui.c | 19 ++++++++++---------
+ 3 files changed, 21 insertions(+), 14 deletions(-)
+
+commit a06253dc8f10d305354eadfe28b0584180ff960c
+Author: Ole Aamot <oka@oka.no>
+Date:   Thu Nov 27 17:39:32 2014 +0100
+
+    Add girl 0.5 DTD, 4 new Internet radio stations and compile script.
+
+ ChangeLog                      |   14 +-
+ INSTALL                        |    4 +-
+ Makefile.in                    |   17 +-
+ NEWS                           |   13 +
+ aclocal.m4                     | 1906 ----------------------------------------
+ compile                        |  347 ++++++++
+ config.h.in                    |   86 --
+ configure                      |  122 ++-
+ configure.ac                   |    2 +-
+ data/Makefile.in               |    2 +-
+ data/icons/16x16/Makefile.in   |    2 +-
+ data/icons/22x22/Makefile.in   |    2 +-
+ data/icons/24x24/Makefile.in   |    2 +-
+ data/icons/256x256/Makefile.in |    2 +-
+ data/icons/32x32/Makefile.in   |    2 +-
+ data/icons/48x48/Makefile.in   |    2 +-
+ data/icons/Makefile.in         |    2 +-
+ data/pixmaps/Makefile.in       |    2 +-
+ depcomp                        |  791 -----------------
+ install-sh                     |  527 -----------
+ missing                        |  215 -----
+ po/Makefile.in.in              |  222 -----
+ src/Makefile.am                |    4 +-
+ src/Makefile.in                |   10 +-
+ src/girl-0.5.dtd               |   17 +
+ src/stations.xml               |   94 +-
+ 26 files changed, 584 insertions(+), 3825 deletions(-)
+
+commit 7411c70c3df6ca0a67767b27330bb16e61313f66
+Author: Ole Aamot <oka@oka.no>
+Date:   Thu Nov 27 16:56:43 2014 +0100
+
+    Add Rafael Ferreira (Brazilian Portuguese translation)
+
+ AUTHORS | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 9989f06b631c8e5322001350ab98ec45bd170c80
+Author: Ole Aamot <oka@oka.no>
+Date:   Thu Nov 27 16:55:02 2014 +0100
+
+    Add Marek Černocký (Czech translation)
+
+ AUTHORS   | 4 +++-
+ ChangeLog | 5 +++++
+ THANKS    | 2 +-
+ 3 files changed, 9 insertions(+), 2 deletions(-)
+
+commit 32f15f2d8d3c5ae2a2a4b1f215f075abb412550e
+Author: Marek Černocký <marek@manet.cz>
+Date:   Tue Nov 25 07:50:03 2014 +0100
+
+    Added the Czech language
+
+ po/LINGUAS | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 2d3a015580eb9de3e83a57b8372d476d45a5c414
+Author: Marek Černocký <marek@manet.cz>
+Date:   Tue Nov 25 07:49:41 2014 +0100
+
+    Czech translation
+
+ po/cs.po | 107 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 107 insertions(+)
+
+commit 952da59a2ebd7ec66ddcecd72df1ddc685490f47
+Author: Rafael Ferreira <rafael.f.f1@gmail.com>
+Date:   Mon Nov 24 20:28:56 2014 +0000
+
+    Added Brazilian Portuguese translation
+
+ po/LINGUAS  |   1 +
+ po/pt_BR.po | 110 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 111 insertions(+)
+
+commit 7bc0a07f8ee9e698a291d2e1570a7019152e4bcf
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Nov 23 16:27:05 2014 +0100
+
+    Add Piotr Drąg
+
+ THANKS | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit a579a8f39ade35ac01949d97bb366e1e936efa5b
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sat Nov 22 20:34:03 2014 +0100
+
+    Fix minor typos
+
+ src/girl-station.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 2d11fb4e6b535647351a11c57cb9e35a691213b6
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 22 18:37:05 2014 +0100
+
+    Update URL to Git source code repository.
+
+ HACKING | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6173e7c51fb78dfe62a5786ba7f20f6384c4b779
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 22 18:13:05 2014 +0100
+
+    Add girl 0.4 DTD.
+
+ src/girl-0.4.dtd | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+commit 32465a904620e8004731a08494e6585a5128f816
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 22 14:53:53 2014 +0100
+
+    Update programming-language
+
+ girl.doap | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0e9b6fc1b83f0b6d2c6823c425f500fa9cdc490f
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 22 14:53:11 2014 +0100
+
+    Update DOAP file.
+
+ girl.doap | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7e2774638a4980715bf9b5bf126ea05db17d9c35
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 22 14:40:43 2014 +0100
+
+    Add DOAP file for girl.
+
+ girl.doap | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit 0327e2fe76c1051a693241e89186d88252e90688
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 22 14:02:59 2014 +0100
+
+    Correct minor spelling errors and changes.
+
+ ChangeLog           |  2 +-
+ NEWS                |  2 +-
+ src/girl-gui.c      | 23 ++++++++++++-----------
+ src/girl-listener.c |  5 +----
+ src/girl.c          | 15 ++++++++++++---
+ src/listeners.xml   |  6 +++---
+ src/stations.xml    | 16 +++++++++-------
+ 7 files changed, 39 insertions(+), 30 deletions(-)
+
+commit 11be8607a193d78d017f9f11f642ac193b1d45da
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 22 04:43:09 2014 +0100
+
+    GNOME Internet Radio Locator 0.4.0 release
+
+ ChangeLog                        |  11 ++++++-
+ NEWS                             |   9 ++++++
+ configure                        |  20 ++++++------
+ configure.ac                     |   2 +-
+ data/icons/16x16/apps/girl.png   | Bin 4109 -> 781 bytes
+ data/icons/22x22/apps/girl.png   | Bin 4109 -> 1020 bytes
+ data/icons/256x256/apps/girl.png | Bin 4655 -> 2803 bytes
+ data/icons/48x48/apps/girl.png   | Bin 4109 -> 2803 bytes
+ girl.spec.in                     |   4 +++
+ src/Makefile.am                  |   4 +--
+ src/Makefile.in                  |   4 +--
+ src/girl-gui.c                   |   7 ++--
+ src/girl-station.c               |   6 ++--
+ src/stations.xml                 |  67 +++++++++++++++++++++++++++++++++------
+ 14 files changed, 102 insertions(+), 32 deletions(-)
+
+commit f7fa43bb4505b4f5fd0d87bc3571c7525abb8491
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Nov 16 23:47:14 2014 +0100
+
+    Add KTRU and WWNO in src/stations.xml
+
+ Makefile.in      |  2 +-
+ configure        | 20 ++++++++++----------
+ configure.ac     |  2 +-
+ girl.spec.in     |  9 ++++-----
+ src/stations.xml | 17 +++++++++++++++++
+ 5 files changed, 33 insertions(+), 17 deletions(-)
+
+commit 715e7b7e875793fc756b50271cad105b1ab103ab
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Nov 16 22:36:31 2014 +0100
+
+    Release GNOME Internet Radio Locator 0.3.2
+
+ ChangeLog                | 15 ++++++++++++---
+ Makefile.in              |  7 +++----
+ NEWS                     | 16 +++++++++++++---
+ README                   |  2 +-
+ configure.ac             |  2 +-
+ data/girl.appdata.xml.in |  2 +-
+ data/girl.desktop.in.in  |  8 ++++----
+ girl.spec.in             | 14 ++++++++------
+ 8 files changed, 43 insertions(+), 23 deletions(-)
+
+commit 65d28d74d9efe75df198f005bef07b3cb14c7704
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 15 19:22:45 2014 +0100
+
+    Check for totem as audio helper.
+
+ Makefile.in                    |   1 +
+ configure                      | 121 +++++++++++++++++++++++++++++++++++++----
+ configure.ac                   |   7 ++-
+ data/Makefile.in               |   1 +
+ data/icons/16x16/Makefile.in   |   1 +
+ data/icons/22x22/Makefile.in   |   1 +
+ data/icons/24x24/Makefile.in   |   1 +
+ data/icons/256x256/Makefile.in |   1 +
+ data/icons/32x32/Makefile.in   |   1 +
+ data/icons/48x48/Makefile.in   |   1 +
+ data/icons/Makefile.in         |   1 +
+ data/pixmaps/Makefile.in       |   1 +
+ girl.spec.in                   |  14 ++++-
+ src/Makefile.am                |   2 +-
+ src/Makefile.in                |   3 +-
+ src/girl-station.c             |   3 +-
+ src/girl.h                     |   2 +-
+ 17 files changed, 145 insertions(+), 17 deletions(-)
+
+commit 2601fee24f0f2bda9bb99c351a67006f7afaff4d
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 15 18:35:08 2014 +0100
+
+    Note on mailing list.
+
+ HACKING | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit d7b230fe57020ff0a69158229409ad1c040e03be
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 15 18:31:31 2014 +0100
+
+    Introduction to hacking on GNOME Internet Radio Locator
+
+ Makefile    | 819 ------------------------------------------------------------
+ Makefile.am |   1 +
+ Makefile.in |   1 +
+ autogen.sh  |  25 ++
+ 4 files changed, 27 insertions(+), 819 deletions(-)
+
+commit f2f2fbad294fa3ee5a1d46fc030bd7a0905f4ca0
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 15 18:28:35 2014 +0100
+
+    Introduction to hacking on GNOME Internet Radio Locator.
+
+ HACKING | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+commit 1446046b5bec497cdf3a0173e66cbae2b2ac5dc2
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 15 18:18:44 2014 +0100
+
+    Screenshot of GNOME Internet Radio Locator version 0.3.2.
+
+ data/screenshot.png | Bin 0 -> 164998 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f8183e0c0b028d9b3ead70682d10767001f629aa
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Nov 15 00:55:41 2014 +0100
+
+    GNOME Internet Radio Locator (Girl) 0.3.0
+
+ ABOUT-NLS                        | 1282 ++++++
+ AUTHORS                          |    1 +
+ COPYING                          |  340 ++
+ ChangeLog                        |   47 +
+ INSTALL                          |  370 ++
+ LETTER                           |   83 +
+ Makefile                         |  819 ++++
+ Makefile.am                      |   36 +
+ Makefile.in                      |  819 ++++
+ NEWS                             |   25 +
+ README                           |   14 +
+ THANKS                           |    3 +
+ TODO                             |   13 +
+ YP-DIRS                          |    9 +
+ aclocal.m4                       | 1906 +++++++++
+ config.h.in                      |   86 +
+ config.rpath                     |  690 ++++
+ configure                        | 7314 ++++++++++++++++++++++++++++++++++
+ configure.ac                     |   65 +
+ data/Makefile.am                 |   44 +
+ data/Makefile.in                 |  722 ++++
+ data/girl.appdata.xml.in         |   24 +
+ data/girl.desktop.in.in          |   18 +
+ data/icons/16x16/Makefile.am     |    9 +
+ data/icons/16x16/Makefile.in     |  482 +++
+ data/icons/16x16/apps/girl.png   |  Bin 0 -> 4109 bytes
+ data/icons/22x22/Makefile.am     |    9 +
+ data/icons/22x22/Makefile.in     |  482 +++
+ data/icons/22x22/apps/girl.png   |  Bin 0 -> 4109 bytes
+ data/icons/24x24/Makefile.am     |    7 +
+ data/icons/24x24/Makefile.in     |  481 +++
+ data/icons/24x24/apps/girl.png   |  Bin 0 -> 4109 bytes
+ data/icons/256x256/Makefile.am   |    7 +
+ data/icons/256x256/Makefile.in   |  481 +++
+ data/icons/256x256/apps/girl.png |  Bin 0 -> 4655 bytes
+ data/icons/32x32/Makefile.am     |    9 +
+ data/icons/32x32/Makefile.in     |  482 +++
+ data/icons/32x32/apps/girl.png   |  Bin 0 -> 4109 bytes
+ data/icons/48x48/Makefile.am     |    9 +
+ data/icons/48x48/Makefile.in     |  482 +++
+ data/icons/48x48/apps/girl.png   |  Bin 0 -> 4109 bytes
+ data/icons/Makefile.am           |   16 +
+ data/icons/Makefile.in           |  617 +++
+ data/pixmaps/Makefile.am         |    9 +
+ data/pixmaps/Makefile.in         |  482 +++
+ data/pixmaps/girl-map.png        |  Bin 0 -> 111584 bytes
+ depcomp                          |  791 ++++
+ girl.spec.in                     |   69 +
+ install-sh                       |  527 +++
+ m4/ChangeLog                     |   11 +
+ m4/nls.m4                        |   32 +
+ missing                          |  215 +
+ po/ChangeLog                     | 8127 ++++++++++++++++++++++++++++++++++++++
+ po/LINGUAS                       |    3 +
+ po/Makefile.in.in                |  222 ++
+ po/POTFILES.in                   |   10 +
+ po/POTFILES.skip                 |    3 +
+ po/nb.po                         |   20 +
+ src/Makefile.am                  |   13 +
+ src/Makefile.in                  |  648 +++
+ src/girl-0.1.dtd                 |   16 +
+ src/girl-0.2.dtd                 |   16 +
+ src/girl-0.3.dtd                 |   17 +
+ src/girl-canvas.c                |   45 +
+ src/girl-canvas.h                |   38 +
+ src/girl-gui.c                   |  456 +++
+ src/girl-gui.h                   |   14 +
+ src/girl-listener.c              |  191 +
+ src/girl-listener.h              |   37 +
+ src/girl-logo.png                |  Bin 0 -> 111584 bytes
+ src/girl-station.c               |  310 ++
+ src/girl-station.h               |   79 +
+ src/girl.c                       |  340 ++
+ src/girl.h                       |   82 +
+ src/girl.png                     |  Bin 0 -> 4655 bytes
+ src/listener-1.0.dtd             |   14 +
+ src/listeners.xml                |   11 +
+ src/stations.xml                 |   58 +
+ 78 files changed, 31209 insertions(+)
+
+commit 02032d665bb508e84376cca1d21461d513670d11
+Author: Ole K Aamot <oleaamot@users.noreply.github.com>
+Date:   Sat Nov 15 00:53:18 2014 +0100
+
+    Initial commit
+
+ LICENSE   | 340 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.md |   4 +
+ 2 files changed, 344 insertions(+)

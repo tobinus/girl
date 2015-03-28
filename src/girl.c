@@ -22,16 +22,13 @@
  */
 
 #include <config.h>
-
 #include <gnome.h>
 #include <libgnomevfs/gnome-vfs.h>
 #include <libgnomevfs/gnome-vfs-application-registry.h>
 #include <gio/gcredentials.h>
-
 #include <stdlib.h>
 #include <string.h>
 #include <fcntl.h>
-
 #include "girl.h"
 #include "girl-gui.h"
 #include "girl-listener.h"
@@ -192,6 +189,9 @@ void on_previous_station_click(GtkWidget * a, gpointer user_data)
 				girl->selected_station_name,
 				GIRL_STREAM_SHOUTCAST,
 				GIRL_STREAM_PLAYER);
+
+		about_station((GirlData*)girl, (GirlStationInfo*)girl->previous_station);
+		
 	} else {
 
 		GIRL_DEBUG_MSG("Prev Station: At the beginning of Stations list!\n");
@@ -254,6 +254,8 @@ void on_next_station_click(GtkWidget * a, gpointer user_data)
 					GIRL_STREAM_PLAYER);
 
 			girl->selected_station = (GirlStationInfo*)station;
+
+			about_station((GirlData*)girl, (GirlStationInfo*)girl->selected_station);
 		}
 	}
 }
@@ -582,15 +584,16 @@ void about_listener(GtkWidget * a, gpointer user_data)
 
 void about_program(GtkWidget * a, gpointer user_data)
 {
-	static GtkWidget *about_program = NULL;
+	GtkWidget *about_program;
+	
 	/* const gchar *translator_credits = _("translator_credits"); */
 	const gchar *authors[] = {
 		girl->selected_program_name,
 		NULL,
 	};
 
-	about_program->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-	
+	/* about_program->window = gtk_window_new(GTK_WINDOW_TOPLEVEL); */
+		
 	if (about_program) {
 		gdk_window_raise(about_program->window);
 		gtk_widget_show(GTK_WIDGET(about_program->window));
@@ -611,29 +614,33 @@ void about_program(GtkWidget * a, gpointer user_data)
 
 }
 
-void about_station(GtkWidget * a, gpointer user_data)
+void about_station(GirlData * a, gpointer user_data)
 {
-	static GtkWidget *about_station = NULL;
+	static GtkWidget *about_station;
 	/* const gchar *translator_credits = _("translator_credits"); */
 	const gchar *authors[] = {
 		girl->selected_station_name,
 		NULL,
 	};
 
+	if (GTK_IS_WIDGET(about_station)) {
+		gtk_widget_destroy(GTK_WIDGET(about_station));
+	}
+	
 	if (about_station) {
 		gdk_window_raise(about_station->window);
 		return;
 	}
 
 	about_station = gnome_about_new(girl->selected_station_name,
-					girl->selected_station_band,
-					girl->selected_station_location,
-					girl->selected_station_description,
-					authors,
-					NULL,
-					NULL,
-					girl->icon);
-
+					      girl->selected_station_band,
+					      girl->selected_station_location,
+					      girl->selected_station_description,
+					      authors,
+					      NULL,
+					      NULL,
+					      girl->icon);
+	
 	g_signal_connect(G_OBJECT(about_station), "destroy",
 			 G_CALLBACK(gtk_widget_destroy), NULL);
 	g_signal_connect(G_OBJECT(about_station), "delete-event",

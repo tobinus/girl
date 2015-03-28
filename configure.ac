@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(girl, 1.9.0)
+AC_INIT(girl, 2.0.0)
 AM_INIT_AUTOMAKE([no-dist-gzip dist-xz])
 AC_CONFIG_SRCDIR([src/girl.c])
 AC_CONFIG_HEADER([config.h])
@@ -85,7 +85,7 @@ AC_SUBST(GIRL_PKG_DEPS)
 AC_SUBST(GIRL_HELPER_PLAYER)
 
 dnl Enable yelp-tools
-dnl YELP_HELP_INIT
+YELP_HELP_INIT
 
 AC_OUTPUT([
 Makefile
@@ -103,6 +103,7 @@ data/icons/512x512/Makefile
 data/icons/1024x1024/Makefile
 debian/Makefile
 debian/source/Makefile
+help/Makefile
 man/Makefile
 po/Makefile.in
 src/Makefile

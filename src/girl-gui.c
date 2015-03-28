@@ -51,10 +51,6 @@
 extern GtkWidget *girl_app;
 
 GnomeUIInfo toolbar[] = {
-	GNOMEUIINFO_ITEM_STOCK(N_("Stations"), N_("Internet Radio Stations"),
-	 		       on_stations_selector_button_clicked,
-			       GTK_STOCK_NETWORK),
-	GNOMEUIINFO_SEPARATOR,	
 	GNOMEUIINFO_ITEM_STOCK(N_("Search"), N_("Search by location for radio stations"),
 			       on_search_button_clicked,
 			       GTK_STOCK_FIND),
@@ -74,6 +70,9 @@ GnomeUIInfo toolbar[] = {
 	GNOMEUIINFO_ITEM_STOCK(N_("Previous"),
 			       N_("Go back to the previous radio station"),
 			       on_previous_station_click, GTK_STOCK_GO_BACK),
+	GNOMEUIINFO_ITEM_STOCK(N_("Stations"), N_("Internet Radio Stations"),
+	 		       on_stations_selector_button_clicked,
+			       GTK_STOCK_NETWORK),
 	GNOMEUIINFO_ITEM_STOCK(N_("Next"), N_("Proceed to the next radio station"),
 			       on_next_station_click, GTK_STOCK_GO_FORWARD),
 	GNOMEUIINFO_SEPARATOR,
@@ -451,7 +450,7 @@ GtkWidget *create_search_selector(void) {
 	gtk_entry_set_completion(GTK_ENTRY(textentry), completion);
 	g_signal_connect(G_OBJECT(completion), "match-selected",
 			 G_CALLBACK(on_search_matches), NULL);
-	model = gtk_list_store_new(11, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
+	model = gtk_list_store_new(11, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 
 	world_station_xml_filename = g_strconcat(GIRL_DATADIR, "/girl.xml", NULL);
 	GIRL_DEBUG_MSG("world_station_xml_filename = %s\n",
@@ -511,7 +510,7 @@ GtkWidget *create_search_selector(void) {
 				   STATION_ID,
 				   stationinfo->id,
 				   -1);
-		
+
 		stationinfo = stationinfo->next;
 	}
 

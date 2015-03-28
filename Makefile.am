@@ -1,4 +1,4 @@
-SUBDIRS = data man src po debian
+SUBDIRS = data help man src po debian
 
 datadir = @datadir@
 
@@ -10,21 +10,6 @@ EXTRA_DIST = config.rpath m4/ChangeLog  \
 	LETTER \
 	Makefile \
 	NEWS \
-	NEWS-0.5 \
-	NEWS-0.6 \
-	NEWS-0.7 \
-	NEWS-0.8 \
-	NEWS-0.9 \
-	NEWS-1.0 \
-	NEWS-1.1 \
-	NEWS-1.2 \
-	NEWS-1.3 \
-	NEWS-1.4 \
-	NEWS-1.5 \
-	NEWS-1.6 \
-	NEWS-1.7 \
-	NEWS-1.8 \
-	NEWS-1.9 \
 	README \
 	THANKS \
 	TODO \
@@ -52,3 +37,13 @@ MAINTAINERCLEANFILES = \
 -include $(top_srcdir)/git.mk
 
 ACLOCAL_AMFLAGS = -I m4
+
+# Build ChangeLog from GIT history
+ChangeLog:
+	@if test -f $(top_srcdir)/.git/HEAD; then \
+		git log --stat --after="Mon Jul 20 23:47:57 2009" > $@; \
+	fi
+
+dist: ChangeLog
+
+.PHONY: ChangeLog

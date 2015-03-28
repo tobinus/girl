@@ -1,4 +1,20 @@
 =============
+Version 2.0.0
+=============
+
+Stations
+
+	* src/girl.xml: Add UCT Radio (www.radio.uct.ac.za)
+	* src/girl.xml: Add NRK P1 (www.nrk.no/p1)
+	* src/girl.xml: Add NRK P2 (www.nrk.no/p2)
+	* src/girl.xml: Add NRK P3 (www.nrk.no/p3)
+	* src/girl.xml: Add NRK Urørt (www.nrk.no/urort)
+	
+Translations
+
+	* po/hu.po: Updated Hungarian translation by Balázs Úr
+
+=============
 Version 1.9.0
 =============
 

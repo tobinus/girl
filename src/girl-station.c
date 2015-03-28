@@ -498,7 +498,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 			GIRL_DEBUG_MSG("station->stream->uri = %s\n",
 			    station->stream->uri);
 
-			/* fprintf(stdout, "%s (%s)\n%s\n\n, ", station->name, station->location, station->stream->uri); */
+			/* fprintf(stdout, "%s (%s)\n%s\n\n", station->name, station->location, station->stream->uri); */
 			
 			chans = (gchar *)xmlGetProp(sub, (const xmlChar *)"stations");
 

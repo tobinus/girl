@@ -91,14 +91,13 @@ void quit_app(GtkWidget *, gpointer user_data);
 void about_app(GtkWidget *, gpointer user_data);
 void about_listener(GtkWidget *, gpointer user_data);
 void about_program(GtkWidget *, gpointer user_data);
-void about_station(GtkWidget *, gpointer user_data);
-void about_streams(GtkWidget *, gpointer user_data);
 	
 struct _GirlData {
 	GtkImage *pixmap;
 	GnomeAppBar *appbar;
 	GtkProgressBar *progress;
 	GtkAboutDialog *window;
+	GtkWidget *about_station;
 	GirlListenerInfo *selected_listener;
 	gchar *selected_listener_uri;
 	gchar *selected_listener_name;
@@ -139,6 +138,9 @@ struct _GirlData {
 };
 
 typedef struct _GirlData GirlData;
+
+void about_station(GirlData *, gpointer user_data);
+void about_streams(GtkWidget *, gpointer user_data);
 
 extern GirlData *girl;
 extern GList *girl_listeners;

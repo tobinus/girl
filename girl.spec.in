@@ -65,8 +65,12 @@ fi
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_mandir}/man1/%{name}.1*
+%{_datadir}/help/*/%{name}/*
 
 %changelog
+* Tue Mar 24 2015 Ole Aamot - 2.0.0-1.fc21
+- Girl 2.0.0 build on Fedora Linux 21
+
 * Sat Mar 21 2015 Ole Aamot - 1.9.0-1.fc21
 - Girl 1.9.0 build on Fedora Linux 21
 

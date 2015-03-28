@@ -30,6 +30,7 @@ typedef struct _GirlStationInfo GirlStationInfo;
 typedef struct _GirlStreamInfo GirlStreamInfo;
 
 typedef enum {
+	STATION_LANG = 11,
 	STATION_ID = 10,
 	STATION_NAME = 0,
 	STATION_RANK = 7,
@@ -56,6 +57,7 @@ struct _GirlStationInfo {
 	gchar *bitrate;
 	gchar *samplerate;
 	gchar *uri;
+	gchar *lang;
 	/*   gchar *category; */
 	GirlStreamInfo *stream;
 	GirlStationInfo *next;
