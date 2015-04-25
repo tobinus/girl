@@ -1,3 +1,37 @@
+commit b1732c1310cc4d878328dfc1c3672071310a81fd
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun Mar 29 00:10:52 2015 +0100
+
+    GIRL 2.0.0
+
+ ChangeLog                      | 1640 ++++++++++++++++++++++++++++++++++------
+ Makefile.am                    |   27 +-
+ NEWS                           |   16 +
+ README                         |    9 +
+ THANKS                         |    1 +
+ configure                      |  337 ++++++++-
+ configure.ac                   |    5 +-
+ data/Makefile.in               |    8 +-
+ data/icons/16x16/Makefile.in   |    8 +-
+ data/icons/22x22/Makefile.in   |    8 +-
+ data/icons/24x24/Makefile.in   |    8 +-
+ data/icons/256x256/Makefile.in |    8 +-
+ data/icons/32x32/Makefile.in   |    8 +-
+ data/icons/48x48/Makefile.in   |    8 +-
+ data/icons/Makefile.in         |    8 +-
+ data/pixmaps/Makefile.in       |    8 +-
+ data/screenshot.png            |  Bin 165520 -> 251842 bytes
+ girl.spec.in                   |    4 +
+ src/Makefile.am                |    4 +-
+ src/Makefile.in                |   12 +-
+ src/girl-gui.c                 |   11 +-
+ src/girl-station.c             |    2 +-
+ src/girl-station.h             |    2 +
+ src/girl.c                     |   39 +-
+ src/girl.h                     |    6 +-
+ src/girl.xml                   |  149 ++--
+ 26 files changed, 1979 insertions(+), 357 deletions(-)
+
 commit c24031433d2b13b817ec9df7413f4e26e6ad9220
 Author: Balázs Úr <urbalazs@gmail.com>
 Date:   Mon Mar 23 16:40:10 2015 +0000
