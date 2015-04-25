@@ -1,3 +1,27 @@
+commit 42a4818af239b6bafced325be114c1bde6dd446e
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Apr 25 16:44:59 2015 +0200
+
+    Update version number to 3.0.0.
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 86b8588b112d63897e56275ee2272c466df3f616
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Apr 25 16:44:35 2015 +0200
+
+    GIRL 3.0.0
+
+ ChangeLog       |   9 ++++
+ NEWS            |   7 ++-
+ README          |  10 ++++
+ girl.spec.in    |   4 +-
+ src/Makefile.am |   4 +-
+ src/Makefile.in |   4 +-
+ src/girl.xml    | 139 ++++++++++++++++++++++++++++++--------------------------
+ 7 files changed, 105 insertions(+), 72 deletions(-)
+
 commit 27e4872d55c5cff1fe459c30071804c060f1eed0
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat Apr 25 16:14:21 2015 +0200
