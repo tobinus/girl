@@ -68,8 +68,8 @@ fi
 %{_datadir}/help/*/%{name}/*
 
 %changelog
-* Sat Apr 25 2015 Ole Aamot - 2.1.0-1.fc21
-- Girl 2.1.0 build on Fedora Linux 21
+* Sat Apr 25 2015 Ole Aamot - 3.0.0-1.fc21
+- Girl 3.0.0 build on Fedora Linux 21
 
 * Tue Mar 24 2015 Ole Aamot - 2.0.0-1.fc21
 - Girl 2.0.0 build on Fedora Linux 21
