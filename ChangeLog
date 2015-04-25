@@ -1,3 +1,28 @@
+commit 47ce6fb68b823c77e4bc7ae088cf633b83cf672c
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Apr 25 16:12:32 2015 +0200
+
+    Add frequency for KTUH.
+
+ src/girl.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ac2066530562055185c61336f13598f32886c13d
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Apr 25 16:11:10 2015 +0200
+
+    GNOME Internet Radio Locator version 2.1.0
+
+ ChangeLog       | 34 ++++++++++++++++++++++++++++++++++
+ NEWS            |  8 ++++++++
+ configure       | 20 ++++++++++----------
+ configure.ac    |  2 +-
+ girl.spec.in    |  3 +++
+ src/Makefile.am |  5 ++---
+ src/Makefile.in | 22 +++-------------------
+ src/girl.xml    | 13 +++++++++++--
+ 8 files changed, 72 insertions(+), 35 deletions(-)
+
 commit b1732c1310cc4d878328dfc1c3672071310a81fd
 Author: Ole Aamot <oka@oka.no>
 Date:   Sun Mar 29 00:10:52 2015 +0100
