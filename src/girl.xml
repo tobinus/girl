@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
 <!DOCTYPE girl SYSTEM "girl-2.1.dtd">
 <girl version="2.1">
-  <station band="ONLINE" id="ktuh" lang="en" name="KTUH FM" rank="1.0" type="edu">
+  <station band="90.3FM" id="ktuh" lang="en" name="KTUH FM" rank="1.0" type="edu">
     <frequency uri="http://ktuh.org/">Honolulu, HI</frequency>
     <location>Honolulu, Hawaii</location>
     <description>
