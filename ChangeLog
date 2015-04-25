@@ -1,3 +1,12 @@
+commit 27e4872d55c5cff1fe459c30071804c060f1eed0
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Apr 25 16:14:21 2015 +0200
+
+    Update ChangeLog for GIRL 2.1.0.
+
+ ChangeLog | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
 commit 47ce6fb68b823c77e4bc7ae088cf633b83cf672c
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat Apr 25 16:12:32 2015 +0200
