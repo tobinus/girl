@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-2.0.dtd">
-<girl version="1.0">
+<!DOCTYPE girl SYSTEM "girl-2.1.dtd">
+<girl version="2.1">
+  <station band="ONLINE" id="ktuh" lang="en" name="KTUH FM" rank="1.0" type="edu">
+    <frequency uri="http://ktuh.org/">Honolulu, HI</frequency>
+    <location>Honolulu, Hawaii</location>
+    <description>
+      KTUH is a student-run noncommercial radio station broadcasting from the University of Hawai’i at Manoa. We’ve been serving the community since 1969 with a variety of programs that include public announcements, equipment for community events, and a practical chance to learn about radio broadcasting. KTUH was granted a license to the Board of Regents as a non-commercial educational FM Station by the Federal Communications Commission (FCC) on June 28, 1985. Maintaining a staff in excess of 70 volunteers annually, KTUH operates 24 hours a day, year-round.
+    </description>
+    <stream mime="audio/mpeg" uri="http://stream.ktuh.org:8000/stream-mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://ktuh.org/</uri>
+  </station>
   <station band="ONLINE" id="nrkp1" lang="no" name="NRK P1" rank="1.0" type="gov">
     <frequency uri="http://www.nrk.no/p1/">ONLINE in Oslo, Norway</frequency>
     <location>Oslo, Norway</location>

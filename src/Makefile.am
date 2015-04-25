@@ -9,7 +9,6 @@ girl_SOURCES = \
 	       girl-program.c \
 	       girl-runners.c \
 	       girl-streams.c \
-	       girl-canvas.c \
 	       girl-station.c
 
 girl_CFLAGS  = $(GIRL_CFLAGS) \
@@ -23,6 +22,6 @@ girl_CFLAGS  = $(GIRL_CFLAGS) \
 girl_LDADD = $(GIRL_LIBS)
 
 girldir = $(datadir)/girl
-girl_DATA = girl-2.0.dtd girl-logo.png girl.png girl.xml
+girl_DATA = girl-2.1.dtd girl-logo.png girl.png girl.xml
 
-EXTRA_DIST = girl.h girl-station.h girl-gui.h girl-listener.h girl-program.h girl-runners.h girl-streams.h girl-canvas.h girl-2.0.dtd girl-logo.png girl.png girl.xml
+EXTRA_DIST = girl.h girl-station.h girl-gui.h girl-listener.h girl-program.h girl-runners.h girl-streams.h girl-2.1.dtd girl-logo.png girl.png girl.xml
