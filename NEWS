@@ -1,4 +1,17 @@
 =============
+Version 3.1.0
+=============
+
+Stations
+
+	* src/girl.xml: Add RÚV (ruv.is)
+	* src/girl.xml: Add Radio AF (radioaf.se)
+
+Translations
+
+	* po/is.po: New Icelandic translation by Sveinn í Felli.
+
+=============
 Version 3.0.0
 =============
 

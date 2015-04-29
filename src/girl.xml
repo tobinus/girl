@@ -2,7 +2,26 @@
 <?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
 <!DOCTYPE girl SYSTEM "girl-3.0.dtd">
 <girl version="3.0">
+  <station band="99.1FM" id="radioaf" lang="sv" name="Radio AF" rank="1.0" type="edu">
+    <frequency uri="http://www.radioaf.se/">Lund, Sweden</frequency>
+    <location>Lund, Sweden</location>
+    <description lang="sv">
+      Radio AF är ett utskott i Akademiska Föreningen, studenternas förening och navet i Studentlund.
+    </description>
+    <stream mime="audio/mpeg" uri="http://live.radioaf.se:8000/;stream/1" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.radioaf.se/</uri>
+  </station>            
+  <station band="ONLINE" id="ruv" lang="is" name="RÚV" rank="1.0" type="gov">
+    <frequency uri="http://ruv.is/">Reyjkavik, Iceland</frequency>
+    <location>Reyjkavik, Iceland</location>
+    <description lang="en">
+      The Icelandic National Broadcasting Service – Ríkisútvarpið, or RÚV for short - is an independent public service broadcaster, comprising television, radio and online services. The main objective of the National Broadcasting Service is to inform, educate and entertain. This triple role is reflected in its mission to provide the public with reliable news service and culture and entertainment content of the highest quality. We place particular attention on the Icelandic language, the history of the nation, cultural heritage and an active dialogue with the public. We furthermore place special focus on quality programming for children and young people. RÚV’s Archives are open and accessible to the public.
+    </description>
+    <stream mime="audio/mpeg" uri="http://sip-live.hds.adaptive.level3.net/hls-live/ruv-ras2/_definst_/live/stream1.m3u8" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.ruv.is/</uri>
+  </station>      
   <station band="ONLINE" id="RadioEco" lang="it" name="Radio Eco" rank="1.0" type="edu">
+    <frequency uri="http://ktuh.org/">Online in Pisa, Italy</frequency>
     <location>Pisa, Italy</location>
     <description lang="it">
       RadioEco è l’emittente radiofonica dell’Ateneo Pisano. Nasce nell’ambito dell’iniziativa del Sole-24 ore UniOnAir (una radio per ogni ateneo) all’interno della Facoltà di Economia.
@@ -12,7 +31,7 @@
     <uri>http://radioeco.it/</uri>
   </station>
   <station band="90.3FM" id="ktuh" lang="en" name="KTUH FM" rank="1.0" type="edu">
-    <frequency uri="http://ktuh.org/">Honolulu, HI</frequency>
+    <frequency uri="http://ktuh.org/">Online in Honolulu, HI</frequency>
     <location>Honolulu, Hawaii</location>
     <description lang="en">
       KTUH is a student-run noncommercial radio station broadcasting from the University of Hawai’i at Manoa. We’ve been serving the community since 1969 with a variety of programs that include public announcements, equipment for community events, and a practical chance to learn about radio broadcasting. KTUH was granted a license to the Board of Regents as a non-commercial educational FM Station by the Federal Communications Commission (FCC) on June 28, 1985. Maintaining a staff in excess of 70 volunteers annually, KTUH operates 24 hours a day, year-round.

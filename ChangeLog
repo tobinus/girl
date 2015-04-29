@@ -1,3 +1,30 @@
+commit 3aaaee0e745de1f2b614aa0fdd49c6effe48054f
+Merge: cbab998 15cadb3
+Author: Ole Aamot <oka@oka.no>
+Date:   Wed Apr 29 09:27:56 2015 +0200
+
+    Merge branch 'master' of ssh://git.gnome.org/git/girl
+
+commit 15cadb38e1c627ed415cb6ac738a63f444429394
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:   Sat Apr 25 15:22:27 2015 +0000
+
+    Added Icelandic translation
+
+ po/LINGUAS |   1 +
+ po/is.po   | 356 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 357 insertions(+)
+
+commit cbab9981e177a0f7ae73384ef8905ff57ac3a842
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Apr 25 16:49:14 2015 +0200
+
+    Prepare GIRL 3.0.0
+
+ ChangeLog | 24 ++++++++++++++++++++++++
+ configure | 20 ++++++++++----------
+ 2 files changed, 34 insertions(+), 10 deletions(-)
+
 commit 42a4818af239b6bafced325be114c1bde6dd446e
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat Apr 25 16:44:59 2015 +0200
