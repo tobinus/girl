@@ -1,3 +1,19 @@
+commit b24d34a96d6877b4f2a07bb9111052d0a2bb3cd6
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun May 3 15:13:26 2015 +0200
+
+    GIRL 4.0.0
+
+ ChangeLog           |  54 ++++++++++++++++++++++++++++++++++------------------
+ NEWS                |  15 +++++++++++++++
+ README              |  10 ++++++++++
+ configure           |  20 +++++++++----------
+ configure.ac        |   2 +-
+ data/screenshot.png | Bin 193407 -> 157009 bytes
+ girl.spec.in        |   9 +++++++++
+ src/girl.xml        |  53 +++++++++++++++++++++++++++++++++++++++++++--------
+ 8 files changed, 126 insertions(+), 37 deletions(-)
+
 commit bd1864f4be4bea0735441055954222f0361c56a3
 Author: Sveinn í Felli <sv1@fellsnet.is>
 Date:   Wed Apr 29 11:39:21 2015 +0000
