@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-3.0.dtd">
-<girl version="3.0">
+<!DOCTYPE girl SYSTEM "girl-4.0.dtd">
+<girl version="4.0">
+  <station band="100FM" id="radiorevolt" lang="no" name="Radio Revolt" rank="1.0" type="edu">
+    <frequency uri="http://www.radiorevolt.no/">100 FM in Trondheim, Norway</frequency>
+    <location>Trondheim, Norway</location>
+    <description lang="no">
+      Radio Revolt (formerly known as Studentradion i Trondheim), is the student radio in Trondheim, Norway. It airs 55 hours a week on 100 and 106,2 FM, and 24 hours a day on the internet. It employs about 80 students on a voluntary basis. The radio is a part of the Student Society in Trondheim, and is so a part of the running of the house.
+    </description>
+    <stream mime="audio/mpeg" uri="http://streamer.radiorevolt.no:8000/revolt" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.radiorevolt.no/</uri>
+  </station>
+  <station band="107.8FM" id="dcufm" lang="en" name="DCUfm" rank="1.0" type="edu">
+    <frequency uri="http://www.dcufm.com/">107.8 FM in Dublin, Ireland</frequency>
+    <location>Dublin, Ireland</location>
+    <description lang="en">
+      DCUfm is Dublin City University’s award-winning home-grown radio station, staffed by over 120 volunteers from across DCU’s faculties. Our philosophy is simple: we want to put out the best, fun-loving programmes possible, and give students a voice.
+    </description>
+    <stream mime="audio/mpeg" uri="http://dcufm.redbrick.dcu.ie/stream128.mp3"  codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.dcufm.com/</uri>
+  </station>
+  <station band="95.5FM" id="universitetsradioen" lang="dk" name="Universitetsradioen" rank="1.0" type="edu">
+    <frequency uri="http://universitetsradioen.dk/">95.5 FM in Copenhagen, Denmark</frequency>
+    <location>Copenhagen, Denmark</location>
+    <description lang="dk">
+      Det var en håndfuld studerendes syrede idé, der den 17. maj 1986 blev æterbåren, da vi for første gang kunne sige: – Du lytter til Universitetsradioen 95,5 MHz.
+      Siden begyndelsen i det improviserede studie hjemme hos en af stifterne er projektet vokset støt i størrelse og ambitionsniveau. I dag er det mere end 150 studerende, der hver uge står bag 30 timers liveradio og siden 2015 også podcast-produktioner.
+    </description>
+    <stream mime="audio/mpeg" uri="http://netradio.universitetsradioen.dk:8000/live64.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <uri>http://universitetsradioen.dk</uri>
+  </station>
+  <station band="87.7FM" id="uwsradio" lang="en" name="UWSRadio" rank="1.0" type="edu">
+    <frequency uri="http://uwsradio.uws.ac.uk">87.7 FM in Ayr, Dublin</frequency>
+    <location>Ayr, Scotland</location>
+    <description>
+      UWS Radio is the student radio station on the Ayr campus of The University of the West of Scotland.
+    </description>
+    <stream mime="audio/mpeg" uri="http://icecast.commedia.org.uk:8000/ucaradio.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://uwsradio.uws.ac.uk</uri>
+  </station>
   <station band="99.1FM" id="radioaf" lang="sv" name="Radio AF" rank="1.0" type="edu">
-    <frequency uri="http://www.radioaf.se/">Lund, Sweden</frequency>
+    <frequency uri="http://www.radioaf.se/">99.1 FM in Lund, Sweden</frequency>
     <location>Lund, Sweden</location>
     <description lang="sv">
       Radio AF är ett utskott i Akademiska Föreningen, studenternas förening och navet i Studentlund.
@@ -12,16 +49,16 @@
     <uri>http://www.radioaf.se/</uri>
   </station>            
   <station band="ONLINE" id="ruv" lang="is" name="RÚV" rank="1.0" type="gov">
-    <frequency uri="http://ruv.is/">Reyjkavik, Iceland</frequency>
-    <location>Reyjkavik, Iceland</location>
+    <frequency uri="http://ruv.is/">ONLINE in Reykjavik, Iceland</frequency>
+    <location>Reykjavik, Iceland</location>
     <description lang="en">
-      The Icelandic National Broadcasting Service – Ríkisútvarpið, or RÚV for short - is an independent public service broadcaster, comprising television, radio and online services. The main objective of the National Broadcasting Service is to inform, educate and entertain. This triple role is reflected in its mission to provide the public with reliable news service and culture and entertainment content of the highest quality. We place particular attention on the Icelandic language, the history of the nation, cultural heritage and an active dialogue with the public. We furthermore place special focus on quality programming for children and young people. RÚV’s Archives are open and accessible to the public.
+      The Icelandic National Broadcasting Service – Ríkisútvarpið, or RÚV for short - is an independent public service broadcaster, comprising television, radio and online services. The main objective of the National Broadcasting Service is to inform, educate and entertain. This triple role is reflected in its mission to provide the public with reliable news service and culture and entertainment content of the highest quality. We place particular attention on the Icelandic language, the history of the nation, cultural heritage and an active dialogue with the public.  We furthermore place special focus on quality programming for children and young people.  RÚV’s Archives are open and accessible to the public.
     </description>
     <stream mime="audio/mpeg" uri="http://sip-live.hds.adaptive.level3.net/hls-live/ruv-ras2/_definst_/live/stream1.m3u8" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.ruv.is/</uri>
   </station>      
   <station band="ONLINE" id="RadioEco" lang="it" name="Radio Eco" rank="1.0" type="edu">
-    <frequency uri="http://ktuh.org/">Online in Pisa, Italy</frequency>
+    <frequency uri="http://ktuh.org/">ONLINE in Pisa, Italy</frequency>
     <location>Pisa, Italy</location>
     <description lang="it">
       RadioEco è l’emittente radiofonica dell’Ateneo Pisano. Nasce nell’ambito dell’iniziativa del Sole-24 ore UniOnAir (una radio per ogni ateneo) all’interno della Facoltà di Economia.
@@ -31,7 +68,7 @@
     <uri>http://radioeco.it/</uri>
   </station>
   <station band="90.3FM" id="ktuh" lang="en" name="KTUH FM" rank="1.0" type="edu">
-    <frequency uri="http://ktuh.org/">Online in Honolulu, HI</frequency>
+    <frequency uri="http://ktuh.org/">ONLINE in Honolulu, HI</frequency>
     <location>Honolulu, Hawaii</location>
     <description lang="en">
       KTUH is a student-run noncommercial radio station broadcasting from the University of Hawai’i at Manoa. We’ve been serving the community since 1969 with a variety of programs that include public announcements, equipment for community events, and a practical chance to learn about radio broadcasting. KTUH was granted a license to the Board of Regents as a non-commercial educational FM Station by the Federal Communications Commission (FCC) on June 28, 1985. Maintaining a staff in excess of 70 volunteers annually, KTUH operates 24 hours a day, year-round.

@@ -1,4 +1,19 @@
 =============
+Version 4.0.0
+=============
+
+Stations
+
+	* src/girl.xml: DCUfm (Dublin, Ireland)
+	* src/girl.xml: Radio Revolt (Trondheim, Norway)
+	* src/girl.xml: UWSRadio (Ayr, Scotland)
+	* src/girl.xml: Universitetsradioen (Copenhagen, Denmark)
+
+Translations
+
+	* po/is.po: Updated Icelandic translation by Sveinn í Felli.
+
+=============
 Version 3.1.0
 =============
 

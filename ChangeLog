@@ -1,21 +1,29 @@
-commit 3aaaee0e745de1f2b614aa0fdd49c6effe48054f
-Merge: cbab998 15cadb3
-Author: Ole Aamot <oka@oka.no>
-Date:   Wed Apr 29 09:27:56 2015 +0200
-
-    Merge branch 'master' of ssh://git.gnome.org/git/girl
-
-commit 15cadb38e1c627ed415cb6ac738a63f444429394
+commit bd1864f4be4bea0735441055954222f0361c56a3
 Author: Sveinn í Felli <sv1@fellsnet.is>
-Date:   Sat Apr 25 15:22:27 2015 +0000
+Date:   Wed Apr 29 11:39:21 2015 +0000
 
-    Added Icelandic translation
+    Updated Icelandic translation
 
- po/LINGUAS |   1 +
- po/is.po   | 356 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 357 insertions(+)
+ po/is.po | 266 ++++++++++++++++++++++++++++++++++++---------------------------
+ 1 file changed, 153 insertions(+), 113 deletions(-)
 
-commit cbab9981e177a0f7ae73384ef8905ff57ac3a842
+commit 502d27391b311a20bebf6806830d0f24071b1220
+Author: Ole Aamot <oka@oka.no>
+Date:   Wed Apr 29 10:22:48 2015 +0200
+
+    GIRL 3.1.0
+
+ AUTHORS             |   1 +
+ ChangeLog           |  27 +++++++++++++++++++++++++++
+ NEWS                |  13 +++++++++++++
+ THANKS              |   1 +
+ configure           |  20 ++++++++++----------
+ configure.ac        |   2 +-
+ data/screenshot.png | Bin 251842 -> 193407 bytes
+ src/girl.xml        |  21 ++++++++++++++++++++-
+ 8 files changed, 73 insertions(+), 12 deletions(-)
+
+commit 7cd3203e07fc666be42435ac86f9223c81d69aa8
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat Apr 25 16:49:14 2015 +0200
 
@@ -25,7 +33,7 @@ Date:   Sat Apr 25 16:49:14 2015 +0200
  configure | 20 ++++++++++----------
  2 files changed, 34 insertions(+), 10 deletions(-)
 
-commit 42a4818af239b6bafced325be114c1bde6dd446e
+commit c5a01e198650b5ea74f84f5d0004a1c26af3da6f
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat Apr 25 16:44:59 2015 +0200
 
@@ -34,7 +42,7 @@ Date:   Sat Apr 25 16:44:59 2015 +0200
  configure.ac | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-commit 86b8588b112d63897e56275ee2272c466df3f616
+commit 86cb6ba41e9995e86e095002bfd152e200c52a58
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat Apr 25 16:44:35 2015 +0200
 
@@ -49,7 +57,7 @@ Date:   Sat Apr 25 16:44:35 2015 +0200
  src/girl.xml    | 139 ++++++++++++++++++++++++++++++--------------------------
  7 files changed, 105 insertions(+), 72 deletions(-)
 
-commit 27e4872d55c5cff1fe459c30071804c060f1eed0
+commit 80bfdaa58b889a785f8c27833bcc6ebdaceba0b7
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat Apr 25 16:14:21 2015 +0200
 
@@ -58,7 +66,7 @@ Date:   Sat Apr 25 16:14:21 2015 +0200
  ChangeLog | 25 +++++++++++++++++++++++++
  1 file changed, 25 insertions(+)
 
-commit 47ce6fb68b823c77e4bc7ae088cf633b83cf672c
+commit e7cfe8c898b973ade8146282338c91b3c9fe22ac
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat Apr 25 16:12:32 2015 +0200
 
@@ -67,7 +75,7 @@ Date:   Sat Apr 25 16:12:32 2015 +0200
  src/girl.xml | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-commit ac2066530562055185c61336f13598f32886c13d
+commit 9f26c4d8266c78d7b22f4496f2c7a9a02e55fa22
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat Apr 25 16:11:10 2015 +0200
 
@@ -82,6 +90,16 @@ Date:   Sat Apr 25 16:11:10 2015 +0200
  src/Makefile.in | 22 +++-------------------
  src/girl.xml    | 13 +++++++++++--
  8 files changed, 72 insertions(+), 35 deletions(-)
+
+commit 15cadb38e1c627ed415cb6ac738a63f444429394
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:   Sat Apr 25 15:22:27 2015 +0000
+
+    Added Icelandic translation
+
+ po/LINGUAS |   1 +
+ po/is.po   | 356 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 357 insertions(+)
 
 commit b1732c1310cc4d878328dfc1c3672071310a81fd
 Author: Ole Aamot <oka@oka.no>
