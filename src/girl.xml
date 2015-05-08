@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-4.0.dtd">
-<girl version="4.0">
+<!DOCTYPE girl SYSTEM "girl-5.0.dtd">
+<girl version="5.0">
+  <station band="" id="radiouniversidad" lang="en" name="Radio Universidad" rank="1.0" type="edu">
+    <frequency uri="http://radiou.usac.edu.gt/">92.1 FM in Guatemala City, </frequency>
+    <location>Guatemala City, Guatemala</location>
+    <description lang="es">
+      Radio universidad obtiene su frecuencia en 1990 y sale al aire por primera vez en octubre de 1991 bajo la coor dinación del periodista David Grajeda. Su potencia era solamente de 300 vatios, lo cual no le permitía una gran proyección. En esta primera época cubría cuatro horas, programando de 8:00 a 12:00 horas. Operaba en el segundo nivel del Edificio de Bienestar Estudiantil en la ciudad universitaria, zona 12. El 29 de enero de 1992 se traslada a las instalaciones del Centro Cultural Universitario en la 2ª. Avenida 12-40 de la zona 1, y un día después, queda oficialmente inaugurada. Sus operaciones iniciaron con una donación de equipo del Gobierno de España que permitió instalar un transmisor con 1 kilovatio de potencia ampliando su cobertura un poco más allá del área metropolitana. Desde 1994 se cuenta con un transmisor de 10 kilovatios que le permite tener una cobertura de más de 200 kms. Alrededor de la capital del país. Posteriormente se realizan las gestiones para instalar una antena de transmisión desde el Cerro Alux, arrendándose durante algún tiempo espacio en la torre de Radio Rumbos. Se iniciaron trámites para contar con un terreno propio, ante la carencia de espacio en el Cerro. En 1998 se suscribe un contrato de arrendamiento con la Municipalidad de San Lucas Sacatepéquez y se procede a la construcción y acondicionamiento de una modesta cabina con su respectiva guardianía. En el año 2001 se construyen en el Cerro Alux las nuevas instalaciones para los aparatos de transmisión y espacio para planta eléctrica de emergencia. En el año 2005, a través de gestiones realizadas con la fundación “Aracalacana”, adquiere nuevo equipo para el apoyo de la producción y la transmisión por control remoto. Se instituye la automatización computarizada para la transmisión de radio. Dos años después se establecen como actividades rutinarias las transmisiones en directo de actividades grandes como la Huelga de Dolores, la celebración de la Autonomía Universitaria y la Fundación de la Universidad, los partidos de fútbol del equipo universitario, entre otros acontecimientos de alta trascendencia nacional y académica. A partir del año 2009, se comienzan a realizar las primeras transmisiones vía internet, desde puntos externos a la cabina de transmisión, alcanzando con éxito la primera transmisión con sonido de mejor definición desde el Campus Universitario a mediados del año 2010, entrando de esta manera, a una nueva etapa tecnológica para la transmisión por radio.
+    </description>
+    <stream mime="audio/mpeg" uri="http://dns921.no-ip.biz:8000/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Stereo" bitrate="64 kbps" />
+    <uri>http://radiou.usac.edu.gt</uri>
+  </station>
+  <station band="95.3FM" id="stockholmcollegeradio" lang="en" name="Stockholm College Radio" rank="1.0" type="edu">
+    <frequency uri="http://collegeradio.se/">95.3 FM in Stockholm, Sweden</frequency>
+    <location>Stockholm, Sweden</location>
+    <description lang="en">
+      Stockholm College Radio, radiostationen med mest ös och bredd i Stockholms-etern alias studentradiostationen som sänder på 95,3 MHz i Stockholm.  Med ny musik med sting i, humor, kultur, reportage, studentinformation och mer därtill.
+    </description>
+    <stream mime="audio/mpeg" uri="http://narradio.se/webbradio.php?k=953&amp;q=32&amp;m=m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
+    <stream mime="audio/mpeg" uri="http://narradio.se/webbradio.php?k=953&amp;q=64&amp;m=m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <uri>http://collegeradio.se/</uri>
+  </station>        
+  <station band="92FM" id="wumr" lang="en" name="WUMR" rank="1.0" type="edu">
+    <frequency uri="http://www.memphis.edu/wumr/">92 FM in Memphis, TN</frequency>
+    <location>Memphis, TN</location>
+    <description lang="en">Broadcasting in stereo with 25,000 watts of power, WUMR is the only exclusive jazz outlet in the Memphis metro area. The station offers a mix of contemporary and traditional jazz, as well as a sampling of fusion, Blues, Latin, and new age Jazz. The station also serves the Mid-South community with unique educational, sports, and community service programming.
+    
+WUMR has been the University of Memphis broadcasting outlet since 1979, when Southwestern at Memphis (now Rhodes College) sold one of its two radio licenses to then Memphis State University. WSMS-FM 91.7, carrying the Memphis State call letters, was created as an all-jazz station. Although the call letters changed to WUMR, when Memphis State became the University of Memphis on July 1, 1994, the station, which is now known as WUMR “The Jazz Lover” U 92-FM, has stayed true to the all-jazz format during its 30-year history. WUMR is part of the College of Communication and Fine Arts’ (CCFA) Department of Communication. An element of the station’s mission is to train communication and journalism students in broadcasting.
+    </description>
+    <stream mime="audio/mpeg" uri="http://141.225.64.25:88/broadwave.asx?src=1&amp;kbps=56" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="56 kbps" />
+    <uri>http://www.memphis.edu/wumr/</uri>
+  </station>    
   <station band="100FM" id="radiorevolt" lang="no" name="Radio Revolt" rank="1.0" type="edu">
     <frequency uri="http://www.radiorevolt.no/">100 FM in Trondheim, Norway</frequency>
     <location>Trondheim, Norway</location>

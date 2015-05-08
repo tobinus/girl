@@ -1,3 +1,13 @@
+commit ecf6c43a1eaa987ce76672cca18d638551332393
+Author: Ole Aamot <oka@oka.no>
+Date:   Sun May 3 15:50:26 2015 +0200
+
+    Release GIRL 4.0.0
+
+ ChangeLog           |  16 ++++++++++++++++
+ data/screenshot.png | Bin 157009 -> 121529 bytes
+ 2 files changed, 16 insertions(+)
+
 commit b24d34a96d6877b4f2a07bb9111052d0a2bb3cd6
 Author: Ole Aamot <oka@oka.no>
 Date:   Sun May 3 15:13:26 2015 +0200

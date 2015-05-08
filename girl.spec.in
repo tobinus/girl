@@ -57,7 +57,7 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %files -f %{name}.lang
-%doc AUTHORS LETTER NEWS README TODO VERSION YP-DIRS
+%doc AUTHORS LETTER NEWS README TODO VERSION YP-DIRS ChangeLog
 %license COPYING
 %{_bindir}/%{name}
 %{_datadir}/%{name}/
@@ -68,6 +68,9 @@ fi
 %{_datadir}/help/*/%{name}/*
 
 %changelog
+* Fri May 08 2015 Ole Aamot - 5.0.0-1.fc21
+- Girl 5.0.0 build on Fedora Linux 21
+
 * Sun May 03 2015 Ole Aamot - 4.0.0-1.fc21
 - Girl 4.0.0 build on Fedora Linux 21
 

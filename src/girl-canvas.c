@@ -25,7 +25,6 @@
 #include <config.h>
 #endif
 #include <gnome.h>
-#include <libgnomecanvas/libgnomecanvas.h>
 
 GnomeCanvasGroup *girl_canvas_root = NULL;
 GtkWidget *girl_canvas = NULL;

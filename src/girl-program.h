@@ -24,6 +24,7 @@
 #ifndef GIRL_PROGRAM_H
 #define GIRL_PROGRAM_H
 
+#include <gtk/gtk.h>
 #include "girl.h"
 
 typedef struct _GirlProgramInfo GirlProgramInfo;

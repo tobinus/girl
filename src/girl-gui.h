@@ -3,7 +3,7 @@
 #ifndef GIRL_GUI_H
 #define GIRL_GUI_H
 
-#include <gnome.h>
+#include <libgnome/libgnome.h>
 
 GtkWidget *create_girl_app(void);
 GtkWidget *create_listeners_selector(char *selected_listener_uri,

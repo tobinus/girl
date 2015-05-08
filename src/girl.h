@@ -62,7 +62,7 @@ typedef enum {
 #define GIRL_PLAYER_FALSE 0
 
 void show_error(gchar * msg);
-void appbar_send_msg(const char *a, ...);
+void statusbar_send_msg(const char *a, ...);
 
 /* GnomeVFSFileSize get_size(GnomeVFSURI *uri); */
 
@@ -97,6 +97,7 @@ struct _GirlData {
 	GnomeAppBar *appbar;
 	GtkProgressBar *progress;
 	GtkAboutDialog *window;
+	GtkStatusbar *statusbar;
 	GtkWidget *about_station;
 	GirlListenerInfo *selected_listener;
 	gchar *selected_listener_uri;
