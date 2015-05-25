@@ -48,7 +48,7 @@
 \LogoOn
 GIRL, the GNOME Internet Radio Locator program, allows users to easily find and record live radio programs on radio broadcasters on the Internet.
 
-GIRL is developed for the GNOME desktop and requires one audio helper such as Totem (\url{https://developer.gnome.org/totem/}) to be installed for playback and streamripper (\url{http://streamripper.sourceforge.net/}) to be installed for recording live radio streams of supported radio stations. 
+GIRL is developed for the GNOME desktop and requires one audio helper such as GNOME Videos (\url{https://wiki.gnome.org/Apps/Videos}) to be installed for playback and streamripper (\url{http://streamripper.sourceforge.net/}) to be installed for recording live radio streams of supported radio stations. 
 
 GIRL, a recursive acronym for GNOME Internet Radio Locator,
 following the tradition of naming projects in Free Software
@@ -66,19 +66,12 @@ and \url{https://download.gnome.org/sources/girl/}
   \item I support
     \begin{list3}
     \item Freedom
-    \item Free speech
+    \item Free Speech
     \item Free Software
     \end{list3}
   \item I want to give something back to the Free Software community    
   \item Internet Radio is a free Internet resource
-  \item Many U.S. Universities run non-profit Internet radio stations
-  \item I want to meet people, especially girls on my own age,
-    on the same frequency
-    \begin{list3}
-    \item GIRL 1.0 was a huge success
-    \item I met a woman
-    \item She gave me this Fedora hat
-    \end{list3}
+  \item Many Universities run non-profit Internet radio stations
   \end{list2}
 \end{list1}
 
@@ -102,7 +95,7 @@ and \url{https://download.gnome.org/sources/girl/}
     \item GIRL 2.0.0 released on March 29th, 2015
     \item GIRL 3.0.0 released on April 25th, 2015
     \item GIRL 4.0.0 released on May 3rd, 2015
-    \item GIRL 5.0.0 released on May 8th, 2015 with 72 Internet Radio stations
+    \item GIRL 5.0.0 released on May 8th, 2015 with 73 Internet Radio stations
   \end{list2}
 \end{list1}
 
@@ -111,7 +104,7 @@ and \url{https://download.gnome.org/sources/girl/}
 From FSF's home page (\url{https://www.gnu.org/philosophy/free-sw.html}):
 
 \begin{list1}
-\item Free Software is a good idea because you have the
+\item Free Software is a good idea because you have
   \begin{list2}
     \item The freedom to run the program as you wish, for any purpose (freedom 0).
     \item The freedom to study how the program works, and change it so it does your computing as you wish (freedom 1). Access to the source code is a precondition for this.
@@ -123,43 +116,47 @@ From FSF's home page (\url{https://www.gnu.org/philosophy/free-sw.html}):
 \slide{Existing Music Services}
 
 \begin{list1}
-\item Apple, Google and Spotify
+\item Apple iTunes, Google Music and Spotify
   \begin{list2}
-  \item Music services that run/don't run on GNU/Linux
-  \item Non-free streaming services
-  \item Proprietary software
-  \item Not free as in freedom
+  \item Require non-free client software
+  \item DRM (Digital Restrictions Management)
+  \item Impose EULAs that restrict more than copyright
+  \item Track what the user listens to
   \end{list2}
 \end{list1}
 
-\slide{Why did I write GIRL?}
-
-The last public talk I gave, was a talk on Music Recording, Production and Distribution with Free Software at UKUUG Linux 2005 at University of Wales, Swansea, in 2005.  The talk is available from \url{http://home.nuug.no/~ole/UKUUG2005.pdf}.
-
-10 years is a long time, a lot of stuff has happened in-between these 10 years.
-
+One redeeming feature of some of them:
 
 \begin{list2}
+\item You can't access them from GNU/Linux at all.  If you're a GNU/Linux user, this protects you from the temptation to use them.
+\end{list2}
+
+\slide{Why did I write GIRL?}
+
+The last public talk I gave, was a talk on Music Recording, Production and Distribution with Free Software at UKUUG Linux 2005 at University of Wales, Swansea, in 2005. The talk is available from \url{http://home.nuug.no/~ole/UKUUG2005.pdf}
+
+10 years is a long time, a lot of stuff has happened in these 10 years.
+
+\begin{list1}
 \item Free Radio
 \item Free Speech
 \item Free Software
-\end{list2}
+\end{list1}
 
-\slide{Features in GNOME Internet Radio Locator v 5.0.0} 
+\slide{Features in GNOME Internet Radio Locator version 5.0.0} 
 
 \begin{list1}
-\item 72 non-profit and independent radio stations are supported.
+\item 73 non-profit and independent radio stations are supported.
 \item 14 language translations (see girl/AUTHORS and girl/THANKS).
 \item Radio station search by physical location, but just city names.
 \item Optional recording feature (if ``streamripper'' is available)
 \item Support for Personal Radio Stations (``\$HOME/.girl/girl.xml'').
 \item Play supported radio codecs with GNOME Videos
-\item Fedora Core 21 and Debian GNU/Linux packages
 \end{list1}
 
 \slide{Supported Internet Radio Stations}
 
-The following 72 radio stations are supported in GIRL 5.0.0:
+The following 73 radio stations are supported in GIRL 5.0.0:
 
 \begin{list1}
 \item
@@ -224,7 +221,7 @@ The following 72 radio stations are supported in GIRL 5.0.0:
   \item WPTS (Pittsburgh, PA)
   \item WRVU (Nashville, TN)
   \item WTBU (Boston, MA)
-  \item WUMR (Memphis, Sweden)
+  \item WUMR (Memphis, TN)
   \item WUSB (Long Island, NY)
   \item WVAU (Washington, DC)
   \item WVUA-FM (Tuscaloosa, AL)
@@ -240,10 +237,9 @@ radio stations in GNOME Internet Radio Locator.
 
 \slide{Supported Radio Codecs}
 
-The radio stations stream live audio with several different audio
-codecs supported by the GNOME Videos program, see \url{https://wiki.gnome.org/Apps/Videos}
+The radio stations stream live audio with several different audio codecs supported by the GNOME Videos program, see \url{https://wiki.gnome.org/Apps/Videos}
 
-The audio codecs in usage among the supported 72 radio stations are:
+The audio codecs in usage among the supported 76 radio stations are:
 
 \begin{list1}
   \item
@@ -266,6 +262,7 @@ The audio codecs in usage among the supported 72 radio stations are:
 \item GIRL 5.0 DTD is available from \url{http://girl.software/girl-5.0.dtd}
 \item GIRL 5.0 XML data renders as HTML using XSLT in at least Firefox 36.0 at \url{http://girl.software/girl.xml}
 \end{list1}
+
 
 \slide{Current GIRL 5.0 DTD}
 
@@ -296,12 +293,50 @@ The audio codecs in usage among the supported 72 radio stations are:
 \end{verbatim}
 \end{tiny}
 
+\slide{Example of GIRL 5.0 XML data}
+
+\begin{tiny}
+\begin{verbatim}
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://girl.software/girl.xsl" ?>
+<!DOCTYPE girl SYSTEM "girl-5.0.dtd">
+<girl version="5.0">
+  ...
+  <station band="88.1FM"
+           id="wmbr"
+           lang="en"
+           name="WMBR"
+           rank="1.0"
+           type="edu">
+    <frequency>88.1 FM in Cambridge, MA</frequency>
+    <location>Boston, MA</location>
+    <description lang="en">WMBR is the MIT campus radio station.
+    We broadcast on 88.1 FM between 20 and 24 hours per day, 365 days a year.
+    We transmit at 720 watts, effective radiated power from the top of the
+    Eastgate Building in Kendall Square in Cambridge, Massachusetts.
+    Our programming includes a wide range of music shows, public affairs
+    programs and eclectic audio entertainment.</description>
+    <stream mime="audio/mpeg"
+            uri="http://wmbr.org/WMBR_live_128.m3u"
+            codec="MPEG 1 Audio, Layer 3 (MP3)"
+            samplerate="44100 Hz"
+            channels="Stereo"
+            bitrate="128 kbps" />
+    <uri>http://wmbr.org/</uri>
+  </station>
+  ...
+</girl>
+\end{verbatim}
+\end{tiny}
+
 \slide{Screenshot}
 
 \begin{center}
-  \colorbox{white}{\includegraphics[width=0.6\hsize]{../data/screenshot.png}}  
-  
+
+  \colorbox{white}{\includegraphics[width=0.6\hsize]{../data/screenshot.png}}
+
   {\blueem Screenshot of GNOME Internet Radio Locator 5.0.0}
+
 \end{center}
 
 \slide{Legal stuff}
@@ -313,7 +348,7 @@ The audio codecs in usage among the supported 72 radio stations are:
     \item \url{http://en.wikipedia.org/wiki/Broadcast_license}
     \item \url{https://www.dnalounge.com/backstage/webcasting.html}
     \end{list2}
-  \item Personal Radio Stations can be setup using Icecast streaming server
+  \item Personal Radio Stations can be set up using Icecast streaming server
     \begin{list2}
     \item Download Icecast from \url{http://www.icecast.org/} and add your station in \$HOME/.girl/girl.xml
     \end{list2}
@@ -334,7 +369,7 @@ The audio codecs in usage among the supported 72 radio stations are:
   \item \url{https://www.eff.org/Internet-Radio-Fairness-Act-Explanation}
   \item \url{http://en.wikipedia.org/wiki/Internet_Radio_Equality_Act}
   \end{list2}
-\item EFF had a 2012 campaign in support the Internet Radio Fairness Act
+\item EFF had a 2012 campaign in support of the Internet Radio Fairness Act
   \begin{list2}
   \item \url{https://www.eff.org/Internet-Radio-Fairness-Act-Explanation}
   \end{list2}
@@ -381,5 +416,30 @@ The audio codecs in usage among the supported 72 radio stations are:
 \end{list1}  
 
 \slide{Questions?}
+
+\begin{list1}
+\item GNOME Internet Radio Locator 5.0.0 is available here and now.
+  \begin{list2}
+  \item \url{http://download.gnome.org/sources/girl/5.0/girl-5.0.0.tar.xz}
+  \end{list2}
+\item Debian 8.0 'jessie' packages
+  \begin{list2}
+  \item \url{http://girl.software/girl_5.0.0-1_i386.deb}
+  \end{list2}
+\item Fedora 21 RPMS
+  \begin{list2}
+  \item \url{http://girl.software/girl-5.0.0-1.fc21.x86_64.rpm}
+  \end{list2}
+\item Mailing List    
+  \begin{list2}
+  \item \url{http://mail.gnome.org/mailman/listinfo/girl-list/}
+  \end{list2}
+\item Source repository
+  \begin{list2}
+    \item \url{git://git.gnome.org/girl}
+    \item \url{https://git.gnome.org/browse/girl}
+    \item \url{ssh://$USERNAME@git.gnome.org/git/girl}
+  \end{list2}
+\end{list1}
 
 \end{document}
