@@ -1,3 +1,76 @@
+commit f4997aed0052685423dabb85fbdc83421b8872cb
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat May 30 12:58:01 2015 +0200
+
+    Add GIRL 6.0 DTD.
+
+ src/girl-6.0.dtd | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+commit 68d879657da2781a4997798e06f030c9202867a9
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue May 26 13:39:25 2015 +0200
+
+    Add GIRL 5.0 DTD.
+
+ src/girl-5.0.dtd | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+commit 24797eda81ba4b46f70954d88bd9bb56ee6923eb
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue May 26 13:38:04 2015 +0200
+
+    Add code
+
+ src/date-endian.c | 171 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/date-endian.h |  31 ++++++++++
+ 2 files changed, 202 insertions(+)
+
+commit fd5f80ccdc0a6457bc76b411debaf11dddadc1ef
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue May 26 13:36:42 2015 +0200
+
+    Add test of endianess.
+
+ src/test-endianess.c | 55 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit f088248f63356c4b6bef9d8c7b79cc5512d567fb
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue May 26 13:30:04 2015 +0200
+
+    Add test code.
+
+ src/test-stations-gfx.c |  57 +++++++++++++++++++++++++++
+ src/test-stations.c     | 101 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 158 insertions(+)
+
+commit ac9f74e7711d8c3d874ecd9852f1afa6474ab63a
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue May 26 13:27:53 2015 +0200
+
+    Add prototype code for zoomable map function
+
+ src/girl-stations-map.c | 741 ++++++++++++++++++++++++++++++++++++++++++++++++
+ src/girl-stations-map.h | 110 +++++++
+ src/girl-tz.c           | 512 +++++++++++++++++++++++++++++++++
+ src/girl-tz.h           | 118 ++++++++
+ talk/girl-osdc-2015.tex |   4 +
+ 5 files changed, 1485 insertions(+)
+
+commit b97868267e43382c837ad6632734d9bb309a8242
+Author: Ole Aamot <oka@oka.no>
+Date:   Mon May 25 10:40:03 2015 +0200
+
+    GIRL 5.0.0 updates
+
+ ChangeLog               |  26 ++++++++++
+ README                  |   2 +-
+ configure               |  20 ++++----
+ configure.ac            |   2 +-
+ talk/girl-osdc-2015.tex | 128 +++++++++++++++++++++++++++++++++++-------------
+ 5 files changed, 132 insertions(+), 46 deletions(-)
+
 commit fd0530cef5371ed252ea04ef5184358f13e30af6
 Author: Ole Aamot <oka@oka.no>
 Date:   Fri May 8 16:21:24 2015 +0200

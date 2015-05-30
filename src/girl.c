@@ -511,7 +511,13 @@ void about_app(GtkWidget * a, gpointer user_data)
 					"Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
 					"Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
 					"Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
-					"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"));
+					"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
+					"Matej Urbančič <mateju@svn.gnome.org>"
+					"Γιάννης Κουτσούκος <giankoyt@gmail.com>"
+					"Efstathios Iosifidis <iosifidis@opensuse.org>"
+					"Samir Ribić <megaribi@epn.ba>"
+					"Enrico Nicoletto <liverig@gmail.com>"
+					"Sveinn í Felli <sv1@fellsnet.is>"));
 	gchar* artists[] = { "Wiki Graphic Designer",
 			     "Aly Raj",
 			     NULL };
@@ -520,10 +526,12 @@ void about_app(GtkWidget * a, gpointer user_data)
 	gchar* documenters[] = { _("See yelp://girl"), NULL };
 
 	static GdkPixbuf* logo;
+
 	gchar* name = PACKAGE;
 	gchar* version = VERSION;
 	gchar* website = "http://wiki.gnome.org/Apps/Girl";
 	gchar* website_label = "http://wiki.gnome.org/Apps/Girl";
+
 	gchar* license = g_strdup(_("This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\nYou should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA."));
 
 	if (!logo) {
@@ -601,8 +609,6 @@ void about_program(GtkWidget * a, gpointer user_data)
 	}
 
 	if (strcmp(girl->selected_station_name, "KEXP")==0) {
-
-
 		g_signal_connect(G_OBJECT(about_program), "destroy",
 				 G_CALLBACK(gtk_widget_destroy), NULL);
 		g_signal_connect(G_OBJECT(about_program), "delete-event",
