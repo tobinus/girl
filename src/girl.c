@@ -512,12 +512,12 @@ void about_app(GtkWidget * a, gpointer user_data)
 					"Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
 					"Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
 					"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
-					"Matej Urbančič <mateju@svn.gnome.org>"
-					"Γιάννης Κουτσούκος <giankoyt@gmail.com>"
-					"Efstathios Iosifidis <iosifidis@opensuse.org>"
-					"Samir Ribić <megaribi@epn.ba>"
-					"Enrico Nicoletto <liverig@gmail.com>"
-					"Sveinn í Felli <sv1@fellsnet.is>"));
+					"Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
+					"Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
+					"Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
+					"Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
+					"Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
+					"Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)"));
 	gchar* artists[] = { "Wiki Graphic Designer",
 			     "Aly Raj",
 			     NULL };
