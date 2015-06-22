@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-14 16:46+0000\n"
-"PO-Revision-Date: 2015-03-23 17:38+0100\n"
+"POT-Creation-Date: 2015-05-31 16:29+0000\n"
+"PO-Revision-Date: 2015-06-23 00:23+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
@@ -20,9 +20,6 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 
 #: ../data/girl.appdata.xml.in.h:1
-#| msgid ""
-#| "Girl, the GNOME Internet Radio Locator program, allows users to easily "
-#| "find live radio programs on radio broadcasters on the Internet."
 msgid ""
 "GIRL, the GNOME Internet Radio Locator program, allows users to easily find "
 "and record live radio programs on radio broadcasters on the Internet."
@@ -54,7 +51,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Internetes rádió felderítő"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:516
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:524
 msgid "Locate Internet Radio Stations"
 msgstr "Internetes rádióállomások felderítése"
 
@@ -63,44 +60,52 @@ msgstr "Internetes rádióállomások felderítése"
 msgid "Live;Radio;Program;Station;Locator;"
 msgstr "Élő;Rádió;Program;Állomás;Felderítő;"
 
-#: ../src/girl.c:69
+#: ../src/girl.c:66
 msgid "GNOME VFS initialization failed!\n"
 msgstr "A GNOME VFS előkészítése nem sikerült!\n"
 
-#: ../src/girl.c:186
+#: ../src/girl.c:183
 #, c-format
-#| msgid "Selected %s in %s: %s"
 msgid "Selected the previous radio station: %s in %s: %s"
 msgstr "Az előző rádióállomás kiválasztva: %s itt: %s: %s"
 
 #: ../src/girl.c:245
 #, c-format
-#| msgid "Selected %s in %s: %s"
 msgid "Selected the next radio station %s in %s: %s"
 msgstr "A következő rádióállomás kiválasztva: %s itt: %s: %s"
 
-#: ../src/girl.c:298
+#: ../src/girl.c:300
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "%s kiválasztva itt: %s: %s (%f)"
 
-#: ../src/girl.c:346
+#: ../src/girl.c:348
 #, c-format
 msgid "Selected %s in %s: %s"
 msgstr "%s kiválasztva itt: %s: %s"
 
-#: ../src/girl.c:393
+#: ../src/girl.c:395
 #, c-format
-#| msgid "Selected %s in %s: %s"
 msgid "Selected the radio station %s in %s: %s"
 msgstr "A rádióállomás kiválasztva: %s itt: %s: %s"
 
-#: ../src/girl.c:439
+#: ../src/girl.c:441
 #, c-format
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "Kiválasztva: %s [%s] [%s] [%s]"
 
-#: ../src/girl.c:504
+#: ../src/girl.c:506
+#| msgid ""
+#| "Marek Černocký <marek@manet.cz> (Czech translation)\n"
+#| "Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese "
+#| "translation)\n"
+#| "Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+#| "Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
+#| "Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
+#| "Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
+#| "Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
+#| "Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
+#| "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
 msgid ""
 "Marek Černocký <marek@manet.cz> (Czech translation)\n"
 "Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese translation)\n"
@@ -110,7 +115,13 @@ msgid ""
 "Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
 "Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
 "Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
-"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
+"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
+"Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
+"Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
+"Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
+"Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
+"Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
+"Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)"
 msgstr ""
 "Marek Černocký <marek@manet.cz> (cseh fordítás)\n"
 "Rafael Ferreira <rafael.f.f1@gmail.com> (brazíliai portugál fordítás)\n"
@@ -118,19 +129,25 @@ msgstr ""
 "Wolfgang Stöggl <c72578@yahoo.de> (német fordítás)\n"
 "Piotr Drąg <piotrdrag@gmail.com> (lengyel fordítás)\n"
 "Muhammet Kara <muhammetk@gmail.com> (török fordítás)\n"
-"Balázs Úr <urbalazs@gmail.com> (magyar fordítás)\n"
+"Úr Balázs <urbalazs@gmail.com> (magyar fordítás)\n"
 "Andika Triwidada <andika@gmail.com> (indonéz fordítás)\n"
-"Daniel Mustieles <daniel.mustieles@gmail.com> (spanyol fordítás)"
+"Daniel Mustieles <daniel.mustieles@gmail.com> (spanyol fordítás)\n"
+"Matej Urbančič <mateju@svn.gnome.org> (szlovén fordítás)\n"
+"Γιάννης Κουτσούκος <giankoyt@gmail.com> (görög fordítás)\n"
+"Efstathios Iosifidis <iosifidis@opensuse.org> (görög fordítás)\n"
+"Samir Ribić <megaribi@epn.ba> (bosnyák fordítás)\n"
+"Enrico Nicoletto <liverig@gmail.com> (brazíliai portugál fordítás)\n"
+"Sveinn í Felli <sv1@fellsnet.is> (izlandi fordítás)"
 
-#: ../src/girl.c:517
+#: ../src/girl.c:525
 msgid "Copyright (C) 2014, 2015  Ole Aamot Software"
 msgstr "Copyright © Aamot Software, 2014, 2015."
 
-#: ../src/girl.c:518
+#: ../src/girl.c:526
 msgid "See yelp://girl"
 msgstr "Lásd: yelp://girl"
 
-#: ../src/girl.c:525
+#: ../src/girl.c:535
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -152,38 +169,35 @@ msgstr ""
 "alkalmas-e a KÖZREADÁSRA vagy EGY BIZONYOS FELADAT ELVÉGZÉSÉRE. További "
 "részletekért tanulmányozza a GNU GPL licencet.\n"
 "A programhoz a GNU General Public License egy példánya is jár, ha nem kapta "
-"meg, írjon a Free Software Foundation Inc.-nek. Levélcímük: 59 Temple Place - "
-"Suite 330, Boston, MA 02111-1307, USA."
+"meg, írjon a Free Software Foundation Inc.-nek. Levélcímük: 59 Temple Place "
+"- Suite 330, Boston, MA 02111-1307, USA."
 
-#: ../src/girl.c:531
+#: ../src/girl.c:541
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Nem sikerült betölteni a GIRL logót: %s\n"
 
-#: ../src/girl.c:685
+#: ../src/girl.c:698
 msgid "Search radio station by location"
 msgstr "Rádióállomások keresése hely szerint"
 
 #. girl_stream_player(a, user_data);
-#: ../src/girl.c:694
+#: ../src/girl.c:707
 #, c-format
-#| msgid "Listening to %s in %s: %s "
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "A rádióállomás hallgatása: %s itt: %s: %s  "
 
-#: ../src/girl.c:716
+#: ../src/girl.c:729
 #, c-format
-#| msgid "Recording from %s in %s: %s "
 msgid "Recording from the radio station %s in %s: %s "
 msgstr "Rögzítés a rádióállomásból: %s itt: %s: %s "
 
-#: ../src/girl.c:751
+#: ../src/girl.c:764
 #, c-format
-#| msgid "Recording from %s in %s: %s "
 msgid "Finished recording from the radio station %s in %s: %s"
 msgstr "Rögzítés befejezve a rádióállomásból: %s itt: %s: %s"
 
-#: ../src/girl.c:765
+#: ../src/girl.c:778
 #, c-format
 msgid ""
 "To finish playing from the radio station %s in %s, exit the application "
@@ -192,7 +206,7 @@ msgstr ""
 "A lejátszás befejezéséhez a következő rádióállomásból: %s itt: %s, lépjen ki "
 "a Videók alkalmazásból."
 
-#: ../src/girl.c:775
+#: ../src/girl.c:788
 msgid ""
 "Stop what?  You can \"Search\" by location, select a radio station from "
 "\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
@@ -202,164 +216,157 @@ msgstr ""
 "„Állomásokból”, vagy kattintson a „Hallgatásra” és/vagy a „Rögzítésre”. Vagy "
 "ugorjon az „Előző” vagy „Következő” rádióállomásra."
 
-#: ../src/girl.c:815
+#: ../src/girl.c:828
 #, c-format
 msgid "Archiving %s"
 msgstr "%s archiválása"
 
 #: ../src/girl-gui.c:54
-msgid "Stations"
-msgstr "Állomások"
-
-#: ../src/girl-gui.c:54
-#| msgid "Locate Internet Radio Stations"
-msgid "Internet Radio Stations"
-msgstr "Internetes rádióállomások"
-
-#: ../src/girl-gui.c:58
 msgid "Search"
 msgstr "Keresés"
 
-#: ../src/girl-gui.c:58
+#: ../src/girl-gui.c:54
 msgid "Search by location for radio stations"
 msgstr "Rádióállomások keresése hely szerint"
 
-#: ../src/girl-gui.c:62
+#: ../src/girl-gui.c:58
 msgid "Listen"
 msgstr "Hallgatás"
 
-#: ../src/girl-gui.c:62
-#| msgid "Locate Internet Radio Stations"
+#: ../src/girl-gui.c:58
 msgid "Listen to selected radio station"
 msgstr "A kiválasztott rádióállomás hallgatása"
 
-#: ../src/girl-gui.c:66
+#: ../src/girl-gui.c:62
 msgid "Record"
 msgstr "Rögzítés"
 
-#: ../src/girl-gui.c:66
+#: ../src/girl-gui.c:62
 msgid "Record selected radio station"
 msgstr "A kiválasztott rádióállomás rögzítése"
 
-#: ../src/girl-gui.c:69
+#: ../src/girl-gui.c:65
 msgid "Stop"
 msgstr "Leállítás"
 
-#: ../src/girl-gui.c:69
+#: ../src/girl-gui.c:65
 msgid "Stop recording selected radio station"
 msgstr "A kiválasztott rádióállomás rögzítésének leállítása"
 
-#: ../src/girl-gui.c:74
+#: ../src/girl-gui.c:70
 msgid "Previous"
 msgstr "Előző"
 
-#: ../src/girl-gui.c:75
+#: ../src/girl-gui.c:71
 msgid "Go back to the previous radio station"
 msgstr "Ugrás vissza az előző rádióállomáshoz"
 
-#: ../src/girl-gui.c:77
+#: ../src/girl-gui.c:73
+msgid "Stations"
+msgstr "Állomások"
+
+#: ../src/girl-gui.c:73
+msgid "Internet Radio Stations"
+msgstr "Internetes rádióállomások"
+
+#: ../src/girl-gui.c:76
 msgid "Next"
 msgstr "Következő"
 
-#: ../src/girl-gui.c:77
-#| msgid "Locate Internet Radio Stations"
+#: ../src/girl-gui.c:76
 msgid "Proceed to the next radio station"
 msgstr "Folytatás a következő rádióállomással"
 
-#: ../src/girl-gui.c:80
+#: ../src/girl-gui.c:79
 msgid "About Station"
 msgstr "Az állomás névjegye"
 
-#: ../src/girl-gui.c:81
+#: ../src/girl-gui.c:80
 msgid "About the current Station"
 msgstr "A jelenlegi állomás névjegye"
 
-#: ../src/girl-gui.c:84
+#: ../src/girl-gui.c:83
 msgid "About Program"
 msgstr "A program névjegye"
 
-#: ../src/girl-gui.c:85
-#| msgid "GNOME Internet Radio Locator"
+#: ../src/girl-gui.c:84
 msgid "About the GNOME Internet Radio Locator"
 msgstr "A GNOME Internetes rádió felderítő névjegye"
 
-#: ../src/girl-gui.c:89
+#: ../src/girl-gui.c:88
 msgid "Exit"
 msgstr "Kilépés"
 
-#: ../src/girl-gui.c:90
-#| msgid "GNOME Internet Radio Locator"
+#: ../src/girl-gui.c:89
 msgid "Quit the GNOME Internet Radio Locator"
 msgstr "Kilépés a GNOME Internetes rádió felderítőből"
 
 #. The Listeners dialog
-#: ../src/girl-gui.c:119
+#: ../src/girl-gui.c:118
 msgid "Select a listener"
 msgstr "Hallgató kiválasztása"
 
-#: ../src/girl-gui.c:146
+#: ../src/girl-gui.c:145
 #, c-format
 msgid "Failed to open %s.  Please install it.\n"
 msgstr "Nem sikerült megnyitni: %s. Kérjük, telepítse.\n"
 
-#: ../src/girl-gui.c:156 ../src/girl-gui.c:658 ../src/girl-gui.c:802
+#: ../src/girl-gui.c:155 ../src/girl-gui.c:657 ../src/girl-gui.c:801
 #, c-format
-#| msgid "Failed to run %s (%i)\n"
 msgid "Failed to open %s\n"
 msgstr "Nem sikerült megnyitni: %s\n"
 
 #. The Programs dialog
-#: ../src/girl-gui.c:257
+#: ../src/girl-gui.c:256
 msgid "Select a program"
 msgstr "Program kiválasztása"
 
-#: ../src/girl-gui.c:288 ../src/girl-gui.c:298 ../src/girl-gui.c:475
-#: ../src/girl-gui.c:644 ../src/girl-gui.c:787
+#: ../src/girl-gui.c:287 ../src/girl-gui.c:297 ../src/girl-gui.c:474
+#: ../src/girl-gui.c:643 ../src/girl-gui.c:786
 #, c-format
-#| msgid "Failed to run %s (%i)\n"
 msgid "Failed to open %s.\n"
 msgstr "Nem sikerült megnyitni: %s.\n"
 
-#: ../src/girl-gui.c:402
+#: ../src/girl-gui.c:401
 #, c-format
 msgid "Your search by location resulted in the radio station %s in %s: %s"
 msgstr ""
-"A hely szerinti keresése a következő rádióállomásban adott eredményt: %s itt: "
-"%s: %s"
+"A hely szerinti keresése a következő rádióállomásban adott eredményt: %s "
+"itt: %s: %s"
 
 #. The Stations dialog
-#: ../src/girl-gui.c:433
+#: ../src/girl-gui.c:432
 msgid "Search by location"
 msgstr "Keresés hely szerint"
 
 #. The Stations dialog
-#: ../src/girl-gui.c:613
+#: ../src/girl-gui.c:612
 msgid "Select a station"
 msgstr "Állomás kiválasztása"
 
 #. The Streams dialog
-#: ../src/girl-gui.c:758
+#: ../src/girl-gui.c:757
 msgid "Select a stream"
 msgstr "Hangfolyam kiválasztása"
 
-#: ../src/girl-gui.c:889
+#: ../src/girl-gui.c:888
 #, c-format
 msgid "Selection cleared!\n"
 msgstr "Kijelölés törölve!\n"
 
-#: ../src/girl-gui.c:925
+#: ../src/girl-gui.c:924
 msgid "GIRL"
 msgstr "GIRL"
 
-#: ../src/girl-gui.c:927
+#: ../src/girl-gui.c:926
 msgid "GNOME Internet Radio Locator"
 msgstr "GNOME Internetes rádió felderítő"
 
-#: ../src/girl-gui.c:939
+#: ../src/girl-gui.c:938
 msgid "Couldn't create pixmap"
 msgstr "Nem sikerült létrehozni a képet"
 
-#: ../src/girl-gui.c:957
+#: ../src/girl-gui.c:956
 msgid ""
 "Search by location from \"Search\" or select a radio station from \"Stations"
 "\".  Click \"Listen\" to listen to, or \"Record\" to record from the station."
@@ -368,7 +375,7 @@ msgstr ""
 "„Állomásokból”. Kattintson a „Hallgatásra” a hallgatáshoz, vagy a "
 "„Rögzítésre” az állomás rögzítéséhez."
 
-#: ../src/girl-gui.c:960
+#: ../src/girl-gui.c:959
 msgid ""
 "Select a radio station from \"Stations\" and click \"Listen\" to listen to "
 "the station."
