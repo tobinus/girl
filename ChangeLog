@@ -1,3 +1,102 @@
+commit 9c0b065400019e8c80774f4273a2b28b4a2a336d
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:   Mon Jun 22 22:24:31 2015 +0000
+
+    Updated Hungarian translation
+
+ po/hu.po | 177 +++++++++++++++++++++++++++++++++------------------------------
+ 1 file changed, 92 insertions(+), 85 deletions(-)
+
+commit 639648a6a2644d23fd461b437312b282550e9b7e
+Author: Ole Aamot <oka@oka.no>
+Date:   Mon Jun 22 23:28:43 2015 +0200
+
+    Add documentation
+
+ ChangeLog                                        |   50 +
+ help/C.css                                       | 1191 ++++
+ help/C/C.css                                     | 1191 ++++
+ help/C/Makefile                                  |  845 +++
+ help/C/aboutprogram.html                         |   35 +
+ help/C/aboutprogram.page                         |   23 +
+ help/C/aboutstation.html                         |   38 +
+ help/C/aboutstation.page                         |   25 +
+ help/C/exit.page                                 |   28 +
+ help/C/fdl-appendix.xml                          |  668 ++
+ help/C/gnome-help.sct                            |   22 +
+ help/C/index.html                                |   70 +
+ help/C/index.page                                |   68 +
+ help/C/intro.html                                |   40 +
+ help/C/intro.page                                |   29 +
+ help/C/jquery.js                                 | 7179 ++++++++++++++++++++++
+ help/C/jquery.syntax.core.js                     | 1177 ++++
+ help/C/jquery.syntax.js                          |  317 +
+ help/C/jquery.syntax.layout.yelp.js              |    4 +
+ help/C/legal.xml                                 |    5 +
+ help/C/listen.html                               |   41 +
+ help/C/listen.page                               |   34 +
+ help/C/media/girl-aboutprogram.png               |  Bin 0 -> 2536 bytes
+ help/C/media/girl-aboutstation.png               |  Bin 0 -> 2326 bytes
+ help/C/media/girl-exit.png                       |  Bin 0 -> 1624 bytes
+ help/C/media/girl-listen.png                     |  Bin 0 -> 1506 bytes
+ help/C/media/girl-main.png                       |  Bin 0 -> 162426 bytes
+ help/C/media/girl-next-station.png               |  Bin 0 -> 1774 bytes
+ help/C/media/girl-prev-station.png               |  Bin 0 -> 2180 bytes
+ help/C/media/girl-record.png                     |  Bin 0 -> 1901 bytes
+ help/C/media/girl-search-station-by-location.png |  Bin 0 -> 12328 bytes
+ help/C/media/girl-select-station.png             |  Bin 0 -> 15706 bytes
+ help/C/media/girl-stations.png                   |  Bin 0 -> 2341 bytes
+ help/C/media/girl-stop.png                       |  Bin 0 -> 1330 bytes
+ help/C/next.html                                 |   40 +
+ help/C/next.page                                 |   33 +
+ help/C/prev.html                                 |   41 +
+ help/C/prev.page                                 |   35 +
+ help/C/record.html                               |   42 +
+ help/C/record.page                               |   41 +
+ help/C/search.html                               |   33 +
+ help/C/search.page                               |   28 +
+ help/C/stations.page                             |   26 +
+ help/C/version.xml                               |    1 +
+ help/C/version.xml.in                            |    1 +
+ help/C/yelp.js                                   |  518 ++
+ help/Makefile                                    |  608 ++
+ help/Makefile.am                                 |    6 +
+ help/Makefile.in                                 |  440 ++
+ help/aboutprogram.html                           |   35 +
+ help/aboutstation.html                           |   38 +
+ help/en_US/en_US.po                              |  284 +
+ help/en_US/fdl-appendix.xml                      |  668 ++
+ help/en_US/gnome-help.sct                        |   22 +
+ help/en_US/legal.xml                             |    3 +
+ help/exit.html                                   |   42 +
+ help/girl.pot                                    |  421 ++
+ help/index.html                                  |   70 +
+ help/intro.html                                  |   40 +
+ help/jquery.js                                   | 7179 ++++++++++++++++++++++
+ help/jquery.syntax.core.js                       | 1177 ++++
+ help/jquery.syntax.js                            |  317 +
+ help/jquery.syntax.layout.yelp.js                |    4 +
+ help/listen.html                                 |   47 +
+ help/media/girl-aboutprogram.png                 |  Bin 0 -> 2536 bytes
+ help/media/girl-aboutstation.png                 |  Bin 0 -> 2326 bytes
+ help/media/girl-exit.png                         |  Bin 0 -> 1624 bytes
+ help/media/girl-listen.png                       |  Bin 0 -> 1506 bytes
+ help/media/girl-main.png                         |  Bin 0 -> 162426 bytes
+ help/media/girl-next-station.png                 |  Bin 0 -> 1774 bytes
+ help/media/girl-prev-station.png                 |  Bin 0 -> 2180 bytes
+ help/media/girl-prev.png                         |  Bin 0 -> 2180 bytes
+ help/media/girl-record.png                       |  Bin 0 -> 1901 bytes
+ help/media/girl-search-station-by-location.png   |  Bin 0 -> 12328 bytes
+ help/media/girl-select-station.png               |  Bin 0 -> 15706 bytes
+ help/media/girl-stations.png                     |  Bin 0 -> 2341 bytes
+ help/media/girl-stop.png                         |  Bin 0 -> 1330 bytes
+ help/next.html                                   |   46 +
+ help/prev.html                                   |   47 +
+ help/record.html                                 |   52 +
+ help/search.html                                 |   39 +
+ help/yelp.js                                     |  518 ++
+ 82 files changed, 26022 insertions(+)
+
 commit c147099a5bbdb0c25cbafeb39b623fb42e2e2953
 Author: Daniel Mustieles <daniel.mustieles@gmail.com>
 Date:   Tue Jun 9 07:44:31 2015 +0000
