@@ -1,3 +1,53 @@
+commit c147099a5bbdb0c25cbafeb39b623fb42e2e2953
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:   Tue Jun 9 07:44:31 2015 +0000
+
+    Updated Spanish translation
+
+ po/es.po | 742 +++++++++++++++++++++++++++++++++++----------------------------
+ 1 file changed, 415 insertions(+), 327 deletions(-)
+
+commit a956645d4927971ac97c16589e16cf765e01f979
+Author: Marek Černocký <marek@manet.cz>
+Date:   Sun May 31 21:17:11 2015 +0200
+
+    Updated Czech translation
+
+ po/cs.po | 144 ++++++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 77 insertions(+), 67 deletions(-)
+
+commit 67cbaaa1f0e75df91bdace01e3fe8a09e3d18c3f
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sun May 31 18:29:01 2015 +0200
+
+    Updated Polish translation
+
+ po/pl.po | 143 ++++++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 78 insertions(+), 65 deletions(-)
+
+commit a81e58c0d46c21621a6520563433216e1dccb127
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sun May 31 18:26:34 2015 +0200
+
+    Fix translator credits
+
+ src/girl.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 8cdc8ee30c1c72c9175cf558d6437cdbe0d23868
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat May 30 13:24:30 2015 +0200
+
+    Add translator credits and update release.
+
+ ChangeLog        |  73 +++++++
+ girl.spec.in     |   3 +
+ src/Makefile.am  |   4 +-
+ src/Makefile.in  |   4 +-
+ src/girl.c       |  12 +-
+ src/stations.xml | 633 ++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 6 files changed, 721 insertions(+), 8 deletions(-)
+
 commit f4997aed0052685423dabb85fbdc83421b8872cb
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat May 30 12:58:01 2015 +0200
