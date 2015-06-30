@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="record" xml:lang="en-US">
+
+  <info>
+    <link type="guide" xref="index#main" group="#first"/>
+    <revision pkgversion="1.8" date="2015-03-14" status="candidate"/>
+    <credit type="author copyright">
+      <name>Ole Aamot</name>
+      <email>ole@src.gnome.org</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>    
+    <desc>Search for Internet radio stations by location.</desc>
+  </info>
+
+  <title>Record</title>
+
+  <p>It is possible to record from supported radio stations in <app>GIRL</app> if you have installed
+  the <app>streamripper</app> application.  You can download streamripper from <link href="http://streamripper.sf.net/">streamripper.sf.net</link>.</p>
+
+  <p>If you have installed streamripper on your computer, then you can record audio broadcasted from
+  any of the supported radio stations.</p>
+
+  <p>If you select the radio station from "Stations" and click on "Listen" in the <app>GIRL</app>
+  program after you listened to a radio station previously, and then click on "Record", the radio
+  station will be recorded and the recorded audio file will be stored in your home directory.</p>
+
+  <title>
+    <media type="image" mime="image/png" src="media/girl-record.png"/>
+    Record
+  </title>
+  
+  <p>If you want to stop the streamripper recording process of the radio station, click on "Stop".</p>
+
+  <title>
+    <media type="image" mime="image/png" src="media/girl-stop.png"/>
+    Stop
+  </title>
+  
+</page>

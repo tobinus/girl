@@ -1,3 +1,101 @@
+commit 9589d8b1c2d2767160c8a87e89e5debecc9604fe
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jun 23 00:41:30 2015 +0200
+
+    Add map.
+
+ src/girl-map.png | Bin 0 -> 225622 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4072c1987d111d2cced81ad5a2b11ee4e3c8395d
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jun 23 00:38:56 2015 +0200
+
+    Add timezone images.
+
+ ChangeLog                   |  99 ++++++++++++++++++++++++++++++++++++++++++++
+ data/timezone_-1.png        | Bin 0 -> 8012 bytes
+ data/timezone_-10.png       | Bin 0 -> 7783 bytes
+ data/timezone_-10_dim.png   | Bin 0 -> 5139 bytes
+ data/timezone_-11.png       | Bin 0 -> 8347 bytes
+ data/timezone_-11_dim.png   | Bin 0 -> 4815 bytes
+ data/timezone_-1_dim.png    | Bin 0 -> 4953 bytes
+ data/timezone_-2.png        | Bin 0 -> 4333 bytes
+ data/timezone_-2_dim.png    | Bin 0 -> 2670 bytes
+ data/timezone_-3.5.png      | Bin 0 -> 740 bytes
+ data/timezone_-3.5_dim.png  | Bin 0 -> 995 bytes
+ data/timezone_-3.png        | Bin 0 -> 13615 bytes
+ data/timezone_-3_dim.png    | Bin 0 -> 8773 bytes
+ data/timezone_-4.5.png      | Bin 0 -> 1900 bytes
+ data/timezone_-4.5_dim.png  | Bin 0 -> 1527 bytes
+ data/timezone_-4.png        | Bin 0 -> 15084 bytes
+ data/timezone_-4_dim.png    | Bin 0 -> 9836 bytes
+ data/timezone_-5.5.png      | Bin 0 -> 437 bytes
+ data/timezone_-5.5_dim.png  | Bin 0 -> 859 bytes
+ data/timezone_-5.png        | Bin 0 -> 19166 bytes
+ data/timezone_-5_dim.png    | Bin 0 -> 12224 bytes
+ data/timezone_-6.png        | Bin 0 -> 13764 bytes
+ data/timezone_-6_dim.png    | Bin 0 -> 8833 bytes
+ data/timezone_-7.png        | Bin 0 -> 11977 bytes
+ data/timezone_-7_dim.png    | Bin 0 -> 7868 bytes
+ data/timezone_-8.png        | Bin 0 -> 6801 bytes
+ data/timezone_-8_dim.png    | Bin 0 -> 4261 bytes
+ data/timezone_-9.5.png      | Bin 0 -> 437 bytes
+ data/timezone_-9.5_dim.png  | Bin 0 -> 859 bytes
+ data/timezone_-9.png        | Bin 0 -> 7908 bytes
+ data/timezone_-9_dim.png    | Bin 0 -> 4972 bytes
+ data/timezone_0.png         | Bin 0 -> 11074 bytes
+ data/timezone_0_dim.png     | Bin 0 -> 7074 bytes
+ data/timezone_1.png         | Bin 0 -> 15458 bytes
+ data/timezone_10.5.png      | Bin 0 -> 421 bytes
+ data/timezone_10.5_dim.png  | Bin 0 -> 844 bytes
+ data/timezone_10.png        | Bin 0 -> 12829 bytes
+ data/timezone_10_dim.png    | Bin 0 -> 8395 bytes
+ data/timezone_11.5.png      | Bin 0 -> 446 bytes
+ data/timezone_11.5_dim.png  | Bin 0 -> 868 bytes
+ data/timezone_11.png        | Bin 0 -> 12113 bytes
+ data/timezone_11_dim.png    | Bin 0 -> 6744 bytes
+ data/timezone_12.75.png     | Bin 0 -> 409 bytes
+ data/timezone_12.75_dim.png | Bin 0 -> 846 bytes
+ data/timezone_12.png        | Bin 0 -> 7130 bytes
+ data/timezone_12_dim.png    | Bin 0 -> 3935 bytes
+ data/timezone_13.png        | Bin 0 -> 621 bytes
+ data/timezone_13_dim.png    | Bin 0 -> 876 bytes
+ data/timezone_14.png        | Bin 0 -> 7722 bytes
+ data/timezone_14_dim.png    | Bin 0 -> 4150 bytes
+ data/timezone_1_dim.png     | Bin 0 -> 10187 bytes
+ data/timezone_2.png         | Bin 0 -> 12854 bytes
+ data/timezone_2_dim.png     | Bin 0 -> 8709 bytes
+ data/timezone_3.5.png       | Bin 0 -> 2142 bytes
+ data/timezone_3.5_dim.png   | Bin 0 -> 1781 bytes
+ data/timezone_3.png         | Bin 0 -> 17475 bytes
+ data/timezone_3_dim.png     | Bin 0 -> 9877 bytes
+ data/timezone_4.5.png       | Bin 0 -> 1773 bytes
+ data/timezone_4.5_dim.png   | Bin 0 -> 1385 bytes
+ data/timezone_4.png         | Bin 0 -> 4954 bytes
+ data/timezone_4_dim.png     | Bin 0 -> 2754 bytes
+ data/timezone_5.5.png       | Bin 0 -> 6099 bytes
+ data/timezone_5.5_dim.png   | Bin 0 -> 3405 bytes
+ data/timezone_5.75.png      | Bin 0 -> 2885 bytes
+ data/timezone_5.75_dim.png  | Bin 0 -> 1596 bytes
+ data/timezone_5.png         | Bin 0 -> 14539 bytes
+ data/timezone_5_dim.png     | Bin 0 -> 8117 bytes
+ data/timezone_6.5.png       | Bin 0 -> 1609 bytes
+ data/timezone_6.5_dim.png   | Bin 0 -> 1675 bytes
+ data/timezone_6.png         | Bin 0 -> 8441 bytes
+ data/timezone_6_dim.png     | Bin 0 -> 4678 bytes
+ data/timezone_7.png         | Bin 0 -> 14412 bytes
+ data/timezone_7_dim.png     | Bin 0 -> 7972 bytes
+ data/timezone_8.75.png      | Bin 0 -> 13993 bytes
+ data/timezone_8.75_dim.png  | Bin 0 -> 7064 bytes
+ data/timezone_8.png         | Bin 0 -> 16050 bytes
+ data/timezone_8_dim.png     | Bin 0 -> 9378 bytes
+ data/timezone_9.5.png       | Bin 0 -> 1959 bytes
+ data/timezone_9.5_dim.png   | Bin 0 -> 1611 bytes
+ data/timezone_9.png         | Bin 0 -> 12608 bytes
+ data/timezone_9_dim.png     | Bin 0 -> 8383 bytes
+ 81 files changed, 99 insertions(+)
+
 commit 9c0b065400019e8c80774f4273a2b28b4a2a336d
 Author: Balázs Úr <urbalazs@gmail.com>
 Date:   Mon Jun 22 22:24:31 2015 +0000
