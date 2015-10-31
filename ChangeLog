@@ -1,3 +1,67 @@
+commit 944a4d22cd0f90b6f66db80bd9ff415e689e188e
+Author: Igor Gnatenko <ignatenko@src.gnome.org>
+Date:   Mon Aug 3 13:06:41 2015 +0300
+
+    trivial: update FSF address
+    
+    Reported-by: Anders Jonsson <anders.jonsson@norsjovallen.se>
+    Reference: https://bugzilla.gnome.org/show_bug.cgi?id=753044
+    Signed-off-by: Igor Gnatenko <ignatenko@src.gnome.org>
+
+ src/girl-canvas.c       | 2 +-
+ src/girl-canvas.h       | 2 +-
+ src/girl-gui.c          | 2 +-
+ src/girl-listener.c     | 2 +-
+ src/girl-listener.h     | 2 +-
+ src/girl-program.c      | 2 +-
+ src/girl-program.h      | 2 +-
+ src/girl-runners.c      | 2 +-
+ src/girl-runners.h      | 2 +-
+ src/girl-station.c      | 2 +-
+ src/girl-station.h      | 2 +-
+ src/girl-stations-map.c | 2 +-
+ src/girl-stations-map.h | 2 +-
+ src/girl-streams.c      | 2 +-
+ src/girl-streams.h      | 2 +-
+ src/girl-tz.c           | 2 +-
+ src/girl-tz.h           | 2 +-
+ src/girl.c              | 4 ++--
+ src/girl.h              | 2 +-
+ 19 files changed, 20 insertions(+), 20 deletions(-)
+
+commit 255459b00b2e20ed593b9cf716bb487563ef6d46
+Author: Josef Andersson <josef.andersson@gmail.com>
+Date:   Thu Jul 16 00:15:16 2015 +0000
+
+    Added Swedish translation
+
+ po/LINGUAS |   1 +
+ po/sv.po   | 445 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 446 insertions(+)
+
+commit ccd7d72c693078b56795c4bca52f5c9bda2de67d
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jun 30 23:34:38 2015 +0200
+
+    GNOME Internet Radio Locator version 6.0.0
+
+ ChangeLog                    |  98 +++++++++++++++++++++++++++++++++++++++++++
+ help/Makefile                |  56 ++++++++++++-------------
+ help/en_US/aboutprogram.page |  22 ++++++++++
+ help/en_US/aboutstation.page |  24 +++++++++++
+ help/en_US/en_US.mo          | Bin 0 -> 344 bytes
+ help/en_US/en_US.stamp       |   0
+ help/en_US/exit.page         |  27 ++++++++++++
+ help/en_US/index.page        |  65 ++++++++++++++++++++++++++++
+ help/en_US/intro.page        |  28 +++++++++++++
+ help/en_US/listen.page       |  33 +++++++++++++++
+ help/en_US/next.page         |  32 ++++++++++++++
+ help/en_US/prev.page         |  34 +++++++++++++++
+ help/en_US/record.page       |  40 ++++++++++++++++++
+ help/en_US/search.page       |  27 ++++++++++++
+ help/en_US/stations.page     |  25 +++++++++++
+ 15 files changed, 483 insertions(+), 28 deletions(-)
+
 commit 9589d8b1c2d2767160c8a87e89e5debecc9604fe
 Author: Ole Aamot <oka@oka.no>
 Date:   Tue Jun 23 00:41:30 2015 +0200

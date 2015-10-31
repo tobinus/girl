@@ -31,7 +31,7 @@
 
   <section id="search" style="2column">
     <title>Search</title>
-    <p><link xref="intro">Search</link> for radio stations by location.</p>
+    <p><link xref="search">Search</link> for radio stations by location.</p>
   </section>
 
   <section id="listen" style="2column">

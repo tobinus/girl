@@ -700,10 +700,6 @@ void on_search_button_clicked(GtkWidget *a, gpointer user_data)
 
 void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 {
-
-
-	/* girl_stream_player(a, user_data); */
-
 	appbar_send_msg(_("Listening to the radio station %s in %s: %s "),
 			girl->selected_station_name,
 			girl->selected_station_location,
@@ -714,7 +710,6 @@ void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 			girl->selected_station_name,
 			GIRL_STREAM_SHOUTCAST,
 			GIRL_STREAM_PLAYER);
-
 }
 
 void on_record_button_clicked(GtkWidget *a, gpointer user_data)
@@ -731,6 +726,7 @@ void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 				girl->selected_station_location,
 				girl->selected_station_uri,
 				girl->selected_station_band);
+		
 		girl_helper_run(girl->selected_station_uri,
 				girl->selected_station_name,
 				GIRL_STREAM_SHOUTCAST,
@@ -830,78 +826,6 @@ girl_archive_progress_callback(GnomeVFSXferProgressInfo * info, gpointer data)
 	return TRUE;
 }
 
-gint girl_archive_new(GPid *pid, gchar *file)
+gint girl_archive_new(gchar *title, gchar *file)
 {
-#if 0
-	const gchar *temp;
-	FILE *fh;
-	gchar *buf[64];
-	gchar *archive;
-	gchar* stat_path;
-	gchar exec_name[16];
-	struct stat *statobj = g_new(struct stat, 1);
-	
-	snprintf(buf, 64, "/proc/%i/fd", pid);
-
-	archive = g_dir_open(buf, 0, NULL);
-	printf("%s\n", g_dir_read_name (archive));
-
-	while((temp = g_dir_read_name(archive)))
-	{
-		pid = atoi(temp);
-		if (!pid)
-			continue;
-		// /proc/{pid}/stat contains lots of juicy info
-		stat_path = g_strdup_printf("/proc/%d/stat", pid);
-		fh = fopen(stat_path, "r");
-		if (!fh)
-		{
-			g_free(stat_path);
-			continue;
-		}
-		pid = fscanf(fh, "%*d (%15[^)]", exec_name);
-		fclose(fh);
-		if (!g_str_equal(exec_name, "streamripper"))
-		{
-			g_free(stat_path);
-			continue;
-		}
-		//get uid/owner of stat file by using fstat()
-		g_stat(stat_path, statobj);
-		g_free(stat_path);
-		//compare uid/owner of stat file (in g_stat->st_uid) to getuid();
-		if (statobj->st_uid == getuid())
-		{
-			//this copy of streamripper was started by us
-			g_dir_close(archive);
-			g_free(statobj);
-			return TRUE;
-		}
-	}
-	
-	g_dir_close(archive);
-
-	/* GnomeVFSURI *src_uri, *dest_uri; */
-	/* GnomeVFSResult result; */
-	/* GnomeVFSXferOptions xfer_options; */
-
-	/* xfer_options = GNOME_VFS_XFER_DEFAULT; */
-
-	/* src_uri = gnome_vfs_uri_new(src); */
-	/* dest_uri = gnome_vfs_uri_new(dest); */
-
-	/* result = gnome_vfs_xfer_uri(src_uri, */
-	/* 			    dest_uri, */
-	/* 			    xfer_options, */
-	/* 			    GNOME_VFS_XFER_ERROR_MODE_QUERY, */
-	/* 			    GNOME_VFS_XFER_OVERWRITE_MODE_REPLACE, */
-	/* 			    girl_archive_progress_callback, src); */
-
-	/* gnome_vfs_uri_unref(src_uri); */
-
-	/* if (result != GNOME_VFS_OK) */
-	/* 	return NULL; */
-
-	/* return dest_uri; */
-#endif
 }

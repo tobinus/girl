@@ -70,6 +70,9 @@ void statusbar_send_msg(const char *a, ...);
 
 gchar *copy_to_mem(GnomeVFSURI * uri, GnomeVFSFileSize len);
 
+void appbar_send_msg(const char *a, ...);
+gint girl_archive_new(gchar *title, gchar *file);
+
 /* Fetcher for the channels */
 
 void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType girl);

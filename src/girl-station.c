@@ -342,7 +342,7 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		girl->record_pid = pid;
 		girl->record_status = GIRL_RECORD_TRUE;
 
-		girl_archive_new(pid, "archive.mp3");
+		girl_archive_new("Archive", "archive.mp3");
 				
 		/* Install timeout fnction that will move the progress bar */
 		girl->timeout_id = g_timeout_add(100,(GSourceFunc)cb_timeout,girl);

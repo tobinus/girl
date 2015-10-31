@@ -1,4 +1,52 @@
 =============
+Version 6.1.0
+=============
+
+AppData
+
+	* data/girl.appdata.xml: Add new <name> and <summary> tags.
+
+Sources
+
+	* src/girl-canvas.c: update FSF address (Bugzilla #753044)
+	* src/girl-canvas.h: update FSF address (Bugzilla #753044)
+	* src/girl-gui.c: update FSF address (Bugzilla #753044)
+	* src/girl-listener.c: update FSF address (Bugzilla #753044)
+	* src/girl-listener.h: update FSF address (Bugzilla #753044)
+	* src/girl-program.c: update FSF address (Bugzilla #753044)
+	* src/girl-program.h: update FSF address (Bugzilla #753044)
+	* src/girl-runners.c: update FSF address (Bugzilla #753044)
+	* src/girl-runners.h: update FSF address (Bugzilla #753044)
+	* src/girl-station.c: update FSF address (Bugzilla #753044)
+	* src/girl-station.h: update FSF address (Bugzilla #753044)
+	* src/girl-stations-map.c: update FSF address (Bugzilla #753044)
+	* src/girl-stations-map.h: update FSF address (Bugzilla #753044)
+	* src/girl-streams.c: update FSF address (Bugzilla #753044)
+	* src/girl-streams.h: update FSF address (Bugzilla #753044)
+	* src/girl-tz.c: update FSF address (Bugzilla #753044)
+	* src/girl-tz.h: update FSF address (Bugzilla #753044)
+	* src/girl.c: update FSF address (Bugzilla #753044)
+	* src/girl.h: update FSF address (Bugzilla #753044)
+
+Translations
+
+	* po/sv.po: New Swedish translation by Anders Jonsson
+
+=============
+Version 6.0.0
+=============
+
+Stations
+
+	* src/girl.xml: Add RÚV (Reykjavik, Iceland)
+	* src/girl.xml: Add Radio AF (Lund, Sweden)
+
+Translations
+
+	* po/is.po: New Icelandic translation by Sveinn í Felli.
+	* po/hu.po: Updated Hungarian translation by Balázs Úr.
+
+=============
 Version 5.0.0
 =============
 

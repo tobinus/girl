@@ -1,4 +1,55 @@
 ==============
+GIRL 6.1 notes
+==============
+
+GNOME Internet Radio Locator (GIRL) 6.1.0 is now available in 15
+languages and supports 73 Internet radio stations in 69 different
+world cities such as Adelaide, Auckland, Austin, Ayr, Berkeley, Bern,
+Boston, Brighton, Brno, Bruxelles, Budapest, Calgary, Cambridge, Cape
+Town, Chapel Hill, Chicago, Cleveland, Coimbra, Copenhagen, Dublin,
+Guatemala City, Honolulu, Houston, Kingston, Leeds, London, Long
+Island, Los Angeles, Lund, Manchester, Memphis, México City,
+Nashville, Newcastle, New Orleans, New York City, Nottingham, Oslo,
+Oswego, Ottawa, Oxford, Paris, Phoenix, Pisa, Pittsburgh, Portland,
+Reykjavik, Rochester, San Francisco, Seattle, Stockholm, Sydney,
+Trondheim, Tuscaloosa, Washington, Waterloo, York, and Zürich.
+
+21 people have contributed to the GIRL program with new patches and
+translations.  See girl-6.1.0/AUTHORS for the list of contributors.
+
+If you find the program useful, drop me an email at ole@src.gnome.org.
+The GIRL program is completely free, but you don't have to do anything
+else than run it on your computer with a free operating system in
+order to listen to and record from Internet radio stations.  You are
+also free to fork it as long as you follow the license terms in GNU
+GPL version 2, but I would appreciate if you send patches instead of
+releasing your own version.
+
+Send patches through Bugzilla on
+https://bugzilla.gnome.org/enter_bug.cgi?product=girl
+
+You could install and run GIRL on free GNU/Linux systems (such as
+Debian GNU/Linux available from http://www.debian.org/ and Fedora
+Linux available from https://getfedora.org/ with the provided binary
+packages) and MacOS X (via macports.org) in order to listen to and
+record from the 73 supported Internet radio stations around the world
+if you have installed the Videos application
+(https://wiki.gnome.org/Apps/Videos) from the GNOME project.
+
+This program is released as a part of the GNOME project
+(http://www.gnome.org/) and is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.  This program is
+distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.  You should have received a copy of the GNU General
+Public License along with this program; if not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301 USA
+
+==============
 GIRL 5.0 notes
 ==============
 
