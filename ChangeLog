@@ -1,3 +1,179 @@
+commit a81defd83166396ae41c8207d6f024c2fde6dec5
+Merge: 475b1b1 38842f9
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Oct 31 20:44:47 2015 +0100
+
+    Merge branch 'master' of ssh://git.gnome.org/git/girl
+
+commit 475b1b1696ac4c3efdbe3f0a4e064bc302ce0533
+Author: Ole Aamot <oka@oka.no>
+Date:   Sat Oct 31 20:44:31 2015 +0100
+
+    GIRL 6.1.0
+
+ AUTHORS                        |   1 +
+ ChangeLog                      |  64 ++++++++++++++++++++++++
+ NEWS                           |  48 ++++++++++++++++++
+ README                         |  51 +++++++++++++++++++
+ THANKS                         |   2 +
+ autogen.sh                     |   2 +-
+ compile                        |   2 +-
+ configure                      | 109 ++++++++++++++---------------------------
+ configure.ac                   |   8 +--
+ data/Makefile.in               |  23 ++++++---
+ data/girl.appdata.xml.in       |   2 +
+ data/icons/16x16/Makefile.in   |  24 ++++++---
+ data/icons/22x22/Makefile.in   |  24 ++++++---
+ data/icons/24x24/Makefile.in   |  24 ++++++---
+ data/icons/256x256/Makefile.in |  24 ++++++---
+ data/icons/32x32/Makefile.in   |  24 ++++++---
+ data/icons/48x48/Makefile.in   |  24 ++++++---
+ data/icons/Makefile.in         |  22 +++++++--
+ data/pixmaps/Makefile.in       |  22 +++++++--
+ girl.spec.in                   |   3 ++
+ help/C/index.page              |   2 +-
+ help/C/prev.page               |  49 +++++++++---------
+ help/Makefile                  |  40 +++++++++------
+ help/Makefile.am               |   2 +-
+ help/Makefile.in               |  24 ++++++---
+ help/en_US/index.page          |   2 +-
+ help/en_US/legal.xml           |   2 +
+ help/en_US/prev.page           |  48 +++++++++---------
+ po/POTFILES.in                 |   6 ++-
+ po/POTFILES.skip               |   3 +-
+ src/Makefile.in                |  23 ++++++---
+ src/girl-station.c             |   2 +-
+ src/girl.c                     |  80 +-----------------------------
+ src/girl.h                     |   3 ++
+ 34 files changed, 498 insertions(+), 291 deletions(-)
+
+commit 38842f95b3a42662911eeee5d1bb86ab873391c4
+Author: Marek Černocký <marek@manet.cz>
+Date:   Fri Oct 30 09:19:36 2015 +0100
+
+    Added Czech language
+
+ help/Makefile.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 89e6c8bbc487581ae98be97221fd73dc1cb222f8
+Author: Marek Černocký <marek@manet.cz>
+Date:   Fri Oct 30 09:19:31 2015 +0100
+
+    Added Czech language
+
+ help/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bab9204138d50aba5cc2df9e670abf3e1a1e8892
+Author: Marek Černocký <marek@manet.cz>
+Date:   Fri Oct 30 09:19:26 2015 +0100
+
+    Added Czech language
+
+ help/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ffd086adca43c1a6fae0c86bfdd2b76806d24c6d
+Author: Marek Černocký <marek@manet.cz>
+Date:   Fri Oct 30 09:19:09 2015 +0100
+
+    Czech translation
+
+ help/cs/cs.po | 583 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 583 insertions(+)
+
+commit ee9be3575384b36437e51ff1ddf173321e29d660
+Author: Marek Černocký <marek@manet.cz>
+Date:   Fri Oct 30 08:53:31 2015 +0100
+
+    Use tag <key>
+
+ help/C/search.page | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c84511487b678604be5809d689b20b7acadee60e
+Author: Marek Černocký <marek@manet.cz>
+Date:   Fri Oct 30 08:53:02 2015 +0100
+
+    Updated Czech translation
+
+ po/cs.po | 32 ++++++++++++++++----------------
+ 1 file changed, 16 insertions(+), 16 deletions(-)
+
+commit 5a712e9a26072b37ff7bf2764320ae3ce4defbb5
+Author: Marek Černocký <marek@manet.cz>
+Date:   Mon Oct 12 15:37:30 2015 +0200
+
+    Updated Czech translation
+
+ po/cs.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 1293fef495bb912bc092c119bba9dd721b6d9066
+Author: Rafael Fontenelle <rffontenelle@gmail.com>
+Date:   Mon Oct 5 20:47:04 2015 +0000
+
+    Updated Brazilian Portuguese translation
+
+ po/pt_BR.po | 156 ++++++++++++++++++++++++++++++++----------------------------
+ 1 file changed, 84 insertions(+), 72 deletions(-)
+
+commit 5ecc99f6571e5419e8c59e57ce9792e40086735a
+Author: Pedro Albuquerque <palbuquerque73@gmail.com>
+Date:   Fri Sep 18 05:36:53 2015 +0000
+
+    Added Portuguese translation
+
+ po/LINGUAS |   1 +
+ po/pt.po   | 417 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 418 insertions(+)
+
+commit cf988f32a8e2ea986bae595a30e6ed2d0da37d4d
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Thu Sep 3 01:34:12 2015 +0200
+
+    Updated Polish translation
+
+ po/pl.po | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+commit 6e4277ee646f02607e09a191b4d4ccb17e080a59
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:   Mon Aug 31 16:12:29 2015 +0000
+
+    Updated Hungarian translation
+
+ po/hu.po | 35 ++++++++++++++++++-----------------
+ 1 file changed, 18 insertions(+), 17 deletions(-)
+
+commit 4642a87a0f0f0431f63ea8a1ed16197a955a0a35
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:   Tue Aug 25 12:56:33 2015 +0200
+
+    Updated Spanish translation
+
+ po/es.po | 26 +++++++++++++++++++-------
+ 1 file changed, 19 insertions(+), 7 deletions(-)
+
+commit 309cc2df47fcb4c901eb5be4abbe662e463bd0d0
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:   Sun Aug 16 21:56:10 2015 +0000
+
+    Updated Swedish translation
+
+ po/sv.po | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 21128497634f39533ca8ffa8fc58213db8efc35d
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sat Aug 8 23:51:18 2015 +0200
+
+    Updated Polish translation
+
+ po/pl.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
 commit 944a4d22cd0f90b6f66db80bd9ff415e689e188e
 Author: Igor Gnatenko <ignatenko@src.gnome.org>
 Date:   Mon Aug 3 13:06:41 2015 +0300

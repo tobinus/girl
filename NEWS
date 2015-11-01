@@ -6,6 +6,12 @@ AppData
 
 	* data/girl.appdata.xml: Add new <name> and <summary> tags.
 
+Documentation
+
+	* help/C/search.page: Use tag <key> (Marek Černocký)
+	* help/Makefile.am: Add Czech language (Marek Černocký)
+	* help/cs/cs.po: Add Czech language (Marek Černocký)
+
 Sources
 
 	* src/girl-canvas.c: update FSF address (Bugzilla #753044)
@@ -30,6 +36,12 @@ Sources
 
 Translations
 
+	* po/cs.po: Updated Czech translation by Marek Černocký
+	* po/es.po: Updated Spanish translation by Daniel Mustieles
+	* po/hu.po: Updated Hungarian translation by Balázs Úr
+	* po/pl.po: Updated Polish translation by Piotr Drąg
+	* po/pt.po: New Portuguese translation by Pedro Albuquerquexs
+	* po/pt_BR.po: Updated Brazilian Portuguese translation by Rafael Fontenelle
 	* po/sv.po: New Swedish translation by Anders Jonsson
 
 =============
