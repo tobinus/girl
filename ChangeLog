@@ -1,3 +1,12 @@
+commit 57b4b7e0a3f6f71eed237d9e9d5e6c852817da9d
+Author: Ole Aamot <oka@oka.no>
+Date:   Wed Nov 11 19:06:18 2015 +0100
+
+    Misc.
+
+ ChangeLog | 34 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
+
 commit 4abcffdebbce92375f91ee2625828e9f81e7a6a3
 Author: Ole Aamot <oka@oka.no>
 Date:   Wed Nov 11 19:02:18 2015 +0100
