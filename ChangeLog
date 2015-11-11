@@ -1,11 +1,26 @@
-commit a81defd83166396ae41c8207d6f024c2fde6dec5
-Merge: 475b1b1 38842f9
+commit 5a3240db299995343df82fe0400de4df0746470c
 Author: Ole Aamot <oka@oka.no>
-Date:   Sat Oct 31 20:44:47 2015 +0100
+Date:   Sun Nov 1 17:20:34 2015 +0100
 
-    Merge branch 'master' of ssh://git.gnome.org/git/girl
+    GIRL 6.1.0 changes
 
-commit 475b1b1696ac4c3efdbe3f0a4e064bc302ce0533
+ AUTHORS                            |   1 +
+ ChangeLog                          | 176 +++++++++++++++++++++++++++++++++++++
+ NEWS                               |  12 +++
+ data/icons/1024x1024/apps/girl.png | Bin 91311 -> 189386 bytes
+ data/icons/16x16/apps/girl.png     | Bin 744 -> 825 bytes
+ data/icons/22x22/apps/girl.png     | Bin 1052 -> 1309 bytes
+ data/icons/24x24/apps/girl.png     | Bin 1087 -> 1448 bytes
+ data/icons/256x256/apps/girl.png   | Bin 14492 -> 34036 bytes
+ data/icons/32x32/apps/girl.png     | Bin 1401 -> 2154 bytes
+ data/icons/48x48/apps/girl.png     | Bin 2153 -> 3766 bytes
+ data/icons/512x512/apps/girl.png   | Bin 39039 -> 81370 bytes
+ help/Makefile                      |  20 ++---
+ help/en_US/search.page             |   2 +-
+ src/girl.png                       | Bin 2988 -> 3766 bytes
+ 14 files changed, 200 insertions(+), 11 deletions(-)
+
+commit f7996b0dab3641d4dbbe76a3c6af30ed38696875
 Author: Ole Aamot <oka@oka.no>
 Date:   Sat Oct 31 20:44:31 2015 +0100
 

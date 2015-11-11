@@ -91,7 +91,7 @@ YELP_HELP_INIT
 AC_OUTPUT([
 Makefile
 data/Makefile
-data/girl.desktop.in
+data/girl.desktop
 data/pixmaps/Makefile
 data/icons/Makefile
 data/icons/16x16/Makefile

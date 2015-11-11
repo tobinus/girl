@@ -95,7 +95,7 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = girl.desktop.in
+CONFIG_CLEAN_FILES = girl.desktop
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -181,7 +181,7 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 DIST_SUBDIRS = $(SUBDIRS)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/girl.desktop.in.in
+am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/girl.desktop.in
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 am__relativize = \
   dir0=`pwd`; \
@@ -493,7 +493,7 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-girl.desktop.in: $(top_builddir)/config.status $(srcdir)/girl.desktop.in.in
+girl.desktop: $(top_builddir)/config.status $(srcdir)/girl.desktop.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 install-appdataDATA: $(appdata_DATA)
 	@$(NORMAL_INSTALL)

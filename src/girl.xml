@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-5.0.dtd">
-<girl version="5.0">
+<!DOCTYPE girl SYSTEM "girl-6.0.dtd">
+<girl version="6.1">
   <station band="" id="radiouniversidad" lang="en" name="Radio Universidad" rank="1.0" type="edu">
     <frequency uri="http://radiou.usac.edu.gt/">92.1 FM in Guatemala City, </frequency>
     <location>Guatemala City, Guatemala</location>
