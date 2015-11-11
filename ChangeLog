@@ -1,3 +1,37 @@
+commit 4abcffdebbce92375f91ee2625828e9f81e7a6a3
+Author: Ole Aamot <oka@oka.no>
+Date:   Wed Nov 11 19:02:18 2015 +0100
+
+    Misc. changes.
+
+ ChangeLog        | 31 +++++++++++++++++++++++--------
+ configure        |  4 ++--
+ configure.ac     |  2 +-
+ data/Makefile.in |  6 +++---
+ help/Makefile    | 20 ++++++++++----------
+ po/POTFILES.in   |  1 +
+ src/girl.xml     |  4 ++--
+ 7 files changed, 42 insertions(+), 26 deletions(-)
+
+commit 3666bfc9a675d94df5981a92901ca5a81a6aa18a
+Author: Marek Černocký <marek@manet.cz>
+Date:   Tue Nov 3 14:51:03 2015 +0100
+
+    Updated Czech translation
+
+ help/cs/cs.po | 49 ++++++++++++++++++++++++++++++++++++-------------
+ 1 file changed, 36 insertions(+), 13 deletions(-)
+
+commit 9eafb3a0a3ddad61be79533aea9b0a551c141f96
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:   Sun Nov 1 18:48:42 2015 +0100
+
+    Updated POTFILES.in and POTFILES.skip
+
+ po/POTFILES.in   | 3 ---
+ po/POTFILES.skip | 2 +-
+ 2 files changed, 1 insertion(+), 4 deletions(-)
+
 commit 5a3240db299995343df82fe0400de4df0746470c
 Author: Ole Aamot <oka@oka.no>
 Date:   Sun Nov 1 17:20:34 2015 +0100
