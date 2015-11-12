@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
-"POT-Creation-Date: 2015-11-01 16:21+0000\n"
-"PO-Revision-Date: 2015-11-03 14:21+0100\n"
+"POT-Creation-Date: 2015-11-03 13:51+0000\n"
+"PO-Revision-Date: 2015-11-12 16:37+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -290,6 +290,10 @@ msgid ""
 "a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, "
 "California, 94041, USA."
 msgstr ""
+"Toto dílo je licencováno pod Creative Commons Attribution-ShareAlike 3.0 "
+"Unported License. Na znění licence se můžete podívat na <_:link-1/> nebo "
+"zašlete žádost na Creative Commons, 444 Castro Street, Suite 900, Mountain "
+"View, California, 94041, USA."
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
