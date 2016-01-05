@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://people.gnome.org/~ole/girl/girl.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
 <!DOCTYPE girl SYSTEM "girl-7.0.dtd">
 <girl version="7.0">
   <station band="94.1FM" id="narvikstudentradio" lang="nb" name="Narvik Studentradio" rank="1.0" type="edu">

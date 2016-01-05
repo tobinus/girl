@@ -1,3 +1,40 @@
+commit d66a6f89bc102826084ad51a606d9d8d56759646
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jan 5 23:38:57 2016 +0100
+
+    GIRL version information in DNS TXT record
+
+ VERSION | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 7c02a39e597c8e38b3672624b40b7df3c928bf92
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jan 5 23:32:48 2016 +0100
+
+    Add GIRL 7.0 DTD
+
+ src/girl-7.0.dtd | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+commit 5402359306b6e5df977e9994e66dc5e4fbbcd046
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jan 5 23:31:34 2016 +0100
+
+    Add girl.desktop.in
+
+ ChangeLog            | 69 ++++++++++++++++++++++++++--------------------------
+ data/girl.desktop.in | 18 ++++++++++++++
+ 2 files changed, 52 insertions(+), 35 deletions(-)
+
+commit d4ed3e4525ce5c44e406ce36f00fbccfcc087592
+Author: Ole Aamot <oka@oka.no>
+Date:   Tue Jan 5 23:24:06 2016 +0100
+
+    Rebase 7.0 tree
+
+ help/Makefile | 620 ----------------------------------------------------------
+ 1 file changed, 620 deletions(-)
+
 commit 72c6449205724fea9d4c38ee03796a8a653cec5d
 Author: Ole Aamot <oka@oka.no>
 Date:   Tue Jan 5 21:54:10 2016 +0100
