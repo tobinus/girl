@@ -3,9 +3,9 @@ Name: @PACKAGE@
 Version: @VERSION@
 Release: 1%{?dist}
 License: GPLv2+
-URL: http://www.ping.uio.no/~oka/src/girl/
+URL: http://people.gnome.org/~ole/girl/
 Group: Applications/Internet
-Source: http://www.ping.uio.no/~oka/src/girl/@PACKAGE@-@VERSION@.tar.xz
+Source: http://people.gnome.org/~ole/girl/@PACKAGE@-@VERSION@.tar.xz
 BuildRequires: gtk2-devel
 BuildRequires: libgnome-devel
 BuildRequires: libxml2-devel
@@ -68,6 +68,9 @@ fi
 %{_datadir}/help/*/%{name}/*
 
 %changelog
+* Sun Jan 03 2016 Ole Aamot - 7.0.0-1.fc23
+- Girl 7.0.0 build on Fedora Linux 23
+
 * Sat Aug 08 2015 Ole Aamot - 6.1.0-1.fc21
 - Girl 6.1.0 build on Fedora Linux 21
 

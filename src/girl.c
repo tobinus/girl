@@ -517,13 +517,17 @@ void about_app(GtkWidget * a, gpointer user_data)
 					"Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
 					"Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
 					"Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
-					"Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)"));
+					"Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)\n"
+					"Josef Andersson <josef.andersson@gmail.com> (Swedish translation)\n"
+					"Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
+					"Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"));
 	gchar* artists[] = { "Wiki Graphic Designer",
 			     "Aly Raj",
+			     "Mathilde Agostini",
 			     NULL };
 	gchar* comments = { _("Locate Internet Radio Stations") };
-	gchar* copyright = { _("Copyright (C) 2014, 2015  Ole Aamot Software") };
-	gchar* documenters[] = { _("See yelp://girl"), NULL };
+	gchar* copyright = { _("Copyright (C) 2014, 2015, 2016  Ole Aamot Software") };
+	gchar* documenters[] = { _("Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"), _("Marek Černocký <marek@manet.cz> (Czech translation)"), NULL };
 
 	static GdkPixbuf* logo;
 

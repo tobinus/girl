@@ -1,4 +1,34 @@
 =============
+Version 7.0.0
+=============
+
+Documentation
+
+	* help/de/de.po: Add German language translation (Mario Blättermann)
+
+Icons
+	* data/icons/16x16/apps/girl.png: Add new icon (Mathilde Agostini)
+	* data/icons/22x22/apps/girl.png: Add new icon (Mathilde Agostini)
+	* data/icons/24x24/apps/girl.png: Add new icon (Mathilde Agostini)
+	* data/icons/32x32/apps/girl.png: Add new icon (Mathilde Agostini)
+	* data/icons/48x48/apps/girl.png: Add new icon (Mathilde Agostini)
+	* data/icons/128x128/apps/girl.png: Add new icon (Mathilde Agostini)
+	* data/icons/256x256/apps/girl.png: Add new icon (Mathilde Agostini)
+	* data/icons/512x512/apps/girl.png: Add new icon (Mathilde Agostini)
+	* data/icons/1024x1024/apps/girl.png: Add new icon (Mathilde Agostini)
+
+Stations
+
+	* src/girl.xml: Add Narvik Studentradio (Narvik, Norway)
+	* src/girl.xml: Add Radio Campus & City (St. Pölten, Austria)
+
+Translations
+
+	* po/cs.po: Updated Czech translation (Marek Černocký)
+	* po/sr.po: Updated Serbian translation (Мирослав Николић)
+	* po/sr@latin.po: Updated Serbian translation (Miroslav Nikolić)
+
+=============
 Version 6.1.0
 =============
 

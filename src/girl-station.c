@@ -269,7 +269,9 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		out_ch = g_io_channel_unix_new( out );
 		err_ch = g_io_channel_unix_new( error );
 #endif
-		/* Add watches to channels */
+		*/
+
+                /* Add watches to channels */
 		g_io_add_watch( out_ch, G_IO_IN | G_IO_HUP, (GIOFunc)cb_out_watch, girl );
 		g_io_add_watch( err_ch, G_IO_IN | G_IO_HUP, (GIOFunc)cb_err_watch, girl );
 		/* Install timeout fnction that will move the progress bar */

@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(girl, 6.1.0)
+AC_INIT(girl, 7.0.0)
 AM_INIT_AUTOMAKE([no-dist-gzip dist-xz])
 AC_CONFIG_SRCDIR([src/girl.c])
 AC_CONFIG_HEADER([config.h])
@@ -91,7 +91,7 @@ YELP_HELP_INIT
 AC_OUTPUT([
 Makefile
 data/Makefile
-data/girl.desktop.in
+data/girl.desktop
 data/pixmaps/Makefile
 data/icons/Makefile
 data/icons/16x16/Makefile

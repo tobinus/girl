@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://www.ping.uio.no/~oka/src/girl/girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-5.0.dtd">
-<girl version="5.0">
+<?xml-stylesheet type="text/xsl" href="http://people.gnome.org/~ole/girl/girl.xsl" ?>
+<!DOCTYPE girl SYSTEM "girl-7.0.dtd">
+<girl version="7.0">
+  <station band="94.1FM" id="narvikstudentradio" lang="nb" name="Narvik Studentradio" rank="1.0" type="edu">
+    <frequency uri="https://nsr.samfunnet.no/">94.1 FM in Narvik, Norway</frequency>
+    <location>Narvik, Norway</location>
+    <description lang="nb">
+      Narvik Studentradio is the oldest legal local radio station.
+      
+      The station launched in December 1972, is affiliated with the
+      University College of Narvik, and transmits via the FM band in
+      the Narvik area as well as on the Internet.
+    </description>
+    <stream mime="audio/ogg" uri="http://stream.sysrq.no:8000/00-nsr.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
+    <uri>https://nsr.samfunnet.no/</uri>
+  </station>
+  <station band="94.4FM" id="campusandcityradio" lang="de-AT" name="Campus &amp; City Radio" rank="1.0" type="edu">
+    <frequency uri="http://www.campusradio.at/">94.4 FM in St. Pölten, Austria</frequency>
+    <location>St. Pölten, Austria</location>
+    <description lang="de-AT">
+      24 Stunden lang Beiträge von Studierenden der FH St. Pölten, von RadiomacherInnen aus St. Pölten und Umgebung, Beiträge der freien Radios Österreichs und Musik aus allen Genres.
+    </description>
+    <stream mime="audio/mpeg" uri="http://www.cr944.at:8000/cr944-high.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
+    <uri>http://www.campusradio.at/</uri>
+  </station>    
   <station band="" id="radiouniversidad" lang="en" name="Radio Universidad" rank="1.0" type="edu">
-    <frequency uri="http://radiou.usac.edu.gt/">92.1 FM in Guatemala City, </frequency>
+    <frequency uri="http://radiou.usac.edu.gt/">92.1 FM in Guatemala City, Guatemala</frequency>
     <location>Guatemala City, Guatemala</location>
     <description lang="es">
       Radio universidad obtiene su frecuencia en 1990 y sale al aire por primera vez en octubre de 1991 bajo la coor dinación del periodista David Grajeda. Su potencia era solamente de 300 vatios, lo cual no le permitía una gran proyección. En esta primera época cubría cuatro horas, programando de 8:00 a 12:00 horas. Operaba en el segundo nivel del Edificio de Bienestar Estudiantil en la ciudad universitaria, zona 12. El 29 de enero de 1992 se traslada a las instalaciones del Centro Cultural Universitario en la 2ª. Avenida 12-40 de la zona 1, y un día después, queda oficialmente inaugurada. Sus operaciones iniciaron con una donación de equipo del Gobierno de España que permitió instalar un transmisor con 1 kilovatio de potencia ampliando su cobertura un poco más allá del área metropolitana. Desde 1994 se cuenta con un transmisor de 10 kilovatios que le permite tener una cobertura de más de 200 kms. Alrededor de la capital del país. Posteriormente se realizan las gestiones para instalar una antena de transmisión desde el Cerro Alux, arrendándose durante algún tiempo espacio en la torre de Radio Rumbos. Se iniciaron trámites para contar con un terreno propio, ante la carencia de espacio en el Cerro. En 1998 se suscribe un contrato de arrendamiento con la Municipalidad de San Lucas Sacatepéquez y se procede a la construcción y acondicionamiento de una modesta cabina con su respectiva guardianía. En el año 2001 se construyen en el Cerro Alux las nuevas instalaciones para los aparatos de transmisión y espacio para planta eléctrica de emergencia. En el año 2005, a través de gestiones realizadas con la fundación “Aracalacana”, adquiere nuevo equipo para el apoyo de la producción y la transmisión por control remoto. Se instituye la automatización computarizada para la transmisión de radio. Dos años después se establecen como actividades rutinarias las transmisiones en directo de actividades grandes como la Huelga de Dolores, la celebración de la Autonomía Universitaria y la Fundación de la Universidad, los partidos de fútbol del equipo universitario, entre otros acontecimientos de alta trascendencia nacional y académica. A partir del año 2009, se comienzan a realizar las primeras transmisiones vía internet, desde puntos externos a la cabina de transmisión, alcanzando con éxito la primera transmisión con sonido de mejor definición desde el Campus Universitario a mediados del año 2010, entrando de esta manera, a una nueva etapa tecnológica para la transmisión por radio.
