@@ -1,9 +1,37 @@
-commit fe1e790fe6066b616f8d0f329073b8e7d1f4028c
-Merge: f0eb98f 7847cdb
+commit 72c6449205724fea9d4c38ee03796a8a653cec5d
 Author: Ole Aamot <oka@oka.no>
-Date:   Sun Jan 3 18:45:57 2016 +0100
+Date:   Tue Jan 5 21:54:10 2016 +0100
 
-    Merge branch 'master' of ssh://git.gnome.org/git/girl
+    GNOME Internet Radio Locator (GIRL) version 7.0.0
+
+ AUTHORS                            |   8 ++-
+ BROADCAST                          |   4 +-
+ ChangeLog                          | 107 +++++++++++++++++++++++++--
+ HACKING                            |  19 +++--
+ NEWS                               |  30 ++++++++
+ README                             | 143 ++++++++++++++++++++++++++++++++++++-
+ THANKS                             |   6 +-
+ configure                          |  24 +++----
+ configure.ac                       |   4 +-
+ data/Makefile.in                   |   6 +-
+ data/icons/1024x1024/apps/girl.png | Bin 189386 -> 100115 bytes
+ data/icons/16x16/apps/girl.png     | Bin 825 -> 747 bytes
+ data/icons/22x22/apps/girl.png     | Bin 1309 -> 998 bytes
+ data/icons/24x24/apps/girl.png     | Bin 1448 -> 1118 bytes
+ data/icons/256x256/apps/girl.png   | Bin 34036 -> 16693 bytes
+ data/icons/32x32/apps/girl.png     | Bin 2154 -> 1431 bytes
+ data/icons/48x48/apps/girl.png     | Bin 3766 -> 2290 bytes
+ data/icons/512x512/apps/girl.png   | Bin 81370 -> 39550 bytes
+ girl.spec.in                       |   7 +-
+ help/Makefile                      |  22 +++---
+ help/Makefile.in                   |   2 +-
+ src/Makefile.am                    |   4 +-
+ src/Makefile.in                    |   4 +-
+ src/girl-station.c                 |   4 +-
+ src/girl.c                         |  10 ++-
+ src/girl.png                       | Bin 3766 -> 7209 bytes
+ src/girl.xml                       |  30 ++++++--
+ 27 files changed, 376 insertions(+), 58 deletions(-)
 
 commit 7847cdb81ff75ffb8e91416e09d9d99b5fe98981
 Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
@@ -25,13 +53,6 @@ Date:   Mon Dec 28 12:48:44 2015 +0100
  help/de/de.po    | 515 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
  2 files changed, 516 insertions(+), 1 deletion(-)
 
-commit f0eb98f08634d8cff650aabcd653a350dd146c90
-Merge: 4c365dc 0356762
-Author: Ole Aamot <oka@oka.no>
-Date:   Sat Dec 12 15:11:50 2015 +0100
-
-    Merge branch 'master' of ssh://git.gnome.org/git/girl
-
 commit 035676222636f168229b3acf2e07c8fd3d3d1ad8
 Author: Marek Černocký <marek@manet.cz>
 Date:   Thu Nov 12 16:39:19 2015 +0100
@@ -40,28 +61,6 @@ Date:   Thu Nov 12 16:39:19 2015 +0100
 
  help/cs/cs.po | 8 ++++++--
  1 file changed, 6 insertions(+), 2 deletions(-)
-
-commit 4c365dc71f81e062a60de9d49ff832054e3d4c5d
-Merge: e95a3d3 3666bfc
-Author: Ole Aamot <oka@oka.no>
-Date:   Wed Nov 11 19:00:39 2015 +0100
-
-    Merge branch 'master' of ssh://git.gnome.org/git/girl
-
-commit e95a3d378450b0c4de9a298f745da3587a5d4359
-Author: Ole Aamot <oka@oka.no>
-Date:   Wed Nov 11 18:59:46 2015 +0100
-
-    Misc. changes.
-
- ChangeLog        | 31 +++++++++++++++++++++++--------
- configure        |  4 ++--
- configure.ac     |  2 +-
- data/Makefile.in |  6 +++---
- help/Makefile    | 20 ++++++++++----------
- po/POTFILES.in   |  2 --
- src/girl.xml     |  4 ++--
- 7 files changed, 41 insertions(+), 28 deletions(-)
 
 commit 3666bfc9a675d94df5981a92901ca5a81a6aa18a
 Author: Marek Černocký <marek@manet.cz>
