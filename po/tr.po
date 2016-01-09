@@ -1,24 +1,24 @@
 # Turkish translation for girl.
 # Copyright (C) 2014 girl's COPYRIGHT HOLDER
 # This file is distributed under the same license as the girl package.
-# Muhammet Kara <muhammetk@gmail.com>, 2014, 2015.
 # İşbaran Akçayır <isbaran@gmail.com>, 2015.
+# Muhammet Kara <muhammetk@gmail.com>, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-01-05 20:55+0000\n"
-"PO-Revision-Date: 2015-03-13 08:40+0000\n"
-"Last-Translator: İşbaran Akçayır <isbaran@gmail.com>\n"
+"POT-Creation-Date: 2016-01-09 19:20+0000\n"
+"PO-Revision-Date: 2016-01-09 21:31+0200\n"
+"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.5.1.1\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-POOTLE-MTIME: 1426236024.000000\n"
 
 #: ../data/girl.appdata.xml.in.h:1
@@ -320,20 +320,37 @@ msgid ""
 "Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
 "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
 msgstr ""
+"Marek Černocký <marek@manet.cz> (Çekçe çeviri)\n"
+"Rafael Ferreira <rafael.f.f1@gmail.com> (Brezilya Portekizcesi çeviri)\n"
+"Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Sırpça çeviri)\n"
+"Wolfgang Stöggl <c72578@yahoo.de> (Almanca çeviri)\n"
+"Piotr Drąg <piotrdrag@gmail.com> (Polonyaca çeviri)\n"
+"Muhammet Kara <muhammetk@gmail.com> (Türkçe çeviri)\n"
+"Balázs Úr <urbalazs@gmail.com> (Macarca çeviri)\n"
+"Andika Triwidada <andika@gmail.com> (Endonezce çeviri)\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com> (İspanyolca çeviri)\n"
+"Matej Urbančič <mateju@svn.gnome.org> (Slovence çeviri)\n"
+"Γιάννης Κουτσούκος <giankoyt@gmail.com> (Yunanca çeviri)\n"
+"Efstathios Iosifidis <iosifidis@opensuse.org> (Yunanca çeviri)\n"
+"Samir Ribić <megaribi@epn.ba> (Boşnakça çeviri)\n"
+"Enrico Nicoletto <liverig@gmail.com> (Brezilya Portekizcesi çeviri)\n"
+"Sveinn í Felli <sv1@fellsnet.is> (İzlandaca çeviri)\n"
+"Josef Andersson <josef.andersson@gmail.com> (İsveççe çeviri)\n"
+"Pedro Albuquerque <palbuquerque73@gmail.com> (Portekizce çeviri)\n"
+"Mario Blättermann <mario.blaettermann@gmail.com> (Almanca çeviri)\n"
 
 #: ../src/girl.c:529
-#, fuzzy
 #| msgid "Copyright (C) 2014, 2015  Ole Aamot Software"
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
-msgstr "Telif hakkı (C) 2014, 2015  Ole Aamot Yazılım"
+msgstr "Telif Hakkı (C) 2014, 2015, 2016  Ole Aamot Software"
 
 #: ../src/girl.c:530
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
-msgstr ""
+msgstr "Mario Blättermann <mario.blaettermann@gmail.com> (Almanca çeviri)"
 
 #: ../src/girl.c:530
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
-msgstr ""
+msgstr "Marek Černocký <marek@manet.cz> (Çekçe çeviri)"
 
 #: ../src/girl.c:539
 msgid ""
@@ -349,6 +366,15 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
 msgstr ""
+"Bu program özgür yazılımdır; Free Software Foundation tarafınca yayınlanmış "
+"GNU Genel Kamu Lisansı ikinci sürüm ya da (seçiminize istinaden) sonraki bir "
+"sürüm şartlarınca değiştirilebilir ve dağıtılabilir.\n"
+"Bu program kullanışlı olması maksadıyla dağıtılmaktadır, ancak HİÇBİR "
+"GARANTİSİ YOKTUR; aynı zamanda BİR AMACA UYGUNLUĞU ya da SATILABİLİRLİĞİ "
+"garanti etmez. Daha fazla ayrıntı için GNU Genel Kamu Lisansını inceleyin.\n"
+"GNU Genel Kamu Lisansı'nın bir kopyasını bu program ile almış olmalısınız; "
+"eğer almadıysanız the Free Software Foundation, Inc., 51 Franklin Street, "
+"Fifth Floor, Boston, MA 02110-1301 USA adresine yazın."
 
 #: ../src/girl.c:545
 #, c-format
@@ -375,7 +401,7 @@ msgid "Finished recording from the radio station %s in %s: %s"
 msgstr "%s / %s: %s radyo istasyonundan kayıt bitti"
 
 #: ../src/girl.c:778
-#, fuzzy, c-format
+#, c-format
 #| msgid ""
 #| "To finish playing from the radio station %s in %s: %s, simply exit the "
 #| "application Videos."
@@ -383,8 +409,8 @@ msgid ""
 "To finish playing from the radio station %s in %s, exit the application "
 "Videos."
 msgstr ""
-"%s / %s: %s radyo istasyonundan oynatmayı bitirmek için, basitçe Video "
-"uygulamasından çıkın."
+"%s / %s radyo istasyonundan oynatmayı bitirmek için, Videolar uygulamasından "
+"çıkın."
 
 #: ../src/girl.c:788
 msgid ""
