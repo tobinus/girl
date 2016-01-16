@@ -1,4 +1,13 @@
 =============
+Version 8.0.0
+=============
+
+Stations
+
+	* src/girl.xml: Add WNYC (New York City, NY)
+	* src/girl-gui.c: New default station: New York Public Radio (WNYC)
+
+=============
 Version 7.0.0
 =============
 

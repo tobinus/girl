@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2014, 2015  Ole Aamot Software
+ * Copyright (C) 2014, 2015, 2016  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -41,7 +41,6 @@
 /* #include <libgnome/gnome-desktop-item.h> */
 #include <gtk/gtk.h>
 #include <glib/gstdio.h>
-
 #include "girl.h"
 #include "girl-gui.h"
 #include "girl-program.h"
@@ -1003,6 +1002,15 @@ GtkWidget *create_girl_app()
 	girl->selected_station_description =
 	    gnome_config_get_string("selected_station_description=");
 
+	girl->selected_station_name =
+	    gnome_config_get_string("selected_station_name=");
+	girl->selected_station_location =
+	    gnome_config_get_string("selected_station_location=");
+	girl->selected_station_band =
+	    gnome_config_get_string("selected_station_band=");
+	girl->selected_station_description =
+	    gnome_config_get_string("selected_station_description=");
+
 	GIRL_DEBUG_MSG("girl->selected_station_uri: %s\n",
 	       girl->selected_station_uri);
 	GIRL_DEBUG_MSG("girl->selected_station_name: %s\n",
@@ -1013,6 +1021,22 @@ GtkWidget *create_girl_app()
 	       girl->selected_station_band);
 	GIRL_DEBUG_MSG("girl->selected_station_description: %s\n",
 	       girl->selected_station_description);
+
+	if (strcmp(girl->selected_station_uri,"")==0) {
+		girl->selected_station_uri = g_strdup("http://www.wnyc.org/stream/wnyc-fm939/mp3.pls");
+	}
+	if (strcmp(girl->selected_station_name,"")==0) {
+		girl->selected_station_name = g_strdup("WNYC");
+	}
+	if (strcmp(girl->selected_station_location,"")==0) {
+		girl->selected_station_location = g_strdup("New York City, NY");
+	}
+	if (strcmp(girl->selected_station_band,"")==0) {
+		girl->selected_station_band = g_strdup("ONLINE");
+	}
+	if (strcmp(girl->selected_station_description,"")==0) {
+		girl->selected_station_description = g_strdup("WNYC 93.9 FM and AM 820 are New York's flagship public radio stations, broadcasting the finest programs from NPR, American Public Media, Public Radio International and the BBC World Service, as well as a wide range of award-winning local programming.");
+	}
 
 	girl->selected_streams_uri =
 		gnome_config_get_string("selected_streams_uri=");

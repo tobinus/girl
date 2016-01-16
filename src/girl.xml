@@ -651,4 +651,13 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <stream mime="audio/mpeg" uri="http://wmbr.org/WMBR_live_128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wmbr.org/</uri>
   </station>
+  <station band="93.9FM" id="wnyc" lang="en" name="WNYC" rank="1.0" type="org">
+    <frequency uri="http://www.wnyc.org/">93.9 FM in New York City, NY</frequency>
+    <location>New York City, NY</location>
+    <description lang="en">
+      WNYC 93.9 FM and AM 820 are New York's flagship public radio stations, broadcasting the finest programs from NPR, American Public Media, Public Radio International and the BBC World Service, as well as a wide range of award-winning local programming.
+    </description>
+    <stream mime="audio/mpeg" uri="http://www.wnyc.org/stream/wnyc-fm939/mp3.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="24000 Hz" channels="Mono" bitrate="32 kbps" />
+    <uri>http://www.wnyc.org/</uri>
+  </station>
 </girl>

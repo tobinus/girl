@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(girl, 7.0.0)
+AC_INIT(girl, 8.0.0)
 AM_INIT_AUTOMAKE([no-dist-gzip dist-xz])
 AC_CONFIG_SRCDIR([src/girl.c])
 AC_CONFIG_HEADER([config.h])
@@ -49,12 +49,13 @@ AC_SUBST([HAVE_GIRL_RECORD])
 AC_CHECK_LIB(m, pow, [], [], [])
 
 PKG_CHECK_MODULES(GIRL,
-                  gtk+-2.0 >= 2.0 \
+		  gtk+-2.0 >= 2.0 \
 		  glib-2.0 >= 2.0 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
 		  gnome-vfs-2.0 >= 2.0)
+
 GIRL_PKG_DEPS="gtk+-2.0, glib-2.0, libgnome-2.0, libgnomeui-2.0, libxml-2.0, gnome-vfs-2.0"
 
 GTK_DOC_CHECK([1.16], [--flavour no-tmpl])

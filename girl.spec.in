@@ -68,6 +68,9 @@ fi
 %{_datadir}/help/*/%{name}/*
 
 %changelog
+* Sat Jan 16 2016 Ole Aamot - 8.0.0-1.fc23
+- Girl 8.0.0 build on Fedora Linux 23
+
 * Sun Jan 03 2016 Ole Aamot - 7.0.0-1.fc23
 - Girl 7.0.0 build on Fedora Linux 23
 
