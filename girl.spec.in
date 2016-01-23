@@ -1,21 +1,23 @@
-Summary: GNOME Internet Radio Locator program
-Name: @PACKAGE@
-Version: @VERSION@
-Release: 1%{?dist}
-License: GPLv2+
-URL: http://people.gnome.org/~ole/girl/
-Group: Applications/Internet
-Source: http://people.gnome.org/~ole/girl/@PACKAGE@-@VERSION@.tar.xz
-BuildRequires: gtk2-devel
-BuildRequires: libgnome-devel
-BuildRequires: libxml2-devel
-BuildRequires: gnome-vfs2-devel
-BuildRequires: libgnomeui-devel
-BuildRequires: intltool
-BuildRequires: libappstream-glib
-BuildRequires: desktop-file-utils
-Requires: totem >= 3.10.1
-Requires: streamripper >= 1.64.6
+Name:           @PACKAGE@
+Version:        @VERSION@
+Release:        1%{?dist}
+Summary:        GNOME Internet Radio Locator program
+License:        GPLv2+
+URL:            http://people.gnome.org/~ole/girl
+Group:          Applications/Internet
+Source:         http://people.gnome.org/~ole/%{name}/%{name}-%{version}.tar.xz
+
+BuildRequires:  gtk2-devel
+BuildRequires:  libgnome-devel
+BuildRequires:  libxml2-devel
+BuildRequires:  gnome-vfs2-devel
+BuildRequires:  libgnomeui-devel
+BuildRequires:  intltool
+BuildRequires:  itstool
+BuildRequires:  libappstream-glib
+BuildRequires:  desktop-file-utils
+Requires:       totem >= 3.10.1
+Requires:       streamripper >= 1.64.6
 
 %description
 GIRL is a GNOME Internet Radio Locator program that allows the user
@@ -39,8 +41,8 @@ Enjoy Internet Radio.
 %find_lang %{name} --with-man
 
 %check
-appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/girl.appdata.xml
-desktop-file-validate %{buildroot}/%{_datadir}/applications/girl.desktop
+appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/%{name}.appdata.xml
+desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 %post
 /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
@@ -65,9 +67,13 @@ fi
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_mandir}/man1/%{name}.1*
-%{_datadir}/help/*/%{name}/*
+%{_datadir}/help/*/%{name}
 
 %changelog
+* Sun Jan 17 2016 Ole Aamot - 8.0.1-1.fc23
+- Cleanup
+- Rebuild
+
 * Sat Jan 16 2016 Ole Aamot - 8.0.0-1.fc23
 - Girl 8.0.0 build on Fedora Linux 23
 

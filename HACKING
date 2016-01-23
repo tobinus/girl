@@ -27,7 +27,7 @@ https://mail.gnome.org/archives/girl-list/ for mailing list archives.
 Any contribution is welcome and always credited in AUTHORS and THANKS.
 
 To enable debugging messages, modifiy the CC compilation definition flag
-from -DGIRL_DEBUG=0 to -DGIRL_DEBUG=1 in src/Makefile.am allthough it is
+from -DGIRL_DEBUG=1 to -DGIRL_DEBUG=0 in src/Makefile.am allthough it is
 not be necessary, only if you want to debug personal station definitions
 in $HOME/.girl/girl.xml
 

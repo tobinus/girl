@@ -1,4 +1,157 @@
 ==============
+GIRL 8.0 notes
+==============
+
+GNOME Internet Radio Locator 8.0.0 is now available in 17 languages
+and supports 76 Internet radio stations in 60 different world cities
+such as Adelaide, Auckland, Austin, Ayr, Berkeley, Bern, Boston,
+Brighton, Brno, Bruxelles, Budapest, Calgary, Cambridge, Cape Town,
+Chapel Hill, Chicago, Cleveland, Coimbra, Copenhagen, Dublin,
+Guatemala City, Honolulu, Houston, Kingston, Leeds, London, Long
+Island, Los Angeles, Lund, Manchester, Memphis, México City, Narvik,
+Nashville, Newcastle, New Orleans, New York City, Nottingham, Oslo,
+Oswego, Ottawa, Oxford, Paris, Phoenix, Pisa, Pittsburgh, Portland,
+Reykjavik, Rochester, San Francisco, Seattle, Stockholm, St. Pölten,
+Sydney, Trondheim, Tuscaloosa, Washington, Waterloo, York, and Zürich.
+
+The initial work on this program began in 2002 at Norwegian Computing
+Center (http://www.nr.no/) and PING, a computer club at University of
+Oslo (http://www.ping.uio.no/).  Work on GIRL continued in 2014 after
+a visit to SIPB (http://sipb.mit.edu/) at MIT, reached version 1.0 in
+2015, and continues in 2016.
+
+To enable debugging messages, modifiy the compilation definition flag
+from -DGIRL_DEBUG=1 to -DGIRL_DEBUG=0 in src/Makefile.am, if you want
+to debug your own personal station definitions in $HOME/.girl/girl.xml
+
+See src/girl.xml (or ${PREFIX}/share/girl/girl.xml where PREFIX is the
+install path specified as ./configure --prefix=${PREFIX}, see INSTALL)
+for the GIRL radio station format in XML.
+
+24 people have contributed to the program with new patches and
+translations.  See AUTHORS for the list of contributors.
+
+If you find the program useful, drop me an email at ole@src.gnome.org.
+
+The program is completely free, but you don't have to do anything
+else than run it on your computer with a free operating system in
+order to listen to and record from Internet radio stations.  You are
+also free to fork it as long as you follow the license terms in GNU
+GPL version 2, but I would appreciate if you send patches instead of
+releasing your own version.
+
+Send patches through Bugzilla on
+https://bugzilla.gnome.org/enter_bug.cgi?product=girl
+
+You could install and run it on free GNU/Linux systems (such as
+Debian GNU/Linux available from http://www.debian.org/ and Fedora
+Linux available from https://getfedora.org/ with the provided binary
+packages) and MacOS X (via macports.org) in order to listen to and
+record from the 76 supported Internet radio stations around the
+world if you have installed the Videos application
+(https://wiki.gnome.org/Apps/Videos) from the GNOME project, simply
+by opening a terminal window (such as xterm, kterm, rxvt or GNOME
+Terminal) and typing
+
+     wget http://download.gnome.org/sources/girl/8.0/girl-8.0.0.tar.xz
+     tar Jxvf girl-8.0.0.tar.xz
+     cd girl-8.0.0/
+     ./configure --prefix=$HOME/local && make && make install
+     $HOME/local/bin/girl
+
+or install it from a binary package on a Debian-based distribution
+
+     su -
+     wget https://people.gnome.org/~ole/girl/girl_8.0.0-1_i386.deb
+     dpkg -i girl_8.0.0-1_i386.deb
+     exit
+     /usr/bin/girl
+
+or install it from a binary package on a Fedora-based distribution
+
+     su -
+     rpm -i https://people.gnome.org/~ole/girl/girl-8.0.0-1.fc23.x86_64.rpm
+     exit
+     /usr/bin/girl
+
+This program is released as a part of the GNOME project
+(http://www.gnome.org/) and is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.  This program is
+distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.  You should have received a copy of the GNU General
+Public License along with this program; if not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301 USA
+
+
+Changes since GNOME Internet Radio Locator 7.0.0:
+
+Stations
+
+        * src/girl.xml: Add WNYC (New York City, NY)
+	* src/girl-gui.c: New default station: New York Public Radio (WNYC)
+
+Translations
+
+        * po/pl.po: Updated Polish translation (Piotr Drąg)
+        * po/tr.po: Updated Turkish translation (Muhammet Kara)
+        * po/tr.po: Updated Turkish translation (Necdet Yücel)
+
+Source
+
+http://download.gnome.org/sources/girl/8.0/girl-8.0.0.tar.xz
+
+Source repository
+git://git.gnome.org/girl
+https://git.gnome.org/browse/girl
+ssh://USERNAME@git.gnome.org/git/girl
+
+Translation status
+https://l10n.gnome.org/module/girl/
+
+Translators are as always welcome to translate the software to a new
+language.
+
+Authors
+Ole Aamot (Maintainer)
+Marek Černocký (Czech translation)
+Rafael Ferreira (Brazilian Portuguese translation)
+Мирослав Николић/Miroslav Nikolić (Serbian translation)
+Wolfgang Stöggl (German translation)
+Piotr Drąg (Polish translation)
+Muhammet Kara (Turkish translation)
+Balázs Úr (Hungarian translation)
+Wiki Graphic Designer (Icon design)
+Aly Raj (Icon design)
+Andika Triwidada (Indonesian translation)
+Γιάννης Κουτσούκος/Efstathios Iosifidis (Greek translation)
+Matej Urbančič (Slovenian translation)
+Samir Ribić (Bosnian translation)
+Daniel Mustieles (Spanish translation)
+Sveinn í Felli (Icelandic translation)
+Anders Jonsson (Swedish translation)
+Pedro Albuquerque (Portuguese translation)
+Mario Blättermann (German translation)
+Mathilde Agostini (Icon design)
+Necdet Yücel (Turkish translation)
+
+You are welcome to add personal radio stations in $HOME/.girl/girl.xml
+(see src/girl.xml for the syntax) and translations to new languages,
+and submit suggestions for improvements in Bugzilla on
+https://bugzilla.gnome.org/enter_bug.cgi?product=girl
+
+Thanks to all who contributed stations/patches/translations in the 8.0
+release!
+
+Enjoy Internet radio,
+Ole
+
+
+==============
 GIRL 7.0 notes
 ==============
 

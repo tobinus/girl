@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-7.0.dtd">
-<girl version="7.0">
+<!DOCTYPE girl SYSTEM "girl-8.0.dtd">
+<girl version="8.0">
+  <station band="96.4FM" id="srib" lang="nb" name="Studentradioen i Bergen" rank="1.0" type="edu">
+    <frequency uri="http://srib.no/">96.4 FM in Bergen, Norway</frequency>
+    <location>Bergen, Norway</location>
+    <description lang="en">
+Bergen Student Radio was founded in 1982, and is the oldest local radio in Bergen. Every week Bergen Student Radio broadcasts 119 hours of commercial free radio, with live shows every day from 7am – 2pm, and both live shows, replays and podcasts in the evening from 9pm.
+
+Bergen Student Radio strives to be an alternative to commercial and state-run radio channels, and the radio station is run by around 160 volunteer students.
+    </description>
+    <stream mime="audio/mpeg" uri="http://radio.srib.no:8888/srib.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Stereo" bitrate="64 kbps" />
+    <uri>http://srib.no/</uri>
+  </station>
   <station band="94.1FM" id="narvikstudentradio" lang="nb" name="Narvik Studentradio" rank="1.0" type="edu">
     <frequency uri="https://nsr.samfunnet.no/">94.1 FM in Narvik, Norway</frequency>
     <location>Narvik, Norway</location>
