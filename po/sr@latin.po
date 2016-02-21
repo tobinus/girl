@@ -336,7 +336,7 @@ msgid ""
 msgstr ""
 "Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "\n"
-"http://prevod.org — prevod na srpski jezik"
+"http://prevod.org — prevod na srpski jezik\n"
 
 #: ../src/girl.c:529
 #| msgid "Copyright (C) 2014, 2015  Ole Aamot Software"
