@@ -1,14 +1,14 @@
 # Serbian translation for girl.
 # Copyright (C) 2014 girl's COPYRIGHT HOLDER
 # This file is distributed under the same license as the girl package.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2014—2015.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2014—2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=girl&ke"
 "ywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-07 22:01+0000\n"
-"PO-Revision-Date: 2015-12-30 10:11+0200\n"
+"POT-Creation-Date: 2016-01-06 11:20+0000\n"
+"PO-Revision-Date: 2016-02-21 06:42+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Проналазач интернет радиа"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:524
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:528
 msgid "Locate Internet Radio Stations"
 msgstr "Пронађите радио станице на интернету"
 
@@ -57,150 +57,6 @@ msgstr "Пронађите радио станице на интернету"
 #: ../data/girl.desktop.in.in.h:4
 msgid "Live;Radio;Program;Station;Locator;"
 msgstr "радио;уживо;програм;станица;проналазач;"
-
-#: ../src/girl.c:66
-msgid "GNOME VFS initialization failed!\n"
-msgstr "Покретање Гном ВФС-а није успело!\n"
-
-#: ../src/girl.c:183
-#, c-format
-msgid "Selected the previous radio station: %s in %s: %s"
-msgstr "Изабрана је претходна радио станица: %s у %s: %s"
-
-#: ../src/girl.c:245
-#, c-format
-msgid "Selected the next radio station %s in %s: %s"
-msgstr "Изабрана је следећа радио станица: %s у %s: %s"
-
-#: ../src/girl.c:300
-#, c-format
-msgid "Selected %s in %s: %s (%f)"
-msgstr "Изабрана је %s у %s: %s (%f)"
-
-#: ../src/girl.c:348
-#, c-format
-msgid "Selected %s in %s: %s"
-msgstr "Изабрана је %s у %s: %s"
-
-#: ../src/girl.c:395
-#, c-format
-msgid "Selected the radio station %s in %s: %s"
-msgstr "Изабрана је радио станица %s у %s: %s"
-
-#: ../src/girl.c:441
-#, c-format
-msgid "Selected %s [%s] [%s] [%s]"
-msgstr "Изабрана је %s [%s] [%s] [%s]"
-
-#: ../src/girl.c:506
-msgid ""
-"Marek Černocký <marek@manet.cz> (Czech translation)\n"
-"Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese translation)\n"
-"Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
-"Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
-"Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
-"Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
-"Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
-"Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
-"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
-"Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
-"Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
-"Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
-"Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
-"Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
-"Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)"
-msgstr ""
-"Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"\n"
-"http://prevod.org — превод на српски језик"
-
-#: ../src/girl.c:525
-msgid "Copyright (C) 2014, 2015  Ole Aamot Software"
-msgstr "Ауторска права (C) 2014, 2015  Оле Амот софтвер"
-
-#: ../src/girl.c:526
-msgid "See yelp://girl"
-msgstr "Видите „yelp://girl“"
-
-#: ../src/girl.c:535
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
-msgstr ""
-"Овај програм је слободан софтвер; можете га расподељивати\n"
-"и/или мењати под условима Гнуове опште јавне лиценце коју\n"
-"је објавила Задужбина слободног софтвера; издања 2 лиценце\n"
-"или (по вашем избору) било којег новијег издања.\n"
-"\n"
-"Овај програм се расподељује у нади да ће бити користан,\n"
-"али БЕЗ ИКАКВЕ ГАРАНЦИЈЕ; чак и без примењене гаранције\n"
-"ТРЖИШНЕ ВРЕДНОСТИ или ПРИЛАГОЂЕНОСТИ ОДРЕЂЕНОЈ НАМЕНИ.\n"
-"Погледајте Гнуову Општу јавну лиценцу за више детаља.\n"
-"\n"
-"Требали сте да примите примерак Гнуове Опште јавне лиценце\n"
-"уз овај програм; ако нисте, пишите Задужбини слободног\n"
-"софтвера на адресу: „Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA 02110-1301 USA“."
-
-#: ../src/girl.c:541
-#, c-format
-msgid "Unable to load GIRL logo: %s\n"
-msgstr "Не могу да учитам логотип Гирла: %s\n"
-
-#: ../src/girl.c:698
-msgid "Search radio station by location"
-msgstr "Тражи радио станицу према месту"
-
-#. girl_stream_player(a, user_data);
-#: ../src/girl.c:707
-#, c-format
-msgid "Listening to the radio station %s in %s: %s "
-msgstr "Слушам радио станицу %s у %s: %s "
-
-#: ../src/girl.c:729
-#, c-format
-msgid "Recording from the radio station %s in %s: %s "
-msgstr "Снимам са радио станице %s у %s: %s "
-
-#: ../src/girl.c:764
-#, c-format
-msgid "Finished recording from the radio station %s in %s: %s"
-msgstr "Завршио сам снимање са радио станице %s у %s: %s"
-
-#: ../src/girl.c:778
-#, c-format
-#| msgid ""
-#| "To finish playing from the radio station %s in %s: %s, simply exit the "
-#| "application Videos."
-msgid ""
-"To finish playing from the radio station %s in %s, exit the application "
-"Videos."
-msgstr ""
-"Да завршите пуштање са радио станице %s у %s, изађите из програма снимака."
-
-#: ../src/girl.c:788
-msgid ""
-"Stop what?  You can \"Search\" by location, select a radio station from "
-"\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
-"or \"Next\" radio station."
-msgstr ""
-"Шта да зауставим?  Можете да „тражите“ према месту, да изаберете радио "
-"станицу из „станица“, или да притиснете „Слушај“ и/или „Сними“.  Или да "
-"идете на „претходну“ или „следећу“ радио станицу."
-
-#: ../src/girl.c:828
-#, c-format
-msgid "Archiving %s"
-msgstr "Архивирам „%s“"
 
 #: ../src/girl-gui.c:54
 msgid "Search"
@@ -381,12 +237,12 @@ msgstr ""
 "Или датотека не постоји, или немате одговарајући програм за снимање."
 
 #: ../src/girl-station.c:235 ../src/girl-station.c:255
-#: ../src/girl-station.c:333 ../src/girl-station.c:356
+#: ../src/girl-station.c:335 ../src/girl-station.c:358
 #, c-format
 msgid "Failed to run %s (%i)\n"
 msgstr "Нисам успео да покренем „%s“ (%i)\n"
 
-#: ../src/girl-station.c:280 ../src/girl-station.c:380
+#: ../src/girl-station.c:282 ../src/girl-station.c:382
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -397,7 +253,7 @@ msgstr ""
 "Шифра стања: %i\n"
 "Појединости: %s"
 
-#: ../src/girl-station.c:298
+#: ../src/girl-station.c:300
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -405,6 +261,174 @@ msgid ""
 msgstr ""
 "Нисам успео да отворим адресу: „%s“\n"
 "Појединости: %s"
+
+#: ../src/girl.c:66
+msgid "GNOME VFS initialization failed!\n"
+msgstr "Покретање Гном ВФС-а није успело!\n"
+
+#: ../src/girl.c:183
+#, c-format
+msgid "Selected the previous radio station: %s in %s: %s"
+msgstr "Изабрана је претходна радио станица: %s у %s: %s"
+
+#: ../src/girl.c:245
+#, c-format
+msgid "Selected the next radio station %s in %s: %s"
+msgstr "Изабрана је следећа радио станица: %s у %s: %s"
+
+#: ../src/girl.c:300
+#, c-format
+msgid "Selected %s in %s: %s (%f)"
+msgstr "Изабрана је %s у %s: %s (%f)"
+
+#: ../src/girl.c:348
+#, c-format
+msgid "Selected %s in %s: %s"
+msgstr "Изабрана је %s у %s: %s"
+
+#: ../src/girl.c:395
+#, c-format
+msgid "Selected the radio station %s in %s: %s"
+msgstr "Изабрана је радио станица %s у %s: %s"
+
+#: ../src/girl.c:441
+#, c-format
+msgid "Selected %s [%s] [%s] [%s]"
+msgstr "Изабрана је %s [%s] [%s] [%s]"
+
+#: ../src/girl.c:506
+#| msgid ""
+#| "Marek Černocký <marek@manet.cz> (Czech translation)\n"
+#| "Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese "
+#| "translation)\n"
+#| "Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+#| "Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
+#| "Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
+#| "Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
+#| "Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
+#| "Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
+#| "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
+#| "Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
+#| "Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
+#| "Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
+#| "Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
+#| "Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
+#| "Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)"
+msgid ""
+"Marek Černocký <marek@manet.cz> (Czech translation)\n"
+"Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese translation)\n"
+"Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+"Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
+"Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
+"Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
+"Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
+"Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
+"Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
+"Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
+"Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
+"Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
+"Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
+"Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)\n"
+"Josef Andersson <josef.andersson@gmail.com> (Swedish translation)\n"
+"Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
+"Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
+msgstr ""
+"Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"\n"
+"http://prevod.org — превод на српски језик"
+
+#: ../src/girl.c:529
+#| msgid "Copyright (C) 2014, 2015  Ole Aamot Software"
+msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
+msgstr "Ауторска права © 2014, 2015, 2016 Оле Амот софтвер"
+
+#: ../src/girl.c:530
+msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
+msgstr "Марио Блатерман <mario.blaettermann@gmail.com> (превод на немачки)"
+
+#: ../src/girl.c:530
+msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
+msgstr "Марек Черноцки <marek@manet.cz> (превод на чешки)"
+
+#: ../src/girl.c:539
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
+msgstr ""
+"Овај програм је слободан софтвер; можете га расподељивати\n"
+"и/или мењати под условима Гнуове опште јавне лиценце коју\n"
+"је објавила Задужбина слободног софтвера; издања 2 лиценце\n"
+"или (по вашем избору) било којег новијег издања.\n"
+"\n"
+"Овај програм се расподељује у нади да ће бити користан,\n"
+"али БЕЗ ИКАКВЕ ГАРАНЦИЈЕ; чак и без примењене гаранције\n"
+"ТРЖИШНЕ ВРЕДНОСТИ или ПРИЛАГОЂЕНОСТИ ОДРЕЂЕНОЈ НАМЕНИ.\n"
+"Погледајте Гнуову Општу јавну лиценцу за више детаља.\n"
+"\n"
+"Требали сте да примите примерак Гнуове Опште јавне лиценце\n"
+"уз овај програм; ако нисте, пишите Задужбини слободног\n"
+"софтвера на адресу: „Free Software Foundation, Inc., 51 Franklin Street, "
+"Fifth Floor, Boston, MA 02110-1301 USA“."
+
+#: ../src/girl.c:545
+#, c-format
+msgid "Unable to load GIRL logo: %s\n"
+msgstr "Не могу да учитам логотип Гирла: %s\n"
+
+#: ../src/girl.c:702
+msgid "Search radio station by location"
+msgstr "Тражи радио станицу према месту"
+
+#: ../src/girl.c:707
+#, c-format
+msgid "Listening to the radio station %s in %s: %s "
+msgstr "Слушам радио станицу %s у %s: %s "
+
+#: ../src/girl.c:728
+#, c-format
+msgid "Recording from the radio station %s in %s: %s "
+msgstr "Снимам са радио станице %s у %s: %s "
+
+#: ../src/girl.c:764
+#, c-format
+msgid "Finished recording from the radio station %s in %s: %s"
+msgstr "Завршио сам снимање са радио станице %s у %s: %s"
+
+#: ../src/girl.c:778
+#, c-format
+msgid ""
+"To finish playing from the radio station %s in %s, exit the application "
+"Videos."
+msgstr ""
+"Да завршите пуштање са радио станице %s у %s, изађите из програма снимака."
+
+#: ../src/girl.c:788
+msgid ""
+"Stop what?  You can \"Search\" by location, select a radio station from "
+"\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
+"or \"Next\" radio station."
+msgstr ""
+"Шта да зауставим?  Можете да „тражите“ према месту, да изаберете радио "
+"станицу из „станица“, или да притиснете „Слушај“ и/или „Сними“.  Или да "
+"идете на „претходну“ или „следећу“ радио станицу."
+
+#: ../src/girl.c:828
+#, c-format
+msgid "Archiving %s"
+msgstr "Архивирам „%s“"
+
+#~ msgid "See yelp://girl"
+#~ msgstr "Видите „yelp://girl“"
 
 #~| msgid ""
 #~| "Girl is developed on the new GNOME 2.0 platform and requires at least "
