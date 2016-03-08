@@ -1,3 +1,23 @@
+==============
+Version 8.3.16
+==============
+
+Documentation
+
+	* help/es/es.po: Updated Spanish translation (Andy Daniel Cruz Campos)
+
+GUI
+	* src/girl-gui.c: Changing %s to %0x in debug string (MacPorts #50476)
+
+Translations
+
+	* po/de.po: Updated German translation (Mario Blättermann)
+	* po/hu.po: Updated Hungarian translation (Balázs Úr)
+	* po/pt_BR.po: Updated Brazilian Portuguese translation (Rafael Fontenelle)
+	* po/sv.po: Updated Swedish translation (Josef Andersson)
+	* po/sr.po: Updated Serbian translation (Мирослав Николић)
+	* po/sr@latin.po: Updated Serbian translation (Мирослав Николић)
+
 =============
 Version 8.0.1
 =============

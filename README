@@ -1,8 +1,10 @@
-==============
-GIRL 8.0 notes
-==============
+=================
+GIRL 8.3.16 notes
+=================
 
-GNOME Internet Radio Locator 8.0.1 is now available in 17 languages
+GIRL 8.3.16 is released on the International Women's Day (March 8th 2016).
+
+GNOME Internet Radio Locator 8.3.16 is now available in 17 languages
 and supports 77 Internet radio stations in 61 different world cities
 like Adelaide, Auckland, Austin, Ayr, Bergen, Berkeley, Bern, Boston,
 Brighton, Brno, Bruxelles, Budapest, Calgary, Cambridge, Cape Town,
@@ -28,7 +30,7 @@ See src/girl.xml (or ${PREFIX}/share/girl/girl.xml where PREFIX is the
 install path specified as ./configure --prefix=${PREFIX}, see INSTALL)
 for the GIRL radio station format in XML.
 
-24 people have contributed to the program with new patches and
+27 people have contributed to the program with new patches and
 translations.  See AUTHORS for the list of contributors.
 
 If you find the program useful, drop me an email at ole@src.gnome.org.
@@ -53,24 +55,24 @@ world if you have installed the Videos application
 by opening a terminal window (such as xterm, kterm, rxvt or GNOME
 Terminal) and typing
 
-     wget http://download.gnome.org/sources/girl/8.0/girl-8.0.1.tar.xz
-     tar Jxvf girl-8.0.1.tar.xz
-     cd girl-8.0.1/
+     wget http://download.gnome.org/sources/girl/8.3/girl-8.3.16.tar.xz
+     tar Jxvf girl-8.3.16.tar.xz
+     cd girl-8.3.16/
      ./configure --prefix=$HOME/local && make && make install
      $HOME/local/bin/girl
 
 or install it from a binary package on a Debian-based distribution
 
      su -
-     wget https://people.gnome.org/~ole/girl/girl_8.0.1-1_i386.deb
-     dpkg -i girl_8.0.1-1_i386.deb
+     wget https://people.gnome.org/~ole/girl/girl_8.3.16-1_i386.deb
+     dpkg -i girl_8.3.16-1_i386.deb
      exit
      /usr/bin/girl
 
 or install it from a binary package on a Fedora-based distribution
 
      su -
-     rpm -i https://people.gnome.org/~ole/girl/girl-8.0.1-1.fc23.x86_64.rpm
+     rpm -i https://people.gnome.org/~ole/girl/girl-8.3.16-1.fc23.x86_64.rpm
      exit
      /usr/bin/girl
 
@@ -88,15 +90,26 @@ Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 02110-1301 USA
 
 
-Changes since GNOME Internet Radio Locator 8.0.0:
+Changes since GNOME Internet Radio Locator 8.0.1:
 
-Stations
+Documentation
 
-	* src/girl.xml: Add Bergen Student Radio (Bergen, Norway)
+	* help/es/es.po: Updated Spanish translation (Andy Daniel Cruz Campos)
 
-Source
+GUI
+	* src/girl-gui.c: Changing %s to %0x in debug string (MacPorts #50476)
+	
+Translations
 
-http://download.gnome.org/sources/girl/8.0/girl-8.0.1.tar.xz
+	* po/de.po: Updated German translation (Mario Blättermann)
+	* po/hu.po: Updated Hungarian translation (Balázs Úr)
+	* po/pt_BR.po: Updated Brazilian Portuguese translation (Rafael Fontenelle)
+	* po/sv.po: Updated Swedish translation (Josef Andersson)
+	* po/sr.po: Updated Serbian translation (Мирослав Николић)
+	* po/sr@latin.po: Updated Serbian translation (Мирослав Николић)
+
+
+http://download.gnome.org/sources/girl/8.0/girl-8.3.16.tar.xz
 
 Source repository
 git://git.gnome.org/girl
@@ -131,6 +144,9 @@ Pedro Albuquerque (Portuguese translation)
 Mario Blättermann (German translation)
 Mathilde Agostini (Icon design)
 Necdet Yücel (Turkish translation)
+Rafael Fontenelle (Brazilian Portuguese translation)
+Andy Daniel Cruz Campos (Spanish translation)
+Mирослав Николић (Serbian translation)
 
 You are welcome to add personal radio stations in $HOME/.girl/girl.xml
 (see src/girl.xml for the syntax) and translations to new languages,
@@ -138,7 +154,7 @@ and submit suggestions for improvements in Bugzilla on
 https://bugzilla.gnome.org/enter_bug.cgi?product=girl
 
 Thanks to all who contributed stations/patches/translations
-in the 8.0.1 release!
+in the 8.3.16 release!
 
 Enjoy Internet radio,
 Ole
