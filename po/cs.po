@@ -1,15 +1,15 @@
 # Czech translation for girl.
 # Copyright (C) 2014 girl's COPYRIGHT HOLDER
 # This file is distributed under the same license as the girl package.
-# Marek Černocký <marek@manet.cz>, 2014, 2015.
+# Marek Černocký <marek@manet.cz>, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-07 22:01+0000\n"
-"PO-Revision-Date: 2015-10-12 15:35+0200\n"
+"POT-Creation-Date: 2016-01-06 11:20+0000\n"
+"PO-Revision-Date: 2016-03-14 10:32+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -17,16 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../data/girl.appdata.xml.in.h:1
 msgid ""
 "GIRL, the GNOME Internet Radio Locator program, allows users to easily find "
 "and record live radio programs on radio broadcasters on the Internet."
 msgstr ""
-"GIRL, GNOME Internet Radio Locator (naladění internetových rádií v GNOME) "
-"je aplikace, pomocí které si uživatel může snadno najít, a připadně i "
-"nahrát, živé vysílání rádií na Internetu."
+"GIRL, GNOME Internet Radio Locator (naladění internetových rádií v GNOME) je "
+"aplikace, pomocí které si uživatel může snadno najít, a připadně i nahrát, "
+"živé vysílání rádií na Internetu."
 
 #: ../data/girl.appdata.xml.in.h:2
 msgid ""
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Naladění internetových rádií"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:524
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:528
 msgid "Locate Internet Radio Stations"
 msgstr "Nalaďte si rádio na Internetu."
 
@@ -59,157 +59,6 @@ msgstr "Nalaďte si rádio na Internetu."
 #: ../data/girl.desktop.in.in.h:4
 msgid "Live;Radio;Program;Station;Locator;"
 msgstr "živé;živě;rádio;program;stanice;vyhledání;ladění;naladění;"
-
-#: ../src/girl.c:66
-msgid "GNOME VFS initialization failed!\n"
-msgstr "Selhala inicializace GNOME VFS!\n"
-
-#: ../src/girl.c:183
-#, c-format
-msgid "Selected the previous radio station: %s in %s: %s"
-msgstr "Vybrána předchozí stanice: %s v %s: %s"
-
-#: ../src/girl.c:245
-#, c-format
-msgid "Selected the next radio station %s in %s: %s"
-msgstr "Vybrána následující stanice: %s v %s: %s"
-
-#: ../src/girl.c:300
-#, c-format
-msgid "Selected %s in %s: %s (%f)"
-msgstr "Vybráno %s v %s: %s (%f)"
-
-#: ../src/girl.c:348
-#, c-format
-msgid "Selected %s in %s: %s"
-msgstr "Vybráno %s v %s: %s"
-
-#: ../src/girl.c:395
-#, c-format
-msgid "Selected the radio station %s in %s: %s"
-msgstr "Vybrána stanice %s v %s: %s"
-
-#: ../src/girl.c:441
-#, c-format
-msgid "Selected %s [%s] [%s] [%s]"
-msgstr "Vybráno %s [%s] [%s] [%s]"
-
-#: ../src/girl.c:506
-msgid ""
-"Marek Černocký <marek@manet.cz> (Czech translation)\n"
-"Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese translation)\n"
-"Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
-"Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
-"Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
-"Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
-"Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
-"Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
-"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
-"Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
-"Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
-"Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
-"Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
-"Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
-"Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)"
-msgstr ""
-"Marek Černocký <marek@manet.cz> (překlad do češtiny)\n"
-"Rafael Ferreira <rafael.f.f1@gmail.com> (překlad do brazilské "
-"portugalštiny)\n"
-"Miroslav Nikolić <miroslavnikolic@rocketmail.com> (překlad do srbštiny)\n"
-"Wolfgang Stöggl <c72578@yahoo.de> (překlad do němčiny)\n"
-"Piotr Drąg <piotrdrag@gmail.com> (překlad do polštiny)\n"
-"Muhammet Kara <muhammetk@gmail.com> (překlad do turečtiny)\n"
-"Balázs Úr <urbalazs@gmail.com> (překlad do maďarštiny)\n"
-"Andika Triwidada <andika@gmail.com> (překlad do indonézštiny)\n"
-"Daniel Mustieles <daniel.mustieles@gmail.com> (překlad do španělštiny)\n"
-"Matej Urbančič <mateju@svn.gnome.org> (překlad do slovinštiny)\n"
-"Γιάννης Κουτσούκος <giankoyt@gmail.com> (překlad do řečtiny)\n"
-"Efstathios Iosifidis <iosifidis@opensuse.org> (překlad do řečtiny)\n"
-"Samir Ribić <megaribi@epn.ba> (překlad do bosenštiny)\n"
-"Enrico Nicoletto <liverig@gmail.com> (překlad do brazilské "
-"portugalštiny)\n"
-"Sveinn í Felli <sv1@fellsnet.is> (překlad do islandštiny)"
-
-#: ../src/girl.c:525
-msgid "Copyright (C) 2014, 2015  Ole Aamot Software"
-msgstr "Copyright © 2014, 2015  Ole Aamot Software"
-
-#: ../src/girl.c:526
-msgid "See yelp://girl"
-msgstr "Viz yelp://girl"
-
-#: ../src/girl.c:535
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
-msgstr ""
-"Tento program je svobodný software: Můžete jej dále šířit a/nebo upravovat "
-"za podmínek licence GNU General Public License v podobě, v jaké ji vydala "
-"Free Software Foundation, a to buď ve verzi 2 této licence nebo (dle vaší "
-"volby) v libovolné novější verzi.\n"
-"Tento program je šířen ve víře, že bude užitečný, ale BEZ JAKÝCHKOLIV ZÁRUK, "
-"a to i bez předpokládané záruky na PRODEJNOST nebo VHODNOST PRO KONKRÉTNÍ "
-"ÚČEL. Více podrobností najdete přímo v licenci GNU General Public License.\n"
-"Spolu s tímto programem byste měli obdržet kopii licence GNU General Public "
-"License. Pokud se tak nestalo, napište na Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
-
-#: ../src/girl.c:541
-#, c-format
-msgid "Unable to load GIRL logo: %s\n"
-msgstr "Nelze načíst logo GIRL: %s\n"
-
-#: ../src/girl.c:698
-msgid "Search radio station by location"
-msgstr "Hledat stanici podle místa"
-
-#. girl_stream_player(a, user_data);
-#: ../src/girl.c:707
-#, c-format
-msgid "Listening to the radio station %s in %s: %s "
-msgstr "Posloucháte stanici %s v %s: %s"
-
-#: ../src/girl.c:729
-#, c-format
-msgid "Recording from the radio station %s in %s: %s "
-msgstr "Nahrává se ze stanice %s v %s: %s"
-
-#: ../src/girl.c:764
-#, c-format
-msgid "Finished recording from the radio station %s in %s: %s"
-msgstr "Dokončeno nahrávání z stanice %s v %s: %s"
-
-#: ../src/girl.c:778
-#, c-format
-msgid ""
-"To finish playing from the radio station %s in %s, exit the application "
-"Videos."
-msgstr ""
-"Pro ukončení poslechu stanice %s v %s stačí jen ukončit aplikaci Videa."
-
-#: ../src/girl.c:788
-msgid ""
-"Stop what?  You can \"Search\" by location, select a radio station from "
-"\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
-"or \"Next\" radio station."
-msgstr ""
-"Zastavit co? Můžete „Hledat“ podle místa, vybrat stanici ze seznamu "
-"„Stanice“ nebo kliknout na „Poslouchat“ a/nebo „Nahrávat“. Můžete také "
-"přejít na „Předchozí“ nebo „Následující“ stanici."
-
-#: ../src/girl.c:828
-#, c-format
-msgid "Archiving %s"
-msgstr "Archivuje se %s"
 
 #: ../src/girl-gui.c:54
 msgid "Search"
@@ -389,12 +238,12 @@ msgstr ""
 "Buď soubor neexistuje nebo pro něj nemáte nahrávací program."
 
 #: ../src/girl-station.c:235 ../src/girl-station.c:255
-#: ../src/girl-station.c:333 ../src/girl-station.c:356
+#: ../src/girl-station.c:335 ../src/girl-station.c:358
 #, c-format
 msgid "Failed to run %s (%i)\n"
 msgstr "Selhalo spuštění %s (%i)\n"
 
-#: ../src/girl-station.c:280 ../src/girl-station.c:380
+#: ../src/girl-station.c:282 ../src/girl-station.c:382
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -405,7 +254,7 @@ msgstr ""
 "Stavový kód: %i\n"
 "Podrobnosti: %s"
 
-#: ../src/girl-station.c:298
+#: ../src/girl-station.c:300
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -413,3 +262,183 @@ msgid ""
 msgstr ""
 "Selhalo otevření adresy URL: „%s“\n"
 "Podrobnosti: %s"
+
+#: ../src/girl.c:66
+msgid "GNOME VFS initialization failed!\n"
+msgstr "Selhala inicializace GNOME VFS!\n"
+
+#: ../src/girl.c:183
+#, c-format
+msgid "Selected the previous radio station: %s in %s: %s"
+msgstr "Vybrána předchozí stanice: %s v %s: %s"
+
+#: ../src/girl.c:245
+#, c-format
+msgid "Selected the next radio station %s in %s: %s"
+msgstr "Vybrána následující stanice: %s v %s: %s"
+
+#: ../src/girl.c:300
+#, c-format
+msgid "Selected %s in %s: %s (%f)"
+msgstr "Vybráno %s v %s: %s (%f)"
+
+#: ../src/girl.c:348
+#, c-format
+msgid "Selected %s in %s: %s"
+msgstr "Vybráno %s v %s: %s"
+
+#: ../src/girl.c:395
+#, c-format
+msgid "Selected the radio station %s in %s: %s"
+msgstr "Vybrána stanice %s v %s: %s"
+
+#: ../src/girl.c:441
+#, c-format
+msgid "Selected %s [%s] [%s] [%s]"
+msgstr "Vybráno %s [%s] [%s] [%s]"
+
+#: ../src/girl.c:506
+#| msgid ""
+#| "Marek Černocký <marek@manet.cz> (Czech translation)\n"
+#| "Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese "
+#| "translation)\n"
+#| "Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+#| "Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
+#| "Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
+#| "Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
+#| "Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
+#| "Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
+#| "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
+#| "Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
+#| "Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
+#| "Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
+#| "Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
+#| "Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
+#| "Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)"
+msgid ""
+"Marek Černocký <marek@manet.cz> (Czech translation)\n"
+"Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese translation)\n"
+"Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+"Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
+"Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
+"Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
+"Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
+"Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
+"Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
+"Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
+"Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
+"Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
+"Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
+"Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)\n"
+"Josef Andersson <josef.andersson@gmail.com> (Swedish translation)\n"
+"Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
+"Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
+msgstr ""
+"Marek Černocký <marek@manet.cz> (překlad do češtiny)\n"
+"Rafael Ferreira <rafael.f.f1@gmail.com> (překlad do brazilské "
+"portugalštiny)\n"
+"Miroslav Nikolić <miroslavnikolic@rocketmail.com> (překlad do srbštiny)\n"
+"Wolfgang Stöggl <c72578@yahoo.de> (překlad do němčiny)\n"
+"Piotr Drąg <piotrdrag@gmail.com> (překlad do polštiny)\n"
+"Muhammet Kara <muhammetk@gmail.com> (překlad do turečtiny)\n"
+"Balázs Úr <urbalazs@gmail.com> (překlad do maďarštiny)\n"
+"Andika Triwidada <andika@gmail.com> (překlad do indonézštiny)\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com> (překlad do španělštiny)\n"
+"Matej Urbančič <mateju@svn.gnome.org> (překlad do slovinštiny)\n"
+"Γιάννης Κουτσούκος <giankoyt@gmail.com> (překlad do řečtiny)\n"
+"Efstathios Iosifidis <iosifidis@opensuse.org> (překlad do řečtiny)\n"
+"Samir Ribić <megaribi@epn.ba> (překlad do bosenštiny)\n"
+"Enrico Nicoletto <liverig@gmail.com> (překlad do brazilské portugalštiny)\n"
+"Sveinn í Felli <sv1@fellsnet.is> (překlad do islandštiny)\n"
+"Josef Andersson <josef.andersson@gmail.com> (překlad do švédštiny)\n"
+"Pedro Albuquerque <palbuquerque73@gmail.com> (překlad do portugalštiny)\n"
+"Mario Blättermann <mario.blaettermann@gmail.com> (překlad do němčiny)\n"
+
+#: ../src/girl.c:529
+#| msgid "Copyright (C) 2014, 2015  Ole Aamot Software"
+msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
+msgstr "Copyright © 2014, 2015, 2016  Ole Aamot Software"
+
+#: ../src/girl.c:530
+msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
+msgstr "Mario Blättermann <mario.blaettermann@gmail.com> (překlad do němčiny)"
+
+#: ../src/girl.c:530
+msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
+msgstr "Marek Černocký <marek@manet.cz> (překlad do češtiny)"
+
+#: ../src/girl.c:539
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
+msgstr ""
+"Tento program je svobodný software: Můžete jej dále šířit a/nebo upravovat "
+"za podmínek licence GNU General Public License v podobě, v jaké ji vydala "
+"Free Software Foundation, a to buď ve verzi 2 této licence nebo (dle vaší "
+"volby) v libovolné novější verzi.\n"
+"Tento program je šířen ve víře, že bude užitečný, ale BEZ JAKÝCHKOLIV ZÁRUK, "
+"a to i bez předpokládané záruky na PRODEJNOST nebo VHODNOST PRO KONKRÉTNÍ "
+"ÚČEL. Více podrobností najdete přímo v licenci GNU General Public License.\n"
+"Spolu s tímto programem byste měli obdržet kopii licence GNU General Public "
+"License. Pokud se tak nestalo, napište na Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
+
+#: ../src/girl.c:545
+#, c-format
+msgid "Unable to load GIRL logo: %s\n"
+msgstr "Nelze načíst logo GIRL: %s\n"
+
+#: ../src/girl.c:702
+msgid "Search radio station by location"
+msgstr "Hledat stanici podle místa"
+
+#: ../src/girl.c:707
+#, c-format
+msgid "Listening to the radio station %s in %s: %s "
+msgstr "Posloucháte stanici %s v %s: %s"
+
+#: ../src/girl.c:728
+#, c-format
+msgid "Recording from the radio station %s in %s: %s "
+msgstr "Nahrává se ze stanice %s v %s: %s"
+
+#: ../src/girl.c:764
+#, c-format
+msgid "Finished recording from the radio station %s in %s: %s"
+msgstr "Dokončeno nahrávání z stanice %s v %s: %s"
+
+#: ../src/girl.c:778
+#, c-format
+msgid ""
+"To finish playing from the radio station %s in %s, exit the application "
+"Videos."
+msgstr ""
+"Pro ukončení poslechu stanice %s v %s stačí jen ukončit aplikaci Videa."
+
+#: ../src/girl.c:788
+msgid ""
+"Stop what?  You can \"Search\" by location, select a radio station from "
+"\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
+"or \"Next\" radio station."
+msgstr ""
+"Zastavit co? Můžete „Hledat“ podle místa, vybrat stanici ze seznamu "
+"„Stanice“ nebo kliknout na „Poslouchat“ a/nebo „Nahrávat“. Můžete také "
+"přejít na „Předchozí“ nebo „Následující“ stanici."
+
+#: ../src/girl.c:828
+#, c-format
+msgid "Archiving %s"
+msgstr "Archivuje se %s"
+
+#~ msgid "See yelp://girl"
+#~ msgstr "Viz yelp://girl"
