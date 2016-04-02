@@ -46,10 +46,14 @@
 #include "girl-program.h"
 #include "girl-station.h"
 #include "girl-streams.h"
+#include "girl-tz.h"
 
 extern GtkWidget *girl_app;
 
 GnomeUIInfo toolbar[] = {
+	GNOMEUIINFO_ITEM_STOCK(N_("New"), N_("Add a new radio station"),
+			       on_new_station_clicked, GTK_STOCK_NEW),
+	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_ITEM_STOCK(N_("Search"), N_("Search by location for radio stations"),
 			       on_search_button_clicked,
 			       GTK_STOCK_FIND),
@@ -75,11 +79,11 @@ GnomeUIInfo toolbar[] = {
 	GNOMEUIINFO_ITEM_STOCK(N_("Next"), N_("Proceed to the next radio station"),
 			       on_next_station_click, GTK_STOCK_GO_FORWARD),
 	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_ITEM_STOCK(N_("About Station"),
+	GNOMEUIINFO_ITEM_STOCK(N_("Station"),
 			       N_("About the current Station"),
 			       about_station, GNOME_STOCK_ABOUT),
 	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_ITEM_STOCK(N_("About Program"),
+	GNOMEUIINFO_ITEM_STOCK(N_("Program"),
 			       N_("About the GNOME Internet Radio Locator"),
 			       about_app, GNOME_STOCK_ABOUT),
 
@@ -735,6 +739,204 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 			 (gpointer) stations_selector);
 
 	return stations_selector;
+}
+
+static gboolean
+on_location_matches(GtkEntryCompletion *widget,
+		    GtkTreeModel *model,
+		    GtkTreeIter *iter,
+		    gpointer user_data)
+{
+	GValue value = {0, };
+
+	gtk_tree_model_get_value(model, iter, STATION_LOCATION, &value);
+	girl->selected_station_location = g_strdup(g_value_get_string(&value));
+	g_value_unset(&value);
+
+	appbar_send_msg(_("Found location %s"),
+			girl->selected_station_location);
+	/* girl_helper_run(girl->selected_station_uri, */
+	/* 		girl->selected_station_name, */
+	/* 		GIRL_STREAM_SHOUTCAST, */
+	/* 		GIRL_STREAM_PLAYER); */
+	return FALSE;
+}
+
+GtkWidget *create_new_station_selector(void) {
+
+	GirlStationInfo *stationinfo, *localstation;
+	GtkWidget *station_selector, *content_area, *item;
+	GtkWidget *align;
+	GtkWidget *bandentry, *descriptionentry, *nameentry, *locationentry, *urientry, *websiteentry;
+	GtkEntryCompletion *completion;
+	GtkListStore *location_model;
+	GtkTreeIter iter;
+
+	TzDB *db;
+	GPtrArray *locs;
+	guint i;
+	char *pixmap_dir;
+	int retval = 0;
+
+	setlocale (LC_ALL, "");
+
+	gchar *world_station_xml_filename, *local_station_xml_file;
+
+	/* int i = 0, search_selection = -1; */
+
+	GStatBuf stats;
+
+	memset(&stats, 0, sizeof(stats));
+
+	/* The Stations dialog */
+	station_selector = gtk_dialog_new_with_buttons(_("New radio station"), GTK_WINDOW(girl_app), 0,	/* flags */
+						       GTK_STOCK_SAVE,
+						       GTK_RESPONSE_ACCEPT,
+						       NULL);
+	content_area = gtk_dialog_get_content_area (GTK_DIALOG (station_selector));
+	gtk_container_set_border_width
+	    (GTK_CONTAINER(GTK_DIALOG(station_selector)->vbox), 6);
+
+	align = gtk_alignment_new(0.5, 0.5, 0, 0);
+	gtk_container_add(GTK_CONTAINER
+			  (GTK_DIALOG(station_selector)->vbox), align);
+	gtk_container_set_border_width(GTK_CONTAINER(align), 6);
+	gtk_widget_show(align);
+
+	nameentry = gtk_entry_new();
+	locationentry = gtk_entry_new();
+	urientry = gtk_entry_new();
+	bandentry = gtk_entry_new();
+	websiteentry = gtk_entry_new();
+	descriptionentry = gtk_entry_new();
+
+	gtk_entry_set_text(GTK_ENTRY(nameentry), "Station name");
+	gtk_entry_set_text(GTK_ENTRY(locationentry), "City name");
+	gtk_entry_set_text(GTK_ENTRY(urientry), "http://uri-to-stream/");
+	gtk_entry_set_text(GTK_ENTRY(bandentry), "FM/AM bandwidth");
+	gtk_entry_set_text(GTK_ENTRY(websiteentry), "http://uri-to-website/");
+	gtk_entry_set_text(GTK_ENTRY(descriptionentry), "Description");
+	completion = gtk_entry_completion_new();
+	gtk_entry_completion_set_text_column(completion, STATION_LOCATION);
+	gtk_entry_set_completion(GTK_ENTRY(locationentry), completion);
+	g_signal_connect(G_OBJECT(completion), "match-selected",
+			 G_CALLBACK(on_location_matches), NULL);
+	location_model = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_STRING);
+
+	world_station_xml_filename = g_strconcat(GIRL_DATADIR, "/girl.xml", NULL);
+	GIRL_DEBUG_MSG("world_station_xml_filename = %s\n",
+	    world_station_xml_filename);
+
+	if (world_station_xml_filename == NULL) {
+		g_warning(("Failed to open %s.  Please install it.\n"),
+			  world_station_xml_filename);
+	}
+
+	local_station_xml_file =
+	    g_strconcat(g_get_home_dir(), "/.girl/girl.xml", NULL);
+
+	if (!g_stat(local_station_xml_file, &stats)) {
+		localstation = girl_station_load_from_file(NULL, local_station_xml_file);
+	} else {
+		localstation = NULL;
+	}
+
+	if (localstation == NULL) {
+		g_warning(_("Failed to open %s.\n"), local_station_xml_file);
+	}
+
+/*   g_free (local_station_xml_file); */
+
+	stationinfo =
+	    girl_station_load_from_file(localstation,
+					world_station_xml_filename);
+
+	// girl_stations = NULL;
+
+	/* while (stationinfo != NULL) { */
+	/* Timezone map */
+	db = tz_load_db ();
+	locs = tz_get_locations (db);
+	for (i = 0; i < locs->len ; i++) {
+		TzLocation *loc = locs->pdata[i];
+		TzInfo *info;
+		char *filename, *path;
+		gdouble selected_offset;
+		char buf[16];
+		info = tz_info_from_location (loc);
+		selected_offset = tz_location_get_utc_offset (loc)
+			/ (60.0*60.0) + ((info->daylight) ? -1.0 : 0.0);
+		filename = g_strdup_printf ("timezone_%s.png",
+					    g_ascii_formatd (buf, sizeof (buf),
+							     "%g", selected_offset));
+		path = g_build_filename (pixmap_dir, filename, NULL);
+		/* g_printf("Name is %s\n", tz_info_get_clean_name(db, loc->zone)); */
+		/* GIRL_DEBUG_MSG("%s\n", loc->zone); */
+		/* if (g_file_test (path, G_FILE_TEST_IS_REGULAR) == FALSE) { */
+		/* 	g_message ("File '%s' missing for zone '%s'", filename, loc->zone); */
+		gtk_list_store_append(location_model, &iter);
+		/* g_print("%s %s", stationinfo->location, loc->zone); */
+		/* if (g_strcmp0(stationinfo->location, loc->zone)==0) { */
+		gtk_list_store_set(location_model,
+				   &iter,
+				   STATION_LOCATION,
+				   loc->zone,
+				   -1);
+		/* } */
+		retval = 1;
+	}
+	/* 	stationinfo = stationinfo->next; */
+	/* }  */
+	gtk_entry_completion_set_model(completion, GTK_TREE_MODEL(location_model));
+	gtk_widget_show(nameentry);
+	gtk_widget_show(locationentry);
+	gtk_widget_show(urientry);
+	gtk_widget_show(bandentry);
+	gtk_widget_show(descriptionentry);
+	gtk_widget_show(websiteentry);
+	gtk_container_add(GTK_CONTAINER(content_area), nameentry);
+	gtk_container_add(GTK_CONTAINER(content_area), locationentry);
+	gtk_container_add(GTK_CONTAINER(content_area), urientry);
+	gtk_container_add(GTK_CONTAINER(content_area), bandentry);
+	gtk_container_add(GTK_CONTAINER(content_area), descriptionentry);
+	gtk_container_add(GTK_CONTAINER(content_area), websiteentry);
+	/* g_signal_connect(G_OBJECT(station_selector), GTK_RESPONSE_ACCEPT, */
+	/* 		 G_CALLBACK(on_new_station_selector_changed), */
+	/* 		 NULL); */
+	g_object_set_data(G_OBJECT(station_selector), "station_location",
+			  (gpointer) gtk_entry_get_text(GTK_ENTRY(locationentry)));
+	g_object_set_data(G_OBJECT(station_selector), "station_name",
+			  (gpointer) gtk_entry_get_text(GTK_ENTRY(nameentry)));
+	g_object_set_data(G_OBJECT(station_selector), "station_uri",
+			  (gpointer) gtk_entry_get_text(GTK_ENTRY(urientry)));
+	g_object_set_data(G_OBJECT(station_selector), "station_band",
+			  (gpointer) gtk_entry_get_text(GTK_ENTRY(bandentry)));
+	g_object_set_data(G_OBJECT(station_selector), "station_description",
+			  (gpointer) gtk_entry_get_text(GTK_ENTRY(descriptionentry)));
+	g_object_set_data(G_OBJECT(station_selector), "station_website",
+			  (gpointer) gtk_entry_get_text(GTK_ENTRY(websiteentry)));
+
+#if 0 /* FIXME: Add input fields */
+	g_object_set_data(G_OBJECT(station_selector), "station_band",
+			  (gpointer) station_band);
+	g_object_set_data(G_OBJECT(station_selector), "station_description",
+			  (gpointer) station_description);
+	g_object_set_data(G_OBJECT(station_selector), "station_website",
+			  (gpointer) station_website);
+#endif
+	// gtk_widget_show(station_selector);
+	// g_free(label);
+	g_signal_connect(G_OBJECT(station_selector), "response",
+			 G_CALLBACK(gtk_widget_hide),
+			 (gpointer) station_selector);
+	g_signal_connect(G_OBJECT(station_selector), "delete-event",
+			 G_CALLBACK(gtk_widget_hide),
+			 (gpointer) station_selector);
+	tz_db_free (db);
+	g_free (pixmap_dir);
+	/* g_free (filename); */
+	/* g_free (path); */
+	return station_selector;
 }
 
 GtkWidget *create_streams_selector(char *selected_streams_uri,

@@ -260,6 +260,65 @@ void on_next_station_click(GtkWidget * a, gpointer user_data)
 	}
 }
 
+void on_new_station_clicked(GtkWidget *a,
+			    gpointer user_data)
+{
+	GtkWidget *station;
+	GirlStationInfo *stationinfo;
+	GList *l = g_list_first(girl_stations);
+
+	/* stationinfo = l->data; */
+	gint result;
+	// appbar_send_msg(_("New radio station"));
+	station = create_new_station_selector();
+	result = gtk_dialog_run (GTK_DIALOG(station));
+	switch (result)  {
+	case GTK_RESPONSE_ACCEPT:
+
+		g_print ("Squeak!\n\n");
+
+		girl->selected_station_uri =
+			g_strdup(g_object_get_data(G_OBJECT(station), "station_uri"));
+		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n", girl->selected_station_uri);
+		girl->selected_station_description =
+			g_strdup(g_object_get_data(G_OBJECT(station), "station_description"));
+		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n", girl->selected_station_description);
+
+				girl->selected_station_band =
+			g_strdup(g_object_get_data(G_OBJECT(station), "station_band"));
+		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n", girl->selected_station_band);
+
+				girl->selected_station_website =
+			g_strdup(g_object_get_data(G_OBJECT(station), "station_website"));
+		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n", girl->selected_station_website);
+		girl->selected_station_name =
+			g_strdup(g_object_get_data(G_OBJECT(station), "station_name"));
+		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n",
+			       girl->selected_station_name);
+
+		girl->selected_station_location =
+			g_strdup(g_object_get_data(G_OBJECT(station), "station_location"));
+		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n",
+			       girl->selected_station_location);
+
+		girl_station_update (stationinfo, girl->selected_station_band, girl->selected_station_description, girl->selected_station_name, girl->selected_station_location, girl->selected_station_uri, girl->selected_station_website);
+		break;
+	default:
+		g_print ("Nothing\n\n");
+		break;
+	}
+	gtk_widget_destroy(station);
+	/* gtk_widget_show(station); */
+
+}
+
+void on_new_station_selector_changed(GtkWidget *a,
+				     gpointer user_data)
+{
+	GtkWidget *station;
+
+}
+
 void on_listeners_selector_button_clicked(GtkWidget * a,
 					  gpointer user_data)
 {
@@ -404,6 +463,55 @@ void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 		        GIRL_STREAM_PLAYER);
 }
 
+void on_new_station_changed(GtkWidget * a, gpointer user_data)
+{
+	GirlStationInfo *stationinfo;
+	GList *l = g_list_first(girl_stations);
+	/* stationinfo = l->data; */
+
+	if (girl->selected_station_uri != NULL)
+		g_free(girl->selected_station_uri);
+
+	girl->selected_station_uri =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "station_uri"));
+	GIRL_DEBUG_MSG("on_new_station_changed: %s\n", girl->selected_station_uri);
+
+	girl->selected_station_name =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "station_name"));
+	GIRL_DEBUG_MSG("on_new_station_changed: %s\n",
+	    girl->selected_station_name);
+
+	girl->selected_station_location =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "station_location"));
+	GIRL_DEBUG_MSG("on_new_station_changed: %s\n",
+	    girl->selected_station_location);
+
+	girl->selected_station_band =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "station_band"));
+	GIRL_DEBUG_MSG("on_new_station_changed: %s\n",
+	    girl->selected_station_band);
+
+	girl->selected_station_description =
+	    g_strdup(g_object_get_data(G_OBJECT(a), "station_description"));
+	GIRL_DEBUG_MSG("on_new_station_changed: %s\n",
+	    girl->selected_station_description);
+
+	appbar_send_msg(_("Selected the radio station %s in %s: %s"),
+			girl->selected_station_name,
+			girl->selected_station_location,
+			girl->selected_station_uri,
+			girl->selected_station_band);
+
+	girl_station_update(stationinfo, girl->selected_station_band, girl->selected_station_description, girl->selected_station_name,
+			  girl->selected_station_location,
+			  girl->selected_station_uri, girl->selected_station_website);
+
+	girl_helper_run(girl->selected_streams_uri,
+			girl->selected_streams_mime,
+			GIRL_STREAM_SHOUTCAST,
+		        GIRL_STREAM_PLAYER);
+}
+
 void on_streams_selector_button_clicked(GtkWidget * a, gpointer user_data)
 {
 	gtk_widget_show(streams_selector);
@@ -452,6 +560,9 @@ void on_streams_selector_changed(GtkWidget * a, gpointer user_data)
 
 void quit_app(GtkWidget * a, gpointer user_data)
 {
+	/* GirlStationInfo *stationinfo; */
+	/* GList *l = g_list_first(girl_stations); */
+
 	gnome_config_push_prefix("/girl/General/");
 	gnome_config_set_string("selected_listener_uri",
 				girl->selected_listener_uri);
@@ -493,7 +604,8 @@ void quit_app(GtkWidget * a, gpointer user_data)
 	if (GTK_IS_WIDGET(streams_selector)) {
 		gtk_widget_destroy(streams_selector);
 	}
-
+	// stationinfo = l->data;
+	// girl_station_save(stationinfo, NULL, NULL, NULL, NULL, NULL, NULL);
 	gtk_main_quit();
 }
 
@@ -520,7 +632,12 @@ void about_app(GtkWidget * a, gpointer user_data)
 					"Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)\n"
 					"Josef Andersson <josef.andersson@gmail.com> (Swedish translation)\n"
 					"Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
-					"Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"));
+					"Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
+					"Necdet Yücel <necdetyucel@gmail.com> (Turkish translation)\n"
+					"Rafael Fontenelle <rffontenelle@gmail.com> (Brazilian Portuguese translation)\n"
+					"Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (Spanish translation)\n"
+					"Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+					      ));
 	gchar* artists[] = { "Wiki Graphic Designer",
 			     "Aly Raj",
 			     "Mathilde Agostini",

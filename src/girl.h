@@ -81,6 +81,8 @@ void on_listen_button_clicked(GtkWidget * button, gpointer user_data);
 void on_record_button_clicked(GtkWidget * button, gpointer user_data);
 void on_stop_button_clicked(GtkWidget *a, gpointer user_data);
 void on_next_station_click(GtkWidget *, gpointer user_data);
+void on_new_station_clicked(GtkWidget *a, gpointer user_data);
+void on_new_station_selector_changed(GtkWidget *a, gpointer user_data);
 void on_previous_station_click(GtkWidget *, gpointer user_data);
 void on_listeners_selector_button_clicked(GtkWidget *, gpointer user_data);
 void on_listeners_selector_changed(GtkWidget * a, gpointer user_data);

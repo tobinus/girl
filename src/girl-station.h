@@ -83,4 +83,6 @@ GirlStationInfo *girl_station_load_from_http(GirlStationInfo * head,
 					     gpointer data);
 void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType girl);
 
+gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *station_description, gchar *station_name, gchar *station_location, gchar *station_uri, gchar *station_website);
+
 #endif /* GIRL_STATION_H */

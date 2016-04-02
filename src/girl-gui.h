@@ -6,6 +6,7 @@
 #include <libgnome/libgnome.h>
 
 GtkWidget *create_girl_app(void);
+
 GtkWidget *create_listeners_selector(char *selected_listener_uri,
 				     char *filename);
 GtkWidget *create_stations_selector(char *selected_station_uri,
@@ -13,5 +14,7 @@ GtkWidget *create_stations_selector(char *selected_station_uri,
 GtkWidget *create_streams_selector(char *selected_streams_uri,
 				   char *filename);
 GtkWidget *create_search_selector(void);
+
+GtkWidget *create_new_station_selector(void);
 
 #endif /* GIRL_GUI_H */

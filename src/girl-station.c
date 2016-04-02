@@ -30,6 +30,7 @@
 #include <errno.h>
 #include <sys/resource.h>
 #include <glib.h>
+#include <glib/gstdio.h>
 #include <gtk/gtk.h>
 #include <libxml/xmlmemory.h>
 #include <libxml/parser.h>
@@ -610,4 +611,49 @@ GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 	xmlFreeDoc(doc);
 
 	return curr;
+}
+
+gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *station_description, gchar *station_name, gchar *station_location, gchar *station_uri, gchar *station_website) {
+
+	/* Open ~/.girl/girl.xml.  Parse structure.  Insert new item.  Save structure. */
+	GirlStationInfo *new_station;
+	GirlStationInfo *stationinfo;
+	GList *girl_local_stations = NULL;
+	gchar *local_station_uri, *local_station_name, *local_station_location, *local_station_band, *local_station_description, *local_station_website;
+	gchar *label, *world_station_xml_filename, *local_station_xml_file;
+	gchar *stations = g_strconcat(g_get_home_dir(), "/.girl/girl.xml", NULL);
+	GList *l = NULL;
+
+	stationinfo = girl_station_load_from_file(NULL, stations);
+
+	new_station = g_new0(GirlStationInfo, 1);
+	new_station->name = g_strdup(station_name);
+	new_station->band = g_strdup(station_band);
+	new_station->description = g_strdup(station_description);
+	new_station->location = g_strdup(station_location);
+	new_station->stream = g_new0(GirlStreamInfo, 1);
+	new_station->stream->uri = g_strdup(station_uri);
+	new_station->uri = g_strdup(station_website);
+	FILE *fp = g_fopen(stations, "w+");
+	g_fprintf(fp, "<?xml version='1.0' encoding='UTF-8'?>\n<!DOCTYPE girl SYSTEM 'girl-7.0.dtd'>\n<girl version='7.0'>\n");
+	// stationinfo-> = l->data;
+	while (stationinfo != NULL) {
+		local_station_uri = g_strdup(stationinfo->stream->uri);
+		local_station_name = g_strdup(stationinfo->name);
+		local_station_location = g_strdup(stationinfo->location);
+		local_station_band = g_strdup(stationinfo->band);
+		local_station_description = g_strdup(stationinfo->description);
+		local_station_website = g_strdup(stationinfo->uri);
+		/* FIXME: Save mime='audio/mp3' uri='%s' codec='MPEG 1 Audio, Layer 3 (MP3)' samplerate='24000 Hz' channels='Mono' bitrate='32 kbps' */
+		g_fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", local_station_band, local_station_name, local_station_name, local_station_website, local_station_band, local_station_location, local_station_location, local_station_description, local_station_uri, local_station_website);
+		stationinfo = stationinfo->next;
+
+	}
+	g_fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", new_station->band, new_station->name, new_station->name, new_station->uri, new_station->band, new_station->location, new_station->location, new_station->description, new_station->uri, new_station->uri);
+	g_fprintf(fp, "</girl>\n");
+	fclose(fp);
+	girl_stations = g_list_append(girl_stations, (GirlStationInfo *)new_station);
+	g_free(stations);
+	g_free(new_station);
+	g_free(stationinfo);
 }

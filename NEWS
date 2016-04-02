@@ -1,3 +1,16 @@
+=============
+Version 8.4.0
+=============
+
+Documentation
+
+	* LETTER: Update text to reflect the current situation regarding IRFA.
+
+GUI
+	* girl-gui.c: Add "New" Button to update $HOME/.girl/girl.xml from GUI.
+	* girl-gui.c: Add on_location_matches() for autocompletion of locations
+	* girl-gui.c: Add girl_station_update() to update $HOME/.girl/girl.xml
+
 ==============
 Version 8.3.16
 ==============
