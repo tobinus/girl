@@ -616,7 +616,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 	gchar* authors[] = { "Ole Aamot <ole@src.gnome.org> (Maintainer)", NULL };
 
 	gchar* translators = g_strdup(_("Marek Černocký <marek@manet.cz> (Czech translation)\n"
-					"Rafael Ferreira <rafael.f.f1@gmail.com> (Brazilian Portuguese translation)\n"
+					"Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese translation)\n"
 					"Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
 					"Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
 					"Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
@@ -634,7 +634,6 @@ void about_app(GtkWidget * a, gpointer user_data)
 					"Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
 					"Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
 					"Necdet Yücel <necdetyucel@gmail.com> (Turkish translation)\n"
-					"Rafael Fontenelle <rffontenelle@gmail.com> (Brazilian Portuguese translation)\n"
 					"Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (Spanish translation)\n"
 					"Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
 					      ));
