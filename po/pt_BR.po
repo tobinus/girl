@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=girl&ke"
-"ywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-04-02 20:55+0000\n"
-"PO-Revision-Date: 2016-04-04 08:48-0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=girl&k"
+"eywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-04-17 20:45+0000\n"
+"PO-Revision-Date: 2016-04-18 09:42-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Localizador de rádio na Internet"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:645
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:644
 msgid "Locate Internet Radio Stations"
 msgstr "Localizar estações de rádio na Internet."
 
@@ -67,7 +67,6 @@ msgid "New"
 msgstr "Nova"
 
 #: ../src/girl-gui.c:54
-#| msgid "Proceed to the next radio station"
 msgid "Add a new radio station"
 msgstr "Adicione uma nova estação de rádio"
 
@@ -128,7 +127,6 @@ msgid "Proceed to the next radio station"
 msgstr "Vai para a próxima estação de rádio"
 
 #: ../src/girl-gui.c:82
-#| msgid "Stations"
 msgid "Station"
 msgstr "Estação"
 
@@ -137,7 +135,6 @@ msgid "About the current Station"
 msgstr "Sobre a estação atual"
 
 #: ../src/girl-gui.c:86
-#| msgid "About Program"
 msgid "Program"
 msgstr "Programa"
 
@@ -201,7 +198,6 @@ msgstr "Encontrada a localização %s"
 
 #. The Stations dialog
 #: ../src/girl-gui.c:792
-#| msgid "Select a station"
 msgid "New radio station"
 msgstr "Nova estação de rádio"
 
@@ -343,6 +339,11 @@ msgstr "%s selecionado [%s] [%s] [%s]"
 #| "Josef Andersson <josef.andersson@gmail.com> (Swedish translation)\n"
 #| "Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
 #| "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
+#| "Necdet Yücel <necdetyucel@gmail.com> (Turkish translation)\n"
+#| "Rafael Fontenelle <rffontenelle@gmail.com> (Brazilian Portuguese "
+#| "translation)\n"
+#| "Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (Spanish translation)\n"
+#| "Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
 msgid ""
 "Marek Černocký <marek@manet.cz> (Czech translation)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese translation)\n"
@@ -363,14 +364,11 @@ msgid ""
 "Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
 "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
 "Necdet Yücel <necdetyucel@gmail.com> (Turkish translation)\n"
-"Rafael Fontenelle <rffontenelle@gmail.com> (Brazilian Portuguese "
-"translation)\n"
 "Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (Spanish translation)\n"
 "Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
 msgstr ""
 "Marek Černocký <marek@manet.cz> (tradução para tcheco)\n"
-"Rafael Fontenelle <rafaelff@gnome.org> (tradução para português brasileiro)"
-"\n"
+"Rafael Fontenelle <rafaelff@gnome.org> (tradução para português brasileiro)\n"
 "Miroslav Nikolić <miroslavnikolic@rocketmail.com> (tradução para sérvio)\n"
 "Wolfgang Stöggl <c72578@yahoo.de> (tradução para alemão)\n"
 "Piotr Drąg <piotrdrag@gmail.com> (tradução para polonês)\n"
@@ -388,24 +386,22 @@ msgstr ""
 "Pedro Albuquerque <palbuquerque73@gmail.com> (tradução para português)\n"
 "Mario Blättermann <mario.blaettermann@gmail.com> (tradução para alemão)\n"
 "Necdet Yücel <necdetyucel@gmail.com> (tradução para turco)\n"
-"Rafael Fontenelle <rffontenelle@gmail.com> (tradução para português "
-"brasileiro)\n"
 "Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (tradução para espanhol)\n"
 "Mирослав Николић <miroslavnikolic@rocketmail.com> (tradução para sérvio)\n"
 
-#: ../src/girl.c:646
+#: ../src/girl.c:645
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 msgstr "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 
-#: ../src/girl.c:647
+#: ../src/girl.c:646
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
 msgstr "Mario Blättermann <mario.blaettermann@gmail.com> (tradutor de alemão)"
 
-#: ../src/girl.c:647
+#: ../src/girl.c:646
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Marek Černocký <marek@manet.cz> (tradução para tcheco)"
 
-#: ../src/girl.c:656
+#: ../src/girl.c:655
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -431,31 +427,31 @@ msgstr ""
 "programa. Se não recebeu, escreva para a Free Software Foundation, Inc., no "
 "endereço: 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
 
-#: ../src/girl.c:662
+#: ../src/girl.c:661
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Não foi possível carregar a logo do GIRL: %s\n"
 
-#: ../src/girl.c:819
+#: ../src/girl.c:818
 msgid "Search radio station by location"
 msgstr "Pesquise estações de rádio por localização"
 
-#: ../src/girl.c:824
+#: ../src/girl.c:823
 #, c-format
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "Ouvindo a estação de rádio %s em %s: %s"
 
-#: ../src/girl.c:845
+#: ../src/girl.c:844
 #, c-format
 msgid "Recording from the radio station %s in %s: %s "
 msgstr "Gravando da estação de rádio %s em %s: %s"
 
-#: ../src/girl.c:881
+#: ../src/girl.c:880
 #, c-format
 msgid "Finished recording from the radio station %s in %s: %s"
 msgstr "Finalizada a gravação da estação de rádio %s em %s: %s"
 
-#: ../src/girl.c:895
+#: ../src/girl.c:894
 #, c-format
 msgid ""
 "To finish playing from the radio station %s in %s, exit the application "
@@ -464,7 +460,7 @@ msgstr ""
 "Para finalizar a reprodução da estação de rádio %s em %s, saia do aplicativo "
 "Vídeos."
 
-#: ../src/girl.c:905
+#: ../src/girl.c:904
 msgid ""
 "Stop what?  You can \"Search\" by location, select a radio station from "
 "\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
@@ -474,7 +470,7 @@ msgstr ""
 "de rádio de \"Estações\", ou  clicar em \"Ouvir\" e/ou \"Gravar\". Ou vá "
 "para a estação de rádio \"Anterior\" ou a \"Próxima\"."
 
-#: ../src/girl.c:945
+#: ../src/girl.c:944
 #, c-format
 msgid "Archiving %s"
 msgstr "Arquivando %s"
