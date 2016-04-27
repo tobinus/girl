@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <locale.h>
 #include <sys/stat.h>
 
 #ifdef HAVE_CONFIG_H
@@ -764,21 +765,20 @@ on_location_matches(GtkEntryCompletion *widget,
 
 GtkWidget *create_new_station_selector(void) {
 
-	GirlStationInfo *stationinfo, *localstation;
-	GtkWidget *station_selector, *content_area, *item;
+	GirlStationInfo *localstation, *stationinfo;
+	GtkWidget *station_selector, *content_area;
 	GtkWidget *align;
 	GtkWidget *bandentry, *descriptionentry, *nameentry, *locationentry, *urientry, *websiteentry;
 	GtkEntryCompletion *completion;
 	GtkListStore *location_model;
 	GtkTreeIter iter;
-
+	gint retval;
 	TzDB *db;
 	GPtrArray *locs;
 	guint i;
 	char *pixmap_dir;
-	int retval = 0;
 
-	setlocale (LC_ALL, "");
+	setlocale (LC_ALL, "C");
 
 	gchar *world_station_xml_filename, *local_station_xml_file;
 

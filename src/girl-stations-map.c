@@ -185,99 +185,99 @@ girl_stations_map_finalize (GObject *object)
 }
 
 /* GtkWidget functions */
-static void
-girl_stations_map_get_preferred_width (GtkWidget *widget,
-                                     gint      *minimum,
-                                     gint      *natural)
-{
-  GirlStationsMapPrivate *priv = GIRL_STATIONS_MAP (widget)->priv;
-  gint size;
+/* static void */
+/* girl_stations_map_get_preferred_width (GtkWidget *widget, */
+/*                                      gint      *minimum, */
+/*                                      gint      *natural) */
+/* { */
+/*   GirlStationsMapPrivate *priv = GIRL_STATIONS_MAP (widget)->priv; */
+/*   gint size; */
 
-  size = gdk_pixbuf_get_width (priv->orig_background);
+/*   size = gdk_pixbuf_get_width (priv->orig_background); */
 
-  if (minimum != NULL)
-    *minimum = size;
-  if (natural != NULL)
-    *natural = size;
-}
+/*   if (minimum != NULL) */
+/*     *minimum = size; */
+/*   if (natural != NULL) */
+/*     *natural = size; */
+/* } */
 
-static void
-girl_stations_map_get_preferred_height (GtkWidget *widget,
-                                      gint      *minimum,
-                                      gint      *natural)
-{
-  GirlStationsMapPrivate *priv = GIRL_STATIONS_MAP (widget)->priv;
-  gint size;
+/* static void */
+/* girl_stations_map_get_preferred_height (GtkWidget *widget, */
+/*                                       gint      *minimum, */
+/*                                       gint      *natural) */
+/* { */
+/*   GirlStationsMapPrivate *priv = GIRL_STATIONS_MAP (widget)->priv; */
+/*   gint size; */
 
-  size = gdk_pixbuf_get_height (priv->orig_background);
+/*   size = gdk_pixbuf_get_height (priv->orig_background); */
 
-  if (minimum != NULL)
-    *minimum = size;
-  if (natural != NULL)
-    *natural = size;
-}
+/*   if (minimum != NULL) */
+/*     *minimum = size; */
+/*   if (natural != NULL) */
+/*     *natural = size; */
+/* } */
 
-static void
-girl_stations_map_size_allocate (GtkWidget     *widget,
-                               GtkAllocation *allocation)
-{
-  GirlStationsMapPrivate *priv = GIRL_STATIONS_MAP (widget)->priv;
-  GdkPixbuf *pixbuf;
+/* static void */
+/* girl_stations_map_size_allocate (GtkWidget     *widget, */
+/*                                GtkAllocation *allocation) */
+/* { */
+/*   GirlStationsMapPrivate *priv = GIRL_STATIONS_MAP (widget)->priv; */
+/*   GdkPixbuf *pixbuf; */
 
-  if (priv->background)
-    g_object_unref (priv->background);
+/*   if (priv->background) */
+/*     g_object_unref (priv->background); */
 
-  if (!gtk_widget_is_sensitive (widget))
-    pixbuf = priv->orig_background_dim;
-  else
-    pixbuf = priv->orig_background;
+/*   if (!gtk_widget_is_sensitive (widget)) */
+/*     pixbuf = priv->orig_background_dim; */
+/*   else */
+/*     pixbuf = priv->orig_background; */
 
-  priv->background = gdk_pixbuf_scale_simple (pixbuf,
-                                              allocation->width,
-                                              allocation->height,
-                                              GDK_INTERP_BILINEAR);
+/*   priv->background = gdk_pixbuf_scale_simple (pixbuf, */
+/*                                               allocation->width, */
+/*                                               allocation->height, */
+/*                                               GDK_INTERP_BILINEAR); */
 
-  if (priv->color_map)
-    g_object_unref (priv->color_map);
+/*   if (priv->color_map) */
+/*     g_object_unref (priv->color_map); */
 
-  priv->color_map = gdk_pixbuf_scale_simple (priv->orig_color_map,
-                                             allocation->width,
-                                             allocation->height,
-                                             GDK_INTERP_BILINEAR);
+/*   priv->color_map = gdk_pixbuf_scale_simple (priv->orig_color_map, */
+/*                                              allocation->width, */
+/*                                              allocation->height, */
+/*                                              GDK_INTERP_BILINEAR); */
 
-  priv->visible_map_pixels = gdk_pixbuf_get_pixels (priv->color_map);
-  priv->visible_map_rowstride = gdk_pixbuf_get_rowstride (priv->color_map);
+/*   priv->visible_map_pixels = gdk_pixbuf_get_pixels (priv->color_map); */
+/*   priv->visible_map_rowstride = gdk_pixbuf_get_rowstride (priv->color_map); */
 
-  GTK_WIDGET_CLASS (girl_stations_map_parent_class)->size_allocate (widget,
-                                                                  allocation);
-}
+/*   GTK_WIDGET_CLASS (girl_stations_map_parent_class)->size_allocate (widget, */
+/*                                                                   allocation); */
+/* } */
 
-static void
-girl_stations_map_realize (GtkWidget *widget)
-{
-  GdkWindowAttr attr = { 0, };
-  GtkAllocation allocation;
-  GdkWindow *window;
+/* static void */
+/* girl_stations_map_realize (GtkWidget *widget) */
+/* { */
+/*   GdkWindowAttr attr = { 0, }; */
+/*   GtkAllocation allocation; */
+/*   GdkWindow *window; */
 
-  gtk_widget_get_allocation (widget, &allocation);
+/*   gtk_widget_get_allocation (widget, &allocation); */
 
-  gtk_widget_set_realized (widget, TRUE);
+/*   gtk_widget_set_realized (widget, TRUE); */
 
-  attr.window_type = GDK_WINDOW_CHILD;
-  attr.wclass = GDK_INPUT_OUTPUT;
-  attr.width = allocation.width;
-  attr.height = allocation.height;
-  attr.x = allocation.x;
-  attr.y = allocation.y;
-  attr.event_mask = gtk_widget_get_events (widget)
-                                 | GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK;
+/*   attr.window_type = GDK_WINDOW_CHILD; */
+/*   attr.wclass = GDK_INPUT_OUTPUT; */
+/*   attr.width = allocation.width; */
+/*   attr.height = allocation.height; */
+/*   attr.x = allocation.x; */
+/*   attr.y = allocation.y; */
+/*   attr.event_mask = gtk_widget_get_events (widget) */
+/*                                  | GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK; */
 
-  window = gdk_window_new (gtk_widget_get_parent_window (widget), &attr,
-                           GDK_WA_X | GDK_WA_Y);
+/*   window = gdk_window_new (gtk_widget_get_parent_window (widget), &attr, */
+/*                            GDK_WA_X | GDK_WA_Y); */
 
-  gdk_window_set_user_data (window, widget);
-  gtk_widget_set_window (widget, window);
-}
+/*   gdk_window_set_user_data (window, widget); */
+/*   gtk_widget_set_window (widget, window); */
+/* } */
 
 
 static gdouble
@@ -388,101 +388,101 @@ draw_text_bubble (cairo_t *cr,
   cairo_restore (cr);
 }
 
-static gboolean
-girl_stations_map_draw (GtkWidget *widget,
-                      cairo_t   *cr)
-{
-  GirlStationsMapPrivate *priv = GIRL_STATIONS_MAP (widget)->priv;
-  GdkPixbuf *hilight, *orig_hilight;
-  GtkAllocation alloc;
-  gchar *file;
-  GError *err = NULL;
-  gdouble pointx, pointy;
-  char buf[16];
-  const char *fmt;
+/* static gboolean */
+/* girl_stations_map_draw (GtkWidget *widget, */
+/*                       cairo_t   *cr) */
+/* { */
+/*   GirlStationsMapPrivate *priv = GIRL_STATIONS_MAP (widget)->priv; */
+/*   GdkPixbuf *hilight, *orig_hilight; */
+/*   GtkAllocation alloc; */
+/*   gchar *file; */
+/*   GError *err = NULL; */
+/*   gdouble pointx, pointy; */
+/*   char buf[16]; */
+/*   const char *fmt; */
 
-  gtk_widget_get_allocation (widget, &alloc);
+/*   gtk_widget_get_allocation (widget, &alloc); */
 
-  /* paint background */
-  gdk_cairo_set_source_pixbuf (cr, priv->background, 0, 0);
-  cairo_paint (cr);
+/*   /\* paint background *\/ */
+/*   gdk_cairo_set_source_pixbuf (cr, priv->background, 0, 0); */
+/*   cairo_paint (cr); */
 
-  /* paint hilight */
-  if (gtk_widget_is_sensitive (widget))
-    fmt = GIRL_RESOURCE_PATH "/timezone_%s.png";
-  else
-    fmt = GIRL_RESOURCE_PATH "/timezone_%s_dim.png";
+/*   /\* paint hilight *\/ */
+/*   if (gtk_widget_is_sensitive (widget)) */
+/*     fmt = GIRL_RESOURCE_PATH "/timezone_%s.png"; */
+/*   else */
+/*     fmt = GIRL_RESOURCE_PATH "/timezone_%s_dim.png"; */
 
-  file = g_strdup_printf (fmt,
-                          g_ascii_formatd (buf, sizeof (buf),
-                                           "%g", priv->selected_offset));
-  orig_hilight = gdk_pixbuf_new_from_resource (file, &err);
-  g_free (file);
-  file = NULL;
+/*   file = g_strdup_printf (fmt, */
+/*                           g_ascii_formatd (buf, sizeof (buf), */
+/*                                            "%g", priv->selected_offset)); */
+/*   orig_hilight = gdk_pixbuf_new_from_resource (file, &err); */
+/*   g_free (file); */
+/*   file = NULL; */
 
-  if (!orig_hilight)
-    {
-      g_warning ("Could not load hilight: %s",
-                 (err) ? err->message : "Unknown Error");
-      if (err)
-        g_clear_error (&err);
-    }
-  else
-    {
+/*   if (!orig_hilight) */
+/*     { */
+/*       g_warning ("Could not load hilight: %s", */
+/*                  (err) ? err->message : "Unknown Error"); */
+/*       if (err) */
+/*         g_clear_error (&err); */
+/*     } */
+/*   else */
+/*     { */
 
-      hilight = gdk_pixbuf_scale_simple (orig_hilight, alloc.width,
-                                         alloc.height, GDK_INTERP_BILINEAR);
-      gdk_cairo_set_source_pixbuf (cr, hilight, 0, 0);
+/*       hilight = gdk_pixbuf_scale_simple (orig_hilight, alloc.width, */
+/*                                          alloc.height, GDK_INTERP_BILINEAR); */
+/*       gdk_cairo_set_source_pixbuf (cr, hilight, 0, 0); */
 
-      cairo_paint (cr);
-      g_object_unref (hilight);
-      g_object_unref (orig_hilight);
-    }
+/*       cairo_paint (cr); */
+/*       g_object_unref (hilight); */
+/*       g_object_unref (orig_hilight); */
+/*     } */
 
-  if (priv->location)
-    {
-      pointx = convert_longitude_to_x (priv->location->longitude, alloc.width);
-      pointy = convert_latitude_to_y (priv->location->latitude, alloc.height);
+/*   if (priv->location) */
+/*     { */
+/*       pointx = convert_longitude_to_x (priv->location->longitude, alloc.width); */
+/*       pointy = convert_latitude_to_y (priv->location->latitude, alloc.height); */
 
-      pointx = CLAMP (floor (pointx), 0, alloc.width);
-      pointy = CLAMP (floor (pointy), 0, alloc.height);
+/*       pointx = CLAMP (floor (pointx), 0, alloc.width); */
+/*       pointy = CLAMP (floor (pointy), 0, alloc.height); */
 
-      draw_text_bubble (cr, widget, pointx, pointy);
+/*       draw_text_bubble (cr, widget, pointx, pointy); */
 
-      if (priv->pin)
-        {
-          gdk_cairo_set_source_pixbuf (cr, priv->pin,
-                                       pointx - PIN_HOT_POINT_X,
-                                       pointy - PIN_HOT_POINT_Y);
-          cairo_paint (cr);
-        }
-    }
+/*       if (priv->pin) */
+/*         { */
+/*           gdk_cairo_set_source_pixbuf (cr, priv->pin, */
+/*                                        pointx - PIN_HOT_POINT_X, */
+/*                                        pointy - PIN_HOT_POINT_Y); */
+/*           cairo_paint (cr); */
+/*         } */
+/*     } */
 
-  return TRUE;
-}
+/*   return TRUE; */
+/* } */
 
-static void
-update_cursor (GtkWidget *widget)
-{
-  GdkWindow *window;
-  GdkCursor *cursor = NULL;
+/* static void */
+/* update_cursor (GtkWidget *widget) */
+/* { */
+/*   GdkWindow *window; */
+/*   GdkCursor *cursor = NULL; */
 
-  if (!gtk_widget_get_realized (widget))
-    return;
+/*   if (!gtk_widget_get_realized (widget)) */
+/*     return; */
 
-  if (gtk_widget_is_sensitive (widget))
-    {
-      GdkDisplay *display;
-      display = gtk_widget_get_display (widget);
-      cursor = gdk_cursor_new_for_display (display, GDK_HAND2);
-    }
+/*   if (gtk_widget_is_sensitive (widget)) */
+/*     { */
+/*       GdkDisplay *display; */
+/*       display = gtk_widget_get_display (widget); */
+/*       cursor = gdk_cursor_new_for_display (display, GDK_HAND2); */
+/*     } */
 
-  window = gtk_widget_get_window (widget);
-  gdk_window_set_cursor (window, cursor);
+/*   window = gtk_widget_get_window (widget); */
+/*   gdk_window_set_cursor (window, cursor); */
 
-  if (cursor)
-    g_object_unref (cursor);
-}
+/*   if (cursor) */
+/*     g_object_unref (cursor); */
+/* } */
 
 #if 0
 static void
@@ -500,7 +500,7 @@ static void
 girl_stations_map_class_init (GirlStationsMapClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
-  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+  /* GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass); */
 
   g_type_class_add_private (klass, sizeof (GirlStationsMapPrivate));
 

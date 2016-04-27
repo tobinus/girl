@@ -618,11 +618,10 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 	/* Open ~/.girl/girl.xml.  Parse structure.  Insert new item.  Save structure. */
 	GirlStationInfo *new_station;
 	GirlStationInfo *stationinfo;
-	GList *girl_local_stations = NULL;
+	/* GList *girl_local_stations = NULL; */
 	gchar *local_station_uri, *local_station_name, *local_station_location, *local_station_band, *local_station_description, *local_station_website;
-	gchar *label, *world_station_xml_filename, *local_station_xml_file;
 	gchar *stations = g_strconcat(g_get_home_dir(), "/.girl/girl.xml", NULL);
-	GList *l = NULL;
+	/* GList *l = NULL; */
 
 	stationinfo = girl_station_load_from_file(NULL, stations);
 
@@ -656,4 +655,5 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 	g_free(stations);
 	g_free(new_station);
 	g_free(stationinfo);
+	return (0);
 }

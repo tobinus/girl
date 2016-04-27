@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
 <!DOCTYPE girl SYSTEM "girl-8.0.dtd">
-<girl version="8.0">
+<girl version="8.4.1">
+  <station band="102.5FM" id="radiouchile" lang="es" name="Radio Uchile" rank="1.0" type="edu">
+    <frequency uri="http://radio.uchile.cl/">102.5 FM in Santiago, Chile</frequency>
+    <location>Santiago, Chile</location>
+    <description lang="en">
+      La Radio Universidad de Chile es una estación de radio ubicada en el 102.5 MHz del dial FM en Santiago de Chile.
+    </description>
+    <stream mime="audio/mpeg" uri="http://stream.radio.uchile.cl/;stream/1" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="82 kbps" />
+    <uri>http://radio.uchile.cl/</uri>
+  </station>
+  <station band="93.7FM" id="radiousp" lang="pt_BR" name="Radio USP" rank="1.0" type="edu">
+    <frequency uri="http://www.radio.usp.br/">93.7 FM in São Paulo, Brazil</frequency>
+    <location>São Paulo, Brazil</location>
+    <description lang="en">
+      A Rádio USP de São Paulo foi criada em 11 de outubro de 1977, preenchendo o espaço vazio de emissoras educativas em FM na Grande São Paulo e, ao mesmo tempo, proporcionando um canal de comunicação entre a Universidade de São Paulo e a sociedade.
+
+      Ao longo de seus 39 anos, a emissora recebeu diversos prêmios por sua linha de trabalho diferenciada. Em 2000, a Rádio USP recebeu o prêmio da APCA (Associação Paulista dos Críticos de Arte) como melhor programação musical. Destacam-se da mesma maneira as premiações pela melhor programação de cultura geral, melhor programa de variedades, conferidos também pela APCA, o Prêmio Jabuti da Câmara Brasileira do Livro e o Terceiro Concurso Internacional de Programas de Rádio promovido pela Rádio Cubana (vencido pelo Clip Atualidades).
+
+      A Rádio USP mantém uma programação jornalística voltada à divulgação das atividades da Universidade e um espaço aberto para debates sobre temas de interesse da sociedade e para prestação de serviços.
+    </description>
+    <stream mime="audio/ogg" uri="http://flow.emm.usp.br:8007/radiousp-48.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
+    <stream mime="audio/ogg" uri="http://flow.emm.usp.br:8007/radiousp-64.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <stream mime="audio/ogg" uri="http://flow.emm.usp.br:8007/radiousp-128.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.radio.usp.br/</uri>
+  </station>
   <station band="96.4FM" id="srib" lang="nb" name="Studentradioen i Bergen" rank="1.0" type="edu">
     <frequency uri="http://srib.no/">96.4 FM in Bergen, Norway</frequency>
     <location>Bergen, Norway</location>

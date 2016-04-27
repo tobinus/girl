@@ -636,6 +636,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 					"Necdet Yücel <necdetyucel@gmail.com> (Turkish translation)\n"
 					"Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (Spanish translation)\n"
 					"Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+					"Balázs Meskó <meskobalazs@gmail.com> (Hungarian translation)\n"
 					      ));
 	gchar* artists[] = { "Wiki Graphic Designer",
 			     "Aly Raj",
@@ -643,14 +644,14 @@ void about_app(GtkWidget * a, gpointer user_data)
 			     NULL };
 	gchar* comments = { _("Locate Internet Radio Stations") };
 	gchar* copyright = { _("Copyright (C) 2014, 2015, 2016  Ole Aamot Software") };
-	gchar* documenters[] = { _("Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"), _("Marek Černocký <marek@manet.cz> (Czech translation)"), NULL };
+	gchar* documenters[] = { _("Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"), _("Marek Černocký <marek@manet.cz> (Czech translation)"), _("Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"), NULL };
 
 	static GdkPixbuf* logo;
 
 	gchar* name = PACKAGE;
 	gchar* version = VERSION;
-	gchar* website = "http://wiki.gnome.org/Apps/Girl";
-	gchar* website_label = "http://wiki.gnome.org/Apps/Girl";
+	gchar* website = "https://people.gnome.org/~ole/girl/";
+	gchar* website_label = "https://people.gnome.org/~ole/girl/";
 
 	gchar* license = g_strdup(_("This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\nYou should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."));
 
