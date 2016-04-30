@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-04-02 20:55+0000\n"
-"PO-Revision-Date: 2016-04-04 14:25+0200\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"POT-Creation-Date: 2016-04-27 15:50+0000\n"
+"PO-Revision-Date: 2016-04-29 09:44+0200\n"
+"Last-Translator: Meskó Balázs <meskobalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -60,121 +60,121 @@ msgstr "Internetes rádióállomások felderítése"
 msgid "Live;Radio;Program;Station;Locator;"
 msgstr "Élő;Rádió;Program;Állomás;Felderítő;"
 
-#: ../src/girl-gui.c:54
+#: ../src/girl-gui.c:55
 msgid "New"
 msgstr "Új"
 
-#: ../src/girl-gui.c:54
+#: ../src/girl-gui.c:55
 msgid "Add a new radio station"
 msgstr "Új rádióállomás hozzáadása"
 
-#: ../src/girl-gui.c:57
+#: ../src/girl-gui.c:58
 msgid "Search"
 msgstr "Keresés"
 
-#: ../src/girl-gui.c:57
+#: ../src/girl-gui.c:58
 msgid "Search by location for radio stations"
 msgstr "Rádióállomások keresése hely szerint"
 
-#: ../src/girl-gui.c:61
+#: ../src/girl-gui.c:62
 msgid "Listen"
 msgstr "Hallgatás"
 
-#: ../src/girl-gui.c:61
+#: ../src/girl-gui.c:62
 msgid "Listen to selected radio station"
 msgstr "A kiválasztott rádióállomás hallgatása"
 
-#: ../src/girl-gui.c:65
+#: ../src/girl-gui.c:66
 msgid "Record"
 msgstr "Rögzítés"
 
-#: ../src/girl-gui.c:65
+#: ../src/girl-gui.c:66
 msgid "Record selected radio station"
 msgstr "A kiválasztott rádióállomás rögzítése"
 
-#: ../src/girl-gui.c:68
+#: ../src/girl-gui.c:69
 msgid "Stop"
 msgstr "Leállítás"
 
-#: ../src/girl-gui.c:68
+#: ../src/girl-gui.c:69
 msgid "Stop recording selected radio station"
 msgstr "A kiválasztott rádióállomás rögzítésének leállítása"
 
-#: ../src/girl-gui.c:73
+#: ../src/girl-gui.c:74
 msgid "Previous"
 msgstr "Előző"
 
-#: ../src/girl-gui.c:74
+#: ../src/girl-gui.c:75
 msgid "Go back to the previous radio station"
 msgstr "Ugrás vissza az előző rádióállomáshoz"
 
-#: ../src/girl-gui.c:76
+#: ../src/girl-gui.c:77
 msgid "Stations"
 msgstr "Állomások"
 
-#: ../src/girl-gui.c:76
+#: ../src/girl-gui.c:77
 msgid "Internet Radio Stations"
 msgstr "Internetes rádióállomások"
 
-#: ../src/girl-gui.c:79
+#: ../src/girl-gui.c:80
 msgid "Next"
 msgstr "Következő"
 
-#: ../src/girl-gui.c:79
+#: ../src/girl-gui.c:80
 msgid "Proceed to the next radio station"
 msgstr "Folytatás a következő rádióállomással"
 
-#: ../src/girl-gui.c:82
+#: ../src/girl-gui.c:83
 msgid "Station"
 msgstr "Állomás"
 
-#: ../src/girl-gui.c:83
+#: ../src/girl-gui.c:84
 msgid "About the current Station"
 msgstr "A jelenlegi állomás névjegye"
 
-#: ../src/girl-gui.c:86
+#: ../src/girl-gui.c:87
 msgid "Program"
 msgstr "Program"
 
-#: ../src/girl-gui.c:87
+#: ../src/girl-gui.c:88
 msgid "About the GNOME Internet Radio Locator"
 msgstr "A GNOME Internetes rádió felderítő névjegye"
 
-#: ../src/girl-gui.c:91
+#: ../src/girl-gui.c:92
 msgid "Exit"
 msgstr "Kilépés"
 
-#: ../src/girl-gui.c:92
+#: ../src/girl-gui.c:93
 msgid "Quit the GNOME Internet Radio Locator"
 msgstr "Kilépés a GNOME Internetes rádió felderítőből"
 
 #. The Listeners dialog
-#: ../src/girl-gui.c:121
+#: ../src/girl-gui.c:122
 msgid "Select a listener"
 msgstr "Hallgató kiválasztása"
 
-#: ../src/girl-gui.c:148
+#: ../src/girl-gui.c:149
 #, c-format
 msgid "Failed to open %s.  Please install it.\n"
 msgstr "Nem sikerült megnyitni: %s. Kérjük, telepítse.\n"
 
-#: ../src/girl-gui.c:158 ../src/girl-gui.c:660 ../src/girl-gui.c:1002
+#: ../src/girl-gui.c:159 ../src/girl-gui.c:661 ../src/girl-gui.c:1002
 #, c-format
 msgid "Failed to open %s\n"
 msgstr "Nem sikerült megnyitni: %s\n"
 
 #. The Programs dialog
-#: ../src/girl-gui.c:259
+#: ../src/girl-gui.c:260
 msgid "Select a program"
 msgstr "Program kiválasztása"
 
-#: ../src/girl-gui.c:290 ../src/girl-gui.c:300 ../src/girl-gui.c:477
-#: ../src/girl-gui.c:646 ../src/girl-gui.c:845 ../src/girl-gui.c:987
+#: ../src/girl-gui.c:291 ../src/girl-gui.c:301 ../src/girl-gui.c:478
+#: ../src/girl-gui.c:647 ../src/girl-gui.c:845 ../src/girl-gui.c:987
 #, c-format
 msgid "Failed to open %s.\n"
 msgstr "Nem sikerült megnyitni: %s.\n"
 
-#: ../src/girl-gui.c:404
+#: ../src/girl-gui.c:405
 #, c-format
 msgid "Your search by location resulted in the radio station %s in %s: %s"
 msgstr ""
@@ -182,16 +182,16 @@ msgstr ""
 "itt: %s: %s"
 
 #. The Stations dialog
-#: ../src/girl-gui.c:435
+#: ../src/girl-gui.c:436
 msgid "Search by location"
 msgstr "Keresés hely szerint"
 
 #. The Stations dialog
-#: ../src/girl-gui.c:615
+#: ../src/girl-gui.c:616
 msgid "Select a station"
 msgstr "Állomás kiválasztása"
 
-#: ../src/girl-gui.c:756
+#: ../src/girl-gui.c:757
 #, c-format
 msgid "Found location %s"
 msgstr "%s hely megtalálva"
@@ -339,10 +339,9 @@ msgid ""
 "Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
 "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
 "Necdet Yücel <necdetyucel@gmail.com> (Turkish translation)\n"
-"Rafael Fontenelle <rffontenelle@gmail.com> (Brazilian Portuguese "
-"translation)\n"
 "Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (Spanish translation)\n"
 "Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+"Balázs Meskó <meskobalazs@gmail.com> (Hungarian translation)\n"
 msgstr ""
 "Marek Černocký <marek@manet.cz> (cseh fordítás)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (brazíliai portugál fordítás)\n"
@@ -366,7 +365,7 @@ msgstr ""
 "Rafael Fontenelle <rffontenelle@gmail.com> (brazíliai portugál fordítás)\n"
 "Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (spanyol fordítás)\n"
 "Mирослав Николић <miroslavnikolic@rocketmail.com> (szerb fordítás)\n"
-"\n"
+"Meskó Balázs <meskobalazs@gmail.com> (magyar fordítás)\n"
 
 #: ../src/girl.c:646
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
@@ -379,6 +378,10 @@ msgstr "Mario Blättermann <mario.blaettermann@gmail.com> (német fordítás)"
 #: ../src/girl.c:647
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Marek Černocký <marek@manet.cz> (cseh fordítás)"
+
+#: ../src/girl.c:647
+msgid "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
+msgstr "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanyol fordítás)"
 
 #: ../src/girl.c:656
 msgid ""
