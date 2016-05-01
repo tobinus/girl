@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2014, 2015  Ole Aamot Software
+ * Copyright (C) 2014, 2015, 2016  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -621,8 +621,26 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 	/* GList *girl_local_stations = NULL; */
 	gchar *local_station_uri, *local_station_name, *local_station_location, *local_station_band, *local_station_description, *local_station_website;
 	gchar *stations = g_strconcat(g_get_home_dir(), "/.girl/girl.xml", NULL);
-	/* GList *l = NULL; */
 
+	gboolean local_girl_file = g_file_test (".girl/girl.xml", G_FILE_TEST_EXISTS);
+
+	g_printf("DEBUG: local_girl_file = %i\n", local_girl_file);
+
+	if (local_girl_file == 0) {
+
+		gchar *local_girl_directory = g_strconcat(g_get_home_dir(), "/.girl");
+		g_mkdir_with_parents (local_girl_directory, 0700);
+		
+		// fp = fopen(stations, "w");
+			
+		// fprintf(fp, "<?xml version='1.0' encoding='UTF-8'?>\n<!DOCTYPE girl SYSTEM 'girl-8.0.dtd'>\n<girl version='8.0'></girl>\n");
+
+		// fclose(fp);
+	}
+	
+	/* GList *l = NULL; */
+	FILE *fp;
+	
 	stationinfo = girl_station_load_from_file(NULL, stations);
 
 	new_station = g_new0(GirlStationInfo, 1);
@@ -633,8 +651,8 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 	new_station->stream = g_new0(GirlStreamInfo, 1);
 	new_station->stream->uri = g_strdup(station_uri);
 	new_station->uri = g_strdup(station_website);
-	FILE *fp = g_fopen(stations, "w+");
-	g_fprintf(fp, "<?xml version='1.0' encoding='UTF-8'?>\n<!DOCTYPE girl SYSTEM 'girl-7.0.dtd'>\n<girl version='7.0'>\n");
+	fp = fopen(stations, "w+");
+	fprintf(fp, "<?xml version='1.0' encoding='UTF-8'?>\n<!DOCTYPE girl SYSTEM 'girl-8.0.dtd'>\n<girl version='8.0'>\n");
 	// stationinfo-> = l->data;
 	while (stationinfo != NULL) {
 		local_station_uri = g_strdup(stationinfo->stream->uri);
@@ -644,12 +662,12 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 		local_station_description = g_strdup(stationinfo->description);
 		local_station_website = g_strdup(stationinfo->uri);
 		/* FIXME: Save mime='audio/mp3' uri='%s' codec='MPEG 1 Audio, Layer 3 (MP3)' samplerate='24000 Hz' channels='Mono' bitrate='32 kbps' */
-		g_fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", local_station_band, local_station_name, local_station_name, local_station_website, local_station_band, local_station_location, local_station_location, local_station_description, local_station_uri, local_station_website);
+		fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", local_station_band, local_station_name, local_station_name, local_station_website, local_station_band, local_station_location, local_station_location, local_station_description, local_station_uri, local_station_website);
 		stationinfo = stationinfo->next;
 
 	}
-	g_fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", new_station->band, new_station->name, new_station->name, new_station->uri, new_station->band, new_station->location, new_station->location, new_station->description, new_station->uri, new_station->uri);
-	g_fprintf(fp, "</girl>\n");
+	fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", new_station->band, new_station->name, new_station->name, new_station->uri, new_station->band, new_station->location, new_station->location, new_station->description, new_station->uri, new_station->uri);
+	fprintf(fp, "</girl>\n");
 	fclose(fp);
 	girl_stations = g_list_append(girl_stations, (GirlStationInfo *)new_station);
 	g_free(stations);

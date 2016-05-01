@@ -1,4 +1,19 @@
 ================
+GIRL 8.4.2 notes
+================
+
+GIRL 8.4.2 was released April 30th, 2016 with working
+GUI support for adding new personal radio channels in
+$HOME/.girl/girl.xml
+
+It is now possible to add local radio stations on a computer that runs GIRL.
+
+Changes since GNOME Internet Radio Locator 8.4.1:
+
+GUI
+	* src/girl-station.c: Create directory in $HOME if it does not exist
+
+================
 GIRL 8.4.1 notes
 ================
 
