@@ -29,6 +29,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <fcntl.h>
+#include <signal.h>
 #include "girl.h"
 #include "girl-gui.h"
 #include "girl-listener.h"
@@ -606,6 +607,11 @@ void quit_app(GtkWidget * a, gpointer user_data)
 	}
 	// stationinfo = l->data;
 	// girl_station_save(stationinfo, NULL, NULL, NULL, NULL, NULL, NULL);
+
+	g_spawn_close_pid(girl->record_pid);
+	g_spawn_close_pid(girl->player_pid);
+	kill(girl->player_pid,SIGQUIT);
+	kill(girl->record_pid,SIGQUIT);
 	gtk_main_quit();
 }
 

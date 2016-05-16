@@ -36,7 +36,7 @@ girl_SOURCES = \
 girl_CFLAGS  = $(GIRL_CFLAGS) \
 	       -DGIRL_DATADIR=\"$(datadir)/girl\" \
 	       -DDATADIR=\"$(datadir)\" \
-	       -DGIRL_DEBUG=0 \
+	       -DGIRL_DEBUG=1 \
 	       -DGIRL_CFG \
 	       -DGIRL_HELPER_PLAYER=\"$(GIRL_HELPER_PLAYER)\" \
 	       -DGIRL_HELPER_RECORD=\"$(GIRL_HELPER_RECORD)\" \

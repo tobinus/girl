@@ -68,15 +68,28 @@ void show_error(gchar * msg)
 }
 
 static void
-cb_child_watch( GPid  pid,
-		gint  status)
+cb_child_watch_player( GPid  pid,
+		       gint  status)
 {
 	/* Remove timeout callback */
 
 	/* FIXME? g_source_remove(girl->timeout_id ); */
-
+	GIRL_DEBUG_MSG("Closing PID %i in %s", pid, __FUNCTION__);
 	/* Close pid */
 	g_spawn_close_pid( pid );
+	g_spawn_check_exit_status(status, NULL);
+}
+
+static void
+cb_child_watch_record( GPid  pid,
+		       gint  status)
+{
+	/* Remove timeout callback */
+	/* FIXME? g_source_remove(girl->timeout_id ); */
+	GIRL_DEBUG_MSG("Closing PID %i in %s", pid, __FUNCTION__);
+	/* Close pid */
+	g_spawn_close_pid( pid );
+	g_spawn_check_exit_status(status, NULL);
 }
 
 static gboolean
@@ -226,41 +239,41 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 						G_SPAWN_SEARCH_PATH|G_SPAWN_STDOUT_TO_DEV_NULL|G_SPAWN_STDERR_TO_DEV_NULL|G_SPAWN_DO_NOT_REAP_CHILD,
 						NULL,
 						NULL,
-						&pid,
+						&girl->player_pid,
 						NULL,
 						NULL,
 						NULL,
 						&err);
 		if( ! ret )
 		{
-			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, pid);
+			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, girl->player_pid);
 			show_error(msg);
 			g_free(msg);
 			return;
 		}
 		/* Add watch function to catch termination of the process. This function
 		 * will clean any remnants of process. */
-		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl);
+		g_child_watch_add( girl->player_pid, (GChildWatchFunc)cb_child_watch_player, girl);
 		
-		girl->player_pid = pid;
+		/* girl->player_pid = pid; */
 		girl->player_status = GIRL_PLAYER_TRUE;
 		/* Install timeout fnction that will move the progress bar */
 		girl->timeout_id = g_timeout_add(100,(GSourceFunc)cb_timeout,girl);
 /* #endif */
 /* #if 0 */
 		ret = g_spawn_async_with_pipes( NULL, /* command */ argv, NULL,
-						/* G_SPAWN_DO_NOT_REAP_CHILD */ G_SPAWN_DEFAULT, NULL,
-						NULL, &pid, NULL, &out, &error, NULL );
+						G_SPAWN_DO_NOT_REAP_CHILD|G_SPAWN_DEFAULT, NULL,
+						NULL, &girl->player_pid, NULL, &out, &error, NULL );
 		if( ! ret )
 		{
-			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, pid);
+			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, girl->player_pid);
 			show_error(msg);
 			g_free(msg);
 			return;
 		}
 		/* Add watch function to catch termination of the process. This function
 		 * will clean any remnants of process. */
-		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl );
+		g_child_watch_add( girl->player_pid, (GChildWatchFunc)cb_child_watch_player, girl );
 		/* Create channels that will be used to read girl from pipes. *
 			
 #ifdef G_OS_WIN32
@@ -291,7 +304,7 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		}
 		/* Add watch function to catch termination of the process. This function
 		 * will clean any remnants of process. */
-		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl );
+		g_child_watch_add( girl->player_pid, (GChildWatchFunc)cb_child_watch_player, girl );
 #endif
 #endif
 
@@ -326,23 +339,23 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 						G_SPAWN_SEARCH_PATH|G_SPAWN_STDOUT_TO_DEV_NULL|G_SPAWN_STDERR_TO_DEV_NULL|G_SPAWN_DO_NOT_REAP_CHILD,
 						NULL,
 						NULL,
-						&pid,
+						&girl->record_pid,
 						NULL,
 						NULL,
 						NULL,
 						&err);
 		if( ! ret )
 		{
-			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, pid);
+			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, girl->record_pid);
 			show_error(msg);
 			g_free(msg);
 			return;
 		}
 		/* Add watch function to catch termination of the process. This function
 		 * will clean any remnants of process. */
-		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl);
+		g_child_watch_add( girl->record_pid, (GChildWatchFunc)cb_child_watch_record, girl);
 
-		girl->record_pid = pid;
+		/* girl->record_pid = pid; */
 		girl->record_status = GIRL_RECORD_TRUE;
 
 		girl_archive_new("Archive", "archive.mp3");
@@ -352,18 +365,18 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 /* #endif */
 /* #if 0 */
 		ret = g_spawn_async_with_pipes( NULL, /* command */ argv, NULL,
-						/* G_SPAWN_DO_NOT_REAP_CHILD */ G_SPAWN_DEFAULT, NULL,
-						NULL, &pid, NULL, &out, &error, NULL );
+						G_SPAWN_DO_NOT_REAP_CHILD|G_SPAWN_DEFAULT, NULL,
+						NULL, &girl->record_pid, NULL, &out, &error, NULL );
 		if( ! ret )
 		{
-			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, pid);
+			msg = g_strdup_printf(_("Failed to run %s (%i)\n"), command, girl->record_pid);
 			show_error(msg);
 			g_free(msg);
 			return;
 		}
 		/* Add watch function to catch termination of the process. This function
 		 * will clean any remnants of process. */
-		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl );
+		g_child_watch_add( girl->record_pid, (GChildWatchFunc)cb_child_watch_record, girl );
 		/* Create channels that will be used to read girl from pipes. */
 #ifdef G_OS_WIN32
 		out_ch = g_io_channel_win32_new_fd( out );
@@ -391,7 +404,7 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		}
 		/* Add watch function to catch termination of the process. This function
 		 * will clean any remnants of process. */
-		g_child_watch_add( pid, (GChildWatchFunc)cb_child_watch, girl );
+		g_child_watch_add( girl->record_pid, (GChildWatchFunc)cb_child_watch_record, girl );
 #endif
 	}
 }
