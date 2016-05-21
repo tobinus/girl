@@ -75,9 +75,11 @@ girl_streams_parser(GirlStreamsInfo *streams, xmlDocPtr doc,
 	streams->bitrate = (gchar *)xmlGetProp(cur, (const xmlChar *)"bitrate");
 	GIRL_DEBUG_MSG("streams->bitrate = %s\n", streams->bitrate);
 	streams->channels = (GirlChannels)xmlGetProp(cur, (const xmlChar *)"channels");
-	GIRL_DEBUG_MSG("streams->channels = %s\n", streams->channels);
+
 
 #if 0
+	GIRL_DEBUG_MSG("streams->channels = %\n", streams->channels);
+	
 	sub = cur->xmlChildrenNode;
 
 	while (sub != NULL) {

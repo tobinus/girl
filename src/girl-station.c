@@ -149,20 +149,13 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 {
 	GError *err = NULL;
 	GTimeVal mtime;
-
 	/* const char *mime_info = NULL; */
 	/* GnomeVFSMimeApplication *app; */
 	char *app = NULL, *command = NULL, *msg = NULL;
-        /* char *archive; */
 	char **argv = NULL;
 	gint argc;
-	/* gint status; */
-
-	GPid        pid;
-	gint        out, error;
-	GIOChannel *out_ch, *err_ch;
 	gboolean    ret;
-
+	
 	if (signal(SIGCHLD, SIG_IGN) == SIG_ERR) {
 		perror(0);
 		exit(1);
@@ -195,10 +188,45 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 				/* argv[1] = g_strdup(url); */
 			}
 			if (helper == GIRL_STREAM_RECORD) {
-				/* archive = g_strconcat("file://", g_get_home_dir(), "/.girl/", name, NULL); */
-				/* girl_archive_new(url, archive); */
+
+				GtkWidget *dialog;
+				char *filename, *default_filename;
+				GDate gdate;
+				time_t t;
+				struct tm *tmp;
+				char outstr[200];
+				t = time(NULL);
+				tmp = localtime(&t);
+				strftime(outstr, sizeof(outstr), "%a, %d %b %Y %T %z", tmp);
+				dialog = gtk_file_chooser_dialog_new ("Save Recorded Broadcast File",
+								      GTK_WINDOW(girl_app),
+								      GTK_FILE_CHOOSER_ACTION_SAVE,
+								      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+								      GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+								      NULL);
+				default_filename = g_strconcat(girl->selected_station_name, " - Broadcast Recording - ", outstr, ".mp3", NULL);  
+				gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog), default_filename);
+				if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
+				{
+					filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (dialog));
+					girl->selected_archive_file = g_strconcat(filename, NULL);
+				}
+				gtk_widget_destroy (dialog);
+				
 				/* printf("Archiving program at %s\n", archive); */
-				command = g_strconcat(app, " ", url, NULL);
+				
+				appbar_send_msg(_("Recording from %s in %s to %s"),
+						girl->selected_station_name,
+						girl->selected_station_location,
+						girl->selected_station_uri,
+						girl->selected_archive_file);		
+				
+				command = g_strconcat(app, " ", url, " -d ", g_get_home_dir(), "/.girl/ -D %D", NULL);
+
+				GIRL_DEBUG_MSG("%s\n", command);
+
+				// girl_archive_new("Archive", girl->selected_archive_file);
+				
 				/* " -d ", g_get_home_dir(), "/.girl -D \"", name, "\" -s -a -u girl/", VERSION, NULL); */
 				/* command = g_strconcat(command, " -d ", g_get_home_dir(), "/.girl/", name, " -D %S%A%T -t 10 -u girl/", VERSION, NULL); */
 			}
@@ -226,8 +254,6 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 	}
 
 	if (helper == GIRL_STREAM_PLAYER) {
-
-
 #if 0
 		g_shell_parse_argv(command,
 				   &argc,
@@ -358,12 +384,12 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		/* girl->record_pid = pid; */
 		girl->record_status = GIRL_RECORD_TRUE;
 
-		girl_archive_new("Archive", "archive.mp3");
+		girl_archive_new("Archive", girl->selected_archive_file);
 				
 		/* Install timeout fnction that will move the progress bar */
 		girl->timeout_id = g_timeout_add(100,(GSourceFunc)cb_timeout,girl);
 /* #endif */
-/* #if 0 */
+#if 0 
 		ret = g_spawn_async_with_pipes( NULL, /* command */ argv, NULL,
 						G_SPAWN_DO_NOT_REAP_CHILD|G_SPAWN_DEFAULT, NULL,
 						NULL, &girl->record_pid, NULL, &out, &error, NULL );
@@ -390,7 +416,7 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		g_io_add_watch( err_ch, G_IO_IN | G_IO_HUP, (GIOFunc)cb_err_watch, girl );
 		/* Install timeout fnction that will move the progress bar */
 		girl->timeout_id = g_timeout_add( 100, (GSourceFunc)cb_timeout, girl );
-/* #endif */
+#endif
 #if 0
 		if (!g_spawn_command_line_sync(command, stdout, stderr, status, &err)) {
 			msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
@@ -644,14 +670,8 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 		gchar *local_girl_directory = g_strconcat(g_get_home_dir(), "/.girl");
 		g_mkdir_with_parents (local_girl_directory, 0700);
 		
-		// fp = fopen(stations, "w");
-			
-		// fprintf(fp, "<?xml version='1.0' encoding='UTF-8'?>\n<!DOCTYPE girl SYSTEM 'girl-8.0.dtd'>\n<girl version='8.0'></girl>\n");
-
-		// fclose(fp);
 	}
 	
-	/* GList *l = NULL; */
 	FILE *fp;
 	
 	stationinfo = girl_station_load_from_file(NULL, stations);

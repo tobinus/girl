@@ -316,6 +316,7 @@ convert_latitude_to_y (gdouble latitude, gdouble map_height)
   return y;
 }
 
+#if 0
 static void
 draw_text_bubble (cairo_t *cr,
                   GtkWidget *widget,
@@ -387,6 +388,7 @@ draw_text_bubble (cairo_t *cr,
   g_object_unref (layout);
   cairo_restore (cr);
 }
+#endif
 
 /* static gboolean */
 /* girl_stations_map_draw (GtkWidget *widget, */

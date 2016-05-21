@@ -772,16 +772,16 @@ GtkWidget *create_new_station_selector(void) {
 	GtkEntryCompletion *completion;
 	GtkListStore *location_model;
 	GtkTreeIter iter;
-	gint retval;
 	TzDB *db;
 	GPtrArray *locs;
 	guint i;
-	char *pixmap_dir;
-
+	char *pixmap_dir = NULL;
+	gchar *path = NULL;
 	setlocale (LC_ALL, "C");
 
 	gchar *world_station_xml_filename, *local_station_xml_file;
-
+	gint retval;
+	
 	/* int i = 0, search_selection = -1; */
 
 	GStatBuf stats;
@@ -860,7 +860,7 @@ GtkWidget *create_new_station_selector(void) {
 	for (i = 0; i < locs->len ; i++) {
 		TzLocation *loc = locs->pdata[i];
 		TzInfo *info;
-		char *filename, *path;
+		char *filename;
 		gdouble selected_offset;
 		char buf[16];
 		info = tz_info_from_location (loc);

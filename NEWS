@@ -1,4 +1,11 @@
 =============
+Version 9.0.0
+=============
+
+GUI
+	* girl-station.c: Added file dialog for recording of radio broadcasts.
+
+=============
 Version 8.4.0
 =============
 

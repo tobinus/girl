@@ -104,6 +104,7 @@ struct _GirlData {
 	GtkAboutDialog *window;
 	GtkStatusbar *statusbar;
 	GtkWidget *about_station;
+	gchar *selected_archive_file;
 	GirlListenerInfo *selected_listener;
 	gchar *selected_listener_uri;
 	gchar *selected_listener_name;

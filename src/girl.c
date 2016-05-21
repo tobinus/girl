@@ -22,6 +22,7 @@
  */
 
 #include <config.h>
+#include <glib/gstdio.h>
 #include <gnome.h>
 #include <libgnomevfs/gnome-vfs.h>
 #include <libgnomevfs/gnome-vfs-application-registry.h>
@@ -266,7 +267,7 @@ void on_new_station_clicked(GtkWidget *a,
 {
 	GtkWidget *station;
 	GirlStationInfo *stationinfo;
-	GList *l = g_list_first(girl_stations);
+	/* GList *l = g_list_first(girl_stations); */
 
 	/* stationinfo = l->data; */
 	gint result;
@@ -316,7 +317,7 @@ void on_new_station_clicked(GtkWidget *a,
 void on_new_station_selector_changed(GtkWidget *a,
 				     gpointer user_data)
 {
-	GtkWidget *station;
+	/* GtkWidget *station; */
 
 }
 
@@ -466,8 +467,8 @@ void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 
 void on_new_station_changed(GtkWidget * a, gpointer user_data)
 {
-	GirlStationInfo *stationinfo;
-	GList *l = g_list_first(girl_stations);
+	GirlStationInfo *stationinfo = NULL;
+	/* GList *l = g_list_first(girl_stations); */
 	/* stationinfo = l->data; */
 
 	if (girl->selected_station_uri != NULL)
@@ -607,11 +608,10 @@ void quit_app(GtkWidget * a, gpointer user_data)
 	}
 	// stationinfo = l->data;
 	// girl_station_save(stationinfo, NULL, NULL, NULL, NULL, NULL, NULL);
-
 	g_spawn_close_pid(girl->record_pid);
 	g_spawn_close_pid(girl->player_pid);
-	kill(girl->player_pid,SIGQUIT);
-	kill(girl->record_pid,SIGQUIT);
+	// kill(girl->record_pid,SIGHUP);
+	// kill(girl->player_pid,SIGHUP);
 	gtk_main_quit();
 }
 
@@ -719,13 +719,13 @@ void about_listener(GtkWidget * a, gpointer user_data)
 
 void about_program(GtkWidget * a, gpointer user_data)
 {
-	GtkWidget *about_program;
+	GtkWidget *about_program = NULL;
 	
 	/* const gchar *translator_credits = _("translator_credits"); */
-	const gchar *authors[] = {
-		girl->selected_program_name,
-		NULL,
-	};
+	/* const gchar *authors[] = { */
+	/* 	girl->selected_program_name, */
+	/* 	NULL, */
+	/* }; */
 
 	/* about_program->window = gtk_window_new(GTK_WINDOW_TOPLEVEL); */
 		
@@ -848,12 +848,6 @@ void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 	credentials = g_credentials_new ();
 	
 	if (girl->selected_station_name != NULL) {
-		appbar_send_msg(_("Recording from the radio station %s in %s: %s "),
-				girl->selected_station_name,
-				girl->selected_station_location,
-				girl->selected_station_uri,
-				girl->selected_station_band);
-		
 		girl_helper_run(girl->selected_station_uri,
 				girl->selected_station_name,
 				GIRL_STREAM_SHOUTCAST,
@@ -884,11 +878,11 @@ void on_stop_button_clicked(GtkWidget *a, gpointer user_data)
 		
 		g_spawn_close_pid( girl->record_pid);
 
-		appbar_send_msg(_("Finished recording from the radio station %s in %s: %s"),
+		appbar_send_msg(_("Finished saving recording from the radio station %s in %s from %s to %s"),
 				girl->selected_station_name,
 				girl->selected_station_location,
 				girl->selected_station_uri,
-				girl->selected_station_band);
+				girl->selected_archive_file);
 
 		girl->record_status = GIRL_RECORD_FALSE;
 		
@@ -954,5 +948,19 @@ girl_archive_progress_callback(GnomeVFSXferProgressInfo * info, gpointer data)
 }
 
 gint girl_archive_new(gchar *title, gchar *file)
+	
 {
+	int ret;
+	gchar *oldpath, *newpath;
+
+	oldpath = g_strconcat(g_get_home_dir(), "/.girl/incomplete/ - .mp3", NULL);
+	newpath = g_strconcat(file, NULL);
+	
+	GIRL_DEBUG_MSG("Renaming %s to %s\n", oldpath, newpath);
+	
+	ret = g_rename(oldpath, newpath);
+
+	GIRL_DEBUG_MSG("Renamed %s to %s\n", oldpath, newpath);
+
+	return ret;
 }
