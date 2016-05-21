@@ -215,7 +215,7 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 				
 				/* printf("Archiving program at %s\n", archive); */
 				
-				appbar_send_msg(_("Recording from %s in %s to %s"),
+				appbar_send_msg(_("Recording from %s in %s on %s to %s"),
 						girl->selected_station_name,
 						girl->selected_station_location,
 						girl->selected_station_uri,
