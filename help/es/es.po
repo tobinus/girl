@@ -7,28 +7,30 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
-"POT-Creation-Date: 2016-02-22 20:10+0000\n"
-"PO-Revision-Date: 2016-02-23 09:39+0100\n"
+"POT-Creation-Date: 2016-02-23 18:32+0000\n"
+"PO-Revision-Date: 2016-05-27 12:34+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Andy Daniel Cruz Ramos <god_of_war_2@hotmail.com>, 2016"
+msgstr ""
+"Daniel Mustieles <daniel.mustieles@gmail.com, 2016>\n"
+"Andy Daniel Cruz Ramos <god_of_war_2@hotmail.com>, 2016"
 
 #. (itstool) path: credit/name
 #: C/aboutprogram.page:9 C/aboutstation.page:9 C/exit.page:9 C/index.page:14
 #: C/intro.page:9 C/listen.page:9 C/next.page:9 C/prev.page:7 C/record.page:9
 #: C/search.page:9 C/stations.page:9
 msgid "Ole Aamot"
-msgstr ""
+msgstr "Ole Aamot"
 
 #. (itstool) path: info/desc
 #: C/aboutprogram.page:14 C/aboutstation.page:14 C/exit.page:14
@@ -95,7 +97,7 @@ msgstr "Salir"
 #. (itstool) path: page/p
 #: C/exit.page:19
 msgid "It is possible to exit the <app>GIRL</app> with the \"Exit\" button."
-msgstr ""
+msgstr "Es posible salir de <app>GIRL</app> usando el botón «Salir»."
 
 #. (itstool) path: page/title
 #: C/exit.page:21
@@ -257,7 +259,7 @@ msgstr ""
 #. (itstool) path: p/link
 #: C/legal.xml:3
 msgid "http://creativecommons.org/licenses/by-sa/3.0/"
-msgstr ""
+msgstr "http://creativecommons.org/licenses/by-sa/3.0/"
 
 #. (itstool) path: license/p
 #: C/legal.xml:3
@@ -310,6 +312,8 @@ msgid ""
 "<media type=\"image\" mime=\"image/png\" src=\"media/girl-listen.png\"/> "
 "Listen to radio station"
 msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"media/girl-listen.png\"/> "
+"Escuchar la emisora de radio"
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
@@ -353,6 +357,8 @@ msgid ""
 "<media type=\"image\" mime=\"image/png\" src=\"media/girl-next-station.png\"/"
 "> Next station"
 msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"media/girl-next-station.png\"/"
+"> Siguiente emisora"
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
@@ -404,6 +410,8 @@ msgid ""
 "<media type=\"image\" mime=\"image/png\" src=\"media/girl-prev-station.png\"/"
 "> Previous radio station"
 msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"media/girl-prev-station.png\"/"
+"> Emisora de radio anterior"
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
@@ -444,6 +452,8 @@ msgid ""
 "<media type=\"image\" mime=\"image/png\" src=\"media/girl-record.png\"/> "
 "Record"
 msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"media/girl-record.png\"/> "
+"Grabar"
 
 #. (itstool) path: page/p
 #: C/record.page:34
@@ -457,6 +467,8 @@ msgstr ""
 msgid ""
 "<media type=\"image\" mime=\"image/png\" src=\"media/girl-stop.png\"/> Stop"
 msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"media/girl-stop.png\"/> "
+"Detener"
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
@@ -475,7 +487,7 @@ msgstr ""
 #. (itstool) path: page/title
 #: C/search.page:17
 msgid "Search by location"
-msgstr ""
+msgstr "Buscar por ubicación"
 
 #. (itstool) path: page/p
 #: C/search.page:19
@@ -497,6 +509,8 @@ msgid ""
 "<media type=\"image\" mime=\"image/png\" src=\"media/girl-search-station-by-"
 "location.png\"/> Search for radio station by location"
 msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"media/girl-search-station-by-"
+"location.png\"/> Buscar emisoras de radio por ubicación"
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
