@@ -1,23 +1,23 @@
 # Brazilian Portuguese translation for girl.
 # Copyright (C) 2016 girl's COPYRIGHT HOLDER
 # This file is distributed under the same license as the girl package.
-# Enrico Nicoletto <liverig@gmail.com>, 2015.
+# Enrico Nicoletto <liverig@gmail.com>, 2015, 2016.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=girl&ke"
-"ywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-04-27 15:50+0000\n"
-"PO-Revision-Date: 2016-05-03 15:54-0200\n"
-"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=girl&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-05-21 08:38+0000\n"
+"PO-Revision-Date: 2016-05-30 17:36-0300\n"
+"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/girl.appdata.xml.in.h:1
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Localizador de rádio na Internet"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:645
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:651
 msgid "Locate Internet Radio Stations"
 msgstr "Localizar estações de rádio na Internet."
 
@@ -240,7 +240,13 @@ msgstr ""
 "Selecione uma estação de rádio em \"Estações\" e clique \"Ouvir\" para ouvir "
 "a estação."
 
-#: ../src/girl-station.c:197
+#. printf("Archiving program at %s\n", archive);
+#: ../src/girl-station.c:218
+#, c-format
+msgid "Recording from %s in %s on %s to %s"
+msgstr "Gravando de %s em %s de %s a %s"
+
+#: ../src/girl-station.c:238
 #, c-format
 msgid ""
 "An error happened trying to play %s\n"
@@ -249,7 +255,7 @@ msgstr ""
 "Ocorreu um erro ao tentar reproduzir %s\n"
 "O arquivo não existe ou você não tem um reprodutor para ele."
 
-#: ../src/girl-station.c:203
+#: ../src/girl-station.c:244
 #, c-format
 msgid ""
 "An error happened trying to record %s\n"
@@ -258,13 +264,13 @@ msgstr ""
 "Ocorreu um erro ao tentar reproduzir %s\n"
 "O arquivo não existe ou você não tem um gravador para ele."
 
-#: ../src/girl-station.c:236 ../src/girl-station.c:256
-#: ../src/girl-station.c:336 ../src/girl-station.c:359
+#: ../src/girl-station.c:275 ../src/girl-station.c:295
+#: ../src/girl-station.c:375 ../src/girl-station.c:398
 #, c-format
 msgid "Failed to run %s (%i)\n"
 msgstr "Falha ao executar %s (%i)\n"
 
-#: ../src/girl-station.c:283 ../src/girl-station.c:383
+#: ../src/girl-station.c:322 ../src/girl-station.c:422
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -275,7 +281,7 @@ msgstr ""
 "Código de status: %i\n"
 "Detalhes: %s"
 
-#: ../src/girl-station.c:301
+#: ../src/girl-station.c:340
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -284,64 +290,41 @@ msgstr ""
 "Falha ao abrir a URL: \"%s\"\n"
 "Detalhes: %s"
 
-#: ../src/girl.c:66
+#: ../src/girl.c:68
 msgid "GNOME VFS initialization failed!\n"
 msgstr "Falha ao inicializar GNOME VFS\n"
 
-#: ../src/girl.c:183
+#: ../src/girl.c:185
 #, c-format
 msgid "Selected the previous radio station: %s in %s: %s"
 msgstr "Selecionada a estação de rádio anterior: %s em %s: %s"
 
-#: ../src/girl.c:245
+#: ../src/girl.c:247
 #, c-format
 msgid "Selected the next radio station %s in %s: %s"
 msgstr "Selecionada a próxima estação de rádio %s em %s: %s"
 
-#: ../src/girl.c:359
+#: ../src/girl.c:361
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "%s selecionado em %s: %s (%f)"
 
-#: ../src/girl.c:407
+#: ../src/girl.c:409
 #, c-format
 msgid "Selected %s in %s: %s"
 msgstr "%s selecionado em %s: %s"
 
-#: ../src/girl.c:454 ../src/girl.c:499
+#: ../src/girl.c:456 ../src/girl.c:501
 #, c-format
 msgid "Selected the radio station %s in %s: %s"
 msgstr "Selecionada a estação de rádio %s em %s: %s"
 
-#: ../src/girl.c:549
+#: ../src/girl.c:551
 #, c-format
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "%s selecionado [%s] [%s] [%s]"
 
-#: ../src/girl.c:618
-#| msgid ""
-#| "Marek Černocký <marek@manet.cz> (Czech translation)\n"
-#| "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese "
-#| "translation)\n"
-#| "Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
-#| "Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
-#| "Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
-#| "Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
-#| "Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
-#| "Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
-#| "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
-#| "Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
-#| "Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
-#| "Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
-#| "Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
-#| "Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
-#| "Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)\n"
-#| "Josef Andersson <josef.andersson@gmail.com> (Swedish translation)\n"
-#| "Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
-#| "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
-#| "Necdet Yücel <necdetyucel@gmail.com> (Turkish translation)\n"
-#| "Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (Spanish translation)\n"
-#| "Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+#: ../src/girl.c:624
 msgid ""
 "Marek Černocký <marek@manet.cz> (Czech translation)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese translation)\n"
@@ -389,23 +372,23 @@ msgstr ""
 "Mирослав Николић <miroslavnikolic@rocketmail.com> (tradução para sérvio)\n"
 "Balázs Meskó <meskobalazs@gmail.com> (tradução para húngaro)\n"
 
-#: ../src/girl.c:646
+#: ../src/girl.c:652
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 msgstr "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 
-#: ../src/girl.c:647
+#: ../src/girl.c:653
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
 msgstr "Mario Blättermann <mario.blaettermann@gmail.com> (tradutor de alemão)"
 
-#: ../src/girl.c:647
+#: ../src/girl.c:653
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Marek Černocký <marek@manet.cz> (tradução para tcheco)"
 
-#: ../src/girl.c:647
+#: ../src/girl.c:653
 msgid "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com> (tradução para espanhol)"
 
-#: ../src/girl.c:656
+#: ../src/girl.c:662
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -431,29 +414,25 @@ msgstr ""
 "programa. Se não recebeu, escreva para a Free Software Foundation, Inc., no "
 "endereço: 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
 
-#: ../src/girl.c:662
+#: ../src/girl.c:668
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Não foi possível carregar a logo do GIRL: %s\n"
 
-#: ../src/girl.c:819
+#: ../src/girl.c:825
 msgid "Search radio station by location"
 msgstr "Pesquise estações de rádio por localização"
 
-#: ../src/girl.c:824
+#: ../src/girl.c:830
 #, c-format
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "Ouvindo a estação de rádio %s em %s: %s"
 
-#: ../src/girl.c:845
-#, c-format
-msgid "Recording from the radio station %s in %s: %s "
-msgstr "Gravando da estação de rádio %s em %s: %s"
-
 #: ../src/girl.c:881
 #, c-format
-msgid "Finished recording from the radio station %s in %s: %s"
-msgstr "Finalizada a gravação da estação de rádio %s em %s: %s"
+msgid "Finished saving recording from the radio station %s in %s from %s to %s"
+msgstr ""
+"Concluído o salvamento da gravação da estação de rádio %s em %s de %s para %s"
 
 #: ../src/girl.c:895
 #, c-format
