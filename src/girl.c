@@ -610,6 +610,9 @@ void quit_app(GtkWidget * a, gpointer user_data)
 	// girl_station_save(stationinfo, NULL, NULL, NULL, NULL, NULL, NULL);
 	g_spawn_close_pid(girl->record_pid);
 	g_spawn_close_pid(girl->player_pid);
+
+	g_subprocess_force_exit(girl->player_subprocess);
+	g_subprocess_force_exit(girl->record_subprocess);
 	// kill(girl->record_pid,SIGHUP);
 	// kill(girl->player_pid,SIGHUP);
 	gtk_main_quit();
@@ -875,8 +878,10 @@ void on_stop_button_clicked(GtkWidget *a, gpointer user_data)
 	if (girl->record_status == GIRL_RECORD_TRUE) {
 		
 		/* Close pid */
-		
-		g_spawn_close_pid( girl->record_pid);
+
+		g_subprocess_force_exit(girl->record_subprocess);
+
+		// g_spawn_close_pid( girl->record_pid);
 
 		appbar_send_msg(_("Finished saving recording from the radio station %s in %s from %s to %s"),
 				girl->selected_station_name,
@@ -889,8 +894,10 @@ void on_stop_button_clicked(GtkWidget *a, gpointer user_data)
 	} else {
 
 		if (girl->player_status == GIRL_PLAYER_TRUE) {
-			
-			g_spawn_close_pid( girl->player_pid);
+
+			g_subprocess_force_exit(girl->player_subprocess);
+
+			// g_spawn_close_pid( girl->player_pid);
 			
 			appbar_send_msg(_("To finish playing from the radio station %s in %s, exit the application Videos."),
 					girl->selected_station_name,
@@ -947,13 +954,13 @@ girl_archive_progress_callback(GnomeVFSXferProgressInfo * info, gpointer data)
 	return TRUE;
 }
 
-gint girl_archive_new(gchar *title, gchar *file)
+gint girl_archive_new(gchar *title, gchar *file, gchar *codec)
 	
 {
 	int ret;
 	gchar *oldpath, *newpath;
 
-	oldpath = g_strconcat(g_get_home_dir(), "/.girl/incomplete/ - .mp3", NULL);
+	oldpath = g_strconcat(g_get_home_dir(), "/.girl/incomplete/ - .", strtok(codec, "/"), NULL);
 	newpath = g_strconcat(file, NULL);
 	
 	GIRL_DEBUG_MSG("Renaming %s to %s\n", oldpath, newpath);

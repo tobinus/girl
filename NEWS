@@ -1,4 +1,16 @@
 =============
+Version 9.1.0
+=============
+
+GUI
+	* girl-station.c: Implement async processes with GAsyncReadyCallback
+
+Stations
+
+	* src/girl.xml: Add Radio USP (São Paulo, Brazil)
+	* src/girl.xml: Add Radio Uchile (Santiago, Chile)
+
+=============
 Version 9.0.0
 =============
 

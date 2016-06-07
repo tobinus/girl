@@ -71,7 +71,7 @@ void statusbar_send_msg(const char *a, ...);
 gchar *copy_to_mem(GnomeVFSURI * uri, GnomeVFSFileSize len);
 
 void appbar_send_msg(const char *a, ...);
-gint girl_archive_new(gchar *title, gchar *file);
+gint girl_archive_new(gchar *title, gchar *file, gchar *codec);
 
 /* Fetcher for the channels */
 
@@ -140,6 +140,10 @@ struct _GirlData {
 	GdkPixbuf *icon;
 	gint player_status;
 	GPid player_pid;
+	GSubprocess *player_subprocess;
+	GSubprocess *record_subprocess;
+	GSubprocessLauncher *player_launcher;
+	GSubprocessLauncher *record_launcher;
 	gint record_status;
 	GPid record_pid;
 };
