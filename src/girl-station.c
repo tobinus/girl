@@ -31,6 +31,7 @@
 #include <sys/resource.h>
 #include <glib.h>
 #include <glib/gstdio.h>
+#include <gio/gio.h>
 #include <gtk/gtk.h>
 #include <libxml/xmlmemory.h>
 #include <libxml/parser.h>
@@ -65,6 +66,18 @@ void show_error(gchar * msg)
 	gtk_dialog_run(GTK_DIALOG(dialog));
 	gtk_widget_destroy(dialog);
 #endif				/* GIRL_CLI */
+}
+
+GAsyncReadyCallback
+cb_subprocess_player (GSubprocess *subprocess)
+{
+	g_subprocess_force_exit(subprocess);
+}
+
+GAsyncReadyCallback
+cb_subprocess_record (GSubprocess *subprocess)
+{
+	g_subprocess_force_exit(subprocess);
 }
 
 static void
@@ -145,7 +158,7 @@ cb_timeout( )
 	return( TRUE );
 }
 
-void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType helper)
+void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperType helper)
 {
 	GError *err = NULL;
 	GTimeVal mtime;
@@ -155,6 +168,9 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 	char **argv = NULL;
 	gint argc;
 	gboolean    ret;
+	GError *error = NULL;
+	GCancellable *player_cancellable;
+	GCancellable *record_cancellable;
 	
 	if (signal(SIGCHLD, SIG_IGN) == SIG_ERR) {
 		perror(0);
@@ -215,14 +231,12 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 				
 				/* printf("Archiving program at %s\n", archive); */
 				
-				appbar_send_msg(_("Recording from %s in %s on %s to %s"),
+				appbar_send_msg(_("Recording from %s in %s to %s"),
 						girl->selected_station_name,
 						girl->selected_station_location,
-						girl->selected_station_uri,
 						girl->selected_archive_file);		
 				
 				command = g_strconcat(app, " ", url, " -d ", g_get_home_dir(), "/.girl/ -D %D", NULL);
-
 				GIRL_DEBUG_MSG("%s\n", command);
 
 				// girl_archive_new("Archive", girl->selected_archive_file);
@@ -335,7 +349,22 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 #endif
 
 		/* Original async player code */
-		
+
+		girl->player_launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_NONE);
+		girl->player_subprocess = g_subprocess_launcher_spawn (girl->player_launcher, &error, app, url, NULL);
+		if (girl->player_subprocess == NULL) {
+			msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
+						"Details: %s"), url, error->message);
+			show_error(msg);
+			g_error_free(error);
+			g_free(msg);
+			goto quit_player;
+		} else {
+			girl->player_status = GIRL_PLAYER_TRUE;
+			GIRL_DEBUG_MSG("Launching %s player\n", command);
+		}
+
+#if 0
 		if (!g_spawn_command_line_async(command, &err)) {
 			msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
 						"Details: %s"), url, err->message);
@@ -345,8 +374,12 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		} else {
 			girl->player_status = GIRL_PLAYER_TRUE;
 			GIRL_DEBUG_MSG("Launching %s player\n", command);
+			g_subprocess_wait_async (girl->player_subprocess,
+						 player_cancellable,
+						 (GAsyncReadyCallback)cb_subprocess_player,
+						 NULL);
 		}
-
+#endif
 	}
 	
 	if (helper == GIRL_STREAM_RECORD) {
@@ -354,7 +387,25 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 /* #if 0 */
 		/* gchar *argv[] = { command, NULL }; */
 		/* Spawn child process */
-		
+		gchar *recording_path_name = g_strconcat(g_get_home_dir(), "/.girl/", NULL);
+		gchar *formatting_argument = g_strdup("-D %D");
+		girl->record_launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_NONE);
+		girl->record_subprocess = g_subprocess_launcher_spawn (girl->record_launcher, &error, GIRL_HELPER_RECORD, url, "-d", recording_path_name, "-D", "%D", NULL);
+		if (girl->record_subprocess == NULL) {
+			msg = g_strdup_printf(_("Failed to run '%s'\n"
+						"Details: %s"), GIRL_HELPER_RECORD, error->message);
+			show_error(msg);
+			g_error_free(error);
+			g_free(msg);
+			goto quit_record;
+		} else {
+			GIRL_DEBUG_MSG("Launching %s\n", command);
+			g_subprocess_wait_async (girl->record_subprocess,
+						 record_cancellable,
+						 (GAsyncReadyCallback)cb_subprocess_record, NULL);
+		}
+
+#if 0
 		g_shell_parse_argv(command,
 				   &argc,
 				   &argv,
@@ -384,7 +435,7 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		/* girl->record_pid = pid; */
 		girl->record_status = GIRL_RECORD_TRUE;
 
-		girl_archive_new("Archive", girl->selected_archive_file);
+		girl_archive_new("Archive", girl->selected_archive_file, girl->selected_streams_codec);
 				
 		/* Install timeout fnction that will move the progress bar */
 		girl->timeout_id = g_timeout_add(100,(GSourceFunc)cb_timeout,girl);
@@ -432,7 +483,21 @@ void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType 
 		 * will clean any remnants of process. */
 		g_child_watch_add( girl->record_pid, (GChildWatchFunc)cb_child_watch_record, girl );
 #endif
+#endif
 	}
+
+quit_player:
+
+        if (girl->player_subprocess)
+		g_object_unref(girl->player_subprocess);
+        if (girl->player_launcher)
+		g_object_unref(girl->player_launcher);
+quit_record:
+        if (girl->record_subprocess)
+		g_object_unref(girl->record_subprocess);
+        if (girl->record_launcher)
+		g_object_unref(girl->record_launcher);
+
 }
 
 void girl_stream_player(GtkWidget * widget, gpointer data)
@@ -699,7 +764,7 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 		stationinfo = stationinfo->next;
 
 	}
-	fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", new_station->band, new_station->name, new_station->name, new_station->uri, new_station->band, new_station->location, new_station->location, new_station->description, new_station->uri, new_station->uri);
+	fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", new_station->band, new_station->name, new_station->name, new_station->uri, new_station->band, new_station->location, new_station->location, new_station->description, new_station->stream->uri, new_station->uri);
 	fprintf(fp, "</girl>\n");
 	fclose(fp);
 	girl_stations = g_list_append(girl_stations, (GirlStationInfo *)new_station);
