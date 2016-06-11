@@ -1,4 +1,11 @@
 =============
+Version 9.2.0
+=============
+
+GUI
+	* girl-station.c: Fix structure
+
+=============
 Version 9.1.0
 =============
 
