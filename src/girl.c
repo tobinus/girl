@@ -879,46 +879,38 @@ void on_stop_button_clicked(GtkWidget *a, gpointer user_data)
 		
 		/* Close pid */
 
+		GIRL_DEBUG_MSG("Recording stopped.\n");
 		g_subprocess_force_exit(girl->record_subprocess);
-
 		// g_spawn_close_pid( girl->record_pid);
-
 		appbar_send_msg(_("Finished saving recording from the radio station %s in %s from %s to %s"),
 				girl->selected_station_name,
 				girl->selected_station_location,
 				girl->selected_station_uri,
 				girl->selected_archive_file);
-
 		girl->record_status = GIRL_RECORD_FALSE;
 		
-	} else {
-
-		if (girl->player_status == GIRL_PLAYER_TRUE) {
-
-			g_subprocess_force_exit(girl->player_subprocess);
-
-			// g_spawn_close_pid( girl->player_pid);
-			
-			appbar_send_msg(_("To finish playing from the radio station %s in %s, exit the application Videos."),
-					girl->selected_station_name,
-					girl->selected_station_location,
-					girl->selected_station_uri,
-					girl->selected_station_band);
-			
-			girl->player_status = GIRL_PLAYER_FALSE;
-
-		} else {
-			
-			appbar_send_msg(_("Stop what?  You can \"Search\" by location, select a radio station from \"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" or \"Next\" radio station."),
-					girl->selected_station_name,
-					girl->selected_station_location,
-					girl->selected_station_uri,
-					girl->selected_station_band);
-			
-		}
 	}
-	
-	
+
+	if (girl->player_status == GIRL_PLAYER_TRUE) {
+
+		GIRL_DEBUG_MSG("Playback stopped.\n");
+		g_subprocess_force_exit(girl->player_subprocess);
+		// g_spawn_close_pid( girl->player_pid);
+		appbar_send_msg(_("Stopped playing the radio station %s in %s, exit the application Videos."),
+				girl->selected_station_name,
+				girl->selected_station_location,
+				girl->selected_station_uri,
+				girl->selected_station_band);
+		girl->player_status = GIRL_PLAYER_FALSE;
+	}
+	/* if (girl->player_status != GIRL_RECORD_TRUE) { */
+	/* appbar_send_msg(_("Stop what?  You can \"Search\" by location, select a radio station from \"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" or \"Next\" radio station."), */
+	/* 				girl->selected_station_name, */
+	/* 				girl->selected_station_location, */
+	/* 				girl->selected_station_uri, */
+	/* 				girl->selected_station_band); */
+	/* 	} */
+	/* } */
 }
 
 GnomeVFSFileSize get_size(GnomeVFSURI * uri)

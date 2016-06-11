@@ -749,8 +749,8 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 	new_station->stream = g_new0(GirlStreamInfo, 1);
 	new_station->stream->uri = g_strdup(station_uri);
 	new_station->uri = g_strdup(station_website);
-	fp = fopen(stations, "w+");
-	fprintf(fp, "<?xml version='1.0' encoding='UTF-8'?>\n<!DOCTYPE girl SYSTEM 'girl-8.0.dtd'>\n<girl version='8.0'>\n");
+	fp = g_fopen(stations, "w+");
+	g_fprintf(fp, "<?xml version='1.0' encoding='UTF-8'?>\n<!DOCTYPE girl SYSTEM 'girl-9.1.dtd'>\n<girl version='9.1'>\n");
 	// stationinfo-> = l->data;
 	while (stationinfo != NULL) {
 		local_station_uri = g_strdup(stationinfo->stream->uri);
@@ -760,12 +760,12 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 		local_station_description = g_strdup(stationinfo->description);
 		local_station_website = g_strdup(stationinfo->uri);
 		/* FIXME: Save mime='audio/mp3' uri='%s' codec='MPEG 1 Audio, Layer 3 (MP3)' samplerate='24000 Hz' channels='Mono' bitrate='32 kbps' */
-		fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", local_station_band, local_station_name, local_station_name, local_station_website, local_station_band, local_station_location, local_station_location, local_station_description, local_station_uri, local_station_website);
+		g_fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", local_station_band, local_station_name, local_station_name, local_station_website, local_station_band, local_station_location, local_station_location, local_station_description, local_station_uri, local_station_website);
 		stationinfo = stationinfo->next;
 
 	}
-	fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", new_station->band, new_station->name, new_station->name, new_station->uri, new_station->band, new_station->location, new_station->location, new_station->description, new_station->stream->uri, new_station->uri);
-	fprintf(fp, "</girl>\n");
+	g_fprintf(fp, "  <station band=\"%s\" id=\"%s\" lang=\"en\" name=\"%s\" rank=\"1.0\" type=\"org\">\n    <frequency uri=\"%s\">%s in %s</frequency>\n    <location>%s</location>\n    <description lang=\"en\">%s</description>\n    <stream uri=\"%s\" />\n    <uri>%s</uri>\n  </station>\n", new_station->band, new_station->name, new_station->name, new_station->uri, new_station->band, new_station->location, new_station->location, new_station->description, new_station->stream->uri, new_station->uri);
+	g_fprintf(fp, "</girl>\n");
 	fclose(fp);
 	girl_stations = g_list_append(girl_stations, (GirlStationInfo *)new_station);
 	g_free(stations);
