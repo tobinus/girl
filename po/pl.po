@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: girl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-21 08:38+0000\n"
-"PO-Revision-Date: 2016-05-21 15:11+0200\n"
+"POT-Creation-Date: 2016-06-11 12:10+0000\n"
+"PO-Revision-Date: 2016-06-11 17:37+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -51,7 +51,7 @@ msgstr "Ciesz się radiem internetowym w programie GIRL."
 msgid "Internet Radio Locator"
 msgstr "Internetowe stacje radiowe"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:651
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:654
 msgid "Locate Internet Radio Stations"
 msgstr "Wyszukiwanie internetowych stacji radiowych"
 
@@ -240,12 +240,12 @@ msgid ""
 msgstr "Można wybrać stację radiową ze „Stacje” i kliknąć „Słuchaj”."
 
 #. printf("Archiving program at %s\n", archive);
-#: ../src/girl-station.c:218
+#: ../src/girl-station.c:234
 #, c-format
-msgid "Recording from %s in %s on %s to %s"
-msgstr "Nagrywanie z %s w %s na %s do %s"
+msgid "Recording from %s in %s to %s"
+msgstr "Nagrywanie z %s w %s do %s"
 
-#: ../src/girl-station.c:238
+#: ../src/girl-station.c:252
 #, c-format
 msgid ""
 "An error happened trying to play %s\n"
@@ -254,7 +254,7 @@ msgstr ""
 "Wystąpił błąd podczas próby odtworzenia %s\n"
 "Plik nie istnieje lub nie ma dla niego odtwarzacza."
 
-#: ../src/girl-station.c:244
+#: ../src/girl-station.c:258
 #, c-format
 msgid ""
 "An error happened trying to record %s\n"
@@ -263,13 +263,13 @@ msgstr ""
 "Wystąpił błąd podczas próby nagrania %s\n"
 "Plik nie istnieje lub nie ma dla niego programu nagrywającego."
 
-#: ../src/girl-station.c:275 ../src/girl-station.c:295
-#: ../src/girl-station.c:375 ../src/girl-station.c:398
+#: ../src/girl-station.c:289 ../src/girl-station.c:309
+#: ../src/girl-station.c:426 ../src/girl-station.c:449
 #, c-format
 msgid "Failed to run %s (%i)\n"
 msgstr "Wykonanie %s się nie powiodło (%i)\n"
 
-#: ../src/girl-station.c:322 ../src/girl-station.c:422
+#: ../src/girl-station.c:336 ../src/girl-station.c:473
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -280,13 +280,22 @@ msgstr ""
 "Kod stanu: %i\n"
 "Szczegóły: %s"
 
-#: ../src/girl-station.c:340
+#: ../src/girl-station.c:356 ../src/girl-station.c:369
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
 "Details: %s"
 msgstr ""
 "Otwarcie adresu URL się nie powiodło: „%s”\n"
+"Szczegóły: %s"
+
+#: ../src/girl-station.c:395
+#, c-format
+msgid ""
+"Failed to run '%s'\n"
+"Details: %s"
+msgstr ""
+"Uruchomienie „%s” się nie powiodło\n"
 "Szczegóły: %s"
 
 #: ../src/girl.c:68
@@ -323,7 +332,7 @@ msgstr "Wybrano stację radiową %s w %s: %s"
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "Wybrano %s [%s] [%s] [%s]"
 
-#: ../src/girl.c:624
+#: ../src/girl.c:627
 msgid ""
 "Marek Černocký <marek@manet.cz> (Czech translation)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese translation)\n"
@@ -374,25 +383,25 @@ msgstr ""
 "Mирослав Николић <miroslavnikolic@rocketmail.com> (serbskie tłumaczenie)\n"
 "Balázs Meskó <meskobalazs@gmail.com> (węgierskie tłumaczenie)\n"
 
-#: ../src/girl.c:652
+#: ../src/girl.c:655
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 msgstr "Copyright © 2014, 2015, 2016 Ole Aamot Software"
 
-#: ../src/girl.c:653
+#: ../src/girl.c:656
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
 msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com> (niemieckie tłumaczenie)"
 
-#: ../src/girl.c:653
+#: ../src/girl.c:656
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Marek Černocký <marek@manet.cz> (czeskie tłumaczenie)"
 
-#: ../src/girl.c:653
+#: ../src/girl.c:656
 msgid "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com> (hiszpańskie tłumaczenie)"
 
-#: ../src/girl.c:662
+#: ../src/girl.c:665
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -422,45 +431,45 @@ msgstr ""
 "— proszę napisać do Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA 02110-1301 USA."
 
-#: ../src/girl.c:668
+#: ../src/girl.c:671
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Nie można wczytać logo programu GIRL: %s\n"
 
-#: ../src/girl.c:825
+#: ../src/girl.c:828
 msgid "Search radio station by location"
 msgstr "Wyszukiwanie stacji radiowych według położenia"
 
-#: ../src/girl.c:830
+#: ../src/girl.c:833
 #, c-format
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "Słuchanie stacji radiowej %s w %s: %s "
 
-#: ../src/girl.c:881
+#. g_spawn_close_pid( girl->record_pid);
+#: ../src/girl.c:885
 #, c-format
 msgid "Finished saving recording from the radio station %s in %s from %s to %s"
 msgstr "Ukończono zapisywanie nagrania ze stacji radiowej %s w %s od %s do %s"
 
-#: ../src/girl.c:895
+#. g_spawn_close_pid( girl->player_pid);
+#: ../src/girl.c:899
 #, c-format
 msgid ""
-"To finish playing from the radio station %s in %s, exit the application "
-"Videos."
+"Stopped playing the radio station %s in %s, exit the application Videos."
 msgstr ""
-"Aby ukończyć odtwarzanie ze stacji radiowej %s w %s, należy zakończyć "
+"Zatrzymano odtwarzanie stacji radiowej %s w %s, należy zakończyć "
 "działanie programu Filmy."
 
-#: ../src/girl.c:905
-msgid ""
-"Stop what?  You can \"Search\" by location, select a radio station from "
-"\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" "
-"or \"Next\" radio station."
-msgstr ""
-"Nie ma nic do zatrzymania. Można „Wyszukać” według położenia, wybrać stację "
-"radiową ze „Stacje”, albo kliknąć „Słuchaj” i/lub „Nagrywaj”. Można też "
-"przejść do „Poprzedniej” lub „Następnej” stacji radiowej."
-
-#: ../src/girl.c:945
+#: ../src/girl.c:944
 #, c-format
 msgid "Archiving %s"
 msgstr "Archiwizowanie %s"
+
+#~ msgid ""
+#~ "Stop what?  You can \"Search\" by location, select a radio station from "
+#~ "\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev"
+#~ "\" or \"Next\" radio station."
+#~ msgstr ""
+#~ "Nie ma nic do zatrzymania. Można „Wyszukać” według położenia, wybrać "
+#~ "stację radiową ze „Stacje”, albo kliknąć „Słuchaj” i/lub „Nagrywaj”. "
+#~ "Można też przejść do „Poprzedniej” lub „Następnej” stacji radiowej."
