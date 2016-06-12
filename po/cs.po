@@ -457,7 +457,7 @@ msgstr "Posloucháte stanici %s v %s: %s"
 #: ../src/girl.c:885
 #, c-format
 msgid "Finished saving recording from the radio station %s in %s from %s to %s"
-msgstr "Dokončeno ukládání nahrávky ze stanice %s v mísě %s do %s"
+msgstr "Dokončeno ukládání nahrávky ze stanice %s v mísě %s y %s do %s"
 
 #. g_spawn_close_pid( girl->player_pid);
 #: ../src/girl.c:899
