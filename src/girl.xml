@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-9.1.dtd">
-<girl version="9.1.0">
+<!DOCTYPE girl SYSTEM "girl-9.2.dtd">
+<girl version="9.2.0">
   <station band="102.5FM" id="radiouchile" lang="es" name="Radio Uchile" rank="1.0" type="edu">
     <frequency uri="http://radio.uchile.cl/">102.5 FM in Santiago, Chile</frequency>
     <location>Santiago, Chile</location>
