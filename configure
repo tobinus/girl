@@ -4332,13 +4332,13 @@ if test -n "$GIRL_CFLAGS"; then
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtk+-2.0 >= 2.0 \\
-		  glib-2.0 >= 2.0 \\
+		  glib-2.0 >= 2.40 \\
 		  libgnome-2.0 >= 2.0 \\
 		  libgnomeui-2.0 >= 2.0 \\
 		  libxml-2.0 >= 2.0 \\
 		  gnome-vfs-2.0 >= 2.0\""; } >&5
   ($PKG_CONFIG --exists --print-errors "gtk+-2.0 >= 2.0 \
-		  glib-2.0 >= 2.0 \
+		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
@@ -4347,7 +4347,7 @@ if test -n "$GIRL_CFLAGS"; then
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
   pkg_cv_GIRL_CFLAGS=`$PKG_CONFIG --cflags "gtk+-2.0 >= 2.0 \
-		  glib-2.0 >= 2.0 \
+		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
@@ -4364,13 +4364,13 @@ if test -n "$GIRL_LIBS"; then
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtk+-2.0 >= 2.0 \\
-		  glib-2.0 >= 2.0 \\
+		  glib-2.0 >= 2.40 \\
 		  libgnome-2.0 >= 2.0 \\
 		  libgnomeui-2.0 >= 2.0 \\
 		  libxml-2.0 >= 2.0 \\
 		  gnome-vfs-2.0 >= 2.0\""; } >&5
   ($PKG_CONFIG --exists --print-errors "gtk+-2.0 >= 2.0 \
-		  glib-2.0 >= 2.0 \
+		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
@@ -4379,7 +4379,7 @@ if test -n "$GIRL_LIBS"; then
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
   pkg_cv_GIRL_LIBS=`$PKG_CONFIG --libs "gtk+-2.0 >= 2.0 \
-		  glib-2.0 >= 2.0 \
+		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
@@ -4405,14 +4405,14 @@ else
 fi
         if test $_pkg_short_errors_supported = yes; then
 	        GIRL_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "gtk+-2.0 >= 2.0 \
-		  glib-2.0 >= 2.0 \
+		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
 		  gnome-vfs-2.0 >= 2.0" 2>&1`
         else
 	        GIRL_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gtk+-2.0 >= 2.0 \
-		  glib-2.0 >= 2.0 \
+		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
@@ -4422,7 +4422,7 @@ fi
 	echo "$GIRL_PKG_ERRORS" >&5
 
 	as_fn_error $? "Package requirements (gtk+-2.0 >= 2.0 \
-		  glib-2.0 >= 2.0 \
+		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \

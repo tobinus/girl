@@ -50,7 +50,7 @@ AC_CHECK_LIB(m, pow, [], [], [])
 
 PKG_CHECK_MODULES(GIRL,
 		  gtk+-2.0 >= 2.0 \
-		  glib-2.0 >= 2.0 \
+		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
