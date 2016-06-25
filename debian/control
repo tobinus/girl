@@ -5,12 +5,15 @@ Maintainer: Ole Aamot <ole@src.gnome.org>
 Standards-Version: 3.9.6
 Homepage: https://wiki.gnome.org/Apps/Girl
 Build-Depends: debhelper (>> 9.0.0),
+	       dh-autoreconf,
 	       pkg-config (>> 0.28-0),
 	       libgtk2.0-dev (>> 2.24.24-1),
 	       libgnome2-dev (>> 2.32.1-4),
 	       libxml2-dev (>> 2.9.0),
 	       libgnomevfs2-dev (>> 2.24.5),
 	       libgnomeui-dev (>> 2.24.5),
+	       itstool,
+	       libyelp-dev,
 	       intltool (>> 0.50.2)
 
 Package: girl
