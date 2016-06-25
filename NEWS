@@ -11,6 +11,12 @@ Stations
 	* src/girl.xml: Add URadio (Nicosia, Cyprus)
 	* src/girl.xml: Add Urgent.fm (Gent, Belgium)
 
+Translations
+
+	* po/cs.po: Updated Czech translation (Marek Černocký)
+	* po/es.po: Updated Spanish translation (Daniel Mustieles)
+	* po/pl.po: Updated Polish translation (Piotr Drąg)
+
 =============
 Version 9.2.0
 =============
