@@ -1,4 +1,0 @@
-?package(girl):needs="x11" section="Applications/Players" \
-  title="GNOME Internet Radio Locator" hints="Music" command="/usr/bin/girl" \
-  longtitle="Locate Internet Radio Stations" \
-  icon="/usr/share/pixmaps/girl.xpm"

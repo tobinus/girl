@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-9.2.dtd">
-<girl version="9.2.0">
+<!DOCTYPE girl SYSTEM "girl-9.3.dtd">
+<girl version="9.3.0">
+  <station band="105.3FM" id="urgentfm" lang="be" name="Urgent.fm" rank="1.0" type="edu">
+    <frequency uri="http://www.urgent.fm/">105.3 FM in Gent, Belgium</frequency>
+    <location>Gent, Belgium</location>
+    <description>
+      Nieuws en informatie over de Gentse studentenzender.
+    </description>
+    <stream mime="audio/mpeg" uri="http://urgent.stream.flumotion.com/urgent/high.mp3.m3u" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="127 kbps" />
+    <uri>http://www.urgent.fm/</uri>
+  </station>
+  <station band="99.6FM" id="uradio" lang="el-CY" name="U Radio" rank="1.0" type="edu">
+    <frequency uri="http://www.uradio.com.cy/">99.6 FM in Nicosia, Cyprus</frequency>
+    <location>Nicosia, Cyprus</location>
+    <description>
+      Nicosia's best Rock and Alternative music station
+    </description>
+    <stream mime="audio/mpeg" uri="http://shout.kalsedia.com:9996/uradio996_64" codec="MPEG-1 Layer 3 (MP3)" samplerate="24000 Hz" channels="Stereo" bitrate="64 kbps" />
+    <uri>http://www.uradio.com.cy/</uri>
+  </station>
   <station band="102.5FM" id="radiouchile" lang="es" name="Radio Uchile" rank="1.0" type="edu">
     <frequency uri="http://radio.uchile.cl/">102.5 FM in Santiago, Chile</frequency>
     <location>Santiago, Chile</location>

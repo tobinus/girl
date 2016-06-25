@@ -1,4 +1,17 @@
 =============
+Version 9.3.0
+=============
+
+GUI
+
+	* src/girl-station.c: Major overhaul of "New Station" functionality
+
+Stations
+
+	* src/girl.xml: Add URadio (Nicosia, Cyprus)
+	* src/girl.xml: Add Urgent.fm (Gent, Belgium)
+
+=============
 Version 9.2.0
 =============
 

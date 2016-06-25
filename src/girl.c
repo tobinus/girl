@@ -279,30 +279,20 @@ void on_new_station_clicked(GtkWidget *a,
 
 		g_print ("Squeak!\n\n");
 
-		girl->selected_station_uri =
-			g_strdup(g_object_get_data(G_OBJECT(station), "station_uri"));
+		girl->selected_station_uri = g_strdup(g_object_get_data(G_OBJECT(station), "station_uri"));
 		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n", girl->selected_station_uri);
-		girl->selected_station_description =
-			g_strdup(g_object_get_data(G_OBJECT(station), "station_description"));
+		girl->selected_station_description = g_strdup(g_object_get_data(G_OBJECT(station), "station_description"));
 		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n", girl->selected_station_description);
-
-				girl->selected_station_band =
-			g_strdup(g_object_get_data(G_OBJECT(station), "station_band"));
+		girl->selected_station_band = g_strdup(g_object_get_data(G_OBJECT(station), "station_band"));
 		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n", girl->selected_station_band);
-
-				girl->selected_station_website =
-			g_strdup(g_object_get_data(G_OBJECT(station), "station_website"));
+		girl->selected_station_website = g_strdup(g_object_get_data(G_OBJECT(station), "station_website"));
 		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n", girl->selected_station_website);
-		girl->selected_station_name =
-			g_strdup(g_object_get_data(G_OBJECT(station), "station_name"));
+		girl->selected_station_name = g_strdup(g_object_get_data(G_OBJECT(station), "station_name"));
 		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n",
 			       girl->selected_station_name);
-
-		girl->selected_station_location =
-			g_strdup(g_object_get_data(G_OBJECT(station), "station_location"));
+		girl->selected_station_location = g_strdup(g_object_get_data(G_OBJECT(station), "station_location"));
 		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n",
 			       girl->selected_station_location);
-
 		girl_station_update (stationinfo, girl->selected_station_band, girl->selected_station_description, girl->selected_station_name, girl->selected_station_location, girl->selected_station_uri, girl->selected_station_website);
 		break;
 	default:
@@ -429,8 +419,8 @@ void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 	if (girl->selected_station_uri != NULL)
 		g_free(girl->selected_station_uri);
 
-	girl->selected_station_uri =
-	    g_strdup(g_object_get_data(G_OBJECT(a), "station_uri"));
+	girl->selected_station_uri = g_strdup(g_object_get_data(G_OBJECT(a), "station_uri"));
+
 	GIRL_DEBUG_MSG("on_station_select_changed: %s\n", girl->selected_station_uri);
 
 	girl->selected_station_name =
@@ -471,8 +461,8 @@ void on_new_station_changed(GtkWidget * a, gpointer user_data)
 	/* GList *l = g_list_first(girl_stations); */
 	/* stationinfo = l->data; */
 
-	if (girl->selected_station_uri != NULL)
-		g_free(girl->selected_station_uri);
+	/* if (girl->selected_station_uri != NULL) */
+	/* 	g_free(girl->selected_station_uri); */
 
 	girl->selected_station_uri =
 	    g_strdup(g_object_get_data(G_OBJECT(a), "station_uri"));
