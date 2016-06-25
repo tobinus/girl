@@ -1,4 +1,4 @@
-SUBDIRS = data help man src po debian
+SUBDIRS = data help man src po
 
 datadir = @datadir@
 

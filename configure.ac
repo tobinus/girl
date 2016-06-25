@@ -103,8 +103,6 @@ data/icons/48x48/Makefile
 data/icons/256x256/Makefile
 data/icons/512x512/Makefile
 data/icons/1024x1024/Makefile
-debian/Makefile
-debian/source/Makefile
 help/Makefile
 man/Makefile
 po/Makefile.in
