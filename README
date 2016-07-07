@@ -1,4 +1,15 @@
 ================
+GIRL 9.4.0 notes
+================
+
+GIRL 9.4.0 was released on June 7th, 2016 and support Democracy Now
+broadcasted through Canadian radio station CIUT in Toronto, Canada.
+
+The GIRL program now supports process control for GIRL_HELPER_PLAYER
+and GIRL_HELPER_RECORD with GAsyncReadyCallback from the GSubprocess
+API in glib 2.40 and later.
+
+================
 GIRL 8.4.2 notes
 ================
 

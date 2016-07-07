@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
 <!DOCTYPE girl SYSTEM "girl-9.3.dtd">
-<girl version="9.3.0">
+<girl version="9.4.0">
+  <station band="CIUT" id="ciut" lang="en" name="CIUT" rank="1.0" type="edu">
+    <frequency uri="http://www.ciut.fm/">89.5 FM in Toronto, Canada</frequency>
+    <location>Toronto, Canada</location>
+    <description lang="en">
+      CIUT 89.5 FM is Toronto’s preeminent, listener-supported, presenter of leading-edge music and spoken-word programming since 1966. Firmly rooted in the University of Toronto community, CIUT’s programming reaches and represents the community at large and encompasses a wide panorama of styles and expressions. CIUT entertains and informs listeners from Barrie to Buffalo, Kitchener to Cobourg, 24 hours a day, seven days a week.
+      Based on our mission statement, we provide an alternative to mainstream media, provide community access to the airwaves, and offer programming that reflects the diverse elements of the communities we serve.
+      We draw on the wide-ranging talents and global interests of students, faculty and community members, and provide opportunities for volunteers to learn about and participate in radio-related activities.
+      Above all, CIUT 89.5 FM exists to serve its listeners. We seek to stimulate, educate, entertain and challenge our audiences, and to meet listener needs that are not currently addressed by other broadcast media.
+    </description>
+    <stream mime="audio/mpeg" uri="http://128.100.197.46:80/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.ciut.fm/</uri>
+  </station>
+  <station band="KSLU" id="kslu" lang="en" name="KSLU" rank="1.0" type="edu">
+    <frequency uri="http://www2.southeastern.edu/kslu/">90.9 FM in Hammond, LA</frequency>
+    <location>Hammond, LA</location>
+    <description lang="en">
+      KSLU is a 3000 watt CPB-qualified non-commercial educational radio station owned and operated by Southeastern Louisiana University in Hammond, LA. The radio station's city-grade signal reaches a 10 mile radius and is often heard from Denham Springs to Covington to Kentwood. Many of the announcers are communication students at Southeastern training for careers in the broadcast industry. KSLU strives to serve both the Southeastern and surrounding communities.
+    </description>
+    <stream mime="audio/mpeg" uri="http://147.174.55.27:7998/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="64 kbps" />
+    <stream mime="audio/mpeg" uri="http://147.174.55.27:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="48 kbps" />
+    <stream mime="audio/mpeg" uri="http://147.174.55.27:8002/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="24 kbps" />
+    <uri>http://www2.southeastern.edu/kslu/</uri>
+  </station>
+  <station band="RadioK" id="radiok" lang="en" name="Radio K" rank="1.0" type="edu">
+    <frequency>88.1 FM in Minneapolis, MN</frequency>
+    <location>Minneapolis, MN</location>
+    <description lang="en">
+      Radio K - KUOM is the award-winning student-run radio station of the University of Minnesota, playing an eclectic variety of independent music both old and new. Radio K educates students, breaks ground in musical programming, and provides cutting-edge cultural coverage through our specialty shows and Real College Podcast.
+      The independent music heard every day on Radio K is made possible through the support of listeners like you. Additional support comes from the students of the University of Minnesota, the College of Continuing Education, the Minnesota Arts and Cultural Heritage Fund, and the State of Minnesota.
+    </description>
+    <stream mime="audio/mpeg" uri="http://radiokstreams.cce.umn.edu:8256/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="256 kbps" />
+    <stream mime="audio/mpeg" uri="http://radiokstreams.cce.umn.edu:8128/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://radiok.org/</uri>
+  </station>
+  <station band="ONLINE" id="blurfm" lang="es-AR" name="Blur FM" rank="1.0" type="com">
+    <frequency uri="http://www.blurfm.com/">ONLINE in Buenos Aires, Argentina</frequency>
+    <location>Buenos Aires, Argentina</location>
+    <description>
+      Blur FM is an online radio station that works without advertising and with the sole purpose of promoting the artists that are broadcasted.  Music files are downloaded legally-free, or under consent of the artists, from online sources, which aim to promote independent/emerging artists.
+    </description>
+    <stream mime="audio/mpeg" uri="http://www.blurfm.com/streams/m3u/blurfm.m3u" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://www.blurfm.com/streams/m3u/blurfmlowmp3.m3u" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <stream mime="audio/aacp" uri="http://www.blurfm.com/streams/m3u/blurfmlow.m3u" codec="MPEG-2 AAC (AAC+)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
+    <uri>http://www.blurfm.com/</uri>
+  </station>
   <station band="105.3FM" id="urgentfm" lang="be" name="Urgent.fm" rank="1.0" type="edu">
     <frequency uri="http://www.urgent.fm/">105.3 FM in Gent, Belgium</frequency>
     <location>Gent, Belgium</location>

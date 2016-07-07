@@ -1,4 +1,19 @@
 =============
+Version 9.4.0
+=============
+
+Stations
+
+	* src/girl.xml: Add Blur FM (Buenos Aires, Argentina)
+	* src/girl.xml: Add KSLU (Hammond, LA)
+	* src/girl.xml: Add Radio K (Minneapolis, MN)
+	* src/girl.xml: Add CIUT (University of Toronto, Canada)
+
+The girl 9.4.0 "Never shoot" release is released against police
+violence and racism in U.S.A. and in support of the Black Lives
+Matter movement.  CIUT in Canada is broadcasting Democracy Now.
+
+=============
 Version 9.3.0
 =============
 
