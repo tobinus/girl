@@ -9,6 +9,11 @@ Stations
 	* src/girl.xml: Add Radio K (Minneapolis, MN)
 	* src/girl.xml: Add CIUT (University of Toronto, Canada)
 
+Translations
+
+	* po/pt_BR.po: Updated Brazilian Portuguese translation
+          (Laudivan Freire de Almeida)
+
 =============
 Version 9.3.0
 =============
