@@ -726,13 +726,13 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
   </station>
   <station band="90.1FM" id="kzsu" lang="en" name="KZSU" rank="1.0" type="edu">
     <frequency>90.1 FM in Stanford, CA</frequency>
-    <location>San Francisco, CA</location>
+    <location>Palo Alto, CA</location>
     <description lang="en">KZSU is Stanford University's FM radio station, broadcasting across the Bay Area on 90.1 FM and across the world at kzsulive.stanford.edu. We exist to serve the Stanford community with quality radio broadcasts, including music, sports, news, and public affairs programming.
 <!--
       The station is owned by the Board of Trustees of Stanford University and is governed by a Board of Directors appointed by the President. We got our FM license in 1964, and upgraded from 10 to 500 watts in 1978. Before 1964, KZSU broadcast as an AM carrier current station (through the University's power supply) on 880 kHz, starting in 1947 as a part of the Department of Communication.
 
       KZSU is a non-commercial station funded mainly by Stanford student fees, in addition to underwriting and listener donations. KZSU's staff is all volunteer, made up of Stanford students, staff, alumni, and community affiliates.--></description>
-    <stream mime="audio/mpeg" uri="http://kzsulive.stanford.edu/audio/kzsu-1-128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://kzsu-streams.stanford.edu/kzsu-1-128.mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://kzsulive.stanford.edu/</uri>
   </station>
   <station band="90.9FM" id="kexp" lang="en" name="KEXP" rank="1.0" type="edu">
