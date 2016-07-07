@@ -2,8 +2,13 @@
 GIRL 9.4.0 notes
 ================
 
-GIRL 9.4.0 was released on June 7th, 2016 and support Democracy Now
-broadcasted through Canadian radio station CIUT in Toronto, Canada.
+GIRL 9.4.0 was released on June 7th, 2016 with support for Blur FM
+broadcasting from Buenos Aires, Argentina, the Canadian radio station
+CIUT at University of Toronto, Canada, Radio K, a student-run radio
+station of the University of Minnesota in Minneapolis, as well as
+KSLU, a 3000 watt CPB-qualified non-commercial educational radio
+station owned and operated by Southeastern Louisiana University in
+Hammond, Louisiana.
 
 The GIRL program now supports process control for GIRL_HELPER_PLAYER
 and GIRL_HELPER_RECORD with GAsyncReadyCallback from the GSubprocess
