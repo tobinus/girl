@@ -8,6 +8,10 @@ GUI
 	* src/girl-gui.c: Add History button
 	* src/girl-station.c: Add and increment station_count variable
 
+Translations
+
+	* po/hu.po: Updated Hungarian translation by Balázs Meskó
+
 =============
 Version 9.4.0
 =============
