@@ -23,6 +23,7 @@
 
 #include <config.h>
 #include <glib/gstdio.h>
+#include <glib/glist.h>
 #include <gnome.h>
 #include <libgnomevfs/gnome-vfs.h>
 #include <libgnomevfs/gnome-vfs-application-registry.h>
@@ -44,7 +45,7 @@ GList *girl_listeners;
 GList *girl_programs;
 GList *girl_stations;
 GList *girl_streams;
-
+GList *girl_history;
 
 GtkWidget *girl_app;
 GtkWidget *archivers_selector = NULL;
@@ -115,6 +116,14 @@ int main(int argc, char *argv[])
 
 	if (girl->icon != NULL)
 		gtk_window_set_icon(GTK_WINDOW(girl_app), girl->icon);
+
+#if HAVE_GIRL_RECORD == 1
+	appbar_send_msg(_("%i stations and %i streams found "),
+			girl->station_count, girl->stream_count);
+#else
+	appbar_send_msg(_("%i stations and %i streams found"),
+			girl->station_count, girl->stream_count);
+#endif
 
 	gtk_main();
 	return 0;
@@ -416,6 +425,8 @@ void on_stations_selector_button_clicked(GtkWidget * a, gpointer user_data)
 
 void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 {
+	GirlStationInfo *station;
+
 	if (girl->selected_station_uri != NULL)
 		g_free(girl->selected_station_uri);
 
@@ -449,6 +460,8 @@ void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 			girl->selected_station_uri,
 			girl->selected_station_band);
 
+	station->name = g_strdup(g_object_get_data(G_OBJECT(a), "station_name"));
+	/* girl_history = g_list_add(GLIST(girl_history), (GirlStationInfo *)station); */
 	girl_helper_run(girl->selected_station_uri,
 			girl->selected_station_name,
 			GIRL_STREAM_SHOUTCAST,
@@ -636,6 +649,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 					"Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (Spanish translation)\n"
 					"Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
 					"Balázs Meskó <meskobalazs@gmail.com> (Hungarian translation)\n"
+					"Laudivan Freire de Almeida <laudivan@riseup.net> (Brazilian Portuguese translation)\n"
 					      ));
 	gchar* artists[] = { "Wiki Graphic Designer",
 			     "Aly Raj",
@@ -806,6 +820,12 @@ void about_streams(GtkWidget * a, gpointer user_data)
 		gtk_widget_show(about_streams);
 	}
 
+}
+
+void on_history_button_clicked(GtkWidget *a, gpointer user_data)
+{
+	girl_history = g_list_insert(girl_history, (gchar*)girl->selected_station_name, girl->current_station_number++);
+        appbar_send_msg(_("Added %s to history of radio stations as station #%i"), girl->selected_station_name, girl->current_station_number);
 }
 
 void on_search_button_clicked(GtkWidget *a, gpointer user_data)

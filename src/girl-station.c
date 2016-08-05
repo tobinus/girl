@@ -581,6 +581,9 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 		if ((!xmlStrcmp(sub->name, (const xmlChar *) "stream"))) {
 
 			GirlStreamInfo *stream = g_new0(GirlStreamInfo, 1);
+
+			girl->stream_count++;
+
 			station->stream = stream;
 
 			station->stream->mimetype = (gchar *)
@@ -631,6 +634,7 @@ girl_station_parser(GirlStationInfo * station, xmlDocPtr doc,
 		sub = sub->next;
 	}
 
+	girl->station_count++;
 	return;
 }
 

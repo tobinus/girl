@@ -76,6 +76,7 @@ gint girl_archive_new(gchar *title, gchar *file, gchar *codec);
 /* Fetcher for the channels */
 
 void girl_helper_run(char *url, char *name, GirlStreamType type, GirlHelperType girl);
+void on_history_button_clicked(GtkWidget *a, gpointer user_data);
 void on_search_button_clicked(GtkWidget * button, gpointer user_data);
 void on_listen_button_clicked(GtkWidget * button, gpointer user_data);
 void on_record_button_clicked(GtkWidget * button, gpointer user_data);
@@ -119,6 +120,7 @@ struct _GirlData {
 	gchar *selected_program_description;
 	GirlRunnersInfo *selected_runners;
 	gint timeout_id;
+	gint current_station_number;
 	GirlStationInfo *previous_station;
 	GirlStationInfo *selected_station;
 	gchar *selected_station_uri;
@@ -146,6 +148,8 @@ struct _GirlData {
 	GSubprocessLauncher *record_launcher;
 	gint record_status;
 	GPid record_pid;
+	gint station_count;
+	gint stream_count;
 };
 
 typedef struct _GirlData GirlData;
@@ -158,5 +162,6 @@ extern GList *girl_listeners;
 extern GList *girl_programs;
 extern GList *girl_stations;
 extern GList *girl_streams;
+extern GList *girl_history;
 
 #endif /* GIRL_H */

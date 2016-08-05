@@ -59,6 +59,10 @@ GnomeUIInfo toolbar[] = {
 			       on_search_button_clicked,
 			       GTK_STOCK_FIND),
 	GNOMEUIINFO_SEPARATOR,
+	GNOMEUIINFO_ITEM_STOCK(N_("History"), N_("History of radio stations"),
+			       on_history_button_clicked,
+			       GTK_STOCK_HARDDISK),
+	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_ITEM_STOCK(N_("Listen"), N_("Listen to selected radio station"),
 			       on_listen_button_clicked,
 			       GTK_STOCK_MEDIA_PLAY),
@@ -1153,16 +1157,13 @@ GtkWidget *create_girl_app()
 	girl_data->progress = GTK_PROGRESS_BAR(progress);
 
 #if HAVE_GIRL_RECORD == 1
-	gnome_appbar_push(girl_data->appbar,
-			  _("Search by location from \"Search\" or select a radio station from \"Stations\".  Click \"Listen\" to listen to, or \"Record\" to record from the station."));
+	gnome_appbar_push(girl_data->appbar,_("Search by location from \"Search\" or select a radio station from \"Stations\".  Click \"Listen\" to listen to, or \"Record\" to record from the station."));
 #else
-	gnome_appbar_push(girl_data->appbar,
-			  _("Select a radio station from \"Stations\" and click \"Listen\" to listen to the station."));
-#endif	
+	gnome_appbar_push(girl_data->appbar,_("Select a radio station from \"Stations\" and click \"Listen\" to listen to the station."));
+#endif
 	/*    g_signal_connect(G_OBJECT(calendar), */
 	/*                     "day_selected_double_click", */
 	/*                     G_CALLBACK (on_listen_button_clicked), girl_data); */
-
 	g_signal_connect(G_OBJECT(girl_app), "destroy",
 			 G_CALLBACK(quit_app), girl_data);
 

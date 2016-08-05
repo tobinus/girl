@@ -1,4 +1,14 @@
 =============
+Version 9.5.0
+=============
+
+GUI
+	* src/girl.c: Add translation credits for Laudivan Freire de Almeida
+	* src/girl.[ch]: Add History callback
+	* src/girl-gui.c: Add History button
+	* src/girl-station.c: Add and increment station_count variable
+
+=============
 Version 9.4.0
 =============
 
