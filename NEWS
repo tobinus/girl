@@ -4,7 +4,7 @@ Version 9.5.0
 
 GUI
 	* src/girl.c: Add translation credits for Laudivan Freire de Almeida
-	* src/girl-station.c: Add and increment station_count variable
+	* src/girl-station.c: Add station_count and stream_count variables
 
 Stations
 
@@ -15,6 +15,7 @@ Stations
 Translations
 
 	* po/hu.po: Updated Hungarian translation by Balázs Meskó
+	* po/sv.po: Updated Swedish translation by Anders Jonsson
 
 =============
 Version 9.4.0
