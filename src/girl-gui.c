@@ -41,6 +41,7 @@
 #include <libgnome/libgnome.h>
 /* #include <libgnome/gnome-desktop-item.h> */
 #include <gtk/gtk.h>
+#include <gtk/gtkcombobox.h>
 #include <glib/gstdio.h>
 #include "girl.h"
 #include "girl-gui.h"
@@ -58,10 +59,6 @@ GnomeUIInfo toolbar[] = {
 	GNOMEUIINFO_ITEM_STOCK(N_("Search"), N_("Search by location for radio stations"),
 			       on_search_button_clicked,
 			       GTK_STOCK_FIND),
-	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_ITEM_STOCK(N_("History"), N_("History of radio stations"),
-			       on_history_button_clicked,
-			       GTK_STOCK_HARDDISK),
 	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_ITEM_STOCK(N_("Listen"), N_("Listen to selected radio station"),
 			       on_listen_button_clicked,
@@ -107,6 +104,112 @@ GnomeUIInfo toolbar[] = {
    $HOME/.girl/girl.xml
 
 */
+
+/* This is the signal handler that got connected to button
+ * press/release events of the List
+ */
+void sigh_button_event( GtkWidget      *gtklist,
+			GdkEventButton *event,
+			GtkWidget      *frame )
+{
+	/* We only do something if the third (rightmost mouse button
+	 * was released
+	 */
+	if (event->type==GDK_BUTTON_RELEASE &&
+	    event->button==3) {
+		GList           *dlist, *free_list;
+		GtkWidget       *new_station;
+
+		/* Fetch the currently selected list item which
+		 * will be our next station ;)
+		 */
+		dlist=GTK_LIST(gtklist)->selection;
+		if (dlist)
+			new_station=GTK_WIDGET(dlist->data);
+		else
+			new_station=NULL;
+
+		/* Look for already imprisoned list items, we
+		 * will put them back into the list.
+		 * Remember to free the doubly linked list that
+		 * gtk_container_children() returns
+		 */
+		dlist=gtk_container_children(GTK_CONTAINER(frame));
+		free_list=dlist;
+		while (dlist) {
+			GtkWidget       *list_item;
+
+			list_item=dlist->data;
+
+			gtk_widget_reparent(list_item, gtklist);
+
+			dlist=dlist->next;
+		}
+		g_list_free(free_list);
+
+		/* If we have a new station, remove station from the
+		 * List and put station into the frame "Station History".
+		 * We need to unselect the item first.
+		 */
+		if (new_station) {
+			GList   static_dlist;
+
+			static_dlist.data=new_station;
+			// static_dlist.next=NULL;
+			// static_dlist.prev=NULL;
+
+			gtk_list_unselect_child(GTK_LIST(gtklist),
+						new_station);
+			gtk_widget_reparent(new_station, frame);
+		}
+	}
+}
+
+/* This is the signal handler that gets called if List
+ * emits the "selection_changed" signal
+ */
+void sigh_print_selection( GtkWidget *gtklist,
+			   gpointer   func_data )
+{
+	GList   *dlist;
+
+	/* Fetch the doubly linked list of selected items
+	 * of the List, remember to treat this as read-only!
+	 */
+	dlist=GTK_LIST(gtklist)->selection;
+
+	/* If there are no selected items there is nothing more
+	 * to do than just telling the user so
+	 */
+	if (!dlist) {
+		g_print("Selection cleared\n");
+		return;
+	}
+	/* Ok, we got a selection and so we print it
+	 */
+	g_print("The selection is a ");
+
+
+	/* Get the list item from the doubly linked list
+	 * and then query the data associated with list_item_data_key.
+	 * We then just print it */
+	while (dlist) {
+		GtkObject       *list_item;
+		gchar           *item_data_string;
+
+		list_item=GTK_OBJECT(dlist->data);
+		item_data_string=gtk_object_get_data(list_item,
+						     list_item_data_key);
+		appbar_send_msg(_("Playing %s"), item_data_string);
+
+		girl_helper_run(item_data_string,
+				"Historic station",
+				GIRL_STREAM_SHOUTCAST,
+				GIRL_STREAM_PLAYER);
+		
+		dlist=dlist->next;
+	}
+}
 
 GtkWidget *create_listeners_selector(char *selected_listener_uri,
 				     char *filename)
@@ -1086,28 +1189,28 @@ GtkWidget *create_streams_selector(char *selected_streams_uri,
 #if 0
 static void station_print_selection(GtkWidget * list, gpointer func_data)
 {
-	GList *dlist;
-	/*      dlist = GTK_LIST(list)->selection; */
+	GList *girl_history;
+	girl_history = GTK_LIST(list)->selection;
 
-	if (!dlist) {
+	if (!girl_history) {
 		g_print(_("Selection cleared!\n"));
 		return;
 	}
 
 	g_print("The selection is a ");
 
-	while (dlist) {
+	while (girl_history) {
 
 		GtkObject *list_item;
 		gchar *item_data_string;
 
-		list_item = dlist->data;
+		list_item = girl_history->data;
 		item_data_string =
 		    g_object_get_data(G_OBJECT(list_item),
 				      "station_list_item_data");
 		g_print("%s ", item_data_string);
 
-		dlist = dlist->next;
+		girl_history = girl_history->next;
 	}
 	g_print("\n");
 }

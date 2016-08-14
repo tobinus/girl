@@ -45,7 +45,6 @@ GList *girl_listeners;
 GList *girl_programs;
 GList *girl_stations;
 GList *girl_streams;
-GList *girl_history;
 
 GtkWidget *girl_app;
 GtkWidget *archivers_selector = NULL;
@@ -54,6 +53,8 @@ GtkWidget *programs_selector = NULL;
 GtkWidget *stations_selector = NULL;
 GtkWidget *streams_selector = NULL;
 GtkWidget *search_selector = NULL;
+
+gchar *list_item_data_key ="list_item_data";
 
 int main(int argc, char *argv[])
 {
@@ -86,7 +87,7 @@ int main(int argc, char *argv[])
 	/* Set up the channels list */
 	stations_selector = create_stations_selector(girl->selected_station_uri,
 						     "girl.xml");
-	
+
 	/* /\* Set up the stations list *\/ */
 	/* stations_selector = create_stations_selector(girl->selected_station_uri, */
 	/* 					     "girl.xml"); */
@@ -97,7 +98,7 @@ int main(int argc, char *argv[])
 
 	g_object_add_weak_pointer(G_OBJECT(stations_selector),
 				  (void **) &(stations_selector));
-	
+
 	/* g_object_add_weak_pointer(G_OBJECT(stations_selector), */
 	/* 			  (void **) &(stations_selector)); */
 
@@ -822,11 +823,6 @@ void about_streams(GtkWidget * a, gpointer user_data)
 
 }
 
-void on_history_button_clicked(GtkWidget *a, gpointer user_data)
-{
-	girl_history = g_list_insert(girl_history, (gchar*)girl->selected_station_name, girl->current_station_number++);
-        appbar_send_msg(_("Added %s to history of radio stations as station #%i"), girl->selected_station_name, girl->current_station_number);
-}
 
 void on_search_button_clicked(GtkWidget *a, gpointer user_data)
 {
@@ -840,12 +836,12 @@ void on_search_button_clicked(GtkWidget *a, gpointer user_data)
 
 void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 {
+
 	appbar_send_msg(_("Listening to the radio station %s in %s: %s "),
 			girl->selected_station_name,
 			girl->selected_station_location,
 			girl->selected_station_uri,
 			girl->selected_station_band);
-
 	girl_helper_run(girl->selected_station_uri,
 			girl->selected_station_name,
 			GIRL_STREAM_SHOUTCAST,

@@ -24,7 +24,7 @@ test_endianess_CFLAGS = $(GIRL_CFLAGS) -DGIRL_DATADIR="\"$(pkgdatadir)\""
 bin_PROGRAMS = girl
 girl_SOURCES = \
 	       girl-gui.c \
-	       girl-listener.c\
+	       girl-listener.c \
 	       girl-program.c \
 	       girl-runners.c \
 	       girl-station.c \
@@ -36,7 +36,7 @@ girl_SOURCES = \
 girl_CFLAGS  = $(GIRL_CFLAGS) \
 	       -DGIRL_DATADIR=\"$(datadir)/girl\" \
 	       -DDATADIR=\"$(datadir)\" \
-	       -DGIRL_DEBUG=0 \
+	       -DGIRL_DEBUG=1 \
 	       -DGIRL_CFG \
 	       -DGIRL_HELPER_PLAYER=\"$(GIRL_HELPER_PLAYER)\" \
 	       -DGIRL_HELPER_RECORD=\"$(GIRL_HELPER_RECORD)\" \
@@ -44,9 +44,9 @@ girl_CFLAGS  = $(GIRL_CFLAGS) \
 girl_LDADD = $(GIRL_LIBS)
 
 girldir = $(datadir)/girl
-girl_DATA = girl-9.3.dtd girl-logo.png girl.png girl.xml
+girl_DATA = girl-9.5.dtd girl-logo.png girl.png girl.xml
 
-EXTRA_DIST = girl.h girl-station.h girl-stations-map.h girl-tz.h girl-gui.h girl-listener.h girl-program.h girl-runners.h girl-streams.h girl-9.3.dtd girl-map.png girl-logo.png girl.png girl.xml
+EXTRA_DIST = girl.h girl-station.h girl-stations-map.h girl-tz.h girl-gui.h girl-listener.h girl-program.h girl-runners.h girl-streams.h girl-9.5.dtd girl-map.png girl-logo.png girl.png girl.xml
 
 all-local: check-local
 

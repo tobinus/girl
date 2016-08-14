@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-9.3.dtd">
-<girl version="9.4.0">
+<!DOCTYPE girl SYSTEM "girl-9.5.dtd">
+<girl version="9.5.0">
   <station band="CIUT" id="ciut" lang="en" name="CIUT" rank="1.0" type="edu">
     <frequency uri="http://www.ciut.fm/">89.5 FM in Toronto, Canada</frequency>
     <location>Toronto, Canada</location>
@@ -260,6 +260,17 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     <stream mime="audio/mpeg" uri="http://lyd.nrk.no/nrk_radio_p3_aac_h" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.nrk.no/p3</uri>
   </station>
+  <station band="ONLINE" id="nrkp13" lang="no" name="NRK P13" rank="1.0" type="gov">
+    <frequency uri="https://www.nrk.no/p13">ONLINE in Oslo, Norway</frequency>
+    <location>Oslo, Norway</location>
+    <description lang="en">
+      NRK P13 is a Norwegian digital radio station, run by the Norwegian Broadcasting Corporation.
+      NRK P13 launched on January 28th 2014.
+      The station is broadcast on DAB, Internet radio and digital television and plays mainly rock and indie music.
+    </description>
+    <stream mime="audio/mpeg" uri="http://lyd.nrk.no/nrk_radio_p13_aac_h" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://radio.nrk.no/direkte/p13</uri>
+  </station>
   <station band="ONLINE" id="nrkurort" lang="no" name="NRK Urørt" rank="1.0" type="gov">
     <frequency uri="http://www.nrk.no/urort/">ONLINE in Oslo, Norway</frequency>
     <location>Oslo, Norway</location>
@@ -268,6 +279,26 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     </description>
     <stream mime="audio/mpeg" uri="http://lyd.nrk.no/nrk_radio_p3_urort_aac_h" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://urort.p3.no</uri>
+  </station>
+  <station band="ONLINE" id="nrkjazz" lang="no" name="NRK Jazz" rank="1.0" type="gov">
+    <frequency uri="https://radio.nrk.no/direkte/jazz">ONLINE in Oslo, Norway</frequency>
+    <location>Oslo, Norway</location>
+    <description lang="en">
+      NRK Jazz is a Norwegian radio station operated by the Norwegian Broadcasting Corporation (NRK) that broadcasts jazz on DAB Digital Radio and the internet.
+    </description>
+    <stream mime="audio/mpeg" uri="http://lyd.nrk.no/nrk_radio_jazz_aac_h" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>https://radio.nrk.no/direkte/jazz</uri>
+  </station>
+  <station band="ONLINE" id="nrkklassisk" lang="no" name="NRK Klassisk" rank="1.0" type="gov">
+    <frequency uri="https://www.nrk.no/arkiv/artikkel/radiokanalen-nrk-klassisk-1.5318146">ONLINE in Oslo, Norway</frequency>
+    <location>Oslo, Norway</location>
+    <description lang="en">
+      NRK Klassisk is a digital radio channel operated by the Norwegian Broadcasting Corporation (NRK) which broadcasts classical music 24 hours a day.
+      NRK Klassisk was launched in Oslo on 1 June 1995 as the world’s first all-digital radio station (DAB), broadcasting 24 hours a day. The BBC and Swedish Radio, which launched their first digital radio stations in September 1995, caused NRK to bring forward its plans, so as to be the first in the world to use the DAB radio standard (Eureka 147).
+      Right from the start, the channel was in operation 24 hours a day with a staff of six, in a totally digital programme chain from production via DAB transmitter to receiver.
+    </description>
+    <stream mime="audio/mpeg" uri="http://lyd.nrk.no/nrk_radio_klassisk_aac_h" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>https://radio.nrk.no/direkte/klassisk</uri>
   </station>
   <station band="104.5FM" id="uctradio" lang="en" name="UCT Radio" rank="1.0" type="edu">
     <frequency uri="http://www.radio.uct.ac.za/">104.5 FM in Cape Town, South Africa</frequency>

@@ -51,13 +51,12 @@ AC_CHECK_LIB(m, pow, [], [], [])
 PKG_CHECK_MODULES(GIRL,
 		  gtk+-2.0 >= 2.0 \
 		  glib-2.0 >= 2.40 \
-		  gstreamer-1.0 >= 1.0 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
 		  gnome-vfs-2.0 >= 2.0)
 
-GIRL_PKG_DEPS="gtk+-2.0, glib-2.0, gstreamer-1.0, libgnome-2.0, libgnomeui-2.0, libxml-2.0, gnome-vfs-2.0"
+GIRL_PKG_DEPS="gtk+-2.0, glib-2.0, libgnome-2.0, libgnomeui-2.0, libxml-2.0, gnome-vfs-2.0"
 
 GTK_DOC_CHECK([1.16], [--flavour no-tmpl])
 
