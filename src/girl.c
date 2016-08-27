@@ -32,6 +32,7 @@
 #include <string.h>
 #include <fcntl.h>
 #include <signal.h>
+#include <libintl.h>
 #include "girl.h"
 #include "girl-gui.h"
 #include "girl-listener.h"
@@ -59,7 +60,8 @@ gchar *list_item_data_key ="list_item_data";
 int main(int argc, char *argv[])
 {
 	gchar *iconname;
-
+	gchar msg[256];
+	gchar *msg1, *msg2;
 #ifdef GETTEXT_PACKAGE
 	bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
 	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
@@ -118,14 +120,13 @@ int main(int argc, char *argv[])
 	if (girl->icon != NULL)
 		gtk_window_set_icon(GTK_WINDOW(girl_app), girl->icon);
 
-#if HAVE_GIRL_RECORD == 1
-	appbar_send_msg(_("%i stations and %i streams found "),
-			girl->station_count, girl->stream_count);
-#else
-	appbar_send_msg(_("%i stations and %i streams found"),
-			girl->station_count, girl->stream_count);
-#endif
-
+#ifdef GETTEXT_PACKAGE
+	msg1 = ngettext("%i station", "%i stations", girl->station_count);
+	msg2 = ngettext("and %i stream found", "and %i streams found",
+			girl->stream_count);
+	snprintf(msg, sizeof(msg), _("%s %s"), msg1, msg2);
+	appbar_send_msg(msg, girl->station_count, girl->stream_count);
+#endif /* GETTEXT_PACKAGE */
 	gtk_main();
 	return 0;
 }

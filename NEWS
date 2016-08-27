@@ -1,4 +1,23 @@
 =============
+Version 9.5.1
+=============
+
+GUI
+
+	* src/girl.c: Close Bugzilla #770188 - Plural forms missing (Marek Černocký)
+
+Stations
+
+	* src/girl.xml: Close Bugzilla #770473 - Add paroles.fm (Claude Paroz)
+
+Translations
+
+	* po/cs.po: Updated Czech translation (Marek Černocký)
+	* po/hu.po: Updated Hungarian translation (Balázs Meskó)
+	* po/pl.po: Updated Polish translation (Piotr Drąg)
+	* po/sr.po: Updated Serbian translation (Мирослав Николић)
+
+=============
 Version 9.5.0
 =============
 

@@ -6,8 +6,10 @@ EXTRA_DIST = config.rpath m4/ChangeLog  \
 	AUTHORS \
 	ChangeLog \
 	BROADCAST \
+	DEBIAN \
 	HACKING \
 	LETTER \
+	MAILINGLIST \
 	Makefile \
 	NEWS \
 	README \
