@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: girl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 19:28+0200\n"
-"PO-Revision-Date: 2016-08-19 19:29+0200\n"
+"POT-Creation-Date: 2016-08-28 14:11+0200\n"
+"PO-Revision-Date: 2016-08-28 14:12+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -47,7 +47,7 @@ msgstr "Ciesz się radiem internetowym w programie GIRL."
 msgid "Internet Radio Locator"
 msgstr "Internetowe stacje radiowe"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:659
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:660
 msgid "Locate Internet Radio Stations"
 msgstr "Wyszukiwanie internetowych stacji radiowych"
 
@@ -299,51 +299,62 @@ msgstr ""
 "Uruchomienie „%s” się nie powiodło\n"
 "Szczegóły: %s"
 
-#: ../src/girl.c:70
+#: ../src/girl.c:72
 msgid "GNOME VFS initialization failed!\n"
 msgstr "Zainicjowanie GNOME VFS się nie powiodło.\n"
 
-#: ../src/girl.c:122
+#: ../src/girl.c:124
 #, c-format
-msgid "%i stations and %i streams found "
-msgstr "Odnaleziono %i stacji i %i strumieni "
+msgid "%i station"
+msgid_plural "%i stations"
+msgstr[0] "%i stację"
+msgstr[1] "%i stacje"
+msgstr[2] "%i stacji"
 
 #: ../src/girl.c:125
 #, c-format
-msgid "%i stations and %i streams found"
-msgstr "Odnaleziono %i stacji i %i strumieni"
+msgid "and %i stream found"
+msgid_plural "and %i streams found"
+msgstr[0] "i %i strumień"
+msgstr[1] "i %i strumienie"
+msgstr[2] "i %i strumieni"
 
-#: ../src/girl.c:195
+#: ../src/girl.c:127
+#, c-format
+msgid "%s %s"
+msgstr "Odnaleziono %s %s"
+
+#: ../src/girl.c:196
 #, c-format
 msgid "Selected the previous radio station: %s in %s: %s"
 msgstr "Wybrano poprzednią stację radiową: %s w %s: %s"
 
-#: ../src/girl.c:257
+#: ../src/girl.c:258
 #, c-format
 msgid "Selected the next radio station %s in %s: %s"
 msgstr "Wybrano następną stację radiową %s w %s: %s"
 
-#: ../src/girl.c:361
+#: ../src/girl.c:362
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "Wybrano %s w %s: %s (%f)"
 
-#: ../src/girl.c:409
+#: ../src/girl.c:410
 #, c-format
 msgid "Selected %s in %s: %s"
 msgstr "Wybrano %s w %s: %s"
 
-#: ../src/girl.c:458 ../src/girl.c:505
+#: ../src/girl.c:459 ../src/girl.c:506
 #, c-format
 msgid "Selected the radio station %s in %s: %s"
 msgstr "Wybrano stację radiową %s w %s: %s"
 
-#: ../src/girl.c:555
+#: ../src/girl.c:556
 #, c-format
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "Wybrano %s [%s] [%s] [%s]"
 
-#: ../src/girl.c:631
+#: ../src/girl.c:632
 msgid ""
 "Marek Černocký <marek@manet.cz> (Czech translation)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese translation)\n"
@@ -398,25 +409,25 @@ msgstr ""
 "Laudivan Freire de Almeida <laudivan@riseup.net> (portugalskie brazylijskie "
 "tłumaczenie)\n"
 
-#: ../src/girl.c:660
+#: ../src/girl.c:661
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 msgstr "Copyright © 2014, 2015, 2016 Ole Aamot Software"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
 msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com> (niemieckie tłumaczenie)"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Marek Černocký <marek@manet.cz> (czeskie tłumaczenie)"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com> (hiszpańskie tłumaczenie)"
 
-#: ../src/girl.c:670
+#: ../src/girl.c:671
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -446,28 +457,28 @@ msgstr ""
 "— proszę napisać do Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA 02110-1301 USA."
 
-#: ../src/girl.c:676
+#: ../src/girl.c:677
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Nie można wczytać logo programu GIRL: %s\n"
 
-#: ../src/girl.c:834
+#: ../src/girl.c:835
 msgid "Search radio station by location"
 msgstr "Wyszukiwanie stacji radiowych według położenia"
 
-#: ../src/girl.c:840
+#: ../src/girl.c:841
 #, c-format
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "Słuchanie stacji radiowej %s w %s: %s "
 
 #. g_spawn_close_pid( girl->record_pid);
-#: ../src/girl.c:891
+#: ../src/girl.c:892
 #, c-format
 msgid "Finished saving recording from the radio station %s in %s from %s to %s"
 msgstr "Ukończono zapisywanie nagrania ze stacji radiowej %s w %s od %s do %s"
 
 #. g_spawn_close_pid( girl->player_pid);
-#: ../src/girl.c:905
+#: ../src/girl.c:906
 #, c-format
 msgid ""
 "Stopped playing the radio station %s in %s, exit the application Videos."
@@ -475,7 +486,7 @@ msgstr ""
 "Zatrzymano odtwarzanie stacji radiowej %s w %s, należy zakończyć działanie "
 "programu Filmy."
 
-#: ../src/girl.c:950
+#: ../src/girl.c:951
 #, c-format
 msgid "Archiving %s"
 msgstr "Archiwizowanie %s"
