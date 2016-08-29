@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-14 19:19+0000\n"
-"PO-Revision-Date: 2016-08-17 17:21+0200\n"
-"Last-Translator: Meskó Balázs <meskobalazs@gmail.com>\n"
+"POT-Creation-Date: 2016-08-27 17:40+0000\n"
+"PO-Revision-Date: 2016-08-29 23:16+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Lokalize 1.2\n"
 
 #: ../data/girl.appdata.xml.in.h:1
 msgid ""
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Internetes rádió felderítő"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:659
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:660
 msgid "Locate Internet Radio Stations"
 msgstr "Internetes rádióállomások felderítése"
 
@@ -304,51 +304,62 @@ msgstr ""
 "A(z) „%s” futtatása nem sikerült\n"
 "Részletek: %s"
 
-#: ../src/girl.c:70
+#: ../src/girl.c:72
 msgid "GNOME VFS initialization failed!\n"
 msgstr "A GNOME VFS előkészítése nem sikerült!\n"
 
-#: ../src/girl.c:122
+#: ../src/girl.c:124
 #, c-format
-msgid "%i stations and %i streams found "
-msgstr "%i állomás és %i adatfolyam található "
+#| msgid "Station"
+msgid "%i station"
+msgid_plural "%i stations"
+msgstr[0] "%i állomás"
+msgstr[1] "%i állomás"
 
 #: ../src/girl.c:125
 #, c-format
-msgid "%i stations and %i streams found"
-msgstr "%i állomás és %i adatfolyam található"
+#| msgid "%i stations and %i streams found"
+msgid "and %i stream found"
+msgid_plural "and %i streams found"
+msgstr[0] "és %i adatfolyam található"
+msgstr[1] "és %i adatfolyam található"
 
-#: ../src/girl.c:195
+#: ../src/girl.c:127
+#, c-format
+msgid "%s %s"
+msgstr "%s %s"
+
+#: ../src/girl.c:196
 #, c-format
 msgid "Selected the previous radio station: %s in %s: %s"
 msgstr "Az előző rádióállomás kiválasztva: %s itt: %s: %s"
 
-#: ../src/girl.c:257
+#: ../src/girl.c:258
 #, c-format
 msgid "Selected the next radio station %s in %s: %s"
 msgstr "A következő rádióállomás kiválasztva: %s itt: %s: %s"
 
-#: ../src/girl.c:361
+#: ../src/girl.c:362
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "%s kiválasztva itt: %s: %s (%f)"
 
-#: ../src/girl.c:409
+#: ../src/girl.c:410
 #, c-format
 msgid "Selected %s in %s: %s"
 msgstr "%s kiválasztva itt: %s: %s"
 
-#: ../src/girl.c:458 ../src/girl.c:505
+#: ../src/girl.c:459 ../src/girl.c:506
 #, c-format
 msgid "Selected the radio station %s in %s: %s"
 msgstr "A rádióállomás kiválasztva: %s itt: %s: %s"
 
-#: ../src/girl.c:555
+#: ../src/girl.c:556
 #, c-format
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "Kiválasztva: %s [%s] [%s] [%s]"
 
-#: ../src/girl.c:631
+#: ../src/girl.c:632
 msgid ""
 "Marek Černocký <marek@manet.cz> (Czech translation)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese translation)\n"
@@ -401,23 +412,23 @@ msgstr ""
 "Laudivan Freire de Almeida <laudivan@riseup.net> (brazíliai portugál "
 "fordítás)\n"
 
-#: ../src/girl.c:660
+#: ../src/girl.c:661
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 msgstr "Copyright © Ole Aamot Software, 2014, 2015, 2016."
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
 msgstr "Mario Blättermann <mario.blaettermann@gmail.com> (német fordítás)"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Marek Černocký <marek@manet.cz> (cseh fordítás)"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanyol fordítás)"
 
-#: ../src/girl.c:670
+#: ../src/girl.c:671
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -442,28 +453,28 @@ msgstr ""
 "meg, írjon a Free Software Foundation Inc.-nek. Levélcímük: 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA."
 
-#: ../src/girl.c:676
+#: ../src/girl.c:677
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Nem sikerült betölteni a GIRL logót: %s\n"
 
-#: ../src/girl.c:834
+#: ../src/girl.c:835
 msgid "Search radio station by location"
 msgstr "Rádióállomások keresése hely szerint"
 
-#: ../src/girl.c:840
+#: ../src/girl.c:841
 #, c-format
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "A rádióállomás hallgatása: %s itt: %s: %s  "
 
 #. g_spawn_close_pid( girl->record_pid);
-#: ../src/girl.c:891
+#: ../src/girl.c:892
 #, c-format
 msgid "Finished saving recording from the radio station %s in %s from %s to %s"
 msgstr "Rögzítés befejezve a rádióállomásból: %s itt: %s: %s – %s"
 
 #. g_spawn_close_pid( girl->player_pid);
-#: ../src/girl.c:905
+#: ../src/girl.c:906
 #, c-format
 msgid ""
 "Stopped playing the radio station %s in %s, exit the application Videos."
@@ -471,42 +482,7 @@ msgstr ""
 "A lejátszás befejezve a következő rádióállomásból: %s itt: %s, lépjen ki a "
 "Videók alkalmazásból."
 
-#: ../src/girl.c:950
+#: ../src/girl.c:951
 #, c-format
 msgid "Archiving %s"
 msgstr "%s archiválása"
-
-#~ msgid ""
-#~ "Stop what?  You can \"Search\" by location, select a radio station from "
-#~ "\"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev"
-#~ "\" or \"Next\" radio station."
-#~ msgstr ""
-#~ "Mit állít le? „Kereshet” hely szerint, választhat egy rádióállomást az "
-#~ "„Állomásokból”, vagy kattintson a „Hallgatásra” és/vagy a „Rögzítésre”. "
-#~ "Vagy ugorjon az „Előző” vagy „Következő” rádióállomásra."
-
-#~ msgid "About Station"
-#~ msgstr "Az állomás névjegye"
-
-#~ msgid "See yelp://girl"
-#~ msgstr "Lásd: yelp://girl"
-
-#~ msgid ""
-#~ "Girl is developed on the GNOME platform and requires at least one audio "
-#~ "helper such as totem to be installed."
-#~ msgstr ""
-#~ "A Girl a GNOME platformon készült és legalább egy hang segédprogram - "
-#~ "mint például a totem - telepítését igényli."
-
-#~ msgid "Enjoy Internet Radio."
-#~ msgstr "Élvezze az internetes rádiót."
-
-#~ msgid "translator_credits"
-#~ msgstr "Úr Balázs <urbalazs@gmail.com>"
-
-#~ msgid ""
-#~ "Copyright 2014 Ole Aamot Software\n"
-#~ "Copyright 2002 Free Software Foundation"
-#~ msgstr ""
-#~ "Copyright © Ole Aamot Software, 2014.\n"
-#~ "Copyright © Free Software Foundation, 2002."
