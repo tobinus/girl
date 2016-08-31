@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=girl&ke"
 "ywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-14 19:19+0000\n"
-"PO-Revision-Date: 2016-08-20 23:40+0200\n"
+"POT-Creation-Date: 2016-08-27 17:40+0000\n"
+"PO-Revision-Date: 2016-08-31 21:20+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: Serbian <gnom@prevod.org>\n"
+"Language-Team: српски <gnome-sr@googlegroups.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Проналазач интернет радиа"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:659
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:660
 msgid "Locate Internet Radio Stations"
 msgstr "Пронађите радио станице на интернету"
 
@@ -244,7 +244,6 @@ msgstr ""
 #. printf("Archiving program at %s\n", archive);
 #: ../src/girl-station.c:234
 #, c-format
-#| msgid "Recording from the radio station %s in %s: %s "
 msgid "Recording from %s in %s to %s"
 msgstr "Снимам са „%s“ за %s у %s"
 
@@ -294,9 +293,6 @@ msgstr ""
 
 #: ../src/girl-station.c:395
 #, c-format
-#| msgid ""
-#| "Failed to open URL: '%s'\n"
-#| "Details: %s"
 msgid ""
 "Failed to run '%s'\n"
 "Details: %s"
@@ -304,76 +300,66 @@ msgstr ""
 "Нисам успео да покренем „%s“\n"
 "Појединости: %s"
 
-#: ../src/girl.c:70
+#: ../src/girl.c:72
 msgid "GNOME VFS initialization failed!\n"
 msgstr "Покретање Гном ВФС-а није успело!\n"
 
-#: ../src/girl.c:122
+#: ../src/girl.c:124
 #, c-format
-msgid "%i stations and %i streams found "
-msgstr "Нашао сам %i станице и %i тока "
+#| msgid "Station"
+msgid "%i station"
+msgid_plural "%i stations"
+msgstr[0] "Нашао сам %i станицу"
+msgstr[1] "Нашао сам %i станице"
+msgstr[2] "Нашао сам %i станица"
+msgstr[3] "Нашао сам једну станицу"
 
 #: ../src/girl.c:125
-#, c-format
-msgid "%i stations and %i streams found"
-msgstr "Нашао сам %i станице и %i тока"
+#, fuzzy, c-format
+#| msgid "%i stations and %i streams found"
+msgid "and %i stream found"
+msgid_plural "and %i streams found"
+msgstr[0] "и %i ток"
+msgstr[1] "и %i тока"
+msgstr[2] "и %i токова"
+msgstr[3] "и један ток"
 
-#: ../src/girl.c:195
+#: ../src/girl.c:127
+#, c-format
+msgid "%s %s"
+msgstr "%s %s"
+
+#: ../src/girl.c:196
 #, c-format
 msgid "Selected the previous radio station: %s in %s: %s"
 msgstr "Изабрана је претходна радио станица: %s у %s: %s"
 
-#: ../src/girl.c:257
+#: ../src/girl.c:258
 #, c-format
 msgid "Selected the next radio station %s in %s: %s"
 msgstr "Изабрана је следећа радио станица: %s у %s: %s"
 
-#: ../src/girl.c:361
+#: ../src/girl.c:362
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "Изабрана је %s у %s: %s (%f)"
 
-#: ../src/girl.c:409
+#: ../src/girl.c:410
 #, c-format
 msgid "Selected %s in %s: %s"
 msgstr "Изабрана је %s у %s: %s"
 
-#: ../src/girl.c:458 ../src/girl.c:505
+#: ../src/girl.c:459 ../src/girl.c:506
 #, c-format
 msgid "Selected the radio station %s in %s: %s"
 msgstr "Изабрана је радио станица %s у %s: %s"
 
-#: ../src/girl.c:555
+#: ../src/girl.c:556
 #, c-format
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "Изабрана је %s [%s] [%s] [%s]"
 
-#: ../src/girl.c:631
-#| msgid ""
-#| "Marek Černocký <marek@manet.cz> (Czech translation)\n"
-#| "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese "
-#| "translation)\n"
-#| "Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
-#| "Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
-#| "Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
-#| "Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
-#| "Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
-#| "Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
-#| "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
-#| "Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
-#| "Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
-#| "Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
-#| "Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
-#| "Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
-#| "Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)\n"
-#| "Josef Andersson <josef.andersson@gmail.com> (Swedish translation)\n"
-#| "Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
-#| "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
-#| "Necdet Yücel <necdetyucel@gmail.com> (Turkish translation)\n"
-#| "Rafael Fontenelle <rffontenelle@gmail.com> (Brazilian Portuguese "
-#| "translation)\n"
-#| "Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (Spanish translation)\n"
-#| "Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
+#: ../src/girl.c:632
 msgid ""
 "Marek Černocký <marek@manet.cz> (Czech translation)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese translation)\n"
@@ -404,23 +390,23 @@ msgstr ""
 "\n"
 "http://prevod.org — превод на српски језик\n"
 
-#: ../src/girl.c:660
+#: ../src/girl.c:661
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 msgstr "Ауторска права © 2014, 2015, 2016 Оле Амот софтвер"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
 msgstr "Марио Блатерман <mario.blaettermann@gmail.com> (превод на немачки)"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Марек Черноцки <marek@manet.cz> (превод на чешки)"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
 msgstr "Даниел Мустјелес <daniel.mustieles@gmail.com> (превод на шпански)"
 
-#: ../src/girl.c:670
+#: ../src/girl.c:671
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -449,43 +435,42 @@ msgstr ""
 "софтвера на адресу: „Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA 02110-1301 USA“."
 
-#: ../src/girl.c:676
+#: ../src/girl.c:677
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Не могу да учитам логотип Гирла: %s\n"
 
-#: ../src/girl.c:834
+#: ../src/girl.c:835
 msgid "Search radio station by location"
 msgstr "Тражи радио станицу према месту"
 
-#: ../src/girl.c:840
+#: ../src/girl.c:841
 #, c-format
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "Слушам радио станицу %s у %s: %s "
 
 #. g_spawn_close_pid( girl->record_pid);
-#: ../src/girl.c:891
+#: ../src/girl.c:892
 #, c-format
-#| msgid "Finished recording from the radio station %s in %s: %s"
 msgid "Finished saving recording from the radio station %s in %s from %s to %s"
 msgstr "Завршио сам снимање са радио станице „%s“ за %s са %s у %s"
 
 #. g_spawn_close_pid( girl->player_pid);
-#: ../src/girl.c:905
+#: ../src/girl.c:906
 #, c-format
-#| msgid ""
-#| "To finish playing from the radio station %s in %s, exit the application "
-#| "Videos."
 msgid ""
 "Stopped playing the radio station %s in %s, exit the application Videos."
 msgstr ""
 "Зауставио сам пуштање са радио станице „%s“ за %s, изађите из програма "
 "снимака."
 
-#: ../src/girl.c:950
+#: ../src/girl.c:951
 #, c-format
 msgid "Archiving %s"
 msgstr "Архивирам „%s“"
+
+#~ msgid "%i stations and %i streams found "
+#~ msgstr "Нашао сам %i станице и %i тока "
 
 #~ msgid ""
 #~ "Stop what?  You can \"Search\" by location, select a radio station from "
