@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-14 19:19+0000\n"
-"PO-Revision-Date: 2016-08-21 09:28+0200\n"
+"POT-Creation-Date: 2016-08-27 17:40+0000\n"
+"PO-Revision-Date: 2016-09-10 08:56+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Naladění internetových rádií"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:659
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:660
 msgid "Locate Internet Radio Stations"
 msgstr "Nalaďte si rádio na Internetu."
 
@@ -301,76 +301,62 @@ msgstr ""
 "Selhalo spuštění „%s“\n"
 "Podrobnosti: %s"
 
-#: ../src/girl.c:70
+#: ../src/girl.c:72
 msgid "GNOME VFS initialization failed!\n"
 msgstr "Selhala inicializace GNOME VFS!\n"
 
-#: ../src/girl.c:122
+#: ../src/girl.c:124
 #, c-format
-msgid "%i stations and %i streams found "
-msgstr ""
+msgid "%i station"
+msgid_plural "%i stations"
+msgstr[0] "Byla nalezena %i stanice"
+msgstr[1] "Byla nalezeny %i stanice"
+msgstr[2] "Bylo nalezeno %i stanic"
 
 #: ../src/girl.c:125
 #, c-format
-msgid "%i stations and %i streams found"
-msgstr ""
+msgid "and %i stream found"
+msgid_plural "and %i streams found"
+msgstr[0] "a %i vysílání"
+msgstr[1] "a %i vysílání"
+msgstr[2] "a %i vysílání"
 
-#: ../src/girl.c:195
+#: ../src/girl.c:127
+#, c-format
+msgid "%s %s"
+msgstr "%s %s"
+
+#: ../src/girl.c:196
 #, c-format
 msgid "Selected the previous radio station: %s in %s: %s"
 msgstr "Vybrána předchozí stanice: %s v %s: %s"
 
-#: ../src/girl.c:257
+#: ../src/girl.c:258
 #, c-format
 msgid "Selected the next radio station %s in %s: %s"
 msgstr "Vybrána následující stanice: %s v %s: %s"
 
-#: ../src/girl.c:361
+#: ../src/girl.c:362
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "Vybráno %s v %s: %s (%f)"
 
-#: ../src/girl.c:409
+#: ../src/girl.c:410
 #, c-format
 msgid "Selected %s in %s: %s"
 msgstr "Vybráno %s v %s: %s"
 
-#: ../src/girl.c:458 ../src/girl.c:505
+#: ../src/girl.c:459 ../src/girl.c:506
 #, c-format
 msgid "Selected the radio station %s in %s: %s"
 msgstr "Vybrána stanice %s v %s: %s"
 
-#: ../src/girl.c:555
+#: ../src/girl.c:556
 #, c-format
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "Vybráno %s [%s] [%s] [%s]"
 
-#: ../src/girl.c:631
-#, fuzzy
-#| msgid ""
-#| "Marek Černocký <marek@manet.cz> (Czech translation)\n"
-#| "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese "
-#| "translation)\n"
-#| "Miroslav Nikolić <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
-#| "Wolfgang Stöggl <c72578@yahoo.de> (German translation)\n"
-#| "Piotr Drąg <piotrdrag@gmail.com> (Polish translation)\n"
-#| "Muhammet Kara <muhammetk@gmail.com> (Turkish translation)\n"
-#| "Balázs Úr <urbalazs@gmail.com> (Hungarian translation)\n"
-#| "Andika Triwidada <andika@gmail.com> (Indonesian translation)\n"
-#| "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)\n"
-#| "Matej Urbančič <mateju@svn.gnome.org> (Slovenian translation)\n"
-#| "Γιάννης Κουτσούκος <giankoyt@gmail.com> (Greek translation)\n"
-#| "Efstathios Iosifidis <iosifidis@opensuse.org> (Greek translation)\n"
-#| "Samir Ribić <megaribi@epn.ba> (Bosnian translation)\n"
-#| "Enrico Nicoletto <liverig@gmail.com> (Brazilian Portuguese translation)\n"
-#| "Sveinn í Felli <sv1@fellsnet.is> (Icelandic translation)\n"
-#| "Josef Andersson <josef.andersson@gmail.com> (Swedish translation)\n"
-#| "Pedro Albuquerque <palbuquerque73@gmail.com> (Portuguese translation)\n"
-#| "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)\n"
-#| "Necdet Yücel <necdetyucel@gmail.com> (Turkish translation)\n"
-#| "Andy Daniel Cruz Campos <god_of_war_2@hotmail.com> (Spanish translation)\n"
-#| "Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
-#| "Balázs Meskó <meskobalazs@gmail.com> (Hungarian translation)\n"
+#: ../src/girl.c:632
 msgid ""
 "Marek Černocký <marek@manet.cz> (Czech translation)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese translation)\n"
@@ -422,23 +408,23 @@ msgstr ""
 "Laudivan Freire de Almeida <laudivan@riseup.net> (překlad do brazilské "
 "portugalštiny)\n"
 
-#: ../src/girl.c:660
+#: ../src/girl.c:661
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 msgstr "Copyright © 2014, 2015, 2016  Ole Aamot Software"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
 msgstr "Mario Blättermann <mario.blaettermann@gmail.com> (překlad do němčiny)"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Marek Černocký <marek@manet.cz> (překlad do češtiny)"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:662
 msgid "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com> (překlad do španělštiny)"
 
-#: ../src/girl.c:670
+#: ../src/girl.c:671
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -463,34 +449,34 @@ msgstr ""
 "License. Pokud se tak nestalo, napište na Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
 
-#: ../src/girl.c:676
+#: ../src/girl.c:677
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Nelze načíst logo GIRL: %s\n"
 
-#: ../src/girl.c:834
+#: ../src/girl.c:835
 msgid "Search radio station by location"
 msgstr "Hledat stanici podle místa"
 
-#: ../src/girl.c:840
+#: ../src/girl.c:841
 #, c-format
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "Posloucháte stanici %s v %s: %s"
 
 #. g_spawn_close_pid( girl->record_pid);
-#: ../src/girl.c:891
+#: ../src/girl.c:892
 #, c-format
 msgid "Finished saving recording from the radio station %s in %s from %s to %s"
 msgstr "Dokončeno ukládání nahrávky ze stanice %s v mísě %s y %s do %s"
 
 #. g_spawn_close_pid( girl->player_pid);
-#: ../src/girl.c:905
+#: ../src/girl.c:906
 #, c-format
 msgid ""
 "Stopped playing the radio station %s in %s, exit the application Videos."
 msgstr "Zastaveno přehrávání stanice %s v místě %s, ukončete aplikaci Videa."
 
-#: ../src/girl.c:950
+#: ../src/girl.c:951
 #, c-format
 msgid "Archiving %s"
 msgstr "Archivuje se %s"
