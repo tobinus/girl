@@ -652,6 +652,10 @@ void about_app(GtkWidget * a, gpointer user_data)
 					"Mирослав Николић <miroslavnikolic@rocketmail.com> (Serbian translation)\n"
 					"Balázs Meskó <meskobalazs@gmail.com> (Hungarian translation)\n"
 					"Laudivan Freire de Almeida <laudivan@riseup.net> (Brazilian Portuguese translation)\n"
+					"Bernd Homuth <dev@hmt.im> (German translation)\n"
+					"Paul Feuvraux and Claude Paroz <claude@2xlibre.net> (French translation)\n"
+					"Anders Jonsson <anders.jonsson@norsjovallen.se> (Swedish translation)\n"
+
 					      ));
 	gchar* artists[] = { "Wiki Graphic Designer",
 			     "Aly Raj",
@@ -903,7 +907,7 @@ void on_stop_button_clicked(GtkWidget *a, gpointer user_data)
 		GIRL_DEBUG_MSG("Playback stopped.\n");
 		g_subprocess_force_exit(girl->player_subprocess);
 		// g_spawn_close_pid( girl->player_pid);
-		appbar_send_msg(_("Stopped playing the radio station %s in %s, exit the application Videos."),
+		appbar_send_msg(_("Stopped playing the radio station %s in %s, exit the application GNOME Videos."),
 				girl->selected_station_name,
 				girl->selected_station_location,
 				girl->selected_station_uri,

@@ -1,4 +1,25 @@
 =============
+Version 9.5.2
+=============
+
+Stations
+
+	* src/girl.xml: Add BBC Radio 5 Live (bbc.co.uk)
+
+Translations
+
+	* po/cs.po: Updated Czech translation (Marek Černocký)
+	* po/de.po: Updated German translation (Bernd Homuth)
+	* po/es.po: Updated Spanish translation (Daniel Mustieles)
+	* po/fr.po: New French translation (Paul Feuvraux and Claude Paroz)
+	* po/hu.po: Updated Hungarian translation (Balázs Úr)
+	* po/pl.po: Updated Polish translation (Piotr Drąg)
+	* po/pt_BR.po: Updated Brazilian Portuguese (Rafael Fontenelle)
+	* po/sr.po: Updated Serbian translation (Мирослав Николић)
+	* po/sr@latin..po: Updated Serbian translation (Мирослав Николић)
+	* po/sv.po: Updated Swedish translation (Anders Jonsson)
+
+=============
 Version 9.5.1
 =============
 
