@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
 <!DOCTYPE girl SYSTEM "girl-9.5.dtd">
-<girl version="9.5.1">
+<girl version="9.5.2">
+  <station band="909/693 MW" id="bbcradio5live" lang="en" name="BBC Radio 5 Live" rank="1.0" type="gov">
+    <frequency uri="http://www.bbc.co.uk/5live">909/693 MW in Salford, United Kingdom</frequency>
+    <location>Salford, United Kingdom</location>
+    <description lang="en">
+      BBC Radio 5 Live (also known as just 5 Live) is the BBC's national radio service that specialises in live BBC News, phone-ins, interviews and sports commentaries. It is the principal radio station covering sport in the United Kingdom, broadcasting virtually all major sports events staged in the UK or involving British competitors.
+
+      Radio 5 Live was launched in March 1994 as a repositioning of the original Radio 5, which was launched on 27 August 1990.  It is transmitted via analogue radio in AM on medium wave 693 and 909 kHz and digitally via digital radio, television and via an Internet stream. Due to rights restrictions, coverage of some events (in particular live sport) is not available on-line or is restricted to UK addresses.
+
+      The station broadcasts from MediaCityUK in Salford and is a department of the BBC North division.
+    </description>
+    <stream mime="audio/mpeg" uri="http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio5live_mf_p" codec="MPEG-4 AAC" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <uri>http://www.bbc.co.uk/5live</uri>
+  </station>
   <station band="ONLINE" id="ciut" lang="en" name="CIUT" rank="1.0" type="edu">
     <frequency uri="http://www.ciut.fm/">89.5 FM in Toronto, Canada</frequency>
     <location>Toronto, Canada</location>
