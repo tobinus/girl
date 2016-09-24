@@ -79,14 +79,14 @@ girl_player_frontend_pause (GtkWidget *widget, gpointer data)
 	girl_player_backend_pause();
 }
 
-gboolean girl_player_frontend_start ()
+gboolean girl_player_frontend_start (gchar *name)
 {
 	player->table = gtk_table_new (300,60,FALSE);
 	
 	player->app_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	
 	gtk_window_set_position (GTK_WINDOW (player->app_window),GTK_WIN_POS_CENTER_ALWAYS);
-	gtk_window_set_title (GTK_WINDOW (player->app_window),"GNOME Internet Radio Locator Player");
+	gtk_window_set_title (GTK_WINDOW (player->app_window),name);
 	gtk_window_set_default_size (GTK_WINDOW (player->app_window),300,60);
 	gtk_container_set_border_width (GTK_CONTAINER (player->app_window), 10);
 	

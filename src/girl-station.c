@@ -193,7 +193,7 @@ void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperTyp
 		app = g_strdup(GIRL_HELPER_RECORD);
 	}
 
-	girl_player_main(url);
+	girl_player_main(url, girl->selected_station_name);
 
 	if (g_strcmp0(app,"no")!=0) {
 		command = g_strconcat(app, " ", url, NULL);

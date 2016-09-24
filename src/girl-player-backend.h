@@ -61,7 +61,7 @@ typedef struct GirlMedia {
 
 gboolean girl_player_backend_init (int *argc, char **argv[]);
 
-gboolean girl_player_backend_start (gchar *uri);
+gboolean girl_player_backend_start (gchar *uri, gchar *name);
 
 static gboolean handle_message (GstBus *bus, GstMessage *message , gpointer data);
 

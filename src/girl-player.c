@@ -46,7 +46,7 @@
 #include "girl-player-globals.h"
 
 int
-girl_player_main(gchar *streamuri)
+girl_player_main(gchar *streamuri, gchar *name)
 {
  
 	gchar *uri = g_strdup(streamuri);
@@ -62,11 +62,11 @@ girl_player_main(gchar *streamuri)
 	/*   return 0; */
 	/* } */
 	
-	if (!girl_player_frontend_start ()) {  
+	if (!girl_player_frontend_start (name)) {  
 		g_message ("Player UI creation failure...."); 
 		exit (0);
 	}
-	if (!girl_player_backend_start (uri)) {  
+	if (!girl_player_backend_start (uri, name)) {  
 		g_message ("Girl-Player backend creation failure");
 		exit (0);
 	}

@@ -112,7 +112,7 @@ GstBusSyncReply CreateWindow (GstBus *bus,GstMessage *message,gpointer data)
 }
 
 
-gboolean girl_player_backend_start (gchar *uri)
+gboolean girl_player_backend_start (gchar *uri, gchar *name)
 {
   media->uri = uri;
   media->pipeline = gst_element_factory_make ("playbin2", "playbin2");
