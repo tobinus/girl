@@ -104,10 +104,12 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(girldir)"
 PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
 am_girl_OBJECTS = girl-girl-gui.$(OBJEXT) girl-girl-listener.$(OBJEXT) \
-	girl-girl-program.$(OBJEXT) girl-girl-runners.$(OBJEXT) \
-	girl-girl-station.$(OBJEXT) girl-girl-stations-map.$(OBJEXT) \
-	girl-girl-streams.$(OBJEXT) girl-girl-tz.$(OBJEXT) \
-	girl-girl.$(OBJEXT)
+	girl-girl-program.$(OBJEXT) girl-girl-player.$(OBJEXT) \
+	girl-girl-player-backend.$(OBJEXT) \
+	girl-girl-player-frontend.$(OBJEXT) \
+	girl-girl-runners.$(OBJEXT) girl-girl-station.$(OBJEXT) \
+	girl-girl-stations-map.$(OBJEXT) girl-girl-streams.$(OBJEXT) \
+	girl-girl-tz.$(OBJEXT) girl-girl.$(OBJEXT)
 girl_OBJECTS = $(am_girl_OBJECTS)
 am__DEPENDENCIES_1 =
 girl_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -382,7 +384,10 @@ girl_SOURCES = \
 	       girl-gui.c \
 	       girl-listener.c \
 	       girl-program.c \
-	       girl-runners.c \
+	       girl-player.c \
+	       girl-player-backend.c \
+	       girl-player-frontend.c \
+               girl-runners.c \
 	       girl-station.c \
 	       girl-stations-map.c \
 	       girl-streams.c \
@@ -401,7 +406,7 @@ girl_CFLAGS = $(GIRL_CFLAGS) \
 girl_LDADD = $(GIRL_LIBS)
 girldir = $(datadir)/girl
 girl_DATA = girl-9.5.dtd girl-logo.png girl.png girl.xml
-EXTRA_DIST = girl.h girl-station.h girl-stations-map.h girl-tz.h girl-gui.h girl-listener.h girl-program.h girl-runners.h girl-streams.h girl-9.5.dtd girl-map.png girl-logo.png girl.png girl.xml
+EXTRA_DIST = girl.h girl-station.h girl-stations-map.h girl-tz.h girl-gui.h girl-listener.h girl-player-globals.h girl-player-frontend.h girl-player-backend.h girl-program.h girl-runners.h girl-streams.h girl-9.5.dtd girl-map.png girl-logo.png girl.png girl.xml
 all: all-am
 
 .SUFFIXES:
@@ -505,6 +510,9 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/girl-girl-gui.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/girl-girl-listener.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/girl-girl-player-backend.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/girl-girl-player-frontend.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/girl-girl-player.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/girl-girl-program.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/girl-girl-runners.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/girl-girl-station.Po@am__quote@
@@ -575,6 +583,48 @@ girl-girl-program.obj: girl-program.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='girl-program.c' object='girl-girl-program.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -c -o girl-girl-program.obj `if test -f 'girl-program.c'; then $(CYGPATH_W) 'girl-program.c'; else $(CYGPATH_W) '$(srcdir)/girl-program.c'; fi`
+
+girl-girl-player.o: girl-player.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -MT girl-girl-player.o -MD -MP -MF $(DEPDIR)/girl-girl-player.Tpo -c -o girl-girl-player.o `test -f 'girl-player.c' || echo '$(srcdir)/'`girl-player.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/girl-girl-player.Tpo $(DEPDIR)/girl-girl-player.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='girl-player.c' object='girl-girl-player.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -c -o girl-girl-player.o `test -f 'girl-player.c' || echo '$(srcdir)/'`girl-player.c
+
+girl-girl-player.obj: girl-player.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -MT girl-girl-player.obj -MD -MP -MF $(DEPDIR)/girl-girl-player.Tpo -c -o girl-girl-player.obj `if test -f 'girl-player.c'; then $(CYGPATH_W) 'girl-player.c'; else $(CYGPATH_W) '$(srcdir)/girl-player.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/girl-girl-player.Tpo $(DEPDIR)/girl-girl-player.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='girl-player.c' object='girl-girl-player.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -c -o girl-girl-player.obj `if test -f 'girl-player.c'; then $(CYGPATH_W) 'girl-player.c'; else $(CYGPATH_W) '$(srcdir)/girl-player.c'; fi`
+
+girl-girl-player-backend.o: girl-player-backend.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -MT girl-girl-player-backend.o -MD -MP -MF $(DEPDIR)/girl-girl-player-backend.Tpo -c -o girl-girl-player-backend.o `test -f 'girl-player-backend.c' || echo '$(srcdir)/'`girl-player-backend.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/girl-girl-player-backend.Tpo $(DEPDIR)/girl-girl-player-backend.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='girl-player-backend.c' object='girl-girl-player-backend.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -c -o girl-girl-player-backend.o `test -f 'girl-player-backend.c' || echo '$(srcdir)/'`girl-player-backend.c
+
+girl-girl-player-backend.obj: girl-player-backend.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -MT girl-girl-player-backend.obj -MD -MP -MF $(DEPDIR)/girl-girl-player-backend.Tpo -c -o girl-girl-player-backend.obj `if test -f 'girl-player-backend.c'; then $(CYGPATH_W) 'girl-player-backend.c'; else $(CYGPATH_W) '$(srcdir)/girl-player-backend.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/girl-girl-player-backend.Tpo $(DEPDIR)/girl-girl-player-backend.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='girl-player-backend.c' object='girl-girl-player-backend.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -c -o girl-girl-player-backend.obj `if test -f 'girl-player-backend.c'; then $(CYGPATH_W) 'girl-player-backend.c'; else $(CYGPATH_W) '$(srcdir)/girl-player-backend.c'; fi`
+
+girl-girl-player-frontend.o: girl-player-frontend.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -MT girl-girl-player-frontend.o -MD -MP -MF $(DEPDIR)/girl-girl-player-frontend.Tpo -c -o girl-girl-player-frontend.o `test -f 'girl-player-frontend.c' || echo '$(srcdir)/'`girl-player-frontend.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/girl-girl-player-frontend.Tpo $(DEPDIR)/girl-girl-player-frontend.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='girl-player-frontend.c' object='girl-girl-player-frontend.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -c -o girl-girl-player-frontend.o `test -f 'girl-player-frontend.c' || echo '$(srcdir)/'`girl-player-frontend.c
+
+girl-girl-player-frontend.obj: girl-player-frontend.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -MT girl-girl-player-frontend.obj -MD -MP -MF $(DEPDIR)/girl-girl-player-frontend.Tpo -c -o girl-girl-player-frontend.obj `if test -f 'girl-player-frontend.c'; then $(CYGPATH_W) 'girl-player-frontend.c'; else $(CYGPATH_W) '$(srcdir)/girl-player-frontend.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/girl-girl-player-frontend.Tpo $(DEPDIR)/girl-girl-player-frontend.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='girl-player-frontend.c' object='girl-girl-player-frontend.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -c -o girl-girl-player-frontend.obj `if test -f 'girl-player-frontend.c'; then $(CYGPATH_W) 'girl-player-frontend.c'; else $(CYGPATH_W) '$(srcdir)/girl-player-frontend.c'; fi`
 
 girl-girl-runners.o: girl-runners.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(girl_CFLAGS) $(CFLAGS) -MT girl-girl-runners.o -MD -MP -MF $(DEPDIR)/girl-girl-runners.Tpo -c -o girl-girl-runners.o `test -f 'girl-runners.c' || echo '$(srcdir)/'`girl-runners.c

@@ -1329,7 +1329,7 @@ GtkWidget *create_girl_app()
 	       girl->selected_station_description);
 
 	if (strcmp(girl->selected_station_uri,"")==0) {
-		girl->selected_station_uri = g_strdup("http://www.wnyc.org/stream/wnyc-fm939/mp3.pls");
+		girl->selected_station_uri = g_strdup("http://fm939.wnyc.org/wnycfm");
 	}
 	if (strcmp(girl->selected_station_name,"")==0) {
 		girl->selected_station_name = g_strdup("WNYC");

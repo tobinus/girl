@@ -4336,13 +4336,17 @@ if test -n "$GIRL_CFLAGS"; then
 		  libgnome-2.0 >= 2.0 \\
 		  libgnomeui-2.0 >= 2.0 \\
 		  libxml-2.0 >= 2.0 \\
-		  gnome-vfs-2.0 >= 2.0\""; } >&5
+		  gnome-vfs-2.0 >= 2.0
+		  gstreamer-0.10 >= 0.10.36 \\
+		  gstreamer-interfaces-0.10 >= 0.10.36\""; } >&5
   ($PKG_CONFIG --exists --print-errors "gtk+-2.0 >= 2.0 \
 		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
-		  gnome-vfs-2.0 >= 2.0") 2>&5
+		  gnome-vfs-2.0 >= 2.0
+		  gstreamer-0.10 >= 0.10.36 \
+		  gstreamer-interfaces-0.10 >= 0.10.36") 2>&5
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
@@ -4351,7 +4355,9 @@ if test -n "$GIRL_CFLAGS"; then
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
-		  gnome-vfs-2.0 >= 2.0" 2>/dev/null`
+		  gnome-vfs-2.0 >= 2.0
+		  gstreamer-0.10 >= 0.10.36 \
+		  gstreamer-interfaces-0.10 >= 0.10.36" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -4368,13 +4374,17 @@ if test -n "$GIRL_LIBS"; then
 		  libgnome-2.0 >= 2.0 \\
 		  libgnomeui-2.0 >= 2.0 \\
 		  libxml-2.0 >= 2.0 \\
-		  gnome-vfs-2.0 >= 2.0\""; } >&5
+		  gnome-vfs-2.0 >= 2.0
+		  gstreamer-0.10 >= 0.10.36 \\
+		  gstreamer-interfaces-0.10 >= 0.10.36\""; } >&5
   ($PKG_CONFIG --exists --print-errors "gtk+-2.0 >= 2.0 \
 		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
-		  gnome-vfs-2.0 >= 2.0") 2>&5
+		  gnome-vfs-2.0 >= 2.0
+		  gstreamer-0.10 >= 0.10.36 \
+		  gstreamer-interfaces-0.10 >= 0.10.36") 2>&5
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
@@ -4383,7 +4393,9 @@ if test -n "$GIRL_LIBS"; then
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
-		  gnome-vfs-2.0 >= 2.0" 2>/dev/null`
+		  gnome-vfs-2.0 >= 2.0
+		  gstreamer-0.10 >= 0.10.36 \
+		  gstreamer-interfaces-0.10 >= 0.10.36" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -4409,14 +4421,18 @@ fi
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
-		  gnome-vfs-2.0 >= 2.0" 2>&1`
+		  gnome-vfs-2.0 >= 2.0
+		  gstreamer-0.10 >= 0.10.36 \
+		  gstreamer-interfaces-0.10 >= 0.10.36" 2>&1`
         else
 	        GIRL_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gtk+-2.0 >= 2.0 \
 		  glib-2.0 >= 2.40 \
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
-		  gnome-vfs-2.0 >= 2.0" 2>&1`
+		  gnome-vfs-2.0 >= 2.0
+		  gstreamer-0.10 >= 0.10.36 \
+		  gstreamer-interfaces-0.10 >= 0.10.36" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs
 	echo "$GIRL_PKG_ERRORS" >&5
@@ -4426,7 +4442,9 @@ fi
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
-		  gnome-vfs-2.0 >= 2.0) were not met:
+		  gnome-vfs-2.0 >= 2.0
+		  gstreamer-0.10 >= 0.10.36 \
+		  gstreamer-interfaces-0.10 >= 0.10.36) were not met:
 
 $GIRL_PKG_ERRORS
 
@@ -4459,7 +4477,7 @@ $as_echo "yes" >&6; }
 
 fi
 
-GIRL_PKG_DEPS="gtk+-2.0, glib-2.0, libgnome-2.0, libgnomeui-2.0, libxml-2.0, gnome-vfs-2.0"
+GIRL_PKG_DEPS="gtk+-2.0, glib-2.0, libgnome-2.0, libgnomeui-2.0, libxml-2.0, gnome-vfs-2.0, gstreamer-0.10, gstreamer-interfaces-0.10"
 
 
 

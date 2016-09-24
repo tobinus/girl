@@ -38,6 +38,8 @@
 #include "girl-listener.h"
 #include "girl-station.h"
 #include "girl-program.h"
+#include "girl-player-frontend.h"
+#include "girl-player-backend.h"
 
 GirlData *girl;
 
@@ -72,6 +74,18 @@ int main(int argc, char *argv[])
 		g_warning(_("GNOME VFS initialization failed!\n"));
 		exit(1);
 	}
+
+	if (!girl_player_frontend_init (&argc, &argv)) {
+		g_message ("Frontend initialization failure....");
+		exit (0);
+	}
+
+	if (!girl_player_backend_init (&argc, &argv)) {
+		g_message ("Backend creation failure");
+		exit (0);
+	}
+
+	gst_init(&argc, &argv);
 
 	gnome_program_init(PACKAGE, VERSION,
 			   LIBGNOMEUI_MODULE,

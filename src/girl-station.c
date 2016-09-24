@@ -39,10 +39,9 @@
 #include <libgnomevfs/gnome-vfs.h>
 #include <libgnomevfs/gnome-vfs-application-registry.h>
 
-
-
 #include "girl.h"
 #include "girl-station.h"
+#include "girl-player.h"
 
 extern GirlData *girl;
 extern GList *girl_stations;
@@ -193,6 +192,8 @@ void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperTyp
 	if (helper == GIRL_STREAM_RECORD) {
 		app = g_strdup(GIRL_HELPER_RECORD);
 	}
+
+	girl_player_main(url);
 
 	if (g_strcmp0(app,"no")!=0) {
 		command = g_strconcat(app, " ", url, NULL);

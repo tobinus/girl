@@ -54,9 +54,11 @@ PKG_CHECK_MODULES(GIRL,
 		  libgnome-2.0 >= 2.0 \
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
-		  gnome-vfs-2.0 >= 2.0)
+		  gnome-vfs-2.0 >= 2.0
+		  gstreamer-0.10 >= 0.10.36 \
+		  gstreamer-interfaces-0.10 >= 0.10.36)
 
-GIRL_PKG_DEPS="gtk+-2.0, glib-2.0, libgnome-2.0, libgnomeui-2.0, libxml-2.0, gnome-vfs-2.0"
+GIRL_PKG_DEPS="gtk+-2.0, glib-2.0, libgnome-2.0, libgnomeui-2.0, libxml-2.0, gnome-vfs-2.0, gstreamer-0.10, gstreamer-interfaces-0.10"
 
 GTK_DOC_CHECK([1.16], [--flavour no-tmpl])
 
