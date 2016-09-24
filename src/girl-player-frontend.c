@@ -58,6 +58,7 @@ delete_event (GtkWidget *window,
               gpointer data)
 {
 	g_message ("delete event occurred");
+	girl_player_backend_pause();
 	return FALSE;
 }
 
