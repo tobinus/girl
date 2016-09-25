@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-27 17:40+0000\n"
-"PO-Revision-Date: 2016-09-06 21:38+0200\n"
+"POT-Creation-Date: 2016-09-23 20:22+0000\n"
+"PO-Revision-Date: 2016-09-26 00:19+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/girl.appdata.xml.in.h:1
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Internetradioletare"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:660
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:664
 msgid "Locate Internet Radio Stations"
 msgstr "Leta rätt på internetradiostationer"
 
@@ -379,6 +379,9 @@ msgid ""
 "Balázs Meskó <meskobalazs@gmail.com> (Hungarian translation)\n"
 "Laudivan Freire de Almeida <laudivan@riseup.net> (Brazilian Portuguese "
 "translation)\n"
+"Bernd Homuth <dev@hmt.im> (German translation)\n"
+"Paul Feuvraux and Claude Paroz <claude@2xlibre.net> (French translation)\n"
+"Anders Jonsson <anders.jonsson@norsjovallen.se> (Swedish translation)\n"
 msgstr ""
 "Marek Černocký <marek@manet.cz> (Översättning till tjeckiska)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (Översättning till brasiliansk "
@@ -410,24 +413,28 @@ msgstr ""
 "Balázs Meskó <meskobalazs@gmail.com> (Översättning till ungerska)\n"
 "Laudivan Freire de Almeida <laudivan@riseup.net> (Översättning till "
 "brasiliansk portugisiska)\n"
+"Bernd Homuth <dev@hmt.im> (Översättning till tyska)\n"
+"Paul Feuvraux and Claude Paroz <claude@2xlibre.net> (Översättning till "
+"franska)\n"
+"Anders Jonsson <anders.jonsson@norsjovallen.se> (Översättning till svenska)\n"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:665
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 msgstr "Copyright © 2014, 2015, 2016  Ole Aamot Software"
 
-#: ../src/girl.c:662
+#: ../src/girl.c:666
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
 msgstr "Mario Blättermann <mario.blaettermann@gmail.com> (Tysk översättning)"
 
-#: ../src/girl.c:662
+#: ../src/girl.c:666
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Marek Černocký <marek@manet.cz> (Tjeckisk översättning)"
 
-#: ../src/girl.c:662
+#: ../src/girl.c:666
 msgid "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com> (Spansk översättning)"
 
-#: ../src/girl.c:671
+#: ../src/girl.c:675
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -453,35 +460,37 @@ msgstr ""
 "program, om inte, skriv till Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA."
 
-#: ../src/girl.c:677
+#: ../src/girl.c:681
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Kan inte läsa in logotyp för GIRL: %s\n"
 
-#: ../src/girl.c:835
+#: ../src/girl.c:839
 msgid "Search radio station by location"
 msgstr "Sök radiostation efter plats"
 
-#: ../src/girl.c:841
+#: ../src/girl.c:845
 #, c-format
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "Lyssnar på radiostationen %s i %s: %s "
 
 #. g_spawn_close_pid( girl->record_pid);
-#: ../src/girl.c:892
+#: ../src/girl.c:896
 #, c-format
 msgid "Finished saving recording from the radio station %s in %s from %s to %s"
 msgstr ""
 "Klar med sparning av inspelning från radiostationen %s i %s från %s till %s"
 
 #. g_spawn_close_pid( girl->player_pid);
-#: ../src/girl.c:906
+#: ../src/girl.c:910
 #, c-format
 msgid ""
-"Stopped playing the radio station %s in %s, exit the application Videos."
-msgstr "Slutade spela radiostationen %s i %s, avsluta programmet Videoklipp."
+"Stopped playing the radio station %s in %s, exit the application GNOME "
+"Videos."
+msgstr ""
+"Slutade spela radiostationen %s i %s, avsluta programmet GNOME Videoklipp."
 
-#: ../src/girl.c:951
+#: ../src/girl.c:955
 #, c-format
 msgid "Archiving %s"
 msgstr "Arkiverar %s"
