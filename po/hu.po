@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-27 17:40+0000\n"
-"PO-Revision-Date: 2016-08-29 23:16+0200\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"POT-Creation-Date: 2016-09-23 20:22+0000\n"
+"PO-Revision-Date: 2016-09-24 13:19+0200\n"
+"Last-Translator: Meskó Balázs <meskobalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #: ../data/girl.appdata.xml.in.h:1
 msgid ""
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Internetes rádió felderítő"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:660
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:664
 msgid "Locate Internet Radio Stations"
 msgstr "Internetes rádióállomások felderítése"
 
@@ -310,7 +310,6 @@ msgstr "A GNOME VFS előkészítése nem sikerült!\n"
 
 #: ../src/girl.c:124
 #, c-format
-#| msgid "Station"
 msgid "%i station"
 msgid_plural "%i stations"
 msgstr[0] "%i állomás"
@@ -318,7 +317,6 @@ msgstr[1] "%i állomás"
 
 #: ../src/girl.c:125
 #, c-format
-#| msgid "%i stations and %i streams found"
 msgid "and %i stream found"
 msgid_plural "and %i streams found"
 msgstr[0] "és %i adatfolyam található"
@@ -385,6 +383,9 @@ msgid ""
 "Balázs Meskó <meskobalazs@gmail.com> (Hungarian translation)\n"
 "Laudivan Freire de Almeida <laudivan@riseup.net> (Brazilian Portuguese "
 "translation)\n"
+"Bernd Homuth <dev@hmt.im> (German translation)\n"
+"Paul Feuvraux and Claude Paroz <claude@2xlibre.net> (French translation)\n"
+"Anders Jonsson <anders.jonsson@norsjovallen.se> (Swedish translation)\n"
 msgstr ""
 "Marek Černocký <marek@manet.cz> (cseh fordítás)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (brazíliai portugál fordítás)\n"
@@ -411,24 +412,28 @@ msgstr ""
 "Meskó Balázs <meskobalazs@gmail.com> (magyar fordítás)\n"
 "Laudivan Freire de Almeida <laudivan@riseup.net> (brazíliai portugál "
 "fordítás)\n"
+"\n"
+"Bernd Homuth <dev@hmt.im> (német fordítás)\n"
+"Paul Feuvraux and Claude Paroz <claude@2xlibre.net> (francia fordítás)\n"
+"Anders Jonsson <anders.jonsson@norsjovallen.se> (svéd fordítás)\n"
 
-#: ../src/girl.c:661
+#: ../src/girl.c:665
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 msgstr "Copyright © Ole Aamot Software, 2014, 2015, 2016."
 
-#: ../src/girl.c:662
+#: ../src/girl.c:666
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
 msgstr "Mario Blättermann <mario.blaettermann@gmail.com> (német fordítás)"
 
-#: ../src/girl.c:662
+#: ../src/girl.c:666
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Marek Černocký <marek@manet.cz> (cseh fordítás)"
 
-#: ../src/girl.c:662
+#: ../src/girl.c:666
 msgid "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanyol fordítás)"
 
-#: ../src/girl.c:671
+#: ../src/girl.c:675
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -453,36 +458,37 @@ msgstr ""
 "meg, írjon a Free Software Foundation Inc.-nek. Levélcímük: 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA."
 
-#: ../src/girl.c:677
+#: ../src/girl.c:681
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Nem sikerült betölteni a GIRL logót: %s\n"
 
-#: ../src/girl.c:835
+#: ../src/girl.c:839
 msgid "Search radio station by location"
 msgstr "Rádióállomások keresése hely szerint"
 
-#: ../src/girl.c:841
+#: ../src/girl.c:845
 #, c-format
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "A rádióállomás hallgatása: %s itt: %s: %s  "
 
 #. g_spawn_close_pid( girl->record_pid);
-#: ../src/girl.c:892
+#: ../src/girl.c:896
 #, c-format
 msgid "Finished saving recording from the radio station %s in %s from %s to %s"
 msgstr "Rögzítés befejezve a rádióállomásból: %s itt: %s: %s – %s"
 
 #. g_spawn_close_pid( girl->player_pid);
-#: ../src/girl.c:906
+#: ../src/girl.c:910
 #, c-format
 msgid ""
-"Stopped playing the radio station %s in %s, exit the application Videos."
+"Stopped playing the radio station %s in %s, exit the application GNOME "
+"Videos."
 msgstr ""
 "A lejátszás befejezve a következő rádióállomásból: %s itt: %s, lépjen ki a "
-"Videók alkalmazásból."
+"GNOME Videók alkalmazásból."
 
-#: ../src/girl.c:951
+#: ../src/girl.c:955
 #, c-format
 msgid "Archiving %s"
 msgstr "%s archiválása"
