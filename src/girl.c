@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 	}
 
 	if (!girl_player_frontend_init (&argc, &argv)) {
-		GIRL_DEBUG_MSG (_("Player Frontend initialization failure...."));
+		GIRL_DEBUG_MSG (_("Player Frontend initialization failure..."));
 		exit (0);
 	}
 
