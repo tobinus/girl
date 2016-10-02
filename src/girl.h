@@ -49,6 +49,7 @@ typedef enum {
 #include "girl-runners.h"
 #include "girl-streams.h"
 #include "girl-station.h"
+#include "girl-player.h"
 
 #if GIRL_DEBUG == 0
 #define GIRL_DEBUG_MSG(x...) g_message(x)
@@ -96,7 +97,7 @@ void quit_app(GtkWidget *, gpointer user_data);
 void about_app(GtkWidget *, gpointer user_data);
 void about_listener(GtkWidget *, gpointer user_data);
 void about_program(GtkWidget *, gpointer user_data);
-	
+
 struct _GirlData {
 	GtkImage *pixmap;
 	GnomeAppBar *appbar;
@@ -104,6 +105,8 @@ struct _GirlData {
 	GtkAboutDialog *window;
 	GtkStatusbar *statusbar;
 	GtkWidget *about_station;
+	GtkWidget *player_window;
+	GtkWidget *record_window;
 	gchar *selected_archive_file;
 	GirlListenerInfo *selected_listener;
 	gchar *selected_listener_uri;

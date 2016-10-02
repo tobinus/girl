@@ -41,9 +41,13 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include "girl.h"
 #include "girl-player-backend.h"
 #include "girl-player-frontend.h"
 #include "girl-player-globals.h"
+
+extern GtkWidget *girl_app;
+extern GirlData *girl;
 
 struct GirlPlayer *player;
 
@@ -63,7 +67,7 @@ delete_event (GtkWidget *window,
 }
 
 static void
-destroy (GtkWidget *widget, gpointer data)
+girl_player_frontend_destroy (GtkWidget *widget, gpointer data)
 {
 	gtk_widget_destroy (widget);
 }
@@ -71,7 +75,15 @@ destroy (GtkWidget *widget, gpointer data)
 static void
 girl_player_frontend_play (GtkWidget *widget, gpointer data)
 {
+	girl_player_backend_pause();
 	girl_player_backend_play();
+}
+
+static void
+girl_player_frontend_stop (GtkWidget *widget, gpointer data)
+{
+	girl_player_backend_pause();
+	gtk_widget_destroy(girl->player_window);
 }
 
 static void
@@ -83,20 +95,22 @@ girl_player_frontend_pause (GtkWidget *widget, gpointer data)
 gboolean girl_player_frontend_start (gchar *name)
 {
 	player->table = gtk_table_new (300,60,FALSE);
+
+	girl->player_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	
-	player->app_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	gtk_window_set_position (GTK_WINDOW (girl->player_window),GTK_WIN_POS_CENTER_ALWAYS);
+	gtk_window_set_title (GTK_WINDOW (girl->player_window),name);
+	gtk_window_set_default_size (GTK_WINDOW (girl->player_window),300,60);
+	gtk_container_set_border_width (GTK_CONTAINER (girl->player_window), 10);
+	gtk_window_set_transient_for (GTK_WINDOW(girl->player_window),
+				      GTK_WINDOW(girl_app));
 	
-	gtk_window_set_position (GTK_WINDOW (player->app_window),GTK_WIN_POS_CENTER_ALWAYS);
-	gtk_window_set_title (GTK_WINDOW (player->app_window),name);
-	gtk_window_set_default_size (GTK_WINDOW (player->app_window),300,60);
-	gtk_container_set_border_width (GTK_CONTAINER (player->app_window), 10);
-	
-	gtk_signal_connect (GTK_OBJECT (player->app_window), "delete_event",
+	gtk_signal_connect (GTK_OBJECT (girl->player_window), "delete_event",
 			    GTK_SIGNAL_FUNC (delete_event), NULL);
 	
-	g_signal_connect (G_OBJECT (player->app_window), "destroy",
-			  G_CALLBACK (destroy), NULL);
-	
+	g_signal_connect (G_OBJECT (girl->player_window), "destroy",
+			  G_CALLBACK (girl_player_frontend_destroy), NULL);
+
 	player->video_window = gtk_drawing_area_new ();
 	gtk_widget_set_size_request (player->video_window, 100, 100);
 	
@@ -107,27 +121,31 @@ gboolean girl_player_frontend_start (gchar *name)
 	
 	player->play_button = gtk_button_new_with_label ("Play");
 	player->pause_button = gtk_button_new_with_label ("Pause");
+	player->stop_button = gtk_button_new_with_label ("Stop");
 	
-	
-	gtk_container_add (GTK_CONTAINER (player->app_window), player->table);
+	gtk_container_add (GTK_CONTAINER (girl->player_window), player->table);
 	gtk_table_attach_defaults (GTK_TABLE(player->table), player->video_window, 0, 700, 0, 500);
 	gtk_table_attach_defaults (GTK_TABLE(player->table), player->play_button, 0, 15, 590, 600);
 	gtk_table_attach_defaults (GTK_TABLE(player->table), player->pause_button, 15, 25, 590, 600);
-	
+	gtk_table_attach_defaults (GTK_TABLE(player->table), player->stop_button, 25, 35, 590, 600);
+
 	g_signal_connect (G_OBJECT (player->play_button), "clicked",
                           G_CALLBACK (girl_player_frontend_play), NULL);
 	
 	g_signal_connect (G_OBJECT (player->pause_button), "clicked",
                           G_CALLBACK (girl_player_frontend_pause), NULL);
 	
-	gtk_widget_show_all (player->app_window);
-	gtk_widget_realize (player->app_window);
+	g_signal_connect (G_OBJECT (player->stop_button), "clicked",
+                          G_CALLBACK (girl_player_frontend_stop), NULL);
+
+	gtk_widget_show_all (girl->player_window);
+	gtk_widget_realize (girl->player_window);
 	
 	g_assert (Window_Xid != 0);
 	
 	return TRUE;
 }
-gboolean girl_player_frontend_init (int argc, gchar **argv)
+gboolean girl_player_frontend_init (int *argc, gchar **argv[])
 {
 	player = (struct GirlPlayer*)malloc(sizeof(GirlPlayer));
 	if (player != NULL)

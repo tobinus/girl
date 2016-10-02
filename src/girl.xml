@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
 <!DOCTYPE girl SYSTEM "girl-9.5.dtd">
-<girl version="9.5.2">
+<girl version="9.5.3">
   <station band="909/693 MW" id="bbcradio5live" lang="en" name="BBC Radio 5 Live" rank="1.0" type="gov">
     <frequency uri="http://www.bbc.co.uk/5live">909/693 MW in Salford, United Kingdom</frequency>
     <location>Salford, United Kingdom</location>
@@ -33,9 +33,9 @@
     <description lang="en">
       KSLU is a 3000 watt CPB-qualified non-commercial educational radio station owned and operated by Southeastern Louisiana University in Hammond, LA. The radio station's city-grade signal reaches a 10 mile radius and is often heard from Denham Springs to Covington to Kentwood. Many of the announcers are communication students at Southeastern training for careers in the broadcast industry. KSLU strives to serve both the Southeastern and surrounding communities.
     </description>
-    <stream mime="audio/mpeg" uri="http://147.174.55.27:7998/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="64 kbps" />
-    <stream mime="audio/mpeg" uri="http://147.174.55.27:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="48 kbps" />
-    <stream mime="audio/mpeg" uri="http://147.174.55.27:8002/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="24 kbps" />
+    <stream mime="audio/mpeg" uri="http://147.174.55.27:7998/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="64 kbps" />
+    <stream mime="audio/mpeg" uri="http://147.174.55.27:8000/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="48 kbps" />
+    <stream mime="audio/mpeg" uri="http://147.174.55.27:8002/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="24 kbps" />
     <uri>http://www2.southeastern.edu/kslu/</uri>
   </station>
   <station band="RadioK" id="radiok" lang="en" name="Radio K" rank="1.0" type="edu">
@@ -45,8 +45,8 @@
       Radio K - KUOM is the award-winning student-run radio station of the University of Minnesota, playing an eclectic variety of independent music both old and new. Radio K educates students, breaks ground in musical programming, and provides cutting-edge cultural coverage through our specialty shows and Real College Podcast.
       The independent music heard every day on Radio K is made possible through the support of listeners like you. Additional support comes from the students of the University of Minnesota, the College of Continuing Education, the Minnesota Arts and Cultural Heritage Fund, and the State of Minnesota.
     </description>
-    <stream mime="audio/mpeg" uri="http://radiokstreams.cce.umn.edu:8256/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="256 kbps" />
-    <stream mime="audio/mpeg" uri="http://radiokstreams.cce.umn.edu:8128/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://128.101.73.38:8256/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="256 kbps" />
+    <stream mime="audio/mpeg" uri="http://128.101.73.38:8128/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://radiok.org/</uri>
   </station>
   <station band="ONLINE" id="blurfm" lang="es-AR" name="Blur FM" rank="1.0" type="com">
@@ -55,9 +55,9 @@
     <description>
       Blur FM is an online radio station that works without advertising and with the sole purpose of promoting the artists that are broadcasted.  Music files are downloaded legally-free, or under consent of the artists, from online sources, which aim to promote independent/emerging artists.
     </description>
-    <stream mime="audio/mpeg" uri="http://www.blurfm.com/streams/m3u/blurfm.m3u" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
-    <stream mime="audio/mpeg" uri="http://www.blurfm.com/streams/m3u/blurfmlowmp3.m3u" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
-    <stream mime="audio/aacp" uri="http://www.blurfm.com/streams/m3u/blurfmlow.m3u" codec="MPEG-2 AAC (AAC+)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
+    <stream mime="audio/mpeg" uri="http://64.34.175.149:8000/blurfm01" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://198.199.70.248:8000/blurfm02" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <stream mime="audio/aacp" uri="http://91.109.241.253:8170" codec="MPEG-2 AAC (AAC+)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
     <uri>http://www.blurfm.com/</uri>
   </station>
   <station band="105.3FM" id="urgentfm" lang="be" name="Urgent.fm" rank="1.0" type="edu">
@@ -66,7 +66,7 @@
     <description>
       Nieuws en informatie over de Gentse studentenzender.
     </description>
-    <stream mime="audio/mpeg" uri="http://urgent.stream.flumotion.com/urgent/high.mp3.m3u" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="127 kbps" />
+    <stream mime="audio/mpeg" uri="http://195.10.10.201/urgent/high.mp3?GKID=af6fd868859111e6bffa00163e914f69" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="127 kbps" />
     <uri>http://www.urgent.fm/</uri>
   </station>
   <station band="99.6FM" id="uradio" lang="el-CY" name="U Radio" rank="1.0" type="edu">
@@ -84,7 +84,7 @@
     <description lang="en">
       La Radio Universidad de Chile es una estación de radio ubicada en el 102.5 MHz del dial FM en Santiago de Chile.
     </description>
-    <stream mime="audio/mpeg" uri="http://stream.radio.uchile.cl/;stream/1" codec="MPEG-1 Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="82 kbps" />
+    <stream mime="audio/mpeg" uri="http://stream3.rbm.cl:8010/playerweb.aac" codec="MPEG-2 AAC" samplerate="44100 Hz" channels="Stereo" bitrate="78 kbps" />
     <uri>http://radio.uchile.cl/</uri>
   </station>
   <station band="93.7FM" id="radiousp" lang="pt_BR" name="Radio USP" rank="1.0" type="edu">
@@ -132,7 +132,7 @@ Bergen Student Radio strives to be an alternative to commercial and state-run ra
     <description lang="de-AT">
       24 Stunden lang Beiträge von Studierenden der FH St. Pölten, von RadiomacherInnen aus St. Pölten und Umgebung, Beiträge der freien Radios Österreichs und Musik aus allen Genres.
     </description>
-    <stream mime="audio/mpeg" uri="http://www.cr944.at:8000/cr944-high.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
+    <stream mime="audio/mpeg" uri="http://www.cr944.at:8000/cr944-high" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
     <uri>http://www.campusradio.at/</uri>
   </station>    
   <station band="" id="radiouniversidad" lang="en" name="Radio Universidad" rank="1.0" type="edu">
@@ -150,8 +150,7 @@ Bergen Student Radio strives to be an alternative to commercial and state-run ra
     <description lang="en">
       Stockholm College Radio, radiostationen med mest ös och bredd i Stockholms-etern alias studentradiostationen som sänder på 95,3 MHz i Stockholm.  Med ny musik med sting i, humor, kultur, reportage, studentinformation och mer därtill.
     </description>
-    <stream mime="audio/mpeg" uri="http://narradio.se/webbradio.php?k=953&amp;q=32&amp;m=m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
-    <stream mime="audio/mpeg" uri="http://narradio.se/webbradio.php?k=953&amp;q=64&amp;m=m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <stream mime="audio/mpeg" uri="http://radiostreamone.mine.nu:80" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="48 kbps" />
     <uri>http://collegeradio.se/</uri>
   </station>        
   <station band="92FM" id="wumr" lang="en" name="WUMR" rank="1.0" type="edu">
@@ -161,7 +160,7 @@ Bergen Student Radio strives to be an alternative to commercial and state-run ra
     
 WUMR has been the University of Memphis broadcasting outlet since 1979, when Southwestern at Memphis (now Rhodes College) sold one of its two radio licenses to then Memphis State University. WSMS-FM 91.7, carrying the Memphis State call letters, was created as an all-jazz station. Although the call letters changed to WUMR, when Memphis State became the University of Memphis on July 1, 1994, the station, which is now known as WUMR “The Jazz Lover” U 92-FM, has stayed true to the all-jazz format during its 30-year history. WUMR is part of the College of Communication and Fine Arts’ (CCFA) Department of Communication. An element of the station’s mission is to train communication and journalism students in broadcasting.
     </description>
-    <stream mime="audio/mpeg" uri="http://141.225.64.25:88/broadwave.asx?src=1&amp;kbps=56" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="56 kbps" />
+    <stream mime="audio/mpeg" uri="http://141.225.64.25:88/broadwave.mp3?src=1&amp;rate=1&amp;ref=" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="56 kbps" />
     <uri>http://www.memphis.edu/wumr/</uri>
   </station>    
   <station band="100FM" id="radiorevolt" lang="no" name="Radio Revolt" rank="1.0" type="edu">
@@ -241,7 +240,7 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     <description lang="en">
       KTUH is a student-run noncommercial radio station broadcasting from the University of Hawai’i at Manoa. We’ve been serving the community since 1969 with a variety of programs that include public announcements, equipment for community events, and a practical chance to learn about radio broadcasting. KTUH was granted a license to the Board of Regents as a non-commercial educational FM Station by the Federal Communications Commission (FCC) on June 28, 1985. Maintaining a staff in excess of 70 volunteers annually, KTUH operates 24 hours a day, year-round.
     </description>
-    <stream mime="audio/mpeg" uri="http://stream.ktuh.org:8000/stream-mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://stream.ktuh.org:8000/stream-mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://ktuh.org/</uri>
   </station>
   <station band="ONLINE" id="nrkp1" lang="no" name="NRK P1" rank="1.0" type="gov">
@@ -321,7 +320,7 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
 
       From the underground beats of hip hop, to the euphoric tones of house and the classic tunes of rock,  and everything else in between, UCT Radio embodies what it truly means to be a music lover. The station captures a diverse audience of university students, staffers and even the wider Cape Town community.
     </description>
-    <stream mime="audio/mpeg" uri="http://listenlive-c2p1.ndstream.net:8130/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="48 kbps" />
+    <stream mime="audio/mpeg" uri="http://listenlive-c2p1.ndstream.net:8130/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Mono" bitrate="48 kbps" />
     <uri>http://www.radio.uct.ac.za/</uri>
   </station>
   <station band="101.9FM" id="cfrc" lang="en" name="CFRC" rank="1.0" type="edu">
@@ -334,7 +333,7 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
       We provide free broadcast skills training and experience to members of the community.-->
       We have been broadcasting since 1922, making us the longest-running campus-based broadcaster in Canada.
     </description>
-    <stream mime="audio/mpeg" uri="http://stream.cfrc.ca:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://stream.cfrc.ca:8000" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://chuo.fm/</uri>
   </station>
   <station band="89.1FM" id="chuo" lang="en" name="CHUO" rank="1.0" type="edu">
@@ -344,7 +343,7 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
       We are NOT your traditional radio station. We are THE community radio station.
       For over 20 YEARS we’ve been playing nothing but the best in indie-rock, folk, funk, reggae, hip hop, jazz, blues, country, rock, classical, ska, punk, soul, Motown and more. We offer a new, refreshing flavour of music from local, independent, underground and emerging artists to tickle every one of your musical taste buds. We play tunes that you probably won’t know the words to… we feature artists you’ve probably never heard of… we make radio worth listening to.
     </description>
-    <stream mime="audio/mpeg" uri="http://icecast1.isiglobal.ca:8000/chuo.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://icecast1.isiglobal.ca:8000/chuo" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://chuo.fm/</uri>
   </station>
   <station band="99.3FM" id="radiorakel" lang="en" name="radiOrakel" rank="1.0" type="edu">
@@ -364,7 +363,7 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     KXSC traces its roots to the original KUSC, which was operated by students starting in 1946. KUSC transitioned to classical programming and moved off-campus in the mid-1970s, but students still demanded a broadcast voice. So on April 2, 1975, a dozen students gathered in a converted production studio to start KSCR, a radio station run by and for students.
 <!--    KXSC has undergone yet another revolution with our new home in the Ronald Tutor Campus Center, but our approach to radio is still the same: All-student run music, sports and news broadcasts that encourage diversity and a student-centric approach.-->
     </description>
-    <stream mime="audio/mpeg" uri="http://kxsc.org/s/kxsc.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://68.181.136.188:8000" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.kxsc.org/</uri>
   </station>
   <station band="92.1FM" id="wpts" lang="en" name="WPTS" rank="1.0" type="edu">
@@ -403,7 +402,7 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     <description lang="en">
       CKMS 100.3 FM (SoundFM) is a community radio station broadcasting independent and alternative music and culture to Waterloo Region.
     </description>
-    <stream mime="audio/mpeg" uri="http://cast9.directhostingcenter.com:2199/tunein/soevwkmu.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://192.240.102.133:7703/stream" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://soundfm.ca/</uri>
   </station>
   <station band="ONLINE" id="nrj-bern" lang="en" name="Radio NRJ Bern" rank="1.0" type="edu">
@@ -427,9 +426,9 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     <frequency uri="http://www.kcsn.org/">88.5 FM in Los Angeles, CA</frequency>
     <location>Los Angeles, CA</location>
     <description lang="en">KCSN is commercial free, public radio that relies heavily on donor contributions.</description>
-    <stream mime="audio/mpeg" uri="http://130.166.82.184:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
-    <stream mime="audio/mpeg" uri="http://130.166.82.184:8002/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
-    <stream mime="audio/mpeg" uri="http://130.166.82.184:8004/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
+    <stream mime="audio/mpeg" uri="http://130.166.82.184:8000/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://130.166.82.184:8002/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <stream mime="audio/mpeg" uri="http://130.166.82.184:8004/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
     <uri>http://www.kcsn.org/</uri>
   </station>
   <station band="91.7FM" id="kvrx" name="KVRX" rank="1.0" type="edu">
@@ -450,36 +449,38 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     <frequency uri="http://wrvu.org/">Online in Nashville, TN</frequency>
     <location>Nashville, TN</location>
     <description lang="en">WRVU is a free-format college radio station committed to providing Vanderbilt University and the surrounding community with the best in new, non-mainstream music. WRVU is student-run and focuses on teaching Vanderbilt students the ins and outs of radio broadcasting, playing music you can’t hear anywhere else.</description>
-    <stream mime="audio/mpeg" uri="http://129.59.202.68:8200/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://129.59.202.68:8200/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wrvu.org/</uri>
   </station>
   <station band="88.5FM" id="whpk" name="WHPK" rank="1.0" type="edu">
     <frequency uri="http://www.whpk.org/">88.5 FM in Chicago, IL</frequency>
     <location>Chicago, IL</location>
     <description lang="en">WHPK a non-profit community radio station of the University of Chicago, broadcasting to Hyde Park and the South Side of Chicago for over 50 years.</description>
-    <stream mime="audio/mpeg" uri="http://www.whpk.org/stream/mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://www.whpk.org:8000/mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://whpk.org/</uri>
   </station>
+  <!-- Non-streamable as of 2016/10/01
   <station band="88.9FM" id="wnyo" name="WNYO" rank="1.0" type="edu">
     <frequency uri="http://www.wnyo889.org/">88.9 FM in Oswego, NY</frequency>
     <location>Oswego, NY</location>
     <description lang="en">WNYO is an FCC regulated student ran radio station at SUNY Oswego. It is located on the SUNY Oswego campus, inside The Point in the Marano Campus Center. WNYO is also recognized on campus as a student organization. The radio station produces multiple concert events each year through the Indie Series, Artswego and Lifestyles. The sports department at WNYO broadcasts live campus athletics including home and away games.</description>
-    <stream mime="audio/ogg" uri="http://www.wnyo.org/webcast-ogg-high.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
+    <stream mime="audio/ogg" uri="http://wnyo-stream-01.oswego.edu:8000/stream.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
     <uri>http://www.wnyo889.org/</uri>
-  </station>
+    </station>
+  -->
   <station band="90.1FM" id="wusb" name="WUSB" rank="1.0" type="edu">
     <frequency uri="http://www.wusb.fm/">90.1 FM in Long Island, NY</frequency>
     <location>Long Island, NY</location>
     <description lang="en">WUSB is a 3,600 watt non-commercial station located on the campus of Stony Brook University. Since 1977, we have served the campus and Long Island listening communities with a diverse broadcast mix of music, news, public affairs, drama and sports programming.<!-- Our 24 hour a day schedule is made possible by a volunteer staff efforts of over 160 Stony Brook students, faculty, staff, alumni and community residents. Behind-the-scenes as well as on-air work, combined with a variety of nationally syndicated radio programs integrated into the schedule, creates the 168 hours per week of innovative and high-quality programming.--></description>
-    <stream mime="audio/mpeg" uri="http://stream.wusb.stonybrook.edu:8080/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
-    <stream mime="audio/mpeg" uri="http://stream.wusb.stonybrook.edu:8090/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://stream.wusb.stonybrook.edu:8080/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="32 kbps" />
+    <stream mime="audio/mpeg" uri="http://stream.wusb.stonybrook.edu:8090/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.wusb.fm/</uri>
   </station>
   <station band="ONLINE" id="coog" name="COOG" rank="1.0" type="edu">
     <frequency uri="http://coogradio.uh.edu/"></frequency>
     <location>Houston, TX</location>
     <description lang="en">Coog Radio is an online radio station operated and staffed by students from the University of Houston. Co-founders Conner Clifton, Markley Rogers, and Matt Womack came up with the idea in 2010, but it wasn’t until fall 2011 that the idea finally came to fruition. Coog Radio not only provides a creative outlet for fellow students to express themselves over the air, but also introduces them to the world of broadcasting.</description>
-    <stream mime="audio/mpeg" uri="http://coogradio.uh.edu:8000/coogradio.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="48000 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://coogradio.uh.edu:8000/coogradio" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="48000 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://coogradio.uh.edu/</uri>
   </station>
   <station band="90.7FM" id="wvua" name="WVUA-FM" rank="1.0" type="edu">
@@ -495,9 +496,9 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     <description lang="en">University Radio York (URY) is the student radio station for the University of York, broadcasting 24 hours a day during term time on 1350am across the University's Heslington Campus and worldwide via this website.<!--
     The station is run by students for students, meaning the people behind the station understand what the listenership want to hear.
     With no playlist and no set format to many of our shows, our presenters have the chance to try whatever they like, as long as it's legal!--></description>
-    <stream mime="audio/mpeg" uri="http://ury.york.ac.uk/audio/live-mobile.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
-    <stream mime="audio/mpeg" uri="http://ury.york.ac.uk/audio/live-low.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
-    <stream mime="audio/mpeg" uri="http://ury.york.ac.uk/audio/live-high.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
+    <stream mime="audio/mpeg" uri="http://dolby.ury.york.ac.uk:7070/live-mobile" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
+    <stream mime="audio/mpeg" uri="http://dolby.ury.york.ac.uk:7070/live-low" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
+    <stream mime="audio/mpeg" uri="http://dolby.ury.york.ac.uk:7070/live-high" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
   </station>
   <station band="97.0FM" id="eper" lang="en" name="EPER" rank="1.0" type="edu">
     <frequency uri="http://eper.elte.hu/"></frequency>
@@ -532,7 +533,7 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     <frequency uri="http://cjsw.com/"></frequency>
     <location>Calgary, Canada</location>
     <description lang="en">CJSW 90.9 FM will be celebrating 30 years of on air radio programming at the beginning of 2015. Our goal is to provide an alternative to commercial media by recognizing and promoting the diverse musical styles, points of view and cultures that exist within our city.<!-- CJSW strives to provide programming to an audience and by programmers that are varied in their ethnicity, culture, gender, sexual orientation, age, and physical and mental ability. Our diverse programming includes music, arts, spoken word and multicultural programs.--></description>
-    <stream mime="audio/mpeg" uri="http://stream.cjsw.com/cjsw.mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://stream.cjsw.com:80/cjsw.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://cjsw.com/</uri>
   </station>
   <station band="ONLINE" id="caper" lang="en" name="Caper Radio" rank="1.0" type="edu">
@@ -542,14 +543,14 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     Located in the Students' Union building we are equipped with an ever-growing music collection of over 6000 CDs on a digital library. We offer some of the best independent music in Canada. Caper Radio is also a prime resource for information on events taking place both on and off campus.
 <!--    Being involved with Caper Radio, Inc. helps students gain new skills (in communication, as well as working with the equipment), build confidence, and make new friends. Taking part in shaping the university community, and building valuable job skills – It's a lot of fun too!-->
     Caper Radio broadcasts from 9:30am until 4:30pm Monday - Friday. Repeat broadcasts can be heard by visiting our website.</description>
-    <stream mime="audio/mpeg" uri="http://142.12.32.15:8000/stream.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://142.12.32.15:8000/stream" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://caperradio.ca/</uri>
   </station>
   <station band="88.3FM" id="wxou" lang="en" name="WXOU" rank="1.0" type="edu">
     <frequency uri="http://wxou.org/">88.3 FM in Rochester, MI</frequency>
     <location>Rochester, MI</location>
     <description lang="en">WXOU is a non-profit, student operated, freeform community radio station. Currently we are broadcasting with 110 watts of power from the campus of Oakland University. WE offer diverse programming such as, music, sports, news and student produced programs.<!-- Our goal is to supply the community with a service that provides both an educational experience to those involved with the radio station, while also providing information and entertainment o the rest of the community outside of Oakland’s campus.--></description>
-    <stream mime="audio/mpeg" uri="http://wxou.oakland.edu:8000/listen.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Mono" bitrate="24 kbps" />
+    <stream mime="audio/mpeg" uri="http://wxou.oakland.edu:8000/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="22050 Hz" channels="Mono" bitrate="24 kbps" />
   </station>
   <station band="88.5FM" id="wamu" lang="en" name="WAMU" rank="1.0" type="edu">
     <frequency uri="http://wamu.org/">88.5 FM in Washington, DC</frequency>
@@ -594,16 +595,16 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
     <frequency uri="http://radior.cz">Internet</frequency>
     <location>Brno, Czech Republic</location>
     <description lang="en">Masaryk University’s student radio.</description>
-    <stream mime="audio/ogg" uri="http://radior.video.muni.cz:8000/FSS_ogg-q0.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
-    <stream mime="audio/ogg" uri="http://radior.video.muni.cz:8000/FSS_ogg-q4.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
-    <stream mime="audio/ogg" uri="http://radior.video.muni.cz:8000/FSS_ogg-q8.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="256 kbps" />
+    <stream mime="audio/ogg" uri="http://radior.video.muni.cz:8000/FSS_ogg-q0.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="64 kbps" />
+    <stream mime="audio/ogg" uri="http://radior.video.muni.cz:8000/FSS_ogg-q4.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/ogg" uri="http://radior.video.muni.cz:8000/FSS_ogg-q8.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="256 kbps" />
     <uri>http://www.radior.cz/</uri>
   </station>
   <station band="ONLINE" id="radius" lang="de" name="Radio Radius" rank="1.0" type="edu">
     <frequency uri="http://radioradius.ch/">Internet</frequency>
     <location>Zürich, Switzerland</location>
     <description lang="en">Student webradio in Zürich.</description>
-    <stream mime="audio/ogg" uri="http://relay.radio.ethz.ch/sender.ogg.m3u" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/ogg" uri="http://relay.radio.ethz.ch:80/sender.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.radioradius.ch/</uri>
   </station>
   <!-- Non-streamable as of 2016/07/07
@@ -670,7 +671,7 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <frequency uri="http://wcsb.org/">89.3 FM in Cleveland, OH</frequency>
     <location>Cleveland, OH</location>
     <description lang="en">A student-operated radio station at Cleveland State University, broadcasting from northeast Ohio.</description>
-    <stream mime="audio/mpeg" uri="http://cent7.directhostingcenter.com:2199/tunein/ubtevcdv.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://198.154.112.233:8367/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wcsb.org/</uri>
   </station>
   <!-- Non-streamable as of 2016/07/07
@@ -702,7 +703,7 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <frequency uri="http://www.radiounam.unam.mx/">96.1 FM in México City, México</frequency>
     <location>México City, México</location>
     <description lang="en">Radio Universidad Nacional Autónoma de México</description>
-    <stream mime="audio/mpeg" uri="http://server2.usatelk.com:27547/;" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://server1.usatelk.com:27547/;" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.radiounam.unam.mx/</uri>
   </station>
   <station band="89.3FM" id="wxyc" lang="en" name="WXYC" rank="1.0" type="edu">
@@ -723,8 +724,8 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
       In 1994, the staff of UNC's SunSITE, the first Web site in North America, helped WXYC become the first radio station in the world to stream its on-air signal live over the Internet. We're proud to have been at the forefront of the Internet radio medium. We now have loyal listeners all over the world who contact us with comments and requests by email and IM.
 
       WXYC alumni include ESPN anchor Stuart Scott, former Squirrel Nut Zipper Tom Maxwell, former Polvo guitarist Dave Brylawski, Newsweek reporter Colin Soloway, film director Peyton Reed, as well as scores of doctors, lawyers, writers, executives, and successful professionals of all kinds.--></description>
-    <stream mime="audio/ogg" uri="http://www.wxyc.org/files/streams/wxyc-ogg.pls" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
-    <stream mime="audio/mpeg" uri="http://wxyc.org/files/streams/wxyc-mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/ogg" uri="http://152.46.7.128:8000/wxyc.ogg" codec="Ogg Vorbis" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
+    <stream mime="audio/mpeg" uri="http://audio-mp3.ibiblio.org:8000/wxyc.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.wxyc.org/</uri>
   </station>
   <station band="90.7FM" id="kalx" lang="en" name="KALX" rank="1.0" type="edu">
@@ -743,35 +744,35 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <frequency uri="http://www.whrb.org/">95.3 FM in Boston, MA</frequency>
     <location>Boston, MA</location>
     <description lang="en">For seventy years, 95.3FM has been Boston's first source for exciting, entertaining, and enlightening music broadcasts. Harvard Radio's daily broadcast of Classical music, Jazz, and underground Rock explore a great repertoire of music left largely untouched by other commercial stations.</description>
-    <stream mime="audio/mpeg" uri="http://hrbinc-hi.streamguys.net/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
+    <stream mime="audio/mpeg" uri="http://hrbinc-hi.streamguys.net:80/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
     <uri>http://www.whrb.org/</uri>
   </station>
   <station band="99.3FM" id="nova" lang="nb" name="Radio NOVA" rank="1.0" type="edu">
     <frequency uri="http://radionova.no/">99.3 FM in Oslo, Norway</frequency>
     <location>Oslo, Norway</location>
     <description lang="en">Radio NOVA is the student radio of University of Oslo.</description>
-    <stream mime="audio/mpeg" uri="http://stream.radionova.no/mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
+    <stream mime="audio/mpeg" uri="http://stream.radionova.no:80/mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="192 kbps" />
     <uri>http://radionova.no/</uri>
   </station>
   <station band="89.9FM" id="wwno" lang="en" name="WWNO" rank="1.0" type="edu">
     <frequency uri="http://wwno.org/">89.9 FM in New Orleans, LA</frequency>
     <location>New Orleans, LA</location>
     <description lang="en">WWNO is the NPR member station for New Orleans and the 13 parishes of southeast Louisiana, broadcasting on 89.9 FM — and on KTLN 90.5 FM in the Houma-Thibodaux area — as a public service of the University of New Orleans.</description>
-    <stream mime="audio/mpeg" uri="http://www.publicbroadcasting.net/wwno/ppr/wwno_128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://pubint.ic.llnwd.net/stream/pubint_wwno_128" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wwno.org/</uri>
   </station>
   <station band="99.1FM" id="ktru" lang="en" name="KTRU" rank="1.0" type="edu">
     <frequency uri="http://ktru.org/">99.1 FM in Houston, TX</frequency>
     <location>Houston, TX</location>
     <description lang="en">KTRU Houston is Rice University's student-run radio station.</description>
-    <stream mime="audio/mpeg" uri="http://ktru.org/audiometa/listen3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://128.42.201.27:80" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://ktru.org/</uri>
   </station>
   <station band="93.20FM" id="bbcworldservice" lang="en" name="BBC World Service" rank="1.0" type="gov">
     <frequency uri="http://www.bbc.co.uk/worldservice/schedules/frequencies/">Internet</frequency>
     <location>London, United Kingdom</location>
     <description lang="en">BBC World Service is an international news service available on radio, television and online. It provides impartial news reports and analysis in English and 27 other languages.  BBC World Service aims to inspire and illuminate the lives of its audience by bringing the world together, making connections and helping listeners to make sense of the world.</description>
-    <stream mime="audio/mpeg" uri="http://www.bbc.co.uk/worldservice/meta/live/mp3/eneuk.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
+    <stream mime="audio/mpeg" uri="http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-eieuk" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="48 kbps" />
     <uri>http://www.bbc.co.uk/worldserviceradio</uri>
   </station>
   <station band="93.0FM" id="nrkradioalltidnyheter" lang="nb" name="NRK Radio Alltid Nyheter" rank="1.0" type="gov">
@@ -785,7 +786,7 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
     <frequency>89.9 FM in New York, NY</frequency>
     <location>New York City, NY</location>
     <description lang="en">WKCR-FM, Columbia University’s non-commercial student-run radio station, is dedicated to presenting a spectrum of alternative programming—traditional and art music, spoken arts, and original journalism. Granted its FCC license in 1941, WKCR is both steeped in tradition and committed to innovation. In the New York area, the station can be heard at 89.9 megacycles in FM; worldwide, it streams online.</description>
-    <stream mime="audio/mpeg" uri="http://wkcr.streamguys1.com/live.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
+    <stream mime="audio/mpeg" uri="http://wkcr.streamguys1.com:80/live" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="96 kbps" />
     <uri>http://www.studentaffairs.columbia.edu/wkcr/</uri>
   </station>
   <station band="90.1FM" id="kzsu" lang="en" name="KZSU" rank="1.0" type="edu">
@@ -796,21 +797,21 @@ Behind the scenes we rely on our fantastic technical, musical and promotional te
       The station is owned by the Board of Trustees of Stanford University and is governed by a Board of Directors appointed by the President. We got our FM license in 1964, and upgraded from 10 to 500 watts in 1978. Before 1964, KZSU broadcast as an AM carrier current station (through the University's power supply) on 880 kHz, starting in 1947 as a part of the Department of Communication.
 
       KZSU is a non-commercial station funded mainly by Stanford student fees, in addition to underwriting and listener donations. KZSU's staff is all volunteer, made up of Stanford students, staff, alumni, and community affiliates.--></description>
-    <stream mime="audio/mpeg" uri="http://kzsu-streams.stanford.edu/kzsu-1-128.mp3.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://171.66.118.51:80/kzsu-1-128.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://kzsulive.stanford.edu/</uri>
   </station>
   <station band="90.9FM" id="kexp" lang="en" name="KEXP" rank="1.0" type="edu">
     <frequency>90.9 FM in Seattle, WA</frequency>
     <location>Seattle, WA</location>
     <description lang="en">KEXP is a service of the University of Washington, who holds the station’s FCC license. As a 501(c)3 non-profit arts organization, KEXP relies on investments from individual, foundation, business, and government supporters.</description>
-    <stream mime="audio/mpeg" uri="http://live-mp3-128.kexp.org:8000/listen.pls" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://live-mp3-128.kexp.org:80/kexp128.mp3" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://kexp.org/</uri>
   </station>
   <station band="88.1FM" id="wmbr" lang="en" name="WMBR" rank="1.0" type="edu">
     <frequency>88.1 FM in Cambridge, MA</frequency>
     <location>Boston, MA</location>
     <description lang="en">WMBR is the MIT campus radio station. We broadcast on 88.1 FM between 20 and 24 hours per day, 365 days a year. We transmit at 720 watts, effective radiated power from the top of the Eastgate Building in Kendall Square in Cambridge, Massachusetts. Our programming includes a wide range of music shows, public affairs programs and eclectic audio entertainment.</description>
-    <stream mime="audio/mpeg" uri="http://wmbr.org/WMBR_live_128.m3u" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+    <stream mime="audio/mpeg" uri="http://wmbr.org:8000/hi" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://wmbr.org/</uri>
   </station>
   <station band="93.9FM" id="wnyc" lang="en" name="WNYC" rank="1.0" type="org">

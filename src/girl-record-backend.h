@@ -41,8 +41,8 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __GIRL_PLAYER_BACKEND__
-#define __GIRL_PLAYER_BACKEND__
+#ifndef __GIRL_RECORD_BACKEND__
+#define __GIRL_RECORD_BACKEND__
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -52,25 +52,24 @@
 #include <gst/gst.h>
 #include <gst/interfaces/xoverlay.h>
 
-typedef struct GirlMedia {
+typedef struct GirlStoreMedia {
   GstElement *pipeline;
   GstBus *bus;
   gchar *uri;
-} GirlMedia;
+} GirlStoreMedia;
 
+gboolean girl_record_backend_init (int *argc, char **argv[]);
 
-gboolean girl_player_backend_init (int *argc, char **argv[]);
-
-gboolean girl_player_backend_start (gchar *uri, gchar *name);
+gboolean girl_record_backend_start (gchar *uri, gchar *name);
 
 static gboolean handle_message (GstBus *bus, GstMessage *message , gpointer data);
 
-GstBusSyncReply CreateWindow (GstBus *bus, GstMessage *message, gpointer data);
+GstBusSyncReply CreateRecordWindow (GstBus *bus, GstMessage *message, gpointer data);
 
-void girl_player_backend_play ();
-void girl_player_backend_pause ();
-void girl_player_backend_seek ();
+void girl_record_backend_play ();
+void girl_record_backend_pause ();
+void girl_record_backend_seek ();
 
-void girl_player_backend_stop (void);
+void girl_record_backend_stop (void);
 
 #endif

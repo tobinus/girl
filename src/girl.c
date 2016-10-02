@@ -40,6 +40,8 @@
 #include "girl-program.h"
 #include "girl-player-frontend.h"
 #include "girl-player-backend.h"
+#include "girl-record-frontend.h"
+#include "girl-record-backend.h"
 
 GirlData *girl;
 
@@ -71,17 +73,17 @@ int main(int argc, char *argv[])
 #endif
 
 	if (gnome_vfs_init() == FALSE) {
-		g_warning(_("GNOME VFS initialization failed!\n"));
+	        GIRL_DEBUG_MSG(_("GNOME VFS initialization failed!\n"));
 		exit(1);
 	}
 
 	if (!girl_player_frontend_init (&argc, &argv)) {
-		g_message ("Frontend initialization failure....");
+		GIRL_DEBUG_MSG (_("Player Frontend initialization failure...."));
 		exit (0);
 	}
 
 	if (!girl_player_backend_init (&argc, &argv)) {
-		g_message ("Backend creation failure");
+		GIRL_DEBUG_MSG (_("Player Backend creation failure"));
 		exit (0);
 	}
 
@@ -634,7 +636,21 @@ void quit_app(GtkWidget * a, gpointer user_data)
 	g_subprocess_force_exit(girl->record_subprocess);
 	// kill(girl->record_pid,SIGHUP);
 	// kill(girl->player_pid,SIGHUP);
+
+	gtk_widget_destroy(girl->player_window);
+	gtk_widget_destroy(girl->record_window);
+
+	girl_player_backend_stop();
+	girl_record_backend_stop();
+
 	gtk_main_quit();
+}
+
+void about_rec(GtkWidget * a, gpointer user_data)
+{
+	static GtkWindow *about = NULL;
+	about = gtk_message_dialog_new(girl_app,GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_QUESTION, GTK_BUTTONS_YES_NO, "Recording is not yet implemented.  If you want to implement it, send an email to ole@src.gnome.org with a patch.");
+	gtk_dialog_run(GTK_DIALOG(about));
 }
 
 void about_app(GtkWidget * a, gpointer user_data)
@@ -861,10 +877,12 @@ void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 			girl->selected_station_location,
 			girl->selected_station_uri,
 			girl->selected_station_band);
+	g_print ("BEFORE %s\n", __FUNCTION__);
 	girl_helper_run(girl->selected_station_uri,
 			girl->selected_station_name,
 			GIRL_STREAM_SHOUTCAST,
 			GIRL_STREAM_PLAYER);
+	g_print ("AFTER %s\n", __FUNCTION__);
 }
 
 void on_record_button_clicked(GtkWidget *a, gpointer user_data)
@@ -873,13 +891,21 @@ void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 	GCredentials *credentials;
 	GError **err = NULL;
 
-	credentials = g_credentials_new ();
+	dialog = gtk_message_dialog_new(GTK_WINDOW(girl_app),
+					GTK_DIALOG_MODAL,
+					GTK_MESSAGE_ERROR,
+					GTK_BUTTONS_CLOSE,
+					"Record is not yet implemented!\nYou are welcome to send a patch!");
+	gtk_dialog_run(GTK_DIALOG(dialog));
+	gtk_widget_destroy(dialog);
 	
+	credentials = g_credentials_new ();
+
 	if (girl->selected_station_name != NULL) {
-		girl_helper_run(girl->selected_station_uri,
-				girl->selected_station_name,
-				GIRL_STREAM_SHOUTCAST,
-				GIRL_STREAM_RECORD);
+		/* girl_helper_run(girl->selected_station_uri, */
+		/* 		girl->selected_station_name, */
+		/* 		GIRL_STREAM_SHOUTCAST, */
+		/* 		GIRL_STREAM_RECORD); */
 		girl->selected_runners = girl_runners_new(g_credentials_get_unix_pid(credentials, err),
 							  girl->selected_station_name,
 							  "date",
@@ -916,17 +942,18 @@ void on_stop_button_clicked(GtkWidget *a, gpointer user_data)
 		
 	}
 
-	if (girl->player_status == GIRL_PLAYER_TRUE) {
+	girl_player_backend_pause();
+	gtk_widget_destroy(girl->player_window);
 
+	if (girl->player_status == GIRL_PLAYER_TRUE) {
 		GIRL_DEBUG_MSG("Playback stopped.\n");
 		g_subprocess_force_exit(girl->player_subprocess);
 		// g_spawn_close_pid( girl->player_pid);
-		appbar_send_msg(_("Stopped playing the radio station %s in %s, exit the application GNOME Videos."),
+		appbar_send_msg(_("Stopped playing the radio station %s in %s."),
 				girl->selected_station_name,
 				girl->selected_station_location,
 				girl->selected_station_uri,
 				girl->selected_station_band);
-		girl->player_status = GIRL_PLAYER_FALSE;
 	}
 	/* if (girl->player_status != GIRL_RECORD_TRUE) { */
 	/* appbar_send_msg(_("Stop what?  You can \"Search\" by location, select a radio station from \"Stations\", or click on \"Listen\" and/or \"Record\".  Or go to \"Prev\" or \"Next\" radio station."), */

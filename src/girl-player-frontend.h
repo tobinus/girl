@@ -49,17 +49,19 @@
 #include <glib.h>
 
 typedef struct GirlPlayer {
-  GtkWidget *app_window;
-  GtkWidget *video_window;
-  GtkWidget *pause_button;
-  GtkWidget *play_button;
-  GtkWidget *table;
+	GtkWidget *app_window;
+	GtkWidget *video_window;
+	GtkWidget *pause_button;
+	GtkWidget *play_button;
+	GtkWidget *stop_button;
+	GtkWidget *table;
 } GirlPlayer;
 
-gboolean girl_player_frontend_init (int argc, char **argv);
+gboolean girl_player_frontend_init (int *argc, char **argv[]);
 gboolean girl_player_frontend_start (char *name);
 static void video_widget_realize_cb (GtkWidget * widget, gpointer data);
 static void girl_player_frontend_play (GtkWidget *widget, gpointer data);
 static void girl_player_frontend_pause (GtkWidget *widget, gpointer data);
+static void girl_player_frontend_destroy (GtkWidget *widget, gpointer data);
 
 #endif

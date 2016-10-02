@@ -29,6 +29,9 @@ girl_SOURCES = \
 	       girl-player.c \
 	       girl-player-backend.c \
 	       girl-player-frontend.c \
+	       girl-record.c \
+               girl-record-backend.c \
+	       girl-record-frontend.c \
                girl-runners.c \
 	       girl-station.c \
 	       girl-stations-map.c \
@@ -49,7 +52,7 @@ girl_LDADD = $(GIRL_LIBS)
 girldir = $(datadir)/girl
 girl_DATA = girl-9.5.dtd girl-logo.png girl.png girl.xml
 
-EXTRA_DIST = girl.h girl-station.h girl-stations-map.h girl-tz.h girl-gui.h girl-listener.h girl-player.h girl-player-globals.h girl-player-frontend.h girl-player-backend.h girl-program.h girl-runners.h girl-streams.h girl-9.5.dtd girl-map.png girl-logo.png girl.png girl.xml
+EXTRA_DIST = girl.h girl-station.h girl-stations-map.h girl-tz.h girl-gui.h girl-listener.h girl-player.h girl-player-globals.h girl-player-frontend.h girl-player-backend.h girl-record.h girl-record-globals.h girl-record-frontend.h girl-program.h girl-runners.h girl-streams.h girl-9.5.dtd girl-map.png girl-logo.png girl.png girl.xml
 
 all-local: check-local
 

@@ -184,17 +184,19 @@ void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperTyp
 	g_get_current_time(&mtime);
 
 	/* app = (gchar *)gnome_vfs_mime_get_default_application (mime_info); */
+
+	// girl_player_main(url, girl->selected_station_name);
 	
 	if (helper == GIRL_STREAM_PLAYER) {
 		app = g_strdup(GIRL_HELPER_PLAYER);
+		girl_player_main(url, girl->selected_station_name);
 	}
 
 	if (helper == GIRL_STREAM_RECORD) {
 		app = g_strdup(GIRL_HELPER_RECORD);
+		girl_record_main(url, girl->selected_station_name);
 	}
-
-	girl_player_main(url, girl->selected_station_name);
-
+#if 0
 	if (g_strcmp0(app,"no")!=0) {
 		command = g_strconcat(app, " ", url, NULL);
 		GIRL_DEBUG_MSG("Helper application is %s\n", command);
@@ -486,6 +488,7 @@ void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperTyp
 #endif
 #endif
 	}
+#endif
 
 quit_player:
 

@@ -41,9 +41,12 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include "girl.h"
 #include "girl-player-frontend.h"
 #include "girl-player-backend.h"
 #include "girl-player-globals.h"
+
+extern GirlData *girl;
 
 int
 girl_player_main(gchar *streamuri, gchar *name)
@@ -70,10 +73,8 @@ girl_player_main(gchar *streamuri, gchar *name)
 		g_message ("Girl-Player backend creation failure");
 		exit (0);
 	}
-	
 	loop = g_main_loop_new (NULL, FALSE);
 	g_main_loop_run (loop);
-	
 	girl_player_backend_stop ();
-	
+	girl->player_status = GIRL_PLAYER_TRUE;
 }

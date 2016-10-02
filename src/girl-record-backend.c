@@ -42,10 +42,10 @@
  */
 
 #include "girl.h"
-#include "girl-player-backend.h"
-#include "girl-player-globals.h"
+#include "girl-record-backend.h"
+#include "girl-record-globals.h"
 
-struct GirlMedia *media;
+struct GirlStoreMedia *media;
 extern GirlData *girl;
 
 static gboolean handler_message (GstBus *bus, GstMessage *message , gpointer data)
@@ -76,24 +76,24 @@ static gboolean handler_message (GstBus *bus, GstMessage *message , gpointer dat
    return TRUE;
 }
 
-void girl_player_backend_pause()
+void girl_record_backend_pause()
 {
   gst_element_set_state(media->pipeline, GST_STATE_PAUSED);  
   g_message("Paused....");
 
 }
 
-void girl_player_backend_play()
+void girl_record_backend_play()
 {
   gst_element_set_state(media->pipeline, GST_STATE_PLAYING);  
   g_message("Playing....");
 }
 
-void girl_player_backend_seek()
+void girl_record_backend_seek()
 {
 }
 
-GstBusSyncReply CreateWindow (GstBus *bus,GstMessage *message,gpointer data)
+GstBusSyncReply CreateRecordWindow (GstBus *bus,GstMessage *message,gpointer data)
 {
 
   if (GST_MESSAGE_TYPE (message) != GST_MESSAGE_ELEMENT)
@@ -114,42 +114,43 @@ GstBusSyncReply CreateWindow (GstBus *bus,GstMessage *message,gpointer data)
 }
 
 
-gboolean girl_player_backend_start (gchar *uri, gchar *name)
+gboolean girl_record_backend_start (gchar *uri, gchar *name)
 {
-	media = (struct GirlMedia*)malloc(sizeof(GirlMedia));
+	media = (struct GirlStoreMedia*)malloc(sizeof(GirlStoreMedia));
 	media->uri = uri;
 	media->pipeline = gst_element_factory_make ("playbin", "playbin");
 	if (!media->pipeline)
 	{
-		g_message("Failed to create the pipeline element,playbin...!");
+		g_message("Failed to create the pipeline alsasrc...!");
 		return FALSE;
 	}
 
-  g_object_set(G_OBJECT(media->pipeline),"uri",media->uri,NULL);
-
-  media->bus = gst_pipeline_get_bus(GST_PIPELINE(media->pipeline));
-  gst_bus_set_sync_handler (media->bus, (GstBusSyncHandler)CreateWindow, NULL);
-  gst_bus_add_watch(media->bus, handler_message, NULL);
-  gst_object_unref (media->bus);
-
-  girl_player_backend_play();
-  return TRUE;
+	g_object_set(G_OBJECT(media->pipeline),"uri",media->uri,NULL);
+	
+	media->bus = gst_pipeline_get_bus(GST_PIPELINE(media->pipeline));
+	gst_bus_set_sync_handler (media->bus, (GstBusSyncHandler)CreateRecordWindow, NULL);
+	gst_bus_add_watch(media->bus, handler_message, NULL);
+	gst_object_unref (media->bus);
+	
+	girl_record_backend_play();
+	return TRUE;
 }
 
-gboolean girl_player_backend_init (int *argc,char **argv[])
+gboolean girl_record_backend_init (int *argc,char **argv[])
 {
-  media = (struct GirlMedia*)malloc(sizeof(GirlMedia));
-  if (media != NULL)
-    return TRUE;
-  else 
-    return FALSE;	
+	media = (struct GirlStoreMedia*)malloc(sizeof(GirlStoreMedia));
+	if (media != NULL)
+		return TRUE;
+	else 
+		return FALSE;	
 }
 
-void girl_player_backend_stop (void)
+void girl_record_backend_stop (void)
 {
-
-	girl->player_status = GIRL_PLAYER_FALSE;
+	
+	girl->record_status = GIRL_RECORD_FALSE;
 	gst_element_set_state(media->pipeline, GST_STATE_NULL);
 	gst_object_unref(GST_OBJECT (media->pipeline));
 	gst_deinit();
+	
 }

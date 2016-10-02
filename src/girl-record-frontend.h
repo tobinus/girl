@@ -22,7 +22,7 @@
  */
 
 /* Based on gstplayer from
- * https://github.com/sreerenjb/gstplayer/blob/master/gst-backend.h
+ * https://github.com/sreerenjb/gstplayer/blob/master/gst-frontend.h
  *
  * Copyright (C) 2010 Sreerenj Balachandran
  *
@@ -41,36 +41,26 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef __GIRL_PLAYER_BACKEND__
-#define __GIRL_PLAYER_BACKEND__
+#ifndef __GIRL_RECORD_FRONTEND__
+#define __GIRL_RECORD_FRONTEND__
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+#include <gdk/gdkx.h>
+#include <gtk/gtk.h>
+#include <glib.h>
 
-#include <gst/gst.h>
-#include <gst/interfaces/xoverlay.h>
+typedef struct GirlRecord {
+  GtkWidget *app_window;
+  GtkWidget *video_window;
+  GtkWidget *pause_button;
+  GtkWidget *play_button;
+  GtkWidget *table;
+} GirlRecord;
 
-typedef struct GirlMedia {
-  GstElement *pipeline;
-  GstBus *bus;
-  gchar *uri;
-} GirlMedia;
-
-
-gboolean girl_player_backend_init (int *argc, char **argv[]);
-
-gboolean girl_player_backend_start (gchar *uri, gchar *name);
-
-static gboolean handle_message (GstBus *bus, GstMessage *message , gpointer data);
-
-GstBusSyncReply CreateWindow (GstBus *bus, GstMessage *message, gpointer data);
-
-void girl_player_backend_play ();
-void girl_player_backend_pause ();
-void girl_player_backend_seek ();
-
-void girl_player_backend_stop (void);
+gboolean girl_record_frontend_init (int *argc, char **argv[]);
+gboolean girl_record_frontend_start (char *name);
+static void video_widget_realize_cb (GtkWidget * widget, gpointer data);
+static void girl_record_frontend_play (GtkWidget *widget, gpointer data);
+static void girl_record_frontend_pause (GtkWidget *widget, gpointer data);
+static void girl_record_frontend_destroy (GtkWidget *widget, gpointer data);
 
 #endif
