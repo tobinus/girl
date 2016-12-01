@@ -7,6 +7,7 @@ EXTRA_DIST = config.rpath m4/ChangeLog  \
 	ChangeLog \
 	BROADCAST \
 	DEBIAN \
+	GNOME3 \
 	HACKING \
 	LETTER \
 	MAILINGLIST \

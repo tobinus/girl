@@ -6,11 +6,11 @@
     <title type="link">GNOME Internet Radio Locator</title>
     <title type="text">GNOME Internet Radio Locator</title>
 
-    <revision pkgversion="1.8" date="2015-03-08" status="candidate"/>
+    <revision pkgversion="1.8" date="2016-12-01" status="candidate"/>
     <credit type="author copyright">
       <name>Ole Aamot</name>
       <email>ole@src.gnome.org</email>
-      <years>2015</years>
+      <years>2016</years>
     </credit>
 
    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/> 
@@ -25,6 +25,11 @@
 
   <p>Other help topics are grouped together into sections below.  Enjoy locating
   non-profit, independent Internet radio stations with the <app>GNOME Internet Radio Locator</app>!</p>
+
+  <section id="search" style="2column">
+    <title>New</title>
+    <p><link xref="new">New</link> radio station by location.</p>
+  </section>
 
   <section id="search" style="2column">
     <title>Search</title>

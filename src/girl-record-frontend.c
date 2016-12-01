@@ -41,6 +41,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <config.h>
 #include "girl.h"
 #include "girl-record-backend.h"
 #include "girl-record-frontend.h"
@@ -49,7 +50,7 @@
 extern GtkWidget *girl_app;
 extern GirlData *girl;
 
-struct GirlRecord *record;
+GirlRecord *record;
 
 static void video_widget_realize_cb (GtkWidget * widget, gpointer data)
 {
@@ -136,7 +137,7 @@ gboolean girl_record_frontend_start (gchar *name)
 }
 gboolean girl_record_frontend_init (int *argc, gchar **argv[])
 {
-	record = (struct GirlStoreMedia*)malloc(sizeof(GirlStoreMedia));
+	record = (GirlRecord *)malloc(sizeof(GirlRecord));
 	if (record != NULL)
 		return TRUE;
 	else

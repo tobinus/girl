@@ -254,7 +254,6 @@ EXEEXT = @EXEEXT@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GIRL_CFLAGS = @GIRL_CFLAGS@
 GIRL_HELPER_PLAYER = @GIRL_HELPER_PLAYER@
-GIRL_HELPER_RECORD = @GIRL_HELPER_RECORD@
 GIRL_LIBS = @GIRL_LIBS@
 GIRL_PKG_DEPS = @GIRL_PKG_DEPS@
 GMOFILES = @GMOFILES@
@@ -266,7 +265,6 @@ GTKDOC_DEPS_CFLAGS = @GTKDOC_DEPS_CFLAGS@
 GTKDOC_DEPS_LIBS = @GTKDOC_DEPS_LIBS@
 GTKDOC_MKPDF = @GTKDOC_MKPDF@
 GTKDOC_REBASE = @GTKDOC_REBASE@
-HAVE_GIRL_RECORD = @HAVE_GIRL_RECORD@
 HELP_DIR = @HELP_DIR@
 HTML_DIR = @HTML_DIR@
 INSTALL = @INSTALL@
@@ -410,8 +408,8 @@ girl_CFLAGS = $(GIRL_CFLAGS) \
 
 girl_LDADD = $(GIRL_LIBS)
 girldir = $(datadir)/girl
-girl_DATA = girl-9.5.dtd girl-logo.png girl.png girl.xml
-EXTRA_DIST = girl.h girl-station.h girl-stations-map.h girl-tz.h girl-gui.h girl-listener.h girl-player.h girl-player-globals.h girl-player-frontend.h girl-player-backend.h girl-record.h girl-record-globals.h girl-record-frontend.h girl-program.h girl-runners.h girl-streams.h girl-9.5.dtd girl-map.png girl-logo.png girl.png girl.xml
+girl_DATA = girl-9.6.dtd girl-logo.png girl.png girl.xml
+EXTRA_DIST = girl.h girl-station.h girl-stations-map.h girl-tz.h girl-gui.h girl-listener.h girl-player.h girl-player-globals.h girl-player-frontend.h girl-player-backend.h girl-record.h girl-record-backend.h girl-record-globals.h girl-record-frontend.h girl-program.h girl-runners.h girl-streams.h girl-9.6.dtd girl-map.png girl-logo.png girl.png girl.xml
 all: all-am
 
 .SUFFIXES:

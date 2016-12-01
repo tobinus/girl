@@ -1,4 +1,42 @@
 =============
+Version 9.6.0
+=============
+
+Documentation
+
+	* help/C/aboutprogram.page: Update version
+	* help/C/aboutstation.page: Update version
+	* help/C/exit.page: Update version
+	* help/C/index.page: Update version
+	* help/C/intro.page: Update version
+	* help/C/listen.page: Update version
+	* help/C/media/girl-newstation: Add screenshot
+	* help/C/new.page: Update version
+	* help/C/next.page: Update version
+	* help/C/prev.page: Update version
+	* help/C/record.page: Update version
+	* help/C/search.page: Update version
+	* help/C/station.page: Update version
+
+GUI
+
+	* src/girl-player-frontend.[ch]: New gstreamer player frontend based on gstplayer
+	* src/girl-player-backend.[ch]: New gstreamer player frontend based on gstplayer
+	* src/girl-player.[ch]: New gstreamer player frontend based on gstplayer
+
+Packaging
+
+	* girl.spec.in: Remove the dependency on totem and add a dependency on gstreamer
+
+Translations
+
+	* po/cs.po: Updated Czech translation (Marek Černocký)
+	* po/hu.po: Updated Hungarian translation (Balázs Meskó)
+	* po/pl.po: Updated Polish translation (Piotr Drąg)
+	* po/pt_BR.po: Updated Brazilian Portuguese (Rafael Fontenelle)
+	* po/sv.po: Updated Swedish translation (Anders Jonsson)
+
+=============
 Version 9.5.2
 =============
 

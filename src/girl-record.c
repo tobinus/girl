@@ -41,10 +41,15 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <config.h>
 #include "girl.h"
+
 #include "girl-player-frontend.h"
 #include "girl-player-backend.h"
 #include "girl-player-globals.h"
+
+#include "girl-record-backend.h"
+#include "girl-record-frontend.h"
 
 extern GirlData *girl;
 

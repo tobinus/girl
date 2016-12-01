@@ -42,6 +42,7 @@
 #include "girl.h"
 #include "girl-station.h"
 #include "girl-player.h"
+#include "girl-record.h"
 
 extern GirlData *girl;
 extern GList *girl_stations;
@@ -186,16 +187,17 @@ void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperTyp
 	/* app = (gchar *)gnome_vfs_mime_get_default_application (mime_info); */
 
 	// girl_player_main(url, girl->selected_station_name);
-	
+
 	if (helper == GIRL_STREAM_PLAYER) {
-		app = g_strdup(GIRL_HELPER_PLAYER);
 		girl_player_main(url, girl->selected_station_name);
 	}
 
 	if (helper == GIRL_STREAM_RECORD) {
-		app = g_strdup(GIRL_HELPER_RECORD);
 		girl_record_main(url, girl->selected_station_name);
 	}
+
+	return;
+
 #if 0
 	if (g_strcmp0(app,"no")!=0) {
 		command = g_strconcat(app, " ", url, NULL);
@@ -349,8 +351,6 @@ void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperTyp
 		 * will clean any remnants of process. */
 		g_child_watch_add( girl->player_pid, (GChildWatchFunc)cb_child_watch_player, girl );
 #endif
-#endif
-
 		/* Original async player code */
 
 		girl->player_launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_NONE);
@@ -367,6 +367,7 @@ void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperTyp
 			GIRL_DEBUG_MSG("Launching %s player\n", command);
 		}
 
+#endif
 #if 0
 		if (!g_spawn_command_line_async(command, &err)) {
 			msg = g_strdup_printf(_("Failed to open URL: '%s'\n"
@@ -488,7 +489,6 @@ void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperTyp
 #endif
 #endif
 	}
-#endif
 
 quit_player:
 
@@ -501,7 +501,7 @@ quit_record:
 		g_object_unref(girl->record_subprocess);
         if (girl->record_launcher)
 		g_object_unref(girl->record_launcher);
-
+#endif
 }
 
 void girl_stream_player(GtkWidget * widget, gpointer data)
@@ -726,7 +726,8 @@ GirlStationInfo *girl_station_load_from_file(GirlStationInfo * head,
 }
 
 gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *station_description, gchar *station_name, gchar *station_location, gchar *station_uri, gchar *station_website) {
-
+	gchar msg[256];
+	gchar *msg1, *msg2;
 	/* Open ~/.girl/girl.xml.  Parse structure.  Insert new item.  Save structure. */
 	GirlStationInfo *new_station;
 	GirlStationInfo *stationinfo;
@@ -779,5 +780,6 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 	g_free(stations);
 	g_free(new_station);
 	g_free(stationinfo);
+
 	return (0);
 }

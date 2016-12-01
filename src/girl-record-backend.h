@@ -52,7 +52,7 @@
 #include <gst/gst.h>
 #include <gst/interfaces/xoverlay.h>
 
-typedef struct GirlStoreMedia {
+typedef struct _GirlStoreMedia {
   GstElement *pipeline;
   GstBus *bus;
   gchar *uri;

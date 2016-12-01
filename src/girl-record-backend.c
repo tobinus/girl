@@ -41,11 +41,13 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <config.h>
 #include "girl.h"
+
 #include "girl-record-backend.h"
 #include "girl-record-globals.h"
 
-struct GirlStoreMedia *media;
+GirlStoreMedia *media;
 extern GirlData *girl;
 
 static gboolean handler_message (GstBus *bus, GstMessage *message , gpointer data)
@@ -116,7 +118,7 @@ GstBusSyncReply CreateRecordWindow (GstBus *bus,GstMessage *message,gpointer dat
 
 gboolean girl_record_backend_start (gchar *uri, gchar *name)
 {
-	media = (struct GirlStoreMedia*)malloc(sizeof(GirlStoreMedia));
+	media = (GirlStoreMedia *)malloc(sizeof(GirlStoreMedia));
 	media->uri = uri;
 	media->pipeline = gst_element_factory_make ("playbin", "playbin");
 	if (!media->pipeline)
@@ -138,7 +140,7 @@ gboolean girl_record_backend_start (gchar *uri, gchar *name)
 
 gboolean girl_record_backend_init (int *argc,char **argv[])
 {
-	media = (struct GirlStoreMedia*)malloc(sizeof(GirlStoreMedia));
+	media = (GirlStoreMedia*)malloc(sizeof(GirlStoreMedia));
 	if (media != NULL)
 		return TRUE;
 	else 

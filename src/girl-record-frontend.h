@@ -48,7 +48,7 @@
 #include <gtk/gtk.h>
 #include <glib.h>
 
-typedef struct GirlRecord {
+typedef struct _GirlRecord {
   GtkWidget *app_window;
   GtkWidget *video_window;
   GtkWidget *pause_button;

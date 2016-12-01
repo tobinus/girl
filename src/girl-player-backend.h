@@ -44,11 +44,11 @@
 #ifndef __GIRL_PLAYER_BACKEND__
 #define __GIRL_PLAYER_BACKEND__
 
+#include <config.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
 #include <gst/gst.h>
 #include <gst/interfaces/xoverlay.h>
 

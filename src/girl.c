@@ -181,6 +181,7 @@ static void cause_movement(int way)
 void on_previous_station_click(GtkWidget * a, gpointer user_data)
 {
 	GirlStationInfo *station = (GirlStationInfo *)girl->previous_station;
+
 	girl->previous_station = girl->selected_station;
 
 	if (station != NULL) {
@@ -231,6 +232,7 @@ void on_previous_station_click(GtkWidget * a, gpointer user_data)
 void on_next_station_click(GtkWidget * a, gpointer user_data)
 {
 	GList *l = g_list_first(girl_stations);
+	girl_player_frontend_stop (girl->player_window, NULL);
 	girl->previous_station = (GirlStationInfo*)girl->selected_station;
 	if (l != NULL) {
 		GirlStationInfo *station = l->data;
@@ -480,6 +482,7 @@ void on_stations_selector_changed(GtkWidget * a, gpointer user_data)
 
 	station->name = g_strdup(g_object_get_data(G_OBJECT(a), "station_name"));
 	/* girl_history = g_list_add(GLIST(girl_history), (GirlStationInfo *)station); */
+	girl_player_frontend_stop(girl->player_window, NULL);
 	girl_helper_run(girl->selected_station_uri,
 			girl->selected_station_name,
 			GIRL_STREAM_SHOUTCAST,
@@ -629,8 +632,10 @@ void quit_app(GtkWidget * a, gpointer user_data)
 	}
 	// stationinfo = l->data;
 	// girl_station_save(stationinfo, NULL, NULL, NULL, NULL, NULL, NULL);
+
 	g_spawn_close_pid(girl->record_pid);
 	g_spawn_close_pid(girl->player_pid);
+
 
 	g_subprocess_force_exit(girl->player_subprocess);
 	g_subprocess_force_exit(girl->record_subprocess);
@@ -649,7 +654,12 @@ void quit_app(GtkWidget * a, gpointer user_data)
 void about_rec(GtkWidget * a, gpointer user_data)
 {
 	static GtkWindow *about = NULL;
-	about = gtk_message_dialog_new(girl_app,GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_QUESTION, GTK_BUTTONS_YES_NO, "Recording is not yet implemented.  If you want to implement it, send an email to ole@src.gnome.org with a patch.");
+	about = GTK_WINDOW(gtk_message_dialog_new(GTK_WINDOW(girl_app),
+				       GTK_DIALOG_DESTROY_WITH_PARENT,
+				       GTK_MESSAGE_QUESTION,
+				       GTK_BUTTONS_YES_NO,
+						  "Recording is not yet implemented.  If you want to implement it, see src/girl-record.c and send an email to ole@src.gnome.org with the patch."));
+
 	gtk_dialog_run(GTK_DIALOG(about));
 }
 
@@ -693,7 +703,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 			     NULL };
 	gchar* comments = { _("Locate Internet Radio Stations") };
 	gchar* copyright = { _("Copyright (C) 2014, 2015, 2016  Ole Aamot Software") };
-	gchar* documenters[] = { _("Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"), _("Marek Černocký <marek@manet.cz> (Czech translation)"), _("Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"), NULL };
+	gchar* documenters[] = { _("Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"), _("Marek Černocký <marek@manet.cz> (Czech translation)"), _("Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"), _("Josef Andersson <josef.andersson@fripost.org> (Swedish translation)"), NULL };
 
 	static GdkPixbuf* logo;
 
@@ -877,12 +887,10 @@ void on_listen_button_clicked(GtkWidget *a, gpointer user_data)
 			girl->selected_station_location,
 			girl->selected_station_uri,
 			girl->selected_station_band);
-	g_print ("BEFORE %s\n", __FUNCTION__);
 	girl_helper_run(girl->selected_station_uri,
 			girl->selected_station_name,
 			GIRL_STREAM_SHOUTCAST,
 			GIRL_STREAM_PLAYER);
-	g_print ("AFTER %s\n", __FUNCTION__);
 }
 
 void on_record_button_clicked(GtkWidget *a, gpointer user_data)
@@ -895,7 +903,7 @@ void on_record_button_clicked(GtkWidget *a, gpointer user_data)
 					GTK_DIALOG_MODAL,
 					GTK_MESSAGE_ERROR,
 					GTK_BUTTONS_CLOSE,
-					"Record is not yet implemented!\nYou are welcome to send a patch!");
+					"Recording is not yet implemented.  If you want to implement it, see src/girl-record.c and send an email to ole@src.gnome.org with the patch.");
 	gtk_dialog_run(GTK_DIALOG(dialog));
 	gtk_widget_destroy(dialog);
 	

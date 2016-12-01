@@ -41,7 +41,9 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <config.h>
 #include "girl.h"
+
 #include "girl-player-backend.h"
 #include "girl-player-globals.h"
 
@@ -95,22 +97,19 @@ void girl_player_backend_seek()
 
 GstBusSyncReply CreateWindow (GstBus *bus,GstMessage *message,gpointer data)
 {
-
-  if (GST_MESSAGE_TYPE (message) != GST_MESSAGE_ELEMENT)
-    return GST_BUS_PASS;
-  if ( !gst_structure_has_name (message->structure, "prepare-xwindow-id")) 
-    return GST_BUS_PASS;
-  
-  if (Window_Xid != 0) { 
-   GstXOverlay *xoverlay;
-   xoverlay = GST_X_OVERLAY (GST_MESSAGE_SRC (message));
-   gst_x_overlay_set_xwindow_id (xoverlay, Window_Xid);
-  } else {
-     g_warning ("Should have obtained Window_Xid by now!");
-  }
-
-  gst_message_unref (message);
-  return GST_BUS_DROP;   
+	if (GST_MESSAGE_TYPE (message) != GST_MESSAGE_ELEMENT)
+		return GST_BUS_PASS;
+	if ( !gst_structure_has_name (message->structure, "prepare-xwindow-id")) 
+		return GST_BUS_PASS;
+	if (Window_Xid != 0) { 
+		GstXOverlay *xoverlay;
+		xoverlay = GST_X_OVERLAY (GST_MESSAGE_SRC (message));
+		gst_x_overlay_set_xwindow_id (xoverlay, Window_Xid);
+	} else {
+		g_warning ("Should have obtained Window_Xid by now!");
+	}
+	gst_message_unref (message);
+	return GST_BUS_DROP;   
 }
 
 

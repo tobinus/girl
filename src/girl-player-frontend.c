@@ -41,6 +41,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <config.h>
 #include "girl.h"
 #include "girl-player-backend.h"
 #include "girl-player-frontend.h"
@@ -79,11 +80,13 @@ girl_player_frontend_play (GtkWidget *widget, gpointer data)
 	girl_player_backend_play();
 }
 
-static void
+void
 girl_player_frontend_stop (GtkWidget *widget, gpointer data)
 {
-	girl_player_backend_pause();
-	gtk_widget_destroy(girl->player_window);
+	if (girl->player_window != NULL) {
+		girl_player_backend_pause();
+		gtk_widget_destroy(girl->player_window);
+	}
 }
 
 static void
@@ -153,4 +156,3 @@ gboolean girl_player_frontend_init (int *argc, gchar **argv[])
 	else
 		return FALSE;
 }
-

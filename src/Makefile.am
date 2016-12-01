@@ -1,3 +1,4 @@
+
 AM_CPPFLAGS = $(GIRL_CFLAGS) \
 	$(NULL)
 
@@ -22,6 +23,7 @@ test_endianess_LDADD = $(GIRL_LIBS)
 test_endianess_CFLAGS = $(GIRL_CFLAGS) -DGIRL_DATADIR="\"$(pkgdatadir)\""
 
 bin_PROGRAMS = girl
+
 girl_SOURCES = \
 	       girl-gui.c \
 	       girl-listener.c \
@@ -47,12 +49,14 @@ girl_CFLAGS  = $(GIRL_CFLAGS) \
 	       -DGIRL_HELPER_PLAYER=\"$(GIRL_HELPER_PLAYER)\" \
 	       -DGIRL_HELPER_RECORD=\"$(GIRL_HELPER_RECORD)\" \
 	       -DGNOMELOCALEDIR=\"$(datadir)/locale\"
+
 girl_LDADD = $(GIRL_LIBS)
 
 girldir = $(datadir)/girl
-girl_DATA = girl-9.5.dtd girl-logo.png girl.png girl.xml
 
-EXTRA_DIST = girl.h girl-station.h girl-stations-map.h girl-tz.h girl-gui.h girl-listener.h girl-player.h girl-player-globals.h girl-player-frontend.h girl-player-backend.h girl-record.h girl-record-backend.h girl-record-globals.h girl-record-frontend.h girl-program.h girl-runners.h girl-streams.h girl-9.5.dtd girl-map.png girl-logo.png girl.png girl.xml
+girl_DATA = girl-9.6.dtd girl-logo.png girl.png girl.xml
+
+EXTRA_DIST = girl.h girl-station.h girl-stations-map.h girl-tz.h girl-gui.h girl-listener.h girl-player.h girl-player-globals.h girl-player-frontend.h girl-player-backend.h girl-record.h girl-record-backend.h girl-record-globals.h girl-record-frontend.h girl-program.h girl-runners.h girl-streams.h girl-9.6.dtd girl-map.png girl-logo.png girl.png girl.xml
 
 all-local: check-local
 

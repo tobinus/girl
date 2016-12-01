@@ -59,9 +59,11 @@ typedef struct GirlPlayer {
 
 gboolean girl_player_frontend_init (int *argc, char **argv[]);
 gboolean girl_player_frontend_start (char *name);
+
 static void video_widget_realize_cb (GtkWidget * widget, gpointer data);
 static void girl_player_frontend_play (GtkWidget *widget, gpointer data);
 static void girl_player_frontend_pause (GtkWidget *widget, gpointer data);
 static void girl_player_frontend_destroy (GtkWidget *widget, gpointer data);
+void girl_player_frontend_stop (GtkWidget *widget, gpointer data);
 
 #endif
