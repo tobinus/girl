@@ -67,10 +67,10 @@ GnomeUIInfo toolbar[] = {
 	GNOMEUIINFO_ITEM_STOCK(N_("Record"), N_("Record selected radio station"),
 			       on_record_button_clicked,
 			       GTK_STOCK_MEDIA_RECORD),
+#endif /* HAVE_GIRL_RECORD */	
 	GNOMEUIINFO_ITEM_STOCK(N_("Stop"), N_("Stop recording selected radio station"),
 			       on_stop_button_clicked,
 			       GTK_STOCK_MEDIA_STOP),
-#endif /* HAVE_GIRL_RECORD */
 	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_ITEM_STOCK(N_("Previous"),
 			       N_("Go back to the previous radio station"),
