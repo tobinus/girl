@@ -21,10 +21,11 @@ Requires:       gstreamer1 >= 1.8.3
 
 %description
 GNOME Internet Radio Locator (GIRL) is a program that allows the user
-to easily locate and record live radio programs on radio broadcasters
+to easily locate and record live radio programs by radio broadcasters
 on the Internet.
 
-GIRL is developed on the GNOME platform and it requires gstreamer. 
+GIRL is developed on the GNOME platform and it requires gstreamer for
+playback.
 
 Enjoy Internet Radio.
 

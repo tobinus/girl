@@ -9,6 +9,27 @@ AC_CONFIG_HEADER([config.h])
 
 # Checks for libraries.
 
+record_msg="no (not requested)"
+try_record=:
+girl_record=false
+
+AC_ARG_WITH([recording],AS_HELP_STRING([--with-recording],[Support recording with gstreamer]), [
+     AC_MSG_CHECKING([for recording])
+     if test x$withval = xno; then
+           try_record=false
+	   record_msg = "no (not requested)"
+	   AC_DEFINE([HAVE_GIRL_RECORD],0,[record missing])
+	   girl_record=false
+     else
+	   AC_DEFINE([HAVE_GIRL_RECORD],1,[have record])
+	   record_msg="yes (with recording support)"
+	   girl_record=true
+     fi
+     AC_MSG_RESULT([$record_msg])
+])
+AM_CONDITIONAL([HAVE_GIRL_RECORD], [$girl_record])
+AC_SUBST([HAVE_GIRL_RECORD])
+
 AC_CHECK_LIB(m, pow, [], [], [])
 
 PKG_CHECK_MODULES(GIRL,

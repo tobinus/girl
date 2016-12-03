@@ -724,6 +724,9 @@ CPPFLAGS
 LDFLAGS
 CFLAGS
 CC
+HAVE_GIRL_RECORD
+HAVE_GIRL_RECORD_FALSE
+HAVE_GIRL_RECORD_TRUE
 AM_BACKSLASH
 AM_DEFAULT_VERBOSITY
 AM_DEFAULT_V
@@ -793,6 +796,7 @@ ac_subst_files=''
 ac_user_opts='
 enable_option_checking
 enable_silent_rules
+with_recording
 enable_dependency_tracking
 with_html_dir
 enable_gtk_doc
@@ -1447,6 +1451,7 @@ Optional Features:
 Optional Packages:
   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+  --with-recording        Support recording with gstreamer
   --with-html-dir=PATH    path to installed docs
   --with-help-dir=DIR     path where help files are installed
 
@@ -2865,6 +2870,45 @@ ac_config_headers="$ac_config_headers config.h"
 
 
 # Checks for libraries.
+
+record_msg="no (not requested)"
+try_record=:
+girl_record=false
+
+
+# Check whether --with-recording was given.
+if test "${with_recording+set}" = set; then :
+  withval=$with_recording;
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for recording" >&5
+$as_echo_n "checking for recording... " >&6; }
+     if test x$withval = xno; then
+           try_record=false
+	   record_msg = "no (not requested)"
+
+$as_echo "#define HAVE_GIRL_RECORD 0" >>confdefs.h
+
+	   girl_record=false
+     else
+
+$as_echo "#define HAVE_GIRL_RECORD 1" >>confdefs.h
+
+	   record_msg="yes (with recording support)"
+	   girl_record=true
+     fi
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $record_msg" >&5
+$as_echo "$record_msg" >&6; }
+
+fi
+
+ if $girl_record; then
+  HAVE_GIRL_RECORD_TRUE=
+  HAVE_GIRL_RECORD_FALSE='#'
+else
+  HAVE_GIRL_RECORD_TRUE='#'
+  HAVE_GIRL_RECORD_FALSE=
+fi
+
+
 
 DEPDIR="${am__leading_dot}deps"
 
@@ -6788,6 +6832,10 @@ else
   am__EXEEXT_FALSE=
 fi
 
+if test -z "${HAVE_GIRL_RECORD_TRUE}" && test -z "${HAVE_GIRL_RECORD_FALSE}"; then
+  as_fn_error $? "conditional \"HAVE_GIRL_RECORD\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
 if test -z "${AMDEP_TRUE}" && test -z "${AMDEP_FALSE}"; then
   as_fn_error $? "conditional \"AMDEP\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
