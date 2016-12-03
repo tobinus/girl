@@ -44,6 +44,7 @@
 #include <gtk/gtkcombobox.h>
 #include <glib/gstdio.h>
 #include "girl.h"
+#include "girl-player-frontend.h"
 #include "girl-gui.h"
 #include "girl-program.h"
 #include "girl-station.h"
@@ -513,6 +514,8 @@ on_search_matches(GtkEntryCompletion *widget,
 			girl->selected_station_name,
 			girl->selected_station_location,
 			girl->selected_station_uri);
+
+	girl_player_frontend_stop (girl->player_window, NULL);
 
 	girl_helper_run(girl->selected_station_uri,
 			girl->selected_station_name,
