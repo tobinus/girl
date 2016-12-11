@@ -70,7 +70,9 @@ fi
 
 %changelog
 
-* Thu Dec 01 2016 Ole Aamot - 9.6.0-1.fc24
+* Sat Dec 10 2016 Ole Aamot - 9.6.1-1.fc24
+- Girl 9.6.1 build on Fedora Linux 24
+
 - Girl 9.6.0 build on Fedora Linux 24
 - Remove dependency on totem
 - Add dependency on gstreamer1

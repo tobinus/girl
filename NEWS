@@ -1,4 +1,17 @@
 =============
+Version 9.6.1
+=============
+
+Autoconf
+
+	* configure.ac: Check for HAVE_GIRL_RECORD
+
+GUI
+
+	* src/girl-gui.c: Remove player frontend on new search result
+	* src/girl-gui.c: Display Stop button
+
+=============
 Version 9.6.0
 =============
 
