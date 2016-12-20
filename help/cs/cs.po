@@ -1,15 +1,15 @@
 # Czech translation for girl.
 # Copyright (C) 2015 girl's COPYRIGHT HOLDER
 # This file is distributed under the same license as the girl package.
-# Marek Černocký <marek@manet.cz>, 2015.
+# Marek Černocký <marek@manet.cz>, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
-"POT-Creation-Date: 2015-11-03 13:51+0000\n"
-"PO-Revision-Date: 2015-11-12 16:37+0100\n"
+"POT-Creation-Date: 2016-12-19 15:07+0000\n"
+"PO-Revision-Date: 2016-12-20 10:44+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
-"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,15 +30,15 @@ msgid "Ole Aamot"
 msgstr "Ole Aamot"
 
 #. (itstool) path: info/desc
-#: C/aboutprogram.page:14 C/aboutstation.page:14 C/exit.page:14
-#: C/intro.page:14 C/listen.page:14 C/next.page:14 C/prev.page:11
-#: C/record.page:14 C/search.page:14 C/stations.page:14
+#: C/aboutprogram.page:14 C/aboutstation.page:14 C/exit.page:14 C/intro.page:14
+#: C/listen.page:14 C/next.page:14 C/prev.page:11 C/record.page:14
+#: C/search.page:14 C/stations.page:14
 msgid "Search for Internet radio stations by location."
 msgstr "Jak vyhledat stanici internetového rádia podle místa."
 
 #. (itstool) path: page/title
 #. (itstool) path: section/title
-#: C/aboutprogram.page:17 C/index.page:64
+#: C/aboutprogram.page:17 C/index.page:69
 msgid "About Program"
 msgstr "O aplikaci"
 
@@ -55,7 +55,7 @@ msgstr ""
 
 #. (itstool) path: page/title
 #. (itstool) path: section/title
-#: C/aboutstation.page:17 C/index.page:59
+#: C/aboutstation.page:17 C/index.page:64
 msgid "About Station"
 msgstr "O stanici"
 
@@ -112,11 +112,10 @@ msgstr ""
 #. (itstool) path: page/p
 #: C/exit.page:26
 msgid ""
-"However, in order to stop streaming the radio station, you must exit the "
-"<app>Videos</app> app."
+"However, in order to stop streaming the radio station, you must click on "
+"\"Stop\" first."
 msgstr ""
-"Abyste ale zastavili vysílání rádia, musíte ukončit aplikaci <app>Videa</"
-"app>."
+"Abyste ale zastavili vysílání rádia, musíte nejprve kliknout na „Zastavit“."
 
 #. (itstool) path: info/desc
 #: C/index.page:8
@@ -137,8 +136,8 @@ msgstr "Naladění internetových rádií v GNOME"
 
 #. (itstool) path: credit/years
 #: C/index.page:16
-msgid "2015"
-msgstr "2015"
+msgid "2016"
+msgstr "2016"
 
 #. (itstool) path: info/desc
 #: C/index.page:21
@@ -170,22 +169,32 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/index.page:33
+msgid "New"
+msgstr "Nová"
+
+#. (itstool) path: section/p
+#: C/index.page:34
+msgid "<link xref=\"new\">New</link> radio station by location."
+msgstr "<link xref=\"new\">Nová</link> stanice podle místa."
+
+#. (itstool) path: section/title
+#: C/index.page:38
 msgid "Search"
 msgstr "Hledat"
 
 #. (itstool) path: section/p
-#: C/index.page:34
+#: C/index.page:39
 msgid "<link xref=\"search\">Search</link> for radio stations by location."
 msgstr "<link xref=\"search\">Vyhledejte</link> si stanici rádia podle místa."
 
 #. (itstool) path: section/title
 #. (itstool) path: page/title
-#: C/index.page:38 C/listen.page:17
+#: C/index.page:43 C/listen.page:17
 msgid "Listen"
 msgstr "Poslouchat"
 
 #. (itstool) path: section/p
-#: C/index.page:39
+#: C/index.page:44
 msgid ""
 "Learn how to <link xref=\"listen\">listen</link> to your default radio "
 "station."
@@ -193,39 +202,39 @@ msgstr "Jak <link xref=\"listen\">poslouchat</link> svoje výchozí rádio."
 
 #. (itstool) path: section/title
 #. (itstool) path: page/title
-#: C/index.page:43 C/record.page:17
+#: C/index.page:48 C/record.page:17
 msgid "Record"
 msgstr "Nahrávat"
 
 #. (itstool) path: section/p
-#: C/index.page:44
+#: C/index.page:49
 msgid "Learn how to <link xref=\"record\">record</link> from radio stations."
 msgstr "Jak si <link xref=\"record\">nahrávat</link> z vysílání rádia."
 
 #. (itstool) path: section/title
 #. (itstool) path: page/title
-#: C/index.page:49 C/prev.page:13
+#: C/index.page:54 C/prev.page:13
 msgid "Prev"
 msgstr "Předchozí"
 
 #. (itstool) path: section/p
-#: C/index.page:50
+#: C/index.page:55
 msgid "Navigate to the <link xref=\"prev\">previous</link> radio station."
 msgstr "Jak přejít na <link xref=\"prev\">předchozí</link> stanici rádia."
 
 #. (itstool) path: section/title
 #. (itstool) path: page/title
-#: C/index.page:54 C/next.page:17
+#: C/index.page:59 C/next.page:17
 msgid "Next"
 msgstr "Následující"
 
 #. (itstool) path: section/p
-#: C/index.page:55
+#: C/index.page:60
 msgid "Navigate to the <link xref=\"next\">next</link> radio station."
 msgstr "Jak přejít na <link xref=\"next\">následující</link> stanici rádia."
 
 #. (itstool) path: section/p
-#: C/index.page:60
+#: C/index.page:65
 msgid ""
 "Learn <link xref=\"aboutstation\">about the current radio station</link>."
 msgstr ""
@@ -233,7 +242,7 @@ msgstr ""
 "link>."
 
 #. (itstool) path: section/p
-#: C/index.page:65
+#: C/index.page:70
 msgid ""
 "Learn <link xref=\"aboutprogram\">about the GNOME Internet Radio Locator</"
 "link> and its contributors."
@@ -249,9 +258,9 @@ msgstr ""
 #: C/intro.page:25
 msgctxt "_"
 msgid ""
-"external ref='media/girl-main.png' md5='604ab52adcccb7c7c73bb04f1f11f24c'"
+"external ref='media/girl-main.png' md5='935b9e52a954f1991f9b241dcfaf687d'"
 msgstr ""
-"external ref='media/girl-main.png' md5='604ab52adcccb7c7c73bb04f1f11f24c'"
+"external ref='media/girl-main.png' md5='935b9e52a954f1991f9b241dcfaf687d'"
 
 #. (itstool) path: page/title
 #: C/intro.page:17
@@ -300,7 +309,7 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/listen.page:30
+#: C/listen.page:28
 msgctxt "_"
 msgid ""
 "external ref='media/girl-listen.png' md5='ad6fce1f9ff9ce95ccacd310d490a287'"
@@ -311,15 +320,13 @@ msgstr ""
 #: C/listen.page:19
 msgid ""
 "It is possible to listen to supported radio stations in <app>GIRL</app> if "
-"you have installed the <app>Videos</app> application with the necessary "
-"audio codecs."
+"you have installed gstreamer with the necessary audio codecs."
 msgstr ""
 "Stanice rádií podporované v aplikaci <app>GIRL</app> můžete poslouchat, "
-"pokud máte nainstalovánu aplikaci <app>Videa</app> s potřebnými zvukovými "
-"kodeky."
+"pokud máte nainstalován gstreamer s potřebnými zvukovými kodeky."
 
 #. (itstool) path: page/p
-#: C/listen.page:22
+#: C/listen.page:21
 msgid ""
 "If you have installed Ogg Vorbis audio codec on your computer, then you can "
 "listen to many of the included radio stations."
@@ -328,19 +335,18 @@ msgstr ""
 "nainstalovaný kodek Ogg Vorbis."
 
 #. (itstool) path: page/p
-#: C/listen.page:25
+#: C/listen.page:24
 msgid ""
 "If you select the radio station from \"Stations\" and click on \"Listen\" in "
 "the <app>GIRL</app> program after you listened to a radio station "
-"previously, the default radio station will stream in the <app>Videos</app> "
-"application."
+"previously, the default radio station will stream audio with gstreamer."
 msgstr ""
 "Když vyberete stanici rádia ze „Stanic“ a kliknete v aplikaci <app>GIRL</"
-"app> na „Poslouchat“ a přitom posloucháte nějaké předchozí rádio, začne "
-"aplikace <app>Videa</app> vysílat současnou výchozí stanici."
+"app> na „Poslouchat“ a přitom posloucháte nějaké předchozí rádio, začne se "
+"vysílat výchozí stanice."
 
 #. (itstool) path: page/title
-#: C/listen.page:29
+#: C/listen.page:27
 msgid ""
 "<media type=\"image\" mime=\"image/png\" src=\"media/girl-listen.png\"/> "
 "Listen to radio station"
@@ -433,7 +439,7 @@ msgstr ""
 "nahrávat. K tomu musíte mít nainstalovánu aplikaci <app>streamripper</app>."
 
 #. (itstool) path: page/p
-#: C/prev.page:25 C/record.page:22
+#: C/prev.page:25
 msgid ""
 "If you have installed streamripper on your computer, then you can record "
 "audio broadcasted from any of the supported radio stations."
@@ -442,7 +448,7 @@ msgstr ""
 "zvukové vysílání z libovolné podporované stanice."
 
 #. (itstool) path: page/p
-#: C/prev.page:27 C/record.page:25
+#: C/prev.page:27
 msgid ""
 "If you select the radio station from \"Stations\" and click on \"Listen\" in "
 "the <app>GIRL</app> program after you listened to a radio station "
@@ -490,15 +496,35 @@ msgstr ""
 #. (itstool) path: page/p
 #: C/record.page:19
 msgid ""
-"It is possible to record from supported radio stations in <app>GIRL</app> if "
-"you have installed the <app>streamripper</app> application. You can download "
-"streamripper from <link href=\"http://streamripper.sf.net/\">streamripper.sf."
-"net</link>."
+"A planned feature in <app>GIRL</app> is to make it possible to record audio "
+"files from supported radio stations in <app>GIRL</app> if you have installed "
+"the gstreamer library."
 msgstr ""
-"Pokud máte nainstalovanou aplikaci <app>streamripper</app>, můžete si v "
-"<app>GIRL</app> nahrávat vysílání podporovaných stanic rádií. Aplikaci "
-"streamripper je možné stáhnout z <link href=\"http://streamripper.sf.net/"
-"\">streamripper.sf.net</link>."
+"K plánovaným funkcím aplikace <app>GIRL</app> patří nahrávání zvukových "
+"souborů z podporovaných stanic rádií, když budete míst nainstalovanou "
+"knihovnu gstreamer."
+
+#. (itstool) path: page/p
+#: C/record.page:23
+msgid ""
+"If you select the radio station from \"Stations\" and click on \"Listen\" in "
+"the <app>GIRL</app> program after you listened to a radio station "
+"previously, and then click on \"Record\", the radio station would be "
+"recorded and the recorded audio file would be stored in your home directory."
+msgstr ""
+"Když vyberete stanici rádia ze „Stanic“ a kliknete v aplikaci <app>GIRL</"
+"app> na „Poslouchat“ a přitom posloucháte nějaké předchozí rádio, a pak "
+"kliknete na „Nahrávat“, bude stanice rádia nahrávána na disk. Nahrávaný "
+"zvukový soubor se ukládá do vaší domovské složky."
+
+#. (itstool) path: page/p
+#: C/record.page:27
+msgid ""
+"Please get in touch and check out src/girl-record.c for the code if you want "
+"to implement recording with gstreamer."
+msgstr ""
+"V případě, že byste měli zájem implementovat nahrávání pomocí knihovny "
+"gstreamer, dívejte se po souboru src/girl-record.c."
 
 #. (itstool) path: page/title
 #: C/record.page:29
@@ -512,11 +538,9 @@ msgstr ""
 #. (itstool) path: page/p
 #: C/record.page:34
 msgid ""
-"If you want to stop the streamripper recording process of the radio station, "
-"click on \"Stop\"."
-msgstr ""
-"Když chcete nahrávání stanice rádia pomocí streamripper zastavit zastavit, "
-"klikněte na „Zastavit“."
+"If you want to stop the recording process of the radio station, click on "
+"\"Stop\"."
+msgstr "Když chcete nahrávání stanice rádia zastavit, klikněte na „Zastavit“."
 
 #. (itstool) path: page/title
 #: C/record.page:36
