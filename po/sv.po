@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: girl master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=girl&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-10-02 10:49+0000\n"
-"PO-Revision-Date: 2016-11-10 21:20+0100\n"
+"POT-Creation-Date: 2016-12-01 22:47+0000\n"
+"PO-Revision-Date: 2016-12-21 23:12+0100\n"
 "Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/girl.appdata.xml.in.h:1
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Internet Radio Locator"
 msgstr "Internetradioletare"
 
-#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:694
+#: ../data/girl.desktop.in.in.h:2 ../src/girl.c:704
 msgid "Locate Internet Radio Stations"
 msgstr "Leta rätt på internetradiostationer"
 
@@ -242,12 +242,12 @@ msgstr ""
 "stationen."
 
 #. printf("Archiving program at %s\n", archive);
-#: ../src/girl-station.c:237
+#: ../src/girl-station.c:239
 #, c-format
 msgid "Recording from %s in %s to %s"
 msgstr "Spelar in från %s i %s till %s"
 
-#: ../src/girl-station.c:255
+#: ../src/girl-station.c:257
 #, c-format
 msgid ""
 "An error happened trying to play %s\n"
@@ -256,7 +256,7 @@ msgstr ""
 "Ett fel uppstod vid uppspelning av %s\n"
 "Antingen existerar inte filen, eller så har du ingen spelare för den."
 
-#: ../src/girl-station.c:261
+#: ../src/girl-station.c:263
 #, c-format
 msgid ""
 "An error happened trying to record %s\n"
@@ -265,13 +265,13 @@ msgstr ""
 "Ett fel uppstod vid inspelning av %s\n"
 "Antingen existerar inte filen, eller så har du ingen inspelare för den."
 
-#: ../src/girl-station.c:292 ../src/girl-station.c:312
-#: ../src/girl-station.c:429 ../src/girl-station.c:452
+#: ../src/girl-station.c:294 ../src/girl-station.c:314
+#: ../src/girl-station.c:430 ../src/girl-station.c:453
 #, c-format
 msgid "Failed to run %s (%i)\n"
 msgstr "Kunde inte köra %s (%i)\n"
 
-#: ../src/girl-station.c:339 ../src/girl-station.c:476
+#: ../src/girl-station.c:341 ../src/girl-station.c:477
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -282,7 +282,7 @@ msgstr ""
 "Statuskod: %i\n"
 "Detaljer: %s"
 
-#: ../src/girl-station.c:359 ../src/girl-station.c:372
+#: ../src/girl-station.c:359 ../src/girl-station.c:373
 #, c-format
 msgid ""
 "Failed to open URL: '%s'\n"
@@ -291,7 +291,7 @@ msgstr ""
 "Kunde inte öppna URL: ”%s”\n"
 "Detaljer: %s"
 
-#: ../src/girl-station.c:398
+#: ../src/girl-station.c:399
 #, c-format
 msgid ""
 "Failed to run '%s'\n"
@@ -331,37 +331,37 @@ msgstr[1] "och %i strömmar hittades"
 msgid "%s %s"
 msgstr "%s %s"
 
-#: ../src/girl.c:212
+#: ../src/girl.c:213
 #, c-format
 msgid "Selected the previous radio station: %s in %s: %s"
 msgstr "Valde föregående radiostation: %s i %s: %s"
 
-#: ../src/girl.c:274
+#: ../src/girl.c:276
 #, c-format
 msgid "Selected the next radio station %s in %s: %s"
 msgstr "Valde nästa radiostation: %s i %s: %s"
 
-#: ../src/girl.c:378
+#: ../src/girl.c:380
 #, c-format
 msgid "Selected %s in %s: %s (%f)"
 msgstr "Valde %s i %s: %s (%f)"
 
-#: ../src/girl.c:426
+#: ../src/girl.c:428
 #, c-format
 msgid "Selected %s in %s: %s"
 msgstr "Valde %s i %s: %s"
 
-#: ../src/girl.c:475 ../src/girl.c:522
+#: ../src/girl.c:477 ../src/girl.c:525
 #, c-format
 msgid "Selected the radio station %s in %s: %s"
 msgstr "Valde radiostationen %s i %s: %s"
 
-#: ../src/girl.c:572
+#: ../src/girl.c:575
 #, c-format
 msgid "Selected %s [%s] [%s] [%s]"
 msgstr "Valde %s [%s] [%s] [%s]"
 
-#: ../src/girl.c:662
+#: ../src/girl.c:672
 msgid ""
 "Marek Černocký <marek@manet.cz> (Czech translation)\n"
 "Rafael Fontenelle <rafaelff@gnome.org> (Brazilian Portuguese translation)\n"
@@ -426,23 +426,27 @@ msgstr ""
 "franska)\n"
 "Anders Jonsson <anders.jonsson@norsjovallen.se> (Översättning till svenska)\n"
 
-#: ../src/girl.c:695
+#: ../src/girl.c:705
 msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
 msgstr "Copyright © 2014, 2015, 2016  Ole Aamot Software"
 
-#: ../src/girl.c:696
+#: ../src/girl.c:706
 msgid "Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"
 msgstr "Mario Blättermann <mario.blaettermann@gmail.com> (Tysk översättning)"
 
-#: ../src/girl.c:696
+#: ../src/girl.c:706
 msgid "Marek Černocký <marek@manet.cz> (Czech translation)"
 msgstr "Marek Černocký <marek@manet.cz> (Tjeckisk översättning)"
 
-#: ../src/girl.c:696
+#: ../src/girl.c:706
 msgid "Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com> (Spansk översättning)"
 
-#: ../src/girl.c:705
+#: ../src/girl.c:706
+msgid "Josef Andersson <josef.andersson@fripost.org> (Swedish translation)"
+msgstr "Josef Andersson <josef.andersson@fripost.org> (Svensk översättning)"
+
+#: ../src/girl.c:715
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -468,34 +472,34 @@ msgstr ""
 "program, om inte, skriv till Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA."
 
-#: ../src/girl.c:711
+#: ../src/girl.c:721
 #, c-format
 msgid "Unable to load GIRL logo: %s\n"
 msgstr "Kan inte läsa in logotyp för GIRL: %s\n"
 
-#: ../src/girl.c:869
+#: ../src/girl.c:879
 msgid "Search radio station by location"
 msgstr "Sök radiostation efter plats"
 
-#: ../src/girl.c:875
+#: ../src/girl.c:885
 #, c-format
 msgid "Listening to the radio station %s in %s: %s "
 msgstr "Lyssnar på radiostationen %s i %s: %s "
 
 #. g_spawn_close_pid( girl->record_pid);
-#: ../src/girl.c:936
+#: ../src/girl.c:944
 #, c-format
 msgid "Finished saving recording from the radio station %s in %s from %s to %s"
 msgstr ""
 "Klar med sparning av inspelning från radiostationen %s i %s från %s till %s"
 
 #. g_spawn_close_pid( girl->player_pid);
-#: ../src/girl.c:952
+#: ../src/girl.c:960
 #, c-format
 msgid "Stopped playing the radio station %s in %s."
 msgstr "Slutade att spela upp radiostationen %s i %s."
 
-#: ../src/girl.c:996
+#: ../src/girl.c:1004
 #, c-format
 msgid "Archiving %s"
 msgstr "Arkiverar %s"
