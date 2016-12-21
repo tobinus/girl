@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: girl master\n"
-"POT-Creation-Date: 2016-12-19 15:07+0000\n"
-"PO-Revision-Date: 2016-12-20 10:44+0100\n"
+"POT-Creation-Date: 2016-12-21 15:32+0000\n"
+"PO-Revision-Date: 2016-12-21 23:51+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -24,15 +24,15 @@ msgstr "Marek Černocký <marek@manet.cz>"
 
 #. (itstool) path: credit/name
 #: C/aboutprogram.page:9 C/aboutstation.page:9 C/exit.page:9 C/index.page:14
-#: C/intro.page:9 C/listen.page:9 C/next.page:9 C/prev.page:7 C/record.page:9
-#: C/search.page:9 C/stations.page:9
+#: C/intro.page:9 C/listen.page:9 C/new.page:7 C/next.page:9 C/prev.page:7
+#: C/record.page:9 C/search.page:9 C/stations.page:9
 msgid "Ole Aamot"
 msgstr "Ole Aamot"
 
 #. (itstool) path: info/desc
 #: C/aboutprogram.page:14 C/aboutstation.page:14 C/exit.page:14 C/intro.page:14
-#: C/listen.page:14 C/next.page:14 C/prev.page:11 C/record.page:14
-#: C/search.page:14 C/stations.page:14
+#: C/listen.page:14 C/new.page:11 C/next.page:14 C/prev.page:11
+#: C/record.page:14 C/search.page:14 C/stations.page:14
 msgid "Search for Internet radio stations by location."
 msgstr "Jak vyhledat stanici internetového rádia podle místa."
 
@@ -168,7 +168,8 @@ msgstr ""
 "neziskových nezávislých internetových rádií v aplikaci <app>GIRL</app>."
 
 #. (itstool) path: section/title
-#: C/index.page:33
+#. (itstool) path: page/title
+#: C/index.page:33 C/new.page:13
 msgid "New"
 msgstr "Nová"
 
@@ -353,6 +354,38 @@ msgid ""
 msgstr ""
 "<media type=\"image\" mime=\"image/png\" src=\"media/girl-listen.png\"/> "
 "Poslech rádia"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/new.page:17
+msgctxt "_"
+msgid ""
+"external ref='media/girl-newstation.png' "
+"md5='c00156ebc179c6d70f0f2aa70d6a63be'"
+msgstr ""
+"external ref='media/girl-newstation.png' "
+"md5='c00156ebc179c6d70f0f2aa70d6a63be'"
+
+#. (itstool) path: page/p
+#: C/new.page:14
+msgid ""
+"It is possible to add new Internet radio stations in <app>GIRL</app> with "
+"the \"New\" button."
+msgstr ""
+"Do aplikace <app>GIRL</app> můžete přidat novou stanici internetového rádia "
+"pomocí tlačítka „Nová“."
+
+#. (itstool) path: page/title
+#: C/new.page:16
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"media/girl-newstation.png\"/> "
+"New Internet radio station"
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"media/girl-newstation.png\"/> "
+"> Nová stanice"
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
@@ -632,3 +665,4 @@ msgid ""
 msgstr ""
 "<media type=\"image\" mime=\"image/png\" src=\"media/girl-select-station.png"
 "\"/> Naladění internetových rádií v GNOME"
+
