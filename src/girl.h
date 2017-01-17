@@ -152,6 +152,8 @@ struct _GirlData {
 	GPid record_pid;
 	gint station_count;
 	gint stream_count;
+	GMainLoop *player_loop;
+	GMainLoop *record_loop;
 };
 
 typedef struct _GirlData GirlData;

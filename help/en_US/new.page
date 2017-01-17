@@ -4,16 +4,16 @@
     <link type="guide" xref="index#main" group="#first"/>
     <revision pkgversion="1.8" date="2016-12-01" status="candidate"/>
     <credit type="author copyright">
-      <name>Ole Aamot</name>
+      <name xml:lang="en-US">Ole Aamot</name>
       <email>ole@src.gnome.org</email>
     </credit>
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-    <desc>Search for Internet radio stations by location.</desc>
+    <desc xml:lang="en-US">Search for Internet radio stations by location.</desc>
   </info>
-  <title>New</title>
-    <p>It is possible to add new Internet radio stations 
+  <title xml:lang="en-US">New</title>
+    <p xml:lang="en-US">It is possible to add new Internet radio stations 
     in <app>GIRL</app> with the "New" button.</p>
-    <title>
+    <title xml:lang="en-US">
       <media type="image" mime="image/png" src="media/girl-newstation.png"/>
       New Internet radio station
     </title>

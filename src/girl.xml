@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-9.6.dtd">
-<girl version="9.6.0">
+<!DOCTYPE girl SYSTEM "girl-9.7.dtd">
+<girl version="9.7.0">
   <station band="909/693 MW" id="bbcradio5live" lang="en" name="BBC Radio 5 Live" rank="1.0" type="gov">
     <frequency uri="http://www.bbc.co.uk/5live">909/693 MW in Salford, United Kingdom</frequency>
     <location>Salford, United Kingdom</location>

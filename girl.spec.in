@@ -17,12 +17,14 @@ BuildRequires:  itstool
 BuildRequires:  libappstream-glib
 BuildRequires:  desktop-file-utils
 BuildRequires:  gstreamer-devel
+BuildRequires:  gstreamer1-plugins-bad-free-devel
+BuildRequires:  gstreamer1-plugins-base-devel
 Requires:       gstreamer1 >= 1.8.3
+Requires:       gstreamer1-plugins-ugly >= 1.8.3
 
 %description
 GNOME Internet Radio Locator (GIRL) is a program that allows the user
-to easily locate and record live radio programs by radio broadcasters
-on the Internet.
+to easily locate live radio programs by broadcasters on the Internet.
 
 GIRL is developed on the GNOME platform and it requires gstreamer for
 playback.
@@ -69,6 +71,11 @@ fi
 %{_datadir}/help/*/%{name}
 
 %changelog
+* Tue Jan 17 2017 Ole Aamot - 9.7.0-1.fc24
+- Girl 9.7.0 build on Fedora Linux 24
+
+* Sat Jan 07 2017 Ole Aamot - 9.6.2-1.fc24
+- Girl 9.6.2 build on Fedora Linux 24
 
 * Sat Dec 10 2016 Ole Aamot - 9.6.1-1.fc24
 - Girl 9.6.1 build on Fedora Linux 24

@@ -1,4 +1,14 @@
 ================
+GIRL 9.7.0 notes
+================
+
+GNOME Internet Radio Locator version 9.7 was released in January 2017.
+
+This release contains a port to gstreamer 1.0 by Dominique Leuenberger
+(GNOME Bugzilla #777397).  Note: The gst-plugins-ugly package (Fedora:
+gstreamer1-plugins-ugly) is required for some Internet radio stations.
+
+================
 GIRL 9.6.1 notes
 ================
 
@@ -519,11 +529,6 @@ Everything in book The Hitchhiker's Guide to the Galaxy.  Life is
 finite.  The Universe is infinite.  Listen to and/or record Everything
 that is broadcasted live from 42 radio stations on Earth included with
 this program.
-
-GIRL was developed for the GNOME desktop and requires one audio helper
-such as Totem (https://developer.gnome.org/totem/) to be installed for
-playback and StreamRipper (http://streamripper.sourceforge.net/) to be
-installed for recording live radio streams of supported radio stations.
 
 The station list is available in XML from http://girl.software/girl.xml
 

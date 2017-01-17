@@ -50,7 +50,6 @@
 #include <unistd.h>
 
 #include <gst/gst.h>
-#include <gst/interfaces/xoverlay.h>
 
 typedef struct _GirlStoreMedia {
   GstElement *pipeline;
@@ -70,6 +69,6 @@ void girl_record_backend_play ();
 void girl_record_backend_pause ();
 void girl_record_backend_seek ();
 
-void girl_record_backend_stop (void);
+void girl_record_backend_stop (GMainLoop *loop);
 
 #endif

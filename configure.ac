@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(girl, 9.6.2)
+AC_INIT(girl, 9.7.0)
 AM_INIT_AUTOMAKE([no-dist-gzip dist-xz])
 AC_CONFIG_SRCDIR([src/girl.c])
 AC_CONFIG_HEADER([config.h])
@@ -39,10 +39,10 @@ PKG_CHECK_MODULES(GIRL,
 		  libgnomeui-2.0 >= 2.0 \
 		  libxml-2.0 >= 2.0 \
 		  gnome-vfs-2.0 >= 2.0
-		  gstreamer-0.10 >= 0.10.36 \
-		  gstreamer-interfaces-0.10 >= 0.10.36)
+		  gstreamer-1.0 >= 1.0
+		  gstreamer-video-1.0) 2>&5
 
-GIRL_PKG_DEPS="gtk+-2.0, glib-2.0, libgnome-2.0, libgnomeui-2.0, libxml-2.0, gnome-vfs-2.0, gstreamer-0.10, gstreamer-interfaces-0.10"
+GIRL_PKG_DEPS="gtk+-2.0, glib-2.0, libgnome-2.0, libgnomeui-2.0, libxml-2.0, gnome-vfs-2.0, gstreamer-1.0 gstreamer-video-1.0"
 
 GTK_DOC_CHECK([1.16], [--flavour no-tmpl])
 
@@ -70,7 +70,6 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package.])
 AC_SUBST(GIRL_LIBS)
 AC_SUBST(GIRL_CFLAGS)
 AC_SUBST(GIRL_PKG_DEPS)
-AC_SUBST(GIRL_HELPER_PLAYER)
 
 dnl Enable yelp-tools
 YELP_HELP_INIT

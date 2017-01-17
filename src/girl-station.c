@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2014, 2015, 2016  Ole Aamot Software
+ * Copyright (C) 2014, 2015, 2016, 2017  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -384,6 +384,7 @@ void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperTyp
 						 NULL);
 		}
 #endif
+
 	}
 	
 	if (helper == GIRL_STREAM_RECORD) {
@@ -394,10 +395,10 @@ void girl_helper_run(gchar *url, gchar *name, GirlStreamType type, GirlHelperTyp
 		gchar *recording_path_name = g_strconcat(g_get_home_dir(), "/.girl/", NULL);
 		gchar *formatting_argument = g_strdup("-D %D");
 		girl->record_launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_NONE);
-		girl->record_subprocess = g_subprocess_launcher_spawn (girl->record_launcher, &error, GIRL_HELPER_RECORD, url, "-d", recording_path_name, "-D", "%D", NULL);
+		/* girl->record_subprocess = g_subprocess_launcher_spawn (girl->record_launcher, &error, GIRL_HELPER_RECORD, url, "-d", recording_path_name, "-D", "%D", NULL); */
 		if (girl->record_subprocess == NULL) {
-			msg = g_strdup_printf(_("Failed to run '%s'\n"
-						"Details: %s"), GIRL_HELPER_RECORD, error->message);
+			/* msg = g_strdup_printf(_("Failed to run '%s'\n" */
+			/* 			"Details: %s"), GIRL_HELPER_RECORD, error->message); */
 			show_error(msg);
 			g_error_free(error);
 			g_free(msg);
@@ -737,7 +738,7 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 
 	gboolean local_girl_file = g_file_test (".girl/girl.xml", G_FILE_TEST_EXISTS);
 
-	g_printf("DEBUG: local_girl_file = %i\n", local_girl_file);
+	GIRL_DEBUG_MSG("local_girl_file = %i\n", local_girl_file);
 
 	if (local_girl_file == 0) {
 

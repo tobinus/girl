@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2016  Ole Aamot Software
+ * Copyright (C) 2016, 2017  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -46,6 +46,7 @@
 
 #include "girl-player-backend.h"
 #include "girl-player-globals.h"
+#include <gst/video/videooverlay.h>
 
 struct GirlMedia *media;
 extern GirlData *girl;
@@ -81,14 +82,14 @@ static gboolean handler_message (GstBus *bus, GstMessage *message , gpointer dat
 void girl_player_backend_pause()
 {
   gst_element_set_state(media->pipeline, GST_STATE_PAUSED);  
-  g_message("Paused....");
+  GIRL_DEBUG_MSG("Paused....");
 
 }
 
 void girl_player_backend_play()
 {
   gst_element_set_state(media->pipeline, GST_STATE_PLAYING);  
-  g_message("Playing....");
+  GIRL_DEBUG_MSG("Playing....");
 }
 
 void girl_player_backend_seek()
@@ -99,12 +100,12 @@ GstBusSyncReply CreateWindow (GstBus *bus,GstMessage *message,gpointer data)
 {
 	if (GST_MESSAGE_TYPE (message) != GST_MESSAGE_ELEMENT)
 		return GST_BUS_PASS;
-	if ( !gst_structure_has_name (message->structure, "prepare-xwindow-id")) 
+	if ( !gst_structure_has_name (gst_message_get_structure (message), "prepare-xwindow-id")) 
 		return GST_BUS_PASS;
 	if (Window_Xid != 0) { 
-		GstXOverlay *xoverlay;
-		xoverlay = GST_X_OVERLAY (GST_MESSAGE_SRC (message));
-		gst_x_overlay_set_xwindow_id (xoverlay, Window_Xid);
+		GstVideoOverlay *video_overlay;
+		video_overlay = GST_VIDEO_OVERLAY (GST_MESSAGE_SRC (message));
+		gst_video_overlay_set_window_handle (video_overlay, Window_Xid);
 	} else {
 		g_warning ("Should have obtained Window_Xid by now!");
 	}
@@ -127,7 +128,7 @@ gboolean girl_player_backend_start (gchar *uri, gchar *name)
   g_object_set(G_OBJECT(media->pipeline),"uri",media->uri,NULL);
 
   media->bus = gst_pipeline_get_bus(GST_PIPELINE(media->pipeline));
-  gst_bus_set_sync_handler (media->bus, (GstBusSyncHandler)CreateWindow, NULL);
+  gst_bus_set_sync_handler (media->bus, (GstBusSyncHandler)CreateWindow, NULL, NULL);
   gst_bus_add_watch(media->bus, handler_message, NULL);
   gst_object_unref (media->bus);
 
@@ -144,11 +145,12 @@ gboolean girl_player_backend_init (int *argc,char **argv[])
     return FALSE;	
 }
 
-void girl_player_backend_stop (void)
+void girl_player_backend_stop (GMainLoop *loop)
 {
 
 	girl->player_status = GIRL_PLAYER_FALSE;
 	gst_element_set_state(media->pipeline, GST_STATE_NULL);
 	gst_object_unref(GST_OBJECT (media->pipeline));
 	gst_deinit();
+	g_main_loop_quit (loop);
 }

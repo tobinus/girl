@@ -181,9 +181,7 @@ static void cause_movement(int way)
 void on_previous_station_click(GtkWidget * a, gpointer user_data)
 {
 	GirlStationInfo *station = (GirlStationInfo *)girl->previous_station;
-
 	girl->previous_station = girl->selected_station;
-
 	if (station != NULL) {
 		cause_movement(-1);
 		GIRL_DEBUG_MSG("Previous Station ID: %s\n", station->id);
@@ -306,8 +304,7 @@ void on_new_station_clicked(GtkWidget *a,
 	switch (result)  {
 	case GTK_RESPONSE_ACCEPT:
 
-		g_print ("Squeak!\n\n");
-
+		GIRL_DEBUG_MSG("Squeak!\n\n");
 		girl->selected_station_uri = g_strdup(g_object_get_data(G_OBJECT(station), "station_uri"));
 		GIRL_DEBUG_MSG("on_new_station_select_changed: %s\n", girl->selected_station_uri);
 		girl->selected_station_description = g_strdup(g_object_get_data(G_OBJECT(station), "station_description"));
@@ -624,30 +621,34 @@ void quit_app(GtkWidget * a, gpointer user_data)
 	gnome_config_pop_prefix();
 
 	gtk_widget_destroy(girl_app);
-	if (GTK_IS_WIDGET(stations_selector)) {
-		gtk_widget_destroy(stations_selector);
-	}
-	if (GTK_IS_WIDGET(streams_selector)) {
-		gtk_widget_destroy(streams_selector);
-	}
+	/* if (GTK_IS_WIDGET(stations_selector)) { */
+	/* 	gtk_widget_destroy(stations_selector); */
+	/* } */
+	/* if (GTK_IS_WIDGET(streams_selector)) { */
+	/* 	gtk_widget_destroy(streams_selector); */
+	/* } */
 	// stationinfo = l->data;
 	// girl_station_save(stationinfo, NULL, NULL, NULL, NULL, NULL, NULL);
-
 	g_spawn_close_pid(girl->record_pid);
 	g_spawn_close_pid(girl->player_pid);
-
-
-	g_subprocess_force_exit(girl->player_subprocess);
-	g_subprocess_force_exit(girl->record_subprocess);
+	/* g_subprocess_force_exit(girl->player_subprocess); */
+	/* g_subprocess_force_exit(girl->record_subprocess); */
 	// kill(girl->record_pid,SIGHUP);
 	// kill(girl->player_pid,SIGHUP);
-
-	gtk_widget_destroy(girl->player_window);
-	gtk_widget_destroy(girl->record_window);
-
-	girl_player_backend_stop();
-	girl_record_backend_stop();
-
+	if (GTK_IS_WIDGET(girl->player_window)) {
+		gtk_widget_destroy(girl->player_window);
+	}
+	/* gtk_widget_destroy(girl->record_window); */
+	if (g_main_loop_is_running (girl->player_loop)) {
+		girl_player_backend_stop(girl->player_loop);
+	}
+	if (GTK_IS_WIDGET(girl->record_window)) {
+		gtk_widget_destroy(girl->record_window);
+	}
+	if (g_main_loop_is_running (girl->record_loop)) {
+		girl_record_backend_stop(girl->record_loop);
+	}
+	/* girl_record_backend_stop(girl->record_loop); */
 	gtk_main_quit();
 }
 
@@ -702,7 +703,7 @@ void about_app(GtkWidget * a, gpointer user_data)
 			     "Mathilde Agostini",
 			     NULL };
 	gchar* comments = { _("Locate Internet Radio Stations") };
-	gchar* copyright = { _("Copyright (C) 2014, 2015, 2016  Ole Aamot Software") };
+	gchar* copyright = { _("Copyright (C) 2014-2017  Ole Aamot Software") };
 	gchar* documenters[] = { _("Mario Blättermann <mario.blaettermann@gmail.com> (German translation)"), _("Marek Černocký <marek@manet.cz> (Czech translation)"), _("Daniel Mustieles <daniel.mustieles@gmail.com> (Spanish translation)"), _("Josef Andersson <josef.andersson@fripost.org> (Swedish translation)"), NULL };
 
 	static GdkPixbuf* logo;
@@ -802,14 +803,14 @@ void about_program(GtkWidget * a, gpointer user_data)
 
 void about_station(GirlData * a, gpointer user_data)
 {
-	static GtkWidget *about_station;
+	static GtkWidget *about_station = NULL;
 	/* const gchar *translator_credits = _("translator_credits"); */
 	const gchar *authors[] = {
 		girl->selected_station_name,
 		NULL,
 	};
 
-	if (GTK_IS_WIDGET(about_station)) {
+	if (about_station != NULL) {
 		gtk_widget_destroy(GTK_WIDGET(about_station));
 	}
 	
@@ -873,8 +874,8 @@ void on_search_button_clicked(GtkWidget *a, gpointer user_data)
 {
 	GtkWidget *search;
 
-	search = create_search_selector();
-	gtk_widget_show(search);
+	search_selector = create_search_selector();
+	gtk_widget_show(search_selector);
 	
 	appbar_send_msg(_("Search radio station by location"));
 }
@@ -951,7 +952,9 @@ void on_stop_button_clicked(GtkWidget *a, gpointer user_data)
 	}
 
 	girl_player_backend_pause();
-	gtk_widget_destroy(girl->player_window);
+	if (GTK_IS_WIDGET(girl->player_window)) {
+		gtk_widget_destroy(girl->player_window);
+	}
 
 	if (girl->player_status == GIRL_PLAYER_TRUE) {
 		GIRL_DEBUG_MSG("Playback stopped.\n");

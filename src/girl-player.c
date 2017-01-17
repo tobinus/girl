@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2016  Ole Aamot Software
+ * Copyright (C) 2016, 2017  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -76,8 +76,9 @@ girl_player_main(gchar *streamuri, gchar *name)
 		g_message ("Girl-Player backend creation failure");
 		exit (0);
 	}
-	loop = g_main_loop_new (NULL, FALSE);
-	g_main_loop_run (loop);
-	girl_player_backend_stop ();
+	girl->player_loop = g_main_loop_new (NULL, FALSE);
+	g_main_loop_run (girl->player_loop);
+	girl_player_backend_stop (girl->player_loop);
 	girl->player_status = GIRL_PLAYER_TRUE;
+	exit (0);
 }

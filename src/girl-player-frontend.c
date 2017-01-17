@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2016  Ole Aamot Software
+ * Copyright (C) 2016, 2017  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -70,7 +70,7 @@ delete_event (GtkWidget *window,
 static void
 girl_player_frontend_destroy (GtkWidget *widget, gpointer data)
 {
-	gtk_widget_destroy (widget);
+	gtk_widget_destroy (GTK_WIDGET(widget));
 }
 
 static void
@@ -85,7 +85,7 @@ girl_player_frontend_stop (GtkWidget *widget, gpointer data)
 {
 	if (girl->player_window != NULL) {
 		girl_player_backend_pause();
-		gtk_widget_destroy(girl->player_window);
+		gtk_widget_destroy(GTK_WIDGET(girl->player_window));
 	}
 }
 

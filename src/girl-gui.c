@@ -2,7 +2,7 @@
  *
  * GNOME Internet Radio Locator
  *
- * Copyright (C) 2014, 2015, 2016  Ole Aamot Software
+ * Copyright (C) 2014, 2015, 2016, 2017  Ole Aamot Software
  *
  * Author: Ole Aamot <oka@oka.no>
  *
@@ -52,6 +52,7 @@
 #include "girl-tz.h"
 
 extern GtkWidget *girl_app;
+extern GtkWidget *search_selector;
 
 GnomeUIInfo toolbar[] = {
 	GNOMEUIINFO_ITEM_STOCK(N_("New"), N_("Add a new radio station"),
@@ -517,6 +518,10 @@ on_search_matches(GtkEntryCompletion *widget,
 
 	girl_player_frontend_stop (girl->player_window, NULL);
 
+	if (GTK_IS_WIDGET(search_selector)) {
+		gtk_widget_destroy(search_selector);
+	}
+	
 	girl_helper_run(girl->selected_station_uri,
 			girl->selected_station_name,
 			GIRL_STREAM_SHOUTCAST,

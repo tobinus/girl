@@ -1,4 +1,22 @@
 =============
+Version 9.7.0
+=============
+
+	* AUTHORS: Add Dominique Leuenberger for GStreamer 1.0 port
+	* THANKS: Add Dominique Leuenberger for GStreamer 1.0 port
+	* configure.ac: GStreamer 1.0 Port (Bugzilla #777397)
+	* help/cs/cs.po: Updated Czech translation by Marek Černocký
+	* po/es.po: Updated Spanish translation by Daniel Mustieles
+	* po/sv.po: Updated Swedish translation by Josef Andersson
+	* src/girl-9.7.dtd: Add 'href' attribute in location tag for 9.7.0
+	* src/girl-player-backend.c: GStreamer 1.0 Port (Bugzilla #777397)
+	* src/girl-player-backend.h: GStreamer 1.0 Port (Bugzilla #777397)
+	* src/girl-record-backend.c: GStreamer 1.0 Port (Bugzilla #777397)
+	* src/girl-record-backend.h: GStreamer 1.0 Port (Bugzilla #777397)
+	* src/girl.xml: Update to 9.7 DTD
+	* src/girl.xsl: Add XSL Transformation template
+
+=============
 Version 9.6.1
 =============
 
