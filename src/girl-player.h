@@ -24,7 +24,7 @@
 #ifndef __GIRL_PLAYER__
 #define __GIRL_PLAYER__
 
-int girl_player_main(gchar *streamuri, gchar *name);
+void girl_player_main(gchar *streamuri, gchar *name);
 
 #endif /* __GIRL_PLAYER__ */
 

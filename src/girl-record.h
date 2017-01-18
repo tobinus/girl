@@ -24,7 +24,7 @@
 #ifndef __GIRL_RECORD__
 #define __GIRL_RECORD__
 
-int girl_record_main(gchar *streamuri, gchar *name);
+void girl_record_main(gchar *streamuri, gchar *name);
 
 #endif /* __GIRL_RECORD__ */
 

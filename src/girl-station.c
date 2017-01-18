@@ -68,13 +68,13 @@ void show_error(gchar * msg)
 #endif				/* GIRL_CLI */
 }
 
-GAsyncReadyCallback
+void
 cb_subprocess_player (GSubprocess *subprocess)
 {
 	g_subprocess_force_exit(subprocess);
 }
 
-GAsyncReadyCallback
+void
 cb_subprocess_record (GSubprocess *subprocess)
 {
 	g_subprocess_force_exit(subprocess);

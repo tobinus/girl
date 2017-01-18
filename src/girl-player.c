@@ -51,7 +51,7 @@
 
 extern GirlData *girl;
 
-int
+void
 girl_player_main(gchar *streamuri, gchar *name)
 {
  

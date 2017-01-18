@@ -53,7 +53,7 @@
 
 extern GirlData *girl;
 
-int
+void
 girl_record_main(gchar *streamuri, gchar *name)
 {
  
