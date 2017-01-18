@@ -742,7 +742,7 @@ gint girl_station_update (GirlStationInfo *head, gchar *station_band, gchar *sta
 
 	if (local_girl_file == 0) {
 
-		gchar *local_girl_directory = g_strconcat(g_get_home_dir(), "/.girl");
+		gchar *local_girl_directory = g_strconcat(g_get_home_dir(), "/.girl", NULL);
 		g_mkdir_with_parents (local_girl_directory, 0700);
 		
 	}
