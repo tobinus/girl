@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="girl.xsl" ?>
-<!DOCTYPE girl SYSTEM "girl-9.7.dtd">
-<girl version="9.7.0">
+<!DOCTYPE girl SYSTEM "girl-9.8.dtd">
+<girl version="9.8.0">
+  <station band="102.2FM" id="piratefm" lang="en" name="Pirate FM" rank="1.0" type="com">
+    <frequency uri="http://www.piratefm.co.uk/">102.2 FM in Cornwall, United Kingdom</frequency>
+    <location>Cornwall, United Kingdom</location>
+    <description lang="en">
+      Pirate FM was born on the 3rd April 1992. We were launched by the legendary radio presenter Roger Day, using state-of-the-art computer technology that even saw us featured on BBC TV's "Tomorrow's World".
+...and to this day, we are proud to be made IN Cornwall, FOR Cornwall. We broadcast our programming from our studios in Redruth, and cover the whole of the Duchy using two transmitters - one in the West (102.8), and one in the East (102.2).
+In fact we even split our adverts, and many of our local news and travel bulletins between the two areas, to enable us to super-serve the communities of the Duchy with relevant information.
+    </description>
+    <stream mime="audio/mpeg" uri="http://str1.sad.ukrd.com:80/pirate" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
+  </station>
   <station band="909/693 MW" id="bbcradio5live" lang="en" name="BBC Radio 5 Live" rank="1.0" type="gov">
     <frequency uri="http://www.bbc.co.uk/5live">909/693 MW in Salford, United Kingdom</frequency>
     <location>Salford, United Kingdom</location>
@@ -27,7 +37,7 @@
     <stream mime="audio/mpeg" uri="http://128.100.197.46:80/" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
     <uri>http://www.ciut.fm/</uri>
   </station>
-  <station band="KSLU" id="kslu" lang="en" name="KSLU" rank="1.0" type="edu">
+  <station band="ONLINE" id="kslu" lang="en" name="KSLU" rank="1.0" type="edu">
     <frequency uri="http://www2.southeastern.edu/kslu/">90.9 FM in Hammond, LA</frequency>
     <location>Hammond, LA</location>
     <description lang="en">
@@ -166,7 +176,7 @@ WUMR has been the University of Memphis broadcasting outlet since 1979, when Sou
   <station band="100FM" id="radiorevolt" lang="no" name="Radio Revolt" rank="1.0" type="edu">
     <frequency uri="http://www.radiorevolt.no/">100 FM in Trondheim, Norway</frequency>
     <location>Trondheim, Norway</location>
-    <description lang="no">
+    <description lang="en">
       Radio Revolt (formerly known as Studentradion i Trondheim), is the student radio in Trondheim, Norway. It airs 55 hours a week on 100 and 106,2 FM, and 24 hours a day on the internet. It employs about 80 students on a voluntary basis. The radio is a part of the Student Society in Trondheim, and is so a part of the running of the house.
     </description>
     <stream mime="audio/mpeg" uri="http://streamer.radiorevolt.no:8000/revolt" codec="MPEG 1 Audio, Layer 3 (MP3)" samplerate="44100 Hz" channels="Stereo" bitrate="128 kbps" />
