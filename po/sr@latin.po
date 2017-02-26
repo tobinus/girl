@@ -420,7 +420,7 @@ msgid ""
 msgstr ""
 "Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "\n"
-"http://prevod.org — prevod na srpski jezik"
+"http://prevod.org — prevod na srpski jezik\n"
 
 #: ../src/girl.c:706
 #| msgid "Copyright (C) 2014, 2015, 2016  Ole Aamot Software"
